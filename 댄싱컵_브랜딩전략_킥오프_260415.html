@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>댄싱컵 브랜딩 전략 — 킥오프 자료</title>
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --ink-2: #3a3a3a;
+    --paper: #fafaf7;
+    --cream: #f4efe5;
+    --cream-2: #ede7d8;
+    --accent: #6b2c2c;
+    --accent-soft: #b8856a;
+    --mute: #8a8a8a;
+    --line: #e2ddd2;
+    --hl: #fff8e7;
+    --pos: #4a6b3a;
+    --neg: #8b4545;
+    --neu: #6a6a6a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.55;
+    padding: 48px 20px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .deck { max-width: 1080px; margin: 0 auto; }
+
+  .slide {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 68px 76px;
+    margin-bottom: 28px;
+    min-height: 580px;
+    position: relative;
+  }
+  .slide.cover {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 110px 76px;
+    min-height: 560px;
+  }
+
+  .slide-num {
+    position: absolute;
+    top: 26px;
+    right: 30px;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--mute);
+    font-variant-numeric: tabular-nums;
+  }
+  .kicker {
+    font-size: 11.5px;
+    letter-spacing: 0.22em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+  .cover .kicker { color: var(--accent-soft); }
+
+  h1 {
+    font-size: 44px;
+    line-height: 1.14;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    margin-bottom: 22px;
+  }
+  h2 {
+    font-size: 30px;
+    line-height: 1.22;
+    font-weight: 700;
+    margin-bottom: 28px;
+    letter-spacing: -0.02em;
+  }
+  h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 10px;
+    letter-spacing: -0.005em;
+  }
+  h4 {
+    font-size: 12px;
+    font-weight: 700;
+    margin: 26px 0 12px;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  p { margin-bottom: 12px; font-size: 14.5px; }
+  .lead {
+    font-size: 16px;
+    line-height: 1.65;
+    color: #2a2a2a;
+    margin-bottom: 26px;
+    max-width: 820px;
+  }
+  .cover p { color: #bbb; font-size: 16px; line-height: 1.6; }
+  .cover .meta { margin-top: 60px; font-size: 12px; color: #777; letter-spacing: 0.05em; }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; }
+
+  .card {
+    background: var(--cream);
+    padding: 22px 24px;
+    border-radius: 4px;
+    border-left: 3px solid var(--accent);
+  }
+  .card.soft { background: #f7f4ee; border-left-color: var(--accent-soft); }
+  .card.dark { background: var(--ink); color: var(--paper); border-left-color: var(--accent-soft); }
+  .card h3 { font-size: 15px; margin-bottom: 10px; }
+  .card p { font-size: 13.5px; line-height: 1.6; margin-bottom: 8px; }
+  .card ul, .card ol { margin-left: 14px; margin-top: 6px; }
+  .card li { font-size: 13.5px; margin-bottom: 5px; line-height: 1.55; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    margin: 12px 0;
+  }
+  th {
+    background: var(--ink);
+    color: #fff;
+    text-align: left;
+    padding: 10px 14px;
+    font-weight: 600;
+    font-size: 12.5px;
+    letter-spacing: 0.02em;
+  }
+  td {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: #faf7f1; }
+
+  .callout {
+    background: var(--hl);
+    padding: 16px 22px;
+    border-radius: 4px;
+    font-size: 14.5px;
+    line-height: 1.6;
+    margin: 18px 0;
+    border-left: 3px solid var(--accent);
+  }
+  .sub { color: var(--mute); font-size: 12.5px; }
+  .divider { height: 1px; background: var(--line); margin: 28px 0; }
+
+  ul.clean { list-style: none; margin: 0; padding: 0; }
+  ul.clean li {
+    padding-left: 16px;
+    position: relative;
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  ul.clean li:before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+  }
+
+  /* === SOCIAL LISTENING === */
+  .voice-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 10px;
+    margin: 12px 0 20px;
+    align-items: baseline;
+  }
+  .voice-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    line-height: 1.3;
+    background: #f2ece1;
+    color: var(--ink-2);
+  }
+  .voice-tag.lg { font-size: 18px; font-weight: 700; padding: 6px 14px; background: var(--cream-2); color: var(--ink); }
+  .voice-tag.md { font-size: 15px; font-weight: 600; padding: 5px 12px; }
+  .voice-tag.pos { background: #e4ecdf; color: var(--pos); }
+  .voice-tag.pos.lg { background: #d4e0cb; color: #3a5a2a; }
+  .voice-tag.neg { background: #efdede; color: var(--neg); }
+  .voice-tag.neu { background: #ececea; color: var(--neu); }
+
+  .quote-box {
+    background: #fdfbf5;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent-soft);
+    padding: 14px 18px;
+    border-radius: 3px;
+    font-size: 14px;
+    line-height: 1.55;
+    margin-bottom: 10px;
+    color: #2a2a2a;
+  }
+  .quote-box .src {
+    font-size: 11px;
+    color: var(--mute);
+    letter-spacing: 0.03em;
+    margin-top: 6px;
+    display: block;
+  }
+
+  .channel-row {
+    display: grid;
+    grid-template-columns: 120px 1fr 90px;
+    gap: 18px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+    align-items: start;
+  }
+  .channel-row:last-child { border-bottom: none; }
+  .channel-row .ch-name { font-weight: 700; font-size: 14px; }
+  .channel-row .ch-name .sub { display: block; margin-top: 2px; }
+  .channel-row .ch-body { font-size: 13.5px; line-height: 1.55; color: #333; }
+  .channel-row .ch-strength {
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    padding: 3px 9px;
+    border-radius: 3px;
+    text-align: center;
+    height: fit-content;
+    white-space: nowrap;
+  }
+  .ch-high { background: #d4e0cb; color: #3a5a2a; }
+  .ch-mid { background: #f2ece1; color: var(--accent); }
+  .ch-low { background: #ececea; color: var(--mute); }
+
+  /* === 2-TRACK === */
+  .tracks {
+    display: grid;
+    grid-template-columns: 1fr 48px 1fr;
+    gap: 0;
+    align-items: stretch;
+    margin: 18px 0;
+  }
+  .track-col { padding: 24px 24px; border-radius: 4px; }
+  .track-a { background: #fdf3ee; border: 2px solid var(--accent); }
+  .track-b { background: #f0ede5; border: 2px solid var(--ink); }
+  .track-col h3 { font-size: 18px; margin-bottom: 6px; }
+  .track-col .tiny { font-size: 11px; color: var(--mute); letter-spacing: 0.08em; margin-bottom: 6px; text-transform: uppercase; }
+  .vs { display: flex; align-items: center; justify-content: center; font-size: 13px; color: var(--mute); font-weight: 600; }
+
+  .bridge {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 15px 22px;
+    margin-top: 12px;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 13.5px;
+    letter-spacing: 0.02em;
+  }
+
+  /* === CHANNEL SPLIT === */
+  .chan-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin: 12px 0 16px;
+  }
+  .chan-box { padding: 26px 26px; border-radius: 5px; min-height: 250px; }
+  .chan-insta { background: linear-gradient(135deg, #f4efe5 0%, #e8dfd0 100%); border: 1px solid var(--line); }
+  .chan-viral { background: var(--ink); color: var(--paper); }
+  .chan-box .chan-tag { font-size: 10.5px; letter-spacing: 0.15em; opacity: 0.75; margin-bottom: 10px; }
+  .chan-box h3 { font-size: 19px; margin-bottom: 12px; }
+  .chan-box .role { font-size: 13.5px; margin-bottom: 14px; line-height: 1.6; }
+  .chan-viral ul.clean li:before { color: var(--accent-soft); }
+  .chan-viral ul.clean li { color: #ddd; }
+
+  @media print {
+    body { background: #fff; padding: 0; }
+    .slide { page-break-after: always; border: none; margin: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="deck">
+
+<!-- COVER -->
+<section class="slide cover">
+  <div class="kicker">HIZ × DancingCup — Kickoff</div>
+  <h1>댄싱컵 브랜딩 전략</h1>
+  <p>라떼 맛집 + 유행 선도, 2-Track 운영 제안</p>
+  <div class="meta">2026. 04. 15 · 킥오프 미팅 자료</div>
+</section>
+
+<!-- 01. 진단 -->
+<section class="slide">
+  <div class="slide-num">01</div>
+  <div class="kicker">진단</div>
+  <h2>현황 · 시장 · 기회</h2>
+
+  <div class="grid-3">
+    <div class="card">
+      <h3>댄싱컵 현황</h3>
+      <ul class="clean">
+        <li>매장 약 130개, 경남권 중심</li>
+        <li>라떼 품질 우수하나 "라떼 맛집" 인지 전환 안 됨</li>
+        <li>두쫀쿠·버터떡 등 유행 메뉴 출시 이력</li>
+        <li>지난 2년간 브랜딩 공백</li>
+      </ul>
+    </div>
+    <div class="card soft">
+      <h3>시장 맥락</h3>
+      <ul class="clean">
+        <li>디저트 유행주기 월 단위 압축</li>
+        <li>버터떡 검색량 1개월 18배 급증</li>
+        <li>대형 프랜차이즈 2~4주 늦게 출시</li>
+        <li>빅모델 전쟁 레드오션화</li>
+        <li>메가·컴포즈 틱톡 공식계정 방치</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>구조적 이점</h3>
+      <ul class="clean">
+        <li><b>속도</b> — 본사 의사결정 1~2주</li>
+        <li><b>실재하는 라떼</b> — 인식의 문제</li>
+        <li><b>거점 밀집</b> — 타겟 광고 효율</li>
+        <li><b>묶인 톤 없음</b> — 출발선 재설정 가능</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout">
+    <b>기회 요약</b> — 유행 주기 압축 + 대형 브랜드 속도 한계 + 틱톡 슬롯 공백.
+    작은 프랜차이즈가 속도와 재미로 자리를 만들 수 있는 구간.
+  </div>
+</section>
+
+<!-- 02. 소셜 리스닝 -->
+<section class="slide">
+  <div class="slide-num">02</div>
+  <div class="kicker">소셜 리스닝</div>
+  <h2>댄싱컵을 말하는 목소리</h2>
+  <p class="lead">포털·블로그·SNS에서 수집한 실제 소비자 보이스. 긍정 언급이 <b>시그니처 "댄싱커피"에 집중</b>되어 있고, 라떼·가격은 강점, 매장 크기는 공통 아쉬움.</p>
+
+  <h4>자주 쓰이는 표현 · voice cloud</h4>
+  <div class="voice-cloud">
+    <span class="voice-tag lg pos">댄싱커피</span>
+    <span class="voice-tag pos lg">취향저격</span>
+    <span class="voice-tag pos md">혜자</span>
+    <span class="voice-tag pos md">착한 가격</span>
+    <span class="voice-tag pos">중독성</span>
+    <span class="voice-tag pos md">커스터드 크림</span>
+    <span class="voice-tag pos">쫀득</span>
+    <span class="voice-tag pos">갈 때마다 마시는</span>
+    <span class="voice-tag pos">절묘하게 조화</span>
+    <span class="voice-tag pos">자주 생각날 듯</span>
+    <span class="voice-tag pos">기분 좋은 맛</span>
+    <span class="voice-tag pos">후회하지 않을</span>
+    <span class="voice-tag pos md">시그니처</span>
+    <span class="voice-tag pos">상큼함</span>
+    <span class="voice-tag pos">부드러운 단맛</span>
+    <span class="voice-tag pos">아기자기</span>
+    <span class="voice-tag neu">저렴</span>
+    <span class="voice-tag neu">온전하게 커피만</span>
+    <span class="voice-tag neg md">매장이 작다</span>
+    <span class="voice-tag neg">눈치 보임</span>
+    <span class="voice-tag neg">오래 앉기 부담</span>
+  </div>
+
+  <div class="grid-2">
+    <div>
+      <h4>Positive · 맛과 시그니처</h4>
+      <div class="quote-box">"댄싱커피가 제 취향저격… 갈 때마다 마시는 커피"<span class="src">tistory 블로그 후기</span></div>
+      <div class="quote-box">"에스프레소 샷과 블렌딩밀크 + 커스터드 크림이 절묘하게 조화"<span class="src">tistory 블로그 후기</span></div>
+      <div class="quote-box">"후회하지 않을 탁월한 메뉴 · 중독성 강한 시그니처 · 이 메뉴 정말 자주 생각날 듯"<span class="src">billnote.net</span></div>
+      <div class="quote-box">"꼭 '댄싱커피'부터 맛보시길 추천"<span class="src">오픈 후기 블로그</span></div>
+    </div>
+    <div>
+      <h4>Positive · 가격</h4>
+      <div class="quote-box">"2000원이니 정말 혜자네요 · 가격이 착한 편 · 쿠폰까지 정말 좋은 것 같습니다"<span class="src">tistory 블로그</span></div>
+      <div class="quote-box">"가격이 저렴해서 온전하게 커피만 즐기고 가면 될 것 같음"<span class="src">개인 리뷰</span></div>
+
+      <h4>Negative · 공간의 아쉬움</h4>
+      <div class="quote-box">"매장이 작아서 오래 앉아 있기는 조금 눈치가 보입니다"<span class="src">블로그</span></div>
+      <div class="quote-box">"잠깐 앉아서 짧게는 20분, 길게는 1시간 정도 머물러 가는 공간"<span class="src">블로그</span></div>
+    </div>
+  </div>
+
+  <h4>채널별 언급 강도 · 지금 무엇이 일어나고 있나</h4>
+  <div>
+    <div class="channel-row">
+      <div class="ch-name">네이버 블로그<br><span class="sub">tistory 포함</span></div>
+      <div class="ch-body">신규 오픈·지점 방문 후기 중심. <b>"댄싱커피"·"커스터드 크림"·"혜자"</b> 키워드 반복. 시그니처 중심 맛 언급은 살아있음.</div>
+      <div class="ch-strength ch-mid">지점 후기</div>
+    </div>
+    <div class="channel-row">
+      <div class="ch-name">인스타그램<br><span class="sub">#댄싱컵</span></div>
+      <div class="ch-body">공식 @dancingcup.official 운영. <b>지점 자발 계정 다수</b> — @dancingcup_pajuunjeong(파주운정점) 등 확인. 일반 유저 해시태그 활동은 메가·컴포즈 대비 작음.</div>
+      <div class="ch-strength ch-mid">공식+지점</div>
+    </div>
+    <div class="channel-row">
+      <div class="ch-name">다이닝코드 · 카카오맵</div>
+      <div class="ch-body">지점별 <b>4점대</b> 평점 (금광점·광주선운점·대연역점 등). 음료·베이커리 평가 분리 — 라떼/에이드/바질치아바타/소금빵 개별 평가 누적.</div>
+      <div class="ch-strength ch-high">활발</div>
+    </div>
+    <div class="channel-row">
+      <div class="ch-name">X · 스레드</div>
+      <div class="ch-body">직접 검색 시 댄싱컵 관련 실시간 언급 <b>매우 적음</b>. 브랜드 대화 형성 전 단계. (※ 대표님 언급 — 스레드에 소규모 빵/커피 맥락 언급 산재. 본격 모니터링 필요.)</div>
+      <div class="ch-strength ch-low">미진입</div>
+    </div>
+    <div class="channel-row">
+      <div class="ch-name">유튜브</div>
+      <div class="ch-body">브랜드 단위 먹방·리뷰 콘텐츠 사실상 없음. 카페 브이로그 크리에이터의 협업 대상으로 미편입.</div>
+      <div class="ch-strength ch-low">공백</div>
+    </div>
+    <div class="channel-row">
+      <div class="ch-name">틱톡</div>
+      <div class="ch-body">"#댄싱컵" 해시태그 <b>거의 없음</b>. 메가·컴포즈식 알바 브이로그 장르 진입 전. 슬롯 공백.</div>
+      <div class="ch-strength ch-low">공백</div>
+    </div>
+    <div class="channel-row">
+      <div class="ch-name">커뮤니티<br><span class="sub">디시 커피갤 · 더쿠 · 여시</span></div>
+      <div class="ch-body">"저가 프차 커피 추천" 류 글에 간헐 등장. <b>"저가커피 3대장" 담론에 댄싱컵은 미포함</b> — 진입해야 할 대화 영역.</div>
+      <div class="ch-strength ch-low">주변부</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <b>종합</b> — 소비자 언어는 이미 <b>"댄싱커피 · 혜자 · 커스터드 크림"</b> 에 모여 있다. "라떼 맛집" 포지션은 아직 약하지만,
+    <b>'시그니처가 있는 저가 카페'</b>라는 인식 자산은 존재. 이 기반 위에 라떼 언급을 의도적으로 쌓는다.
+  </div>
+</section>
+
+<!-- 03. 전략 프레임 -->
+<section class="slide">
+  <div class="slide-num">03</div>
+  <div class="kicker">전략 프레임</div>
+  <h2>2-Track — 묶지 않고 각자 운영</h2>
+  <p class="lead">대표님이 제시한 두 방향을 하나의 슬로건으로 묶지 않습니다. 각자 다른 메시지로 운영하되, 매장·앱 접점에서 자연스럽게 이어집니다.</p>
+
+  <div class="tracks">
+    <div class="track-col track-a">
+      <div class="tiny">TRACK A · 유행 훅</div>
+      <h3>"유행, 댄싱컵이 제일 빨라"</h3>
+      <p class="sub" style="margin:4px 0 10px;">신규 유입 · 단발 임팩트</p>
+      <ul class="clean">
+        <li>신메뉴 런칭마다 단발 캠페인</li>
+        <li>메뉴명이 콘텐츠 주인공</li>
+        <li>유행 사이클 앞서 타기</li>
+      </ul>
+    </div>
+    <div class="vs">×</div>
+    <div class="track-col track-b">
+      <div class="tiny">TRACK B · 라떼 앵커</div>
+      <h3>"라떼 맛집, 댄싱컵"</h3>
+      <p class="sub" style="margin:4px 0 10px;">재방문 · 장기 포지셔닝</p>
+      <ul class="clean">
+        <li>딥라떼·댄싱커피 시리즈 상시 운영</li>
+        <li>브랜드 자산·장기 인지</li>
+        <li>재방문·LTV 축</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout">
+    <b>핵심 원리 — 포지션은 반복으로 만들어진다.</b><br>
+    "라떼 맛집"은 선언이 아니라 많은 사람이 그렇게 말하고 있는 상태. 따라서 라떼도 바이럴이 필요함.
+    신메뉴만 바이럴하면 "유행 따라가는 카페"로만 남는다.
+  </div>
+
+  <div class="bridge">두 트랙은 슬로건이 아니라, 매장·영수증·앱 쿠폰 접점에서 연결한다.</div>
+</section>
+
+<!-- 04. 채널 역할 분리 -->
+<section class="slide">
+  <div class="slide-num">04</div>
+  <div class="kicker">채널 전략</div>
+  <h2>채널을 역할로 가른다 — 감도 vs 바이럴</h2>
+  <p class="lead">한 채널에서 감도와 재미를 섞지 않습니다. 두 트랙의 콘텐츠가 채널에 따라 다른 옷을 입고 올라갑니다.</p>
+
+  <div class="chan-split">
+    <div class="chan-box chan-insta">
+      <div class="chan-tag">BRAND EQUITY · 감도</div>
+      <h3>인스타그램 (공식)</h3>
+      <p class="role"><b>지금처럼 감도 있는 사진·영상</b>을 유지.<br>포지션의 <em>증거</em>를 쌓는 곳.</p>
+      <ul class="clean">
+        <li>고퀄 촬영, 통일된 톤·색감</li>
+        <li>딥라떼·댄싱커피 시그니처 자산</li>
+        <li>신제품 정돈된 비주얼</li>
+        <li>판매 문구 최소화, 무드 우선</li>
+      </ul>
+    </div>
+    <div class="chan-box chan-viral">
+      <div class="chan-tag" style="color:var(--accent-soft);">VIRAL · 가볍고 재밌게</div>
+      <h3>틱톡 · X · 인스타 지점/인플루언서</h3>
+      <p class="role" style="color:#ddd;">메가·컴포즈 관련 영상들처럼 <b>가볍고 재밌게.</b><br>포지션에 대한 <em>입소문</em>을 만드는 곳.</p>
+      <ul class="clean">
+        <li>신메뉴·라떼·일상 전부 바이럴 소재</li>
+        <li>퀄리티보다 재미·속도·양</li>
+        <li>유행음악·밈·드립 적극 탑승</li>
+        <li>"댄싱컵 라떼 맛있다" 언급 누적</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="bridge">인스타 공식은 <b>증거</b>를, 틱톡·X·지점 계정·인플루언서는 <b>입소문</b>을 만든다.</div>
+</section>
+
+<!-- 05. 인스타 운영 -->
+<section class="slide">
+  <div class="slide-num">05</div>
+  <div class="kicker">Channel · 인스타그램</div>
+  <h2>공식은 감도, 지점·인플루언서는 바이럴</h2>
+  <p class="lead">같은 인스타 플랫폼 안에서도 계정 종류에 따라 역할을 가릅니다. 공식 계정의 톤을 지키면서도, 지점·인플루언서 콘텐츠로 바이럴 여지를 확보합니다.</p>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>① 공식 계정 @dancingcup.official</h3>
+      <p class="sub" style="margin:6px 0 10px;">BRAND EQUITY · 감도 유지</p>
+      <ul class="clean">
+        <li><b>콘텐츠</b> — 딥라떼·댄싱커피 시그니처, 신제품 정돈된 비주얼, 매장 무드·바리스타 손</li>
+        <li><b>톤</b> — 고퀄 촬영, 통일된 톤·색감, 판매 카피 최소화</li>
+        <li><b>주기</b> — 주 3회 피드 + 스토리 상시</li>
+        <li><b>목적</b> — 틱톡·X에서 유입된 사람이 첫 10초 안에 "라떼 맛집이 맞구나" 납득시키는 증거 축적</li>
+      </ul>
+    </div>
+    <div class="card soft">
+      <h3>② 지점 계정 (130개)</h3>
+      <p class="sub" style="margin:6px 0 10px;">VIRAL · 가볍고 재밌게</p>
+      <ul class="clean">
+        <li><b>콘텐츠</b> — 제조 ASMR, 매장 일상, 알바·점장 리액션, 지역 이벤트, 유행 메뉴 리뷰</li>
+        <li><b>톤</b> — 공식 톤에 맞출 필요 없음. <b>핸드폰 촬영·거친 톤 허용</b></li>
+        <li><b>주기</b> — 본사 소재 제공 + 로컬 자율. 지점 판단</li>
+        <li><b>지원</b> — 본사 네이밍 가이드(@dancingcup_[지역명]) · 해시태그 표준화만</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="grid-2" style="margin-top:18px;">
+    <div class="card">
+      <h3>③ 인플루언서 · 크리에이터</h3>
+      <p class="sub" style="margin:6px 0 10px;">VIRAL · 외부 시점</p>
+      <ul class="clean">
+        <li><b>대상</b> — 카페 브이로그 크리에이터, 지역 맛집 계정, 마이크로 인플루언서</li>
+        <li><b>활용</b> — 공식이 하지 못하는 "솔직 후기" 톤</li>
+        <li><b>콘텐츠</b> — 외부인 시점 첫 방문기, 메뉴 비교, 신제품 리액션</li>
+        <li><b>역할</b> — 유저가 인스타에서 실제로 마주치는 "친구의 추천" 역할</li>
+      </ul>
+    </div>
+    <div class="card soft">
+      <h3>역할 매트릭스 요약</h3>
+      <ul class="clean">
+        <li><b>공식</b> — 브랜드 자산·라떼 포지션 증거</li>
+        <li><b>지점</b> — 로컬 바이럴·알바 발 콘텐츠</li>
+        <li><b>인플루언서</b> — 외부 추천·솔직 후기</li>
+        <li>세 레이어가 <b>같은 인스타 안에서 역할 분담</b></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout">
+    공식 톤에 모두 맞추면 "광고 같다"는 인상이 고착됩니다. <b>인스타 공식은 감도 지키되, 지점·인플루언서가 풀어놓을 공간을 확보</b>해야 합니다.
+  </div>
+</section>
+
+<!-- 06. 틱톡 -->
+<section class="slide">
+  <div class="slide-num">06</div>
+  <div class="kicker">Channel · 틱톡</div>
+  <h2>틱톡 — 단일 공식 계정, 가볍고 재밌게</h2>
+
+  <div class="grid-2">
+    <div class="card soft">
+      <h3>✓ 지키는 것</h3>
+      <ul class="clean">
+        <li>유행음악·밈·챌린지 빠르게 탑승</li>
+        <li>핸드폰 촬영 질감 허용 — 거칠어도 OK</li>
+        <li>15~30초, 호흡 짧게</li>
+        <li>라떼·신메뉴·매장 일상 전부 소재</li>
+        <li>ASMR·리액션 같은 감각 자극</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>✗ 피하는 것</h3>
+      <ul class="clean">
+        <li>과한 편집·자막 효과 (광고 냄새)</li>
+        <li>기업 어투 ("신메뉴가 출시되었습니다")</li>
+        <li>제품 스펙 설명 위주</li>
+        <li>인스타용 감도 톤 그대로 옮기기</li>
+      </ul>
+    </div>
+  </div>
+
+  <h4>콘텐츠 포맷 예시</h4>
+  <div class="grid-3">
+    <div class="card"><h3>제조 ASMR</h3><p class="sub">우유 붓기·얼음 스쿱·휘젓기 클로즈업. 라떼·신메뉴 공통.</p></div>
+    <div class="card"><h3>리액션·밈</h3><p class="sub">첫 맛 반응, 손님 반응, 유행음악 위에 제조 동작 싱크.</p></div>
+    <div class="card"><h3>매장 일상</h3><p class="sub">바쁜 점심, 레시피 외우기, 실수담 — 가벼운 브이로그 톤.</p></div>
+  </div>
+
+  <div class="callout">
+    <b>라떼도 상시 돌린다.</b> 신메뉴 없는 주에도 "오늘의 딥라떼" 제조 ASMR, "월요일인데 라떼 뽑다 실수함" 같은 일상 영상 주 1~2회.
+  </div>
+</section>
+
+<!-- 07. X -->
+<section class="slide">
+  <div class="slide-num">07</div>
+  <div class="kicker">Channel · X (트위터)</div>
+  <h2>X — 공식 어투 0%, 입소문의 진원지</h2>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>톤앤매너 예시</h3>
+      <p class="sub" style="text-decoration:line-through;">"신메뉴가 출시되었습니다. 많은 관심 부탁드립니다."</p>
+      <p>✓ "오늘 알바가 이거 10잔째 만들고 있대요..."</p>
+      <p>✓ "라떼 맛집이라고 부르지 말라고 했지만... 맞습니다"</p>
+      <p>✓ "지금 우리 라떼 드시는 분들 덕에 우유 한 통 더 깠어요"</p>
+      <p>✓ (누가 "댄싱컵 라떼 맛있음") 인용RT "점주님께 전달했습니다 🥲"</p>
+    </div>
+    <div class="card soft">
+      <h3>포스팅 성격 (주 15~20포스트)</h3>
+      <table style="margin:6px 0 0;">
+        <tbody>
+          <tr><td><b>드립·밈</b></td><td>30%</td></tr>
+          <tr><td><b>리플라이 운영</b></td><td>30%</td></tr>
+          <tr><td><b>신메뉴·라떼 일상</b></td><td>15%</td></tr>
+          <tr><td><b>정보 스레드</b></td><td>15%</td></tr>
+          <tr><td><b>팬 이벤트</b></td><td>10%</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <h4>운영 3원칙</h4>
+  <div class="grid-3">
+    <div class="card dark"><h3 style="color:#fff;">① 30분 룰</h3><p style="color:#ddd;">멘션·인용RT에 30분 내 반응.</p></div>
+    <div class="card dark"><h3 style="color:#fff;">② 유저 언어 수용</h3><p style="color:#ddd;">유저가 만든 별명·밈을 공식이 다음날 받아씀.</p></div>
+    <div class="card dark"><h3 style="color:#fff;">③ 셀프디스만</h3><p style="color:#ddd;">경쟁사 직접 디스 금지. 자학 개그로 친근함.</p></div>
+  </div>
+</section>
+
+<!-- 08. Track A 런칭 루틴 -->
+<section class="slide">
+  <div class="slide-num">08</div>
+  <div class="kicker">Track A · 운영</div>
+  <h2>신메뉴 런칭 — 매번 반복하는 표준 루틴</h2>
+  <p class="lead">한 번 세팅한 루틴을 매 신메뉴마다 재활용. 채널별 역할에 맞게 옷만 갈아입힙니다.</p>
+
+  <table>
+    <thead>
+      <tr><th style="width:90px;">시점</th><th>인스타 공식 (감도)</th><th>틱톡 · X · 지점·인플루언서 (바이럴)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>D-7</td><td>티저 스토리 — 실루엣 힌트</td><td>X 드립 티저 "다음주 다들 긴장하세요"</td></tr>
+      <tr><td>D-3</td><td>-</td><td>틱톡 힌트 영상 · 지점 계정 귀띔 스토리</td></tr>
+      <tr><td><b>D-Day 00:00</b></td><td>정돈된 신제품 비주얼 컷</td><td>틱톡 00시 ASMR · 지점 동시 업로드 · X 런칭 드립</td></tr>
+      <tr><td>D+1~3</td><td>고객 인증샷 리포스트</td><td>틱톡 리액션·밈 · 인플루언서 첫 후기 · X 리플 라운드</td></tr>
+      <tr><td>D+7</td><td>라떼 크로스셀 — "이 메뉴에는 딥라떼"</td><td>리캡 영상 · 유저 반응 인용RT</td></tr>
+      <tr><td>D+14</td><td>상설 편입 비주얼</td><td>후속 드립·장기 관리</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 09. Track B -->
+<section class="slide">
+  <div class="slide-num">09</div>
+  <div class="kicker">Track B · 운영</div>
+  <h2>라떼 앵커 — 감도 축적 × 상시 바이럴</h2>
+  <p class="lead">소비자 언어가 이미 <b>"댄싱커피 · 커스터드 크림 · 혜자"</b>에 모여 있음. 이 자산 위에 <b>"라떼 맛집"</b> 언급을 쌓습니다.</p>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>인스타 공식 · 감도 축적</h3>
+      <ul class="clean">
+        <li>딥라떼 주 1~2회 포스트</li>
+        <li>월 1회 시즌 한정 라떼 (흑임자·피스타치오 등)</li>
+        <li>원두·바리스타·매장 무드 컷</li>
+        <li>스토리 하이라이트 "라떼" 고정</li>
+      </ul>
+    </div>
+    <div class="card dark">
+      <h3 style="color:#fff;">틱톡 · X · 지점 · 입소문 누적</h3>
+      <ul class="clean">
+        <li style="color:#ddd;">라떼 제조 ASMR 틱톡 주 1~2회</li>
+        <li style="color:#ddd;">"오늘도 딥라떼" 데일리 X 트윗</li>
+        <li style="color:#ddd;">유저 리뷰 인용RT로 증폭</li>
+        <li style="color:#ddd;">"라떼 맛집" 언급에 적극 반응</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout">
+    <b>자연스러운 크로스 (A→B)</b> — 신메뉴 영수증에 "딥라떼 2,000원" 고정 쿠폰.
+    유행 메뉴로 들어온 손님이 다음 방문엔 라떼로. 슬로건이 아니라 <b>접점으로 연결</b>.
+  </div>
+</section>
+
+<!-- 10. 벤치마크 · 텐퍼센트 꾸덕라떼 -->
+<section class="slide">
+  <div class="slide-num">10</div>
+  <div class="kicker">Benchmark Case</div>
+  <h2>텐퍼센트커피 "꾸덕라떼" — 소비자 창작 → 브랜드 증폭</h2>
+  <p class="lead">2026년 라떼 바이럴의 가장 뚜렷한 성공 사례. <b>브랜드가 기획하지 않은 레시피</b>가 SNS에서 터졌고, 이를 브랜드가 빠르게 알아보고 증폭한 구조. 댄싱컵 라떼 앵커 트랙의 실전 모델.</p>
+
+  <h4>What happened — 타임라인</h4>
+  <div class="grid-2">
+    <div class="card">
+      <h3>소비자 창작 (3월 중순 시작)</h3>
+      <ul class="clean">
+        <li>기존 <b>"시그니처라떼"</b>에 퍼스널 옵션 <b>"텐크림" + 에스프레소 샷</b>을 추가해 먹는 유저 레시피</li>
+        <li>인스타·블로그·커뮤니티에서 "꾸덕한 식감", "크림 디저트 같은 커피" 표현으로 확산</li>
+        <li><b>"꾸덕라떼"</b>라는 별칭이 유저 사이에서 자연발생</li>
+        <li>브랜드가 만든 제품이 아닌 <b>유저가 발견한 먹는 방법</b></li>
+      </ul>
+    </div>
+    <div class="card soft">
+      <h3>판매 성과</h3>
+      <ul class="clean">
+        <li>확산 시작 <b>2주 만에 16만 잔</b></li>
+        <li><b>3월 한 달 33만 잔</b> 누적 판매</li>
+        <li>일부 매장 품귀 현상</li>
+        <li>4월 이벤트 당일 판매량 <b>+500%</b></li>
+      </ul>
+    </div>
+  </div>
+
+  <h4>브랜드가 한 것 · 단계별 대응</h4>
+  <div class="grid-3">
+    <div class="card">
+      <h3>① 즉시 수용</h3>
+      <p class="sub">"별도 마케팅 없이도 자연스러운 바이럴이 나타났다"며 <b>유저 레시피를 공식적으로 인정</b>. 막지도 않았고, 공식 메뉴로 덮어쓰지도 않음. "꾸덕라떼"라는 유저 네이밍을 공식 커뮤니케이션에 그대로 사용.</p>
+    </div>
+    <div class="card">
+      <h3>② 공급 대응</h3>
+      <p class="sub">"안정적인 물량 확보에 힘쓰고 있다" — 품귀 현상에 <b>재료·운영 리소스 집중</b>. 바이럴을 마케팅 이슈가 아닌 <b>운영 이슈</b>로 대응.</p>
+    </div>
+    <div class="card">
+      <h3>③ 공식 이벤트화</h3>
+      <p class="sub">4월 1일 만우절 <b>"쉿!크릿 연구소"</b> 이벤트 — 텐크림·샷 추가 무료, 텐라떼 40% 사이즈업. <b>유저 비공식 레시피를 "시크릿 레시피"로 공식 승인하는 서사.</b> 이벤트 당일 500% 성장.</p>
+    </div>
+  </div>
+
+  <h4>성공을 가능하게 한 구조적 바탕</h4>
+  <div class="grid-2">
+    <div class="card dark">
+      <h3 style="color:#fff;">제품 설계 — "조합 가능성"</h3>
+      <ul class="clean">
+        <li style="color:#ddd;"><b style="color:#fff;">11가지 퍼스널 옵션</b> 운영 — 유저가 조합 실험할 수 있는 기반</li>
+        <li style="color:#ddd;">자체 개발 우유 베이스로 라떼 품질 확보</li>
+        <li style="color:#ddd;">"꾸덕" 같은 감각 표현이 가능한 텍스처</li>
+        <li style="color:#ddd;"><b style="color:#fff;">"조합 = 자기표현"</b>이 되는 메뉴 설계</li>
+      </ul>
+    </div>
+    <div class="card dark">
+      <h3 style="color:#fff;">브랜드 운영 — "빠른 알아챔"</h3>
+      <ul class="clean">
+        <li style="color:#ddd;">SNS 모니터링 체계가 있어 확산 초기에 포착</li>
+        <li style="color:#ddd;">유저 언어("꾸덕")를 <b style="color:#fff;">공식이 즉시 수용</b></li>
+        <li style="color:#ddd;">의사결정 속도 — 2~3주 내 이벤트 기획·실행</li>
+        <li style="color:#ddd;">소비자의 창작 주도권 <b style="color:#fff;">존중</b> (덮어쓰지 않음)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout">
+    <b>댄싱컵 시사점</b> — 댄싱컵 시그니처 "댄싱커피"는 이미 <b>에스프레소 + 블렌딩밀크 + 커스터드 크림 3층 구조</b> — 즉 <b>조합·변형 가능성이 큰 메뉴</b>.
+    소비자 보이스에서 <b>"섞어서 먹는다"</b>는 표현도 관찰됨. 이 구조 위에 <b>①유저 조합 레시피 유도 ②모니터링 ③공식 수용·증폭</b>의 루틴을 만들면 꾸덕라떼급 바이럴 재현 가능.
+  </div>
+</section>
+
+<!-- 11. 톤 원칙 -->
+<section class="slide">
+  <div class="slide-num">11</div>
+  <div class="kicker">톤 원칙</div>
+  <h2>우리가 말하지 않을 것</h2>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>기업 어투 금지</h3>
+      <p class="sub">"신메뉴가 출시되었습니다" 류. 틱톡·X에서는 절대 쓰지 않음.</p>
+    </div>
+    <div class="card">
+      <h3>경쟁사 직접 디스 금지</h3>
+      <p class="sub">웬디스식 디스는 글로벌 규모라 가능. 중소 브랜드가 하면 치졸. <b>셀프디스</b>로 대체.</p>
+    </div>
+    <div class="card">
+      <h3>성과 자랑 금지</h3>
+      <p class="sub">"판매량 O만 돌파"는 공식 공지로만. SNS에선 유저가 자랑하게 두고 공식은 감사만.</p>
+    </div>
+    <div class="card">
+      <h3>한 번에 다 말하지 않기</h3>
+      <p class="sub">한 포스트에 한 메시지. 라떼·신메뉴 섞으면 흐려짐.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 12. 보조 -->
+<section class="slide">
+  <div class="slide-num">12</div>
+  <div class="kicker">Side Ideas</div>
+  <h2>보조 아이디어 — 메인 안착 후 검토</h2>
+  <p class="lead">지금 바로 도입하지 않음. 메인 2-Track 운영이 3~6개월 안착한 뒤 성과 보고 선택 적용.</p>
+
+  <div class="grid-3">
+    <div class="card">
+      <h3>① 직원·알바 콘텐츠</h3>
+      <p class="sub">메가·컴포즈식 자연발생 생태계는 시간·규모 필요. 지금은 조직화하지 않고, 관심 있는 알바 1~2명에게 촬영 가이드만 조용히 제공. 공식 앰버서더 프로그램은 보류.</p>
+    </div>
+    <div class="card">
+      <h3>② 라떼 × 디저트 조합</h3>
+      <p class="sub">컴포즈 꿀조합(3일 100만 조회) 축소판. 유행 메뉴 × 딥라떼 조합을 유저가 자랑하게 만드는 상시 이벤트.</p>
+    </div>
+    <div class="card">
+      <h3>③ 카페 브이로그 크리에이터</h3>
+      <p class="sub">유튜브 "조에"(244만 구독) 같은 카페 브이로그 크리에이터에게 "댄싱컵 일일 체험" 제안. 외부 시점 루트.</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <p class="sub">HIZ × 댄싱컵 · 2026.04.15 · 킥오프 미팅 자료 v5</p>
+</section>
+
+</div>
+</body>
+</html>
