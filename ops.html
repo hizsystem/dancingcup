@@ -654,6 +654,102 @@
     font-weight: 450;
   }
 
+  /* ─── 전략 2×2 매트릭스 ─── */
+  .strat-matrix {
+    display: grid;
+    grid-template-columns: 200px 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    margin-top: 16px;
+  }
+  .matrix-hd {
+    background: var(--ink);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 14px 20px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .matrix-hd:first-child { background: #1a1a1a; }
+  .matrix-rh {
+    background: var(--cream);
+    padding: 20px 22px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .matrix-rh strong {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    margin-bottom: 4px;
+  }
+  .matrix-rh span {
+    font-size: 11.5px;
+    color: var(--ink-2);
+    line-height: 1.5;
+  }
+  .matrix-rh.active { background: rgba(232,82,28,0.08); }
+  .matrix-rh.active strong { color: var(--wine); }
+  .matrix-rh.oos { background: var(--line-3); }
+  .matrix-rh.oos strong { color: var(--mute); }
+  .matrix-rh.oos span em { font-style: normal; color: var(--wine); font-weight: 700; }
+  .matrix-cell {
+    padding: 20px 22px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .matrix-cell:last-child { border-right: none; }
+  .matrix-cell h4 {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--ink);
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+  .matrix-cell ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .matrix-cell ul li {
+    font-size: 13.5px;
+    color: var(--ink-2);
+    line-height: 1.7;
+    padding-left: 14px;
+    position: relative;
+  }
+  .matrix-cell ul li::before {
+    content: '·';
+    position: absolute;
+    left: 4px;
+    color: var(--wine);
+    font-weight: 700;
+  }
+  .matrix-cell.active { background: #fff; }
+  .matrix-cell.oos {
+    background: var(--line-3);
+    opacity: 0.85;
+  }
+  .matrix-cell.oos h4 { color: var(--mute); }
+  .matrix-cell.oos ul li::before { color: var(--mute-2); }
+  @media (max-width: 860px) {
+    .strat-matrix { grid-template-columns: 1fr; }
+    .matrix-hd { display: none; }
+    .matrix-hd:nth-child(2), .matrix-hd:nth-child(3) { display: block; border-right: none; }
+    .matrix-rh { border-right: none; }
+    .matrix-cell { border-right: none; }
+  }
+
   /* ─── 콜아웃 ─── */
   .callout {
     background: var(--hl);
@@ -923,12 +1019,12 @@
     </div>
     <ul>
       <li><a href="#tldr">요약</a></li>
-      <li><a href="#channels">채널별</a></li>
+      <li><a href="#strategy">전략 2×2</a></li>
+      <li><a href="#channels">채널 운영</a></li>
+      <li><a href="#viral">바이럴</a></li>
       <li><a href="#x-bench">X 벤치마크</a></li>
       <li><a href="#rhythm">주간 리듬</a></li>
       <li><a href="#roles">역할</a></li>
-      <li><a href="#checklist">체크리스트</a></li>
-      <li><a href="#pending">대기 항목</a></li>
       <li><a href="#depend">딥라떼 대기</a></li>
     </ul>
   </div>
@@ -939,20 +1035,16 @@
     <div class="hero-top">
       <div class="hero-copy">
         <div class="kicker">Internal Ops Plan · 2026.04.22</div>
-        <h1>채널 네 덩어리 &amp; 운영안</h1>
+        <h1>전략 2축 &amp; 업무 2영역</h1>
         <p class="lead">
-          4월부터 돌아갈 상시 운영 채널을 네 덩어리로 정리했습니다 —
-          <strong>인스타 피드(브랜드 톤 유지)</strong>,
-          <strong>릴스 두 갈래(AI로 만든 짧은 영상 + 현장 촬영)</strong>,
-          <strong>X 신규 계정(운영자 캐릭터로 대화)</strong>,
-          <strong>틱톡(확산 릴스 재포스팅 전용)</strong>.
-          콘텐츠 소스는 3갈래로 공급받습니다 — <strong>① 브랜드팀이 내려주는 메뉴 이미지</strong>,
-          <strong>② HIZ가 지점에서 직접 찍는 확산 릴스 영상</strong>,
-          <strong>③ 인플루언서 협업 결과물</strong>.
-          HIZ는 큐레이션·편집·제작·상시 운영을 맡습니다.
+          댄싱컵은 <strong>① 딥라떼 맛집 전략</strong>과 <strong>② 신메뉴 바이럴(시즌 신메뉴 · 유행맛집)</strong> 두 축으로 갑니다.
+          HIZ는 이걸 <strong>채널 운영</strong>과 <strong>바이럴</strong> 두 영역으로 실행합니다 —
+          <strong>채널 운영</strong>: 인스타 피드·릴스 / 틱톡 미러링 / X 신규 계정.
+          <strong>바이럴</strong>: 블로그 체험단(월 25~30명) + 릴스 바이럴·메타 광고(인플 월 4~5명).
+          월 리테이너 500만 안에 상시 운영 커버 · <strong>신메뉴 바이럴은 OOS(별도 견적)</strong>.
         </p>
         <div class="status-tags">
-          <span class="tag hiz">HIZ 내부 확정</span>
+          <span class="tag hiz">HIZ 내부 확정 · 2026-04-22</span>
           <span class="tag pending">브랜드팀 동의 대기 · 4/24 주간보고</span>
           <span class="tag date">여름 런칭일 5/12 기준 D-20</span>
         </div>
@@ -961,24 +1053,24 @@
 
     <div class="hero-stats">
       <div class="stat">
-        <div class="lbl">Channel Axes</div>
-        <div class="num">05</div>
-        <div class="sub">피드 · 릴스 AI · 확산 릴스 · X · 틱톡</div>
+        <div class="lbl">월 리테이너</div>
+        <div class="num">500<span style="font-size:0.45em; opacity:0.6;">만</span></div>
+        <div class="sub">채널 운영 250만 + 바이럴 250만 · VAT 별도</div>
       </div>
       <div class="stat">
-        <div class="lbl">Instagram Feed</div>
-        <div class="num">12–16</div>
-        <div class="sub">주 3~4회 · 브랜드팀 공급 이미지 기반</div>
+        <div class="lbl">채널 운영</div>
+        <div class="num">4<span style="font-size:0.45em; opacity:0.6;">ch</span></div>
+        <div class="sub">인스타(피드·릴스) · 틱톡 · X</div>
       </div>
       <div class="stat">
-        <div class="lbl">Reels (AI + Viral)</div>
-        <div class="num">8–10</div>
-        <div class="sub">AI 4~6 · 확산 4 /월</div>
+        <div class="lbl">블로그 체험단</div>
+        <div class="num">25–30<span style="font-size:0.45em; opacity:0.6;">/월</span></div>
+        <div class="sub">딥라떼 중심 · 검색·포화도 베이스</div>
       </div>
       <div class="stat">
-        <div class="lbl">X Posts</div>
-        <div class="num">90–120</div>
-        <div class="sub">일 3~5 트윗 · 30분 안에 반응 적용</div>
+        <div class="lbl">인플 시딩</div>
+        <div class="num">4–5<span style="font-size:0.45em; opacity:0.6;">/월</span></div>
+        <div class="sub">릴스형 · 메타 광고 소재로 재활용</div>
       </div>
     </div>
   </div>
@@ -991,36 +1083,36 @@
   <div class="sec-head">
     <div class="sec-num">0<em>1</em><span class="sec-label">요약</span></div>
     <div>
-      <h2>한눈에 <em>—</em> 이번 주 결정 6건</h2>
-      <p class="desc">운영할 채널이 네 덩어리로 서고, 대표 라떼 이름이 "딥라떼"로 붙었습니다. 이제 남은 건 X·틱톡 계정 아이디 확보와 브랜드팀 내부 자료 공유.</p>
+      <h2>한눈에 <em>—</em> 팀 내부 확정 사항</h2>
+      <p class="desc">2026-04-22 팀 내부 논의 결과. 댄싱컵 방향이 <strong>2축(딥라떼 맛집 + 신메뉴 바이럴)</strong>으로 정리됐고, HIZ 업무는 <strong>채널 운영 + 바이럴</strong> 2영역으로 재편.</p>
     </div>
   </div>
 
   <div class="tldr-grid">
     <div class="tldr-card accent">
       <div class="tldr-num">NEW · 2026.04.22</div>
-      <div class="tldr-t">댄싱컵 <strong>대표 라떼 이름 = "딥라떼"</strong>로 확정.</div>
-      <div class="tldr-d">단, 브랜드 감성 축(인스타 피드·AI로 만든 짧은 영상 릴스)에서 딥라떼를 본격적으로 얹으려면, 브랜드팀 내부 전략 자료(포지셔닝·레시피·비주얼·톤)가 HIZ에 먼저 공유돼야 합니다. → §10</div>
+      <div class="tldr-t">전략 <strong>2축 × 업무 2영역</strong>으로 재정렬</div>
+      <div class="tldr-d">댄싱컵 전략 = 딥라떼 맛집(상시) + 신메뉴 바이럴(시즌·단기) 2축. HIZ 실행 = 채널 운영 + 바이럴 2영역. 본 500만 리테이너는 <strong>딥라떼 맛집 축만 커버</strong> · 신메뉴 바이럴은 OOS. → §2·§4</div>
     </div>
     <div class="tldr-card">
       <div class="tldr-num">01</div>
-      <div class="tldr-t">운영 채널 = <strong>네 덩어리</strong>로 확정</div>
-      <div class="tldr-d">인스타 피드 · 릴스(AI로 만든 짧은 영상 + 현장 촬영) · X · 틱톡 재포스팅 — 총 5개 채널</div>
+      <div class="tldr-t">채널 운영 = <strong>인스타·틱톡·X</strong></div>
+      <div class="tldr-d">인스타 피드(고감도 사진 + AI 영상) · 인스타 릴스(바이럴 촬영 + 인플 소스) · 틱톡(인스타 릴스 미러링) · X(소비자 친화 실시간 대화) → §5</div>
     </div>
     <div class="tldr-card">
       <div class="tldr-num">02</div>
-      <div class="tldr-t">콘텐츠 소스 = <strong>세 갈래</strong>로 공급</div>
-      <div class="tldr-d">① 브랜드팀이 내려주는 메뉴 이미지 · ② HIZ가 지점에서 직접 찍는 확산 릴스 영상 · ③ 인플루언서 협업 결과물</div>
+      <div class="tldr-t">바이럴 = <strong>블로그 체험단 + 메타 광고</strong></div>
+      <div class="tldr-d">블로그 체험단 월 25~30명(검색량·콘텐츠 포화도 베이스) · 릴스 바이럴+메타 광고(인플 4~5명/월, 자체 릴스 메타 집행) · 딥라떼 메인 → §6</div>
     </div>
     <div class="tldr-card">
       <div class="tldr-num">03</div>
-      <div class="tldr-t">X 계정은 <strong>새로 시작</strong> · 기업 공지체 완전 금지</div>
-      <div class="tldr-d">"~하겠습니다" 같은 공식 말투 없이 운영자가 사람처럼 대화 · 언급·밈은 30분 안에 응대 · 자기 디스·지점 에피소드 사용</div>
+      <div class="tldr-t">대표 라떼 = <strong>"딥라떼"</strong> 확정</div>
+      <div class="tldr-d">2026-04-22 리드 확정. 딥라떼 맛집 전략 본격 가동을 위해 브랜드팀 내부 전략 자료(포지셔닝·레시피·비주얼·톤)가 HIZ에 먼저 공유돼야 합니다. → §12</div>
     </div>
     <div class="tldr-card">
       <div class="tldr-num">04</div>
-      <div class="tldr-t">틱톡 = <strong>확산 릴스 재포스팅 전용</strong></div>
-      <div class="tldr-d">틱톡용 신규 제작 없음. 인스타에 올린 확산 릴스를 주 1~2회 옮겨 붙이는 방식.</div>
+      <div class="tldr-t">신메뉴 바이럴 = <strong>OOS · 별도 견적</strong></div>
+      <div class="tldr-d">시즌 신메뉴·유행맛집 단기 캠페인은 500만 리테이너 미포함. 기 계약: 2026 여름 캠페인(5/12 런칭) 200만은 별도 건.</div>
     </div>
     <div class="tldr-card">
       <div class="tldr-num">05</div>
@@ -1031,45 +1123,104 @@
 
 </section>
 
+<!-- 02. 전략 2×2 -->
+<section class="block cream" id="strategy">
+  <div class="sec-head">
+    <div class="sec-num">0<em>2</em><span class="sec-label">전략 2×2</span></div>
+    <div>
+      <h2>전략 2축 <em>×</em> 업무 2영역</h2>
+      <p class="desc">세로축 = 댄싱컵 <strong>브랜드 전략</strong>(딥라떼 맛집 상시 · 신메뉴 바이럴 단기). 가로축 = HIZ <strong>실행 영역</strong>(채널 운영 · 바이럴). 본 리테이너는 왼쪽 컬럼(딥라떼 맛집)만 커버.</p>
+    </div>
+  </div>
+
+  <div class="strat-matrix">
+    <div class="matrix-hd"></div>
+    <div class="matrix-hd">채널 운영</div>
+    <div class="matrix-hd">바이럴</div>
+
+    <div class="matrix-rh active">
+      <strong>딥라떼 맛집</strong>
+      <span>상시 운영 · 본 리테이너 범위</span>
+    </div>
+    <div class="matrix-cell active">
+      <h4>인스타 피드 · 릴스 · 틱톡 · X</h4>
+      <ul>
+        <li>피드 — 고감도 메뉴 사진(브랜드팀) + AI 생성 영상(HIZ)</li>
+        <li>릴스 — 바이럴 촬영(HIZ) + 인플 소스 2차 편집</li>
+        <li>틱톡 — 인스타 릴스 미러링 (확산)</li>
+        <li>X — 소비자 친화 실시간 커뮤니케이션</li>
+      </ul>
+    </div>
+    <div class="matrix-cell active">
+      <h4>블로그 체험단 · 릴스+메타</h4>
+      <ul>
+        <li>블로그 체험단 월 25~30명 — 검색·포화도 베이스</li>
+        <li>인플루언서 시딩 월 4~5명 — 딥라떼 메인</li>
+        <li>메타 광고 — 인플 콘텐츠 + HIZ 자체 릴스 집행</li>
+      </ul>
+    </div>
+
+    <div class="matrix-rh oos">
+      <strong>신메뉴 바이럴</strong>
+      <span>시즌 · 단기 · <em>OOS</em> 별도 견적</span>
+    </div>
+    <div class="matrix-cell oos">
+      <h4>시즌 신메뉴 런칭 패키지</h4>
+      <ul>
+        <li>신메뉴 릴스 · 피드 · 썸네일 패키지</li>
+        <li>D-7 ~ D+14 런칭 타임라인</li>
+        <li>2026 여름 캠페인 200만 (5/12, 기 계약)</li>
+      </ul>
+    </div>
+    <div class="matrix-cell oos">
+      <h4>유행맛집 단기 캠페인</h4>
+      <ul>
+        <li>유행 훅 캐치업 · 핫이슈 편승형</li>
+        <li>인플·광고 집중 투입 단기 캠페인</li>
+        <li>발생 시점·규모별 건별 견적</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <!-- 02. 배경 -->
 <section class="block" id="context">
   <div class="sec-head">
-    <div class="sec-num">0<em>2</em><span class="sec-label">배경</span></div>
+    <div class="sec-num">0<em>3</em><span class="sec-label">배경</span></div>
     <div>
-      <h2>왜 <em>네 덩어리</em>로 나누나</h2>
+      <h2>왜 <em>2×2</em>로 재정렬하나</h2>
       <p class="desc">
-        2026-04-21 부산 미팅에서 딥라떼 네이밍·촬영 스케줄·가격 전략이 정리됐고,
-        리드 판단으로 <strong>"브랜드 감성 톤과 확산 톤을 섞지 않는다"는 원칙(덱 §4)은 유지</strong>하되, 릴스를 AI로 만든 짧은 영상과 직접 촬영한 확산 영상 2갈래로 세분했습니다.
-        틱톡은 신규 제작 없이 미러링만 하는 방식으로 전환.
+        2026-04-22 내부 팀 회의에서 댄싱컵 운영 방향을 <strong>전략 2축(딥라떼 맛집 × 신메뉴 바이럴)</strong>과 <strong>업무 2영역(채널 운영 · 바이럴)</strong>으로 재정렬했습니다.
+        월 리테이너(500만) = 딥라떼 맛집 전략 기반 상시 운영. 신메뉴 바이럴은 건별 OOS로 분리해 계약·리소스를 명확히.
       </p>
     </div>
   </div>
   <div class="grid-3">
     <div class="card soft">
-      <h4>2026-04-21 미팅 발췌</h4>
+      <h4>2026-04-21 부산 미팅 발췌</h4>
       <ul>
         <li>촬영 여유: 촬영 7일 전 준비</li>
         <li>거점: 부산 센텀 · 서울 가재울</li>
         <li>레퍼런스 2~3일 전 전달 필수</li>
-        <li>딥라떼 감성 있는 영상 → 소스 활용</li>
+        <li>딥라떼 감성 영상 → 소스 활용</li>
       </ul>
     </div>
     <div class="card soft">
       <h4>덱 v260415 상위 원칙</h4>
       <ul>
-        <li><span class="badge ab">03</span> 두 축(유행 훅 × 대표 라떼)</li>
-        <li><span class="badge ab">04</span> 브랜드 감성 톤 ↔ 확산 톤 분리</li>
+        <li><span class="badge ab">03</span> 두 축(딥라떼 맛집 × 신메뉴 바이럴)</li>
+        <li><span class="badge ab">04</span> 피드·릴스 역할 분리</li>
         <li><span class="badge ab">07</span> X 기업 공지체 금지 · 30분 안에 반응 · 자기 디스</li>
         <li><span class="badge ab">11</span> 기업어투 · 성과자랑 · 직접디스 금지</li>
       </ul>
     </div>
     <div class="card soft">
-      <h4>HIZ 스코프 (2026-04-21)</h4>
+      <h4>HIZ 스코프 (2026-04-22)</h4>
       <ul>
-        <li><strong>월 리테이너</strong> — 인스타·X·틱톡·확산용 영상·광고</li>
-        <li><strong>여름 인플루언서 캠페인</strong> — 시즌·유행 신메뉴</li>
+        <li><strong>월 리테이너 500만</strong> — 채널 운영(인스타·틱톡·X) + 바이럴 베이스(체험단·인플·메타)</li>
+        <li><strong>여름 캠페인 200만</strong> — 5/12 런칭 별도 계약</li>
+        <li><strong>신메뉴 바이럴(OOS)</strong> — 시즌·유행맛집 건별 별도 견적</li>
         <li>제외: 오프라인 홍보물·키오스크·매장 셋팅</li>
-        <li>대표 라떼 = 월 리테이너 안 콘텐츠 피드</li>
       </ul>
     </div>
   </div>
@@ -1078,10 +1229,10 @@
 <!-- 03. 결정 -->
 <section class="block cream" id="decisions">
   <div class="sec-head">
-    <div class="sec-num">0<em>3</em><span class="sec-label">결정</span></div>
+    <div class="sec-num">0<em>4</em><span class="sec-label">결정</span></div>
     <div>
-      <h2>확정된 결정 <em>6건</em></h2>
-      <p class="desc">에이전트가 "확정"으로 인용할 수 있는 기준선. 2026-04-22 딥라떼 네이밍 확정이 가장 최신.</p>
+      <h2>확정된 결정 <em>8건</em></h2>
+      <p class="desc">에이전트가 "확정"으로 인용할 수 있는 기준선. 2026-04-22 2×2 구조 재편·OOS 분리·바이럴 베이스 수량·딥라떼 네이밍이 가장 최신.</p>
     </div>
   </div>
   <table>
@@ -1094,12 +1245,14 @@
       </tr>
     </thead>
     <tbody>
-      <tr><td><strong>D1</strong></td><td>채널 운영 구조(네 덩어리) (피드·릴스 AI·확산 릴스·X·틱톡 미러링)</td><td><span class="tag hiz" style="color:var(--wine); background:#ffe0d0; border-color:rgba(232,82,28,0.4);">HIZ 확정 / 브랜드팀 대기</span></td><td>덱 §3·4·6 업데이트 · 마스터시트 캘린더 재편</td></tr>
-      <tr><td><strong>D2</strong></td><td>인스타 피드 이미지 소스 = 브랜드팀 공급</td><td><span class="tag hiz" style="color:var(--pos); background:#d8ecdf; border-color:rgba(47,122,90,0.4);">HIZ 방침 확정</span></td><td>공식 촬영 라인 미운영 · 큐레이션만 담당</td></tr>
-      <tr><td><strong>D3</strong></td><td>X는 신규 계정으로 시작 (승계 아님)</td><td><span class="tag hiz" style="color:var(--pos); background:#d8ecdf; border-color:rgba(47,122,90,0.4);">HIZ 방침 확정</span></td><td>계정 아이디 선점·톤 세팅 필요 (P10)</td></tr>
-      <tr><td><strong>D4</strong></td><td>틱톡은 미러링 전용</td><td><span class="tag hiz" style="color:var(--pos); background:#d8ecdf; border-color:rgba(47,122,90,0.4);">HIZ 방침 확정</span></td><td>덱 §6 운영 원칙 수정 예정</td></tr>
-      <tr><td><strong>D5</strong></td><td>확산 릴스 촬영 거점 = 부산 센텀 + 서울 가재울</td><td><span class="tag hiz" style="color:var(--pos); background:#d8ecdf; border-color:rgba(47,122,90,0.4);">2026-04-21 미팅 확정</span></td><td>D-7 준비 고정</td></tr>
-      <tr style="background:var(--hl);"><td><strong>D6</strong></td><td><strong>대표 라떼 이름 = 딥라떼</strong> 확정</td><td><span class="tag hiz" style="color:var(--pos); background:#d8ecdf; border-color:rgba(47,122,90,0.4);">2026-04-22 리드 확정</span></td><td>기존 대기 항목 '딥라떼 네이밍' 해제 · 브랜드팀 내부 전략 공유 대기 (§10)</td></tr>
+      <tr><td><strong>D1</strong></td><td>전략 2축 × 업무 2영역 구조 (딥라떼 맛집 · 신메뉴 바이럴 × 채널 운영 · 바이럴)</td><td><span class="tag hiz" style="color:var(--wine); background:#ffe0d0; border-color:rgba(232,82,28,0.4);">2026-04-22 팀 내부 확정</span></td><td>덱 §3·4 재편 · 견적서 구조 적용</td></tr>
+      <tr><td><strong>D2</strong></td><td>인스타 피드 = 고감도 사진(브랜드팀 수급) + AI 생성 영상(HIZ 제작)</td><td><span class="tag hiz" style="color:var(--pos); background:#d8ecdf; border-color:rgba(47,122,90,0.4);">HIZ 방침 확정</span></td><td>공식 촬영 라인 미운영 · 브랜드팀 공급 주기 4/24 합의</td></tr>
+      <tr><td><strong>D3</strong></td><td>X는 신규 계정으로 시작 (승계 아님)</td><td><span class="tag hiz" style="color:var(--pos); background:#d8ecdf; border-color:rgba(47,122,90,0.4);">HIZ 방침 확정</span></td><td>계정 아이디 선점·톤 세팅 필요</td></tr>
+      <tr><td><strong>D4</strong></td><td>틱톡은 미러링 전용 (릴스 재포스팅)</td><td><span class="tag hiz" style="color:var(--pos); background:#d8ecdf; border-color:rgba(47,122,90,0.4);">HIZ 방침 확정</span></td><td>덱 §6 운영 원칙 수정 예정</td></tr>
+      <tr><td><strong>D5</strong></td><td>인스타 릴스 촬영 거점 = 부산 센텀 + 서울 가재울</td><td><span class="tag hiz" style="color:var(--pos); background:#d8ecdf; border-color:rgba(47,122,90,0.4);">2026-04-21 미팅 확정</span></td><td>D-7 준비 고정</td></tr>
+      <tr><td><strong>D6</strong></td><td>신메뉴 바이럴 = OOS (월 리테이너 미포함 · 건별 별도 견적)</td><td><span class="tag hiz" style="color:var(--wine); background:#ffe0d0; border-color:rgba(232,82,28,0.4);">2026-04-22 팀 내부 확정</span></td><td>여름 캠페인 200만(5/12) 별도 계약 · 이후 시즌 신메뉴 건별 합의</td></tr>
+      <tr><td><strong>D7</strong></td><td>바이럴 베이스 = 블로그 체험단 25~30명/월 + 인플 시딩 4~5명/월 + 메타 광고 상시</td><td><span class="tag hiz" style="color:var(--pos); background:#d8ecdf; border-color:rgba(47,122,90,0.4);">2026-04-22 팀 내부 확정</span></td><td>체험단 원고료·인플 협찬비·메타 실광고비 별도 집행비</td></tr>
+      <tr style="background:var(--hl);"><td><strong>D8</strong></td><td><strong>대표 라떼 이름 = 딥라떼</strong> 확정</td><td><span class="tag hiz" style="color:var(--pos); background:#d8ecdf; border-color:rgba(47,122,90,0.4);">2026-04-22 리드 확정</span></td><td>기존 대기 항목 '딥라떼 네이밍' 해제 · 브랜드팀 내부 전략 공유 대기</td></tr>
     </tbody>
   </table>
 </section>
@@ -1107,10 +1260,10 @@
 <!-- 04. 채널별 -->
 <section class="block" id="channels">
   <div class="sec-head">
-    <div class="sec-num">0<em>4</em><span class="sec-label">채널</span></div>
+    <div class="sec-num">0<em>5</em><span class="sec-label">채널 운영</span></div>
     <div>
-      <h2>5채널 <em>운영안</em></h2>
-      <p class="desc">4개 채널(총 5개 소채널). <strong>브랜드 감성 톤</strong>(피드·릴스 AI)과 <strong>확산 톤</strong>(확산 릴스·X·틱톡)으로 톤과 제작 주체를 분리.</p>
+      <h2>4채널 <em>운영안</em></h2>
+      <p class="desc">인스타(피드·릴스)·틱톡·X. <strong>피드 = 브랜드팀 고감도 사진 + HIZ AI 생성 영상</strong>, <strong>릴스 = HIZ 바이럴 촬영 + 인플 소스</strong>, 틱톡 = 릴스 재포스팅, X = 실시간 커뮤니케이션.</p>
     </div>
   </div>
   <p class="desc">각 채널의 역할·주체·월 발행량·핵심 원칙을 한 줄씩.</p>
@@ -1120,116 +1273,89 @@
     <div class="ch-card track-b">
       <span class="ch-icon">◐</span>
       <div class="ch-name">인스타 피드</div>
-      <div class="ch-role">브랜드 감성 톤 유지</div>
+      <div class="ch-role">고감도 사진 + AI 영상</div>
       <div><span class="ch-vol">12~16</span><span class="ch-vol-unit">/월</span></div>
-    </div>
-    <div class="ch-card track-b">
-      <span class="ch-icon">◓</span>
-      <div class="ch-name">릴스 AI</div>
-      <div class="ch-role">브랜드 감성 → 확산</div>
-      <div><span class="ch-vol">4~6</span><span class="ch-vol-unit">/월</span></div>
     </div>
     <div class="ch-card track-a">
       <span class="ch-icon">◑</span>
-      <div class="ch-name">확산 릴스</div>
-      <div class="ch-role">직접 촬영 · 확산</div>
-      <div><span class="ch-vol">4</span><span class="ch-vol-unit">/월</span></div>
-    </div>
-    <div class="ch-card track-ab">
-      <span class="ch-icon">◎</span>
-      <div class="ch-name">X (신규)</div>
-      <div class="ch-role">대화 · 운영자</div>
-      <div><span class="ch-vol">90~120</span><span class="ch-vol-unit">/월</span></div>
+      <div class="ch-name">인스타 릴스</div>
+      <div class="ch-role">바이럴 촬영 + 인플 소스</div>
+      <div><span class="ch-vol">4~6</span><span class="ch-vol-unit">/월</span></div>
     </div>
     <div class="ch-card track-a">
       <span class="ch-icon">◒</span>
       <div class="ch-name">틱톡 미러링</div>
-      <div class="ch-role">확산 증폭</div>
-      <div><span class="ch-vol">4</span><span class="ch-vol-unit">/월</span></div>
+      <div class="ch-role">릴스 재포스팅</div>
+      <div><span class="ch-vol">4~6</span><span class="ch-vol-unit">/월</span></div>
+    </div>
+    <div class="ch-card track-ab">
+      <span class="ch-icon">◎</span>
+      <div class="ch-name">X (신규)</div>
+      <div class="ch-role">실시간 커뮤니케이션</div>
+      <div><span class="ch-vol">30~50</span><span class="ch-vol-unit">/월</span></div>
     </div>
   </div>
 
   <!-- 4-1. 인스타 피드 -->
   <div class="ch-detail track-b">
     <div class="ch-hd">
-      <div class="ch-hd-name">◐ 인스타 피드 <span class="tiny">브랜드 감성 톤 유지</span></div>
+      <div class="ch-hd-name">◐ 인스타 피드 <span class="tiny">고감도 사진 + AI 영상</span></div>
       <div class="ch-hd-meta">
         <div><span>주체</span><strong>브랜드팀 + HIZ</strong></div>
         <div><span>월 발행</span><strong>12~16</strong></div>
-        <div><span>트랙</span><strong>브랜드 감성 축</strong></div>
+        <div><span>구성</span><strong>사진 8~12 + AI 영상 4~6</strong></div>
       </div>
     </div>
     <div class="ch-body">
       <div>
-        <h4>콘텐츠 소스 3가지</h4>
+        <h4>콘텐츠 2유형</h4>
         <div class="pill-row">
-          <span class="pill"><span class="dot"></span><strong>① 브랜드팀 소스</strong> 메뉴 이미지 등 공식 비주얼</span>
-          <span class="pill"><span class="dot"></span><strong>② 확산 릴스 영상</strong> HIZ 직접 촬영</span>
-          <span class="pill"><span class="dot"></span><strong>③ 인플루언서 소스</strong> 협업 결과물 2차 활용</span>
+          <span class="pill"><span class="dot"></span><strong>① 고감도 메뉴 사진</strong> <span style="color:var(--mute);">브랜드팀 수급</span></span>
+          <span class="pill"><span class="dot"></span><strong>② AI 생성 영상</strong> <span style="color:var(--mute);">HIZ 제작 (I2V)</span></span>
         </div>
         <h4>HIZ 담당 범위</h4>
-        <p>큐레이션 · 편집 · 편성 · 업로드. 공식 메뉴 촬영 라인 없음 (브랜드팀 공급분으로 커버).</p>
+        <p>브랜드팀 공급 사진 큐레이션·편집·편성 / AI 영상 직접 제작 / 캡션·해시태그·업로드. 공식 메뉴 촬영 라인 없음 (브랜드팀 공급분으로 커버).</p>
       </div>
       <div>
-        <h4>원칙</h4>
-        <ul>
-          <li>덱 §11 "말하지 않을 것" 고수 (기업어투·성과자랑·직접디스 금지)</li>
-          <li>톤은 현재 피드 브랜드 감성 유지 — 색감 토큰 cream·wine·ink</li>
-        </ul>
-        <h4>4/24 확인</h4>
-        <ul>
-          <li>브랜드팀 이미지 공급 채널·주기·파일 규격</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- 4-2. 릴스 AI -->
-  <div class="ch-detail track-b">
-    <div class="ch-hd">
-      <div class="ch-hd-name">◓ 인스타 릴스 AI <span class="tiny">브랜드 감성 → 확산</span></div>
-      <div class="ch-hd-meta">
-        <div><span>주체</span><strong>HIZ</strong></div>
-        <div><span>월 발행</span><strong>4~6</strong></div>
-        <div><span>트랙</span><strong>브랜드 감성 → 확산 연결</strong></div>
-      </div>
-    </div>
-    <div class="ch-body">
-      <div>
-        <h4>방식</h4>
-        <p>브랜드팀 공급 이미지 → I2V(이미지→영상) AI로 짧은 영상화 (우유 붓기·크레마·김·흔들림).</p>
-        <h4>툴 후보 — 2개월 병행 후 단일화</h4>
+        <h4>AI 영상 — I2V 툴 후보</h4>
         <table class="table-small">
           <tr><th>툴</th><th>강점</th><th>가격</th></tr>
           <tr><td>Runway Gen-3</td><td>이미지→영상 감성 최상</td><td>$15~95/월</td></tr>
           <tr><td>Kling AI</td><td>가성비·한국어</td><td>$10~40/월</td></tr>
           <tr><td>Luma Dream</td><td>부드러운 모션</td><td>$30/월</td></tr>
         </table>
-      </div>
-      <div>
         <h4>AI티 제거 4원칙</h4>
         <ul>
-          <li>얼굴·손 등장 금지</li>
-          <li>1→2 변형만 (0→1 생성 금지)</li>
-          <li>색감 토큰 고정 · 덱 스타일 시스템</li>
-          <li>lead 검수 게이트</li>
+          <li>얼굴·손 등장 금지 / 1→2 변형만 (0→1 생성 금지)</li>
+          <li>색감 토큰 고정 · 덱 스타일 시스템 / lead 검수 게이트</li>
         </ul>
+      </div>
+    </div>
+    <div class="ch-body" style="border-top:1px solid var(--line-2); padding-top:22px;">
+      <div style="grid-column: 1 / -1;">
+        <h4>4/24 확인</h4>
+        <p>브랜드팀 고감도 사진 공급 채널·주기·파일 규격·월 예상 수량.</p>
       </div>
     </div>
   </div>
 
-  <!-- 4-3. 확산 릴스 -->
+  <!-- 4-2. 인스타 릴스 -->
   <div class="ch-detail track-a">
     <div class="ch-hd">
-      <div class="ch-hd-name">◑ 인스타 확산 릴스 <span class="tiny">직접 촬영 · 촬영 7일 전 준비</span></div>
+      <div class="ch-hd-name">◑ 인스타 릴스 <span class="tiny">바이럴 촬영 + 인플 소스</span></div>
       <div class="ch-hd-meta">
         <div><span>주체</span><strong>HIZ</strong></div>
-        <div><span>월 발행</span><strong>4</strong></div>
-        <div><span>트랙</span><strong>A · 유행 훅</strong></div>
+        <div><span>월 발행</span><strong>4~6</strong></div>
+        <div><span>구성</span><strong>자체 촬영 2~3 + 인플 소스 2~3</strong></div>
       </div>
     </div>
     <div class="ch-body">
       <div>
+        <h4>콘텐츠 2유형</h4>
+        <div class="pill-row">
+          <span class="pill"><span class="dot"></span><strong>① 자체 바이럴 촬영</strong> HIZ 직접 — 딥라떼·유행 훅·신메뉴</span>
+          <span class="pill"><span class="dot"></span><strong>② 인플루언서 소스 2차 편집</strong> 시딩 결과물 재구성</span>
+        </div>
         <h4>포맷 3유형</h4>
         <ul>
           <li><strong>훅-점프형</strong> · 0.5초 훅 + 즉시 본편</li>
@@ -1243,7 +1369,7 @@
         </div>
       </div>
       <div>
-        <h4>D-7 타임라인</h4>
+        <h4>D-7 타임라인 (자체 촬영)</h4>
         <table class="table-small">
           <tr><th>D</th><th>액션</th></tr>
           <tr><td>D-7</td><td>레퍼런스·컷리스트 점주 전달</td></tr>
@@ -1252,6 +1378,8 @@
           <tr><td>D-1</td><td>편집·검수</td></tr>
           <tr><td>런칭일</td><td>업로드</td></tr>
         </table>
+        <h4>인플 소스 2차 편집</h4>
+        <p>시딩 인플 원본 영상에 자막·음원·댄싱컵 브랜드 컷 추가해 재편집. 월 2~3편.</p>
       </div>
     </div>
   </div>
@@ -1259,11 +1387,11 @@
   <!-- 4-4. X -->
   <div class="ch-detail track-ab">
     <div class="ch-hd">
-      <div class="ch-hd-name">◎ X (트위터) 신규 <span class="tiny">대화 축</span></div>
+      <div class="ch-hd-name">◎ X (트위터) 신규 <span class="tiny">실시간 커뮤니케이션</span></div>
       <div class="ch-hd-meta">
         <div><span>주체</span><strong>HIZ lead</strong></div>
-        <div><span>월 발행</span><strong>90~120</strong></div>
-        <div><span>트랙</span><strong>A + B 교차</strong></div>
+        <div><span>월 발행</span><strong>30~50</strong></div>
+        <div><span>원칙</span><strong>30분 룰</strong></div>
       </div>
     </div>
     <div class="ch-body">
@@ -1316,20 +1444,20 @@
     </div>
   </div>
 
-  <!-- 4-5. 틱톡 -->
+  <!-- 4-3. 틱톡 -->
   <div class="ch-detail track-a">
     <div class="ch-hd">
       <div class="ch-hd-name">◒ 틱톡 미러링 <span class="tiny">신규 제작 無</span></div>
       <div class="ch-hd-meta">
         <div><span>주체</span><strong>HIZ</strong></div>
-        <div><span>월 발행</span><strong>4</strong></div>
+        <div><span>월 발행</span><strong>4~6</strong></div>
         <div><span>딜레이</span><strong>릴스 +3~7일</strong></div>
       </div>
     </div>
     <div class="ch-body">
       <div>
         <h4>미러링 대상</h4>
-        <p>인스타 <strong>확산 릴스만</strong> (AI로 만든 짧은 영상형 스킵 — 틱톡 문법 불일치).</p>
+        <p>인스타 <strong>바이럴 릴스</strong> 중 확산 주요 건 (피드의 AI 영상 스킵 — 틱톡 문법 불일치).</p>
       </div>
       <div>
         <h4>변환 3요소</h4>
@@ -1344,10 +1472,152 @@
   </div>
 </section>
 
-<!-- 05. X 벤치마크 -->
+<!-- 06. 바이럴 -->
+<section class="block cream" id="viral">
+  <div class="sec-head">
+    <div class="sec-num">0<em>6</em><span class="sec-label">바이럴</span></div>
+    <div>
+      <h2>바이럴 <em>베이스 3축</em></h2>
+      <p class="desc">
+        <strong>블로그 체험단 · 인플루언서 시딩 · 메타 광고</strong>를 묶어 딥라떼 검색량·콘텐츠 포화도·영상 도달을 동시에 끌어올리는 상시 작업.
+        신메뉴 바이럴(OOS)은 이 베이스 위에 이벤트성 레이어를 얹는 구조.
+      </p>
+    </div>
+  </div>
+
+  <!-- 바이럴 오버뷰 -->
+  <div class="ch-overview" style="grid-template-columns: repeat(3, 1fr);">
+    <div class="ch-card track-b">
+      <span class="ch-icon">◫</span>
+      <div class="ch-name">블로그 체험단</div>
+      <div class="ch-role">검색량 · 포화도</div>
+      <div><span class="ch-vol">25~30</span><span class="ch-vol-unit">명/월</span></div>
+    </div>
+    <div class="ch-card track-a">
+      <span class="ch-icon">◭</span>
+      <div class="ch-name">인플루언서 시딩</div>
+      <div class="ch-role">릴스 소스 · 신뢰</div>
+      <div><span class="ch-vol">4~5</span><span class="ch-vol-unit">명/월</span></div>
+    </div>
+    <div class="ch-card track-ab">
+      <span class="ch-icon">◉</span>
+      <div class="ch-name">메타 광고</div>
+      <div class="ch-role">릴스 도달 증폭</div>
+      <div><span class="ch-vol">상시</span><span class="ch-vol-unit">집행</span></div>
+    </div>
+  </div>
+
+  <!-- 6-1. 블로그 체험단 -->
+  <div class="ch-detail track-b">
+    <div class="ch-hd">
+      <div class="ch-hd-name">◫ 블로그 체험단 <span class="tiny">검색량·포화도 베이스</span></div>
+      <div class="ch-hd-meta">
+        <div><span>주체</span><strong>HIZ</strong></div>
+        <div><span>월 모집</span><strong>25~30명</strong></div>
+        <div><span>중심</span><strong>딥라떼 키워드</strong></div>
+      </div>
+    </div>
+    <div class="ch-body">
+      <div>
+        <h4>운영 범위</h4>
+        <ul>
+          <li>키워드 세팅 — "딥라떼 맛집" 중심 / 지점명 로컬 키워드 병행</li>
+          <li>모집·선정·브리프·배송·업로드 확인</li>
+          <li>원고 QC (브랜드 톤 가이드 적용 · 금지어 체크)</li>
+          <li>발행 URL·노출 순위·댓글 반응 주간 리포트</li>
+        </ul>
+      </div>
+      <div>
+        <h4>별도 집행비</h4>
+        <ul>
+          <li>원고료 · 제공 상품(쿠폰/실물) 별도</li>
+          <li>월 예상 원고료 — 업계 표준 기준 산정 후 공유</li>
+        </ul>
+        <h4>기대 효과</h4>
+        <p>딥라떼 관련 자연 검색 결과에 3개월 내 유의미한 블로그 포스트 누적 → "검색하면 나오는 카페" 포지션 구축.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6-2. 인플루언서 시딩 -->
+  <div class="ch-detail track-a">
+    <div class="ch-hd">
+      <div class="ch-hd-name">◭ 인플루언서 시딩 <span class="tiny">릴스 소스 · 신뢰도</span></div>
+      <div class="ch-hd-meta">
+        <div><span>주체</span><strong>HIZ</strong></div>
+        <div><span>월 섭외</span><strong>4~5명</strong></div>
+        <div><span>포맷</span><strong>릴스 중심</strong></div>
+      </div>
+    </div>
+    <div class="ch-body">
+      <div>
+        <h4>섭외 기준</h4>
+        <ul>
+          <li>딥라떼 메인 · 지역(경남·부산·서울 가재울권) 우선</li>
+          <li>릴스형 인플 (정적 피드 단독은 제외) — 팔로워보다 영상 조회수·댓글 반응 지표 우선</li>
+          <li>브랜드 톤(덱 §11) 저촉 계정 스크리닝</li>
+        </ul>
+      </div>
+      <div>
+        <h4>운영 플로우</h4>
+        <ul>
+          <li>섭외·네고·브리프 — 댄싱컵 톤 가이드 + 촬영 체크리스트 공유</li>
+          <li>현장 코디 (부산 센텀·서울 가재울 거점 공유)</li>
+          <li>원본 영상 수령 → <strong>2차 편집본 인스타 릴스 재포스팅</strong> (§5 릴스 축)</li>
+          <li>메타 광고 크리에이티브 소스 공급</li>
+        </ul>
+        <h4>별도 집행비</h4>
+        <p>인플 협찬비 · 광고 협업 단가 별도. 체험형/광고형 구분 가이드 4/30 제출.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6-3. 메타 광고 -->
+  <div class="ch-detail track-ab">
+    <div class="ch-hd">
+      <div class="ch-hd-name">◉ 메타 광고 <span class="tiny">릴스 도달 증폭</span></div>
+      <div class="ch-hd-meta">
+        <div><span>주체</span><strong>HIZ</strong></div>
+        <div><span>집행</span><strong>상시</strong></div>
+        <div><span>권장 광고비</span><strong>월 50~100만</strong></div>
+      </div>
+    </div>
+    <div class="ch-body">
+      <div>
+        <h4>집행 대상 2유형</h4>
+        <div class="pill-row">
+          <span class="pill"><span class="dot"></span><strong>① 인플루언서 릴스</strong> 시딩 결과물 2차 광고</span>
+          <span class="pill"><span class="dot"></span><strong>② HIZ 자체 릴스</strong> 바이럴 훅·신메뉴 릴스</span>
+        </div>
+        <h4>운영 범위</h4>
+        <ul>
+          <li>광고 계정·픽셀 세팅 / 크리에이티브 제작·편집</li>
+          <li>타깃·오디언스 세분화 — 딥라떼 맛집 검색 오디언스 + 지점 로컬</li>
+          <li>A/B 소재 로테이션 · 주간 퍼포먼스 리포트</li>
+        </ul>
+      </div>
+      <div>
+        <h4>권장 광고비 — 월 50~100만</h4>
+        <p>캠페인 규모·신메뉴 여부에 따라 조정. 딥라떼 상시 오디언스 빌드업 + 이벤트 시 스파이크 집행 2원화.</p>
+        <h4>별도 집행비</h4>
+        <p>실광고비는 월 리테이너 미포함. 별도 청구·정산.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top:28px;">
+    <div class="ca-lbl">바이럴 × 채널 연결</div>
+    <p>
+      인플 시딩 결과물은 <strong>인스타 릴스(§5)</strong>의 인플 소스 2차 편집 원자재가 되고, 메타 광고의 주요 크리에이티브 소스로 재사용됩니다.
+      블로그 체험단은 검색 볼륨·자연 유입을, 릴스+광고는 도달·전환을 담당 — 두 경로가 딥라떼 맛집 포지션을 양쪽에서 끌어올립니다.
+    </p>
+  </div>
+</section>
+
+<!-- 07. X 벤치마크 -->
 <section class="block" id="x-bench">
   <div class="sec-head">
-    <div class="sec-num">0<em>5</em><span class="sec-label">X 벤치마크</span></div>
+    <div class="sec-num">0<em>7</em><span class="sec-label">X 벤치마크</span></div>
     <div>
       <h2>X 운영 <em>—</em> 국내 9개 브랜드 사례</h2>
       <p class="desc">
@@ -1516,7 +1786,7 @@
 <!-- 06. 주간 리듬 -->
 <section class="block" id="rhythm">
   <div class="sec-head">
-    <div class="sec-num">0<em>6</em><span class="sec-label">주간 리듬</span></div>
+    <div class="sec-num">0<em>8</em><span class="sec-label">주간 리듬</span></div>
     <div>
       <h2>요일별 <em>발행 캘린더</em></h2>
       <p class="desc">월 리테이너 4개 채널의 요일별 발행 계획. 마스터시트 <code>채널별 콘텐츠 캘린더</code> 탭 반영 완료.</p>
@@ -1533,72 +1803,59 @@
     <div class="wday">토</div>
     <div class="wday">일</div>
 
-    <div class="wlbl">인스타 피드</div>
-    <div class="cell on">1피드</div>
+    <div class="wlbl">인스타 피드<br><span class="tiny">사진+AI영상</span></div>
+    <div class="cell on">사진</div>
+    <div class="cell on">AI영상</div>
+    <div class="cell on">사진</div>
     <div class="cell off">—</div>
-    <div class="cell on">1피드</div>
-    <div class="cell off">—</div>
-    <div class="cell on">1피드</div>
-    <div class="cell off">—</div>
-    <div class="cell on">1피드</div>
+    <div class="cell on">사진</div>
+    <div class="cell on">AI영상</div>
+    <div class="cell on">사진</div>
 
-    <div class="wlbl">릴스 AI</div>
-    <div class="cell off">—</div>
-    <div class="cell on">1릴스</div>
+    <div class="wlbl">인스타 릴스<br><span class="tiny">바이럴+인플</span></div>
     <div class="cell off">—</div>
     <div class="cell off">—</div>
     <div class="cell off">—</div>
-    <div class="cell on">1릴스</div>
+    <div class="cell on">바이럴</div>
     <div class="cell off">—</div>
-
-    <div class="wlbl">확산 릴스</div>
+    <div class="cell on">인플2차</div>
     <div class="cell off">—</div>
-    <div class="cell off">—</div>
-    <div class="cell off">—</div>
-    <div class="cell on">1릴스</div>
-    <div class="cell off">—</div>
-    <div class="cell off">—</div>
-    <div class="cell off">—</div>
-
-    <div class="wlbl">X</div>
-    <div class="cell on">3~5</div>
-    <div class="cell on">3~5</div>
-    <div class="cell on">3~5</div>
-    <div class="cell on">3~5</div>
-    <div class="cell on">3~5</div>
-    <div class="cell on">2~3</div>
-    <div class="cell on">2~3</div>
 
     <div class="wlbl">틱톡 미러링</div>
     <div class="cell off">—</div>
-    <div class="cell on">미러링</div>
-    <div class="cell off">—</div>
     <div class="cell off">—</div>
     <div class="cell on">미러링</div>
     <div class="cell off">—</div>
     <div class="cell off">—</div>
+    <div class="cell on">미러링</div>
+    <div class="cell off">—</div>
+
+    <div class="wlbl">X</div>
+    <div class="cell on">2~3</div>
+    <div class="cell on">1~2</div>
+    <div class="cell on">2~3</div>
+    <div class="cell on">1~2</div>
+    <div class="cell on">2~3</div>
+    <div class="cell on">1~2</div>
+    <div class="cell on">1~2</div>
   </div>
 
-  <div class="grid-5">
+  <div class="grid-4">
     <div class="ch-card track-b">
       <div class="ch-role" style="margin-bottom:4px;">인스타 피드</div>
-      <div><span class="ch-vol">16</span><span class="ch-vol-unit">/월</span></div>
-    </div>
-    <div class="ch-card track-b">
-      <div class="ch-role" style="margin-bottom:4px;">릴스 AI</div>
-      <div><span class="ch-vol">8</span><span class="ch-vol-unit">/월</span></div>
+      <div><span class="ch-vol">12~16</span><span class="ch-vol-unit">/월</span></div>
     </div>
     <div class="ch-card track-a">
-      <div class="ch-role" style="margin-bottom:4px;">확산 릴스</div>
-      <div><span class="ch-vol">4</span><span class="ch-vol-unit">/월</span></div>
-    </div>
-    <div class="ch-card track-ab">
-      <div class="ch-role" style="margin-bottom:4px;">X</div>
-      <div><span class="ch-vol">90~120</span><span class="ch-vol-unit">/월</span></div>
+      <div class="ch-role" style="margin-bottom:4px;">인스타 릴스</div>
+      <div><span class="ch-vol">4~6</span><span class="ch-vol-unit">/월</span></div>
     </div>
     <div class="ch-card track-a">
       <div class="ch-role" style="margin-bottom:4px;">틱톡</div>
-      <div><span class="ch-vol">8</span><span class="ch-vol-unit">/월</span></div>
+      <div><span class="ch-vol">4~6</span><span class="ch-vol-unit">/월</span></div>
+    </div>
+    <div class="ch-card track-ab">
+      <div class="ch-role" style="margin-bottom:4px;">X</div>
+      <div><span class="ch-vol">30~50</span><span class="ch-vol-unit">/월</span></div>
     </div>
   </div>
 </section>
@@ -1606,59 +1863,85 @@
 <!-- 07. 역할 분담 -->
 <section class="block cream" id="roles">
   <div class="sec-head">
-    <div class="sec-num">0<em>7</em><span class="sec-label">역할</span></div>
+    <div class="sec-num">0<em>9</em><span class="sec-label">역할</span></div>
     <div>
       <h2>누가 <em>무엇을</em></h2>
-      <p class="desc">HIZ는 제작·운영·편집, 브랜드팀은 소스 공급·현장 협조·최종 승인. <strong>콘텐츠 소스는 3갈래 — 브랜드팀(메뉴 이미지) · HIZ 촬영(확산 릴스 영상) · 인플루언서(협업 결과물)</strong>. 이 3선 중 하나라도 끊기면 해당 축이 멈춥니다.</p>
+      <p class="desc">HIZ는 제작·운영·편집·바이럴 실행, 브랜드팀은 소스 공급·현장 협조·최종 승인. <strong>콘텐츠 소스 3갈래 — 브랜드팀(고감도 사진) · HIZ 제작(AI 영상·바이럴 촬영) · 인플루언서(시딩 결과물)</strong>. 이 3선 중 하나라도 끊기면 해당 축이 멈춥니다.</p>
     </div>
   </div>
+
+  <h3 style="margin:0 0 16px; font-size:16.5px;">업무 2영역 × 주체</h3>
   <div class="grid-2">
     <div class="role-card hiz">
-      <div class="role-lbl">HIZ</div>
-      <div class="role-h">제작 · 운영 · 편집</div>
+      <div class="role-lbl">HIZ — 채널 운영</div>
+      <div class="role-h">제작 · 편집 · 발행</div>
       <ul>
-        <li>인스타 피드 큐레이션·편집·발행</li>
-        <li>릴스 AI 제작 (이미지→영상 AI 툴 구독 + 오퍼레이터 1인)</li>
-        <li>확산 릴스 촬영·편집·발행</li>
-        <li>X 상시 운영 (편집장 = lead)</li>
-        <li>틱톡 주 1회 미러링 배치</li>
+        <li>인스타 피드 — 큐레이션·편집·발행 + AI 영상 제작 (I2V 툴)</li>
+        <li>인스타 릴스 — 바이럴 자체 촬영 + 인플 소스 2차 편집</li>
+        <li>틱톡 — 릴스 재포스팅 (로컬라이징)</li>
+        <li>X — 상시 운영 (편집장 = lead, 30분 룰)</li>
+        <li>통합 리포트 · 키워드 모니터링</li>
       </ul>
     </div>
-    <div class="role-card client">
-      <div class="role-lbl">브랜드팀</div>
-      <div class="role-h">소스 공급 · 현장 협조 · 최종 승인</div>
+    <div class="role-card hiz">
+      <div class="role-lbl">HIZ — 바이럴</div>
+      <div class="role-h">모집 · 섭외 · 집행</div>
       <ul>
-        <li><strong>메뉴 이미지 공급 (공식 비주얼)</strong></li>
-        <li>지점 촬영 협조 (HIZ가 지점 촬영 7일 전 준비)</li>
-        <li>공식 촬영 매장 배정 (부산 센텀·서울 가재울)</li>
-        <li>메뉴 정보·운영 이슈 실시간 공유 (X 소재)</li>
-        <li>메뉴 결정·네이밍 최종 승인</li>
+        <li>블로그 체험단 운영 (월 25~30명)</li>
+        <li>인플루언서 시딩 (월 4~5명 · 딥라떼 메인)</li>
+        <li>메타 광고 집행 (인플 릴스 + 자체 릴스)</li>
+        <li>소스 수급 · 리포트 · QC</li>
       </ul>
     </div>
   </div>
 
-  <h3 style="margin-top:40px;">콘텐츠 소스 3가지 → 어느 채널로</h3>
+  <div class="grid-2" style="margin-top:18px;">
+    <div class="role-card client">
+      <div class="role-lbl">브랜드팀 — 소스 공급</div>
+      <div class="role-h">고감도 비주얼 · 정보</div>
+      <ul>
+        <li><strong>고감도 메뉴 사진 공급 (피드 메인 비주얼)</strong></li>
+        <li>지점 촬영 협조 (HIZ 촬영 7일 전 준비)</li>
+        <li>공식 촬영 매장 배정 (부산 센텀·서울 가재울)</li>
+        <li>메뉴 정보·운영 이슈 실시간 공유 (X 소재)</li>
+      </ul>
+    </div>
+    <div class="role-card client">
+      <div class="role-lbl">브랜드팀 — 결정 · 승인</div>
+      <div class="role-h">전략 · 예산 · 최종 컨펌</div>
+      <ul>
+        <li>메뉴 결정·네이밍 최종 승인</li>
+        <li>신메뉴 바이럴(OOS) 건별 견적 승인</li>
+        <li>체험단 상품·원고료·인플 협찬비·메타 광고비 집행 승인</li>
+        <li>브랜드 톤·컴플라이언스 최종 컨펌</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="margin-top:40px;">콘텐츠 소스 3가지 → 어느 채널·바이럴로</h3>
   <div class="grid-3">
     <div class="card">
-      <h3 style="margin:0 0 10px; font-size:16.5px;">① 브랜드팀 소스</h3>
+      <h3 style="margin:0 0 10px; font-size:16.5px;">① 브랜드팀 고감도 사진</h3>
       <p class="tiny" style="margin-bottom:10px;">메뉴 이미지 등 공식 비주얼</p>
-      <p><strong>→ 인스타 피드</strong> (큐레이션·편성)</p>
-      <p><strong>→ 릴스 AI</strong> (이미지→영상 AI 영상 소재)</p>
-      <p class="tiny" style="margin-top:8px; color:var(--mute);">공급선 = 브랜드팀 · 공급 주기 합의 필요</p>
+      <p><strong>→ 인스타 피드</strong> (메인 비주얼)</p>
+      <p><strong>→ AI 영상 원본</strong> (I2V 변환 소스)</p>
+      <p class="tiny" style="margin-top:8px; color:var(--mute);">공급선 = 브랜드팀 · 공급 주기 4/24 합의</p>
     </div>
     <div class="card">
-      <h3 style="margin:0 0 10px; font-size:16.5px;">② 확산 릴스 영상</h3>
-      <p class="tiny" style="margin-bottom:10px;">HIZ 직접 촬영</p>
-      <p><strong>→ 확산 릴스</strong> (신메뉴 촬영·유행 훅)</p>
-      <p><strong>→ 틱톡 미러링</strong> (재포스팅만)</p>
+      <h3 style="margin:0 0 10px; font-size:16.5px;">② HIZ 제작 영상</h3>
+      <p class="tiny" style="margin-bottom:10px;">AI 생성 + 자체 촬영</p>
+      <p><strong>→ 인스타 피드</strong> (AI 영상 4~6편)</p>
+      <p><strong>→ 인스타 릴스</strong> (바이럴 촬영 2~3편)</p>
+      <p><strong>→ 틱톡 · 메타 광고</strong> (재활용)</p>
       <p class="tiny" style="margin-top:8px; color:var(--mute);">거점 = 부산 센텀 · 서울 가재울 · 촬영 7일 전 준비</p>
     </div>
     <div class="card">
       <h3 style="margin:0 0 10px; font-size:16.5px;">③ 인플루언서 소스</h3>
-      <p class="tiny" style="margin-bottom:10px;">협업 결과물 2차 활용</p>
-      <p><strong>→ 릴스·피드 2차</strong> (허가받은 인플 콘텐츠)</p>
+      <p class="tiny" style="margin-bottom:10px;">시딩 결과물 (월 4~5명)</p>
+      <p><strong>→ 인스타 릴스</strong> (2차 편집 2~3편)</p>
+      <p><strong>→ 메타 광고</strong> (크리에이티브 소스)</p>
       <p><strong>→ X 리포스트</strong> (지점 에피소드 소재)</p>
-      <p class="tiny" style="margin-top:8px; color:var(--mute);">여름 캠페인 1차 인플 확정 후 본격 수급</p>
+      <p class="tiny" style="margin-top:8px; color:var(--mute);">인플 협찬비·광고비 별도 집행</p>
     </div>
   </div>
 </section>
@@ -1666,7 +1949,7 @@
 <!-- 08. 체크리스트 -->
 <section class="block" id="checklist">
   <div class="sec-head">
-    <div class="sec-num">0<em>8</em><span class="sec-label">체크리스트</span></div>
+    <div class="sec-num">1<em>0</em><span class="sec-label">체크리스트</span></div>
     <div>
       <h2>4월 킥오프 <em>9개 항목</em></h2>
       <p class="desc">1차 마일스톤(4월 말 마감) 완주를 위한 액션 아이템. 마스터시트 <code>체크포인트</code> 탭 반영 완료.</p>
@@ -1677,18 +1960,18 @@
     <li><span class="due">~4/24</span> 틱톡 계정 아이디 선점 · 가용성 확인·확보 <span class="owner">· HIZ · P10</span></li>
     <li><span class="due">~4/24</span> 브랜드팀 이미지 공급 채널·주기·파일 규격 확정 <span class="owner">· HIZ·브랜드팀 · 주간보고 자리</span></li>
     <li><span class="due">~4/24</span> X 샘플 트윗 30~50개 작성 (lead 게이트) <span class="owner">· HIZ</span></li>
-    <li><span class="due">~4/28</span> AI 릴스 파일럿 1편 제작 (Runway/Kling 테스트) <span class="owner">· HIZ · P11</span></li>
+    <li><span class="due">~4/28</span> AI 영상 파일럿 1편 제작 (피드용 · Runway/Kling 테스트) <span class="owner">· HIZ · P11</span></li>
     <li><span class="due">~4/30</span> 인스타 지점 순환 라인업 TOP 15~20 선정 <span class="owner">· HIZ · 지점 계정 디렉토리 탭</span></li>
-    <li><span class="due">~4/30</span> 마스터시트 채널별 콘텐츠 캘린더 4개 채널 리듬 확정 <span class="owner">· HIZ</span></li>
-    <li><span class="due">~4/30</span> 덱 §3·4·6 네 덩어리 구조 반영 <span class="owner">· HIZ · index.html</span></li>
-    <li><span class="due">~4/30</span> 브랜드팀 동의 확보 — 채널 운영 구조(네 덩어리) <span class="owner">· HIZ·브랜드팀 · P9</span></li>
+    <li><span class="due">~4/30</span> 마스터시트 채널별 콘텐츠 캘린더 4채널 리듬 확정 <span class="owner">· HIZ</span></li>
+    <li><span class="due">~4/30</span> 덱 §3·4 2×2 구조 반영 · 견적서 2×2 구조 동기화 <span class="owner">· HIZ · index.html · quote.html</span></li>
+    <li><span class="due">~4/30</span> 브랜드팀 동의 확보 — 전략 2축 × 업무 2영역 구조 <span class="owner">· HIZ·브랜드팀 · P9</span></li>
   </ul>
 </section>
 
 <!-- 09. 대기 항목 -->
 <section class="block" id="pending">
   <div class="sec-head">
-    <div class="sec-num">0<em>9</em><span class="sec-label">대기 항목</span></div>
+    <div class="sec-num">1<em>1</em><span class="sec-label">대기 항목</span></div>
     <div>
       <h2>의사결정 대기 <em>11건</em></h2>
       <p class="desc">결정 로그 대기 항목 큐 (딥라떼 네이밍 해제 · 브랜드팀 딥라떼 자료 공유 신규). 에이전트는 이 항목을 "확정"으로 인용하지 않음. 하이라이트 <strong>4건</strong>이 이번 주 집중 대상.</p>
@@ -1710,7 +1993,7 @@
     </div>
     <div class="p-row hot">
       <div class="p-id">P9</div>
-      <div class="p-item">채널 운영 구조(네 덩어리) 브랜드팀 동의</div>
+      <div class="p-item">전략 2축 × 업무 2영역 구조 브랜드팀 동의 (채널 운영 4채널 + 바이럴 베이스 3축 + OOS 분리)</div>
       <div class="p-due">2026-04-30</div>
       <div class="p-owner">브랜드팀</div>
     </div>
@@ -1774,11 +2057,11 @@
 <!-- 10. 브랜드 전략 공유 대기 -->
 <section class="block" id="depend">
   <div class="sec-head">
-    <div class="sec-num">10<span class="sec-label">대기 중</span></div>
+    <div class="sec-num">12<span class="sec-label">대기 중</span></div>
     <div>
       <h2>딥라떼 내부 전략 공유 대기</h2>
       <p class="desc">
-        네이밍은 확정됐지만, <strong>브랜드 감성 채널(피드·릴스 AI) 본격 가동은 브랜드팀 자료 수령 이후</strong>.
+        네이밍은 확정됐지만, <strong>딥라떼 맛집 전략 본격 가동(피드 고감도 사진·AI 영상·블로그 체험단 키워드)은 브랜드팀 자료 수령 이후</strong>.
         현재는 HIZ가 채널 구조·톤·운영 리듬까지만 세팅한 상태이며, 딥라떼 서사를 얹는 콘텐츠 제작 라인은 대기 큐에 있습니다.
       </p>
       <p class="desc" style="margin-top:12px; font-size:13.5px; color:var(--mute);">
@@ -1803,12 +2086,14 @@
     <div class="depend-col hiz">
       <div class="dc-lbl">HIZ · 공유 후 착수</div>
       <h3>자료 수령 후 <em>HIZ 쪽에서 돌릴</em> 라인</h3>
-      <div class="dc-sub">현재는 대기. 공유 시점 = 브랜드 감성 축 본격 가동 시점</div>
+      <div class="dc-sub">현재는 대기. 공유 시점 = 딥라떼 맛집 전략 본격 가동 시점</div>
       <ul>
-        <li><strong>피드 큐레이션 기준 v1</strong> · 브랜드팀 이미지 풀에서 딥라떼 서사 기준으로 월 16피드 라인업 설계</li>
-        <li><strong>릴스 AI 영상 v1</strong> · 포지셔닝·톤 기반 프롬프트·레퍼런스, 이미지→영상 AI 파일럿 4편</li>
+        <li><strong>피드 큐레이션 기준 v1</strong> · 브랜드팀 이미지 풀에서 딥라떼 서사 기준으로 월 12~16피드 라인업 설계</li>
+        <li><strong>피드용 AI 영상 v1</strong> · 포지셔닝·톤 기반 프롬프트·레퍼런스, I2V(이미지→영상) AI 파일럿 4~6편</li>
+        <li><strong>릴스 바이럴 스크립트 v1</strong> · 딥라떼 자체 촬영 릴스 스크립트 + 인플 소스 2차 편집 기준</li>
         <li><strong>X 딥라떼 소재</strong> · "딥하다"의 일상 번역, 구매 맥락 밈 10~20개 선제작</li>
-        <li><strong>인플루언서 브리프</strong> · 여름 시딩 톤·금지 표현, 네이밍 맥락 1p 브리프</li>
+        <li><strong>인플루언서 브리프</strong> · 시딩 4~5명/월 톤·금지 표현, 네이밍 맥락 1p 브리프</li>
+        <li><strong>블로그 체험단 키워드 v1</strong> · 딥라떼 맛집 + 지점 로컬 키워드 세트 (월 25~30명 브리프용)</li>
         <li><strong>소셜 리스닝 키워드</strong> · 딥라떼·우지 딥카페라떼 혼동 모니터링 큐</li>
       </ul>
     </div>
@@ -1819,7 +2104,7 @@
   <div class="callout" style="background: rgba(181,137,71,0.12); border-left-color: var(--brass-2);">
     <span class="co-label">플래그 —</span>
     <strong>공유 지연 리스크.</strong>
-    브랜드팀 자료 공유가 4월 말~5월 초까지 밀리면, 5/12 여름 런칭일 전 브랜드 감성 축 웜업 시간이 부족해집니다.
+    브랜드팀 자료 공유가 4월 말~5월 초까지 밀리면, 5/12 여름 런칭일 전 딥라떼 맛집 전략 웜업 시간이 부족해집니다.
     <strong style="color:var(--brass-2)">4/24 주간보고에서 공유 시점 합의</strong>를 요청 — 늦어도 <strong>4/30 이전</strong> 1차 공유 필요.
   </div>
 </section>
@@ -1827,7 +2112,7 @@
 <!-- 11. 참고 -->
 <section class="block" id="refs">
   <div class="sec-head">
-    <div class="sec-num">1<em>1</em><span class="sec-label">References</span></div>
+    <div class="sec-num">1<em>3</em><span class="sec-label">References</span></div>
     <div>
       <h2>문서 <em>인덱스</em></h2>
       <p class="desc">리딩 SSoT · 운영 SSoT · 근거 자료 원본 위치.</p>
