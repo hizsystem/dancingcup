@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>댄싱컵 딥라떼 메뉴 리서치북 v1 — 글로벌 트렌드 × 댄싱컵 결정</title>
+<style>
+:root {
+  --ink: #1a1a1a;
+  --paper: #fafaf7;
+  --cream: #f4efe5;
+  --accent: #6b2c2c;
+  --accent-soft: #b8856a;
+  --pos: #2d6e3e;
+  --neg: #6b2c2c;
+  --neu: #6b6b6b;
+  --line: #e5e1d6;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.6;
+  font-size: 15px;
+}
+.deck { max-width: 1180px; margin: 0 auto; padding: 40px 20px; }
+.slide {
+  background: #fff;
+  min-height: 580px;
+  padding: 64px 72px;
+  margin-bottom: 28px;
+  border-radius: 4px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  position: relative;
+}
+.slide.dark { background: var(--ink); color: var(--paper); }
+.slide-num {
+  position: absolute;
+  top: 32px;
+  right: 44px;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--neu);
+}
+.slide.dark .slide-num { color: var(--accent-soft); }
+.kicker {
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: var(--accent);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.slide.dark .kicker { color: var(--accent-soft); }
+.slide h1 { font-size: 34px; font-weight: 700; line-height: 1.2; margin-bottom: 20px; }
+.slide h2 { font-size: 26px; font-weight: 700; line-height: 1.3; margin-bottom: 18px; }
+.slide h3 { font-size: 16px; font-weight: 600; margin-bottom: 10px; }
+.slide h4 { font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--accent); }
+.slide p { font-size: 14px; margin-bottom: 10px; }
+.lead { font-size: 17px; line-height: 1.6; margin-bottom: 22px; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.card { background: var(--cream); padding: 20px; border-radius: 4px; }
+.card.soft { background: #f9f6ed; }
+.card.dark { background: var(--ink); color: var(--paper); }
+.card.accent { background: var(--accent); color: #fff; }
+.card.outline { background: #fff; border: 1px solid var(--line); }
+.callout {
+  border-left: 4px solid var(--accent);
+  padding: 14px 22px;
+  background: #f9f6ed;
+  margin: 18px 0;
+  font-size: 15px;
+}
+.callout strong { color: var(--accent); }
+.stat-num {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--accent);
+  display: block;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.stat-label { font-size: 12px; color: var(--neu); line-height: 1.4; }
+.src {
+  font-size: 11px;
+  color: var(--neu);
+  font-style: italic;
+  display: block;
+  margin-top: 8px;
+}
+.img-ph {
+  background: linear-gradient(135deg, #e5e1d6 0%, #d4cfc0 100%);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--neu);
+  font-size: 12px;
+  text-align: center;
+  padding: 16px;
+  min-height: 160px;
+  position: relative;
+  margin-bottom: 10px;
+}
+.img-ph::before {
+  content: "📷 IMAGE";
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  font-size: 10px;
+  opacity: 0.5;
+  letter-spacing: 0.1em;
+}
+.img-ph .ph-key {
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 4px;
+  font-size: 13px;
+}
+.img-ph .ph-hint {
+  font-size: 10px;
+  color: var(--neu);
+  line-height: 1.4;
+}
+.slide-img-fig { margin-bottom: 10px; }
+.slide-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+  background: var(--cream);
+}
+.slide-img-fig figcaption {
+  font-size: 10px;
+  color: var(--neu);
+  margin-top: 5px;
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+.slide-img.tall { height: 280px; }
+.slide-img.short { height: 180px; }
+.tag {
+  display: inline-block;
+  padding: 3px 9px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  font-size: 10px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+  letter-spacing: 0.02em;
+}
+.tag.pos { color: var(--pos); border-color: var(--pos); }
+.tag.neg { color: var(--neg); border-color: var(--neg); }
+.tag.accent { background: var(--accent); color: #fff; border-color: var(--accent); }
+.tag.warn { background: #fff8e1; color: #8b6914; border-color: #d4af6a; }
+.cover-title { font-size: 54px; line-height: 1.1; font-weight: 700; margin-bottom: 14px; }
+.cover-sub { font-size: 19px; color: var(--accent-soft); margin-bottom: 30px; line-height: 1.5; }
+table.tr {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin: 12px 0;
+}
+table.tr th, table.tr td {
+  text-align: left;
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+table.tr th { background: var(--cream); font-weight: 600; }
+ul.bullets { list-style: none; padding: 0; }
+ul.bullets li {
+  font-size: 13px;
+  margin-bottom: 6px;
+  padding-left: 14px;
+  position: relative;
+  line-height: 1.5;
+}
+ul.bullets li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+.bridge {
+  text-align: center;
+  font-size: 16px;
+  color: var(--accent);
+  font-style: italic;
+  padding: 12px 0;
+  letter-spacing: 0.04em;
+}
+@media print {
+  body { background: #fff; }
+  .deck { padding: 0; max-width: none; }
+  .slide { page-break-after: always; box-shadow: none; margin-bottom: 0; }
+}
+</style>
+</head>
+<body>
+<div class="deck">
+
+<!-- 00. COVER -->
+<section class="slide dark">
+  <div class="slide-num">00 / 15</div>
+  <div style="margin-top: 70px;">
+    <div class="kicker">DANCINGCUP × HIZ — RESEARCH BOOK</div>
+    <h1 class="cover-title">댄싱컵 딥라떼<br>메뉴 리서치북</h1>
+    <p class="cover-sub">글로벌 트렌드 × 댄싱컵 결정의 근거<br><span style="font-size:14px;color:var(--neu);">"오리지널·너티·솔티드 3종, 왜 이 셋인가"에 대한 외부 자료</span></p>
+    <div style="margin-top: 50px; font-size: 13px; color: var(--accent-soft); line-height: 1.9;">
+      v1 · 2026-04-29 · HIZ 작성<br>
+      미국·일본 중심 / 한국 보강 / 솔티드·너티 외 트렌드 포함<br>
+      대상: 5/11 댄싱컵 미팅 발표 자료
+    </div>
+  </div>
+</section>
+
+<!-- 01. ONE-PAGE 결론 -->
+<section class="slide">
+  <div class="slide-num">01 / 15</div>
+  <div class="kicker">ONE-PAGE 결론</div>
+  <h2>3종 라인업, 글로벌 트렌드와 정확히 겹친다</h2>
+  <p class="lead">댄싱컵이 4/29 결정한 <strong>오리지널 · 너티 · 솔티드</strong>는 우리만의 직관이 아니라, 2026년 미국·일본·동남아 카페 씬에서 동시다발로 일어나는 흐름과 겹친다. 본 리서치북은 그 근거를 보여준다.</p>
+
+  <div class="grid-3" style="margin-top: 24px;">
+    <div class="card">
+      <h4>오리지널 (베이스)</h4>
+      <p style="font-size:13px;">% Arabica의 <strong>Kyoto Latte</strong>, Blue Bottle의 <strong>NOLA</strong>, Komeda의 <strong>Shiro-Noir</strong> — 도시·정체성을 한 메뉴로 묶는 글로벌 시그니처 패턴.</p>
+      <span class="tag accent">도시 어태치</span>
+    </div>
+    <div class="card">
+      <h4>너티 (진입 게이트)</h4>
+      <p style="font-size:13px;">Starbucks Japan 2026 봄 <strong>Choux Cream Latte</strong>, 미국 <strong>Pistachio Latte 메가 트렌드</strong> (스타벅스 9개 신메뉴 중 7개). 너티 = 안정 진입.</p>
+      <span class="tag accent">진입 안정</span>
+    </div>
+    <div class="card">
+      <h4>솔티드 (메인 푸쉬)</h4>
+      <p style="font-size:13px;">베트남 <strong>카페 쓰어 무오이</strong> 글로벌 진출, 미국 <strong>"swavory"(sweet+savory)</strong> 메가 트렌드, 부산 <strong>블랙업커피 Sea Salt Coffee</strong> 직접 사례.</p>
+      <span class="tag accent">메가 트렌드 합류</span>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top: 24px;">
+    <strong>한 줄로:</strong> 댄싱컵 솔티드 = 부산 자산 × 글로벌 솔티드 메가 트렌드 × swavory 트렌드의 교차점. 한국에서 댄싱컵이 이 흐름에 가장 빠르고 정확하게 올라타는 카드가 된다.
+  </div>
+</section>
+
+<!-- 02. 2026 매크로 트렌드 -->
+<section class="slide">
+  <div class="slide-num">02 / 15</div>
+  <div class="kicker">2026 GLOBAL CAFE MACRO TREND</div>
+  <h2>2026년, 카페 라떼는 6가지 흐름으로 움직인다</h2>
+
+  <div class="grid-3" style="margin-top: 18px;">
+    <div class="card soft">
+      <h4>① Swavory (Sweet+Savory)</h4>
+      <p style="font-size:12.5px;">Miso·Tahini·Mole·솔티드·Salted Pistachio·Spring Onion. Technomic이 꼽은 핵심 식자재 3개 = miso·tahini·mole.</p>
+      <span class="src">Java City / Restaurant Business 2026</span>
+    </div>
+    <div class="card soft">
+      <h4>② Ube — 2026 #1 Trending</h4>
+      <p style="font-size:12.5px;">미국 외식 메뉴 <strong>4년간 230% 증가</strong>, 95개 체인 운영, 향후 4년 74% 추가 성장 전망.</p>
+      <span class="src">CNBC 2026.04 · Datassentials</span>
+    </div>
+    <div class="card soft">
+      <h4>③ Functional Coffee</h4>
+      <p style="font-size:12.5px;">Lion's Mane·Reishi 같은 어댑토젠, Protein-infused foam 등 기능성 요소 확장.</p>
+      <span class="src">Java City 2026</span>
+    </div>
+    <div class="card soft">
+      <h4>④ Matcha — 시장 1.7배</h4>
+      <p style="font-size:12.5px;">글로벌 시장 <strong>USD 4.47B (2025) → 7.74B (2033)</strong>, #matcha 인스타 1,020만 포스트. 일본 공급 부족.</p>
+      <span class="src">Market Data Forecast 2026</span>
+    </div>
+    <div class="card soft">
+      <h4>⑤ Global Influence 가속</h4>
+      <p style="font-size:12.5px;">Pandan·Ube·Miso·Yuzu — 지역 특화 식자재가 메인 메뉴까지 도달하는 속도가 빨라짐.</p>
+      <span class="src">Perfect Daily Grind 2026.01</span>
+    </div>
+    <div class="card soft">
+      <h4>⑥ Origin Storytelling</h4>
+      <p style="font-size:12.5px;">"어디서 왔는가" 스토리가 메뉴와 함께 팔린다. Stumptown(포틀랜드)·Intelligentsia(시카고) 패턴이 카페 시그니처에 적용.</p>
+      <span class="src">third-wave coffee · Stumptown story</span>
+    </div>
+  </div>
+
+  <div class="bridge" style="margin-top: 18px;">↓ 댄싱컵의 3종은 ①·②(시즈널)·⑤·⑥에 동시 진입한다</div>
+</section>
+
+<!-- 03. 솔티드 라떼 — 글로벌 -->
+<section class="slide">
+  <div class="slide-num">03 / 15</div>
+  <div class="kicker">SALTED LATTE — GLOBAL</div>
+  <h2>솔티드는 이미 글로벌 메가 트렌드다</h2>
+  <p class="lead">솔티드 커피는 베트남 한 작은 카페에서 시작해 2024-2026년 사이에 미국·일본·필리핀까지 번진 글로벌 흐름이다. 댄싱컵의 솔티드 푸쉬는 이 흐름의 한국판이다.</p>
+
+  <div class="grid-2" style="margin-top: 18px;">
+    <div>
+      <figure class="slide-img-fig">
+        <img class="slide-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Viet-coffee.jpg/600px-Viet-coffee.jpg" alt="베트남 커피 (Cà Phê Sữa Đá)">
+        <figcaption>베트남 커피 (Cà Phê Sữa Đá) — 카페 쓰어 무오이의 베이스. 연유 위에 솔티드 크림을 얹는 구조. 출처: Wikimedia Commons</figcaption>
+      </figure>
+      <h4>① 베트남 — 시작점</h4>
+      <ul class="bullets">
+        <li>2010년, 후에(Hue) 시 응우옌 르엉 방 거리의 무명 카페에서 시작</li>
+        <li>연유 + 베트남 커피 + 솔티드 크림. 단맛이 짠맛에 의해 또렷해지는 구조 (솔티드 카라멜 원리)</li>
+        <li>TikTok에서 "스타벅스 커스텀으로 베트남 솔트 커피 만들기" 바이럴</li>
+        <li><strong>스타벅스 베트남이 2024년 5월 자체 솔트 커피 출시</strong></li>
+      </ul>
+      <span class="src">CNN Travel · Vietnam Coracle · Lux Cafe Club 2024</span>
+    </div>
+    <div>
+      <figure class="slide-img-fig">
+        <img class="slide-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/C%C3%80_PH%C3%8A_S%E1%BB%AEA_PHA_PHIN.jpg/600px-C%C3%80_PH%C3%8A_S%E1%BB%AEA_PHA_PHIN.jpg" alt="Cà phê sữa pha phin - 베트남 전통 핀 추출">
+        <figcaption>Cà phê sữa pha phin — 베트남 전통 핀(phin) 추출 방식. Phin Ca Phe(Seattle)·Càphê Roasters(Philadelphia)가 미국에서 차용 중. 출처: Wikimedia Commons</figcaption>
+      </figure>
+      <h4>② 미국 — Gen Z 71%가 시도 의향</h4>
+      <ul class="bullets">
+        <li>독립 베트남 카페가 미국 도시별로 확산 (Seattle, Philadelphia, NYC, LA)</li>
+        <li><strong>미국 Gen Z의 71%가 "아시안 영감 커피" 시도 의향</strong> (Mintel 조사)</li>
+        <li>런던 Caphe House 등 유럽까지 도달</li>
+        <li>Boondocks Coffee <strong>Salted Latik Latte</strong> (필리핀 아신 티복 솔트) RTD 2026 출시 예정</li>
+      </ul>
+      <span class="src">Mintel · Perfect Daily Grind · Barista Magazine 2024-26</span>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top: 16px;">
+    <strong>댄싱컵 시사점:</strong> 솔티드는 글로벌 검증된 흐름이다. "한국·부산이 너무 빠른 것 아닌가" 우려는 정반대 — 오히려 늦지 않게 올라타야 한다. 2024년 글로벌 신호 → 2026년 한국 메인 진입 = 정확한 타이밍.
+  </div>
+</section>
+
+<!-- 04. 솔티드 라떼 — 한국 부산 -->
+<section class="slide">
+  <div class="slide-num">04 / 15</div>
+  <div class="kicker">SALTED LATTE — KOREA · BUSAN</div>
+  <h2>이미 부산에서 검증된 컨셉이다</h2>
+  <p class="lead">부산의 스페셜티 강자 <strong>블랙업커피</strong>는 이미 "Sea Salt Coffee"를 시그니처로 운영 중. 부산 = 바다 = 솔티드 컨셉이 부산 안에서 이미 작동한다는 직접 증거.</p>
+
+  <div class="grid-2" style="margin-top: 18px;">
+    <div class="card">
+      <figure class="slide-img-fig">
+        <img class="slide-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Haeundae_Beach_May_2024.jpg/600px-Haeundae_Beach_May_2024.jpg" alt="부산 해운대 해변">
+        <figcaption>부산 해운대 — "부산 = 바다 = 솔티드" 컨셉의 도시 자산. 블랙업커피 Sea Salt Coffee가 이 자산을 이미 시그니처화. 출처: Wikimedia Commons</figcaption>
+      </figure>
+      <h4>블랙업커피 — Sea Salt Coffee</h4>
+      <ul class="bullets">
+        <li>콜드브루 + 솔티드 크림 + 소금 토핑 = 시그니처</li>
+        <li>부산 거점 스페셜티 카페 — <strong>고가격대(6,000원~)</strong>에서 솔티드 운영</li>
+        <li>HIZ 가설 검증: 부산 + 솔티드 = 작동하는 공식</li>
+      </ul>
+      <span class="src">VisitBusan · Tripadvisor 2026.04</span>
+    </div>
+    <div class="card">
+      <h3>댄싱컵 포지셔닝의 의미</h3>
+      <ul class="bullets">
+        <li><strong>블랙업이 스페셜티 가격대에서 부산을 알렸다면, 댄싱컵은 대중 가격대에서 그 자리를 잡는다</strong> (부산 앵글 의견서 v2의 핵심 가설)</li>
+        <li>블랙업의 6,000원 → 댄싱컵의 3,000원대 (가설 가격) = 다른 진입점, 같은 컨셉</li>
+        <li>"부산에서 온 라떼 맛집" 어휘가 빈 자리를 그대로 차지할 수 있음</li>
+      </ul>
+      <div style="margin-top: 14px;">
+        <span class="tag">부산</span>
+        <span class="tag">솔티드</span>
+        <span class="tag accent">대중 가격대 점유</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-3" style="margin-top: 18px;">
+    <div class="card soft">
+      <h4>모모스커피 (부산)</h4>
+      <p style="font-size:12px;">2019 WBC 챔피언 전주연 본점. MOMOS flavored sugar (오렌지·얼그레이) 시그니처. 부산 = 스페셜티 도시 인식 형성.</p>
+    </div>
+    <div class="card soft">
+      <h4>웨이브온 (기장)</h4>
+      <p style="font-size:12px;">동해 바다 뷰. 부산 = 바다 = 카페 인스타 자산 강화 사례.</p>
+    </div>
+    <div class="card soft">
+      <h4>하이오커피 (부산)</h4>
+      <p style="font-size:12px;">바다 소금 라떼 운영 — 솔티드 = 부산 컨셉의 또 다른 검증 사례.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 05. 솔티드 = Swavory 트렌드 -->
+<section class="slide">
+  <div class="slide-num">05 / 15</div>
+  <div class="kicker">SWAVORY — SWEET + SAVORY</div>
+  <h2>솔티드는 "단짠"의 미국 카페판이다</h2>
+  <p class="lead">2026 미국 카페 트렌드 매체가 가장 많이 언급한 키워드 = <strong>Swavory</strong>. 미소 라떼·솔티드·솔티드 피스타치오·심지어 스프링 어니언 라떼까지 — "달콤하고 짭짤한" 흐름이 메인 라떼 영역으로 진입했다.</p>
+
+  <div class="grid-2" style="margin-top: 16px;">
+    <div>
+      <h4>미국 카페 미소 라떼 사례</h4>
+      <div class="card soft" style="margin-bottom: 10px;">
+        <h3 style="font-size:14px;">Studio 24 Coffee — Miami</h3>
+        <p style="font-size:12.5px;">미소 카라멜 라떼 + <strong>참기름</strong>. 짭짤·고소·달콤이 한 잔에.</p>
+      </div>
+      <div class="card soft">
+        <h3 style="font-size:14px;">Babaloo Coffee Club — Charlotte, NC</h3>
+        <p style="font-size:12.5px;">미소 라떼 + <strong>브라운 버터</strong>. 너티·쏠티의 결합.</p>
+      </div>
+      <span class="src">Spatula Desserts / Yahoo Lifestyle 2026</span>
+    </div>
+    <div>
+      <h4>피스타치오 — 메가 트렌드 합류</h4>
+      <div class="card outline">
+        <ul class="bullets">
+          <li><strong>스타벅스 2026 윈터 신메뉴 9개 중 7개에 피스타치오</strong></li>
+          <li>피스타치오 = 한정 → 연중 정규 메뉴로 격상</li>
+          <li>Peet's <strong>Pistachio Rose Latte</strong> + 비건 Táche 피스타치오 밀크</li>
+          <li>표현: "salted brown-buttery topping" — 솔티드와 같은 향미 가족</li>
+        </ul>
+        <span class="src">Starbucks Stories / Parade 2026.01 / PR Newswire 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top: 16px;">
+    <strong>Technomic이 꼽은 swavory 핵심 식자재 3개:</strong> Miso · Tahini · Mole. 한국·일본·아시아의 발효·지역 식자재가 라떼 메인으로 진입하는 시대 — 댄싱컵 솔티드는 이 흐름의 한 가닥.
+  </div>
+</section>
+
+<!-- 06. 너티 라떼 트렌드 -->
+<section class="slide">
+  <div class="slide-num">06 / 15</div>
+  <div class="kicker">NUTTY LATTE — JAPAN · USA</div>
+  <h2>너티는 안정 진입로다 — 글로벌 카페가 동시에 밀고 있다</h2>
+
+  <div class="grid-2" style="margin-top: 16px;">
+    <div>
+      <figure class="slide-img-fig">
+        <img class="slide-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Pistachio_vera.jpg/600px-Pistachio_vera.jpg" alt="피스타치오 견과 - 너티 베이스">
+        <figcaption>너티 베이스 — 스타벅스 일본 2026 봄 신메뉴 Choux Cream Latte도 동일한 너티/커스터드 결. 아몬드 밀크 너티 향이 표준 커스텀. 출처: Wikimedia Commons</figcaption>
+      </figure>
+      <h4>스타벅스 일본 — 2026 봄 신메뉴</h4>
+      <ul class="bullets">
+        <li>2026.03.13 출시: <strong>Choux Cream Latte / Choux Cream Frappuccino</strong></li>
+        <li>"슈크림 페이스트리에 너트 토핑한" 향미 = 너티 + 커스터드</li>
+        <li>아몬드 밀크 옵션 = "너티 향이 더해져 luxurious" — 일본 매장 표준 커스텀</li>
+      </ul>
+      <span class="src">Holiday Travel / Fun-Japan 2026.03</span>
+    </div>
+    <div>
+      <figure class="slide-img-fig">
+        <img class="slide-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Cezerye_with_pistachio_nuts.jpg/600px-Cezerye_with_pistachio_nuts.jpg" alt="피스타치오 디저트 (Cezerye)">
+        <figcaption>피스타치오 디저트 — 스타벅스 2026 윈터 9개 신메뉴 중 7개에 피스타치오. "salted brown-buttery topping"으로 솔티드와 같은 향미 가족. 출처: Wikimedia Commons</figcaption>
+      </figure>
+      <h4>스타벅스 미국 — 피스타치오 메가 라인업</h4>
+      <ul class="bullets">
+        <li>2026 윈터 신메뉴 9개 중 7개 피스타치오</li>
+        <li>"sweet pistachio sauce + espresso + milk + <strong>salted brown-buttery topping</strong>"</li>
+        <li>2026부터 연중 메뉴로 격상 (한정 → 정규)</li>
+      </ul>
+      <span class="src">about.starbucks.com / Chowhound 2026</span>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top: 14px;">
+    <strong>댄싱컵 너티(아몬드)의 의미:</strong> 너티는 시그니처라기보다 <em>"라인업 안정시키는 진입로"</em>. 스타벅스가 일본·미국 둘 다 너티 베이스로 신메뉴를 미는 이유 = 거부감 낮고 친숙해서 새 라인 도입에 유리. 댄싱컵 너티도 동일 역할 — <strong>솔티드의 거부감 있는 고객을 흡수</strong>.
+  </div>
+</section>
+
+<!-- 07. 시즈널 후보 풀 -->
+<section class="slide">
+  <div class="slide-num">07 / 15</div>
+  <div class="kicker">SEASONAL CANDIDATES — BEYOND OUR 3</div>
+  <h2>3종 외에도 — 시즈널로 차용 가능한 글로벌 트렌드 5</h2>
+  <p class="lead">댄싱컵은 정규 3종 + 시즈널 확장 모델. 아래 5개는 2026 미국·일본·한국 카페가 실제로 운영 중인 메가 트렌드 — 시즈널 후보 풀로 보유.</p>
+
+  <div class="grid-2" style="margin-top: 16px;">
+    <div class="card">
+      <figure class="slide-img-fig">
+        <img class="slide-img short" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Ube_halaya%2C_Filipino_dessert.jpg/600px-Ube_halaya%2C_Filipino_dessert.jpg" alt="Ube halaya 필리핀 보라 얌 디저트">
+        <figcaption>Ube halaya — 필리핀 보라 얌 디저트. 보라색 비주얼이 인스타·틱톡 강력. 출처: Wikimedia Commons</figcaption>
+      </figure>
+      <h3>① Ube (우베) — 2026 #1</h3>
+      <ul class="bullets">
+        <li>스타벅스 라인업 4종: Iced Coconut / Espresso Martini / Matcha / Vanilla Macchiato</li>
+        <li>한국: <strong>A Twosome Place·Cafe Knotted 2026 봄 우베 라인업</strong></li>
+        <li>"low barrier flavor + visually stunning" — 보라색 비주얼 = 인스타·틱톡 강력</li>
+        <li>댄싱컵 시즈널 후보: <strong>봄 한정 우베 딥라떼</strong> 검토</li>
+      </ul>
+      <span class="src">CNBC / Korea Times / SCMP 2026.04</span>
+    </div>
+    <div class="card">
+      <figure class="slide-img-fig">
+        <img class="slide-img short" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Matcha_tea_latte_with_rosetta_latte_art.jpg/600px-Matcha_tea_latte_with_rosetta_latte_art.jpg" alt="Matcha latte with rosetta art">
+        <figcaption>Matcha latte with rosetta art — 글로벌 #matcha 1,020만 인스타 포스트. 출처: Wikimedia Commons</figcaption>
+      </figure>
+      <h3>② Matcha — 글로벌 1.7배 시장</h3>
+      <ul class="bullets">
+        <li>USD 4.47B (2025) → 7.74B (2033)</li>
+        <li>한국: 서울 카페가 "혁신적 매트차 변주" 2026 키워드</li>
+        <li>일본 공급 부족 + 미국 관세 15% = 가격 압박</li>
+        <li>댄싱컵 시즈널 후보: <strong>여름 매트차 딥라떼</strong> (솔티드 부담 고객용)</li>
+      </ul>
+      <span class="src">Market Data Forecast / Korea Herald 2026</span>
+    </div>
+    <div class="card">
+      <figure class="slide-img-fig">
+        <img class="slide-img short" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Black_sesame.jpg/600px-Black_sesame.jpg" alt="흑임자 Black sesame seeds">
+        <figcaption>Black sesame — 한국 식자재의 글로벌 인지 신호 (국립박물관 외국인 인기 1위 시그니처). 출처: Wikimedia Commons</figcaption>
+      </figure>
+      <h3>③ Black Sesame (흑임자)</h3>
+      <ul class="bullets">
+        <li>국립박물관 에디야 — <strong>외국인 인기 1위 시그니처</strong></li>
+        <li>"caffeine-free + nutty + slightly sweet" — 진입 장벽 낮음</li>
+        <li>한국 식자재의 글로벌 인지 확장 신호</li>
+        <li>댄싱컵 시즈널 후보: <strong>가을 흑임자 딥라떼</strong> (메이플과 둘 중 하나)</li>
+      </ul>
+      <span class="src">Seoul Economic Daily 2026.04 / VisitKorea</span>
+    </div>
+    <div class="card">
+      <figure class="slide-img-fig">
+        <img class="slide-img short" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Dubai-Schokolade-Riegel-Angeschnitten.jpg/600px-Dubai-Schokolade-Riegel-Angeschnitten.jpg" alt="Dubai Chocolate with pistachio">
+        <figcaption>Dubai Chocolate with pistachio filling — 2024-26 글로벌 메가 트렌드. 피스타치오 메뉴 격상 동인. 출처: Wikimedia Commons</figcaption>
+      </figure>
+      <h3>④ Pistachio (피스타치오)</h3>
+      <ul class="bullets">
+        <li>스타벅스 정규화 + Peet's 비건 라인</li>
+        <li>너티의 상위 진입 옵션</li>
+        <li>댄싱컵 시즈널 후보: <strong>겨울 피스타치오 딥라떼</strong> (너티 시리즈 확장)</li>
+      </ul>
+      <span class="src">Starbucks Stories 2026 / Parade</span>
+    </div>
+  </div>
+
+  <div class="card soft" style="margin-top: 16px;">
+    <h4>⑤ Functional / Adaptogen — 관찰만 (도입 시기 상조)</h4>
+    <p style="font-size:13px;">Lion's Mane·Reishi 같은 어댑토젠, Protein-infused foam은 미국 스페셜티 영역에서만 활성화. 한국 대중 가격대에는 시기 상조 — <strong>관찰 항목</strong>으로 두고, 2027년 이후 재검토.</p>
+    <span class="src">Java City 2026 / Coffee Lovers 2026</span>
+  </div>
+</section>
+
+<!-- 08. 시그니처 = 도시 정체성 1: % Arabica -->
+<section class="slide">
+  <div class="slide-num">08 / 15</div>
+  <div class="kicker">CASE STUDY ① — % ARABICA · KYOTO LATTE</div>
+  <h2>"Kyoto Latte" — 한 도시의 이름이 한 메뉴가 된 사례</h2>
+
+  <div class="grid-2" style="margin-top: 18px;">
+    <div>
+      <figure class="slide-img-fig">
+        <img class="slide-img tall" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/%25_Arabica_Kyoto_Higashiyama_by_Takumi_Ota.jpg/600px-%25_Arabica_Kyoto_Higashiyama_by_Takumi_Ota.jpg" alt="% Arabica Kyoto Higashiyama 매장">
+        <figcaption>% Arabica Kyoto Higashiyama — "Kyoto Latte"의 본거지. 미니멀 디자인이 도시 정체성을 시각화. 출처: Wikimedia Commons / Takumi Ota</figcaption>
+      </figure>
+      <ul class="bullets">
+        <li>Espresso + 스팀밀크 + <strong>콘덴스드 밀크 한 줄</strong> = "Kyoto Latte"</li>
+        <li>야마구치 준이치 (라떼 아트 세계 챔피언) 헤드 바리스타</li>
+        <li>2014 Higashiyama 1호점 → 글로벌 60+ 매장</li>
+        <li><strong>기업가치 약 1.3 Billion USD</strong></li>
+      </ul>
+      <span class="src">Wikipedia / New Ground / Confetti Decoded 2023</span>
+    </div>
+    <div>
+      <h4>댄싱컵 시사점</h4>
+      <div class="callout">
+        <strong>"Kyoto Latte"의 핵심:</strong><br>
+        ① 재료가 아니라 도시 이름이 메뉴명<br>
+        ② 미니멀 디자인이 도시(교토) 정체성을 시각화<br>
+        ③ 일본 외에도 "교토에서 온 라떼"로 글로벌 통용
+      </div>
+      <p style="font-size:13px;margin-top:12px;">→ 댄싱컵 = "<strong>부산 딥라떼</strong>"가 같은 패턴으로 작동 가능. 도시 이름 + 메뉴 = 정체성 응축. % Arabica가 일본에서 한 일을, 댄싱컵이 한국 대중 가격대에서 시도하는 구조.</p>
+      <div style="margin-top: 12px;">
+        <span class="tag">도시 = 메뉴명</span>
+        <span class="tag">미니멀 디자인</span>
+        <span class="tag accent">우리가 참고할 모델</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 09. 시그니처 = 도시 정체성 2: Blue Bottle NOLA -->
+<section class="slide">
+  <div class="slide-num">09 / 15</div>
+  <div class="kicker">CASE STUDY ② — BLUE BOTTLE · NOLA</div>
+  <h2>한 도시의 마시는 방식을 한 잔으로 압축한 사례</h2>
+
+  <div class="grid-2" style="margin-top: 18px;">
+    <div>
+      <figure class="slide-img-fig">
+        <img class="slide-img tall" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Blue_Bottle_Coffee_Company.jpg/600px-Blue_Bottle_Coffee_Company.jpg" alt="Blue Bottle Coffee 본사 (Oakland)">
+        <figcaption>Blue Bottle Coffee 오클랜드 본사 — 2005년 NOLA(New Orleans-Style Iced Coffee) 시그니처가 출발한 브랜드. 도시 어태치 모범 사례. 출처: Wikimedia Commons</figcaption>
+      </figure>
+      <ul class="bullets">
+        <li>2005년 James Freeman이 샌프란시스코 파머스 마켓에서 시작</li>
+        <li>뉴올리언스 전통의 <strong>치커리 + 우유 + 설탕</strong> 음용 방식 차용</li>
+        <li><strong>연간 300만잔 판매</strong> (미국·아시아 매장 합계)</li>
+        <li>NOLA Cola·NOLA Shakeratos·NOLA Floats·Hot NOLA 등 확장</li>
+        <li>2024 NOLA Craft Instant Coffee Blend로 RTD 진출</li>
+      </ul>
+      <span class="src">PR Newswire 2024.07 / LAist / BevNET</span>
+    </div>
+    <div>
+      <h4>댄싱컵 시사점</h4>
+      <div class="callout">
+        <strong>NOLA의 핵심:</strong><br>
+        ① "도시 이름"이 메뉴명 (New Orleans → NOLA)<br>
+        ② 도시의 <em>실제 음용 방식</em>을 차용 (치커리 전통)<br>
+        ③ 시그니처 한 메뉴를 RTD·확장 메뉴까지 끌고 옴
+      </div>
+      <p style="font-size:13px;margin-top:12px;">→ 댄싱컵 = "부산 딥라떼"가 같은 구조. <strong>부산의 실제 음용 자산(바다·짠 풍미)</strong>을 솔티드로 압축. 시즈널·페어링·컵 디자인까지 "부산 딥라떼" 어휘 하나로 묶기.</p>
+      <p style="font-size:13px;margin-top:8px;color:var(--accent);"><strong>차이점:</strong> Blue Bottle은 스페셜티(중고가), 댄싱컵은 대중가. → 가격대만 다를 뿐 "도시 = 시그니처" 구조는 동일하게 차용 가능.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 10. 시그니처 = 도시 정체성 3: Komeda Shiro-Noir -->
+<section class="slide">
+  <div class="slide-num">10 / 15</div>
+  <div class="kicker">CASE STUDY ③ — KOMEDA · SHIRO-NOIR</div>
+  <h2>나고야의 대중 카페가 한 메뉴로 940개 매장이 된 사례</h2>
+
+  <div class="grid-2" style="margin-top: 18px;">
+    <div>
+      <figure class="slide-img-fig">
+        <img class="slide-img tall" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Komeda_coffe_Aoi_store.JPG/600px-Komeda_coffe_Aoi_store.JPG" alt="Komeda Coffee 아오이점 외관">
+        <figcaption>Komeda Coffee 아오이점 — 1968년 나고야 1호점 출발 → 일본 940개 매장. Shiro-Noir 시그니처 + 나고야 모닝 서비스 어태치 = 댄싱컵에 가장 가까운 모델. 출처: Wikimedia Commons</figcaption>
+      </figure>
+      <ul class="bullets">
+        <li>1968년 Taro Kato가 나고야에 1호점 (가족 쌀가게 "Komeda" → 카페로 전환)</li>
+        <li>시그니처 <strong>Shiro-Noir</strong> = "Shiro(白·하양)" + "Noir(불어 검정)" — 데니쉬 위에 소프트 아이스크림</li>
+        <li>현재 일본 940 매장 + 해외 30+ 매장 (대만·인도네시아·상하이)</li>
+        <li>나고야 "모닝 서비스" 문화 어태치 — 토스트 무료 모닝 11시까지</li>
+      </ul>
+      <span class="src">Wikipedia / Deep Japan / Holiday Golightly</span>
+    </div>
+    <div>
+      <h4>댄싱컵 시사점 — 대중 카페 모델</h4>
+      <div class="callout">
+        <strong>Komeda의 핵심:</strong><br>
+        ① 스페셜티가 아니라 <em>대중 가격대</em>에서 도시 정체성 어태치<br>
+        ② 한 도시(나고야) 자산을 메뉴·운영·시간대까지 통합<br>
+        ③ 시그니처 한 메뉴(Shiro-Noir)를 모든 매장에서 동일하게
+      </div>
+      <p style="font-size:13px;margin-top:12px;">→ 댄싱컵 가장 가까운 모델 = % Arabica·Blue Bottle보다 <strong>Komeda</strong>. 가격대·매장 수(130개) 구조가 비슷. 부산 자산을 "부산 딥라떼"로 압축하고 130개 매장 표준화 = Komeda의 한국판 가능성.</p>
+      <div style="margin-top: 12px;">
+        <span class="tag">대중 가격대</span>
+        <span class="tag">도시 어태치</span>
+        <span class="tag accent">댄싱컵 닮은꼴</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11. 키워드 점유 위협 -->
+<section class="slide">
+  <div class="slide-num">11 / 15</div>
+  <div class="kicker">KEYWORD COMPETITION — 위협과 차별</div>
+  <h2>"딥라떼"는 우지커피가 4년 먼저 점유했다 — 그래서 "부산"이 필요하다</h2>
+
+  <div class="grid-2" style="margin-top: 16px;">
+    <div class="card">
+      <h3>우지커피 — "딥카페라떼" 누적 600만잔</h3>
+      <ul class="bullets">
+        <li><strong>2022.01 출시 → 4년 4개월 누적 600만잔 돌파</strong> (2026.04 기준)</li>
+        <li>특별 로스팅 + 원유 = "균형 잡힌 진한 라떼" 포지션</li>
+        <li>네이버 "딥라떼" 검색 시 우지커피 블로그 콘텐츠 점유</li>
+        <li>또 다른 시그니처: 피넛크림라떼</li>
+        <li>2025-2026 K-식문화 확장: <strong>송파라떼·서울 플로트·깻페라떼</strong> — 도시 어태치 시도 중</li>
+      </ul>
+      <span class="src">우지커피 공식 / 디지털타임스 2026</span>
+    </div>
+    <div class="card accent">
+      <h3 style="color:#fff;">댄싱컵의 차별 키워드 = "부산"</h3>
+      <p style="font-size:13.5px;color:#fff;line-height:1.7;">우지가 "딥라떼" 본진을 먼저 차지했다면, 댄싱컵은 "<strong>부산 딥라떼</strong>"라는 새 키워드를 만든다. <em>같은 카테고리 안의 다른 진입점</em>.</p>
+      <p style="font-size:13px;color:#fff;margin-top:10px;line-height:1.6;">우지의 K-식문화 어휘(송파·서울·깻페)가 <strong>서울 중심</strong>이라는 점도 댄싱컵에 유리. "부산 딥라떼"는 비어 있는 도시 슬롯이다.</p>
+      <div style="margin-top: 12px;">
+        <span class="tag" style="background:#fff;color:var(--accent);">차별 키워드</span>
+        <span class="tag" style="background:#fff;color:var(--accent);">비어있는 슬롯</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card soft" style="margin-top: 14px;">
+    <h4>참고 — 텐퍼센트 꾸덕라떼 패턴</h4>
+    <p style="font-size:13px;">시그니처 라떼 4,500원 + 다크샷 500원 + 텐크림 500원 = <strong>5,000원 "꾸덕라떼"</strong>. 사용자 발화에서 시작된 조합이 브랜드 시그니처화. 라떼류 14oz로 컵 사이즈 축소. → 댄싱컵 솔티드도 사용자 발화·UGC 생성을 메뉴 운영 단계에서 설계 가능.</p>
+    <span class="src">텐퍼센트커피 공식 / 데일리시큐 2026</span>
+  </div>
+</section>
+
+<!-- 12. 일본 시즈널 운영 -->
+<section class="slide">
+  <div class="slide-num">12 / 15</div>
+  <div class="kicker">JAPAN SEASONAL OPERATION MODEL</div>
+  <h2>일본 카페가 시즈널을 운영하는 방식 = 댄싱컵 1년 플랜의 베이스</h2>
+  <p class="lead">스타벅스 재팬·코메다·도토루 — 시즈널 회전이 일본 카페의 핵심 자산. 댄싱컵 1년 플랜의 작업 베이스.</p>
+
+  <div class="grid-2" style="margin-top: 16px;">
+    <div>
+      <h4>스타벅스 재팬 — 시즌 한정의 정석</h4>
+      <ul class="bullets">
+        <li>시즌별 메뉴가 <strong>거의 안 겹친다</strong> — "내년 같은 달에 또 안 나올 수도"</li>
+        <li>사쿠라 (3-4월) → 여름 (6-8월) → 할로윈 (10월) → 크리스마스 (11-12월)</li>
+        <li>희소성·긴급성이 매장 방문 빈도를 만든다 ("지금 안 사면 못 산다")</li>
+        <li>일본 문화의 시즈널 감수성 + 마케팅 조합</li>
+      </ul>
+      <span class="src">Sparkholyoke 2023 / Japan Truly 2026</span>
+    </div>
+    <div>
+      <h4>코메다 — 940 매장 표준화 운영</h4>
+      <ul class="bullets">
+        <li>시그니처 Shiro-Noir 1년 상시 + 시즈널 한정 (Tokyo Banana 등)</li>
+        <li>모닝 시즈널 (시즌 키위 잼 등) — 같은 메뉴의 시즈널 변주</li>
+        <li>대중 가격대에서 시즈널 운영 = 댄싱컵에 가장 가까운 참고 모델</li>
+      </ul>
+      <span class="src">Komeda Coffee Wikipedia / Entabe</span>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top: 16px;">
+    <strong>댄싱컵 1년 플랜에 적용:</strong><br>
+    ① <strong>오리지널 = 1년 상시</strong> (Komeda Shiro-Noir 패턴)<br>
+    ② <strong>너티·솔티드 = 정규 라인 + 메인 시즌별 푸쉬</strong> (솔티드 = 여름 메인, 너티 = 사계절 안정)<br>
+    ③ <strong>시즈널 한정 = 분기별 1-2종</strong> (스타벅스 재팬 패턴) — 봄 우베·가을 흑임자/메이플·겨울 피스타치오·여름 매트차 후보 풀
+  </div>
+</section>
+
+<!-- 13. 컵 디자인·라떼아트 트렌드 -->
+<section class="slide">
+  <div class="slide-num">13 / 15</div>
+  <div class="kicker">CUP DESIGN · LATTE ART VIRAL TREND</div>
+  <h2>2026 컵·라떼 비주얼 = 마블링·3D 폼·QR 폼 프린트</h2>
+
+  <div class="grid-3" style="margin-top: 16px;">
+    <div class="card">
+      <figure class="slide-img-fig">
+        <img class="slide-img short" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Latte_swirl.jpg/600px-Latte_swirl.jpg" alt="라떼 아트 swirl 마블링 패턴">
+        <figcaption>마블링·swirl 라떼 아트. 출처: Wikimedia Commons</figcaption>
+      </figure>
+      <h4>① 마블링 (Swirl Technique)</h4>
+      <p style="font-size:12.5px;">레인보우 라떼 아트 + swirl로 마블링 패턴. 색상이 organic하게 흐르는 비주얼 = 인스타·틱톡 강력. 댄싱컵 4/29 합의된 "마블링 컵" 컨셉과 정확히 일치.</p>
+      <span class="src">Reforma / Moron Cafe 2025-26</span>
+    </div>
+    <div class="card">
+      <figure class="slide-img-fig">
+        <img class="slide-img short" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Latte_art.jpg/600px-Latte_art.jpg" alt="라떼 아트 - 폼 조각">
+        <figcaption>라떼 폼 아트. 2025-26 3D 폼이 메가 트렌드. 출처: Wikimedia Commons</figcaption>
+      </figure>
+      <h4>② 3D 폼 조각</h4>
+      <p style="font-size:12.5px;">우유 폼으로 만든 테디베어·고양이 — 2025-2026 가장 바이럴된 라떼 아트. 댄싱컵 솔티드·너티 시즈널 캠페인 시 적용 검토 가능.</p>
+      <span class="src">Tasting Table NYC / Latte Art Guide IG</span>
+    </div>
+    <div class="card">
+      <figure class="slide-img-fig">
+        <img class="slide-img short" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Latte_swirl2.jpg/600px-Latte_swirl2.jpg" alt="라떼 아트 swirl 2">
+        <figcaption>라떼 폼 = 콘텐츠 인터페이스. QR 폼 프린트는 같은 흐름의 기술 응용. 출처: Wikimedia Commons</figcaption>
+      </figure>
+      <h4>③ QR 사진 폼 프린트</h4>
+      <p style="font-size:12.5px;">손님이 QR 스캔 → 사진 업로드 → 라떼 폼에 프린트. 더블월 컵 + 사진 라떼 = 현장 UGC 자동 생성. 한정 이벤트로 검토.</p>
+      <span class="src">Cafe Marketing Trends 2026</span>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top: 16px;">
+    <strong>댄싱컵 컵 디자인 적용:</strong> 4/29 합의된 "마블링 컵 + 시진핑컵 부활"은 글로벌 메가 트렌드의 정확한 합류점이다. 컵 자체가 콘텐츠 = 콘텐츠 제작 비용 ↓ + 손님 자발 UGC ↑. 메뉴별 마블링 컬러(오리지널·너티·솔티드)는 인스타 그리드 시각화에도 강력.
+  </div>
+</section>
+
+<!-- 14. 스태프 콘텐츠 (TikTok) -->
+<section class="slide">
+  <div class="slide-num">14 / 15</div>
+  <div class="kicker">STAFF CONTENT · TIKTOK</div>
+  <h2>알바생 콘텐츠 = 미국·한국이 동시 검증한 자산</h2>
+
+  <div class="grid-2" style="margin-top: 16px;">
+    <div>
+      <h4>미국 데이터</h4>
+      <div class="card outline">
+        <p style="font-size:13px;"><span class="stat-num">51.8M</span><span class="stat-label">미국 TikTok food fan user 수 — 새 매장을 숏폼으로 발견</span></p>
+        <p style="font-size:13px;margin-top:14px;"><span class="stat-num">39%</span><span class="stat-label">B2C 브랜드의 TikTok 마케팅 활용률 (2026)</span></p>
+        <p style="font-size:13px;margin-top:14px;"><span class="stat-num">50%+</span><span class="stat-label">미국 카페 손님이 인스타·TikTok 영향으로 매장 선택</span></p>
+      </div>
+      <span class="src">TryPerdiem / GoTab / Bloom Intelligence 2026</span>
+    </div>
+    <div>
+      <h4>효과적 콘텐츠 4가지</h4>
+      <ul class="bullets">
+        <li><strong>Behind-the-scenes</strong> — 알바·바리스타가 시그니처 만드는 과정</li>
+        <li><strong>Barista 일상 (a day in the life)</strong> — 신뢰·인격 부여, "사람" 보여주기</li>
+        <li><strong>Product showcase</strong> — 라떼 아트 등 즉각 시각 임팩트, 가장 안정적</li>
+        <li><strong>UGC 해시태그</strong> — 매장 자체 해시태그로 손님 콘텐츠 트래킹·재배포</li>
+      </ul>
+      <div class="callout" style="margin-top:14px;">
+        <strong>댄싱컵 적용:</strong> 4/29 결정한 "알바생 5집 앰버서더" 모델은 <strong>글로벌 검증된 패턴의 한국판</strong>. 미국 TikTok 51.8M food user 데이터가 한국 인스타 릴스에서도 동일 작동.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 15. 댄싱컵 적용 정리 -->
+<section class="slide dark">
+  <div class="slide-num">15 / 15</div>
+  <div class="kicker">SO WHAT — 댄싱컵 적용 정리</div>
+  <h2 style="color:var(--paper);">7가지 시사점 — 5/11 미팅 요약 카드</h2>
+
+  <div class="grid-2" style="margin-top: 18px;">
+    <div>
+      <table class="tr" style="background:transparent;color:var(--paper);">
+        <tr><th style="background:var(--accent);color:#fff;">시사점</th><th style="background:var(--accent);color:#fff;">근거</th></tr>
+        <tr><td style="color:var(--paper);border-color:#3a3a3a;"><strong>① 솔티드 = 정확한 타이밍</strong></td><td style="color:var(--accent-soft);border-color:#3a3a3a;">베트남 ca phe muoi 글로벌 + 미국 swavory + 부산 블랙업 사례</td></tr>
+        <tr><td style="color:var(--paper);border-color:#3a3a3a;"><strong>② 너티 = 안정 진입</strong></td><td style="color:var(--accent-soft);border-color:#3a3a3a;">스타벅스 일본 2026 봄 + 미국 피스타치오 메가 라인업</td></tr>
+        <tr><td style="color:var(--paper);border-color:#3a3a3a;"><strong>③ 부산 = 비어있는 도시 슬롯</strong></td><td style="color:var(--accent-soft);border-color:#3a3a3a;">우지커피 K-식문화는 서울 중심, 부산 슬롯 비어있음</td></tr>
+        <tr><td style="color:var(--paper);border-color:#3a3a3a;"><strong>④ Komeda 모델 = 우리 모델</strong></td><td style="color:var(--accent-soft);border-color:#3a3a3a;">대중 가격대 + 시그니처 + 130개 표준화 = 가장 가까운 참고</td></tr>
+        <tr><td style="color:var(--paper);border-color:#3a3a3a;"><strong>⑤ 시즈널 = 일본 모델</strong></td><td style="color:var(--accent-soft);border-color:#3a3a3a;">스타벅스 재팬·코메다 회전 운영 → 분기별 1-2종</td></tr>
+        <tr><td style="color:var(--paper);border-color:#3a3a3a;"><strong>⑥ 마블링 컵 = 글로벌 합류</strong></td><td style="color:var(--accent-soft);border-color:#3a3a3a;">2026 swirl·3D foam·QR 폼 트렌드와 정확히 합치</td></tr>
+        <tr><td style="color:var(--paper);border-color:#3a3a3a;"><strong>⑦ 알바 콘텐츠 = 검증 패턴</strong></td><td style="color:var(--accent-soft);border-color:#3a3a3a;">미국 TikTok 51.8M food user + 메가커피 사례</td></tr>
+      </table>
+    </div>
+    <div>
+      <h4 style="color:var(--accent-soft);">5/11 미팅 발표 동선</h4>
+      <ul class="bullets" style="color:var(--paper);">
+        <li style="color:var(--paper);">한 줄 결론 (S01) → 매크로 트렌드 (S02)</li>
+        <li style="color:var(--paper);">솔티드 글로벌 (S03) → 부산 검증 (S04) → swavory 합류 (S05)</li>
+        <li style="color:var(--paper);">너티 (S06) → 시즈널 후보 풀 (S07)</li>
+        <li style="color:var(--paper);">도시 어태치 3사 (S08-10) — 핵심 슬라이드</li>
+        <li style="color:var(--paper);">우지커피 위협 + "부산" 차별 (S11)</li>
+        <li style="color:var(--paper);">시즈널 운영 (S12) → 컵·콘텐츠 (S13-14)</li>
+        <li style="color:var(--paper);">정리 (S15)</li>
+      </ul>
+      <div class="callout" style="background:#2a2a2a;border-color:var(--accent-soft);margin-top:16px;">
+        <strong style="color:var(--accent-soft);">다음 보강 (v2 예정 — 5/2):</strong><br>
+        <span style="color:var(--paper);font-size:13px;">① "부산 딥라떼"·"솔티드 라떼" 검색량 (네이버 검색광고 API) ② #부산카페·#부산라떼 인스타 발화 풀 ③ 블랙업·모모스·하이오 SNS 언급량 ④ 텐퍼센트·우지커피 직접 사진·이미지 출처</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+</body>
+</html>
