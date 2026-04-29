@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>댄싱컵 — 딥라떼 부산 앵글 의견서 v2</title>
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --ink-2: #3a3a3a;
+    --paper: #fafaf7;
+    --cream: #f4efe5;
+    --cream-2: #ede7d8;
+    --accent: #6b2c2c;
+    --accent-soft: #b8856a;
+    --mute: #8a8a8a;
+    --line: #e2ddd2;
+    --hl: #fff8e7;
+    --pos: #4a6b3a;
+    --neg: #8b4545;
+    --neu: #6a6a6a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.55;
+    padding: 48px 20px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .deck { max-width: 1080px; margin: 0 auto; }
+
+  .slide {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 66px 72px;
+    margin-bottom: 28px;
+    min-height: 620px;
+    position: relative;
+  }
+  .slide.cover {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 110px 76px;
+    min-height: 560px;
+  }
+
+  .slide-num {
+    position: absolute;
+    top: 24px;
+    right: 30px;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--mute);
+    font-variant-numeric: tabular-nums;
+  }
+  .kicker {
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    font-weight: 600;
+  }
+  .cover .kicker { color: var(--accent-soft); }
+
+  h1 {
+    font-size: 46px;
+    line-height: 1.1;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    margin-bottom: 22px;
+  }
+  h2 {
+    font-size: 30px;
+    line-height: 1.25;
+    font-weight: 700;
+    margin-bottom: 22px;
+    letter-spacing: -0.02em;
+  }
+  h3 {
+    font-size: 15.5px;
+    font-weight: 700;
+    margin: 0 0 9px;
+    letter-spacing: -0.005em;
+  }
+  h4 {
+    font-size: 11.5px;
+    font-weight: 700;
+    margin: 26px 0 12px;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  p { margin-bottom: 11px; font-size: 14.5px; }
+  .lead {
+    font-size: 16px;
+    line-height: 1.75;
+    color: #2a2a2a;
+    margin-bottom: 26px;
+    max-width: 880px;
+  }
+  .cover p { color: #bbb; font-size: 16px; line-height: 1.6; }
+  .cover .meta { margin-top: 60px; font-size: 12px; color: #777; letter-spacing: 0.05em; }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 14px; }
+
+  .card {
+    background: var(--cream);
+    padding: 22px 24px;
+    border-radius: 4px;
+    border-left: 3px solid var(--accent);
+  }
+  .card.soft { background: #f7f4ee; border-left-color: var(--accent-soft); }
+  .card.dark { background: var(--ink); color: var(--paper); border-left-color: var(--accent-soft); }
+  .card h3 { font-size: 14.5px; margin-bottom: 10px; }
+  .card p { font-size: 13.5px; line-height: 1.65; margin-bottom: 7px; }
+  .card ul, .card ol { margin-left: 14px; margin-top: 6px; }
+  .card li { font-size: 13px; margin-bottom: 5px; line-height: 1.6; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin: 10px 0;
+  }
+  th {
+    background: var(--ink);
+    color: #fff;
+    text-align: left;
+    padding: 10px 14px;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+  }
+  td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+
+  .callout {
+    background: var(--hl);
+    padding: 18px 24px;
+    border-radius: 4px;
+    font-size: 14.5px;
+    line-height: 1.7;
+    margin: 18px 0;
+    border-left: 3px solid var(--accent);
+  }
+  .callout.dark {
+    background: var(--ink);
+    color: var(--paper);
+    border-left-color: var(--accent-soft);
+  }
+  .sub { color: var(--mute); font-size: 12px; line-height: 1.55; }
+  .src { font-size: 10.5px; color: var(--mute); letter-spacing: 0.02em; line-height: 1.55; }
+  .divider { height: 1px; background: var(--line); margin: 22px 0; }
+
+  ul.clean { list-style: none; margin: 0; padding: 0; }
+  ul.clean li {
+    padding-left: 14px;
+    position: relative;
+    margin-bottom: 6px;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  ul.clean li:before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+  }
+
+  /* === STAT BLOCK === */
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin: 12px 0 18px;
+  }
+  .stat-row.q4 { grid-template-columns: repeat(4, 1fr); }
+  .stat {
+    background: #fdfbf5;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 18px 18px 16px;
+  }
+  .stat .stat-num {
+    font-size: 34px;
+    font-weight: 800;
+    color: var(--accent);
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .stat .stat-num small { font-size: 15px; font-weight: 700; color: var(--accent-soft); margin-left: 2px; }
+  .stat .stat-label {
+    font-size: 12.5px;
+    color: var(--ink-2);
+    line-height: 1.5;
+    margin-bottom: 7px;
+    font-weight: 600;
+  }
+  .stat .stat-src {
+    font-size: 10.5px;
+    color: var(--mute);
+    letter-spacing: 0.02em;
+    line-height: 1.55;
+  }
+  .stat-row.q4 .stat .stat-num { font-size: 30px; }
+
+  /* === CASE GRID === */
+  .case-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    margin: 12px 0 16px;
+  }
+  .case-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .case-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    position: relative;
+    background: #2a2a2a;
+  }
+  .case-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .case-body { padding: 14px 17px 17px; }
+  .case-name { font-size: 15px; font-weight: 700; margin-bottom: 3px; letter-spacing: -0.01em; }
+  .case-tag { font-size: 10.5px; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 9px; }
+  .case-body p { font-size: 12.5px; line-height: 1.6; color: #2a2a2a; margin-bottom: 0; }
+
+  /* === VOICE CLOUD === */
+  .voice-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px 9px;
+    margin: 8px 0 16px;
+    align-items: baseline;
+  }
+  .voice-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12.5px;
+    line-height: 1.3;
+    background: #f2ece1;
+    color: var(--ink-2);
+  }
+  .voice-tag.lg { font-size: 16.5px; font-weight: 700; padding: 6px 14px; background: var(--cream-2); color: var(--ink); }
+  .voice-tag.md { font-size: 13.5px; font-weight: 600; padding: 5px 12px; }
+  .voice-tag.pos { background: #e4ecdf; color: var(--pos); }
+
+  .quote-box {
+    background: #fdfbf5;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent-soft);
+    padding: 12px 16px;
+    border-radius: 3px;
+    font-size: 13px;
+    line-height: 1.55;
+    margin-bottom: 9px;
+    color: #2a2a2a;
+  }
+  .quote-box .src {
+    font-size: 10.5px;
+    color: var(--mute);
+    letter-spacing: 0.02em;
+    margin-top: 5px;
+    display: block;
+  }
+
+  /* === BACKGROUND BOX === */
+  .bg-box {
+    background: #f7f4ee;
+    border-radius: 4px;
+    padding: 22px 26px;
+    margin: 14px 0 24px;
+    border-left: 3px solid var(--accent-soft);
+  }
+  .bg-box h4 { margin-top: 0; }
+  .bg-box p { font-size: 14.5px; line-height: 1.75; color: #2a2a2a; margin-bottom: 14px; }
+  .bg-box p:last-child { margin-bottom: 0; }
+
+  /* === KEY MESSAGE === */
+  .key-msg {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 22px 28px;
+    border-radius: 4px;
+    margin: 16px 0;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.45;
+    letter-spacing: -0.015em;
+  }
+  .key-msg em { color: var(--accent-soft); font-style: normal; }
+
+  /* === MOCKUP CARDS === */
+  .mockup-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin: 12px 0 16px;
+  }
+  .mockup {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .mockup-head {
+    background: #f7f4ee;
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .mockup-head .ch {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+  .mockup-head .axis {
+    font-size: 10.5px;
+    color: var(--mute);
+    letter-spacing: 0.05em;
+  }
+  .mockup-body { padding: 14px 16px 16px; flex: 1; }
+
+  .ig-post .ig-img {
+    aspect-ratio: 1/1;
+    background: #ede7d8;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  .ig-post .ig-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .ig-caption {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #2a2a2a;
+    margin-bottom: 8px;
+  }
+  .ig-caption strong { color: var(--ink); }
+  .ig-tags {
+    font-size: 12px;
+    color: #4a6080;
+    line-height: 1.55;
+  }
+
+  .reel-timeline { display: flex; flex-direction: column; gap: 8px; }
+  .reel-step {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 10px;
+    padding: 9px 0;
+    border-bottom: 1px dashed var(--line);
+  }
+  .reel-step:last-child { border-bottom: none; }
+  .reel-time {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.04em;
+    background: var(--cream);
+    padding: 4px 6px;
+    border-radius: 3px;
+    text-align: center;
+    height: fit-content;
+  }
+  .reel-content { font-size: 12.5px; line-height: 1.55; color: #2a2a2a; }
+  .reel-content .reel-label { font-size: 10.5px; color: var(--mute); letter-spacing: 0.05em; text-transform: uppercase; display: block; margin-bottom: 2px; }
+
+  .tweet {
+    background: #fdfbf5;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 11px 14px;
+    margin-bottom: 9px;
+  }
+  .tweet:last-child { margin-bottom: 0; }
+  .tweet .tweet-meta {
+    font-size: 10.5px;
+    color: var(--mute);
+    margin-bottom: 5px;
+    letter-spacing: 0.02em;
+  }
+  .tweet .tweet-text {
+    font-size: 12.5px;
+    line-height: 1.55;
+    color: #2a2a2a;
+  }
+
+  .sig-list { display: flex; flex-direction: column; gap: 8px; }
+  .sig-item {
+    border-left: 2px solid var(--accent-soft);
+    padding: 6px 0 6px 12px;
+  }
+  .sig-item .sig-where {
+    font-size: 10.5px;
+    color: var(--mute);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+  .sig-item .sig-text {
+    font-size: 12.5px;
+    line-height: 1.55;
+    color: #2a2a2a;
+    font-weight: 500;
+  }
+
+  /* === LAUNCH TIMELINE === */
+  .tl-head {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    margin-bottom: 6px;
+  }
+  .tl-day {
+    background: var(--cream);
+    color: var(--accent);
+    padding: 6px 4px;
+    text-align: center;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    border-radius: 3px;
+  }
+  .tl-day.dday { background: var(--ink); color: var(--accent-soft); }
+  .tl-row {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    margin-bottom: 4px;
+  }
+  .tl-cell {
+    background: #fdfbf5;
+    border: 1px solid var(--line);
+    padding: 9px 9px;
+    font-size: 11.5px;
+    line-height: 1.5;
+    border-radius: 3px;
+    color: #2a2a2a;
+    min-height: 80px;
+  }
+  .tl-cell .tl-tag {
+    display: block;
+    font-size: 9.5px;
+    color: var(--accent);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+    font-weight: 700;
+  }
+
+  /* === SEASONAL ROADMAP === */
+  .season-row {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 14px;
+    margin-bottom: 12px;
+    align-items: stretch;
+  }
+  .season-tag {
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 4px;
+    padding: 14px 16px;
+    text-align: center;
+  }
+  .season-tag .season-name {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--accent-soft);
+    letter-spacing: -0.01em;
+    margin-bottom: 3px;
+  }
+  .season-tag .season-when {
+    font-size: 11px;
+    color: #ccc;
+    letter-spacing: 0.05em;
+  }
+  .season-body {
+    background: #fdfbf5;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent-soft);
+    border-radius: 4px;
+    padding: 12px 16px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #2a2a2a;
+  }
+  .season-body strong { color: var(--ink); display: block; font-size: 12.5px; margin-bottom: 4px; }
+  .season-body .season-words {
+    margin-top: 6px;
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 12.5px;
+    letter-spacing: -0.005em;
+  }
+
+  /* === DECISION ASK === */
+  .ask-row {
+    display: grid;
+    grid-template-columns: 50px 1fr 130px;
+    gap: 14px;
+    align-items: center;
+    padding: 14px 18px;
+    background: #fdfbf5;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  .ask-row.dark {
+    background: var(--ink);
+    color: var(--paper);
+    border-left-color: var(--accent-soft);
+  }
+  .ask-num {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--accent);
+    letter-spacing: -0.02em;
+  }
+  .ask-row.dark .ask-num { color: var(--accent-soft); }
+  .ask-body strong { display: block; font-size: 14.5px; margin-bottom: 3px; }
+  .ask-body span { font-size: 12.5px; color: var(--ink-2); line-height: 1.55; }
+  .ask-row.dark .ask-body span { color: #ccc; }
+  .ask-tag {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 6px 10px;
+    border-radius: 3px;
+    font-size: 10.5px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .ask-tag.soft { background: var(--cream-2); color: var(--accent); }
+  .ask-row.dark .ask-tag { background: var(--accent-soft); color: var(--ink); }
+
+  @media print {
+    body { background: #fff; padding: 0; }
+    .slide { page-break-after: always; border: none; margin: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="deck">
+
+<!-- 01. COVER -->
+<section class="slide cover">
+  <div class="kicker">HIZ × DancingCup — 의견서 v2</div>
+  <h1>딥라떼,<br>어떤 서사로 끌어갈 것인가</h1>
+  <p>라떼 앵커 콘텐츠 방향 제안 — 부산 앵글 (4/29 자료 반영)</p>
+  <div class="meta">2026. 04. 29 · 미팅 자료 v2</div>
+</section>
+
+<!-- 02. 배경 + 우리 안 -->
+<section class="slide">
+  <div class="slide-num">02</div>
+  <div class="kicker">배경 · 제안</div>
+  <h2>지금 결정해야 할 것 —<br>딥라떼를 어떤 서사로 끌어갈 것인가</h2>
+
+  <div class="bg-box">
+    <p>
+      <strong>댄싱컵</strong>은 부산·경남권 약 130호점의 저가 커피 프랜차이즈다. 라떼 품질은 좋지만 "라떼 맛집"이라는 인지로 이어지지 않는 것이 핵심 진단(킥오프 미팅).
+      이 격차를 풀기 위해 댄싱컵의 라떼를 하나의 콘텐츠 축 — <strong>라떼 앵커</strong> — 으로 운영하기로 했고, 그 앵커 메뉴명은 <code style="background:#fff;padding:1px 6px;border-radius:2px;font-size:13px;border:1px solid var(--line)">딥라떼</code>로 확정되어 있다.
+    </p>
+    <p style="margin-top:10px">
+      이제 결정해야 할 것은 <strong>같은 메뉴를 어떤 서사·키워드·콘텐츠 어휘로 풀 것인가</strong>이다. 같은 라떼라도 어느 각도로 말하느냐에 따라 검색·바이럴·인지에서 전혀 다른 풀에 들어간다.
+    </p>
+    <p style="margin-top:10px">
+      여름 라인업이 4종 안팎으로 구성될 예정이고, 가을·겨울로 시즈널 확장 로드맵이 잡혀 있다 — 즉 *단발 메뉴 출시*가 아니라 *시즈널마다 어휘를 갱신할 수 있는 우산*이 필요하다. 한 번 정해서 1년을 끌고 갈 한 줄을 잡아야 한다.
+    </p>
+  </div>
+
+  <h4>HIZ 제안 — 한 줄</h4>
+  <div class="key-msg">
+    딥라떼를 <em>"부산에서 온 라떼 맛집"</em> 서사로 끌어간다.
+  </div>
+
+  <div class="grid-3" style="margin-top:18px">
+    <div class="card">
+      <h3>강도 — 출신지 어태치 (B)</h3>
+      <p>메뉴명·로고·패키지·가격·라인업 구성은 <strong>불변</strong>. 시그니처 카피·해시태그·매장 POP·콘텐츠 어휘만 부산화. 운영 전환 비용 ≈ 0.</p>
+      <p class="src" style="margin-top:6px">여름 4종, 가을·겨울 시즈널 확장 어떤 안과도 호환.</p>
+    </div>
+    <div class="card soft">
+      <h3>핵심 키워드</h3>
+      <p>
+        <span class="voice-tag md">#부산딥라떼</span>
+        <span class="voice-tag md">#부산라떼</span>
+        <span class="voice-tag">#부산카페추천</span>
+        <span class="voice-tag">#부산카페투어</span>
+        <span class="voice-tag">#부산동네카페</span>
+        <span class="voice-tag">#매일라떼</span>
+      </p>
+      <p class="src" style="margin-top:6px">"부산딥라떼"는 마케팅팀 키워드 후보에서도 동일 노선으로 등장 — 양 팀이 같은 자리를 보고 있다.</p>
+    </div>
+    <div class="card dark">
+      <h3 style="color:#fff">시그니처 카피 후보</h3>
+      <p style="color:#ddd">"부산에서 시작한, 매일 마시는 라떼"</p>
+      <p style="color:#ddd">"부산에서 왔습니다. 라떼는 자신있어요."</p>
+      <p style="color:#aaa;font-size:11.5px">— 매장 POP · 톤 가이드 v1과 함께 최종 선정</p>
+    </div>
+  </div>
+</section>
+
+<!-- 03. 왜 이 안인가 (근거) -->
+<section class="slide">
+  <div class="slide-num">03</div>
+  <div class="kicker">근거</div>
+  <h2>댄싱컵이 자연스럽게 가져갈 수 있는 자리</h2>
+  <p class="lead">
+    "부산"은 새로 만들어 붙이는 서사가 아니다. 댄싱컵이 <em>이미 갖고 있는 자산</em>이고, 한국 소비자가 이미 <em>쥐고 있는 검색 풀</em>이다. 우리가 하는 일은 두 자산을 연결하는 것뿐.
+  </p>
+
+  <div class="grid-3">
+    <div class="card">
+      <h3>① 자산 정합성 — 사실 진술</h3>
+      <p>댄싱컵은 부산·경남권에 약 130호점이 집중된 브랜드다. "부산에서 왔다"는 만들어낸 서사가 아니라 <strong>사실 진술</strong>. 진정성 비용 0.</p>
+    </div>
+    <div class="card">
+      <h3>② 검색 분리 — 우지 "딥라떼" 우회</h3>
+      <p>"딥라떼" 단독 검색은 우지커피가 점유한 풀과 겹친다. <strong>"부산"</strong>이라는 지역 수식어 하나로 결과가 분리되고, 댄싱컵만의 풀(<code style="font-size:12px">부산 딥라떼</code>)이 만들어진다.</p>
+    </div>
+    <div class="card">
+      <h3>③ 검증된 바이럴 훅 패턴</h3>
+      <p>"부산에서 온 ___" "부산 사람이 인정한 ___"은 SNS에서 작동이 검증된 훅. 동일 어법: <code style="font-size:12px">강릉에서 온 빵집</code> · <code style="font-size:12px">대구 납작만두</code> · <code style="font-size:12px">속초 닭강정</code>.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    "부산"은 우리가 새로 만드는 키워드가 아니다. <strong>이미 두꺼운 검색·콘텐츠 풀</strong>이 있고, 그 안에 댄싱컵이 진입할 자리를 만드는 작업이다. 이 자리가 얼마나 두터운지를, <strong>다음 두 슬라이드</strong>에서 정량적으로 보여드린다.
+  </div>
+</section>
+
+<!-- 04. 자산 ① 도시 인프라 -->
+<section class="slide">
+  <div class="slide-num">04</div>
+  <div class="kicker">자산 ① · 도시 인프라</div>
+  <h2>부산은 이미 한국의 커피 도시다</h2>
+  <p class="lead">
+    "부산이 카페 도시인가?"라는 질문에 대한 답은 *이미* 공공 데이터와 미디어 안에서 확정되어 있다. 댄싱컵은 <em>그 안</em>에 들어가는 것이다.
+  </p>
+
+  <h4>인프라 · 정량 자산</h4>
+  <div class="stat-row">
+    <div class="stat">
+      <div class="stat-num">92.5<small>%</small></div>
+      <div class="stat-label">한국 수입 커피 통관 점유율 (부산항)</div>
+      <div class="stat-src">관세청 2022 (17만 4천t) · 일반 인용 95%</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">2019<small>~</small></div>
+      <div class="stat-label">글로벌 영도커피페스티벌 매년 개최</div>
+      <div class="stat-src">2022 '글로벌' 격상 · 봉래나루로 600m 커피특화거리</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">시장<small> 공식</small></div>
+      <div class="stat-label">"글로벌 커피도시 부산" 정책 추진</div>
+      <div class="stat-src">박형준 시장 / 서부산권 커피 제조업 거점 발표</div>
+    </div>
+  </div>
+
+  <h4>전국 키워드를 잡은 부산 발 카페</h4>
+  <div class="case-grid">
+    <div class="case-card">
+      <div class="case-img"><img src="images/cases/momos.jpg" alt="모모스커피 영도 본점"></div>
+      <div class="case-body">
+        <div class="case-name">모모스커피</div>
+        <div class="case-tag">영도 본점 · 로스터리</div>
+        <p>한국인 최초 <strong>2019 World Barista Championship 우승</strong>(전주연 바리스타·공동대표). 영도 선착장 개조 본점은 부산 = 스페셜티 도시 인식의 출처.</p>
+      </div>
+    </div>
+    <div class="case-card">
+      <div class="case-img"><img src="images/cases/blackup.jpg" alt="블랙업커피 시그니처"></div>
+      <div class="case-body">
+        <div class="case-name">블랙업커피</div>
+        <div class="case-tag">서면 본점 · 을숙도점</div>
+        <p>"<strong>부산 대표 로스터리</strong>"로 미디어·블로그에서 일관 호명. 서면 분위기좋은 카페 ★4.3, 시그니처 "해수염 커피"로 부산 정체성을 메뉴화.</p>
+      </div>
+    </div>
+    <div class="case-card">
+      <div class="case-img"><img src="images/cases/waveon.jpg" alt="웨이브온 커피 기장 본점"></div>
+      <div class="case-body">
+        <div class="case-name">웨이브온커피</div>
+        <div class="case-tag">기장 장안읍 본점</div>
+        <p><strong>2017 World Architecture Award · 2018 Korea Architecture Award · 2019 Korea Latte Art Champion</strong>. 인스타 14K + 부산 카페투어 콘텐츠 풀의 대표 케이스.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout dark">
+    그들이 <strong style="color:var(--accent-soft)">스페셜티 가격대</strong>에서 부산을 알렸다면,
+    <span style="display:block;margin-top:4px">댄싱컵은 <strong style="color:var(--accent-soft)">대중 가격대</strong>에서 그 자리를 잡는다.</span>
+  </div>
+
+  <p class="src" style="margin-top:12px">
+    출처 — 관세청 / 부산광역시(busan.go.kr) / 비짓부산(visitbusan.net) / 중앙일보 / 부산일보 / 한국경제 / 디자인플러스 / 다이닝코드 · 사진 © 모모스커피(Heypop) · 블랙업커피(공식 갤러리) · 웨이브온커피·IDMM Architects(idesignarch)
+  </p>
+</section>
+
+<!-- 05. 자산 ② 소비자 발화 -->
+<section class="slide">
+  <div class="slide-num">05</div>
+  <div class="kicker">자산 ② · 소비자 발화</div>
+  <h2>부산은 매일 라떼를 마시는 도시다</h2>
+  <p class="lead">
+    부산 사람들은 매일 라떼를 마신다. 서면·동래·연제·영도·사상 같은 동네에서, 출근길과 점심 후와 퇴근길에.
+    그 일상이 이미 검색·큐레이션·콘텐츠로 굴러가고 있고, <strong>댄싱컵 130호점이 박혀 있는 자리가 정확히 그 자리</strong>다.
+  </p>
+
+  <h4>부산 라떼 · 부산 카페 풀의 두께</h4>
+  <div class="stat-row q4">
+    <div class="stat">
+      <div class="stat-num">130<small>호점</small></div>
+      <div class="stat-label">댄싱컵 부산·경남권 매장</div>
+      <div class="stat-src">서면·동래·연제·영도·사상·기장 등 <strong>동네 상권에 집중</strong> — 부산 사람의 출근·퇴근 동선과 같은 자리</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">559<small>곳</small></div>
+      <div class="stat-label">서면 카페 등록 (다이닝코드)</div>
+      <div class="stat-src">단일 동네 상권 기준 · "분위기좋은 카페" 필터만 111곳 — 부산 한 동네의 카페 두께</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">11<small>K</small></div>
+      <div class="stat-label">@cafe.in.busan 팔로워</div>
+      <div class="stat-src">부산+경상도 카페 전문 큐레이션 · 게시물 270 — 부산 카페 단일 큐레이션이 비즈니스로 굴러가는 두께</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">95<small>%</small></div>
+      <div class="stat-label">한국 수입 커피 통관 (부산항)</div>
+      <div class="stat-src">관세청 92.5% (2022·17만 4천t) · 부산은 커피 산업 도시이기도 하다</div>
+    </div>
+  </div>
+
+  <h4>매일 굴러가는 부산 라떼 키워드</h4>
+  <div class="voice-cloud">
+    <span class="voice-tag lg">부산 라떼 맛집</span>
+    <span class="voice-tag lg">부산 진한 라떼</span>
+    <span class="voice-tag lg">부산 동네 카페</span>
+    <span class="voice-tag md">서면 카페</span>
+    <span class="voice-tag md">동래 카페</span>
+    <span class="voice-tag md">연제 카페</span>
+    <span class="voice-tag md">영도 카페</span>
+    <span class="voice-tag md">전포 카페</span>
+    <span class="voice-tag md">사상 카페</span>
+    <span class="voice-tag">부산 라떼 추천</span>
+    <span class="voice-tag">매일 라떼</span>
+    <span class="voice-tag">부산 출근 카페</span>
+    <span class="voice-tag">부산 골목 카페</span>
+    <span class="voice-tag">부산 일상 카페</span>
+    <span class="voice-tag">부산 라떼 진심</span>
+    <span class="voice-tag pos">부산딥라떼</span>
+  </div>
+  <p class="src" style="margin:-8px 0 22px">
+    동네 상권 · 일상 시간대 · 라떼 자체에 무게가 실린 키워드들 — 댄싱컵 매장이 박혀 있는 자리와 자연스럽게 겹친다.
+  </p>
+
+  <h4>벤치마크 — 소비자 언어가 키워드가 되는 메커니즘</h4>
+  <div class="grid-2">
+    <div class="card soft">
+      <h3>텐퍼센트 "꾸덕라떼"</h3>
+      <p style="font-size:13px;line-height:1.65">실제 메뉴명에 "꾸덕라떼"는 없다. 소비자가 말한 <em>질감 형용사</em>가 SNS·블로그를 타고 키워드가 되었고, 결국 텐퍼센트의 라떼 인지 자산이 됨. (킥오프 덱 슬라이드 10번에서 인용한 사례)</p>
+    </div>
+    <div class="card">
+      <h3>댄싱컵 — 같은 메커니즘, 다른 입력</h3>
+      <p style="font-size:13px;line-height:1.65">메뉴명은 "딥라떼"로 두고, 소비자 발화에서 자랄 키워드는 "<strong>부산딥라떼</strong>". 같은 메커니즘 — 텐퍼센트는 *질감 형용사*를, 우리는 *출신지*를 키워드로 심는다. 이 키워드는 위드런 마케팅팀 후보에도 동일 노선으로 등장.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 06. 시즈널 로드맵 (1년 우산) -->
+<section class="slide">
+  <div class="slide-num">06</div>
+  <div class="kicker">실행 ① · 1년 우산</div>
+  <h2>같은 우산, 다른 어휘 —<br>부산 앵글이 1년을 끌고 가는 법</h2>
+  <p class="lead">
+    근거를 봤으니 이제 실행으로 넘어간다. 가장 먼저 보여드릴 건 <strong>1년 큰 그림</strong>이다. 부산 앵글은 단발이 아니다 — 시즈널마다 메뉴는 바뀌어도 "부산"은 그대로, 어휘만 매 시즌 새로 짠다. 1년 누적되면 그게 곧 "라떼 맛집" 인지 자산.
+  </p>
+
+  <div class="season-row">
+    <div class="season-tag">
+      <div class="season-name">여름</div>
+      <div class="season-when">2026.07~08</div>
+    </div>
+    <div class="season-body">
+      <strong>런칭 시즌 — 어휘 자리잡기</strong>
+      여름 라인업(오리지널 + 변주 메뉴)과 함께 부산 앵글 첫 노출. *부산에서 시작한 라떼·매일 마시는 라떼·동네 라떼집* 세 어휘 동시 점화로 풀 두께부터 만든다.
+      <div class="season-words">"부산에서 시작한 라떼" · "부산딥라떼 시즌 1" · "동네 라떼집의 여름"</div>
+    </div>
+  </div>
+
+  <div class="season-row">
+    <div class="season-tag">
+      <div class="season-name">가을</div>
+      <div class="season-when">2026.09~10</div>
+    </div>
+    <div class="season-body">
+      <strong>일상 어휘 강화 — 출근·골목 톤</strong>
+      가을 시즈널 메뉴(브라운슈가·빠다코코·로열밀크티 등)에 부산 *골목·출근* 어휘가 얹힌다. 인스타 감도가 가장 잘 작동하는 시즌 — 동네 카페 한 컷 콘텐츠로 풀이 두꺼워진다.
+      <div class="season-words">"부산의 가을 골목 라떼" · "출근길 부산 카페" · "사상에서 마시는 가을"</div>
+    </div>
+  </div>
+
+  <div class="season-row">
+    <div class="season-tag">
+      <div class="season-name">겨울</div>
+      <div class="season-when">2026.11~12</div>
+    </div>
+    <div class="season-body">
+      <strong>한 잔의 시간 — 정서 어휘</strong>
+      겨울 시즈널(외계인·핫초코 등) 라떼 라인업에 부산 *겨울 동네 카페* 톤. 짧은 일조량과 따뜻한 한 잔의 정서 어휘로 시그니처 카피 한 줄이 가장 깊게 작동하는 시즌.
+      <div class="season-words">"부산의 겨울 라떼 한 잔" · "동래 골목의 겨울" · "퇴근하고 마시는 진한 라떼"</div>
+    </div>
+  </div>
+
+  <div class="season-row">
+    <div class="season-tag">
+      <div class="season-name">봄</div>
+      <div class="season-when">2027.03~04</div>
+    </div>
+    <div class="season-body">
+      <strong>1년 누적 평가 — 라떼 맛집 인지 측정</strong>
+      봄 시즈널(시트러스 변주 등)과 함께 부산 앵글 1년 누적 결과 측정. *부산딥라떼* 검색량·해시태그 발화량·130호점 매장 인지 변화를 KPI로. 다음 1년 라인업·어휘 우선순위 재조정.
+      <div class="season-words">"부산의 봄 골목 라떼" · "출근길에 마시는 시트러스" · KPI 측정 시즌</div>
+    </div>
+  </div>
+
+  <div class="callout dark">
+    <strong style="color:var(--accent-soft)">시즈널마다 우산은 그대로, 어휘만 변주.</strong>
+    <span style="display:block;margin-top:4px">이렇게 1년이 누적되면 "부산딥라떼"는 마케팅 카피가 아니라 <em>소비자 언어</em>가 된다 — 텐퍼센트 "꾸덕라떼"가 그랬던 것처럼.</span>
+  </div>
+</section>
+
+<!-- 07. 여름 첫 시즌 — D-7 점화 -->
+<section class="slide">
+  <div class="slide-num">07</div>
+  <div class="kicker">실행 ② · 첫 시즌 점화</div>
+  <h2>여름 — 우산이 처음 펼쳐지는 21일</h2>
+  <p class="lead">
+    1년 그림 안에서 가장 결정적인 건 <strong>여름 런칭 첫 21일</strong>이다. 첫 시즌의 풀 두께가 1년 우산의 정착 여부를 결정한다 — 그래서 D-Day 한 번의 폭발이 아니라 <strong>D-7부터 시작되는 콘텐츠 점화</strong>로 설계한다.
+  </p>
+
+  <div class="tl-head">
+    <div class="tl-day">D-7</div>
+    <div class="tl-day">D-3</div>
+    <div class="tl-day">D-1</div>
+    <div class="tl-day dday">D-DAY</div>
+    <div class="tl-day">D+3</div>
+    <div class="tl-day">D+7</div>
+    <div class="tl-day">D+14</div>
+  </div>
+  <div class="tl-row">
+    <div class="tl-cell"><span class="tl-tag">발사대</span>경남권 앰배서더 매장 (진해·거제) 신메뉴 사전 입고 · 자체 촬영. 첫 노출은 *부산 매장이 먼저 마셔본 라떼* 톤</div>
+    <div class="tl-cell"><span class="tl-tag">매장</span>POP · 컵 슬리브 부산 카피 교체. 쇼룸 "부산에서 매일 숙성되는 딥 베이스" 스티커 부착</div>
+    <div class="tl-cell"><span class="tl-tag">예고</span>인스타 공식 티저 · 클로즈업 한 컷 — "부산에서 시작한 라떼, 새 라인업 곧"</div>
+    <div class="tl-cell"><span class="tl-tag">런칭</span>전 채널 동시 노출 + 앰배서더 영상 동시 업로드 + #부산딥라떼 캠페인 점화</div>
+    <div class="tl-cell"><span class="tl-tag">증폭</span>숏폼 30초 점프컷 영상(서면·동래·연제·영도) + X 셀프 디스 트윗 시리즈</div>
+    <div class="tl-cell"><span class="tl-tag">확산</span>인플루언서 시딩 — "부산 동네 라떼" 발화. 매장 정착 콘텐츠로 풀 안착</div>
+    <div class="tl-cell"><span class="tl-tag">정착</span>지점 계정 자율 콘텐츠가 부산 어휘로 진입했는지 측정 → 정착 신호 확인</div>
+  </div>
+  <p class="src" style="margin-top:6px">D-Day = 2026년 7~8월 중 운영팀과 협의 후 확정. D-7 ~ D+14 = 21일 점화 구간. 매장·앰배서더·컵 환원 등 운영 자산이 부산 어휘의 발사대 — 다음 슬라이드에서 매일의 채널 호흡으로 보여드린다.</p>
+
+  <div class="callout">
+    <strong>핵심은 첫 21일에 "부산"이 매장과 채널 양쪽에서 동시에 들리는 것.</strong>
+    <span style="display:block;margin-top:4px">앰배서더 매장이 콘텐츠 발사대, 매장 POP이 매일의 풍경, 채널 4종(인스타·숏폼·X·시그니처 카피)이 매일의 호흡 — 21일이 지나면 "부산딥라떼" 풀이 자연스럽게 굴러간다.</span>
+  </div>
+</section>
+
+<!-- 08. 매일 채널 호흡 -->
+<section class="slide">
+  <div class="slide-num">08</div>
+  <div class="kicker">실행 ③ · 매일 호흡</div>
+  <h2>그리고 매일은,<br>이렇게 손님 손에 닿는다</h2>
+  <p class="lead">
+    1년 우산이 펼쳐지고 여름 첫 시즌이 점화되면 — 매일은 채널과 매장에서 굴러간다. 같은 자산이 채널 문법대로 변주된다. 인스타는 감도, 숏폼은 바이럴, X는 일상 호흡, 시그니처 카피는 손님 손에 닿는 한 줄.
+  </p>
+
+  <div class="mockup-grid">
+
+    <!-- 1. 인스타 피드 -->
+    <div class="mockup">
+      <div class="mockup-head">
+        <div class="ch">Instagram · 피드</div>
+        <div class="axis">감도 축</div>
+      </div>
+      <div class="mockup-body">
+        <div class="ig-post">
+          <div class="ig-img">
+            <img src="images/cases/feed_main.jpg" alt="댄싱컵 라떼 — 부산 동네 카페 톤 예시">
+          </div>
+          <div class="ig-caption">
+            <strong>매일 마시는 라떼는,<br>매일 가는 동네에서 가장 진하다.</strong><br>
+            부산에서 시작한 댄싱컵 딥라떼. 130개 매장에서 같은 한 잔.
+          </div>
+          <div class="ig-tags">
+            #댄싱컵 #딥라떼 #부산딥라떼 #부산라떼 #부산카페추천 #서면카페 #동래카페 #매일라떼
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. 숏폼 릴스 -->
+    <div class="mockup">
+      <div class="mockup-head">
+        <div class="ch">Reels · Shorts (30초)</div>
+        <div class="axis">바이럴 축</div>
+      </div>
+      <div class="mockup-body">
+        <div class="reel-timeline">
+          <div class="reel-step">
+            <div class="reel-time">0~3"</div>
+            <div class="reel-content">
+              <span class="reel-label">훅</span>
+              "부산 사람들은 라떼를 이렇게 마셔요"
+              <span style="display:block;color:var(--mute);font-size:11px;margin-top:2px">→ 우유 따르는 손 클로즈업·찰랑 사운드</span>
+            </div>
+          </div>
+          <div class="reel-step">
+            <div class="reel-time">3~12"</div>
+            <div class="reel-content">
+              <span class="reel-label">전개</span>
+              서면·동래·연제·영도 매장 점프컷 — "어딜 가도 진하다"
+              <span style="display:block;color:var(--mute);font-size:11px;margin-top:2px">→ 같은 라떼, 다른 동네 4컷</span>
+            </div>
+          </div>
+          <div class="reel-step">
+            <div class="reel-time">12~22"</div>
+            <div class="reel-content">
+              <span class="reel-label">확신</span>
+              "<strong>부산에서 시작한 라떼니까요</strong>"
+              <span style="display:block;color:var(--mute);font-size:11px;margin-top:2px">→ 컵 클로즈업 + 자막</span>
+            </div>
+          </div>
+          <div class="reel-step">
+            <div class="reel-time">22~30"</div>
+            <div class="reel-content">
+              <span class="reel-label">CTA</span>
+              "댄싱컵 딥라떼 · 부산·경남 130호점"
+              <span style="display:block;color:var(--mute);font-size:11px;margin-top:2px">→ 로고 + 해시태그 #부산딥라떼</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. X 트윗 -->
+    <div class="mockup">
+      <div class="mockup-head">
+        <div class="ch">X (트위터)</div>
+        <div class="axis">대화 축</div>
+      </div>
+      <div class="mockup-body">
+        <div class="tweet">
+          <div class="tweet-meta">@dancingcup_official · 오전 8:42</div>
+          <div class="tweet-text">서울 갔다가 부산 와서 라떼 마시면 매번 같은 생각함. 진하다… 아니 우리는 항상 이래왔는데</div>
+        </div>
+        <div class="tweet">
+          <div class="tweet-meta">@dancingcup_official · 오후 1:15</div>
+          <div class="tweet-text">오늘 일곱 번째 손님이 "여기 라떼 진짜 진하네요" 그러심.<br>이게 부산 라떼 표준 아닙니까…</div>
+        </div>
+        <div class="tweet">
+          <div class="tweet-meta">@dancingcup_official · 오후 7:31</div>
+          <div class="tweet-text">퇴근하고 동래점에서 라떼 마시는데 옆자리분이 "여기 댄싱커피 라떼는 왜 이렇게 부드럽지" 그러심. 부드러운 게 아니라 진한 겁니다…</div>
+        </div>
+        <div class="tweet">
+          <div class="tweet-meta">@dancingcup_official · 22:04</div>
+          <div class="tweet-text">부산 사람이 만들면 다 진하게 만드는 거 아니에요?<br>(아닙니다)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. 시그니처 카피 활용 -->
+    <div class="mockup">
+      <div class="mockup-head">
+        <div class="ch">시그니처 카피 · 매장 POP</div>
+        <div class="axis">전 채널</div>
+      </div>
+      <div class="mockup-body">
+        <div class="sig-list">
+          <div class="sig-item">
+            <div class="sig-where">인스타 Bio</div>
+            <div class="sig-text">"부산에서 시작한, 매일 마시는 라떼<br>댄싱컵 · 부산·경남 130호점"</div>
+          </div>
+          <div class="sig-item">
+            <div class="sig-where">매장 POP / 컵 슬리브</div>
+            <div class="sig-text">"부산에서 왔습니다. 라떼는 자신있어요."</div>
+          </div>
+          <div class="sig-item">
+            <div class="sig-where">쇼룸 · 딥 베이스 스티커</div>
+            <div class="sig-text">"부산에서 매일 숙성되는 딥 베이스 — 오늘 분 준비 완료"</div>
+          </div>
+          <div class="sig-item">
+            <div class="sig-where">앰배서더 매장 헤드라인</div>
+            <div class="sig-text">"진해 / 거제에서 매일 마시는 라떼 — 부산딥라떼 1호 매장"</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="callout">
+    핵심은 <strong>같은 자산이 채널마다 다르게 호흡하는 것</strong>이다. 인스타에선 정제된 한 컷, 숏폼에선 30초 훅, X에선 동네 사람의 혼잣말, 매장 POP·쇼룸 스티커·앰배서더 매장 헤드라인까지 — 손님 손에 닿는 모든 접점이 같은 한 줄을 다른 호흡으로 반복.
+  </div>
+</section>
+
+<!-- 09. 의사결정 요청 -->
+<section class="slide">
+  <div class="slide-num">09</div>
+  <div class="kicker">의사결정 요청</div>
+  <h2>오늘 결정해주세요 —<br>"부산 앵글을 우산으로 채택할지"</h2>
+  <p class="lead">
+    HIZ가 강하게 미는 것은 한 가지. 채택되면 *결정로그 등재 → 마스터시트 키워드 데이터 갱신 → 인스타·숏폼·X 채널 브리프 일괄 부산 어휘 반영 → 매장 POP·쇼룸 스티커 1차 시안*까지 5월 안에 가동.
+  </p>
+
+  <div class="ask-row dark">
+    <div class="ask-num">①</div>
+    <div class="ask-body">
+      <strong>"부산에서 온 라떼 맛집" 우산 채택 — 강도 B</strong>
+      <span>메뉴명·가격·패키지·라인업 구성은 불변. 시그니처 카피·해시태그·매장 POP·콘텐츠 어휘만 부산화. 운영 전환 비용 ≈ 0. 여름 라인업·시즈널 확장 어떤 안과도 호환.</span>
+    </div>
+    <div class="ask-tag">HIZ 안</div>
+  </div>
+
+  <div class="ask-row">
+    <div class="ask-num">②</div>
+    <div class="ask-body">
+      <strong>핵심 키워드 3종 합의 — #부산딥라떼 #부산라떼 #부산카페추천</strong>
+      <span>채택 시 마스터시트 키워드 데이터 탭에 즉시 반영, 인스타·숏폼·X 브리프에 일괄 적용. 시그니처 카피 후보 2안(인스타 Bio용·매장 POP용)도 동시 합의 가능.</span>
+    </div>
+    <div class="ask-tag soft">합의</div>
+  </div>
+
+  <div class="ask-row">
+    <div class="ask-num">③</div>
+    <div class="ask-body">
+      <strong>여름 런칭 D-7 점화 일정 가동</strong>
+      <span>D-Day 확정 후 D-7부터 매장 POP·쇼룸 스티커·앰배서더 매장 콘텐츠 일정 가동. 매장 카피 1차 시안 5/10까지 HIZ 제출 가능.</span>
+    </div>
+    <div class="ask-tag soft">합의</div>
+  </div>
+
+  <div class="callout">
+    <strong>한 번 더 — 부산 앵글은 이미 양 팀이 같은 자리를 보고 있다.</strong> 운영팀 자산(부산·경남 130호점)도, 마케팅팀 키워드 후보("부산딥라떼")도 같은 방향. 오늘 우리가 하는 일은 <em>그 자리를 한 줄로 뽑아내고, 채널·매장·시즈널이 그 한 줄 아래 정렬되게 하는 것</em>이다.
+  </div>
+</section>
+
+</div>
+</body>
+</html>
