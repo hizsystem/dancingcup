@@ -49,11 +49,11 @@ tr:hover td { background: #fafbfc; }
 tr.subtotal-row td { background: #f8fafb; font-weight: 700; border-top: 1px solid #e8edf1; }
 
 /* KPI GRID */
-.kpi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.kpi-card { background: #f8fafb; border-radius: 10px; padding: 24px 20px; text-align: center; border: 1px solid #e8edf1; }
+.kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.kpi-card { background: #f8fafb; border-radius: 10px; padding: 22px 16px; text-align: center; border: 1px solid #e8edf1; }
 .kpi-card .kc-label { font-size: 11px; color: #999; font-weight: 500; letter-spacing: 0.05em; margin-bottom: 8px; }
-.kpi-card .kc-value { font-size: 28px; font-weight: 900; color: #1a1b18; letter-spacing: -0.02em; }
-.kpi-card .kc-unit { font-size: 14px; font-weight: 500; color: #999; }
+.kpi-card .kc-value { font-size: 26px; font-weight: 900; color: #1a1b18; letter-spacing: -0.02em; }
+.kpi-card .kc-unit { font-size: 13px; font-weight: 500; color: #999; }
 .kpi-card .kc-desc { font-size: 11px; color: #999; margin-top: 6px; }
 .kpi-card.dark { background: #0D0D0D; border-color: #0D0D0D; }
 .kpi-card.dark .kc-label { color: #EA580C; }
@@ -139,7 +139,7 @@ tr.subtotal-row td { background: #f8fafb; font-weight: 700; border-top: 1px soli
       <div class="tl">월 합계</div>
       <div class="ts">VAT 별도 · OOS 미포함</div>
     </div>
-    <div class="ta">5,000,000<span>원</span></div>
+    <div class="ta">6,000,000<span>원</span></div>
   </div>
 
   <!-- OVERVIEW -->
@@ -152,11 +152,16 @@ tr.subtotal-row td { background: #f8fafb; font-weight: 700; border-top: 1px soli
       </div>
       <div class="kpi-card">
         <div class="kc-label">Part 2</div>
+        <div class="kc-value">100<span class="kc-unit">만원</span></div>
+        <div class="kc-desc">딥라떼 사전 바이럴 (5~6월)</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">Part 3</div>
         <div class="kc-value">300<span class="kc-unit">만원</span></div>
         <div class="kc-desc">딥라떼 기획·리서치 <span style="color:#EA580C;font-weight:700;">★</span></div>
       </div>
       <div class="kpi-card dark">
-        <div class="kc-label">Part 3 <em>OOS</em></div>
+        <div class="kc-label">Part 4 <em>OOS</em></div>
         <div class="kc-value">200<span class="kc-unit">만원</span></div>
         <div class="kc-desc">여름 컵빙수 신메뉴 캠페인</div>
       </div>
@@ -173,24 +178,29 @@ tr.subtotal-row td { background: #f8fafb; font-weight: 700; border-top: 1px soli
       <thead><tr><th>항목</th><th>내용</th><th>금액</th></tr></thead>
       <tbody>
         <tr>
-          <td class="item">인스타그램 피드 운영</td>
-          <td class="desc">월 8~10편 · 브랜드팀 고감도 사진 + HIZ AI 영상 · 큐레이션·편집·캡션·발행</td>
-          <td class="amount">500,000</td>
+          <td class="item">인스타그램 피드 채널 운영</td>
+          <td class="desc">브랜드팀 제작 소재 큐레이션·편집·캡션·해시태그·발행 (피드 사진 자체 제작은 불포함)</td>
+          <td class="amount">300,000</td>
         </tr>
         <tr>
-          <td class="item">인스타그램 릴스 운영</td>
-          <td class="desc">월 2~3편 · HIZ 자체 촬영 + 인플 협업 소스 2차 편집 · 자막·음원·업로드</td>
+          <td class="item">인스타그램 릴스 제작·운영</td>
+          <td class="desc">AI 활용 + 바이럴 소재 자체 제작 · 자막·음원·업로드</td>
           <td class="amount">700,000</td>
         </tr>
         <tr>
           <td class="item">X 상시 운영</td>
-          <td class="desc">월 8~10 포스트 · 실시간 커뮤니케이션·클레임 대응 · 30분 룰</td>
+          <td class="desc">실시간 커뮤니케이션·클레임 대응 · 30분 룰</td>
           <td class="amount">500,000</td>
         </tr>
         <tr>
           <td class="item">틱톡 미러링</td>
-          <td class="desc">월 2~3편 · 인스타 릴스 중 확산 주요 건 재포스팅, 틱톡 문법 로컬라이징</td>
+          <td class="desc">릴스 확산 주요 건 재포스팅 · 틱톡 문법 로컬라이징</td>
           <td class="amount">150,000</td>
+        </tr>
+        <tr>
+          <td class="item">메타 광고 운영</td>
+          <td class="desc">캠페인 세팅·소재 운영·타겟팅·리포트 (광고비 집행분 별도)</td>
+          <td class="amount">200,000</td>
         </tr>
         <tr>
           <td class="item">채널 모니터링·KPI 트래킹</td>
@@ -208,7 +218,34 @@ tr.subtotal-row td { background: #f8fafb; font-weight: 700; border-top: 1px soli
   <!-- PART 2 -->
   <div class="section">
     <div class="part-header">
-      <h3>Part 2 — 딥라떼 기획·리서치 <span class="badge">5월 메인</span></h3>
+      <h3>Part 2 — 딥라떼 사전 바이럴 <span class="badge">5~6월</span></h3>
+      <div class="part-price">1,000,000원</div>
+    </div>
+    <table>
+      <thead><tr><th>항목</th><th>내용</th><th>금액</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="item">인플루언서 시딩</td>
+          <td class="desc">7월 리뉴얼 출시 전 키워드·검색량 선점 · 섭외·브리프·소재 QC (협찬비 별도)</td>
+          <td class="amount">600,000</td>
+        </tr>
+        <tr>
+          <td class="item">블로그 체험단</td>
+          <td class="desc">메뉴 키워드 선점·블로그 콘텐츠 풀 구축 · 모집·매니징·QC (원고료·실비 별도)</td>
+          <td class="amount">400,000</td>
+        </tr>
+        <tr class="subtotal-row">
+          <td class="item" colspan="2">Part 2 소계</td>
+          <td class="amount">1,000,000</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PART 3 -->
+  <div class="section">
+    <div class="part-header">
+      <h3>Part 3 — 딥라떼 기획·리서치 <span class="badge">5월 메인</span></h3>
       <div class="part-price">3,000,000원</div>
     </div>
     <table>
@@ -235,17 +272,17 @@ tr.subtotal-row td { background: #f8fafb; font-weight: 700; border-top: 1px soli
           <td class="amount">400,000</td>
         </tr>
         <tr class="subtotal-row">
-          <td class="item" colspan="2">Part 2 소계</td>
+          <td class="item" colspan="2">Part 3 소계</td>
           <td class="amount">3,000,000</td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <!-- PART 3 -->
+  <!-- PART 4 -->
   <div class="section">
     <div class="part-header">
-      <h3>Part 3 — 댄싱컵 여름 컵빙수 캠페인 <span class="badge">OOS</span></h3>
+      <h3>Part 4 — 댄싱컵 여름 컵빙수 캠페인 <span class="badge">OOS</span></h3>
       <div class="part-price">2,000,000원</div>
     </div>
     <table>
@@ -258,7 +295,7 @@ tr.subtotal-row td { background: #f8fafb; font-weight: 700; border-top: 1px soli
         </tr>
         <tr>
           <td class="item">인플루언서 캠페인 시딩</td>
-          <td class="desc">여름 캠페인 전용 2~3명 · 컵빙수 UGC 중심 · 섭외·브리프·현장 코디·영상 QC (협찬비 별도)</td>
+          <td class="desc">여름 캠페인 전용 · 컵빙수 UGC 중심 · 섭외·브리프·현장 코디·영상 QC (협찬비 별도)</td>
           <td class="amount">700,000</td>
         </tr>
         <tr>
@@ -272,7 +309,7 @@ tr.subtotal-row td { background: #f8fafb; font-weight: 700; border-top: 1px soli
           <td class="amount">300,000</td>
         </tr>
         <tr class="subtotal-row">
-          <td class="item" colspan="2">Part 3 소계 (OOS · 발동 시 청구)</td>
+          <td class="item" colspan="2">Part 4 소계 (OOS · 발동 시 청구)</td>
           <td class="amount">2,000,000</td>
         </tr>
       </tbody>
@@ -283,9 +320,9 @@ tr.subtotal-row td { background: #f8fafb; font-weight: 700; border-top: 1px soli
   <div class="total-box">
     <div>
       <div class="tl">월 최종 합계</div>
-      <div class="ts">VAT 별도 · OOS 미포함 (발동 시 +200만 = 7,000,000원)</div>
+      <div class="ts">VAT 별도 · OOS 미포함 (발동 시 +200만 = 8,000,000원)</div>
     </div>
-    <div class="ta">5,000,000<span>원</span></div>
+    <div class="ta">6,000,000<span>원</span></div>
   </div>
 
   <!-- FOOTER -->
