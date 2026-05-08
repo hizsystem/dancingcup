@@ -74,6 +74,11 @@ tr.subtotal-row td { background: #f8fafb; font-weight: 700; border-top: 1px soli
 
 /* BADGE */
 .badge { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 20px; background: #FFF7ED; color: #EA580C; margin-left: 8px; vertical-align: middle; }
+.badge-warn { display: inline-block; font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 20px; background: #FEF3C7; color: #92400E; margin-left: 8px; vertical-align: middle; border: 1px solid #FCD34D; }
+
+/* PART SUBNOTE */
+.part-subnote { background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 8px; padding: 10px 14px; margin: -8px 0 18px; font-size: 12px; color: #78350F; line-height: 1.65; }
+.part-subnote strong { color: #92400E; font-weight: 700; }
 
 /* FOOTER */
 .footer { text-align: center; padding: 40px 0; color: #999; font-size: 12px; line-height: 2; }
@@ -137,9 +142,9 @@ tr.subtotal-row td { background: #f8fafb; font-weight: 700; border-top: 1px soli
   <div class="total-box">
     <div>
       <div class="tl">월 합계</div>
-      <div class="ts">VAT 별도 · OOS 미포함</div>
+      <div class="ts">VAT 별도 · OOS 포함</div>
     </div>
-    <div class="ta">5,000,000<span>원</span></div>
+    <div class="ta">7,000,000<span>원</span></div>
   </div>
 
   <!-- OVERVIEW -->
@@ -171,8 +176,11 @@ tr.subtotal-row td { background: #f8fafb; font-weight: 700; border-top: 1px soli
   <!-- PART 1 -->
   <div class="section">
     <div class="part-header">
-      <h3>Part 1 — 채널 상시 운영</h3>
+      <h3>Part 1 — 채널 상시 운영 <span class="badge-warn">5~6월 축소 운영</span></h3>
       <div class="part-price">1,500,000원</div>
+    </div>
+    <div class="part-subnote">
+      <strong>5~6월 축소 운영 안내</strong> — 딥라떼 사전 바이럴(Part 2)에 리소스를 집중하기 위해 5~6월 채널 발행 빈도를 슬림하게 운영합니다. 7월 딥라떼 본격 출시 시점부터 정상 운영으로 전환.
     </div>
     <table>
       <thead><tr><th>항목</th><th>내용</th><th>금액</th></tr></thead>
@@ -221,12 +229,12 @@ tr.subtotal-row td { background: #f8fafb; font-weight: 700; border-top: 1px soli
       <tbody>
         <tr>
           <td class="item">인플루언서 시딩</td>
-          <td class="desc">7월 리뉴얼 출시 전 키워드·검색량 선점 · 섭외·브리프·소재 QC (협찬비 별도)</td>
+          <td class="desc">7월 리뉴얼 출시 전 키워드·검색량 선점 · 섭외·브리프·소재 QC</td>
           <td class="amount">900,000</td>
         </tr>
         <tr>
           <td class="item">블로그 체험단</td>
-          <td class="desc">메뉴 키워드 선점·블로그 콘텐츠 풀 구축 · 모집·매니징·QC (원고료·실비 별도)</td>
+          <td class="desc">메뉴 키워드 선점·블로그 콘텐츠 풀 구축 · 모집·매니징·QC</td>
           <td class="amount">300,000</td>
         </tr>
         <tr>
@@ -295,7 +303,7 @@ tr.subtotal-row td { background: #f8fafb; font-weight: 700; border-top: 1px soli
         </tr>
         <tr>
           <td class="item">인플루언서 캠페인 시딩</td>
-          <td class="desc">여름 캠페인 전용 · 컵빙수 UGC 중심 · 섭외·브리프·현장 코디·영상 QC (협찬비 별도)</td>
+          <td class="desc">여름 캠페인 전용 · 컵빙수 UGC 중심 · 섭외·브리프·현장 코디·영상 QC</td>
           <td class="amount">700,000</td>
         </tr>
         <tr>
@@ -320,9 +328,9 @@ tr.subtotal-row td { background: #f8fafb; font-weight: 700; border-top: 1px soli
   <div class="total-box">
     <div>
       <div class="tl">월 최종 합계</div>
-      <div class="ts">VAT 별도 · OOS 미포함 (발동 시 +200만 = 7,000,000원)</div>
+      <div class="ts">VAT 별도 · 리테이너 500만 + OOS 200만 포함</div>
     </div>
-    <div class="ta">5,000,000<span>원</span></div>
+    <div class="ta">7,000,000<span>원</span></div>
   </div>
 
   <!-- FOOTER -->
