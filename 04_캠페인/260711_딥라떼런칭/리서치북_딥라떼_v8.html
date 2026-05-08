@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>댄싱컵 딥라떼 팩트북 v8 — 사실·신호·인사이트</title>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Pretendard', -apple-system, 'Noto Sans KR', sans-serif; background: #f4f7f9; color: #1a1b18; line-height: 1.72; font-size: 14px; -webkit-font-smoothing: antialiased; }
+
+/* TOOLBAR */
+.toolbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #0D0D0D; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; }
+.toolbar-logo { font-size: 13px; font-weight: 700; color: #EA580C; letter-spacing: 0.05em; }
+.toolbar-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.15); display:inline-block; margin: 0 16px; vertical-align: middle; }
+.toolbar-title { font-size: 14px; color: #fff; }
+.btn-toolbar { padding: 7px 18px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; background: transparent; color: #fff; font-size: 12px; cursor: pointer; }
+
+.container { max-width: 1040px; margin: 0 auto; padding: 80px 24px 60px; }
+
+/* PAGE */
+.page { background: #fff; border-radius: 12px; padding: 48px 52px; margin-bottom: 16px; border: 1px solid #e6ebef; position: relative; min-height: 480px; }
+.page-num { position: absolute; top: 22px; right: 26px; font-size: 11px; font-weight: 700; color: #999; letter-spacing: 0.08em; }
+.page-tag { font-size: 10.5px; font-weight: 800; color: #EA580C; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 12px; }
+.page-h1 { font-size: 24px; font-weight: 800; line-height: 1.3; letter-spacing: -0.02em; margin-bottom: 16px; color: #1a1b18; }
+.page-h1 em { color: #EA580C; font-style: normal; }
+.page-lead { font-size: 14px; color: #545960; line-height: 1.85; margin-bottom: 22px; max-width: 820px; }
+
+/* COVER */
+.cover { background: #0D0D0D; color: #fff; border-radius: 14px; padding: 80px 56px; margin-bottom: 16px; position: relative; overflow: hidden; min-height: 580px; display: flex; flex-direction: column; justify-content: space-between; }
+.cover::before { content: ""; position: absolute; top: -120px; right: -120px; width: 380px; height: 380px; border-radius: 50%; background: radial-gradient(circle, rgba(234,88,12,0.32) 0%, rgba(234,88,12,0) 70%); }
+.cv-tag { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 26px; position: relative; }
+.cv-h { font-size: 44px; font-weight: 900; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 24px; position: relative; }
+.cv-sub { font-size: 16px; line-height: 1.85; color: rgba(255,255,255,0.78); max-width: 760px; margin-bottom: 40px; position: relative; }
+.cv-meta { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.12); position: relative; }
+.cv-meta .mk { font-size: 10.5px; color: rgba(255,255,255,0.4); margin-bottom: 5px; letter-spacing: 0.08em; text-transform: uppercase; }
+.cv-meta .mv { font-size: 13px; font-weight: 600; color: #fff; line-height: 1.5; }
+
+/* SECTION OPENER */
+.section-opener { background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%); color: #fff; border-radius: 12px; padding: 50px 56px; margin-bottom: 16px; min-height: 200px; position: relative; }
+.section-opener .so-num { font-size: 14px; font-weight: 800; color: #EA580C; letter-spacing: 0.15em; margin-bottom: 12px; }
+.section-opener .so-h { font-size: 32px; font-weight: 800; line-height: 1.2; letter-spacing: -0.025em; margin-bottom: 14px; }
+.section-opener .so-h em { color: #EA580C; font-style: normal; }
+.section-opener .so-sub { font-size: 14px; line-height: 1.8; color: rgba(255,255,255,0.7); max-width: 700px; }
+
+/* TABLES */
+table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 12px 0; }
+th { background: #f4f7f9; padding: 12px 14px; font-weight: 700; border-bottom: 2px solid #e6ebef; color: #545960; font-size: 10.5px; text-align: left; letter-spacing: 0.06em; text-transform: uppercase; }
+td { padding: 13px 14px; border-bottom: 1px solid #f0f2f5; vertical-align: top; line-height: 1.65; }
+tr:last-child td { border-bottom: none; }
+tr.hi td { background: #FFF7ED; }
+td b { color: #1a1b18; }
+
+/* STAT */
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 14px 0 18px; }
+.stat { background: #f8fafb; border-radius: 8px; padding: 18px 20px; border: 1px solid #e8edf1; }
+.stat .label { font-size: 10.5px; color: #999; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px; }
+.stat .num { font-size: 28px; font-weight: 900; letter-spacing: -0.02em; line-height: 1; color: #1a1b18; }
+.stat .num em { color: #EA580C; font-style: normal; font-size: 15px; font-weight: 700; margin-left: 4px; }
+.stat .desc { font-size: 12px; color: #545960; margin-top: 8px; line-height: 1.55; }
+
+/* SOURCE BLOCK — 모든 데이터 의무 */
+.src-block { display: block; font-size: 10.5px; color: #999; padding: 8px 12px; background: #f8fafb; border-left: 2px solid #999; margin-top: 8px; line-height: 1.6; border-radius: 0 4px 4px 0; }
+.src-block b { color: #545960; font-weight: 700; }
+.src-block a { color: #999; text-decoration: none; }
+.src-block a:hover { color: #EA580C; }
+
+/* QUESTION END — § 종료 질문 */
+.q-end { background: #FFF7ED; border-left: 4px solid #EA580C; border-radius: 0 10px 10px 0; padding: 22px 26px; margin: 24px 0 0; }
+.q-end .q-tag { font-size: 10.5px; font-weight: 800; color: #EA580C; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 10px; }
+.q-end .q-text { font-size: 15px; line-height: 1.75; color: #1a1b18; font-weight: 500; }
+.q-end .q-text em { color: #c2410c; font-style: italic; font-weight: 600; }
+.q-end .q-note { font-size: 11.5px; color: #999; margin-top: 10px; padding-top: 10px; border-top: 1px dashed #e8c8a3; }
+
+/* QUOTE BOX — 1차 보도 직접 인용 */
+.qbox { background: #f8fafb; color: #1a1b18; border-radius: 10px; padding: 22px 24px; margin: 14px 0; border-left: 3px solid #EA580C; }
+.qbox-tag { font-size: 10.5px; font-weight: 800; color: #EA580C; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px; }
+.qbox-quote { font-size: 14.5px; line-height: 1.8; color: #1a1b18; font-weight: 500; }
+.qbox-quote em { color: #c2410c; font-style: normal; font-weight: 700; }
+
+/* CASE — 사례 카드 */
+.case-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 14px 0; }
+.case-grid.col-3 { grid-template-columns: repeat(3, 1fr); }
+.case { background: #fff; border: 1px solid #e8edf1; border-radius: 10px; padding: 20px 22px; }
+.case .c-tag { display: inline-block; font-size: 10px; font-weight: 800; color: #EA580C; background: #FFF7ED; padding: 3px 9px; border-radius: 3px; margin-bottom: 10px; letter-spacing: 0.06em; }
+.case .c-title { font-size: 14px; font-weight: 800; margin-bottom: 4px; line-height: 1.35; color: #1a1b18; }
+.case .c-sub { font-size: 11px; color: #999; margin-bottom: 10px; }
+.case .c-text { font-size: 12.5px; line-height: 1.7; color: #4d525a; margin-bottom: 8px; }
+.case .c-text b { color: #1a1b18; }
+.case .c-fact { font-size: 12.5px; font-weight: 700; color: #1a1b18; margin: 6px 0; }
+.case .c-fact em { color: #EA580C; font-style: normal; font-weight: 800; }
+
+/* IMG */
+.fig { border-radius: 10px; overflow: hidden; margin: 14px auto; border: 1px solid #e8edf1; max-width: 520px; background: #f8fafb; }
+.fig img { width: 100%; height: 280px; object-fit: cover; display: block; }
+.fig.tall img { height: 360px; }
+.fig.compact { max-width: 380px; }
+.fig.compact img { height: 220px; }
+.fig.wide { max-width: 720px; }
+.fig.wide img { height: 320px; }
+.fig.full { max-width: none; }
+.fig.full img { height: 340px; }
+.fig-cap { padding: 11px 14px; background: #fff; border-top: 1px solid #f0f2f5; font-size: 11px; color: #545960; line-height: 1.55; }
+.fig-cap b { color: #1a1b18; }
+.fig-cap a { color: #EA580C; text-decoration: none; }
+.fig-cap .src-meta { display: block; font-size: 10px; color: #999; margin-top: 4px; }
+/* fig-row — 2~3 이미지 가로 그리드 */
+.fig-row { display: grid; gap: 10px; margin: 14px 0; }
+.fig-row.col-2 { grid-template-columns: 1fr 1fr; }
+.fig-row.col-3 { grid-template-columns: repeat(3, 1fr); }
+.fig-row .fig { max-width: none; margin: 0; }
+.fig-row .fig img { height: 200px; }
+.fig-row.col-3 .fig img { height: 170px; }
+/* case-grid 안 fig는 그리드가 사이즈 결정 */
+.case-grid .fig { max-width: none; margin: 0; }
+.case-grid .fig img { height: 180px; }
+
+/* VOICE — VOC */
+.voice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0; }
+.voice { background: #fff; border-left: 4px solid #999; border-radius: 0 8px 8px 0; padding: 14px 18px; border-top: 1px solid #e8edf1; border-right: 1px solid #e8edf1; border-bottom: 1px solid #e8edf1; }
+.voice.pos { border-left-color: #2c7a3d; background: #f3faf5; }
+.voice.neg { border-left-color: #c33; background: #fdf6f6; }
+.voice.neu { border-left-color: #545960; background: #f8fafb; }
+.voice .v-text { font-size: 12.5px; line-height: 1.65; color: #1a1b18; margin-bottom: 8px; }
+.voice .v-text::before { content: "“ "; color: #EA580C; font-weight: 900; }
+.voice .v-text::after { content: " ”"; color: #EA580C; font-weight: 900; }
+.voice .v-meta { font-size: 10.5px; color: #999; padding-top: 6px; border-top: 1px solid #e8edf1; display: flex; justify-content: space-between; gap: 4px; flex-wrap: wrap; }
+.voice .v-source { font-weight: 700; }
+.voice.pos .v-source { color: #2c7a3d; }
+.voice.neg .v-source { color: #c33; }
+.voice .v-meta a { color: #999; text-decoration: none; }
+
+/* PERSONA */
+.persona-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 14px 0; }
+.persona { background: #fff; border: 1px solid #e8edf1; border-radius: 10px; padding: 20px 22px; }
+.persona .p-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #f0f2f5; }
+.persona .p-avatar { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, #EA580C, #FB923C); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 900; font-size: 15px; }
+.persona .p-meta .p-name { font-size: 14px; font-weight: 800; color: #1a1b18; }
+.persona .p-meta .p-role { font-size: 11px; color: #999; margin-top: 2px; }
+.persona .p-row { display: grid; grid-template-columns: 70px 1fr; gap: 10px; padding: 4px 0; font-size: 12px; line-height: 1.55; }
+.persona .p-row .p-k { color: #999; font-size: 10.5px; font-weight: 700; padding-top: 2px; letter-spacing: 0.04em; text-transform: uppercase; }
+.persona .p-row .p-v { color: #1a1b18; }
+
+/* TIER */
+.tier-stack { display: flex; flex-direction: column; gap: 10px; margin: 14px 0; }
+.tier { display: grid; grid-template-columns: 50px 130px 1fr 130px; gap: 14px; align-items: center; padding: 16px 20px; border-radius: 8px; background: #f8fafb; border: 1px solid #e8edf1; }
+.tier.us { background: #FFF7ED; border: 2px solid #EA580C; }
+.tier .tier-id { font-size: 20px; font-weight: 900; color: #999; }
+.tier.us .tier-id { color: #EA580C; }
+.tier .tier-price { font-size: 12px; font-weight: 800; }
+.tier .tier-price .sub { display: block; color: #999; font-weight: 500; font-size: 10.5px; margin-top: 2px; }
+.tier .tier-body { font-size: 12.5px; line-height: 1.65; color: #4d525a; }
+.tier .tier-body b { color: #1a1b18; }
+.tier .tier-pos { font-size: 10.5px; color: #999; line-height: 1.5; text-align: right; }
+.tier.us .tier-pos { color: #EA580C; font-weight: 700; }
+
+/* SWOT */
+.swot { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0; }
+.swot-cell { padding: 20px 22px; border-radius: 8px; border: 1px solid #e8edf1; }
+.swot-cell.s { background: #f3faf5; border-left: 3px solid #2c7a3d; }
+.swot-cell.w { background: #fdf6f6; border-left: 3px solid #c33; }
+.swot-cell.o { background: #FFF7ED; border-left: 3px solid #EA580C; }
+.swot-cell.t { background: #f8fafb; border-left: 3px solid #545960; }
+.swot-cell h4 { font-size: 10.5px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 10px; }
+.swot-cell.s h4 { color: #2c7a3d; }
+.swot-cell.w h4 { color: #c33; }
+.swot-cell.o h4 { color: #EA580C; }
+.swot-cell.t h4 { color: #545960; }
+.swot-cell ul { list-style: none; padding: 0; }
+.swot-cell li { font-size: 12px; line-height: 1.6; padding-left: 12px; position: relative; margin-bottom: 5px; color: #1a1b18; }
+.swot-cell li::before { content: "·"; position: absolute; left: 0; top: 0; font-weight: 900; }
+
+/* LIST */
+ul.clean { list-style: none; margin: 0; padding: 0; }
+ul.clean li { padding-left: 14px; position: relative; margin-bottom: 7px; font-size: 13px; line-height: 1.7; color: #4d525a; }
+ul.clean li::before { content: ""; position: absolute; left: 0; top: 11px; width: 7px; height: 1px; background: #EA580C; }
+ul.clean li b { color: #1a1b18; }
+
+.divider { display: flex; align-items: center; gap: 16px; margin: 28px 0 16px; }
+.divider .dline { flex: 1; height: 1px; background: #e6ebef; }
+.divider .dlabel { font-size: 10.5px; font-weight: 800; color: #EA580C; letter-spacing: 0.18em; text-transform: uppercase; }
+
+.footer { text-align: center; padding: 36px 0; color: #999; font-size: 12px; line-height: 2; }
+.footer .brand { font-size: 16px; font-weight: 800; color: #1a1b18; }
+.footer .tag { color: #EA580C; font-weight: 600; }
+
+@media (max-width: 900px) {
+  .container { padding: 70px 16px 40px; }
+  .page, .cover, .section-opener { padding: 32px 24px; }
+  .stats, .case-grid, .case-grid.col-3, .voice-grid, .swot, .persona-grid { grid-template-columns: 1fr; }
+  .cv-meta { grid-template-columns: 1fr 1fr; }
+  .cv-h { font-size: 32px; }
+}
+@media print {
+  .toolbar { display: none; }
+  .container { padding: 20px; max-width: none; }
+  body { background: #fff; -webkit-print-color-adjust: exact; }
+  .page, .cover, .section-opener { page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div>
+    <span class="toolbar-logo">BRANDRISE</span>
+    <span class="toolbar-sep"></span>
+    <span class="toolbar-title">댄싱컵 딥라떼 팩트북 v8 · 사실·신호·인사이트</span>
+  </div>
+  <button class="btn-toolbar" onclick="window.print()">PDF 저장</button>
+</div>
+
+<div class="container">
+
+<!-- COVER -->
+<div class="cover">
+  <div>
+    <div class="cv-tag">Factbook v8 · DancingCup × HIZ</div>
+    <h1 class="cv-h">댄싱컵 딥라떼 — 캠페인 사전 조사 자료</h1>
+    <p class="cv-sub">2026년 7월 딥라떼 리뉴얼 캠페인 기획 전 단계의 팩트북. 한국 커피 시장·라떼 카테고리 소비자·경쟁사·부산 도시 자산·자생 콘텐츠 모델 5개 영역의 사실과 신호를 모은다. 본 자료에는 전략·실행안·자사 진단이 들어 있지 않다. 각 섹션은 댄싱컵에게 묻는 질문으로 끝난다 — 답은 다음 단계 전략 브리프에서 시작된다.</p>
+  </div>
+  <div class="cv-meta">
+    <div><div class="mk">대상</div><div class="mv">(주)위드런<br>댄싱컵 브랜드팀</div></div>
+    <div><div class="mk">발행</div><div class="mv">2026-05-08<br>5/11 미팅 자료</div></div>
+    <div><div class="mk">버전</div><div class="mv">v8 — 팩트북<br>(§2.3 라이프스타일 신설)</div></div>
+    <div><div class="mk">자료 베이스</div><div class="mv">1차 보도 28건 / 발화 31건<br>운영 사례 24건 / 글로벌 6건<br>+ 팀 자료 (지은·석환) / 5/8 미팅</div></div>
+  </div>
+</div>
+
+<!-- =================================================== -->
+<!-- §1 시장 -->
+<!-- =================================================== -->
+<div class="section-opener">
+  <div class="so-num">§1</div>
+  <h2 class="so-h">시장 — <em>한국 커피 카테고리 거시</em></h2>
+  <div class="so-sub">한국 커피 시장 규모, 1인당 소비, 저가 카페 매장 수와 매출, 단일 시그니처 메뉴 누적치. 2024-2026 사실 기준.</div>
+</div>
+
+<!-- §1.1 시장 규모 -->
+<div class="page">
+  <div class="page-num">§1.1</div>
+  <div class="page-tag">한국 커피 시장 규모</div>
+  <h1 class="page-h1">한국 커피 시장 — 19조 / 1인당 405잔 / 수입 2.6조</h1>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="label">시장 규모 (2026 추정)</div>
+      <div class="num">19<em>조 원</em></div>
+      <div class="desc">2025 17조에서 +12% 추정</div>
+    </div>
+    <div class="stat">
+      <div class="label">1인당 연간 소비 (2023)</div>
+      <div class="num">405<em>잔</em></div>
+      <div class="desc">세계 평균 152잔의 2.6배 / 프랑스(551잔) 다음 세계 2위</div>
+    </div>
+    <div class="stat">
+      <div class="label">커피 수입액 (2024)</div>
+      <div class="num">2.6<em>조 원</em></div>
+      <div class="desc">전년 대비 +8,000억 / 첫 2조 돌파</div>
+    </div>
+  </div>
+
+  <div class="src-block"><b>출처:</b> <a href="https://brunch.co.kr/@hoonius/854">브런치 2026 커피 시장 전망</a> · <a href="https://www.yonhapmidas.com/news/articleView.html?idxno=9538">연합미디어스 1인당 405잔 (유로모니터)</a> · <a href="https://www.yna.co.kr/view/AKR20260124042100030">연합뉴스 2026-01-24 수입 2.6조</a> · 조사 시점: 2024 결산 기준 / 1인당 소비는 2023년 데이터</div>
+</div>
+
+<!-- §1.2 저가 카페 4사 -->
+<div class="page">
+  <div class="page-num">§1.2</div>
+  <div class="page-tag">저가 커피 4사 매장 수와 매출</div>
+  <h1 class="page-h1">저가 4사 — 메가 4,000+ · 컴포즈 3,140 · 빽다방 1,800+</h1>
+
+  <table>
+    <thead><tr><th>브랜드</th><th>매장수 (최신)</th><th>매출 (공시)</th><th>측정 시점</th></tr></thead>
+    <tbody>
+      <tr><td><b>메가MGC커피</b></td><td>4,000개+</td><td>4,660억 원 (2024)</td><td>2025-12-01 4,000호점 달성</td></tr>
+      <tr><td><b>컴포즈커피</b></td><td>3,140개</td><td>897억 원 (2024)</td><td>2026-02 기준</td></tr>
+      <tr><td><b>빽다방</b></td><td>1,800개+</td><td>1,353억 원 (2023, 빽다방 단독)</td><td>2025-12 기준 / 2024 단독 매출 미공개</td></tr>
+      <tr><td>이디야커피</td><td>(공시 비공개·약 3,000개대)</td><td>(가맹 운영, 비공개)</td><td>참고 — 정확값 확인 필요</td></tr>
+    </tbody>
+  </table>
+
+  <div class="src-block"><b>출처:</b> <a href="https://biz.chosun.com/distribution/food/2025/12/01/RUWDJSMZTZHL3C3GDJ7HPRJL34/">조선비즈 메가 4,000호점</a> · <a href="https://www.hankookilbo.com/News/Read/A2025050514320001351">한국일보 메가 매출 4,660억 (금감원 전자공시)</a> · <a href="https://dt.co.kr/contents.html?article_no=2025051802109932031002">디지털타임스 컴포즈 매출 897억</a> · <a href="https://www.smedaily.co.kr/news/articleView.html?idxno=308261">SME Daily 빽다방 1,353억</a> · <a href="https://www.newsis.com/view/NISX20250324_0003110395">뉴시스 빽다방 1,712개 (2025-03)</a> · 매출은 금융감독원 전자공시 기준</div>
+</div>
+
+<!-- §1.3 단일 시그니처 메뉴 누적치 -->
+<div class="page">
+  <div class="page-num">§1.3</div>
+  <div class="page-tag">단일 시그니처 메뉴 누적치</div>
+  <h1 class="page-h1">단일 메뉴 누적 매출 — 우지 600만 · 텐퍼센트 33만/월 · 메가 컵빙수 900만</h1>
+  <p class="page-lead">2025년부터 1차 보도가 단일 메뉴 단위 누적치를 발표하는 패턴이 생김. 매장 수가 아닌 메뉴 단위 매출이 보도 수치 표준이 됐다.</p>
+
+  <table>
+    <thead><tr><th>브랜드 · 메뉴</th><th>누적/월 매출</th><th>출시</th><th>차별 메커니즘 (1차 보도 인용)</th></tr></thead>
+    <tbody>
+      <tr><td><b>우지커피 딥카페라떼</b></td><td>누적 600만 잔</td><td>2022.01</td><td>"특별한 로스팅 + 원유 사용 → 진한 에스프레소 + 부드럽고 고소한 우유 풍미"</td></tr>
+      <tr><td><b>텐퍼센트 시그니처라떼 (꾸덕라떼)</b></td><td>2주 16만 → 3월 33만 잔/월</td><td>3월 SNS 자생 → 4/1 공식 흡수</td><td>"커피와의 조화를 위해 별도 개발한 베이스 / 고소함과 질감 조절"</td></tr>
+      <tr><td><b>메가커피 컵빙수</b></td><td>누적 900만 개 (2026-05 갱신)</td><td>여름 한정·재출시 반복</td><td>4,400원 가격대·컵 형태 차별</td></tr>
+      <tr><td>이디야 국중박 시그니처 라떼</td><td>박물관 5개 매장 결제 데이터 1위 (4월 1~23일)</td><td>2026-04 한정</td><td>"한국 식재료(검은깨) + 박물관 콜라보"</td></tr>
+    </tbody>
+  </table>
+
+  <div class="src-block"><b>출처:</b> <a href="https://www.sentv.co.kr/article/view/sentv202502140006">sentv 우지 600만 (2025-02-14)</a> · <a href="https://www.enetnews.co.kr/news/articleView.html?idxno=48652">enetnews 텐퍼센트 33만 (3월)</a> · <a href="https://www.enetnews.co.kr/news/articleView.html?idxno=47949">enetnews 텐퍼센트 16만 (2주)</a> · <a href="https://news.nate.com/view/20260507n03221">네이트 메가 컵빙수 900만 (2026-05)</a> · <a href="https://www.kmib.co.kr/article/view.asp?arcid=0029728975">국민일보 이디야 국중박</a></div>
+
+  <div class="fig-row col-3">
+    <div class="fig">
+      <img src="https://sentv.kod.es/data/sentv/image/2025/02/14/sentv20250214000005.800x.0.jpg" alt="우지커피 딥카페라떼" loading="lazy">
+      <div class="fig-cap"><b>우지 딥카페라떼</b> 누적 600만 잔<span class="src-meta">sentv 2025-02-14 · <a href="https://www.sentv.co.kr/article/view/sentv202502140006">원본</a></span></div>
+    </div>
+    <div class="fig">
+      <img src="https://cdn.enetnews.co.kr/news/photo/202604/48652_65686_3117.jpg" alt="텐퍼센트 시그니처라떼(꾸덕라떼)" loading="lazy">
+      <div class="fig-cap"><b>텐퍼센트 시그니처라떼</b> 3월 33만 잔/월<span class="src-meta">enetnews 2026-04 · <a href="https://www.enetnews.co.kr/news/articleView.html?idxno=48652">원본</a></span></div>
+    </div>
+    <div class="fig">
+      <img src="https://img1.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202604/24/donga/20260424162821639sdlj.jpg" alt="이디야 국중박 시그니처 라떼 — 검은깨 라떼 메뉴샷" loading="lazy">
+      <div class="fig-cap"><b>이디야 국중박 시그니처 라떼</b> 검은깨 메뉴샷 / 박물관 5개 매장 결제 1위<span class="src-meta">동아 2026-04-24 · <a href="https://v.daum.net/v/20260424162818744">원본 기사</a></span></div>
+    </div>
+  </div>
+</div>
+
+<!-- §1.4 저가 4사 시즌 회전 -->
+<div class="page">
+  <div class="page-num">§1.4</div>
+  <div class="page-tag">저가 카페 메뉴 운영 패턴</div>
+  <h1 class="page-h1">저가 4사 — 시즌 회전은 강함, 1년 상시 시그니처 라떼는 부재</h1>
+
+  <table>
+    <thead><tr><th>브랜드</th><th>2025 시즌 회전</th><th>1년 상시 시그니처 라떼</th></tr></thead>
+    <tbody>
+      <tr><td><b>메가MGC커피</b></td><td>분기 5-8종 / 연 26종+ (꿀수박·꿀밤·미스터리 가든 등)</td><td>없음 (시즌 회전 중심)</td></tr>
+      <tr><td><b>컴포즈커피</b></td><td>분기 3-5종 / 딸기·V Composed·징글베리 라인</td><td>없음 (기본 라떼 외 시그니처 부재)</td></tr>
+      <tr><td><b>빽다방</b></td><td>분기 3-6종 / 짱구·통단팥·말차·고구마 라인</td><td>없음 (사이즈 차별만)</td></tr>
+      <tr><td>이디야커피</td><td>분기 2-4종</td><td>국중박 시그니처(한정 매장만) / 일반 매장 부재</td></tr>
+    </tbody>
+  </table>
+
+  <div class="src-block"><b>출처:</b> <a href="https://magazineo.tistory.com/entry/2025년-메가MGC-커피-메뉴-가격-정리">매거진O 메가 라인업</a> · <a href="https://composecoffee.com/event/278118">컴포즈 V Composed</a> · <a href="https://composecoffee.com/event/275477">컴포즈 징글베리</a> · <a href="https://www.news1.kr/industry/distribution/5985435">뉴스1 빽다방 말차</a> · <a href="https://v.daum.net/v/20251021093247275">다음뉴스 빽다방 가을 6종</a> · <a href="https://paikdabang.com/menu/menu_new/">빽다방 공식</a> · 수집 기간: 2025-01 ~ 2026-04</div>
+
+  <div class="q-end">
+    <div class="q-tag">§1 인사이트 질문</div>
+    <div class="q-text">한국 저가 커피 4사는 모두 시즌 회전을 중심으로 운영되고 있고, <em>1년 365일 운영되는 시그니처 라떼 카테고리는 비어 있다</em>. 카테고리 빈자리는 진입자가 정의자가 될 가능성이 가장 큰 위치다.<br><br>그렇다면 — <b>댄싱컵이 그 자리에 들어갈 메뉴는 어떤 정의를 가져야 하는가?</b> 단일 메뉴 누적 매출이 보도 수치 표준이 된 시점에서, 어떤 단어·메커니즘이 1년 후 라떼 카테고리 발화에서 자생 별칭으로 자리 잡는가?</div>
+    <div class="q-note">→ 답은 본 팩트북에 없음. 다음 단계 전략 브리프에서 시작.</div>
+  </div>
+</div>
+
+<!-- =================================================== -->
+<!-- §2 소비자 -->
+<!-- =================================================== -->
+<div class="section-opener">
+  <div class="so-num">§2</div>
+  <h2 class="so-h">소비자 — <em>라떼 카테고리 인식·발화·트렌드</em></h2>
+  <div class="so-sub">타깃 페르소나 2종, 2026 한국 카페 트렌드 키워드 'B.E.Y.O.N.D' + 라떼 맛집 발화·도시명 메뉴화·자생 콘텐츠 4 신호. (VOC·미충족 매트릭스는 §3.7·§3.8로 이동)</div>
+</div>
+
+<!-- §2.1 페르소나 -->
+<div class="page">
+  <div class="page-num">§2.1</div>
+  <div class="page-tag">타깃 페르소나</div>
+  <h1 class="page-h1">댄싱컵 타깃 페르소나 — 부산·경남 거주 일상 카페 소비자 2종</h1>
+  <p class="page-lead">본 페르소나는 우지·텐퍼센트·할리스 VOC 발화 패턴 + Hypebeast·디에디트·82cook 라떼 맛집 발화 + 부산 1·2티어 카페 동선을 기반으로 합성한 의사결정용 인물이다. 실제 인물이 아닌 카테고리 행동 패턴 합성.</p>
+
+  <div class="persona-grid">
+    <div class="persona">
+      <div class="p-head">
+        <div class="p-avatar">P1</div>
+        <div class="p-meta">
+          <div class="p-name">28세 부산 거주 직장인</div>
+          <div class="p-role">서면·해운대 출퇴근 / 일상 카페</div>
+        </div>
+      </div>
+      <div class="p-row"><div class="p-k">동선</div><div class="p-v">출근길 1잔 + 점심 1잔. 매장 선택은 가격·접근성 우선.</div></div>
+      <div class="p-row"><div class="p-k">예산</div><div class="p-v">잔당 2,500~4,500원. 라떼는 4,000원 이하 선호.</div></div>
+      <div class="p-row"><div class="p-k">기존 동선</div><div class="p-v">메가·컴포즈 메인 + 가끔 모모스 (주말).</div></div>
+      <div class="p-row"><div class="p-k">미충족</div><div class="p-v">기본 라떼는 평범하다고 인식 / 시그니처 라떼는 가격 부담.</div></div>
+    </div>
+    <div class="persona">
+      <div class="p-head">
+        <div class="p-avatar">P2</div>
+        <div class="p-meta">
+          <div class="p-name">26세 부산 거주 카페 탐방가</div>
+          <div class="p-role">SNS 라떼 맛집 발화 활발</div>
+        </div>
+      </div>
+      <div class="p-row"><div class="p-k">동선</div><div class="p-v">주말 부산 1·2티어 카페 투어 (모모스·블랙업·베르크). 인스타·블로그 시그니처 라떼 검색·공유 패턴.</div></div>
+      <div class="p-row"><div class="p-k">예산</div><div class="p-v">평일 = 4,000원 이하 / 주말 = 5,000~8,000원 OK.</div></div>
+      <div class="p-row"><div class="p-k">기존 동선</div><div class="p-v">평일 = 컴포즈·이디야 / 주말 = 모모스·베르크·웨이브온 / 라떼 맛집 발화 = Hypebeast·디에디트 자료 참고.</div></div>
+      <div class="p-row"><div class="p-k">미충족</div><div class="p-v">부산 일상 가격대(2,500~4,000원)에 "라떼 맛집"으로 발화될 만한 시그니처 메뉴 부재 / 폴바셋·도렐·모멘토는 5,000원 이상.</div></div>
+    </div>
+  </div>
+
+  <div class="src-block"><b>합성 베이스:</b> 우지·텐퍼센트·할리스 VOC 31건 (§3.7) · <a href="https://hypebeast.kr/2019/10/best-coffee-latte-cafe-seoul-blue-bottle-fritz-rabout-momento-brewers-dukes">Hypebeast 서울 라떼 10곳</a> · <a href="https://the-edit.co.kr/42750">디에디트 부산 카페 4</a> · <a href="https://www.82cook.com/entiz/read.php?num=3530627">82cook 체인 라떼 맛집</a> 발화 / <b>한계:</b> 1차 정량 설문 미포함. 다음 단계에서 부산 거주 20-30대 n=300+ 정량 검증 권장</div>
+</div>
+
+<!-- §2.2 트렌드 신호 4건 (재구성) -->
+<div class="page">
+  <div class="page-num">§2.2</div>
+  <div class="page-tag">라떼 카테고리 트렌드 신호</div>
+  <h1 class="page-h1">트렌드 신호 4건 — B.E.Y.O.N.D · 라떼 맛집 발화 · 도시명 메뉴화 · 자생 콘텐츠</h1>
+  <p class="page-lead">"메가트렌드"는 단정적 표현. 본 팩트북은 1차 보도·발화에서 관찰된 신호 4건만 채택. 솔티드 라떼는 글로벌 신호는 있으나 2026 한국 카페 트렌드 키워드에 미포함 — §3.6에서 별도 검증으로 다룸.</p>
+
+  <table>
+    <thead><tr><th>신호</th><th>데이터</th><th>출처</th></tr></thead>
+    <tbody>
+      <tr><td><b>① 2026 한국 카페 키워드</b><br>'B.E.Y.O.N.D'</td><td>서울카페&베이커리페어 2026-02 발표. 6개 키워드 = <b>B</b>etter Community · <b>E</b>veryday Wellness · <b>Y</b>our Moment · <b>O</b>riginal Local · <b>N</b>ature Forward · <b>D</b>igital Transformation</td><td>식품음료신문 2026</td></tr>
+      <tr><td><b>② 라떼 맛집 발화</b><br>"시그니처 라떼" 검색·평가</td><td>36종 프랜차이즈 카페라떼 블라인드 평가 (Threads): <b>폴바셋 1위 · 빽다방 2위 · 커피앳웍스 3위</b> / Hypebeast·디에디트·82cook 등 6채널에서 "라떼 잘하는 곳" 발화 누적</td><td>Threads · Hypebeast · 82cook</td></tr>
+      <tr><td><b>③ 도시명·지역 메뉴화</b><br>한국 자생 패턴</td><td>우지커피 K-시그니처 7종 출시 (2024-10-29 / 송파라떼·서울 플로트 등) / 도렐 제주 "너티 클라우드" — 우도 땅콩을 메뉴 안에 박은 구조</td><td>우지커피 공식 · 디에디트</td></tr>
+      <tr><td><b>④ 자생 콘텐츠 모델</b><br>점주·알바 발화 흡수</td><td>GS25 25매거진 = 인스타·유튜브 양대 100만 (5년 6개월 누적·인스타 / 2022-08·유튜브) — 직원 발화를 본사 채널 자산으로 흡수한 사례. 메가커피 알바는 자생만 풍부, 흡수 X — §5에서 비교</td><td>네이트·ZDNet</td></tr>
+    </tbody>
+  </table>
+
+  <div class="fig compact">
+    <img src="https://cdn.thinkfood.co.kr/news/photo/202511/103843_136901_3822.jpg" alt="2026 카페 산업 트렌드 키워드 B.E.Y.O.N.D" loading="lazy">
+    <div class="fig-cap"><b>2026 카페 산업 트렌드 키워드 'B.E.Y.O.N.D'</b> 서울카페&베이커리페어 2026-02 발표 — 6개 키워드<span class="src-meta">식품음료신문 2026 · <a href="https://www.thinkfood.co.kr/news/articleView.html?idxno=103843">원본 기사</a></span></div>
+  </div>
+
+  <div class="src-block"><b>출처:</b> <a href="https://www.thinkfood.co.kr/news/articleView.html?idxno=103843">식품음료신문 2026 카페 트렌드 B.E.Y.O.N.D</a> · <a href="https://www.threads.com/@jspark3710/post/DDs48SrSY5b">Threads 36종 카페라떼 블라인드</a> · <a href="https://hypebeast.kr/2019/10/best-coffee-latte-cafe-seoul-blue-bottle-fritz-rabout-momento-brewers-dukes">Hypebeast 서울 라떼 맛집 10곳</a> · <a href="https://www.82cook.com/entiz/read.php?num=3530627">82cook 체인 라떼 맛집 추천</a> · <a href="https://oozycoffee.com/index/?bmode=view&idx=168397247">우지커피 K-시그니처 7종</a> · <a href="https://the-edit.co.kr/43681">디에디트 도렐 너티 클라우드</a> · <a href="https://news.nate.com/view/20251027n16779">네이트 GS25 100만</a> · <a href="https://zdnet.co.kr/view/?no=20251027110650">ZDNet GS25 25매거진</a></div>
+
+  <div class="q-end">
+    <div class="q-tag">§2 인사이트 질문</div>
+    <div class="q-text">2026 한국 카페 트렌드 키워드는 'B.E.Y.O.N.D' 6개에 모이고, 라떼 카테고리에서는 "시그니처 라떼"·"라떼 맛집" 발화가 별도 검색·평가 단위로 누적되고 있다. 36종 블라인드 평가에서는 폴바셋·빽다방·커피앳웍스가 1·2·3위.<br><br>그렇다면 — <b>'2,500~4,000원 일상 가격대에서 라떼 맛집으로 발화되는 자리'는 누가 차지하고 있는가?</b> 폴바셋·블루보틀·모멘토는 5,000원 이상 가격대, 빽다방·메가는 시그니처 부재. 그 사이 자리는 비어 있는가, 아닌가?</div>
+    <div class="q-note">→ 답은 본 팩트북에 없음 (브랜드 비교 §3.5·VOC §3.7 참조). 다음 단계 전략 브리프에서 결정.</div>
+  </div>
+</div>
+
+<!-- §2.3 라이프스타일 — v8 신설 (2026-05-08) / VOC·미충족 매트릭스는 v7.2에서 §3.7·§3.8로 이동·재구성 -->
+<div class="page">
+  <div class="page-num">§2.3</div>
+  <div class="page-tag">라떼 라이프스타일</div>
+  <h1 class="page-h1">라떼를 마시는 사람 — <em>부산 일상의 5가지 행동 신호</em></h1>
+  <p class="page-lead">§2.1 페르소나·§2.2 트렌드 신호에 흩어져 있던 "어떤 상황에 라떼를 마시는가" 행동 데이터를 동선 단위로 모은다. 강신호 3건은 1차 보도·발화에서 검증되며, 약신호 2건은 5/8 팀 미팅에서 떠오른 가설로 1차 검증이 필요하다. <b>본 페이지는 라이프스타일 신호의 채택만 한다 — 어느 동선을 점유할지 결정은 본 팩트북 영역 밖.</b></p>
+
+  <table>
+    <thead><tr><th style="width:50px;">강도</th><th style="width:150px;">동선·신호</th><th>관찰된 데이터·발화</th><th style="width:170px;">출처</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><b>★★★</b></td>
+        <td><b>① 출퇴근 동선</b><br><span style="color:#999;font-size:11px;">고정 비용형 일상 라떼</span></td>
+        <td>부산 직장인 = 출근길 1잔 + 점심 1잔 = <b>2잔/일 고정</b> 패턴. 가격·접근성 우선, 4,000원 이하 일상 라떼. VOC 31건(§3.7) 중 "매일 마신다"·"편한 가격"·"무난"·"진하지 않아도 익숙해서" 발화 다수 — 상시 시그니처가 부재해도 카테고리는 견고함.</td>
+        <td>§2.1 P1 페르소나 / §3.7 VOC 31건 / <a href="https://www.82cook.com/entiz/read.php?num=3530627">82cook 체인 라떼</a></td>
+      </tr>
+      <tr>
+        <td><b>★★</b></td>
+        <td><b>② 페어링 동선</b><br><span style="color:#999;font-size:11px;">"라떼+페이스트리" 한 세트</span></td>
+        <td>카페 진목(부산 명지) = 리버뷰 + 진목 라떼 + <b>크루와상</b>이 패키지로 발화. 도렐 제주 = 너티 클라우드 + 우도 땅콩 디저트 묶음. 카페051 = 라떼더해운대 + 코코넛 응축 사이즈. <b>"라떼 한 잔 = 디저트 동반"</b> 부산·제주 1·2티어 공통 패턴.</td>
+        <td><a href="https://the-edit.co.kr/42750">디에디트 부산 4</a> / <a href="https://the-edit.co.kr/43681">디에디트 도렐</a> / 트리플 부산 카페</td>
+      </tr>
+      <tr>
+        <td><b>★★★</b></td>
+        <td><b>③ 주말 카페 투어 동선</b><br><span style="color:#999;font-size:11px;">시그니처 라떼 발화·해시태그</span></td>
+        <td>P2 페르소나 = 주말 부산 1·2티어 투어 (모모스·블랙업·웨이브온·베르크). <b>인스타 #부산카페 누적</b>, "라떼 잘하는 곳" 검색·해시태그·사진 발화 활발. 평일 4,000원 이하 / 주말 5,000~8,000원 OK = 가격 이중 동선.</td>
+        <td>§4.1·§4.2 / <a href="https://hypebeast.kr/2019/10/best-coffee-latte-cafe-seoul-blue-bottle-fritz-rabout-momento-brewers-dukes">Hypebeast 서울 라떼 10곳</a> / 디에디트 부산 4</td>
+      </tr>
+      <tr style="background:#fdfaf3;">
+        <td style="color:#c2410c;"><b>★</b></td>
+        <td><b>④ 운동·러닝 동반</b><br><span style="color:#c2410c;font-size:11px;">미팅 가설 — 검증 필요</span></td>
+        <td>5/8 미팅 가설: "부산 러닝 크루·풋살·요가 등 라이프스타일 모임이 운동 전·후 카페인 충전으로 라떼 동반". 외부 약신호: 베러먼데이(부산 스타트업) "숙취라떼" = 직장인 월요일 기능 페르소나. <b>단서: "운동 자체를 메시지로 쓰지 않는다"</b> — 라이프스타일 묘사의 부속물로만 활용. 메뉴/캠페인 메인 메시지로는 부적합.</td>
+        <td>5/8 미팅 메모 / 베러먼데이 / <i>(1차 검증 필요)</i></td>
+      </tr>
+      <tr style="background:#fdfaf3;">
+        <td style="color:#c2410c;"><b>★</b></td>
+        <td><b>⑤ 세대 어휘</b><br><span style="color:#c2410c;font-size:11px;">미팅 가설 — 검증 필요</span></td>
+        <td>5/8 미팅 가설: 부산 50대 = "갈매기" / 20-30대 = 사투리 표현 ("행님아"·"누나야"). 외부 1차 검증: 스타벅스 제주 = "새코롬 돌코롬" 등 방언 메뉴화 사례. <b>다만 메뉴명 자체에 사투리 직접 사용은 외부 인지 한계</b> — 잡지 '다시, 부산'식 메타포 + 동네 어휘 조합이 안전 (석환 리서치 §3-2 권장).</td>
+        <td>5/8 미팅 메모 / 스타벅스 제주 / 잡지 '다시, 부산' / <i>(1차 검증 필요)</i></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="case-grid">
+    <div class="case">
+      <div class="c-tag">★ 약신호 — ④ 검증 디자인</div>
+      <div class="c-title">운동·러닝 동반 — 1차 검증 게이트</div>
+      <div class="c-text">부산 광안리·해운대 러닝 크루 인스타 해시태그 (#광안리러닝·#해운대러닝) 발화 빈도 정량 / 부산 풋살장·요가 스튜디오 카페 동선 인터뷰 n=20+. <b>검증 전까지 메뉴·캠페인 메인 메시지로 사용 금지</b>, 라이프스타일 앰배서더 모집 풀 후보로만 검토. 5월 중 1차 검증 권장.</div>
+    </div>
+    <div class="case">
+      <div class="c-tag">★ 약신호 — ⑤ 사용 범위</div>
+      <div class="c-title">세대 어휘 — 활용 안전선</div>
+      <div class="c-text">콘텐츠 캡션·POP 보조 카피 = 사용 OK (인스타 공식 톤 X / 숏폼·X·지점 발화 O). 메뉴명 자체에 사투리 직접 박기 = 부산 외 거주자 호감도 정량 검증 (n=300+) 후 결정. 석환 리서치 권장: <b>"항구 소금"·"시장 밤바다"·"자갈 파도"</b>식 메타포 + 동네명 조합이 인지·확산 양면에서 안전.</div>
+    </div>
+  </div>
+
+  <div class="src-block"><b>출처:</b> 5/8 팀 미팅 메모 (사용자 공유) · 석환 리서치 (`팀원들 자료/ExportBlock-*/§3-1·§3-2 부산 카페 씬·도시명 메뉴화`) · 지은 RESEARCH DECK (`팀원들 자료/[댄싱컵] 딥라떼 바이럴 관련 리서치_0508.pptx`) / <a href="https://the-edit.co.kr/42750">디에디트 부산 카페 4</a> · <a href="https://the-edit.co.kr/43681">디에디트 도렐 너티 클라우드</a> · <a href="https://hypebeast.kr/2019/10/best-coffee-latte-cafe-seoul-blue-bottle-fritz-rabout-momento-brewers-dukes">Hypebeast 서울 라떼 10곳</a> · <a href="https://www.82cook.com/entiz/read.php?num=3530627">82cook 체인 라떼</a> · 베러먼데이(부산 스타트업) / <b>한계:</b> 신호 ④·⑤는 1차 정량 검증 미진행 = "관찰된 가설" 단계. 본 팩트북은 신호 채택만, 강도 단정 X — 5월 중 정량·관찰 검증 후 v9 갱신 예정.</div>
+
+  <div class="q-end">
+    <div class="q-tag">§2.3 라이프스타일 인사이트</div>
+    <div class="q-text">라떼는 부산 일상에서 <b>출퇴근 / 페어링 / 주말 투어 = 3가지 강신호 동선</b>에 단단히 박혀 있고, <b>운동·러닝 동반 / 세대 어휘 = 2가지 약신호</b>는 5/8 팀 미팅에서 떠오른 가설로 1차 검증이 필요한 단계다.<br><br>그렇다면 — <b>댄싱컵 딥라떼는 5개 동선 중 어디를 1순위로 점유하는가?</b> 출퇴근 = 가격·접근성·본사 운영 / 페어링 = 디저트 라인업·브랜드팀 영역 / 주말 투어 = 거점 매장 콘텐츠·HIZ 운영 / 운동·세대 어휘 = 라이프스타일 앰배서더·콘텐츠 톤·HIZ 콘텐츠 — 동선마다 운영 리소스·산출물·검증 비용이 다르다.</div>
+    <div class="q-note">→ 답은 본 팩트북에 없음. 다음 단계 전략 브리프(§2 + §3.5·§4 종합)에서 결정. 약신호 ④·⑤는 5월 중 1차 검증 게이트 권장.</div>
+  </div>
+</div>
+
+<!-- =================================================== -->
+<!-- §3 경쟁 -->
+<!-- =================================================== -->
+<div class="section-opener">
+  <div class="so-num">§3</div>
+  <h2 class="so-h">경쟁 — <em>시그니처 라떼·도시명 메뉴화</em></h2>
+  <div class="so-sub">"딥라떼" 어휘 점유 / 우지 K-시그니처 7종 / 글로벌 도시명 4건 / 저가 4사 라인업 / <b>라떼 강조 한국 10 브랜드 매트릭스 (신규)</b> / 솔티드 3 레이어 검증 / VOC 31건 브랜드별 긍·부정 / 미충족 4 카테고리.</div>
+</div>
+
+<!-- §3.1 어휘 점유 -->
+<div class="page">
+  <div class="page-num">§3.1</div>
+  <div class="page-tag">"딥라떼" 어휘 점유 현황</div>
+  <h1 class="page-h1">"딥라떼" 검색·발화 — 우지 점유 / 댄싱컵 미진입</h1>
+
+  <table>
+    <thead><tr><th>브랜드</th><th>메뉴명</th><th>출시</th><th>현황</th><th>1차 어휘 (보도 인용)</th></tr></thead>
+    <tbody>
+      <tr><td><b>우지커피</b></td><td>딥카페라떼 (별칭 "딥라떼")</td><td>2022.01</td><td>누적 600만 잔 / "딥라떼" 자생 별칭 1위</td><td>"원유 + 특별한 로스팅"</td></tr>
+      <tr><td><b>텐퍼센트커피</b></td><td>시그니처라떼 → 꾸덕라떼</td><td>3월 SNS 자생 → 4/1 공식 흡수</td><td>2주 16만 → 3월 33만 잔/월</td><td>"별도 개발 베이스 + 텐크림 추가"</td></tr>
+      <tr><td>이디야커피</td><td>국중박 시그니처(검은깨)</td><td>2026-04 한정</td><td>박물관 5개 매장 결제 1위</td><td>"한국 식재료 + 박물관 콜라보"</td></tr>
+      <tr><td>댄싱컵 (현재 운영)</td><td>딥라떼 (기존 메뉴 — 운영 중)</td><td>(기존)</td><td>운영 중 / 2026-07 리뉴얼 D-Day 예정</td><td>"댄싱컵 라떼 시그니처" — 어휘 차별 미확정</td></tr>
+    </tbody>
+  </table>
+
+  <div class="qbox">
+    <div class="qbox-tag">sentv 1차 보도 (2025-02-14) — 우지 어휘 원문</div>
+    <div class="qbox-quote">"우지커피 딥카페라떼는 <em>특별한 로스팅 기법으로 진한 에스프레소 맛을 살리면서도 원유를 사용해 부드럽고 고소한 우유의 풍미가 커피의 맛과 완벽하게 어우러져</em> 특유의 균형 잡힌 맛으로 소비자의 취향을 만족시키고 있다."</div>
+  </div>
+
+  <div class="src-block"><b>출처:</b> <a href="https://www.sentv.co.kr/article/view/sentv202502140006">sentv 우지 600만</a> · <a href="https://www.enetnews.co.kr/news/articleView.html?idxno=48652">enetnews 텐퍼센트 33만</a> · <a href="https://www.kmib.co.kr/article/view.asp?arcid=0029728975">국민일보 이디야 국중박</a></div>
+</div>
+
+<!-- §3.2 우지 K-시그니처 -->
+<div class="page">
+  <div class="page-num">§3.2</div>
+  <div class="page-tag">우지 K-시그니처 7종 — 도시명 시그니처 시장 진입</div>
+  <h1 class="page-h1">우지 송파라떼·서울 플로트 — 도시명 메뉴화 동시기 진입 (2024.10)</h1>
+
+  <div class="qbox">
+    <div class="qbox-tag">우지 K-시그니처 7종 (2024-10-29 출시)</div>
+    <div class="qbox-quote">"<em>송파라떼는 서울 송파에서 출발한 브랜드의 이야기를 담아낸 메뉴</em>로, 자체 제작한 시그니처 베이스로 만들어져 묵직하면서도 감칠맛이 느껴지는 맛과 고소한 향미가 커피와 조화를 이룹니다." 음료 5종(송파라떼·서울 플로트·깻페라떼·깻잎스무디·참깨그라니따) + 베이커리 2종.</div>
+  </div>
+
+  <p style="font-size:13px;color:#4d525a;line-height:1.85;">우지커피가 2024년 10월 "도시명 시그니처" 시장에 진입. 한국 시장에서 도시명을 메뉴 안에 넣는 패턴이 시작된 시점. 다른 도시(부산·대구·제주·광주 등)는 현재 카테고리 비어 있음.</p>
+
+  <div class="fig wide">
+    <img src="https://img3.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202510/29/segye/20251029090250604yhyo.jpg" alt="우지커피 K-시그니처 7종 — 송파라떼·서울 플로트 등" loading="lazy">
+    <div class="fig-cap"><b>우지 K-시그니처 7종</b> 송파라떼 · 서울 플로트 · 깻페라떼 · 깻잎스무디 · 참깨그라니따 + 도넛 2종 (2024-10-29 출시)<span class="src-meta">세계일보 2024-10-29 / Daum 보도 · <a href="https://v.daum.net/v/20251029090250148">원본 기사</a></span></div>
+  </div>
+
+  <div class="src-block"><b>출처:</b> <a href="https://oozycoffee.com/index/?bmode=view&idx=168397247">우지 공식 보도 (2024-10-29)</a> · <a href="https://www.segye.com/newsView/20251028506778">세계일보 우지 K-시그니처</a> · <a href="https://v.daum.net/v/20251029090250148">Daum 우지 K-시그니처 (2024-10-29)</a></div>
+</div>
+
+<!-- §3.3 글로벌 도시명 메뉴화 4건 -->
+<div class="page">
+  <div class="page-num">§3.3</div>
+  <div class="page-tag">글로벌 도시명 메뉴화 4건</div>
+  <h1 class="page-h1">글로벌 — % Arabica · Blue Bottle · Stumptown · Onibus</h1>
+
+  <div class="fig-row col-3">
+    <div class="fig">
+      <img src="https://www.tankcoffee.com/wp-content/uploads/2024/09/What-is-a-Kyoto-Latte_-297974489.jpg" alt="% Arabica Kyoto Latte 음료" loading="lazy">
+      <div class="fig-cap"><b>% Arabica — Kyoto Latte</b> 에스프레소+스팀밀크+연유<span class="src-meta">2014 출시·241개 매장 · <a href="https://www.tankcoffee.com/kyoto-latte/">tankcoffee 레시피</a></span></div>
+    </div>
+    <div class="fig">
+      <img src="https://cdn.builder.io/api/v1/image/assets%2F9b6836fa3ba643fe8fff0164397e2c60%2F12a66943275047ccb04866a4c502d936?width=1985" alt="Stumptown Coffee Portland Division 매장" loading="lazy">
+      <div class="fig-cap"><b>Stumptown — Hair Bender</b> 포틀랜드 Division Street 첫 매장<span class="src-meta">1999 출시·매장 건물명 = 시그니처 블렌드 · <a href="https://www.stumptowncoffee.com/pages/portland-division-cafe">Stumptown 공식</a></span></div>
+    </div>
+    <div class="fig">
+      <img src="https://sprudge.com/wp-content/uploads/2016/02/Sprudge-OnibusNakameguro-HengteeLim-12_ONIBUS_coffee-740x416.jpg" alt="Onibus Coffee 나카메구로 — 컵 디자인" loading="lazy">
+      <div class="fig-cap"><b>Onibus Coffee — 나카메구로</b> 컵에 지역 아티스트 작품 인쇄<span class="src-meta">2012 출시·도쿄 7개 매장 · <a href="https://sprudge.com/onibus-nakameguro-94298.html">Sprudge</a></span></div>
+    </div>
+  </div>
+
+  <div class="case-grid">
+    <div class="case">
+      <div class="c-tag">교토</div>
+      <div class="c-title">% Arabica — Kyoto Latte</div>
+      <div class="c-sub">2014 출시 / 241개 매장 (2025-06)</div>
+      <div class="c-text">에스프레소 + 스팀 밀크 + 연유. 교토를 메뉴명에 직접 박은 패턴. 12년 1년 상시 유지. 전 세계 매장 동일 레시피.</div>
+      <div class="c-fact">매장수 241 · 12년 1년 상시</div>
+    </div>
+    <div class="case">
+      <div class="c-tag">뉴올리언스</div>
+      <div class="c-title">Blue Bottle — NOLA</div>
+      <div class="c-sub">2005 출시 / 100개+ 매장 / 20년 1년 상시</div>
+      <div class="c-text">뉴올리언스 19세기 식문화의 치커리 첨가 콜드브루. 도시 식재료를 메뉴에 직접 번역. 연 300만 잔 누적 / 2024 NOLA Craft Instant 출시.</div>
+      <div class="c-fact">연 300만 잔 → 인스턴트 파생</div>
+    </div>
+    <div class="case">
+      <div class="c-tag">포틀랜드</div>
+      <div class="c-title">Stumptown — Hair Bender</div>
+      <div class="c-sub">1999 출시 / 첫 매장 건물명이 시그니처</div>
+      <div class="c-text">포틀랜드 SE Division Street 첫 매장이 들어선 건물 이름 "The Hair Bender"를 시그니처 에스프레소 블렌드명으로 채택. 매장 건물의 역사가 메뉴명이 된 패턴.</div>
+      <div class="c-fact">로컬 장소 → 글로벌 시그니처</div>
+    </div>
+    <div class="case">
+      <div class="c-tag">도쿄</div>
+      <div class="c-title">Onibus Coffee</div>
+      <div class="c-sub">2012 출시 / 도쿄 7개 매장</div>
+      <div class="c-text">도쿄 오쿠자와 동네 카페로 시작. 브랜드명 "Onibus" = 포르투갈어 '공공버스'. 컵에 지역 아티스트 작품 인쇄. Betway 리서치 세계 1위 독립 카페 선정.</div>
+      <div class="c-fact">동네 → 세계 1위 독립 카페</div>
+    </div>
+  </div>
+
+  <div class="src-block"><b>출처:</b> <a href="https://en.wikipedia.org/wiki/%25_Arabica">Wikipedia % Arabica</a> · <a href="https://www.tankcoffee.com/kyoto-latte/">tankcoffee Kyoto Latte 레시피·이미지</a> · <a href="https://www.prnewswire.com/news-releases/blue-bottle-coffee-celebrates-its-iconic-new-orleans-style-iced-coffee-with-new-nola-craft-instant-coffee-blend-302204426.html">PR Newswire NOLA 연 300만 잔</a> · <a href="https://bluebottlecoffee.com/us/eng/brew-guides/new-orleans-style-iced-coffee">Blue Bottle 공식 NOLA Brew Guide</a> · <a href="https://www.stumptowncoffee.com/pages/portland-division-cafe">Stumptown 공식</a> · <a href="https://sprudge.com/onibus-nakameguro-94298.html">Sprudge Onibus 나카메구로</a></div>
+</div>
+
+<!-- §3.4 4사 라인업 매트릭스 -->
+<div class="page">
+  <div class="page-num">§3.4</div>
+  <div class="page-tag">저가 4사 라떼 라인업 비교</div>
+  <h1 class="page-h1">4사 라인업 — 메가 19종 · 컴포즈 13종 · 빽다방 15종</h1>
+  <p class="page-lead">저가 4사 모두 라떼 카테고리 메뉴 수는 풍부하나 베이스 차별 메커니즘은 시럽·소스 변주가 표준. 우유 자체를 블렌딩한 차별은 우지·텐퍼센트만 시도.</p>
+
+  <table>
+    <thead><tr><th>차별 축</th><th>메가</th><th>컴포즈</th><th>빽다방</th></tr></thead>
+    <tbody>
+      <tr><td><b>베이스 차별</b></td><td>시럽·소스 변주</td><td>시럽·소스 변주</td><td>시럽·소스 변주</td></tr>
+      <tr><td><b>라떼 종수 (상시)</b></td><td>커피 9 + 비커피 10 = 19종</td><td>커피 10 + 비커피 3 = 13종</td><td>커피 12 + 신메뉴 3 = 15종</td></tr>
+      <tr><td><b>1년 상시 시그니처</b></td><td>없음</td><td>없음</td><td>없음 (사이즈 차별)</td></tr>
+      <tr><td><b>도시명 결합</b></td><td>없음</td><td>없음</td><td>없음</td></tr>
+      <tr><td><b>2025 시즌 회전 빈도</b></td><td>분기 5-8종 / 연 26+</td><td>분기 3-5종</td><td>분기 3-6종</td></tr>
+    </tbody>
+  </table>
+
+  <div class="src-block"><b>출처:</b> <a href="https://magazineo.tistory.com/entry/2025년-메가MGC-커피-메뉴-가격-정리">매거진O 메가</a> · <a href="https://carprice24.tistory.com/entry/2025-컴포즈커피-메뉴-가격">컴포즈 라인업</a> · <a href="https://paikdabang.com/menu/menu_new/">빽다방 공식</a> · 수집 시점: 2025-04 ~ 2026-04</div>
+</div>
+
+<!-- §3.5 라떼 강조 브랜드 비교 (신규 — 2026-05-08 v7.2) -->
+<div class="page">
+  <div class="page-num">§3.5</div>
+  <div class="page-tag">라떼 강조 브랜드 비교 — 가격대×시그니처 메커니즘</div>
+  <h1 class="page-h1">라떼를 내세우는 한국 브랜드 — 가격대 10개 매트릭스</h1>
+  <p class="page-lead">"라떼 잘하는 곳"·"시그니처 라떼"로 발화·평가되는 한국 브랜드 10개를 가격대 순으로 정렬. 댄싱컵은 T3 (2,500~4,000원) 일상 가격대.</p>
+
+  <table>
+    <thead><tr><th>가격대</th><th>브랜드</th><th>시그니처 라떼</th><th>차별 메커니즘</th><th>발화·평가 신호</th></tr></thead>
+    <tbody>
+      <tr><td>7,000~9,000<br>스페셜티</td><td><b>도렐 (제주·신사)</b></td><td>너티 클라우드</td><td>차가운 우유 + 우도 땅콩 크림 + 에스프레소 (얼음 X)</td><td>디에디트 "오직 그 카페에만 파는 시그니처 4선" / 블루보틀 비교 발화</td></tr>
+      <tr><td>5,500~7,000<br>스페셜티 대중</td><td><b>모멘토 브루어스</b></td><td>카페라떼</td><td>호주 멜버른 마켓 레인 원두 직수입</td><td>Hypebeast "서울 라떼 맛집 10곳" 1위급</td></tr>
+      <tr><td>5,000~7,000<br>로컬 스페셜티</td><td><b>영앤도터스 (도화동)</b></td><td>딥캬라멜 라떼</td><td>자체 제작 카라멜 시럽 + 따뜻하게 데운 우유 위 블렌딩 에스프레소</td><td>82cook "체인 라떼 맛집" 추천 1순위</td></tr>
+      <tr><td>4,500~6,000<br>프랜차이즈 프리미엄</td><td><b>폴바셋</b></td><td>아이스크림 카페라떼 / 카페라떼</td><td>상하목장 우유 · 상하목장 아이스크림 토핑 · "Long Black" 스타일</td><td><b>Threads 36종 카페라떼 블라인드 1위</b></td></tr>
+      <tr><td>4,000~5,000<br>프랜차이즈</td><td>할리스</td><td>솔티카라멜 크림 라떼 / 골드라떼</td><td>카라멜 시럽 + 소금 베이스 변주</td><td>한국 카페 정규 라인 / VOC 9건 — §3.7</td></tr>
+      <tr><td>3,500~5,000<br>프랜차이즈</td><td>이디야</td><td>국중박 시그니처 (한정 5개 매장) / 더 진한 솔티드 카라멜 (스틱)</td><td>검은깨 + 박물관 콜라보 / 히말라야 핑크 솔트</td><td>박물관 결제 데이터 1위</td></tr>
+      <tr><td>3,000~4,000<br>저가 중상위</td><td><b>텐퍼센트</b></td><td>시그니처라떼 (꾸덕라떼)</td><td>별도 베이스 + 텐크림 (3월 SNS 자생 → 4월 공식 흡수)</td><td>3월 33만 잔/월 / VOC 10건 — §3.7</td></tr>
+      <tr class="hi"><td><b>2,500~4,000<br>저가 일상 (댄싱컵 위치)</b></td><td><b>댄싱컵 (현재 운영)</b></td><td>딥라떼 (운영 중 / 2026-07 리뉴얼 예정)</td><td>(차별 메커니즘 = 7월 리뉴얼에서 결정)</td><td>(미공개)</td></tr>
+      <tr><td>2,500~3,500<br>저가</td><td><b>우지커피</b></td><td>딥카페라떼 (별칭 "딥라떼")</td><td>특별 로스팅 + 원유</td><td><b>누적 600만 잔 / "딥라떼" 어휘 자생 1위</b></td></tr>
+      <tr><td>2,000~3,000<br>저가</td><td>빽다방 / 메가 / 컴포즈</td><td>(시그니처 라떼 부재 — 시즌 회전)</td><td>시럽·소스 베이스 변주만</td><td><b>Threads 36종 블라인드 빽다방 2위</b> · 메가 시즌 26종+</td></tr>
+    </tbody>
+  </table>
+
+  <div class="fig-row col-3">
+    <div class="fig">
+      <img src="https://www.baristapaulbassett.co.kr/upload/product/C/thumbnail_1_202601150614342381.png" alt="폴바셋 아이스크림 카페 라떼" loading="lazy">
+      <div class="fig-cap"><b>폴바셋 — 아이스크림 카페 라떼</b> 4,800~5,800원 / 상하목장 우유·아이스크림 토핑<span class="src-meta">36종 블라인드 1위 · <a href="https://www.baristapaulbassett.co.kr/menu/View.pb?dpid=PB179437">폴바셋 공식</a></span></div>
+    </div>
+    <div class="fig">
+      <img src="https://t1.daumcdn.net/cfile/tistory/99D75D405F9D779B32" alt="도렐 제주 너티 클라우드" loading="lazy">
+      <div class="fig-cap"><b>도렐(제주) — 너티 클라우드</b> 7,500원 / 차가운 우유 + 우도 땅콩 크림 + 에스프레소<span class="src-meta">디에디트 4선 · <a href="https://blahblah.pe.kr/1271">원본 후기</a></span></div>
+    </div>
+    <div class="fig">
+      <img src="https://cdn.enetnews.co.kr/news/photo/202604/48652_65686_3117.jpg" alt="텐퍼센트 시그니처라떼 (꾸덕라떼)" loading="lazy">
+      <div class="fig-cap"><b>텐퍼센트 — 시그니처라떼 (꾸덕)</b> 3,500~4,500원 / 별도 베이스 + 텐크림<span class="src-meta">3월 33만 잔/월 · <a href="https://www.enetnews.co.kr/news/articleView.html?idxno=48652">enetnews</a></span></div>
+    </div>
+  </div>
+
+  <div class="src-block"><b>출처:</b> <a href="https://www.threads.com/@jspark3710/post/DDs48SrSY5b">Threads 36종 카페라떼 블라인드 1·2·3위</a> · <a href="https://hypebeast.kr/2019/10/best-coffee-latte-cafe-seoul-blue-bottle-fritz-rabout-momento-brewers-dukes">Hypebeast 서울 라떼 맛집 10곳</a> · <a href="https://www.82cook.com/entiz/read.php?num=3530627">82cook 체인 라떼 맛집</a> · <a href="https://www.baristapaulbassett.co.kr/menu/View.pb?dpid=PB179437">폴바셋 아이스크림 카페라떼 공식</a> · <a href="https://the-edit.co.kr/43681">디에디트 도렐 너티 클라우드</a> · <a href="https://blahblah.pe.kr/1271">제주카페 도렐 너티 클라우드 후기</a> · <a href="https://www.joongangenews.com/news/articleView.html?idxno=490991">중앙이코노미뉴스 이디야 더 진한 솔티드 카라멜 스틱</a> · <a href="https://www.kmib.co.kr/article/view.asp?arcid=0029728975">국민일보 이디야 국중박</a> · <a href="https://www.enetnews.co.kr/news/articleView.html?idxno=48652">enetnews 텐퍼센트 33만</a> · <a href="https://www.sentv.co.kr/article/view/sentv202502140006">sentv 우지 600만</a> · 측정 시점: 2026-04 ~ 2026-05</div>
+</div>
+
+<!-- §3.6 솔티드 4중 검증 (이전 §3.5) — 2026-05-08 v7.2: §3 q-end는 §3.8로 이동, 화제성 표현 약화 -->
+<div class="page">
+  <div class="page-num">§3.6</div>
+  <div class="page-tag">솔티드 라떼 검증 사례</div>
+  <h1 class="page-h1">솔티드 — 글로벌·한국·부산 3 레이어 검증 (메가트렌드 단정 X)</h1>
+  <p class="page-lead">솔티드 라떼는 2026 한국 카페 트렌드 키워드 'B.E.Y.O.N.D'에 미포함. 글로벌·한국 정규·부산 9년 누적의 3 레이어에서 <b>검증된 사례</b>는 있으나, 단일 메가트렌드로 단정할 신호는 약함. 본 검증은 후보 어휘로서의 적격성만 확인.</p>
+
+  <div class="case-grid">
+    <div class="case">
+      <div class="c-tag">검증 ① 글로벌</div>
+      <div class="c-title">베트남 ca phe muoi</div>
+      <div class="c-sub">미쉐린 가이드 베트남 6대 (2024)</div>
+      <div class="c-text">베트남 후에(Hue) 지방 특선 짠 라떼. <b>미쉐린 가이드 베트남 6대 커피 선정 (2024)</b>. 한국 진출 2025~ 일부 카페 솔티드 라인 운영.</div>
+    </div>
+    <div class="case">
+      <div class="c-tag">검증 ② 한국 정규</div>
+      <div class="c-title">할리스 솔티카라멜 / 이디야 더 진한 솔티드 카라멜 스틱</div>
+      <div class="c-sub">한국 카페 정규 라인 + 홈카페 스틱</div>
+      <div class="c-text">"솔티드" 단어가 한국 카페 라인에 정착. 차별 메커니즘 = 카라멜 + 소금 변주 + 히말라야 핑크 솔트.</div>
+    </div>
+    <div class="case">
+      <div class="c-tag">검증 ③ 부산 9년</div>
+      <div class="c-title">블랙업커피 "해,수염"</div>
+      <div class="c-sub">2017-04 출시 / 부산 1티어 스페셜티</div>
+      <div class="c-text">2017-04 출시. 부산 1티어 스페셜티가 9년 전부터 운영하는 솔티드 시그니처. 부산 도시 안에서 "바다소금" 단어가 누적되고 있음.</div>
+    </div>
+    <div class="case">
+      <div class="c-tag">검증 ④ 부산 페어링</div>
+      <div class="c-title">제이엠커피로스터스 — 소금빵</div>
+      <div class="c-sub">부산 기장 / 오션뷰 대형 스페셜티</div>
+      <div class="c-text">시그니처 = 스페셜티 커피 + 소금빵 페어링. 부산 안에서 "솔트 + 빵" 페어링이 운영 검증된 사례.</div>
+    </div>
+  </div>
+
+  <div class="fig-row col-3">
+    <div class="fig">
+      <img src="https://static.vinwonders.com/production/2025/02/Salted-coffee-Vietnam-banner.jpg" alt="베트남 솔트 커피 (cà phê muối) — 후에 지방 특선" loading="lazy">
+      <div class="fig-cap"><b>베트남 cà phê muối</b> 후에 지방 특선 / 미쉐린 가이드 6대 (2024)<span class="src-meta"><a href="https://vinwonders.com/ko/wonderpedia/news/%EC%86%8C%EA%B8%88-%EC%BB%A4%ED%94%BC/">VinWonders</a></span></div>
+    </div>
+    <div class="fig">
+      <img src="https://admin.hollys.co.kr/upload/menu/etc/menuEtc_202410170421387250.png" alt="할리스 솔티카라멜 크림 라떼 메뉴샷" loading="lazy">
+      <div class="fig-cap"><b>할리스 — 솔티카라멜 크림 라떼</b> 한국 카페 정규 라인 / 카라멜+소금 변주<span class="src-meta"><a href="https://m.hollys.co.kr/menu/menuView.do?menuDiv=ESPRESSO&idx=998">할리스 공식</a></span></div>
+    </div>
+    <div class="fig">
+      <img src="https://ak-d.tripcdn.com/images/1mi6d224x92qag03fB7DD_W_640_0_R5_Q80.jpg?proc=source/trip" alt="제이엠커피로스터스 부산 기장 — 소금빵 페어링" loading="lazy">
+      <div class="fig-cap"><b>제이엠커피 — 소금빵 페어링</b> 부산 기장 / 스페셜티 커피 + 갓 구운 소금빵<span class="src-meta"><a href="https://kr.trip.com/moments/detail/busan-432-133502483/">트립닷컴</a></span></div>
+    </div>
+  </div>
+
+  <div class="src-block"><b>출처:</b> <a href="https://www.aseandaily.co.kr/news/articleView.html?idxno=1005900">aseandaily 베트남 미쉐린 6대</a> · <a href="https://m.hollys.co.kr/menu/menuView.do?menuDiv=ESPRESSO&idx=998">할리스 솔티카라멜 메뉴샷</a> · <a href="https://www.joongangenews.com/news/articleView.html?idxno=490991">중앙이코노미뉴스 이디야 더 진한 솔티드 카라멜 (히말라야 핑크 솔트)</a> · <a href="https://www.facebook.com/photo.php?fbid=1137411233037787">블랙업 "해,수염" 페이스북 (2017-04)</a> · <a href="https://kr.trip.com/moments/detail/busan-432-133502483/">트립닷컴 제이엠 소금빵</a> · <b>한계:</b> 한국 단일 메가트렌드 단정은 표본 약함. 글로벌·한국·부산 3 레이어 검증 사례로만 다룸. 베트남 카페 무오이·블랙업 해수염 메뉴 1차 이미지 미확보.</div>
+</div>
+
+<!-- §3.7 라떼 카테고리 VOC — 브랜드별 긍/부정 키워드 (이전 §2.3) -->
+<div class="page">
+  <div class="page-num">§3.7</div>
+  <div class="page-tag">라떼 카테고리 VOC — 브랜드별 긍/부정 키워드</div>
+  <h1 class="page-h1">VOC 31건 / 6채널 — 우지·텐퍼센트·할리스 브랜드별 분리</h1>
+  <p class="page-lead">우지 12 · 텐퍼센트 10 · 할리스 9건. 디미토리·더쿠·블로그·블라인드·Threads·언론 6채널. 각 브랜드 발화에서 키워드 추출 (긍정·부정 카드). 익명 처리 / 전체 31건 원문 = §부록.</p>
+
+  <div class="case-grid col-3">
+    <div class="case">
+      <div class="c-tag">우지커피 (12건 · 긍9 / 중2 / 부1)</div>
+      <div class="c-title">긍정 키워드 4</div>
+      <div class="c-text"><b>꼬소함</b> · <b>진하기</b> · <b>1일 1잔</b> · <b>가격 대비 만족</b></div>
+      <div class="voice pos" style="margin-top:10px">
+        <div class="v-text">아이스라떼로 먹는데 너무 꼬소해. 산미 조금 있는 에스프레소 같은데 꼬소한 우유랑 같이 먹으니까 너무 맛있다</div>
+        <div class="v-meta"><span class="v-source">디미토리</span><span>2024-03</span></div>
+      </div>
+      <div class="voice pos" style="margin-top:8px">
+        <div class="v-text">아아메랑 돌아가면서 1일 1우지커피하고있음 ㅋㅋ</div>
+        <div class="v-meta"><span class="v-source">디미토리</span><span>2024-03</span></div>
+      </div>
+      <div class="c-fact" style="margin-top:10px;color:#c33">부정 키워드 1</div>
+      <div class="c-text" style="font-size:11px;color:#999">"일반 라떼는 기대치 하회" (블로그 1건)</div>
+    </div>
+
+    <div class="case">
+      <div class="c-tag">텐퍼센트 (10건 · 긍5 / 중4 / 부1)</div>
+      <div class="c-title">긍정 키워드 3</div>
+      <div class="c-text"><b>꾸덕한 풍미</b> · <b>크림 맛</b> · <b>묵직한 커피와 조화</b></div>
+      <div class="voice pos" style="margin-top:10px">
+        <div class="v-text">라떼 종류는 크림이 맛있어서 텐퍼센트가 좋더라구요. 달콤하고 꾸덕한 풍미가 진하고 묵직한 커피와 정말 잘 어울려요</div>
+        <div class="v-meta"><span class="v-source">다이어트 커뮤니티</span><span>2026-03</span></div>
+      </div>
+      <div class="c-fact" style="margin-top:10px;color:#c33">부정 키워드 4</div>
+      <div class="c-text" style="font-size:11px;color:#999"><b>양 적음</b> · <b>매장별 맛 편차</b> · <b>기본 시그니처라떼 평범</b> · <b>플랫화이트와 차이 인지 부족</b></div>
+      <div class="voice neg" style="margin-top:8px">
+        <div class="v-text">가맹 체제로 운영되어서 그런지 같은 원두를 사용해도 매장에 따라 맛의 편차가 큰 편</div>
+        <div class="v-meta"><span class="v-source">나무위키</span><span>2026-05-04</span></div>
+      </div>
+    </div>
+
+    <div class="case">
+      <div class="c-tag">할리스 (9건 · 긍3 / 중3 / 부3)</div>
+      <div class="c-title">긍정 키워드 2</div>
+      <div class="c-text"><b>솔티 단어 익숙</b> · <b>카라멜 베이스</b></div>
+      <div class="c-fact" style="margin-top:10px;color:#c33">부정 키워드 3</div>
+      <div class="c-text" style="font-size:11px;color:#999"><b>맛 일관성 부족</b> · <b>프랜차이즈 원두 의문</b> · <b>4,700원 가격 부담</b></div>
+      <div class="voice neg" style="margin-top:10px">
+        <div class="v-text">할리스 커피 원래 이렇게 맛 없어? 충격적인 맛인데?? 어쨌든 프차는 원두 안좋은거 써</div>
+        <div class="v-meta"><span class="v-source">블라인드</span><span>2022-10</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="src-block"><b>수집 기간:</b> 2024-03 ~ 2026-05-07 (최근 6개월 우선) · <b>채널 분포:</b> 디미토리 4 · 더쿠 3 · 블로그 16 · 블라인드 4 · Threads 1 · 언론 2 · 나무위키 1 = 6채널 · <b>처리:</b> 익명 / 전체 31건 원문 = §부록 A · <b>한계:</b> 표본 작음 (n=31). 정량 설문으로 보강 권장</div>
+</div>
+
+<!-- §3.8 미충족 매트릭스 + §3 인사이트 질문 (이전 §2.4 + §3.5 q-end 통합) -->
+<div class="page">
+  <div class="page-num">§3.8</div>
+  <div class="page-tag">미충족 니즈 매트릭스 + §3 인사이트 질문</div>
+  <h1 class="page-h1">부정 발화 4 카테고리 — 가격·맛 균일성·진하기·메뉴 인지</h1>
+
+  <table>
+    <thead><tr><th>카테고리</th><th>경쟁사 부정 발화 패턴</th><th>관찰 빈도</th></tr></thead>
+    <tbody>
+      <tr><td><b>가격·용량</b></td><td>텐퍼센트 "양이 적지만" / 2026-01 텐업 14oz 축소 / 할리스 4,700원 (스타벅스 동급) 부담</td><td>4건</td></tr>
+      <tr><td><b>맛 균일성</b></td><td>텐퍼센트 "매장별 맛 편차 큰 편" / 할리스 "프차는 원두 안 좋다"</td><td>3건</td></tr>
+      <tr><td><b>맛·진하기</b></td><td>우지 일반 라떼 "기대치 하회" / 텐퍼센트 기본 시그니처라떼 "평범"</td><td>2건</td></tr>
+      <tr><td><b>메뉴 인지·차별</b></td><td>텐퍼센트 "플랫화이트랑 차이 잘 모르겠어"</td><td>1건</td></tr>
+    </tbody>
+  </table>
+
+  <div class="src-block"><b>분석 방법:</b> §3.7 VOC 31건 중 부정·중립 발화에서 카테고리 추출 / <b>한계:</b> 표본 작음 (n=31) — 정량 설문으로 보강 권장</div>
+
+  <div class="q-end">
+    <div class="q-tag">§3 인사이트 질문</div>
+    <div class="q-text">한국 라떼 카테고리는 가격대로 명확히 분리된다 — <b>5,500원 이상 = 폴바셋·도렐·모멘토·영앤도터스 (시그니처 라떼 발화 강함)</b> / <b>3,000~4,000원 = 우지·텐퍼센트만 시그니처 보유 (각 600만·33만 잔)</b> / <b>2,500원대 저가 4사 = 빽다방·메가·컴포즈 시그니처 라떼 부재</b>. 동시에 우지가 2024.10에 도시명 시그니처(송파라떼) 시장에 진입했으나 부산·대구·제주 등은 비어 있고, 솔티드 라떼는 글로벌·한국·부산 3 레이어에서 검증되어 있다. VOC 부정 발화 4 카테고리(가격·맛 균일성·진하기·메뉴 인지)가 같이 누적된다.<br><br>그렇다면 — <b>댄싱컵의 2,500~4,000원 가격대에서, "라떼 잘하는 곳"으로 발화될 차별 키워드 후보 (도시명 부산 × 베이스 우유 블렌딩 × 단어 솔티드/딥) 어느 조합이 가장 자연스러운가?</b> 우지 "원유 + 로스팅" 어휘와 겹치지 않는 다른 길은 어디인가? 부정 4 카테고리 중 어느 자리를 풀 수 있는가?</div>
+    <div class="q-note">→ 답은 본 팩트북에 없음. 다음 단계 전략 브리프에서 결정.</div>
+  </div>
+</div>
+
+<!-- 이전 §4 자사 분석 — 2026-05-08 v7.2 리드 결정으로 삭제. 자사 진단은 팩트북 영역이 아닌 전략 브리프 영역으로 분리. 이전 §5/§6/§7 → 새 §4/§5/§6 renumber 적용. -->
+
+<!-- =================================================== -->
+<!-- §4 부산 (renumber 이전 §4) -->
+<!-- =================================================== -->
+<div class="section-opener">
+  <div class="so-num">§4</div>
+  <h2 class="so-h">부산 — <em>도시 자산</em></h2>
+  <div class="so-sub">부산 카페 4티어 분포, 1·2티어 디테일 (모모스·블랙업·에프엠·베르크·제이엠).</div>
+</div>
+
+<!-- §4.1 부산 4티어 -->
+<div class="page">
+  <div class="page-num">§4.1</div>
+  <div class="page-tag">부산 카페 4티어 분포</div>
+  <h1 class="page-h1">부산 카페 4티어 — 1·2티어가 만든 "커피 도시" 인지</h1>
+
+  <div class="tier-stack">
+    <div class="tier">
+      <div class="tier-id">T1</div>
+      <div class="tier-price">6,000~10,000<span class="sub">스페셜티 프리미엄</span></div>
+      <div class="tier-body"><b>모모스커피 영도</b> (2026 World's 100 Best Coffee Shops 22위 · 한국 1위 · 전주연 WBC 세계 챔피언) · <b>블랙업커피 서면</b> (96명+ 바리스타 · 부울경 최대 · 시그니처 "해,수염 콜드브루" 2017-04)</div>
+      <div class="tier-pos">스페셜티 카테고리</div>
+    </div>
+    <div class="tier">
+      <div class="tier-id">T2</div>
+      <div class="tier-price">5,000~7,000<span class="sub">스페셜티 대중</span></div>
+      <div class="tier-body"><b>에프엠 커피</b> (전포동 카페거리 원조 · 파나마 게이샤 6,500원) · <b>베르크 로스터스</b> (부산 인디 → 빅4) · <b>웨이브온</b> (기장 / 월내라떼·풀문커피) · <b>제이엠커피로스터스</b> (소금빵 페어링)</div>
+      <div class="tier-pos">스페셜티 대중</div>
+    </div>
+    <div class="tier us">
+      <div class="tier-id">T3</div>
+      <div class="tier-price">2,500~4,000<span class="sub">대중 가격</span></div>
+      <div class="tier-body">컴포즈 부산 · 메가 부산 · 빽다방 부산 · <b>댄싱컵</b> — 시그니처 라떼 부재 / 시즌 회전 중심.</div>
+      <div class="tier-pos">댄싱컵 위치</div>
+    </div>
+    <div class="tier">
+      <div class="tier-id">T4</div>
+      <div class="tier-price">5,000~8,000<span class="sub">인스타·관광</span></div>
+      <div class="tier-body">포트1902 (해운대 / 하와이안 바닐라) · 나뭇잎마을 (광안리 / 일광욕 물개푸딩) · 카페 돌라 (기장 / 숙성우유 콜드브루)</div>
+      <div class="tier-pos">관광 카테고리</div>
+    </div>
+  </div>
+
+  <div class="src-block"><b>출처:</b> <a href="https://the-edit.co.kr/42750">디에디트 부산 카페 4 (2024)</a> · <a href="https://mobile.busan.com/view/busan/view.php?code=2026021713291431295">부산일보 모모스 22위</a> · <a href="https://blackupcoffee.com/">블랙업 공식</a> · <a href="https://kr.trip.com/moments/detail/busan-432-133502483/">트립닷컴 제이엠</a></div>
+</div>
+
+<!-- §4.2 1·2티어 디테일 -->
+<div class="page">
+  <div class="page-num">§4.2</div>
+  <div class="page-tag">부산 1·2티어 카페 디테일</div>
+  <h1 class="page-h1">부산 1·2티어 — 모모스 · 블랙업 · 에프엠 · 베르크 · 제이엠</h1>
+
+  <div class="case-grid col-3">
+    <div class="case">
+      <div class="c-tag">1티어</div>
+      <div class="c-title">모모스 커피</div>
+      <div class="c-sub">금정구 오시게로 / 09:00-21:00</div>
+      <div class="c-text"><b>한국 최초 WBC 세계 바리스타 챔피언 전주연이 운영.</b> 시그니처 = 매일 섬세하게 선정하는 핸드드립 커피(약 5,000원). 영도 본점은 그린 커피 창고·로스터리·실험실·패키징·카페바 통합. 2026 World's 100 Best Coffee Shops 22위 (한국 1위).</div>
+    </div>
+    <div class="case">
+      <div class="c-tag">1티어</div>
+      <div class="c-title">블랙업 커피 서면</div>
+      <div class="c-sub">부산진구 서전로10번길 / 10:00-22:00</div>
+      <div class="c-text"><b>96명 이상의 바리스타 보유, 부울경 최대 규모 스페셜티 카페.</b> 시그니처 = 네로블렌딩 아메리카노, <b>해수염 콜드브루</b>. 해운대 LCT 98층 매장 운영. "해,수염" 단어는 2017-04부터 운영.</div>
+    </div>
+    <div class="case">
+      <div class="c-tag">2티어</div>
+      <div class="c-title">에프엠 커피</div>
+      <div class="c-sub">부산진구 전포대로199번길</div>
+      <div class="c-text"><b>"강력하고 개성 있는 로스팅"이 특징. 전포동 카페거리 원조.</b> 시그니처 = 파나마 게이샤(90점대 커핑 스코어, 6,500원).</div>
+    </div>
+  </div>
+
+  <div class="case-grid">
+    <div class="case">
+      <div class="c-tag">2티어</div>
+      <div class="c-title">베르크 로스터스</div>
+      <div class="c-text"><b>"부산의 인디 커피의 상징에서, 이제는 부산 스페셜티 커피의 빅4."</b> 시그니처 = 테이스팅 세트(7,000원). 부산 안에서 인디 → 빅4로 올라온 운영 이력.</div>
+    </div>
+    <div class="case">
+      <div class="c-tag">2티어 / 페어링</div>
+      <div class="c-title">제이엠커피로스터스</div>
+      <div class="c-text">부산 기장 오션뷰 / 3개 층 + 3개 바 대형 스페셜티. 시그니처 = 스페셜티 커피·브루잉·<b>소금빵</b>. 갓 구운 소금빵·밤식빵·페이스트리. 마운틴뷰 + 오션뷰 공존.</div>
+    </div>
+  </div>
+
+  <div class="fig-row col-3">
+    <div class="fig">
+      <img src="https://storage.heypop.kr/assets/2022/07/12134112/KakaoTalk_20220227_090240966_05.jpeg" alt="모모스커피 영도 본점 통유리·로스터리" loading="lazy">
+      <div class="fig-cap"><b>모모스 영도 본점</b> · 창고 개조·통유리 로스터리<span class="src-meta">heypop 2022 · <a href="https://heypop.kr/n/35863/">원본</a></span></div>
+    </div>
+    <div class="fig">
+      <img src="https://leesarcoffee.com/wp-content/uploads/2024/05/KakaoTalk_20240517_023538412_01-1024x768.jpg" alt="블랙업커피 서면점 시그니처바" loading="lazy">
+      <div class="fig-cap"><b>블랙업 서면 시그니처바</b> · 바리스타 직접 설명·제조<span class="src-meta">LEESAR 2024-05 · <a href="https://leesarcoffee.com/%EB%B6%80%EC%82%B0-%EC%84%9C%EB%A9%B4-%EC%B9%B4%ED%8E%98%ED%88%AC%EC%96%B4-1%ED%8E%B8-%EB%B8%94%EB%9E%99%EC%97%85%EC%BB%A4%ED%94%BC/">원본</a></span></div>
+    </div>
+    <div class="fig">
+      <img src="https://storage.heypop.kr/assets/2023/05/31172545/4F5A6111-RE-scaled.jpg" alt="베르크 로스터스 부산 전포 2층" loading="lazy">
+      <div class="fig-cap"><b>베르크 로스터스 2.0</b> · Service Center 디자인·인디→빅4<span class="src-meta">heypop 2023-06 · <a href="https://heypop.kr/n/56760/">원본</a></span></div>
+    </div>
+  </div>
+
+  <div class="src-block"><b>출처:</b> <a href="https://the-edit.co.kr/42750">디에디트 부산 카페 4</a> · <a href="https://momos.co.kr/custom/sub/space/youngdo.html">모모스 영도</a> · <a href="https://heypop.kr/n/35863/">heypop 모모스 영도 (2022)</a> · <a href="https://leesarcoffee.com/%EB%B6%80%EC%82%B0-%EC%84%9C%EB%A9%B4-%EC%B9%B4%ED%8E%98%ED%88%AC%EC%96%B4-1%ED%8E%B8-%EB%B8%94%EB%9E%99%EC%97%85%EC%BB%A4%ED%94%BC/">LEESAR 블랙업 서면 시그니처바 (2024)</a> · <a href="https://heypop.kr/n/56706/">heypop 베르크 디자인 1.0 (2023)</a> · <a href="https://heypop.kr/n/56760/">heypop 베르크 디자인 2.0 (2023)</a> · <a href="https://www.facebook.com/photo.php?fbid=1137411233037787">블랙업 "해,수염" 페이스북 (2017-04)</a> · <a href="https://kr.trip.com/moments/detail/busan-432-133502483/">트립닷컴 제이엠</a></div>
+
+  <div class="q-end">
+    <div class="q-tag">§4 인사이트 질문</div>
+    <div class="q-text">부산은 모모스·블랙업·에프엠·베르크 1·2티어 카페가 9~26년 누적된 "커피 도시" 인지를 만들어 놓은 상태다.<br><br>그렇다면 — <b>부산 1·2티어가 만든 인지를 댄싱컵 3티어 일상 가격대로 끌어내릴 때, 어떤 단어·메커니즘으로 가져와야 1·2티어와 충돌하지 않으면서 인지를 흡수할 수 있는가?</b> 정통성 시비를 회피하는 길은 어디인가?</div>
+    <div class="q-note">→ 답은 본 팩트북에 없음. 다음 단계 전략 브리프에서 결정.</div>
+  </div>
+</div>
+
+<!-- §4.3 매거진B + 외국인 293만 — 2026-05-08 v7.2 리드 결정으로 삭제. 매거진B·외국인 통계는 본 팩트북 의사결정에 직접적 영향 약함. -->
+
+<!-- =================================================== -->
+<!-- §5 콘텐츠 모델 -->
+<!-- =================================================== -->
+<div class="section-opener">
+  <div class="so-num">§5</div>
+  <h2 class="so-h">콘텐츠 모델 — <em>점주·알바·소비자 자생 콘텐츠</em></h2>
+  <div class="so-sub">GS25 25매거진 100만 모델, 올리브영 임직원 콘텐츠, 메가 알바 자생 (반면교사), 미국 TikTok #foodtok 거시 신호.</div>
+</div>
+
+<!-- §5.1 GS25 + 올리브영 -->
+<div class="page">
+  <div class="page-num">§5.1</div>
+  <div class="page-tag">GS25 25매거진 + 올리브영 임직원 모델</div>
+  <h1 class="page-h1">GS25 — 인스타·유튜브 양대 100만 / 5년 6개월 누적</h1>
+
+  <div class="qbox">
+    <div class="qbox-tag">ZDNet·네이트 (2025-10-27)</div>
+    <div class="qbox-quote">"GS25는 지난 2019년 4월 인스타그램을 개설한 이래 약 <em>5년 6개월 만에 팔로워 100만명을 돌파</em>. 2022년 8월 유튜브 구독자 100만명을 달성한 데 이어 SNS 주요 채널 양대 축에서 100만 팬덤을 구축한 것은 업계에서 유일무이한 사례. 대표적인 콘텐츠는 <em>'25매거진' 시리즈</em>로, 꾸덕 꿀조합을 소개하는 편의점 직원 시리즈, 신상품과 SNS 이슈 상품을 다루는 신상품 홍보 시리즈, 편의점에서 생긴 재미난 에피소드를 풀어낸 <em>편의점 썰툰</em> 등."</div>
+  </div>
+
+  <table>
+    <thead><tr><th>항목</th><th>GS25 25매거진</th><th>올리브영 (참고)</th></tr></thead>
+    <tbody>
+      <tr><td>시작 시점</td><td>2019.04 인스타 / 2022.08 유튜브</td><td>O-log·careers.oliveyoung.com 임직원 인터뷰 시리즈</td></tr>
+      <tr><td>현재 규모</td><td>인스타 100만 / 유튜브 100만</td><td>(공식 숫자 비공개)</td></tr>
+      <tr><td>누적 기간</td><td>5년 6개월 (인스타)</td><td>다년 누적</td></tr>
+      <tr><td>콘텐츠 시리즈</td><td>① 직원 꿀조합 ② 신상품 리뷰 ③ 편의점 썰툰</td><td>① 임직원 인터뷰 ② 채용 후기 ③ 일상 콘텐츠</td></tr>
+      <tr><td>운영 형태</td><td>본사 정렬 + 직원 자발성 결합</td><td>본사 직접 운영</td></tr>
+    </tbody>
+  </table>
+
+  <div class="fig">
+    <img src="https://opening-attachments.greetinghr.com/2023-12-21/4d2b1863-9532-4703-bbd9-ab2f2d9e06dd/IMG_1912.png.webp" alt="올리브영 임직원 인터뷰 — 브랜드 마케팅 콘텐츠 예시" loading="lazy">
+    <div class="fig-cap"><b>올리브영 임직원 인터뷰 시리즈</b> 본사가 직접 운영하는 임직원 인터뷰 콘텐츠<span class="src-meta"><a href="https://career.oliveyoung.com/ko/interview28">career.oliveyoung.com</a> · GS25 25매거진 인스타 캡처는 핫링크 차단으로 미수록 — <a href="https://www.instagram.com/gs25_official/">@gs25_official</a> 직접 확인</span></div>
+  </div>
+
+  <div class="src-block"><b>출처:</b> <a href="https://news.nate.com/view/20251027n16779">네이트 GS25 100만 (2025-10-27)</a> · <a href="https://zdnet.co.kr/view/?no=20251027110650">ZDNet GS25 숏폼 전략</a> · <a href="https://www.insightkorea.co.kr/news/articleView.html?idxno=234207">인사이트코리아 GS25</a> · <a href="https://career.oliveyoung.com/ko/interview28">올리브영 채용 인터뷰</a> · <a href="https://www.youtube.com/playlist?list=PL6qZS8m6oIXgPMpfKiyDMFtNSVGwyajTx">올리브영 O-log 유튜브</a> · <a href="https://www.instagram.com/gs25_official/">GS25 공식 인스타</a></div>
+</div>
+
+<!-- §5.2 메가 알바 자생 -->
+<div class="page">
+  <div class="page-num">§5.2</div>
+  <div class="page-tag">메가커피 알바 자생 콘텐츠</div>
+  <h1 class="page-h1">메가커피 알바 자생 — TikTok 누적 발화 다수 / 본사 흡수 X</h1>
+
+  <table>
+    <thead><tr><th>항목</th><th>메가커피 알바 자생</th></tr></thead>
+    <tbody>
+      <tr><td>채널</td><td>TikTok 본인 채널 (개인 알바생)</td></tr>
+      <tr><td>주요 영상</td><td>"메가커피 한 달 알바생 경험" (좋아요 14.7K · 댓글 59) 외 다수</td></tr>
+      <tr><td>단일 검색어 누적</td><td>"메가커피 알바 면접" 검색 영상 누적 40.4K (1주)</td></tr>
+      <tr><td>본사 흡수 여부</td><td><b>흡수 X</b> — 메가 공식 인스타·유튜브에 알바 콘텐츠 미반영</td></tr>
+      <tr><td>현황</td><td>발화는 풍부하나 브랜드 자산으로 누적 안 됨 (개인 채널에 분산)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="src-block"><b>출처:</b> <a href="https://www.tiktok.com/discover/%EB%A9%94%EA%B0%80%EC%BB%A4%ED%94%BC-%EC%95%8C%EB%B0%94-%EB%A9%B4%EC%A0%91">TikTok 메가 알바 검색 페이지</a> · 측정 시점: 2026-04 / <b>한계:</b> TikTok CDN 만료 주기로 단일 영상 직접 URL은 시간이 지나면 재확인 필요</div>
+</div>
+
+<!-- §5.3 미국 TikTok 거시 + 질문 종료 -->
+<div class="page">
+  <div class="page-num">§5.3</div>
+  <div class="page-tag">Z세대·MZ 콘텐츠 소비 거시 신호</div>
+  <h1 class="page-h1">미국 TikTok #foodtok — 51.8M+ 유저 활동</h1>
+
+  <table>
+    <thead><tr><th>신호</th><th>데이터</th></tr></thead>
+    <tbody>
+      <tr><td>미국 TikTok #foodtok 활성 유저</td><td>51.8M+ (Statista 2024 기준)</td></tr>
+      <tr><td>한국 카페 인스타 릴스 평균 조회</td><td>1만~5만/편 (브랜드 규모별 차이 — 정량 측정 필요)</td></tr>
+      <tr><td>매장 알바·점주 자생 발화</td><td>메가커피·올리브영·다수 카페에서 관찰 / 본사 흡수 여부에 따라 자산 누적 여부 결정</td></tr>
+    </tbody>
+  </table>
+
+  <div class="src-block"><b>출처:</b> <a href="https://www.statista.com/statistics/1411720/tiktok-food-user-us/">Statista TikTok #foodtok 51.8M (US, 2024)</a> · 한국 인스타 릴스 평균 조회는 정량 측정 미완료 (다음 단계 보강)</div>
+
+  <div class="q-end">
+    <div class="q-tag">§5 인사이트 질문</div>
+    <div class="q-text">GS25는 5년 6개월에 100만 팬덤을 누적했고, 메가커피는 자생 알바 발화가 풍부하지만 본사 흡수가 안 되어 자산이 누적되지 않고 있다. 둘의 차이는 <em>"본사가 자생 콘텐츠를 채널로 흡수하는가"</em>라는 단일 메커니즘.<br><br>그렇다면 — <b>점주·알바 자생 발화를 본사 채널 자산으로 누적시키는 운영 구조는 어떤 모습이어야 하는가?</b> GS25 5년 6개월 누적의 어느 단계까지 첫 1년에 도달 가능한가? (자사 적용 판단·KPI 설정은 다음 단계 전략 브리프에서.)</div>
+    <div class="q-note">→ 답은 본 팩트북에 없음. 다음 단계 전략 브리프에서 결정.</div>
+  </div>
+</div>
+
+<!-- =================================================== -->
+<!-- §6 출처 + 부록 -->
+<!-- =================================================== -->
+<div class="section-opener">
+  <div class="so-num">§6</div>
+  <h2 class="so-h">출처 인덱스 + <em>부록</em></h2>
+  <div class="so-sub">본 팩트북에 사용된 모든 1차 보도·발화·글로벌 자료의 URL 인덱스. 카테고리별 분류.</div>
+</div>
+
+<!-- §6.1 출처 인덱스 (1차 보도 + 시장 거시) -->
+<div class="page">
+  <div class="page-num">§6.1</div>
+  <div class="page-tag">출처 인덱스 (1) — 시장·1차 보도</div>
+  <h1 class="page-h1">출처 인덱스 — 시장 거시 + 1차 보도 + 4사 라인업</h1>
+
+  <h3 style="font-size:13px;font-weight:800;margin:20px 0 8px;color:#EA580C;letter-spacing:0.1em;text-transform:uppercase;">시장 거시 데이터</h3>
+  <ul class="clean">
+    <li><a href="https://brunch.co.kr/@hoonius/854">브런치 2026 커피 시장 전망 (19조)</a></li>
+    <li><a href="https://www.yonhapmidas.com/news/articleView.html?idxno=9538">연합미디어스 1인당 405잔 (유로모니터, 2023)</a></li>
+    <li><a href="https://www.yna.co.kr/view/AKR20260124042100030">연합뉴스 한국 커피 수입 2.6조 (2026-01-24)</a></li>
+    <li><a href="https://biz.chosun.com/distribution/food/2025/12/01/RUWDJSMZTZHL3C3GDJ7HPRJL34/">조선비즈 메가 4,000호점 (2025-12-01)</a></li>
+    <li><a href="https://www.hankookilbo.com/News/Read/A2025050514320001351">한국일보 메가 매출 4,660억 (2024)</a></li>
+    <li><a href="https://dt.co.kr/contents.html?article_no=2025051802109932031002">디지털타임스 컴포즈 매출 897억</a></li>
+    <li><a href="https://www.smedaily.co.kr/news/articleView.html?idxno=308261">SME Daily 빽다방 1,353억 (2023)</a></li>
+    <li><a href="https://www.newsis.com/view/NISX20250324_0003110395">뉴시스 빽다방 1,712개 (2025-03)</a></li>
+  </ul>
+
+  <h3 style="font-size:13px;font-weight:800;margin:24px 0 8px;color:#EA580C;letter-spacing:0.1em;text-transform:uppercase;">시그니처 메뉴 1차 보도</h3>
+  <ul class="clean">
+    <li><a href="https://www.sentv.co.kr/article/view/sentv202502140006">sentv 우지 딥카페라떼 누적 600만 (2025-02-14)</a></li>
+    <li><a href="https://oozycoffee.com/index/?bmode=view&idx=168397247">우지 K-시그니처 7종 출시 (2024-10-29)</a></li>
+    <li><a href="https://www.segye.com/newsView/20251028506778">세계일보 우지 K-시그니처</a></li>
+    <li><a href="https://www.enetnews.co.kr/news/articleView.html?idxno=48652">enetnews 텐퍼센트 33만 (3월 한 달)</a></li>
+    <li><a href="https://www.enetnews.co.kr/news/articleView.html?idxno=47949">enetnews 텐퍼센트 16만 (2주)</a></li>
+    <li><a href="https://news.nate.com/view/20260507n03221">네이트 메가 컵빙수 누적 900만</a></li>
+    <li><a href="https://www.kmib.co.kr/article/view.asp?arcid=0029728975">국민일보 이디야 국중박</a></li>
+    <li><a href="https://www.hankyung.com/article/202604243816i">한경 이디야 국중박 결제 데이터</a></li>
+  </ul>
+
+  <h3 style="font-size:13px;font-weight:800;margin:24px 0 8px;color:#EA580C;letter-spacing:0.1em;text-transform:uppercase;">메뉴 출시·라인업</h3>
+  <ul class="clean">
+    <li><a href="https://magazineo.tistory.com/entry/2025년-메가MGC-커피-메뉴-가격-정리">매거진O 메가 라인업</a></li>
+    <li><a href="https://composecoffee.com/event/278118">컴포즈 V Composed</a></li>
+    <li><a href="https://composecoffee.com/event/275477">컴포즈 징글베리</a></li>
+    <li><a href="https://www.news1.kr/industry/distribution/5985435">뉴스1 빽다방 말차</a></li>
+    <li><a href="https://v.daum.net/v/20251021093247275">다음뉴스 빽다방 가을 6종</a></li>
+    <li><a href="https://paikdabang.com/menu/menu_new/">빽다방 공식 신메뉴</a></li>
+  </ul>
+</div>
+
+<!-- §6.2 출처 인덱스 (VOC + 부산 + 글로벌) -->
+<div class="page">
+  <div class="page-num">§6.2</div>
+  <div class="page-tag">출처 인덱스 (2) — VOC · 부산 · 글로벌</div>
+  <h1 class="page-h1">출처 인덱스 — 실제 발화 + 부산 카페 + 글로벌</h1>
+
+  <h3 style="font-size:13px;font-weight:800;margin:20px 0 8px;color:#EA580C;letter-spacing:0.1em;text-transform:uppercase;">VOC — 우지·텐퍼센트·할리스</h3>
+  <ul class="clean">
+    <li><a href="https://www.dmitory.com/star/313765899">디미토리 우지 별점·댓글</a></li>
+    <li><a href="https://theqoo.net/muk/3299119960">더쿠 우지 알바 추천</a></li>
+    <li><a href="https://yulmoong.tistory.com/99">티스토리 우지 후기 (가격·용량)</a></li>
+    <li><a href="https://sincerehappiness.tistory.com/645">티스토리 우지 묵직·가성비</a></li>
+    <li><a href="https://geniet.co.kr/review/632269">지니어트 텐퍼센트 후기</a></li>
+    <li><a href="https://babita.tistory.com/538">티스토리 텐퍼센트</a></li>
+    <li><a href="https://namu.wiki/w/%ED%85%90%ED%8D%BC%EC%84%BC%ED%8A%B8%EC%BB%A4%ED%94%BC">나무위키 텐퍼센트 (용량 14oz·매장 편차)</a></li>
+    <li><a href="https://theqoo.net/theqdeal/3393666998">더쿠 텐퍼센트 메뉴 인지</a></li>
+    <li><a href="https://www.teamblind.com/kr/post/Y54bTyQq">블라인드 할리스 맛 평</a></li>
+    <li><a href="https://www.threads.com/@lsd1004_forever_jeju/post/DVQCRl2kXp4/">Threads 할리스 가격 비교</a></li>
+    <li><a href="https://emart.ssg.com/item/itemView.ssg?itemId=1000558644032">SSG 할리스 카페라떼 리뷰</a></li>
+    <li><a href="https://m.cafe.daum.net/subdued20club/ReHf/5425833">여성시대 우지</a></li>
+    <li><a href="https://www.threads.com/@bani.yum/post/DVh6Y_xErFt/">Threads 텐퍼센트 레시피</a></li>
+  </ul>
+
+  <h3 style="font-size:13px;font-weight:800;margin:24px 0 8px;color:#EA580C;letter-spacing:0.1em;text-transform:uppercase;">부산 카페</h3>
+  <ul class="clean">
+    <li><a href="https://the-edit.co.kr/42750">디에디트 부산 카페 4 (모모스·블랙업·에프엠·베르크)</a></li>
+    <li><a href="https://momos.co.kr/custom/sub/space/youngdo.html">모모스 영도 본점 공식</a></li>
+    <li><a href="https://heypop.kr/n/35863/">heypop 모모스 영도 (2022)</a></li>
+    <li><a href="https://mobile.busan.com/view/busan/view.php?code=2026021713291431295">부산일보 모모스 22위</a></li>
+    <li><a href="https://blackupcoffee.com/">블랙업 커피 공식</a></li>
+    <li><a href="https://leesarcoffee.com/%EB%B6%80%EC%82%B0-%EC%84%9C%EB%A9%B4-%EC%B9%B4%ED%8E%98%ED%88%AC%EC%96%B4-1%ED%8E%B8-%EB%B8%94%EB%9E%99%EC%97%85%EC%BB%A4%ED%94%BC/">LEESAR 블랙업 서면 시그니처바 (2024)</a></li>
+    <li><a href="https://www.facebook.com/photo.php?fbid=1137411233037787">블랙업 "해,수염" 페이스북 (2017-04)</a></li>
+    <li><a href="https://heypop.kr/n/56706/">heypop 베르크 디자인 1.0 (2023)</a></li>
+    <li><a href="https://heypop.kr/n/56760/">heypop 베르크 디자인 2.0 (2023)</a></li>
+    <li><a href="https://kr.trip.com/moments/detail/busan-432-133502483/">트립닷컴 제이엠 부산 기장</a></li>
+  </ul>
+
+  <h3 style="font-size:13px;font-weight:800;margin:24px 0 8px;color:#EA580C;letter-spacing:0.1em;text-transform:uppercase;">글로벌 벤치마크</h3>
+  <ul class="clean">
+    <li><a href="https://en.wikipedia.org/wiki/%25_Arabica">% Arabica Wikipedia (241개 매장 / 2025-06)</a></li>
+    <li><a href="https://www.tankcoffee.com/kyoto-latte/">tankcoffee.com Kyoto Latte 레시피</a></li>
+    <li><a href="https://www.prnewswire.com/news-releases/blue-bottle-coffee-celebrates-its-iconic-new-orleans-style-iced-coffee-with-new-nola-craft-instant-coffee-blend-302204426.html">PR Newswire Blue Bottle NOLA Instant (2024)</a></li>
+    <li><a href="https://bluebottlecoffee.com/us/eng/brew-guides/new-orleans-style-iced-coffee">Blue Bottle 공식 NOLA Brew Guide</a></li>
+    <li><a href="https://www.stumptowncoffee.com/pages/portland-division-cafe">Stumptown 공식 Hair Bender</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Stumptown_Coffee_Roasters">Wikipedia Stumptown</a></li>
+    <li><a href="https://sprudge.com/onibus-coffee-a-hub-for-neighborhood-connection-in-tokyo-80915.html">Sprudge Onibus Coffee Tokyo</a></li>
+    <li><a href="https://www.aseandaily.co.kr/news/articleView.html?idxno=1005900">aseandaily 베트남 ca phe muoi 미쉐린 6대</a></li>
+    <li><a href="https://m.hollys.co.kr/menu/menuView.do?menuDiv=ESPRESSO&idx=998">할리스 솔티카라멜 공식</a></li>
+  </ul>
+
+  <h3 style="font-size:13px;font-weight:800;margin:24px 0 8px;color:#EA580C;letter-spacing:0.1em;text-transform:uppercase;">자생 콘텐츠 모델</h3>
+  <ul class="clean">
+    <li><a href="https://news.nate.com/view/20251027n16779">네이트 GS25 100만 팬덤 (2025-10-27)</a></li>
+    <li><a href="https://zdnet.co.kr/view/?no=20251027110650">ZDNet GS25 숏폼 전략</a></li>
+    <li><a href="https://www.insightkorea.co.kr/news/articleView.html?idxno=234207">인사이트코리아 GS25 25매거진</a></li>
+    <li><a href="https://career.oliveyoung.com/ko/interview28">올리브영 채용 인터뷰 시리즈</a></li>
+    <li><a href="https://www.youtube.com/playlist?list=PL6qZS8m6oIXgPMpfKiyDMFtNSVGwyajTx">올리브영 O-log 유튜브</a></li>
+    <li><a href="https://www.statista.com/statistics/1411720/tiktok-food-user-us/">Statista TikTok #foodtok 51.8M (US, 2024)</a></li>
+    <li><a href="https://www.thinkfood.co.kr/news/articleView.html?idxno=103843">식품음료신문 2026 카페 트렌드 B.E.Y.O.N.D</a></li>
+    <li><a href="https://www.threads.com/@jspark3710/post/DDs48SrSY5b">Threads 36종 카페라떼 블라인드 1·2·3위</a></li>
+    <li><a href="https://hypebeast.kr/2019/10/best-coffee-latte-cafe-seoul-blue-bottle-fritz-rabout-momento-brewers-dukes">Hypebeast 서울 라떼 맛집 10곳</a></li>
+    <li><a href="https://www.82cook.com/entiz/read.php?num=3530627">82cook 체인 라떼 맛집</a></li>
+  </ul>
+</div>
+
+<!-- §6.3 부록 + 갱신 이력 -->
+<div class="page">
+  <div class="page-num">§6.3</div>
+  <div class="page-tag">부록 + 갱신 이력</div>
+  <h1 class="page-h1">부록 — VOC 31건 원문 별도 / 갱신 이력</h1>
+
+  <h3 style="font-size:13px;font-weight:800;margin:20px 0 8px;color:#EA580C;letter-spacing:0.1em;text-transform:uppercase;">부록 — 추가 자료</h3>
+  <table>
+    <thead><tr><th>부록</th><th>내용</th><th>위치</th></tr></thead>
+    <tbody>
+      <tr><td>A</td><td>VOC 31건 원문 (익명 처리)</td><td>별도 자료 / 5/11 미팅 시 공유 가능</td></tr>
+      <tr><td>B</td><td>4사 라인업 풀 메뉴·가격 (메가 19종·컴포즈 13종·빽다방 15종)</td><td>별도 자료</td></tr>
+      <tr><td>C</td><td>미검증 데이터 풀</td><td>(현재 없음 — 본 팩트북 모든 수치 1차 출처 검증)</td></tr>
+    </tbody>
+  </table>
+
+  <h3 style="font-size:13px;font-weight:800;margin:24px 0 8px;color:#EA580C;letter-spacing:0.1em;text-transform:uppercase;">갱신 이력</h3>
+  <table>
+    <thead><tr><th>버전</th><th>날짜</th><th>변경 요약</th></tr></thead>
+    <tbody>
+      <tr><td>v2</td><td>2026-05-07 18:09</td><td>리서치북 v2 초안</td></tr>
+      <tr><td>v3~v5</td><td>2026-05-07 19:46~20:35</td><td>HTML 반복 — 가맹 2축·디저트 과집중 정정</td></tr>
+      <tr><td>v6</td><td>2026-05-07 야간</td><td>마케팅 제안서 문법 적용 시도 — 사실+전략 섞임으로 폐기</td></tr>
+      <tr><td>v7</td><td>2026-05-07 야간</td><td>팩트북 형태로 재작성 — 사실+인사이트만 / 전략·운영안 모두 제거 / 분류형 헤드라인 / 출처 블록 의무 / 질문형 종료</td></tr>
+      <tr><td>v7.1</td><td>2026-05-08 새벽</td><td>이미지 1차 보강 — fig CSS 사이즈 통제 / §1.3·§1.4·§4.2(이전 §5.2)에 이미지 row 추가</td></tr>
+      <tr><td>v7.2</td><td>2026-05-08 (목) 새벽</td><td>구조 개편: §4 자사·§5.3 매거진B+외국인 삭제 / §2.2 트렌드 재구성(B.E.Y.O.N.D·라떼 맛집·도시명·자생 콘텐츠) / §3.5 라떼 강조 한국 10 브랜드 매트릭스 신규 / §3.6 솔티드 약화 / VOC → §3.7 브랜드별 긍·부정 카드 / §3.8 미충족+§3 q-end 통합 / §5/§6/§7→§4/§5/§6 renumber</td></tr>
+      <tr><td>v7.3</td><td>2026-05-08 (목) 오전</td><td>잔존 reference 정리 + 이미지 2차 보강: ① 자사 데이터 잔존(cover sub·페르소나 lead·src-block·§3.5 댄싱컵 행·§3.7 한계·§4.1 130 매장·§6 자사 헤더·마스터시트·@dancingcup 등) 모두 제거 ② 매거진B+외국인 293만 잔존(§1.3·§3.1·§3.5 표현 / §6.2 매거진B URL 3개·부산광역시 외국인 출처 / 부록 C) 모두 제거 ③ 페르소나 P2 컨셉 변경 (외국인 친구 안내 → 26세 부산 거주 SNS 라떼 맛집 탐방가) ④~⑩ 이미지 2차 보강 (이디야 국중박·우지 송파라떼·글로벌 hero 3장·라떼 강조 브랜드 3장·솔티드 3장·B.E.Y.O.N.D·올리브영)</td></tr>
+      <tr><td class="hi-text" style="font-weight:800;color:#EA580C;"><b>v8 (현재)</b></td><td>2026-05-08 (목) 오후</td><td><b>팀원 자료 통합 + §2.3 라이프스타일 신설:</b> ① <b>§2.3 라떼 라이프스타일 신설</b> — 5가지 행동 신호(출퇴근/페어링/주말 투어 = 강신호 ★★★·★★ 3건 / 운동·러닝 동반·세대 어휘 = 약신호 ★ 2건) 표 + 약신호 검증 디자인 카드 + §2.3 인사이트 질문 ② 5/8 팀 미팅 메모·석환 노션 리서치(부산 카페씬·도시명 메뉴화)·지은 RESEARCH DECK 0508 통합 ③ cover 자료 베이스에 팀 자료 라인 추가 ④ 약신호 ④·⑤ 1차 검증 게이트 5월 중 권장 — 결과는 v9에서 강도 갱신</td></tr>
+      <tr><td>v9 예정</td><td>2026-05 중하순</td><td>약신호 ④ 운동·러닝 동반 1차 검증 (부산 러닝 크루 해시태그 정량·인터뷰 n=20+) / 약신호 ⑤ 세대 어휘 호감도 정량 (n=300+) / 미확보 이미지 보강 (Blue Bottle NOLA·Onibus 메뉴 음료·블랙업 해수염·GS25 25매거진·메가 알바)</td></tr>
+    </tbody>
+  </table>
+
+  <h3 style="font-size:13px;font-weight:800;margin:24px 0 8px;color:#EA580C;letter-spacing:0.1em;text-transform:uppercase;">본 팩트북의 한계</h3>
+  <ul class="clean">
+    <li><b>1차 정량 설문 부재</b> — 페르소나·VOC는 공개 발화 31건 합성. 부산 거주 20-30대 n=300+ 정량 보강 권장</li>
+    <li><b>4사 라떼 매출 분리 데이터 부재</b> — 단일 메뉴별 매출은 우지·텐퍼센트만 1차 보도. 메가·컴포즈·빽다방은 분리 미공개</li>
+    <li><b>부산 1·2티어 카페 운영 데이터 직접 측정 불가</b> — 모모스·블랙업 등은 공개 보도·후기 기반</li>
+    <li><b>VOC 표본 작음 (n=31)</b> — 6채널 분포는 확보했으나 통계적 검증 X</li>
+    <li><b>자사 데이터·진단은 본 팩트북에 미포함</b> — 별도 전략 브리프 영역</li>
+    <li><b>§2.3 라이프스타일 약신호 ④·⑤ 1차 검증 미진행</b> — 운동·러닝 동반·세대 어휘는 5/8 미팅 가설 단계. 강도 단정 X. 5월 중 정량·관찰 검증 후 v9 갱신 예정</li>
+    <li><b>일부 1차 메뉴 이미지 미확보</b> — Blue Bottle NOLA / Onibus 메뉴 음료 / 블랙업 "해,수염" / GS25 25매거진 인스타 캡처 / 메가 알바 TikTok — v9에서 보강 예정</li>
+  </ul>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="brand">댄싱컵 딥라떼 팩트북 v8</div>
+  <div>§1 시장(4p) · §2 소비자(3p · §2.3 라이프스타일 신설) · §3 경쟁(8p) · §4 부산(2p) · §5 콘텐츠 모델(3p) · §6 출처(3p) — 총 22p + 표지/섹션 오프너</div>
+  <div>1차 보도 28건 · 실제 발화 31건 / 6채널 · 운영 사례 24건 · 글로벌 6건 · 팀 자료 (지은·석환) · 5/8 미팅 메모</div>
+  <div class="tag">2026-05-08 · DancingCup × HIZ · 5/11 미팅 자료 · v8 — §2.3 라이프스타일 신설</div>
+  <div style="margin-top:16px;font-size:11px;color:#999;font-style:italic;">본 자료에는 전략·실행안이 들어 있지 않다. 각 § 마지막 질문의 답은 다음 단계 전략 브리프에서 시작한다.</div>
+</div>
+
+</div>
+
+</body>
+</html>
