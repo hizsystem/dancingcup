@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2026 댄싱컵 딥라떼 — 기획안 v3</title>
+<title>2026 댄싱컵 딥라떼 — 기획안 v4</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -215,6 +215,33 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
 .footer .brand { font-size: 16px; font-weight: 800; color: #1a1b18; margin-bottom: 4px; }
 .footer .tag { color: #EA580C; font-weight: 600; }
 
+/* THUMB STUB — 카드 상단 컬러 띠 (이미지 없음) */
+.thumb-stub { width: 100%; min-height: 48px; display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 18px; position: relative; }
+.thumb-stub .ts-eyebrow { font-size: 10.5px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.75; flex-shrink: 0; }
+.thumb-stub .ts-title { font-size: 14px; font-weight: 800; letter-spacing: -0.01em; line-height: 1.2; text-align: right; }
+.thumb-stub .ts-sub { display: none; }
+/* 큰 fig 카드용 — 베이스 케이스·POP 6요소 등 임팩트 영역 */
+.fig .thumb-stub { min-height: 100%; flex-direction: column; align-items: flex-start; justify-content: flex-end; padding: 26px 28px; gap: 4px; }
+.fig .thumb-stub .ts-eyebrow { font-size: 11px; opacity: 0.85; }
+.fig .thumb-stub .ts-title { font-size: 22px; text-align: left; line-height: 1.3; }
+.fig .thumb-stub .ts-sub { display: block; font-size: 12px; opacity: 0.75; margin-top: 8px; line-height: 1.55; }
+.fig.h-260 { height: 200px; }
+.fig.h-320 { height: 240px; }
+/* 컬러 변주 — 4종 + 보조 4종 (사용 줄임) */
+.thumb-stub.wine { background: #6b2c2c; color: #fff; }
+.thumb-stub.cream { background: #f4efe5; color: #6b2c2c; }
+.thumb-stub.ink { background: #1a1a1a; color: #fff; }
+.thumb-stub.accent { background: #EA580C; color: #fff; }
+.thumb-stub.steel { background: #4d525a; color: #fff; }
+.thumb-stub.sand { background: #b8856a; color: #fff; }
+.thumb-stub.deep { background: #1a3a4d; color: #fff; }
+.thumb-stub.frost { background: #d8e4ec; color: #1a3a4d; }
+/* case·menu-card 컨테이너 자체 축소 */
+.case .c-img { height: auto; min-height: 0; background: transparent; }
+.case .c-img .c-tag { position: static; display: inline-block; margin: 0; }
+.menu-card .m-img { height: auto; min-height: 0; }
+
+
 @media (max-width: 900px) {
   .container { padding: 70px 16px 40px; }
   .section, .part-divider, .cover { padding: 32px 24px; }
@@ -240,7 +267,7 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
   <div class="toolbar-left">
     <div class="toolbar-logo">BRANDRISE</div>
     <div class="toolbar-sep"></div>
-    <div class="toolbar-title">댄싱컵 딥라떼 기획안 v3 — 1년 마케팅 제안서 (Track 1 라떼 앵커)</div>
+    <div class="toolbar-title">댄싱컵 딥라떼 기획안 v4 — 라떼 맛집 + 신메뉴 바이럴 2-Track 운영안</div>
   </div>
   <div>
     <button class="btn-toolbar" onclick="window.print()">PDF 저장</button>
@@ -251,186 +278,449 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
 
   <!-- COVER -->
   <div class="cover">
-    <div class="cv-tag">Marketing Plan v3 · Track 1 Latte Anchor · 1-Year Execution Proposal</div>
-    <h1>1년 상시 시그니처 라떼,<br><em>부산</em>에서 시작한다.</h1>
-    <p class="cv-lead">리서치북 v8의 인사이트·결정 게이트를 받아, HIZ가 제시하는 9개월 운영의 결정·실행 자료. <b>본 기획안은 댄싱컵 메뉴 운영 2-Track 중 Track 1 라떼 앵커 영역</b>(딥라떼 라인) 전용. Track 2 신메뉴 시즌(여름 컵빙수·오미자 등)은 별도 캠페인으로 분리. 메뉴 운영 2-Track 오버뷰(§1.5) → 채널 톤 2-Track + 3축 어휘(§2) → 메뉴 결정(§3) → 운영안(§4) → 시각 시스템(§5) → 1년 액션(§6) → 견적(§7) → KPI(§8) → 리스크(§9).</p>
+    <div class="cv-tag">Marketing Plan v4 · 2-Track Operating Model · 9-Month Execution Proposal</div>
+    <h1>라떼 한 잔으로,<br><em>부산</em>이라는 매력을 더한다.</h1>
+    <p class="cv-lead">댄싱컵 9개월, <b>2-Track</b>으로 굴린다. <b>라떼 맛집</b>(장기·정통성) + <b>신메뉴 바이럴</b>(즉각·트렌드). <b>라떼는 본질, 부산은 매력.</b></p>
     <div class="cv-meta">
       <div class="cv-meta-item"><div class="mk">제안 대상</div><div class="mv">(주)위드런 · 댄싱컵</div></div>
-      <div class="cv-meta-item"><div class="mk">제안 주체</div><div class="mv">브랜드라이즈 by HIZ</div></div>
-      <div class="cv-meta-item"><div class="mk">발행</div><div class="mv">2026-05-08 (v3)</div></div>
+      <div class="cv-meta-item"><div class="mk">제안 주체</div><div class="mv">브랜드라이즈</div></div>
+      <div class="cv-meta-item"><div class="mk">발행</div><div class="mv">2026-05-10 (v4)</div></div>
       <div class="cv-meta-item"><div class="mk">기간</div><div class="mv">2026.04 ~ 12 (9개월)</div></div>
     </div>
     <div class="cv-meta" style="margin-top: 14px; padding-top: 14px;">
-      <div class="cv-meta-item"><div class="mk">자매 산출물</div><div class="mv">리서치북 v8 (사실·신호 + §2.3 라이프스타일)</div></div>
-      <div class="cv-meta-item"><div class="mk">결정 게이트 매핑</div><div class="mv">리서치북 §10-2 ↔ 본 기획안 §10</div></div>
+      <div class="cv-meta-item"><div class="mk">자매 산출물</div><div class="mv">리서치북 v9 (사실·신호) / 견적서 quote.html</div></div>
+      <div class="cv-meta-item"><div class="mk">큰 전략</div><div class="mv">라떼 맛집(장기) + 신메뉴 바이럴(즉각)</div></div>
       <div class="cv-meta-item"><div class="mk">합의 시점</div><div class="mv">5/11(월) 14:00 미팅</div></div>
     </div>
   </div>
 
-  <!-- §1 미션 -->
+  <!-- §1 큰 전략 -->
   <div class="section">
     <div class="part">
-      <div class="part-num">§1 MISSION</div>
-      <div class="part-name">1년 9개월 안에 만들 것</div>
+      <div class="part-num">§1 BIG STRATEGY</div>
+      <div class="part-name">라떼 맛집 × 신메뉴 바이럴</div>
     </div>
-    <h2>한 줄 미션 <em>한 가지.</em></h2>
+    <h2>9개월 운영, <em>두 트랙으로</em> 굴린다.</h2>
+    <p class="lead">한 트랙은 장기·정통성·1년 누적. 다른 트랙은 즉각·일시·트렌드 캐치. 두 트랙은 운영 인프라를 공유하면서 톤·견적·자산은 분리된다.</p>
 
     <div class="quote dark">
-      <div class="q-body">댄싱컵 딥라떼를 한국 저가 카페에서 <b style="color:#EA580C;">1년 상시 시그니처 라떼 카테고리 1위</b>로 만든다 — "부산"이라는 도시 자산을 메뉴 정의 안에 담아서.</div>
-      <div class="q-meta"><b>HIZ × 댄싱컵 1년 미션</b> · 2026.04 ~ 12.31</div>
+      <div class="q-body">라떼 맛집은 <b style="color:#FB923C;">장기로,</b><br>신메뉴 바이럴은 <b style="color:#FB923C;">즉각으로.</b><br><br>부산의 라떼 맛집 + 트렌드 캐치 — 댄싱컵의 자리.</div>
+      <div class="q-meta"><b>댄싱컵 9개월 미션</b> · 2026.04 ~ 12.31</div>
     </div>
 
-    <h3 class="with-line">1-1. 미션의 4 근거 (리서치북 위임)</h3>
+    <h3 class="with-line">1-1. 라떼 맛집(Track 1)을 만들 수 있는 4 근거</h3>
 
     <div class="pillars">
       <div class="pillar">
         <div class="p-num">01</div>
         <h3>카테고리 1위 자리 비어 있음</h3>
-        <p>한국 저가 카페 4대(메가·컴포즈·빽·이디야) 중 1년 상시 시그니처 보유 브랜드 0.</p>
-        <p style="margin-top:10px;font-size:11px;color:#999;">리서치북 §4-3</p>
+        <p>한국 저가 카페 4대(메가·컴포즈·빽·이디야) 중 1년 상시 시그니처 보유 브랜드 0. 진입자가 정의자 위치.</p>
+        <p style="margin-top:10px;font-size:11px;color:#999;">리서치북 §1.4 · §3.4</p>
       </div>
       <div class="pillar">
         <div class="p-num">02</div>
-        <h3>단순 추격 프레임 회피 → 복합 어휘</h3>
-        <p>"딥라떼" 단일 키워드는 우지 점유. <b>"부산 + 1년 상시 + 우유 블렌딩"</b> 3축 복합.</p>
-        <p style="margin-top:10px;font-size:11px;color:#999;">리서치북 §4-1 / §10 Insight #2</p>
+        <h3>라떼 본질 + 부산 매력 코팅 결합</h3>
+        <p>라떼 = 한국인 일상 본질(우유 블렌딩·1년 상시) / 부산 = 그 일상을 매력적으로 만드는 도시 코팅. % Arabica Kyoto · 팀홀튼 캐나다 모델.</p>
+        <p style="margin-top:10px;font-size:11px;color:#999;">리서치북 §3.3 · §3.5</p>
       </div>
       <div class="pillar">
         <div class="p-num">03</div>
         <h3>부산 = 커피 도시 자산 상속</h3>
-        <p>1·2티어(모모스·블랙업)가 만든 자산. 3티어 대중 가격대 비어 있음.</p>
-        <p style="margin-top:10px;font-size:11px;color:#999;">리서치북 §4-2 / §8-3</p>
+        <p>1·2티어(모모스·블랙업·에프엠·베르크)가 만든 9~26년 누적 자산. 3티어 대중 가격대 비어 있음.</p>
+        <p style="margin-top:10px;font-size:11px;color:#999;">리서치북 §4.1 · §4.2</p>
       </div>
       <div class="pillar">
         <div class="p-num">04</div>
-        <h3>솔티드 = 글로벌 메가트렌드 합류</h3>
-        <p>베트남 ca phe muoi + 부산 바다 어휘 + 블랙업 9년 검증 = 자연 결합.</p>
-        <p style="margin-top:10px;font-size:11px;color:#999;">리서치북 §8-1 / §10 Insight #5</p>
+        <h3>솔티드 = 글로벌·한국·부산 3 레이어 검증</h3>
+        <p>베트남 ca phe muoi 미쉐린 + 한국 할리스·이디야 정규 + 부산 블랙업 9년. 메가트렌드 단정 X, 후보 어휘 적격성 ○.</p>
+        <p style="margin-top:10px;font-size:11px;color:#999;">리서치북 §3.6</p>
       </div>
     </div>
 
-    <div class="info-dark"><strong>본 기획안의 모든 결정은 리서치북 v8 §10의 인사이트 5건·결정 게이트 6건에 1:1 매핑.</strong></div>
+    <h4 style="margin-top:24px;font-size:14px;font-weight:700;">1-1-1. 한국 라떼 시그니처 누적 검증 — 진입자가 정의자</h4>
+
+    <div class="fig-grid-3">
+      <div class="fig h-200">
+        <img src="https://sentv.kod.es/data/sentv/image/2025/02/14/sentv20250214000005.800x.0.jpg" alt="우지커피 딥카페라떼" loading="lazy">
+        <div class="fig-overlay">
+          <div class="fig-cap">
+            <span class="fig-tag">600만 잔</span>
+            <div class="fig-title">우지 딥카페라떼</div>
+            <div class="fig-meta">2022.01 출시 · "딥라떼" 어휘 자생 1위 / 누적 600만 잔</div>
+          </div>
+        </div>
+      </div>
+      <div class="fig h-200">
+        <img src="https://cdn.enetnews.co.kr/news/photo/202604/48652_65686_3117.jpg" alt="텐퍼센트 시그니처라떼" loading="lazy">
+        <div class="fig-overlay">
+          <div class="fig-cap">
+            <span class="fig-tag">33만 잔/월</span>
+            <div class="fig-title">텐퍼센트 꾸덕라떼</div>
+            <div class="fig-meta">3월 SNS 자생 → 4/1 공식 흡수 / 자생 별칭 흡수 모델</div>
+          </div>
+        </div>
+      </div>
+      <div class="fig h-200">
+        <img src="https://img1.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202604/24/donga/20260424162821639sdlj.jpg" alt="이디야 국중박 시그니처" loading="lazy">
+        <div class="fig-overlay">
+          <div class="fig-cap">
+            <span class="fig-tag">한정 1위</span>
+            <div class="fig-title">이디야 국중박 시그니처</div>
+            <div class="fig-meta">2026-04 한정 · 박물관 5개 매장 결제 1위 / 한국 식재료 + 콜라보</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size:11px;color:#999;margin-top:8px;">출처: sentv · enetnews · 동아 (리서치북 v9 §1.3 자매 인용)</p>
+
+    <h3 class="with-line">1-2. 신메뉴 바이럴(Track 2) 포지션</h3>
+
+    <div class="quote">
+      <div class="q-body">"요즘 뭐가 유행이던데, 댄싱컵 가면 있겠다."</div>
+      <div class="q-meta"><b>한 줄 포지션</b> · 일상 가격대(2,500~4,000원)에서 SNS 유행 메뉴를 가장 빠르게 만나는 카페</div>
+    </div>
+
+    <p class="lead" style="margin-top:14px;">댄싱컵 130개 매장은 4,000개 메가 대비 운영 통일·교체 결정 속도가 빠르다. 본사 → 매장 일제 적용으로 <b>트렌드 신호 발생 후 D+30~60</b> 즉각 캐치 가능. 라떼 맛집의 정통성 자산과 다른 결로 작동.</p>
+
+    <div class="info-dark"><strong>본 기획안의 모든 결정은 자매 산출물 리서치북 v9의 사실·신호와 1:1 매핑.</strong> 라떼 전략(§3) = Track 1 디테일 / 신메뉴 전략(§4) = Track 2 디테일 / 채널 4축(§2) = 두 트랙 공통 운영 인프라.</div>
   </div>
 
-  <!-- §1.5 메뉴 운영 2-Track 오버뷰 — v3 신설 (2026-05-08) -->
+  <!-- §1.5 2-Track 디테일 -->
   <div class="section">
     <div class="part">
       <div class="part-num">§1.5 OVERVIEW</div>
-      <div class="part-name">메뉴 운영 2-Track</div>
+      <div class="part-name">2-Track 디테일 비교</div>
     </div>
-    <h2>댄싱컵 메뉴는 <em>2-Track</em>으로 굴린다.<br>본 기획안은 <em>Track 1.</em></h2>
-    <p class="lead">댄싱컵 1년 메뉴 운영은 <b>라떼 앵커</b>와 <b>신메뉴 시즌</b> 2가지 트랙으로 분리한다. 본 기획안 §2~§11은 <b>Track 1 라떼 앵커</b> 영역만 다룬다 — 1년 상시 시그니처 라떼(딥라떼) 라인의 정의·메뉴·운영·시각·1년 액션. Track 2(여름 컵빙수·오미자 등 시즌 신메뉴)는 별도 캠페인으로 분리 견적·운영하며, 본 기획안에서는 운영 리소스·콘텐츠 캘린더 충돌 지점만 표기.</p>
+    <h2>두 트랙의 <em>스코프·톤·접점</em>.</h2>
+    <p class="lead">§1 큰 전략에서 정의된 라떼 맛집·신메뉴 바이럴 2-Track의 운영 디테일. 본 기획안 §3 = Track 1 라떼 전략 / §4 = Track 2 신메뉴 전략 / §2 채널 4축·§5 운영·§6 시각·§7 1년 액션 = 두 트랙 공통 인프라.</p>
 
     <div class="grid-2">
       <div class="case main">
         <div class="c-img">
-          <img src="https://picsum.photos/seed/track-1-latte-anchor-overview/400/240" alt="Track 1 라떼 앵커">
-          <div class="c-tag">★ TRACK 1 — 본 기획안</div>
+          <div class="thumb-stub wine"><div class="ts-eyebrow">Track 1</div><div class="ts-title">라떼 맛집</div><div class="ts-sub">1년 상시 · 정통성 · 부산 매력 코팅</div></div>
+          <div class="c-tag">★ TRACK 1</div>
         </div>
         <div class="c-body">
-          <div class="c-title">라떼 앵커 (1년 상시)</div>
+          <div class="c-title">라떼 맛집 (1년 상시)</div>
           <div class="c-sub">딥라떼 라인 = 정규 3종(오리지널·너티·솔티드) + 시즈널 분기 1종</div>
-          <div class="c-text"><b>스코프:</b> 본 기획안 §2~§11 전체. 부산 도시 자산을 메뉴 정의 안에 담아 1년 누적·반복 구매로 카테고리 1위를 만든다. <b>운영 톤:</b> 매거진B 톤 인스타 빌드업 + 7월 D-Day(솔티드) + 분기 회전. <b>핵심 자산:</b> 자체 블렌딩 우유 베이스, 부산 도시 자산, 1년 상시 시그니처 슬롯.</div>
+          <div class="c-text"><b>스코프:</b> §3 라떼 전략 본문 + §5~§7 운영·시각·1년 액션의 라떼 영역. <b>핵심 모델:</b> 라떼 본질(우유 블렌딩·1년 상시)에 부산이라는 매력을 더해 1년 누적·반복 구매로 카테고리 1위. <b>운영 톤:</b> 인스타 감도 유지 + 라이프스타일 모티프 + 부산 코팅 + 7월 D-Day(솔티드) + 분기 시즈널 회전. <b>핵심 자산:</b> 자체 블렌딩 우유 베이스, 부산 도시 자산, 1년 상시 시그니처 슬롯, 알바생 서포터즈 콘텐츠 풀.</div>
         </div>
       </div>
       <div class="case">
         <div class="c-img">
-          <img src="https://picsum.photos/seed/track-2-seasonal-newmenu-overview/400/240" alt="Track 2 신메뉴 시즌">
-          <div class="c-tag">TRACK 2 — 별도 캠페인</div>
+          <div class="thumb-stub accent"><div class="ts-eyebrow">Track 2</div><div class="ts-title">신메뉴 바이럴</div><div class="ts-sub">즉각 · 트렌드 캐치 · D+30~60</div></div>
+          <div class="c-tag">TRACK 2</div>
         </div>
         <div class="c-body">
-          <div class="c-title">신메뉴 시즌 (분기 회전)</div>
-          <div class="c-sub">컵빙수·오미자·수박·시즌 비커피 신메뉴</div>
-          <div class="c-text"><b>스코프:</b> 본 기획안 외. 2026 여름 캠페인(5/12 D-Day · 오미자에이드·컵빙수 3종·컵케이크) = 별도 견적 200만/회. <b>운영 톤:</b> 트렌드 캐치·바이럴 즉발. <b>접점:</b> Track 1과 매장 POP·콘텐츠 캘린더 일부 공유, 메뉴 정의·정규 라인업은 분리.</div>
+          <div class="c-title">신메뉴 바이럴 (트렌드 캐치)</div>
+          <div class="c-sub">5/12 컵빙수·오미자에이드 + 분기 1~2회 한정</div>
+          <div class="c-text"><b>스코프:</b> §4 신메뉴 전략 본문 + 캠페인별 별도 견적 200만/회. <b>핵심 모델:</b> 트렌드 신호 모니터링 → 본사 의사결정 → 130개 매장 일제 적용 = D+30~60 즉답. 4,000개 메가 대비 운영 통일 속도가 무기. <b>운영 톤:</b> 즉발·바이럴·릴스 즉답·UGC 회수. <b>접점:</b> 매장 POP 슬롯·인스타 슬롯·메타 광고 예산 일부 공유. 메뉴 정의·정규 라인업·콘텐츠 톤은 분리.</div>
         </div>
       </div>
     </div>
 
-    <div class="info-dark"><strong>두 트랙은 메뉴 축의 분리이며, 채널 톤 축의 2-Track(§2-1 인스타 감도 / 숏폼·X·지점 바이럴)과는 다른 축이다.</strong> <b>메뉴 = "무엇을" 운영할지 (§1.5)</b> · <b>채널 = "어떤 톤으로" 보여줄지 (§2-1)</b> — 두 축이 직교한다. 본 기획안의 모든 §2~§11 결정은 Track 1(메뉴 축) × 양 채널 톤의 조합이다.</div>
+    <div class="info-dark"><strong>두 트랙은 운영 인프라(§2 채널 4축·§5 운영·§6 시각·§7 1년 액션)를 공유하면서 메뉴·톤·견적·자산은 분리된다.</strong> 라떼 맛집 = 1년 누적되는 정통성 / 신메뉴 바이럴 = 즉각 소비되는 트렌드. 두 결이 부딪히지 않고 댄싱컵 브랜드 안에서 보완.</div>
 
-    <div class="info"><strong>Track 1·2의 운영 리소스 충돌 지점:</strong> ① 매장 POP 슬롯 (한 매장 내 동시 노출 한도) ② 콘텐츠 캘린더 (인스타 주 3회 슬롯 분배 — Track 1 = 2회 / Track 2 = 1회 권장) ③ 메타 광고 예산 (Track 1 = 분기당 80만 / Track 2 = 캠페인당 별도). 본 기획안 §6 캘린더에 Track 2 출시 일정 음영 처리 권장.</div>
+    <div class="info"><strong>운영 리소스 충돌 회피 룰:</strong> ① 매장 POP — Track 1 컵·메인 POP / Track 2 시즌 미니 POP. ② 인스타 주 4~5회 슬롯 — Track 1 = 주 2~3회 / Track 2 한정 시 = 주 1~2회 추가. ③ 메타 광고 — Track 1 분기 80만 / Track 2 캠페인당 별도. ④ 라떼 D-Day(7/15·10/15) ±2주 = Track 2 신규 캠페인 X (자원 집중).</div>
   </div>
 
-  <!-- §2 전략 프레임 -->
+  <!-- §2 채널 4축 -->
   <div class="section">
     <div class="part">
-      <div class="part-num">§2 STRATEGY</div>
-      <div class="part-name">2-Track + 3축 어휘</div>
+      <div class="part-num">§2 CHANNELS</div>
+      <div class="part-name">채널 4축 + 알바생 서포터즈</div>
     </div>
-    <h2>2-Track 프레임 +<br><em>3축 복합 어휘.</em></h2>
-    <p class="lead">덱 03번 합의 그대로. 인스타 공식 = 감도 / 숏폼·X·지점 = 바이럴. 톤 섞지 않음. 단일 어휘가 아닌 복합 어휘로 점유. <b style="color:#EA580C;">※ 본 §2의 2-Track은 "채널 톤 축". §1.5 메뉴 운영 2-Track(라떼 앵커 / 신메뉴 시즌)과는 별개의 축으로, 두 축이 직교한다.</b></p>
+    <h2>채널 4축 +<br><em>채널 위 공급 레이어.</em></h2>
+    <p class="lead">두 트랙(라떼 맛집·신메뉴 바이럴) 공통 인프라. <b>인스타 = 감도 현재 유지 / 릴스 = 다양화로 바이럴·유입 / X = 부산토박이 마케터 직원 페르소나 / 틱톡 = 릴스 미러링.</b> 채널 위에 알바생 서포터즈가 콘텐츠 공급 레이어로 가동.</p>
 
-    <h3 class="with-line">2-1. 2-Track 프레임</h3>
+    <h3 class="with-line">2-1. 채널 4축 정체성</h3>
+
+    <table>
+      <thead><tr><th style="width:90px;">채널</th><th style="width:160px;">정체성</th><th>본 운영의 핵심</th><th style="width:120px;">담당 에이전트</th></tr></thead>
+      <tbody>
+        <tr><td><b>인스타 피드</b></td><td>감도 — 현재 유지</td><td>잘 하고 있는 톤 그대로. 라이프스타일 모티프 + 부산 코팅 시리즈로 구조화. 새 톤 시스템 도입 X.</td><td>insta</td></tr>
+        <tr><td><b>인스타 릴스</b></td><td>바이럴·유입 — 다양화</td><td>6 포맷 섞어 플레이 (매장 자생·AI 비주얼·신메뉴 즉답·부산 거점·페어링·트렌드 챌린지). 메타 광고 소재 공급.</td><td>shortform</td></tr>
+        <tr class="hi"><td><b>X (트위터)</b></td><td>부산토박이 마케터 직원 페르소나</td><td>친화적·일상·셀프디스. 30분 룰. 자생 발화 흡수 베이스. 클레임 즉답 SOP.</td><td>x</td></tr>
+        <tr><td><b>틱톡</b></td><td>릴스 미러링 (신규 X)</td><td>인스타 릴스 바이럴 콘텐츠 재포스팅만. 신규 촬영 X.</td><td>shortform</td></tr>
+        <tr><td>알바생 서포터즈</td><td>채널 위 공급 레이어</td><td>매장 알바 5명·6개월·월 4편 콘텐츠. GS25 25매거진 모델 차용. 본사 흡수 SOP 가동.</td><td>insta + shortform</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="with-line">2-2. 인스타 피드 — 감도 현재 유지</h3>
+
+    <p class="lead" style="margin-bottom:14px;">댄싱컵 @dancingcup.official 톤 그대로 유지 (팔로워 2,518 / 게시물 487). 신규 톤 시스템 도입 X. 라떼 맛집 콘텐츠를 시리즈로 얹는 방식.</p>
+
+    <div class="case-grid">
+      <div class="case">
+        <div class="c-tag">시리즈 ①</div>
+        <div class="c-title">라이프스타일 모티프</div>
+        <div class="c-sub">주 2회</div>
+        <div class="c-text">출근길·점심·페어링·작업·연인 등 보편 일상 모티프 12개 풀 활용. 부산 한정 X — 한국인 일상 라떼 보편 결.</div>
+      </div>
+      <div class="case">
+        <div class="c-tag">시리즈 ②</div>
+        <div class="c-title">부산 코팅</div>
+        <div class="c-sub">격주 1회</div>
+        <div class="c-text">풍경·시장·시간대·언어·재료 8 카테고리 풀. 부산을 메뉴에 박지 않고 라이프스타일에 끼얹음. 거점 매장 4곳이 무대.</div>
+      </div>
+      <div class="case">
+        <div class="c-tag">시리즈 ③</div>
+        <div class="c-title">신메뉴 바이럴</div>
+        <div class="c-sub">캠페인당 4~6편</div>
+        <div class="c-text">Track 2 신메뉴 출시 시점. 라떼 맛집과 톤 분리.</div>
+      </div>
+      <div class="case">
+        <div class="c-tag">시리즈 ④</div>
+        <div class="c-title">매장·점주·알바</div>
+        <div class="c-sub">격주 1회</div>
+        <div class="c-text">알바생 서포터즈 콘텐츠 흡수. 점주 꿀조합·매장 일상.</div>
+      </div>
+      <div class="case">
+        <div class="c-tag">시리즈 ⑤</div>
+        <div class="c-title">페어링</div>
+        <div class="c-sub">월 1회 + 시즈널 D-Day 추가</div>
+        <div class="c-text">라떼 + 디저트 한 컷. 솔티드 휘낭시에·메이플 호두 스콘 등.</div>
+      </div>
+      <div class="case">
+        <div class="c-tag">발행 빈도</div>
+        <div class="c-title">월 12~16편</div>
+        <div class="c-sub">시리즈 5개 분배</div>
+        <div class="c-text">평월 12편 / D-Day 월 16편. 광고비 별도.</div>
+      </div>
+    </div>
+
+    <h3 class="with-line">2-3. 인스타 릴스 — 6 포맷 다양화</h3>
+
+    <p class="lead" style="margin-bottom:14px;">단일 톤 락인 X. 매주 다른 결의 릴스로 바이럴 후보 노출. 인스타 피드(감도) 톤과 분리 — 릴스는 가벼움·즉발·바이럴 영역.</p>
+
+    <table>
+      <thead><tr><th>#</th><th>포맷</th><th>핵심</th><th>빈도</th></tr></thead>
+      <tbody>
+        <tr><td>F1</td><td><b>매장 알바생 자생</b></td><td>알바 시점 일상·신메뉴 시연·점주 썰툰</td><td>주 1~2회</td></tr>
+        <tr><td>F2</td><td><b>AI 비주얼 (이미지→씨즐 I2V)</b></td><td>우유 블렌딩 비주얼·시즌 색감 모션</td><td>주 1회</td></tr>
+        <tr><td>F3</td><td><b>신메뉴 즉답 릴스 (15초)</b></td><td>트렌드 메뉴 출시 발표</td><td>캠페인당 2~4편</td></tr>
+        <tr><td>F4</td><td><b>부산 거점 다큐 (30~60초)</b></td><td>광안리·해운대·기장 거점 풍경 + 라떼</td><td>월 1~2회</td></tr>
+        <tr><td>F5</td><td><b>페어링 모먼트 (15~30초)</b></td><td>라떼 + 디저트 한 컷</td><td>월 2~3회</td></tr>
+        <tr><td>F6</td><td><b>트렌드 챌린지 합류</b></td><td>인스타 챌린지 즉답</td><td>월 0~2회 (트렌드 신호 발생 시)</td></tr>
+      </tbody>
+    </table>
+
+    <div class="info"><strong>운영 룰:</strong> 주 4~5편 발행. 6 포맷 중 매주 다른 결로 섞음. 메타 광고 = 릴스 소재 활용 (피드 업로드 안 하고 광고만 가능). 분기당 광고 예산 80만 (Track 1). 한 편 터지면 → 자생 별칭·UGC 회수 SOP 가동.</div>
+
+    <h3 class="with-line">2-4. X — 부산토박이 마케터 직원 페르소나</h3>
+
+    <div class="quote dark">
+      <div class="q-body">부산에서 자란 마케터 직원. 댄싱컵에서 일하고 있고, 매장 일상·라떼·부산 일상을 자기 말투로 트윗하는 사람.</div>
+      <div class="q-meta"><b>X 페르소나 한 줄</b> · 28~33세 · 친화적·일상·셀프디스</div>
+    </div>
+
+    <h4 style="margin-top:18px;font-size:14px;font-weight:700;">2-4-1. 페르소나 디테일</h4>
+    <ul class="clean">
+      <li><b>나이대:</b> 28~33세 (부산 거주 직장인 페르소나 P1과 겹침 — 리서치북 §2.1)</li>
+      <li><b>출신:</b> 부산 토박이 (사투리 자연스럽게 섞음, 락인 X)</li>
+      <li><b>직업:</b> 댄싱컵 본사 또는 매장 마케터</li>
+      <li><b>말투:</b> 친화적·일상·소심·셀프디스 (덱 07: 0%·30분·셀프디스 원칙)</li>
+      <li><b>잘 하는 것:</b> 자기 회사 셀프디스 / 매장 일상 발화 / 일상 라떼 발언 / 부산 동네 이야기</li>
+      <li><b>하지 않는 것:</b> 자랑·홍보·"우리 메뉴 최고" 발언·이모티콘 과다·!!!·경쟁사 직접 디스</li>
+    </ul>
+
+    <h4 style="margin-top:18px;font-size:14px;font-weight:700;">2-4-2. 톤 가이드 — 사용 ✅ / 금지 ❌</h4>
 
     <div class="grid-2">
-      <div class="case">
-        <div class="c-img">
-          <img src="https://picsum.photos/seed/track-a-viral-shortform/400/240" alt="Track A 바이럴">
-          <div class="c-tag">TRACK A</div>
-        </div>
-        <div class="c-body">
-          <div class="c-title">유행 훅 / 바이럴</div>
-          <div class="c-sub">숏폼·X·매장 미러링</div>
-          <div class="c-text">신메뉴 D-Day 빅뱅 / 솔티드 트렌드 합류 / 점주·알바 자생 콘텐츠 흡수</div>
-        </div>
+      <div class="case" style="background:#f3faf5;border-color:#2c7a3d;">
+        <div class="c-tag" style="background:#e6f4ea;color:#2c7a3d;">✅ 사용 어휘</div>
+        <div class="c-text" style="font-family:'Noto Sans KR',monospace;line-height:1.95;">"오늘 출근길에 한 잔 먹고 왔는데 미안하지만 또 마실 거 같다"<br><br>"광안리 점주님이 오늘 갈매기랑 싸웠다는데 제가 무슨 말을 더 하겠습니까"<br><br>"신메뉴 출시했어요. 솔직히 저는 오리지널 파"<br><br>"댄싱컵 = 직장 / 라떼 = 월급보다 자주 만남"<br><br>"월요일에 4잔 마신 사람 = 저"</div>
       </div>
-      <div class="case">
-        <div class="c-img">
-          <img src="https://picsum.photos/seed/track-b-anchor-feed/400/240" alt="Track B 라떼 앵커">
-          <div class="c-tag">TRACK B</div>
-        </div>
-        <div class="c-body">
-          <div class="c-title">라떼 앵커 / 감도</div>
-          <div class="c-sub">인스타 공식</div>
-          <div class="c-text">딥라떼 정의·1년 상시·부산 자산 빌드업. 매거진B 톤 다큐멘터리.</div>
-        </div>
+      <div class="case" style="background:#fdf6f6;border-color:#c33;">
+        <div class="c-tag" style="background:#fde8e8;color:#c33;">❌ 금지 어휘</div>
+        <div class="c-text" style="line-height:1.95;">"최고"·"대박"·"미쳤어요"·"진짜 맛있어요" (광고 톤)<br><br>"오늘도 ○○ 출시!" 류 단순 홍보문<br><br>"여러분~"·"고객님~" (기업 어투)<br><br>이모티콘 3개 이상 / !!! 다용<br><br>경쟁사 직접 디스 ("X보다 좋아요" 류)</div>
       </div>
     </div>
 
-    <div class="info"><strong>두 트랙은 슬로건으로 묶지 않는다.</strong> 인스타 공식 = 감도 / 숏폼·X·지점 = 바이럴. 톤 섞지 않음. (덱 03번 핵심 원칙)</div>
+    <h4 style="margin-top:18px;font-size:14px;font-weight:700;">2-4-3. 30분 룰 + 셀프디스 + 클레임 SOP</h4>
 
-    <h3 class="with-line">2-2. 3축 차별 어휘 — 단일 슬롯이 아닌 복합 어휘 점유</h3>
+    <table>
+      <thead><tr><th style="width:130px;">룰</th><th>운영 방식</th></tr></thead>
+      <tbody>
+        <tr><td><b>30분 룰</b></td><td>트윗 후 30분 안에 댓글·인용·DM 응답. 부정 발화·클레임 = 30분 안에 사과·이관 결정. 30분 안에 응답 못 하면 그날 트윗 자체를 늦은 시간에 안 함.</td></tr>
+        <tr><td><b>셀프디스 ○</b></td><td>본사 자체 셀프디스 ("우리 마케팅 팀이 또 사고쳤어요") · 라떼 자체 셀프디스 ("오늘 카페인 너무 많이 마셨다") · 점주 셀프디스 (점주 동의 후)</td></tr>
+        <tr><td><b>셀프디스 X</b></td><td>댄싱컵 본사 셀프디스 — 회사 외부 신뢰 영역</td></tr>
+        <tr><td><b>클레임 SOP</b></td><td>① 30분 안에 응답 ② 사과 우선 → 매장·본사 이관 ③ DM으로 디테일 ④ 공개 트윗으로 결과 보고 X ⑤ 24시간 안에 손님 OK 답 받으면 트윗 종결</td></tr>
+        <tr><td><b>발행 빈도</b></td><td>평일 일 5~7건 (오전·점심·오후·저녁 분산) / 주말 일 2~3건 / 신메뉴 시점 평일 일 7~10건 추가 가능</td></tr>
+      </tbody>
+    </table>
 
-    <div class="info-dark" style="font-family: 'Noto Sans KR', monospace; font-size: 14px; line-height: 2;">
-"딥라떼" 단일 키워드 → 우지 영역<br>
-&nbsp;&nbsp;↓<br>
-<strong style="font-size:18px;">"부산"</strong> + <strong style="font-size:18px;">"1년 상시 시그니처"</strong> + <strong style="font-size:18px;">"우유 블렌딩"</strong><br>
-&nbsp;&nbsp;= 댄싱컵 점유 슬롯
-    </div>
+    <h3 class="with-line">2-5. 틱톡 — 릴스 미러링</h3>
 
-    <h3 class="with-line">2-3. 핵심 카피 풀</h3>
+    <div class="info"><strong>신규 콘텐츠 제작 X — 인스타 릴스 바이럴 콘텐츠만 미러링.</strong> 댄싱컵 틱톡 공식 계정 운영 시작. 1년 누적 50만+ 조회 KPI 1순위. 단순 미러링 = 캡션·해시태그 틱톡 톤으로 변환만. 댓글 응답 = X 페르소나가 미러링 운영.</div>
 
-    <div class="quote">
-      <div class="q-body">"딥라떼는 다른 곳과 다른 길로 깊이를 만든 댄싱컵의 라떼다."</div>
-      <div class="q-meta"><b>메뉴 정의 한 줄</b> · 모든 메뉴판·POP·콘텐츠 캡션 베이스</div>
-    </div>
+    <h3 class="with-line">2-6. 알바생 서포터즈 — 채널 위 공급 레이어</h3>
 
-    <div class="quote">
-      <div class="q-body">"부산은 이미 커피 도시다. 모모스가 스페셜티 가격대에서 만든 부산을, 댄싱컵이 대중 가격대에서 잇는다."</div>
-      <div class="q-meta"><b>인스타 정의 시리즈 톤</b> · 6월 빌드업</div>
-    </div>
+    <p class="lead" style="margin-bottom:14px;">매장 알바 5명·6개월·월 4편 콘텐츠 (4/29 미팅 결정 + 5/11 D6 디테일 합의 예정). 1인당 월 4편 = 5명 × 6개월 × 4편 = <b>120편 누적</b>. GS25 25매거진 모델을 카페 카테고리에 적용한 첫 사례. <span class="pill warn">디테일 숫자는 5/11 D6 합의 후 별도 인계 문서로 분리</span></p>
 
-    <div class="quote">
-      <div class="q-body">"바다가 가까운 도시에서, 짠 게 단 걸 만든다."</div>
-      <div class="q-meta"><b>솔티드 D-Day 카피</b> · 7/15</div>
+    <table>
+      <thead><tr><th>의무</th><th>분배 (월 4편)</th></tr></thead>
+      <tbody>
+        <tr><td>매장·점주·알바 일상 (F1 릴스 / 인스타 매장 시리즈)</td><td>월 1편</td></tr>
+        <tr><td>신메뉴 시연 (라떼 맛집 또는 신메뉴 시즌)</td><td>월 1편</td></tr>
+        <tr><td>자유 콘텐츠 (서포터즈 자율)</td><td>월 2편</td></tr>
+      </tbody>
+    </table>
+
+    <div class="info"><strong>검수:</strong> 신메뉴 콘텐츠 = 사전 검수 (D-3 시점) / 자유 콘텐츠 = 사후 검수 (≤24시간). <strong>채널 활용:</strong> 인스타 피드 시리즈 ④ + 인스타 릴스 F1 + X 페르소나 인용·리트윗 + 틱톡 미러링 자연 흡수.</div>
+
+    <h3 class="with-line">2-7. 채널간 콘텐츠 흐름 + 자생 발화 흡수 SOP</h3>
+
+    <div class="info-dark" style="font-family:'Noto Sans KR',monospace;font-size:13px;line-height:1.95;">
+<strong style="color:#EA580C;">베이스 흐름</strong>&nbsp;&nbsp;&nbsp;&nbsp;인스타 피드 → 릴스 변주 → 틱톡 미러링 → X 페르소나가 자기 톤으로 인용<br><br>
+<strong style="color:#EA580C;">역방향 흐름</strong>&nbsp;&nbsp;X 페르소나 일상 발화 → 좋은 발화 회수 → 인스타 캡션·릴스 자막으로 재활용<br><br>
+<strong style="color:#EA580C;">자생 별칭 흡수</strong>&nbsp;&nbsp;X에서 자생 별칭 후보 어휘 노출 ("부산딥"·"솔딥") → 손님 반응 1~2주 모니터링 → 본사 채널 어휘로 흡수 → 인스타 공식·매장 POP 등록 (텐퍼센트 "꾸덕라떼" 모델 = 3월 SNS 자생 → 4/1 공식 흡수 차용)
     </div>
   </div>
 
-  <!-- §3 메뉴 결정 -->
+  <!-- §3 라떼 전략 -->
   <div class="section">
     <div class="part">
-      <div class="part-num">§3 MENU</div>
-      <div class="part-name">정규 3종 + 시즈널 회전</div>
+      <div class="part-num">§3 LATTE STRATEGY</div>
+      <div class="part-name">메뉴 + 라이프스타일 + 부산 코팅 + 5~12월 액션</div>
     </div>
-    <h2>라떼는 커피 + 우유다.<br><em>에스프레소샷이 사는 라떼만 후보.</em></h2>
-    <p class="lead">정규 3종 (오리지널·너티·솔티드) 1년 상시 + 시즈널 분기별 1종 한정 회전. 라떼 정합성을 1순위 게이트로 두고 평가. <b style="color:#EA580C;">본 §3은 §1.5 Track 1 라떼 앵커 스코프 — Track 2 신메뉴 시즌(컵빙수·오미자 등)은 별도 캠페인.</b></p>
+    <h2>라떼는 본질,<br><em>부산은 매력을 더하는 코팅.</em></h2>
+    <p class="lead">Track 1 라떼 맛집의 디테일. <b>라떼를 즐기는 일상이 본질</b> — 한국인 보편 라이프스타일 모티프. <b>부산은 그 일상에 매력을 더하는 도시 코팅</b> — 메뉴에 박지 않고 콘텐츠·캡션·거점 매장에 끼얹음. % Arabica Kyoto + 팀홀튼 캐나다 + 스타벅스 제주 결합 모델. 메뉴(3-1·3-2) → 라이프스타일 본질(3-3) → 부산 코팅(3-4) → 5~12월 캠페인(3-5) → 시즌 룰·페어링(3-6·3-7).</p>
+
+    <div class="quote dark" style="margin-top:18px;">
+      <div class="q-body">"라떼는 본질, <b style="color:#FB923C;">부산은 매력.</b>"</div>
+      <div class="q-meta"><b>핵심 슬로건</b> · 모든 채널·매장·콘텐츠 베이스</div>
+    </div>
+
+    <div class="quote">
+      <div class="q-body">"부산은 이미 커피 도시다. 그 매력을 일상 라떼에 <b>끼얹는다</b>."</div>
+      <div class="q-meta"><b>인스타 정의 시리즈 톤</b> · 5~6월 베이스 다지기</div>
+    </div>
+
+    <div class="quote">
+      <div class="q-body">"바다가 가까운 도시에서, <b>짠 게 단 걸</b> 만든다."</div>
+      <div class="q-meta"><b>솔티드 D-Day 카피</b> · 7/15</div>
+    </div>
+
+    <div class="fig h-320" style="margin-top:18px;">
+      <img src="./04_캠페인/260711_딥라떼런칭/팀원들%20자료/ExportBlock-2f549d0c-6edd-4f0d-81ea-05838ab91248-Part-1/image%2011.png" alt="우유 블렌딩 비주얼 — 라떼 본질" style="width:100%;height:100%;object-fit:cover;display:block;">
+      <div class="fig-overlay">
+        <div class="fig-cap">
+          <span class="fig-tag">라떼 본질 비주얼</span>
+          <div class="fig-title">우유 블렌딩 — 베이스가 두꺼운 라떼</div>
+          <div class="fig-meta">시럽·토핑이 아닌 우유 자체 블렌딩으로 베이스 두께 만들기 / 우지·텐퍼센트와 다른 메커니즘</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="with-line">3-0. 참고 사례 — 라떼 본질 + 도시 매력 글로벌 모델 4건</h3>
+
+    <p class="lead" style="margin-bottom:14px;">메뉴에 도시명을 박거나 도시 어휘를 라이프스타일에 끼얹은 글로벌 카페 4건. 댄싱컵 모델의 베이스.</p>
+
+    <div class="fig-grid-2" style="margin-bottom:14px;">
+      <div class="fig h-200">
+        <img src="https://www.tankcoffee.com/wp-content/uploads/2024/09/What-is-a-Kyoto-Latte_-297974489.jpg" alt="% Arabica Kyoto Latte" loading="lazy">
+        <div class="fig-overlay">
+          <div class="fig-cap">
+            <span class="fig-tag">% ARABICA</span>
+            <div class="fig-title">Kyoto Latte</div>
+            <div class="fig-meta">2014 출시 · 241개 매장 · 12년 1년 상시 / 도시명 메뉴 직접 박기 모델</div>
+          </div>
+        </div>
+      </div>
+      <div class="fig h-200">
+        <img src="https://cdn.builder.io/api/v1/image/assets%2F9b6836fa3ba643fe8fff0164397e2c60%2F12a66943275047ccb04866a4c502d936?width=1985" alt="Stumptown Coffee Portland Division" loading="lazy">
+        <div class="fig-overlay">
+          <div class="fig-cap">
+            <span class="fig-tag">STUMPTOWN</span>
+            <div class="fig-title">Hair Bender (Portland)</div>
+            <div class="fig-meta">1999 · 첫 매장 건물명 = 시그니처 블렌드 / 로컬 장소 → 글로벌 시그니처</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="fig-grid-2">
+      <div class="fig h-200">
+        <img src="https://sprudge.com/wp-content/uploads/2016/02/Sprudge-OnibusNakameguro-HengteeLim-12_ONIBUS_coffee-740x416.jpg" alt="Onibus Coffee 나카메구로" loading="lazy">
+        <div class="fig-overlay">
+          <div class="fig-cap">
+            <span class="fig-tag">ONIBUS</span>
+            <div class="fig-title">나카메구로 (도쿄)</div>
+            <div class="fig-meta">2012 · 도쿄 7개 / 컵에 지역 아티스트 작품 인쇄 / 동네 → 세계 1위 독립 카페</div>
+          </div>
+        </div>
+      </div>
+      <div class="fig h-200">
+        <img src="https://static.vinwonders.com/production/2025/02/Salted-coffee-Vietnam-banner.jpg" alt="베트남 cà phê muối" loading="lazy">
+        <div class="fig-overlay">
+          <div class="fig-cap">
+            <span class="fig-tag">VIETNAM</span>
+            <div class="fig-title">cà phê muối (후에)</div>
+            <div class="fig-meta">미쉐린 가이드 베트남 6대 (2024) / 솔티드 글로벌 합류 베이스</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size:11px;color:#999;margin-top:8px;">출처: tankcoffee · Stumptown 공식 · Sprudge · VinWonders (리서치북 v9 §3.3·§3.6 자매 인용)</p>
+
+    <h4 style="margin-top:24px;font-size:14px;font-weight:700;">3-0-1. 한국 도시명 메뉴화 사례 4건 — 부산이 들어갈 자리</h4>
+
+    <div class="fig-grid-2" style="margin-bottom:14px;">
+      <div class="fig h-200">
+        <img src="./04_캠페인/260711_딥라떼런칭/팀원들%20자료/ExportBlock-2f549d0c-6edd-4f0d-81ea-05838ab91248-Part-1/image%208.png" alt="스타벅스 제주 메뉴" loading="lazy">
+        <div class="fig-overlay">
+          <div class="fig-cap">
+            <span class="fig-tag">제주</span>
+            <div class="fig-title">스타벅스 — 제주 한정</div>
+            <div class="fig-meta">새코롬 돌코롬 / 까망 크림 프라푸치노 / 비자림 콜드브루 — 방언 + 명소 결합</div>
+          </div>
+        </div>
+      </div>
+      <div class="fig h-200">
+        <img src="./04_캠페인/260711_딥라떼런칭/팀원들%20자료/ExportBlock-2f549d0c-6edd-4f0d-81ea-05838ab91248-Part-1/image%209.png" alt="스타벅스 제주 메뉴 추가" loading="lazy">
+        <div class="fig-overlay">
+          <div class="fig-cap">
+            <span class="fig-tag">제주</span>
+            <div class="fig-title">스타벅스 — 제주 정서적 깊이</div>
+            <div class="fig-meta">장소 자산(Place Asset) + 언어적 특색 결합 / 청정·힐링 정서</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fig-grid-2">
+      <div class="fig h-200">
+        <img src="./04_캠페인/260711_딥라떼런칭/팀원들%20자료/ExportBlock-2f549d0c-6edd-4f0d-81ea-05838ab91248-Part-1/image%207.png" alt="보난자커피 서울라떼" loading="lazy">
+        <div class="fig-overlay">
+          <div class="fig-cap">
+            <span class="fig-tag">서울</span>
+            <div class="fig-title">보난자 — 서울라떼</div>
+            <div class="fig-meta">베를린 본사 → 한국에서 서울 도시명 시그니처 / "라떼 안 마시는 사람도 중독"</div>
+          </div>
+        </div>
+      </div>
+      <div class="fig h-200">
+        <img src="./04_캠페인/260711_딥라떼런칭/팀원들%20자료/ExportBlock-2f549d0c-6edd-4f0d-81ea-05838ab91248-Part-1/image%2010.png" alt="블루보틀 NOLA" loading="lazy">
+        <div class="fig-overlay">
+          <div class="fig-cap">
+            <span class="fig-tag">NOLA</span>
+            <div class="fig-title">블루보틀 — 뉴올리언스 스타일</div>
+            <div class="fig-meta">치커리 레시피 = 도시 커피 문화 그대로 메뉴화 / 도시명 = 레시피 설명</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size:11px;color:#999;margin-top:8px;">출처: 석환 리서치 §3-2 (팀원 자료) · 부산 도시명 메뉴화 = 댄싱컵 자리</p>
 
     <h3 class="with-line">3-1. 정규 3종 (1년 상시) — 5/19 메뉴 최종 확정 게이트</h3>
 
     <div class="menu-grid">
       <div class="menu-card">
         <div class="m-img">
-          <img src="https://picsum.photos/seed/menu-original-deep-latte/400/240" alt="오리지널 딥라떼">
+          <div class="thumb-stub cream"><div class="ts-eyebrow">Menu 01</div><div class="ts-title">오리지널</div><div class="ts-sub">베이스 · 닻 메뉴 · 1년 상시</div></div>
         </div>
         <div class="m-body">
           <div class="m-tag">베이스 · 1년 상시</div>
@@ -441,7 +731,7 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
       </div>
       <div class="menu-card">
         <div class="m-img">
-          <img src="https://picsum.photos/seed/menu-nutty-almond/400/240" alt="너티 딥라떼">
+          <div class="thumb-stub sand"><div class="ts-eyebrow">Menu 02</div><div class="ts-title">너티</div><div class="ts-sub">진입 메뉴 · 라떼 입문</div></div>
         </div>
         <div class="m-body">
           <div class="m-tag">진입로 · 라떼 입문</div>
@@ -452,7 +742,7 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
       </div>
       <div class="menu-card main">
         <div class="m-img">
-          <img src="https://picsum.photos/seed/menu-salted-busan-main/400/240" alt="솔티드 딥라떼">
+          <div class="thumb-stub deep"><div class="ts-eyebrow">Menu 03 · ★</div><div class="ts-title">솔티드</div><div class="ts-sub">여름 메인 · 부산 바다 어휘</div></div>
         </div>
         <div class="m-body">
           <div class="m-tag">★ 여름 메인 + 1년 상시</div>
@@ -467,9 +757,46 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
       <strong style="color:#EA580C;">5/19 메뉴 네이밍 결정 게이트 — 양안 병기 (5/8 미팅 발화 반영):</strong><br><br>
       <b>A안 (지은 RESEARCH DECK 0508):</b> 메뉴명은 짧게 = "오리지널 / 솔티드 / (너티) 딥라떼" + 동네 어휘는 소제목·콘텐츠로. 라인명 = "부산 딥라떼 — 부산에서 시작한 깊은 라떼". 동네명(해운대·광안리·송정)은 메뉴판 소제목·인스타 캡션에서 풀이. <i>지은 pptx Slide 10·11 인용.</i><br><br>
       <b>B안 (5/8 미팅 메모):</b> 메뉴명 자체에 동네명 박기 = "해운대 선셋 딥라떼 / 광안 문라이트 딥라떼 / 부산 미드나잇 딥라떼" 등 베리에이션 > 스토리텔링. 우유 강조형 = 숙성우유 / 커피 강조형 = 특별 로스팅 두 갈래로 라인 시리즈화. <i>5/8 사용자 미팅 메모 인용.</i><br><br>
-      <b>판단 축:</b> A안 = 운영·인지 안정 + 본사 통일 운영 부담↓ + 부산 외 거주자 인지 친화 / B안 = 화제성·콘텐츠 자산 + 매장당 변주 가능 + 베리에이션 콘텐츠 누적 가능, 단 운영 복잡도↑·본사 통일 룰 깨질 위험. <b>리서치북 v8 §2.3 약신호 ⑤ 세대 어휘</b>(부산 외 거주자 인지 한계) 1차 검증 결과를 5/19 게이트 입력으로 사용 권장.<br><br>
-      <b>중간안 (검토 후보):</b> 메뉴명은 A안(짧게) 유지 + <b>시즈널 1종 한정으로 B안 시리즈 시범 운영</b> (예: 8월 "해운대 선셋 솔티드 딥라떼" 한정 캠페인) — 양안 충돌을 시즈널 슬롯에서 검증.
+      <b>판단 축:</b> A안 = 운영·인지 안정 + 본사 통일 운영 부담↓ + 부산 외 거주자 인지 친화 + <b>"라떼 본질 + 부산 코팅" 모델 정합</b> (% Arabica Kyoto·팀홀튼 캐나다처럼 메뉴명에 도시명 박지 않고 콘텐츠·일상에 도시 끼얹기). B안 = 화제성·콘텐츠 자산 + 매장당 변주 가능 + 베리에이션 콘텐츠 누적, 단 운영 복잡도↑·본사 통일 룰 깨질 위험·부산 외 거주자 거리감.<br><br>
+      <b>에이전시 권장 = A안 (정규) + B안 시즈널 한정 시범:</b> 정규 3종 = A안(짧게) 1년 상시 / 시즈널 한정 1~2종 = B안 시범 운영 (예: 8월 "해운대 선셋 솔티드 딥라떼" 6주 한정, 10월 "광안 문라이트 메이플 딥라떼" 6주 한정). 스타벅스 제주 한정 메뉴 모델 차용. 한정 종료 후 정규 메뉴는 A안 어휘로 복귀. 5/19 메뉴 최종 게이트 본사 합의.
     </div>
+
+    <h4 style="margin-top:24px;font-size:14px;font-weight:700;">3-1-1. 라떼 본질 한국 사례 — 메뉴 정의를 잘 풀어낸 3건</h4>
+
+    <div class="fig-grid-3">
+      <div class="fig h-200">
+        <img src="./04_캠페인/260711_딥라떼런칭/팀원들%20자료/ExportBlock-2f549d0c-6edd-4f0d-81ea-05838ab91248-Part-1/image%201.png" alt="벤티프레소 숙성라떼" loading="lazy">
+        <div class="fig-overlay">
+          <div class="fig-cap">
+            <span class="fig-tag">시간·정성</span>
+            <div class="fig-title">벤티프레소 — 숙성라떼</div>
+            <div class="fig-meta">3일 저온 숙성 / "시간이 만들어낸 맛" / 공정을 전면 강조한 깊이 서사</div>
+          </div>
+        </div>
+      </div>
+      <div class="fig h-200">
+        <img src="./04_캠페인/260711_딥라떼런칭/팀원들%20자료/ExportBlock-2f549d0c-6edd-4f0d-81ea-05838ab91248-Part-1/image%202.png" alt="하이오커피 말차 크림 카페라떼" loading="lazy">
+        <div class="fig-overlay">
+          <div class="fig-cap">
+            <span class="fig-tag">우유 본질</span>
+            <div class="fig-title">하이오커피 — 말차 크림 카페라떼</div>
+            <div class="fig-meta">숙성 우유 + 제주산 말차 크림 / 우유 베이스 시그니처 확장</div>
+          </div>
+        </div>
+      </div>
+      <div class="fig h-200">
+        <img src="./04_캠페인/260711_딥라떼런칭/팀원들%20자료/ExportBlock-2f549d0c-6edd-4f0d-81ea-05838ab91248-Part-1/image%204.png" alt="할리스 솔티카라멜크림 라떼" loading="lazy">
+        <div class="fig-overlay">
+          <div class="fig-cap">
+            <span class="fig-tag">솔티드 검증</span>
+            <div class="fig-title">할리스 — 솔티카라멜 크림 라떼</div>
+            <div class="fig-meta">"더욱 진한 풍미의 딥 라떼" 운영 / 솔티드 + 딥라떼 어휘 직접 결합</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size:11px;color:#999;margin-top:8px;">출처: 석환 리서치 §1-1·§2-2 (팀원 자료)</p>
 
     <h3 class="with-line">3-2. 시즈널 회전 룰 (분기별 1종 한정)</h3>
 
@@ -477,32 +804,167 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
       <thead><tr><th>시즌</th><th>1순위</th><th>2순위 (백업)</th><th>사유</th></tr></thead>
       <tbody>
         <tr><td>봄 (3-5월)</td><td><b>운영 안 함</b></td><td>—</td><td>라떼 정합 ⭐⭐⭐ 후보 중 봄 어휘 결합도 낮음. 운영 부담 감소.</td></tr>
-        <tr class="hi"><td>여름 (6-8월)</td><td><b>솔티드 (정규 푸쉬)</b></td><td>—</td><td>4/29 결정 + Insight #5 (글로벌 메가트렌드)</td></tr>
+        <tr class="hi"><td>여름 (6-8월)</td><td><b>솔티드 (정규 푸쉬)</b></td><td>—</td><td>4/29 결정 + 글로벌·한국·부산 3 레이어 검증 (리서치북 §3.6)</td></tr>
         <tr><td>가을 (9-11월)</td><td><b>메이플 한정</b></td><td>흑당</td><td>라떼 정합 ⭐⭐⭐ + 가을 어휘 + 페어링 호환</td></tr>
         <tr><td>겨울 (12-2월)</td><td>피스타치오 한정 (검토)</td><td>흑당 / 메이플 연장</td><td>원가 부담 시 흑당 즉시 교체</td></tr>
       </tbody>
     </table>
 
-    <h3 class="with-line">3-3. 시즈널 출시·삭제 표준 룰</h3>
+    <h3 class="with-line">3-3. 라떼 라이프스타일 본질 — 한국인 일상 모티프 12</h3>
+
+    <p class="lead" style="margin-bottom:14px;">라떼를 즐기는 순간·동선·감정을 모은 모티프 풀. <b>부산 한정 X</b> — 댄싱컵 130개 매장 어디서든 통하는 보편 결. 인스타·릴스·X 콘텐츠의 본질 베이스. <b>동선 5 + 순간 4 + 감정 3 = 12 모티프.</b></p>
+
+    <p class="lead" style="margin-bottom:14px;">동선 4 + 감정 2 = <b>핵심 6 모티프.</b> 콘텐츠 캘린더에서 매주 다른 모티프로 순환.</p>
+
+    <div class="case-grid col-3">
+      <div class="case">
+        <div class="c-img"><div class="thumb-stub cream"><div class="ts-eyebrow">M1 · 출근길</div><div class="ts-title">한 잔으로 시작</div></div></div>
+        <div class="c-body">
+          <div class="c-text">평일 7~9시 · 시작·환기. <b>"오늘은 이 한 잔으로 시작"</b></div>
+        </div>
+      </div>
+      <div class="case">
+        <div class="c-img"><div class="thumb-stub sand"><div class="ts-eyebrow">M2 · 페어링</div><div class="ts-title">라떼 + 디저트</div></div></div>
+        <div class="c-body">
+          <div class="c-text">주말·오후 · 만족·공유. <b>"솔티드 + 휘낭시에"</b></div>
+        </div>
+      </div>
+      <div class="case">
+        <div class="c-img"><div class="thumb-stub wine"><div class="ts-eyebrow">M3 · 친구·연인</div><div class="ts-title">결국 같은 자리</div></div></div>
+        <div class="c-body">
+          <div class="c-text">주말 저녁 · 동행·기록. <b>"오늘은 메뉴 바꿔볼까"</b></div>
+        </div>
+      </div>
+      <div class="case">
+        <div class="c-img"><div class="thumb-stub ink"><div class="ts-eyebrow">M4 · 작업·야근</div><div class="ts-title">4잔째</div></div></div>
+        <div class="c-body">
+          <div class="c-text">집중·버팀·웃픔. <b>"오늘 4잔째 = 카페인 빚"</b></div>
+        </div>
+      </div>
+      <div class="case hi">
+        <div class="c-img"><div class="thumb-stub accent"><div class="ts-eyebrow">M5 · ★ 부산 코팅 정점</div><div class="ts-title">한 잔으로 도시가 되는 순간</div></div></div>
+        <div class="c-body">
+          <div class="c-text"><b>광안리 야경 + 솔티드 = 부산.</b> 한 잔이 그 도시의 시간·풍경을 응축. 부산 코팅 가장 강해지는 모티프.</div>
+        </div>
+      </div>
+      <div class="case">
+        <div class="c-img"><div class="thumb-stub deep"><div class="ts-eyebrow">M6 · 자생 별칭 자리</div><div class="ts-title">친구에게 추천한 라떼</div></div></div>
+        <div class="c-body">
+          <div class="c-text">UGC·자생 발화 흡수. <b>"○○에 가면 딥라떼 꼭 마셔"</b> 자생 별칭 등장 자리.</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="with-line">3-4. 부산 = 매력 코팅 — 8 카테고리 + 거점 매칭</h3>
+
+    <p class="lead" style="margin-bottom:14px;">부산을 라떼 라이프스타일 위에 끼얹는 자산. <b>메뉴에 박는 게 아니라, 콘텐츠·캡션·소제목·거점·시즌 한정에 활용.</b> 부산 외 거주 손님에게 거리감 X, 부산 매력은 자연스럽게 노출.</p>
+
+    <table>
+      <thead><tr><th>#</th><th>카테고리</th><th>자산 풀</th><th>활용 시점</th></tr></thead>
+      <tbody>
+        <tr><td>C1</td><td><b>풍경·미장센</b></td><td>광안대교·해운대 일출·송정 일몰·기장 바다</td><td>거점 매장 콘텐츠 / 릴스 배경</td></tr>
+        <tr><td>C2</td><td><b>시장·동네</b></td><td>자갈치·국제시장·전포카페거리·송도·청사포</td><td>페어링 콘텐츠 / X 일상 트윗</td></tr>
+        <tr><td>C3</td><td><b>시간대</b></td><td>새벽 항구·아침 해변·저녁 야경·심야 부산역</td><td>시즌 한정 + 콘텐츠 시리즈</td></tr>
+        <tr><td>C4</td><td><b>언어·사투리</b></td><td>"행님아"·"갈매기"·"부산이라카이"</td><td>X 톤·캡션 (메뉴명 X)</td></tr>
+        <tr><td>C5</td><td><b>재료·식문화</b></td><td>미역·소금·꼬막·돼지국밥·밀면·씨앗호떡</td><td>페어링 디저트 / 솔티드 한정</td></tr>
+        <tr><td>C6</td><td><b>계절·날씨</b></td><td>7월 휴가·해무·11월 갈맷길</td><td>시즈널 회전 / 캠페인 시점</td></tr>
+      </tbody>
+    </table>
+
+    <h4 style="margin-top:18px;font-size:14px;font-weight:700;">3-4-1. 거점 매장 4개 × 부산 요소 매칭</h4>
+
+    <table>
+      <thead><tr><th>거점</th><th>매칭 부산 요소</th><th>콘텐츠 톤</th></tr></thead>
+      <tbody>
+        <tr><td><b>부산 센텀점</b></td><td>C1 도시 풍경 / C2 직장가 / C7 직장인 캐릭터</td><td>평일·낮·일상</td></tr>
+        <tr><td><b>부산 광안리점</b></td><td>C1 광안대교·야경 / C3 저녁 / C5 페어링 / C8 파도 소리</td><td>저녁·연말·연인</td></tr>
+        <tr><td><b>부산 해운대점</b></td><td>C1 일출·바다 / C3 아침 / C6 7월 휴가 / 외국인</td><td>휴가·관광·외국인</td></tr>
+        <tr><td><b>부산 기장점</b></td><td>C1 기장 바다 / C5 미역·소금 / C3 새벽 항구</td><td>솔티드 D-Day 베이스</td></tr>
+        <tr><td>서울 가재울점</td><td>(부산 요소 X — 보편 라이프스타일 콘텐츠)</td><td>인플 컨택·서울 거점</td></tr>
+      </tbody>
+    </table>
+
+    <div class="info"><strong>운영 룰 4건:</strong> ① 부산 요소는 1년 내내 깔리지 않음 — 매월 콘텐츠 30~40%만 부산 노출, 나머지는 보편 라이프스타일 모티프. ② 솔티드 D-Day(7월) + 메이플 D-Day(10월)에는 부산 코팅 농도 50~60%로 ↑. ③ 부산 외 거주자 거리감 회피 = 사투리·동네명은 메뉴명 X, 콘텐츠·X 톤에서만. ④ 거점 매장 = 부산 요소 자연스러운 무대, 비거점 125개는 보편 라이프스타일 콘텐츠 + 부산 미러링 자율.</div>
+
+    <h4 style="margin-top:18px;font-size:14px;font-weight:700;">3-4-2. 부산 1·2티어 무대 — 거점 매장 톤 참고 사례</h4>
+
+    <p class="lead" style="margin-bottom:14px;">부산 9~26년 누적된 카페 도시 자산. 댄싱컵 거점 매장 콘텐츠 톤 참고.</p>
+
+    <div class="fig-grid-3">
+      <div class="fig h-200">
+        <img src="https://storage.heypop.kr/assets/2022/07/12134112/KakaoTalk_20220227_090240966_05.jpeg" alt="모모스 영도 본점" loading="lazy">
+        <div class="fig-overlay">
+          <div class="fig-cap">
+            <span class="fig-tag">1티어</span>
+            <div class="fig-title">모모스 영도</div>
+            <div class="fig-meta">2026 World's 100 Best 22위 / 한국 1위 / WBC 챔피언 전주연</div>
+          </div>
+        </div>
+      </div>
+      <div class="fig h-200">
+        <img src="https://leesarcoffee.com/wp-content/uploads/2024/05/KakaoTalk_20240517_023538412_01-1024x768.jpg" alt="블랙업커피 서면" loading="lazy">
+        <div class="fig-overlay">
+          <div class="fig-cap">
+            <span class="fig-tag">1티어</span>
+            <div class="fig-title">블랙업 서면</div>
+            <div class="fig-meta">96명+ 바리스타 / 부울경 최대 / "해,수염 콜드브루" 2017-04~ 9년</div>
+          </div>
+        </div>
+      </div>
+      <div class="fig h-200">
+        <img src="https://storage.heypop.kr/assets/2023/05/31172545/4F5A6111-RE-scaled.jpg" alt="베르크 로스터스" loading="lazy">
+        <div class="fig-overlay">
+          <div class="fig-cap">
+            <span class="fig-tag">2티어</span>
+            <div class="fig-title">베르크 로스터스</div>
+            <div class="fig-meta">부산 인디 → 부산 스페셜티 빅4 / Service Center 디자인</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size:11px;color:#999;margin-top:8px;">출처: heypop·LEESAR (리서치북 v9 §4.2 자매 인용)</p>
+
+    <h3 class="with-line">3-5. 5~12월 캠페인 캘린더 — 베이스 다지기 + D-Day + 시즌 회전</h3>
+
+    <p class="lead" style="margin-bottom:14px;">5~6월 = 기존 딥라떼 메뉴 활용 <b>바이럴 베이스 다지기</b> (콘텐츠 발행 시작). 7월 = 본격 D-Day 플레이. 8월 이후 = 시즈널 회전·자생 별칭 누적. 부산 코팅 농도는 D-Day 정점에서 ↑, 평월에는 일상 라이프스타일 비중 ↑.</p>
+
+    <table>
+      <thead><tr><th>월</th><th>페이즈</th><th>핵심 메커니즘</th><th>모티프 비중</th><th style="width:90px;">부산 코팅</th></tr></thead>
+      <tbody>
+        <tr><td><b>5월</b></td><td>베이스 다지기 #1</td><td>기존 딥라떼 메뉴 활용 일상 콘텐츠 시작 / X 페르소나 가동 / 알바생 OT 사전</td><td>M1·M3</td><td>30%</td></tr>
+        <tr><td><b>6월</b></td><td>베이스 다지기 #2 (빌드업)</td><td>일상 모티프 누적 / 컵 본 안 발주 / 서포터즈 OT / 인플 1차 컨택</td><td>M2·M5</td><td>35%</td></tr>
+        <tr class="hi"><td><b>7월</b></td><td><b>D-Day 본격 플레이</b></td><td>D-7 사전 호기심 → 7/15 4채널 동시 빅뱅 → D+14 UGC 회수 시작</td><td>M5·M2</td><td><b>55%</b></td></tr>
+        <tr><td><b>8월</b></td><td>모멘텀 + 자생 별칭 회수</td><td>UGC 1,000+ SOP / 자생 별칭 모니터링 / 외국인 트라이얼 / 메이플 사전 (D-30)</td><td>M6·M3</td><td>40%</td></tr>
+        <tr><td><b>9월</b></td><td>가을 사전</td><td>메이플 캠페인 기획 / 거점 변주표 / 서포터즈 OT 재시행</td><td>M2·M4</td><td>30%</td></tr>
+        <tr class="hi"><td><b>10월</b></td><td><b>메이플 한정 D-Day</b></td><td>10/15 메이플 D-Day / 시즌컵 2차 / PPL 정점</td><td>M2·M5</td><td><b>45%</b></td></tr>
+        <tr><td><b>11월</b></td><td>모멘텀 + 겨울 사전</td><td>메이플 모멘텀 / 피스타치오 권고안 / 서포터즈 6개월 KPI</td><td>M4·M6</td><td>30%</td></tr>
+        <tr><td><b>12월</b></td><td>연말 + 1년 KPI</td><td>연말 한정 / 시즌컵 3차 / 1년 KPI 보고 / 2027 Q1 마스터</td><td>M3·M5</td><td>35%</td></tr>
+      </tbody>
+    </table>
+
+    <div class="info"><strong>부산 코팅 농도 평균 ~37%</strong> — D-Day(7월 55% / 10월 45%) 정점, 평월 30~40%. 부산이 본질이 되지 않으면서 매력 코팅으로만 작동. 보편 라떼 라이프스타일 ~63%.</div>
+
+    <h3 class="with-line">3-6. 시즈널 출시·삭제 표준 룰</h3>
 
     <div class="info-dark" style="font-family: 'Noto Sans KR', monospace; font-size: 13px; line-height: 1.85;">
 <strong style="color:#EA580C;">D-30</strong>&nbsp;&nbsp;사전 빌드업 시작 (인스타 호기심·릴스 떡밥·매장 POP 시안 노출)<br>
 <strong style="color:#EA580C;">D-Day</strong>&nbsp;&nbsp;단일 날짜 빅뱅 (분산 출시 금지)<br>
-<strong style="color:#EA580C;">D+1~D+14</strong>&nbsp;&nbsp;화력 정점 (인플루언서·앰배서더·메타 광고 동시)<br>
+<strong style="color:#EA580C;">D+1~D+14</strong>&nbsp;&nbsp;화력 정점 (인플루언서·서포터즈·메타 광고 동시)<br>
 <strong style="color:#EA580C;">D+15~D+30</strong>&nbsp;&nbsp;모멘텀 유지 (UGC 재배포·매장 POP 회수)<br>
 <strong style="color:#EA580C;">D+31~D+60</strong>&nbsp;&nbsp;정규 / 한정 분기 결정<br>
 <strong style="color:#EA580C;">한정 운영</strong>&nbsp;&nbsp;6~8주 / 종료 1주 전 SNS 알림 / 다음 시즌 사전 빌드업 동시
     </div>
 
-    <h3 class="with-line">3-4. 페어링 디저트 (브랜드팀 영역 — HIZ는 가이드만 인계)</h3>
+    <h3 class="with-line">3-7. 페어링 디저트 (브랜드팀 영역 — 에이전시는 가이드만 인계)</h3>
 
-    <div class="info"><strong>스코프:</strong> 디저트 개발·시연·납품 결정은 브랜드팀(또는 운영팀) 영역. HIZ는 케이스 기반 1·2순위 후보 추천 + 콘텐츠 시점 정합만 책임.</div>
+    <div class="info"><strong>스코프:</strong> 디저트 개발·시연·납품 결정은 브랜드팀(또는 운영팀) 영역. 에이전시는 케이스 기반 1·2순위 후보 추천 + 콘텐츠 시점 정합만 책임.</div>
 
     <div class="case-grid">
       <div class="case">
-        <div class="c-img">
-          <img src="https://picsum.photos/seed/pairing-summer-finanier-salt/400/240" alt="솔티드 휘낭시에">
-          <div class="c-tag">여름 (솔티드)</div>
+        <div class="c-img" style="height:180px;position:relative;overflow:hidden;">
+          <img src="./04_캠페인/260711_딥라떼런칭/팀원들%20자료/ExportBlock-2f549d0c-6edd-4f0d-81ea-05838ab91248-Part-1/image%2015.png" alt="라떼 + 디저트 페어링" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <div class="c-tag" style="position:absolute;top:12px;left:12px;background:rgba(13,13,13,0.85);color:#EA580C;padding:4px 10px;border-radius:4px;letter-spacing:0.08em;">여름 (솔티드)</div>
         </div>
         <div class="c-body">
           <div class="c-title">솔티드 휘낭시에</div>
@@ -511,9 +973,9 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
         </div>
       </div>
       <div class="case">
-        <div class="c-img">
-          <img src="https://picsum.photos/seed/pairing-fall-maple-finanier/400/240" alt="메이플 휘낭시에">
-          <div class="c-tag">가을 (메이플)</div>
+        <div class="c-img" style="height:180px;position:relative;overflow:hidden;">
+          <img src="./04_캠페인/260711_딥라떼런칭/팀원들%20자료/ExportBlock-2f549d0c-6edd-4f0d-81ea-05838ab91248-Part-1/image%2017.png" alt="가을 페어링 시안" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <div class="c-tag" style="position:absolute;top:12px;left:12px;background:rgba(13,13,13,0.85);color:#EA580C;padding:4px 10px;border-radius:4px;letter-spacing:0.08em;">가을 (메이플)</div>
         </div>
         <div class="c-body">
           <div class="c-title">메이플 휘낭시에</div>
@@ -522,9 +984,9 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
         </div>
       </div>
       <div class="case">
-        <div class="c-img">
-          <img src="https://picsum.photos/seed/pairing-winter-pistachio/400/240" alt="피스타치오 마들렌">
-          <div class="c-tag">겨울 (피스타치오)</div>
+        <div class="c-img" style="height:180px;position:relative;overflow:hidden;">
+          <img src="./04_캠페인/260711_딥라떼런칭/팀원들%20자료/ExportBlock-2f549d0c-6edd-4f0d-81ea-05838ab91248-Part-1/image%2019.png" alt="겨울 페어링 시안" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <div class="c-tag" style="position:absolute;top:12px;left:12px;background:rgba(13,13,13,0.85);color:#EA580C;padding:4px 10px;border-radius:4px;letter-spacing:0.08em;">겨울 (피스타치오)</div>
         </div>
         <div class="c-body">
           <div class="c-title">피스타치오 마들렌</div>
@@ -533,23 +995,242 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
         </div>
       </div>
     </div>
+
+    <h4 style="margin-top:24px;font-size:14px;font-weight:700;">3-7-1. 참고 페어링 사례 — 검증된 라떼 + 디저트 6건</h4>
+
+    <div class="fig-grid-3" style="margin-bottom:14px;">
+      <div class="fig h-200">
+        <img src="https://ak-d.tripcdn.com/images/1mi6d224x92qag03fB7DD_W_640_0_R5_Q80.jpg?proc=source/trip" alt="제이엠커피로스터스 소금빵 페어링" loading="lazy">
+        <div class="fig-overlay">
+          <div class="fig-cap">
+            <span class="fig-tag">솔티드</span>
+            <div class="fig-title">제이엠커피 — 소금빵</div>
+            <div class="fig-meta">부산 기장 / 솔트 + 빵 페어링 검증</div>
+          </div>
+        </div>
+      </div>
+      <div class="fig h-200">
+        <img src="https://t1.daumcdn.net/cfile/tistory/99D75D405F9D779B32" alt="도렐 너티 클라우드" loading="lazy">
+        <div class="fig-overlay">
+          <div class="fig-cap">
+            <span class="fig-tag">너티</span>
+            <div class="fig-title">도렐 — 너티 클라우드</div>
+            <div class="fig-meta">제주 / 우도 땅콩 크림 + 에스프레소</div>
+          </div>
+        </div>
+      </div>
+      <div class="fig h-200">
+        <img src="./04_캠페인/260711_딥라떼런칭/팀원들%20자료/ExportBlock-2f549d0c-6edd-4f0d-81ea-05838ab91248-Part-1/image%2016.png" alt="라떼 + 크루아상 페어링" loading="lazy">
+        <div class="fig-overlay">
+          <div class="fig-cap">
+            <span class="fig-tag">기본 페어링</span>
+            <div class="fig-title">라떼 + 크루아상</div>
+            <div class="fig-meta">에스프레소·말차마키아토·크루아상 트레이 묶음</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fig-grid-3">
+      <div class="fig h-200">
+        <img src="./04_캠페인/260711_딥라떼런칭/팀원들%20자료/ExportBlock-2f549d0c-6edd-4f0d-81ea-05838ab91248-Part-1/image%2018.png" alt="페어링 시즌 디저트" loading="lazy">
+        <div class="fig-overlay">
+          <div class="fig-cap">
+            <span class="fig-tag">시즌 디저트</span>
+            <div class="fig-title">시즌 한정 페어링</div>
+            <div class="fig-meta">시즌 컬러 디저트 + 라떼 묶음 운영</div>
+          </div>
+        </div>
+      </div>
+      <div class="fig h-200">
+        <img src="./04_캠페인/260711_딥라떼런칭/팀원들%20자료/ExportBlock-2f549d0c-6edd-4f0d-81ea-05838ab91248-Part-1/image%2020.png" alt="휘낭시에 디저트" loading="lazy">
+        <div class="fig-overlay">
+          <div class="fig-cap">
+            <span class="fig-tag">휘낭시에</span>
+            <div class="fig-title">휘낭시에 시즈널</div>
+            <div class="fig-meta">소금초코 마들렌·게랑드 천일염 베이스</div>
+          </div>
+        </div>
+      </div>
+      <div class="fig h-200">
+        <img src="./04_캠페인/260711_딥라떼런칭/팀원들%20자료/ExportBlock-2f549d0c-6edd-4f0d-81ea-05838ab91248-Part-1/image%2022.png" alt="디저트 페어링" loading="lazy">
+        <div class="fig-overlay">
+          <div class="fig-cap">
+            <span class="fig-tag">디저트 라인</span>
+            <div class="fig-title">디저트 + 라떼 비주얼</div>
+            <div class="fig-meta">시각 통일 페어링 / 콘텐츠 비주얼 자산</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size:11px;color:#999;margin-top:8px;">출처: 트립닷컴 · blahblah.pe.kr · 석환 리서치 §4-B (팀원 자료)</p>
   </div>
 
-  <!-- §4 운영 -->
+  <!-- §4 신메뉴 전략 (Track 2) -->
   <div class="section">
     <div class="part">
-      <div class="part-num">§4 OPERATION</div>
-      <div class="part-name">거점 + 앰배서더 + 인플 + 채널 4축</div>
+      <div class="part-num">§4 NEW MENU</div>
+      <div class="part-name">트렌드 캐치 — Track 2</div>
+    </div>
+    <h2>요즘 뭐가 유행이던데,<br><em>댄싱컵 가면 있겠다.</em></h2>
+    <p class="lead">Track 2 신메뉴 바이럴의 디테일. <b>일상 가격대(2,500~4,000원)에서 SNS 유행 메뉴를 가장 빠르게 만나는 카페</b> 포지션. 댄싱컵 130개 매장 = 4,000개 메가 대비 운영 통일·교체 결정 속도가 무기. 트렌드 신호 → 본사 결정 → 매장 일제 적용 D+30~60 즉답 모델. 라떼 맛집(§3)의 정통성 자산과 다른 결로 작동.</p>
+
+    <div class="quote dark" style="margin-top:18px;">
+      <div class="q-body">"요즘 뭐가 유행이던데, <b style="color:#FB923C;">댄싱컵 가면 있겠다.</b>"</div>
+      <div class="q-meta"><b>한 줄 포지션</b> · Track 2 모든 콘텐츠·캠페인 베이스</div>
+    </div>
+
+    <div class="quote">
+      <div class="q-body">"트렌드 캐치 = <b>우리 일.</b>"</div>
+      <div class="q-meta"><b>운영자 모토</b> · X 페르소나·릴스·인스타 캡션</div>
+    </div>
+
+    <div class="quote">
+      <div class="q-body">"매장 130개에 같은 메뉴 — <b>어디서든 마실 수 있는 트렌드.</b>"</div>
+      <div class="q-meta"><b>차별 한 줄</b> · 본사 통일 운영 속도 강조</div>
+    </div>
+
+    <h3 class="with-line">4-1. 댄싱컵 트렌드 캐치 vs 메가 시즌 회전 차별</h3>
+
+    <table>
+      <thead><tr><th>축</th><th>메가커피 (시즌 회전)</th><th>댄싱컵 (트렌드 캐치)</th></tr></thead>
+      <tbody>
+        <tr><td>출시 주기</td><td>분기 5~8종 / 연 26+</td><td>트렌드 신호 발생 후 D+30~60</td></tr>
+        <tr><td>출시 결정 근거</td><td>본사 R&D 시즌 계획</td><td><b>SNS 유행·바이럴 신호 모니터링</b></td></tr>
+        <tr><td>콘텐츠 톤</td><td>전통 광고 톤</td><td>바이럴·릴스 즉발 톤</td></tr>
+        <tr><td>매장 수</td><td>4,000개 (운영 통일 부담↑)</td><td>130개 (운영 통일 속도↑)</td></tr>
+        <tr><td>차별 어휘</td><td>"신메뉴 출시"</td><td><b>"댄싱컵 가면 있겠다"</b></td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="with-line">4-2. 트렌드 발견 SOP — dancingcup-viral 에이전트</h3>
+
+    <p class="lead" style="margin-bottom:14px;">5 채널 모니터링 + 신호 강도 3단계 분류. 주간 보고로 운영팀에 트렌드 후보 공급.</p>
+
+    <table>
+      <thead><tr><th>채널</th><th>대상</th><th>주기</th></tr></thead>
+      <tbody>
+        <tr><td><b>① 인스타 릴스 트렌드</b></td><td>#카페신메뉴·#카페추천·#오늘의카페 해시태그</td><td>주간 (월요일)</td></tr>
+        <tr><td><b>② TikTok 한국 #foodtok</b></td><td>카페·디저트·음료 카테고리</td><td>주간 (수요일)</td></tr>
+        <tr><td><b>③ X 카페 발화</b></td><td>"맛있는 거 뭐 있어"·"신메뉴 뭐 나왔어" 검색</td><td>수시</td></tr>
+        <tr><td><b>④ 네이버 데이터랩</b></td><td>카페·음료 키워드 검색량</td><td>주간 (월요일)</td></tr>
+        <tr><td><b>⑤ 경쟁사 신메뉴</b></td><td>메가·컴포즈·빽다방·텐퍼센트·스타벅스 인스타</td><td>주간</td></tr>
+      </tbody>
+    </table>
+
+    <table style="margin-top:14px;">
+      <thead><tr><th style="width:80px;">강도</th><th>정의</th><th>결정 속도</th><th>결정자</th></tr></thead>
+      <tbody>
+        <tr class="hi"><td><b>★★★</b></td><td>같은 신호가 3개 이상 채널에서 1주 안에 동시 등장</td><td>1주 안에 운영팀 검토</td><td>본사 운영팀 + 에이전시</td></tr>
+        <tr><td><b>★★</b></td><td>1~2개 채널에서 등장, 강도 상승 중</td><td>2주 모니터링 후 검토</td><td>에이전시 보고 → 본사 결정</td></tr>
+        <tr><td><b>★</b></td><td>약신호, 단발</td><td>4주 모니터링</td><td>에이전시 자체 판단</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="with-line">4-3. 트렌드 → 메뉴 결정 SOP (D-30~D+30)</h3>
+
+    <div class="info-dark" style="font-family:'Noto Sans KR',monospace;font-size:13px;line-height:1.85;">
+<strong style="color:#EA580C;">D-30</strong>&nbsp;&nbsp;메뉴 개발·시연 (브랜드팀)<br>
+<strong style="color:#EA580C;">D-14</strong>&nbsp;&nbsp;매장 OT + 콘텐츠 사전 기획<br>
+<strong style="color:#EA580C;">D-7</strong>&nbsp;&nbsp;&nbsp;사전 콘텐츠 시작 (릴스·X)<br>
+<strong style="color:#EA580C;">D-Day</strong>&nbsp;&nbsp;매장 출시 + 4채널 동시 송출 (라떼 D-Day보다 가벼운 모델)<br>
+<strong style="color:#EA580C;">D+1~14</strong>&nbsp;바이럴 콘텐츠 + UGC 회수<br>
+<strong style="color:#EA580C;">D+15~30</strong>&nbsp;한정 종료 또는 정규 흡수 결정
+    </div>
+
+    <h4 style="margin-top:18px;font-size:14px;font-weight:700;">4-3-1. 라떼 D-Day vs 신메뉴 D-Day 차이</h4>
+
+    <table>
+      <thead><tr><th>축</th><th>라떼 D-Day (예: 7/15 솔티드)</th><th>신메뉴 D-Day (예: 5/12 컵빙수)</th></tr></thead>
+      <tbody>
+        <tr><td>사전 빌드업</td><td>D-30+ (장기)</td><td><b>D-7~14 (단기)</b></td></tr>
+        <tr><td>콘텐츠 빈도</td><td>본격·집중</td><td>가볍게·빠르게</td></tr>
+        <tr><td>인플루언서</td><td>메가 1~2 + 미들 4~6 + 마이크로 15~25</td><td><b>마이크로·UGC 중심</b></td></tr>
+        <tr><td>견적</td><td>리테이너 + PPL 분기</td><td>별도 캠페인 200만/회 정형</td></tr>
+        <tr><td>자산 누적</td><td>장기 (1년 상시)</td><td>단기 (한정 6~8주 또는 정규 흡수)</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="with-line">4-4. 2026 신메뉴 캠페인 캘린더</h3>
+
+    <table>
+      <thead><tr><th>시점</th><th>신메뉴</th><th>상태</th><th>견적</th></tr></thead>
+      <tbody>
+        <tr class="hi"><td><b>5/12</b></td><td><b>오미자에이드 + 컵빙수 3종 + 컵케이크</b></td><td>진행 중 (4월부터 빌드업)</td><td>200만</td></tr>
+        <tr><td>6월 말~7월</td><td>여름 음료 1종 한정 (수박·자몽·복숭아 등)</td><td>6월 모니터링 후 결정</td><td>별도</td></tr>
+        <tr><td>9월</td><td>가을 한정 (밤·고구마·호박 등)</td><td>8월 모니터링 후 결정</td><td>별도</td></tr>
+        <tr><td>11~12월</td><td>겨울 한정 (시나몬·진저·핫초코 베이스)</td><td>10월 모니터링 후 결정</td><td>별도</td></tr>
+      </tbody>
+    </table>
+
+    <div class="info"><strong>2026년 신메뉴 시즌 캠페인 = 4~6회 예상 (분기당 1~2회 한정).</strong> 트렌드 신호에 따라 추가 캠페인 가능. 각 캠페인 = 별도 견적 200만/회 정형 표준.</div>
+
+    <h3 class="with-line">4-5. 콘텐츠 톤 — 즉발·바이럴</h3>
+
+    <p class="lead" style="margin-bottom:14px;">라떼 맛집의 라이프스타일 톤과 분리. <b>"요즘 ○○ 핫하다며?"</b> 같은 댓글·X 발화에 즉답하는 운영자 캐릭터. 인플루언서 + UGC 중심.</p>
+
+    <div class="quote">
+      <div class="q-body">"요즘 ○○ 유행이라며? 댄싱컵에도 있어요 (5/12 출시)"<br>"또 떠올랐다 — ○○. 출시 D-7"<br>"트렌드 캐치 = 우리 일"<br>"매장 130개에 같은 메뉴 = 어디서든 마실 수 있는 트렌드"</div>
+      <div class="q-meta"><b>신메뉴 시즌 카피 풀</b> · X 페르소나 톤과 결합</div>
+    </div>
+
+    <table>
+      <thead><tr><th>채널</th><th>신메뉴 톤</th><th>라떼 맛집 톤 (대조)</th></tr></thead>
+      <tbody>
+        <tr><td>인스타 피드</td><td>즉발 사진 + 짧은 캡션</td><td>라이프스타일 모티프 시리즈</td></tr>
+        <tr><td>인스타 릴스</td><td>트렌드 즉답 릴스 (15초)</td><td>우유 블렌딩 비주얼 + 매장 자생</td></tr>
+        <tr><td>X</td><td>"요즘 ○○ 한다며? 우리도 있어"</td><td>부산토박이 일상 트윗</td></tr>
+        <tr><td>틱톡</td><td>릴스 미러링</td><td>릴스 미러링</td></tr>
+        <tr><td>매장 POP</td><td>시즌 한정 미니 POP</td><td>컵·컵홀더 본사 통일</td></tr>
+      </tbody>
+    </table>
+
+    <div class="info"><strong>금지 어휘:</strong> "대박"·"미쳤다" 등 단정·과장. <strong>유지 어휘:</strong> X 부산토박이 페르소나 톤과 자연스럽게 연결되는 일상 발화 형식.</div>
+
+    <h3 class="with-line">4-6. 라떼 맛집과의 자원 충돌 회피</h3>
+
+    <table>
+      <thead><tr><th>지점</th><th>충돌 리스크</th><th>회피 룰</th></tr></thead>
+      <tbody>
+        <tr><td><b>인스타 슬롯</b></td><td>주 4~5회 발행 한도</td><td>Track 1 = 주 2~3회 / Track 2 한정 시 = 주 1~2회 추가</td></tr>
+        <tr><td><b>메타 광고 예산</b></td><td>분기당 광고 예산 한계</td><td>Track 1 = 분기 80만 / Track 2 = 캠페인당 별도 견적</td></tr>
+        <tr><td><b>매장 POP 슬롯</b></td><td>한 매장 안 동시 노출 한도</td><td>Track 1 컵·메인 POP / Track 2 시즌 미니 POP</td></tr>
+        <tr><td><b>D-Day 충돌</b></td><td>라떼 D-Day(7/15·10/15) ±2주</td><td>이 기간 Track 2 신규 캠페인 X — 자원 집중</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="with-line">4-7. 알바생 서포터즈 결합</h3>
+
+    <p class="lead" style="margin-bottom:14px;"><b>알바생 서포터즈 = 트렌드 즉발 콘텐츠의 1차 공급자.</b> 매장에서 신메뉴 출시 시 알바생이 가장 먼저 시연·발화. 본사 흡수 SOP 가동 (GS25 25매거진 모델).</p>
+
+    <table>
+      <thead><tr><th>시점</th><th>서포터즈 액션</th></tr></thead>
+      <tbody>
+        <tr><td>D-7 사전 시연</td><td>신메뉴 사전 시음 + 콘텐츠 의무 1편</td></tr>
+        <tr><td>D-Day</td><td>알바생 콘텐츠 일제 송출 (X·인스타·릴스)</td></tr>
+        <tr><td>D+1~14</td><td>자유 콘텐츠 추가 1~2편 (서포터즈 자율)</td></tr>
+      </tbody>
+    </table>
+
+    <div class="info"><strong>서포터즈 콘텐츠 의무 4편 분배:</strong> 라떼 맛집 시점 = 매장 일상 1편 + 신메뉴 시연 1편 + 자유 2편 / 신메뉴 시즌 시점 = 매장 일상 1편 + 신메뉴 시연 1편 + 자유 2편 (의무 동일, 비중만 변동).</div>
+  </div>
+
+  <!-- §5 운영 -->
+  <div class="section">
+    <div class="part">
+      <div class="part-num">§5 OPERATION</div>
+      <div class="part-name">거점 + 서포터즈 + 인플</div>
     </div>
     <h2>메뉴는 본사 통일.<br><em>거점은 콘텐츠 단위.</em></h2>
-    <p class="lead">가맹·확장 구조이므로 지점별 메뉴명 변주는 운영하지 않는다. 거점 매장 = 콘텐츠 촬영·이벤트·동네 어휘를 보여주는 단위.</p>
+    <p class="lead">가맹·확장 구조이므로 지점별 메뉴명 변주는 운영하지 않는다. 거점 매장 = 콘텐츠 촬영·이벤트·동네 어휘를 보여주는 단위. 채널 4축은 §2로 이동, 본 §5는 거점·서포터즈·인플 3축 운영 디테일.</p>
 
-    <h3 class="with-line">4-1. 거점 매장 5개 — 콘텐츠·이벤트 거점</h3>
+    <h3 class="with-line">5-1. 거점 매장 5개 — 콘텐츠·이벤트 거점</h3>
 
     <div class="case-grid">
       <div class="case">
         <div class="c-img">
-          <img src="https://picsum.photos/seed/spot-busan-centum/400/240" alt="부산 센텀점">
+          <div class="thumb-stub steel"><div class="ts-eyebrow">SPOT 1</div><div class="ts-title">부산 센텀</div><div class="ts-sub">직장인 · 낮 · 일상</div></div>
           <div class="c-tag">SPOT 1</div>
         </div>
         <div class="c-body">
@@ -560,7 +1241,7 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
       </div>
       <div class="case">
         <div class="c-img">
-          <img src="https://picsum.photos/seed/spot-busan-gwangalli-night/400/240" alt="광안리점">
+          <div class="thumb-stub deep"><div class="ts-eyebrow">SPOT 2</div><div class="ts-title">부산 광안리</div><div class="ts-sub">광안대교 · 야경 · 연인</div></div>
           <div class="c-tag">SPOT 2</div>
         </div>
         <div class="c-body">
@@ -571,7 +1252,7 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
       </div>
       <div class="case">
         <div class="c-img">
-          <img src="https://picsum.photos/seed/spot-busan-haeundae-tourist/400/240" alt="해운대점">
+          <div class="thumb-stub frost"><div class="ts-eyebrow">SPOT 3</div><div class="ts-title">부산 해운대</div><div class="ts-sub">바다 · 휴가 · 외국인</div></div>
           <div class="c-tag">SPOT 3</div>
         </div>
         <div class="c-body">
@@ -585,7 +1266,7 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
     <div class="case-grid col-2" style="margin-top: 14px;">
       <div class="case">
         <div class="c-img">
-          <img src="https://picsum.photos/seed/spot-busan-gijang-sea/400/240" alt="기장점">
+          <div class="thumb-stub sand"><div class="ts-eyebrow">SPOT 4</div><div class="ts-title">부산 기장</div><div class="ts-sub">미역 · 소금 · 새벽 항구</div></div>
           <div class="c-tag">SPOT 4</div>
         </div>
         <div class="c-body">
@@ -596,7 +1277,7 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
       </div>
       <div class="case">
         <div class="c-img">
-          <img src="https://picsum.photos/seed/spot-seoul-gajaeul/400/240" alt="가재울점">
+          <div class="thumb-stub ink"><div class="ts-eyebrow">SPOT 5</div><div class="ts-title">서울 가재울</div><div class="ts-sub">인플 · 수도권 콘텐츠 거점</div></div>
           <div class="c-tag">SPOT 5</div>
         </div>
         <div class="c-body">
@@ -609,34 +1290,31 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
 
     <div class="info"><strong>거점 선정 기준:</strong> 비주얼 강도 / 점주 콘텐츠 협조 의지 / 위치 접근성 → 6/1까지 마스터시트 지점 디렉토리에서 TOP 15-20 후보 → 5개 확정. <strong>5/11 D4 게이트 / 5/30 점주 동의 마감</strong>.</div>
 
-    <h3 class="with-line">4-2. 앰배서더 5집 — 한국 검증 모델 차용</h3>
+    <h3 class="with-line">5-2. 알바생 서포터즈 — 한국 검증 모델 차용</h3>
 
-    <p class="lead" style="margin-bottom: 18px;">v2 결정 (4/29) 그대로 + GS25·올리브영·노티드 한국 케이스 차용으로 시리즈 3개 추가. <span class="pill warn">외부 자료 노출 금지 / 내부 산출물·미팅 자료에만 노출</span></p>
+    <p class="lead" style="margin-bottom: 18px;">4/29 미팅 방향 합의(알바생 5명·6개월 활용) + GS25·올리브영 한국 케이스 차용으로 콘텐츠 시리즈 3종. <span class="pill warn">디테일 숫자(인원·기간·콘텐츠 의무·인센티브)는 외부 노출 금지 — 5/11 D6 합의 후 별도 인계 문서로 분리</span></p>
 
     <div class="grid-2">
       <div class="fig h-260">
-        <img src="https://picsum.photos/seed/gs25-25mag-fandom/400/360" alt="GS25 25매거진">
-        <div class="fig-overlay">
-          <div class="fig-cap">
-            <span class="fig-tag">★ 베이스 케이스</span>
-            <div class="fig-title">GS25 25매거진 — 100만 팬덤</div>
-            <div class="fig-meta">2019-04 시작 → 6년 6개월 만에 유튜브·인스타 각 100만 / 업계 최초 / 숏폼 + 점주·알바 페르소나</div>
-          </div>
+        <div class="thumb-stub accent" style="height:100%;flex-direction:column;align-items:flex-start;justify-content:flex-end;padding:26px 28px;gap:4px;">
+          <div class="ts-eyebrow" style="font-size:11px;opacity:0.85;">★ 베이스 케이스</div>
+          <div class="ts-title" style="font-size:22px;text-align:left;line-height:1.3;">GS25 25매거진</div>
+          <div style="font-size:12px;opacity:0.85;margin-top:8px;line-height:1.55;">5년 6개월 → 인스타·유튜브 각 100만 / 점주·알바 페르소나 / 본사 흡수 SOP 모델</div>
         </div>
       </div>
       <div class="fig h-260">
-        <img src="https://picsum.photos/seed/oliveyoung-allivebetter/400/360" alt="올리브영 임직원 콘텐츠">
+        <img src="https://opening-attachments.greetinghr.com/2023-12-21/4d2b1863-9532-4703-bbd9-ab2f2d9e06dd/IMG_1912.png.webp" alt="올리브영 임직원 콘텐츠" loading="lazy">
         <div class="fig-overlay">
           <div class="fig-cap">
             <span class="fig-tag">베이스 케이스</span>
-            <div class="fig-title">올리브영 — 직원 인터뷰 콘텐츠</div>
+            <div class="fig-title">올리브영 — 임직원 인터뷰</div>
             <div class="fig-meta">"올리브영다움" 시리즈 + O-log 직원 하루 / 직원 일상이 브랜드 자산</div>
           </div>
         </div>
       </div>
     </div>
 
-    <h4>4-2-1. 모집·운영 베이스 (5/11 D6 합의)</h4>
+    <h4>5-2-1. 모집·운영 베이스 (5/11 D6 합의)</h4>
     <table>
       <thead><tr><th>항목</th><th>권장 안 (4/29 방향 합의 기반)</th></tr></thead>
       <tbody>
@@ -650,11 +1328,11 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
       </tbody>
     </table>
 
-    <h4>4-2-2. 콘텐츠 시리즈 3종 (한국 검증 모델)</h4>
+    <h4>5-2-2. 콘텐츠 시리즈 3종 (한국 검증 모델)</h4>
     <div class="case-grid">
       <div class="case">
         <div class="c-img">
-          <img src="https://picsum.photos/seed/series-owner-combo/400/240" alt="점주의 꿀조합">
+          <div class="thumb-stub cream"><div class="ts-eyebrow">시리즈 ①</div><div class="ts-title">점주의 꿀조합</div><div class="ts-sub">월 1회 · GS25 25매거진 패턴</div></div>
           <div class="c-tag">시리즈 ①</div>
         </div>
         <div class="c-body">
@@ -665,7 +1343,7 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
       </div>
       <div class="case">
         <div class="c-img">
-          <img src="https://picsum.photos/seed/series-newmenu-mirror/400/240" alt="신메뉴 리뷰">
+          <div class="thumb-stub wine"><div class="ts-eyebrow">시리즈 ②</div><div class="ts-title">신메뉴 리뷰</div><div class="ts-sub">월 1회 · 정규 미러링</div></div>
           <div class="c-tag">시리즈 ②</div>
         </div>
         <div class="c-body">
@@ -676,7 +1354,7 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
       </div>
       <div class="case">
         <div class="c-img">
-          <img src="https://picsum.photos/seed/series-cafe-stories/400/240" alt="카페 썰툰">
+          <div class="thumb-stub ink"><div class="ts-eyebrow">시리즈 ③</div><div class="ts-title">카페 썰툰</div><div class="ts-sub">월 2회 · GS25 + X 운영자 결합</div></div>
           <div class="c-tag">시리즈 ③</div>
         </div>
         <div class="c-body">
@@ -687,7 +1365,31 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
       </div>
     </div>
 
-    <h3 class="with-line">4-3. 인플루언서 3-레이어 (PPL 별도 라인)</h3>
+    <h4 style="margin-top:24px;font-size:14px;font-weight:700;">5-2-3. 한국 카페·F&B 서포터즈 운영 사례</h4>
+
+    <div class="grid-2">
+      <div class="fig h-260">
+        <img src="./04_캠페인/260711_딥라떼런칭/팀원들%20자료/ExportBlock-2f549d0c-6edd-4f0d-81ea-05838ab91248-Part-1/image%2030.png" alt="더벤티 벤티보라 1기 모집" loading="lazy">
+        <div class="fig-overlay">
+          <div class="fig-cap">
+            <span class="fig-tag">한국 사례</span>
+            <div class="fig-title">더벤티 — 벤티보라 1기</div>
+            <div class="fig-meta">19~24세 대학생 / 6개월 기수제 / Z세대 진정성 소통 모집 모델</div>
+          </div>
+        </div>
+      </div>
+      <div class="fig h-260">
+        <div class="thumb-stub steel" style="height:100%;flex-direction:column;align-items:flex-start;justify-content:flex-end;padding:26px 28px;gap:4px;">
+          <div class="ts-eyebrow" style="font-size:11px;opacity:0.85;">한국 사례 (참고)</div>
+          <div class="ts-title" style="font-size:18px;text-align:left;line-height:1.35;">이디야 메이튜 / 터미널 에스프레소 크리에이터 2기 / 달리는 커피 달커즈</div>
+          <div style="font-size:11.5px;opacity:0.85;margin-top:8px;line-height:1.55;">소수 정예 + 활동 장학금 + 입사 가산점 / 외부 크리에이터 4개월 미션 / 팬덤 → 크루 발대식·체험 온보딩</div>
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size:11px;color:#999;margin-top:8px;">출처: 석환 리서치 §5-1 (팀원 자료)</p>
+
+    <h3 class="with-line">5-3. 인플루언서 3-레이어 (PPL 별도 라인)</h3>
 
     <table>
       <thead><tr><th>레이어</th><th>인원</th><th>단가/건</th><th>콘텐츠</th><th>예산 (만원)</th><th>컨택</th></tr></thead>
@@ -700,60 +1402,48 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
       </tbody>
     </table>
 
-    <h3 class="with-line">4-4. 채널 4축 운영</h3>
-
-    <table>
-      <thead><tr><th>채널</th><th>톤</th><th>콘텐츠</th><th>책임 에이전트</th></tr></thead>
-      <tbody>
-        <tr><td><b>인스타 피드</b></td><td>감도</td><td>정의 시리즈 + 부산 자산 시리즈 (매거진B 톤)</td><td>dancingcup-insta</td></tr>
-        <tr><td><b>인스타 릴스 AI</b></td><td>감도 (이미지→씨즐 I2V)</td><td>우유 블렌딩 비주얼 / 시즌 색감 모션</td><td>dancingcup-shortform</td></tr>
-        <tr><td><b>인스타 릴스 바이럴</b></td><td>바이럴 (직접 촬영)</td><td>점주·알바 / D-Day 빅뱅 / UGC</td><td>dancingcup-shortform</td></tr>
-        <tr><td><b>X (트위터)</b></td><td>운영자 캐릭터 (덱 07: 0%·30분·셀프디스)</td><td>떡밥·셀프디스·클레임 대응</td><td>dancingcup-x</td></tr>
-        <tr><td><b>틱톡</b></td><td>미러링 전용 (신규 X)</td><td>인스타 릴스 바이럴만 재포스팅</td><td>dancingcup-shortform</td></tr>
-      </tbody>
-    </table>
   </div>
 
-  <!-- §5 시각 시스템 -->
+  <!-- §6 시각 시스템 -->
   <div class="section">
     <div class="part">
-      <div class="part-num">§5 VISUAL</div>
+      <div class="part-num">§6 VISUAL</div>
       <div class="part-name">컵 · POP · 시즌컵 · 캡션</div>
     </div>
     <h2>본사 통일 +<br><em>시즌 변주만.</em></h2>
     <p class="lead">메뉴별 변주(솔티드 컵·너티 컵)·거점별 변주는 운영하지 않는다. 컵 변주는 시즌 차원에서만.</p>
 
-    <h3 class="with-line">5-1. 시각 자산 일관성 룰</h3>
+    <h3 class="with-line">6-1. 시각 자산 일관성 룰</h3>
 
     <div class="info-dark" style="font-family: 'Noto Sans KR', monospace; font-size: 13px; line-height: 2;">
 <strong style="color:#EA580C;">컬러</strong>&nbsp;&nbsp;&nbsp;&nbsp;와인 (#6b2c2c) + 크림 (#f4efe5) + 잉크 (#1a1a1a)<br>
 <strong style="color:#EA580C;">패턴</strong>&nbsp;&nbsp;&nbsp;&nbsp;마블링 (음료 우유 블렌딩 시각화)<br>
 <strong style="color:#EA580C;">어휘</strong>&nbsp;&nbsp;&nbsp;&nbsp;"딥라떼" / "부산" / "Made in Busan" / 시즌 한정<br>
 <strong style="color:#EA580C;">폰트</strong>&nbsp;&nbsp;&nbsp;&nbsp;Pretendard 중심 + 시즌 한정만 손글씨 변주<br>
-<strong style="color:#EA580C;">시각 톤</strong>&nbsp;&nbsp;&nbsp;차분 · 다큐멘터리 (매거진B 톤)<br>
+<strong style="color:#EA580C;">시각 톤</strong>&nbsp;&nbsp;&nbsp;현 댄싱컵 인스타 톤 유지 (매거진B 톤 도입 X)<br>
 <strong style="color:#EA580C;">회피</strong>&nbsp;&nbsp;&nbsp;&nbsp;캐릭터 (노티드 영역) · 귀여움 · 형광색 · 이모티콘
     </div>
 
-    <h3 class="with-line">5-2. 컵 시안 5안 — 브랜드팀 발주 가이드</h3>
+    <h3 class="with-line">6-2. 컵 시안 5안 — 브랜드팀 발주 가이드</h3>
 
-    <div class="info"><strong>스코프:</strong> 컵 디자인·발주는 브랜드팀 영역. HIZ는 리서치 케이스 기반 발주 가이드만 인계.</div>
+    <div class="info"><strong>스코프:</strong> 컵 디자인·발주는 브랜드팀 영역. 에이전시는 리서치 케이스 기반 발주 가이드만 인계.</div>
 
     <div class="case-grid">
       <div class="case hi">
-        <div class="c-img">
-          <img src="https://picsum.photos/seed/cup-1-wine-marble-main/400/240" alt="안 1 와인 마블링">
-          <div class="c-tag">★ 안 1 (메인)</div>
+        <div class="c-img" style="height:180px;position:relative;overflow:hidden;">
+          <img src="./04_캠페인/260711_딥라떼런칭/팀원들%20자료/ExportBlock-2f549d0c-6edd-4f0d-81ea-05838ab91248-Part-1/image%2012.png" alt="우유 블렌딩 비주얼 — 마블링 시안" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <div class="c-tag" style="position:absolute;top:12px;left:12px;background:rgba(13,13,13,0.85);color:#EA580C;padding:4px 10px;border-radius:4px;letter-spacing:0.08em;">★ 안 1 (메인)</div>
         </div>
         <div class="c-body">
-          <div class="c-title">와인 마블링 (메인)</div>
+          <div class="c-title">마블링 (와인색) (메인)</div>
           <div class="c-sub">와인 + 크림 / 마블링 스월</div>
           <div class="c-text">"딥라떼" 측면 / "Made in Busan" 컵홀더. <b>1년 상시 / 정규 3종 전 매장 공용</b>.</div>
         </div>
       </div>
       <div class="case hi">
-        <div class="c-img">
-          <img src="https://picsum.photos/seed/cup-2-season-summer/400/240" alt="안 2 시즌 변주">
-          <div class="c-tag">★ 안 2 (시즌)</div>
+        <div class="c-img" style="height:180px;position:relative;overflow:hidden;">
+          <img src="./04_캠페인/260711_딥라떼런칭/팀원들%20자료/ExportBlock-2f549d0c-6edd-4f0d-81ea-05838ab91248-Part-1/image%2013.png" alt="시즌 컬러 변주 시안" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <div class="c-tag" style="position:absolute;top:12px;left:12px;background:rgba(13,13,13,0.85);color:#EA580C;padding:4px 10px;border-radius:4px;letter-spacing:0.08em;">★ 안 2 (시즌)</div>
         </div>
         <div class="c-body">
           <div class="c-title">시즌 컬러 변주</div>
@@ -763,7 +1453,7 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
       </div>
       <div class="case hi">
         <div class="c-img">
-          <img src="https://picsum.photos/seed/cup-5-seasoncup-revival/400/240" alt="안 5 시즌컵 부활">
+          <div class="thumb-stub cream"><div class="ts-eyebrow">★ 안 5 (부활)</div><div class="ts-title">시즌컵 부활</div><div class="ts-sub">와인+크림+시즌 액센트 / 손님 자발 재활용</div></div>
           <div class="c-tag">★ 안 5 (부활)</div>
         </div>
         <div class="c-body">
@@ -777,7 +1467,7 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
     <div class="case-grid col-2" style="margin-top: 14px;">
       <div class="case">
         <div class="c-img">
-          <img src="https://picsum.photos/seed/cup-3-minimal-text/400/240" alt="안 3 미니멀">
+          <div class="thumb-stub ink"><div class="ts-eyebrow">백업 안 3</div><div class="ts-title">미니멀 텍스트</div><div class="ts-sub">잉크 단색 · DEEP LATTE</div></div>
           <div class="c-tag">백업 안 3</div>
         </div>
         <div class="c-body">
@@ -788,7 +1478,7 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
       </div>
       <div class="case">
         <div class="c-img">
-          <img src="https://picsum.photos/seed/cup-4-calligraphy-korean/400/240" alt="안 4 캘리그래피">
+          <div class="thumb-stub sand"><div class="ts-eyebrow">백업 안 4</div><div class="ts-title">한글 캘리그래피</div><div class="ts-sub">와인 + 크림 / 손글씨</div></div>
           <div class="c-tag">백업 안 4</div>
         </div>
         <div class="c-body">
@@ -801,10 +1491,10 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
 
     <div class="info-dark"><strong>발주 룰:</strong> 본사 통일 = 안 1 / 시즌 한정 = 안 2 + 안 5 / 컵홀더는 모든 안 공통 = "부산 딥라떼" / 거점 매장도 컵·POP 본사 통일 / 메뉴별 변주(솔티드 컵 등) = 가맹 확장성 저해 → 운영 안 함</div>
 
-    <h3 class="with-line">5-3. POP·메뉴판 6요소 통합안 (7월 D-Day 솔티드 메인)</h3>
+    <h3 class="with-line">6-3. POP·메뉴판 6요소 통합안 (7월 D-Day 솔티드 메인)</h3>
 
     <div class="fig h-320">
-      <img src="https://picsum.photos/seed/pop-6elements-summer-salted/980/440" alt="POP 6요소 통합안">
+      <img src="./04_캠페인/260711_딥라떼런칭/팀원들%20자료/ExportBlock-2f549d0c-6edd-4f0d-81ea-05838ab91248-Part-1/image%2024.png" alt="신메뉴 매장 POP 시안 사례" style="width:100%;height:100%;object-fit:cover;display:block;">
       <div class="fig-overlay">
         <div class="fig-cap">
           <span class="fig-tag">5요소 한 톤 (스타벅스 벚꽃 시즌 모델)</span>
@@ -817,7 +1507,7 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
     <table>
       <thead><tr><th>요소</th><th>7월 D-Day 안</th></tr></thead>
       <tbody>
-        <tr><td>① 컵</td><td>안 1 (와인 마블링 본사 통일) + 안 2 (여름 시즌 컬러)</td></tr>
+        <tr><td>① 컵</td><td>안 1 (마블링 (와인색) 본사 통일) + 안 2 (여름 시즌 컬러)</td></tr>
         <tr><td>② 컵홀더</td><td>"부산 딥라떼" 통일 (거리 미디어)</td></tr>
         <tr><td>③ 정규 메뉴판</td><td>미니멀 (정규 메뉴 + 가격) — 본사 통일</td></tr>
         <tr><td>④ 시즌 POP</td><td>와인 + 바다 (솔티드 메인) — 와블러·댕글러</td></tr>
@@ -826,11 +1516,75 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
       </tbody>
     </table>
 
-    <h3 class="with-line">5-4. 시즌컵 부활 — 손님 자발 재활용 자산</h3>
+    <h4 style="margin-top:24px;font-size:14px;font-weight:700;">6-3-1. 신메뉴·시즌 POP 시안 사례 4건</h4>
 
-    <div class="quote">
-      <div class="q-body">"이번 시즌에 다시 그 컵이 나옴." — 4/29 클라 발화. 손님이 자발적으로 연필꽂이·사무실 용기로 재활용 — 검증된 브랜드 각인 자산.</div>
-      <div class="q-meta"><b>시즌컵 = 댄싱컵의 가장 강력한 시각 자산</b></div>
+    <div class="fig-grid-2" style="margin-bottom:14px;">
+      <div class="fig h-200">
+        <img src="./04_캠페인/260711_딥라떼런칭/팀원들%20자료/ExportBlock-2f549d0c-6edd-4f0d-81ea-05838ab91248-Part-1/image%2025.png" alt="Mowchi 시즌 캠페인 — SOMETHING BIG" loading="lazy">
+        <div class="fig-overlay">
+          <div class="fig-cap">
+            <span class="fig-tag">시즌 티저</span>
+            <div class="fig-title">Mowchi — December 시즌</div>
+            <div class="fig-meta">"SOMETHING BIG IS COMING" / 시즌 티저 어휘</div>
+          </div>
+        </div>
+      </div>
+      <div class="fig h-200">
+        <img src="./04_캠페인/260711_딥라떼런칭/팀원들%20자료/ExportBlock-2f549d0c-6edd-4f0d-81ea-05838ab91248-Part-1/image%2026.png" alt="시즌 POP 시안" loading="lazy">
+        <div class="fig-overlay">
+          <div class="fig-cap">
+            <span class="fig-tag">매장 POP</span>
+            <div class="fig-title">매장 POP 컬러·시각</div>
+            <div class="fig-meta">시즌 톤 + 메뉴 비주얼 통합</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fig-grid-2">
+      <div class="fig h-200">
+        <img src="./04_캠페인/260711_딥라떼런칭/팀원들%20자료/ExportBlock-2f549d0c-6edd-4f0d-81ea-05838ab91248-Part-1/image%2027.png" alt="시즌 캠페인 비주얼" loading="lazy">
+        <div class="fig-overlay">
+          <div class="fig-cap">
+            <span class="fig-tag">시즌 캠페인</span>
+            <div class="fig-title">시즌 캠페인 비주얼</div>
+            <div class="fig-meta">컬러·타이포 시즌 변주</div>
+          </div>
+        </div>
+      </div>
+      <div class="fig h-200">
+        <img src="./04_캠페인/260711_딥라떼런칭/팀원들%20자료/ExportBlock-2f549d0c-6edd-4f0d-81ea-05838ab91248-Part-1/image%2028.png" alt="POP 시안" loading="lazy">
+        <div class="fig-overlay">
+          <div class="fig-cap">
+            <span class="fig-tag">한정 어휘</span>
+            <div class="fig-title">"한정·시즌" 시각화</div>
+            <div class="fig-meta">한정 어휘 시각 처리 사례</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size:11px;color:#999;margin-top:8px;">출처: 석환 리서치 §4-C (팀원 자료)</p>
+
+    <h3 class="with-line">6-4. 시즌컵 부활 — 손님 자발 재활용 자산</h3>
+
+    <div class="grid-2-1">
+      <div>
+        <div class="quote">
+          <div class="q-body">"이번 시즌에 다시 그 컵이 나옴." — 4/29 본사 발화. 손님이 자발적으로 연필꽂이·사무실 용기로 재활용 — 검증된 브랜드 각인 자산.</div>
+          <div class="q-meta"><b>시즌컵 = 댄싱컵의 가장 강력한 시각 자산</b></div>
+        </div>
+      </div>
+      <div class="fig h-260">
+        <img src="./04_캠페인/260711_딥라떼런칭/팀원들%20자료/ExportBlock-2f549d0c-6edd-4f0d-81ea-05838ab91248-Part-1/image%2014.png" alt="시즌컵 손님 자발 재활용 — 컵 스택" style="width:100%;height:100%;object-fit:cover;display:block;">
+        <div class="fig-overlay">
+          <div class="fig-cap">
+            <span class="fig-tag">검증 자산</span>
+            <div class="fig-title">손님 자발 재활용 — 컵 스택</div>
+            <div class="fig-meta">시즌컵 한정 → 손님이 모아 쌓는 케이스 / 브랜드 각인 검증</div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="grid-2">
@@ -861,7 +1615,7 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
       </div>
     </div>
 
-    <h3 class="with-line">5-5. 인스타 캡션 톤 풀</h3>
+    <h3 class="with-line">6-5. 인스타 캡션 톤 풀</h3>
 
     <div class="caption-box">
       <div class="cb-tag">정의 콘텐츠 (6월 빌드업)</div>
@@ -891,32 +1645,34 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
     </div>
   </div>
 
-  <!-- §6 1년 액션 -->
+  <!-- §7 1년 액션 -->
   <div class="section">
     <div class="part">
-      <div class="part-num">§6 1-YEAR ACTION</div>
+      <div class="part-num">§7 1-YEAR ACTION</div>
       <div class="part-name">월별·D-Day 표준</div>
     </div>
     <h2>5월~12월,<br><em>월별로 본 1년.</em></h2>
-    <p class="lead">HIZ 산출물 vs 브랜드팀 산출물 분리. 매월 게이트 명시.</p>
+    <p class="lead">5~6월 = 기존 딥라떼 메뉴 활용 <b>바이럴 베이스 다지기</b> (콘텐츠 발행 시작) / 7월 = 본격 D-Day 플레이 / 8~12월 = 시즈널 회전·자생 별칭 누적. 에이전시 산출물 vs 브랜드팀 산출물 분리. 매월 게이트 명시.</p>
 
-    <h3 class="with-line">6-1. 마일스톤 캘린더</h3>
+    <h3 class="with-line">7-1. 마일스톤 캘린더</h3>
 
     <table>
-      <thead><tr><th>월</th><th>핵심 액션</th><th>HIZ 산출물</th><th>브랜드팀 산출물</th><th>게이트</th></tr></thead>
+      <thead><tr><th>월</th><th>페이즈</th><th>핵심 메커니즘</th><th>에이전시 산출물</th><th>브랜드팀 산출물</th><th>게이트</th></tr></thead>
       <tbody>
-        <tr class="hi"><td><b>5월</b></td><td>정의·메뉴·부산·거점·컵 가이드</td><td>5/11 미팅 제안서 / 거점 컨택 / 어휘 룰 / 컵 5안 가이드</td><td>메뉴 최종 (5/19) / 컵 디자이너 컨택</td><td>5/11 6 게이트 / 5/30 거점</td></tr>
-        <tr><td><b>6월</b></td><td>빌드업 + 앰배서더 모집</td><td>매거진B 시리즈 / 앰배서더 OT / 인플 1차 컨택</td><td>컵 본 안 / 솔티드 휘낭시에 시연·납품</td><td>6/14 마감 / 6/15 컵</td></tr>
-        <tr class="hi"><td><b>7월</b></td><td><b>D-Day 7/15</b></td><td>빅뱅 30+ / 앰배서더 24 / 인플 30~40</td><td>매장 POP 130 배포 / 시즌컵 출고 / 디저트 입고</td><td>7/15 D-Day / 7/30 D+14</td></tr>
-        <tr><td><b>8월</b></td><td>모멘텀 + UGC + 자생 별칭 + 외국인 트라이얼</td><td>UGC 1,000+ / 외국인 5건 / 자생 별칭 보고</td><td>매출 변화 보고</td><td>8/15 D+30 매출 점검</td></tr>
-        <tr><td><b>9월</b></td><td>가을 시즈널 메이플 사전 (D-30)</td><td>메이플 캠페인 기획 / 거점 변주표</td><td>메이플 점주 OT / 메이플 발주</td><td>9/15 OT / 9/30 발주</td></tr>
-        <tr class="hi"><td><b>10월</b></td><td><b>메이플 한정</b> + 시즌컵 2차 + PPL 정점</td><td>메이플 콘텐츠 30+ / 인플 시딩</td><td>메이플 출시 / 시즌컵 2차</td><td>10/15 메이플 D-Day</td></tr>
-        <tr><td><b>11월</b></td><td>메이플 모멘텀 + 겨울 사전</td><td>겨울 캠페인 / 피스타치오 권고안</td><td>피스타치오 의사결정</td><td>11/15 게이트</td></tr>
-        <tr><td><b>12월</b></td><td>연말 한정 + 1년 KPI + 2027 사전</td><td>연말 콘텐츠 / 1년 KPI 보고서 / 2027 Q1</td><td>피스타치오 출시 (검토 후)</td><td>12/15 연말 / 12/30 KPI</td></tr>
+        <tr class="hi"><td><b>5월</b></td><td>베이스 다지기 #1</td><td>기존 딥라떼 메뉴 활용 일상 콘텐츠 시작 / X 페르소나 가동 / 정의·메뉴 기획</td><td>5/11 제안서 / 거점 컨택 / 어휘 룰 / 컵 5안 가이드 / 인스타 시리즈 #1·#2 / X 시작</td><td>메뉴 최종 (5/19) / 컵 디자이너 컨택</td><td>5/11 6 게이트 / 5/19 메뉴 / 5/30 거점</td></tr>
+        <tr><td><b>6월</b></td><td>베이스 다지기 #2 (빌드업)</td><td>일상 모티프 시리즈 #2~#3 누적 / 컵 본 안 발주 / 서포터즈 OT / 인플 1차 컨택</td><td>인스타 시리즈 #2·#3 / 릴스 다양화 / 서포터즈 OT / 인플 1차</td><td>컵 본 안 / 솔티드 휘낭시에 시연·납품</td><td>6/14 서포터즈 마감 / 6/15 컵</td></tr>
+        <tr class="hi"><td><b>7월</b></td><td><b>D-Day 본격 플레이 (7/15)</b></td><td>D-7 사전 → 7/15 4채널 동시 빅뱅 → D+14 UGC 회수 시작</td><td>빅뱅 30+ / 서포터즈 24 / 인플 30~40</td><td>매장 POP 130 배포 / 시즌컵 출고 / 디저트 입고</td><td>7/15 D-Day / 7/30 D+14</td></tr>
+        <tr><td><b>8월</b></td><td>모멘텀 + 자생 별칭 회수</td><td>UGC SOP 1,000+ / 자생 별칭 모니터링 / 외국인 트라이얼 / 메이플 사전 (D-30)</td><td>UGC 1,000+ / 외국인 5건 / 자생 별칭 보고</td><td>매출 변화 보고</td><td>8/15 D+30 매출 점검</td></tr>
+        <tr><td><b>9월</b></td><td>가을 사전</td><td>시즌간 연결 (솔티드 모멘텀 → 메이플 사전) / 거점 변주표</td><td>메이플 캠페인 기획 / 거점 변주표 / 서포터즈 OT 재시행</td><td>메이플 점주 OT / 메이플 발주</td><td>9/15 OT / 9/30 발주</td></tr>
+        <tr class="hi"><td><b>10월</b></td><td><b>메이플 한정 D-Day</b></td><td>시즈널 회전으로 "1년 상시" 어휘 강화 / 시즌컵 2차 / PPL 정점</td><td>메이플 콘텐츠 30+ / 인플 시딩</td><td>메이플 출시 / 시즌컵 2차</td><td>10/15 메이플 D-Day</td></tr>
+        <tr><td><b>11월</b></td><td>모멘텀 + 겨울 사전</td><td>카테고리 정의자 자리 진입 가설 검증 / 피스타치오 권고안</td><td>겨울 캠페인 / 피스타치오 권고안</td><td>피스타치오 의사결정</td><td>11/15 게이트</td></tr>
+        <tr><td><b>12월</b></td><td>연말 + 1년 KPI</td><td>1년 미션 도달 평가 + 2027 다음 단계 정의</td><td>연말 콘텐츠 / 1년 KPI 보고서 / 2027 Q1</td><td>피스타치오 출시 (검토 후)</td><td>12/15 연말 / 12/30 KPI</td></tr>
       </tbody>
     </table>
 
-    <h3 class="with-line">6-2. D-7~D+14 표준 타임라인 (7월 D-Day · 향후 D-Day 공통)</h3>
+    <div class="info"><strong>5~6월 베이스 다지기의 핵심:</strong> 5/19 메뉴 확정 게이트 전이라도 <b>기존 딥라떼 메뉴를 활용해 콘텐츠 발행을 시작</b>한다. X 부산토박이 페르소나 가동 + 인스타 일상 모티프 시리즈 + 릴스 매장 자생. 7월 D-Day 시점에 인지 베이스가 이미 누적된 상태로 진입.</div>
+
+    <h3 class="with-line">7-2. D-7~D+14 표준 타임라인 (7월 D-Day · 향후 D-Day 공통)</h3>
 
     <div class="dday">
       <div class="dd pre">
@@ -941,7 +1697,7 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
       </div>
       <div class="dd">
         <div class="dd-w">D+1~7</div>
-        <div class="dd-t">앰배서더 + 인플 일제 송출</div>
+        <div class="dd-t">서포터즈 + 인플 일제 송출</div>
         <div class="dd-c">시리즈 ② / 시리즈 #1</div>
       </div>
       <div class="dd">
@@ -956,7 +1712,7 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
       </div>
     </div>
 
-    <h3 class="with-line">6-3. 측정·점검 루틴</h3>
+    <h3 class="with-line">7-3. 측정·점검 루틴</h3>
 
     <table>
       <thead><tr><th>주기</th><th>시점</th><th>산출물</th><th>담당</th></tr></thead>
@@ -969,10 +1725,10 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
     </table>
   </div>
 
-  <!-- §7 견적 -->
+  <!-- §8 견적 -->
   <div class="section">
     <div class="part">
-      <div class="part-num">§7 BUDGET</div>
+      <div class="part-num">§8 BUDGET</div>
       <div class="part-name">9개월 견적 구조</div>
     </div>
     <h2>9개월 <em>7,500 ~ 9,500만,</em><br>PPL 4분할.</h2>
@@ -1005,14 +1761,14 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
       </div>
     </div>
 
-    <h3 class="with-line">7-1. 5월~12월 월별 견적·산출물 매핑</h3>
+    <h3 class="with-line">8-1. 5월~12월 월별 견적·산출물 매핑</h3>
 
     <table>
-      <thead><tr><th>월</th><th>액션</th><th>예산 (만원)</th><th>HIZ 산출물</th></tr></thead>
+      <thead><tr><th>월</th><th>액션</th><th>예산 (만원)</th><th>에이전시 산출물</th></tr></thead>
       <tbody>
         <tr><td>5월</td><td>정의·메뉴·부산·거점·컵 가이드</td><td>500 (리테이너)</td><td>제안서 / 거점 컨택 / 컵 5안 가이드</td></tr>
-        <tr><td>6월</td><td>빌드업 + 앰배서더 모집</td><td>500</td><td>인스타 8 / 릴스 4 / X 12 / 앰배서더 OT</td></tr>
-        <tr class="hi"><td><b>7월</b></td><td><b>D-Day + 인플 1차 + 시즌컵</b></td><td><b>500 + 200 + 1,500</b></td><td>빅뱅 30+ / 앰배서더 24 / 인플 30~40</td></tr>
+        <tr><td>6월</td><td>빌드업 + 서포터즈 모집</td><td>500</td><td>인스타 8 / 릴스 4 / X 12 / 서포터즈 OT</td></tr>
+        <tr class="hi"><td><b>7월</b></td><td><b>D-Day + 인플 1차 + 시즌컵</b></td><td><b>500 + 200 + 1,500</b></td><td>빅뱅 30+ / 서포터즈 24 / 인플 30~40</td></tr>
         <tr><td>8월</td><td>모멘텀 + UGC + 외국인</td><td>500 + 1,000</td><td>UGC 1,000+ / 외국인 5 / 자생 별칭 보고</td></tr>
         <tr><td>9월</td><td>가을 사전 + 거점 어휘</td><td>500</td><td>메이플 캠페인 기획 / 거점 변주표</td></tr>
         <tr class="hi"><td><b>10월</b></td><td><b>메이플 한정 + 시즌컵 2차</b></td><td>500 + 500</td><td>메이플 콘텐츠 30+ / 시즌컵 2차</td></tr>
@@ -1025,16 +1781,16 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
     <div class="info"><strong>5월 견적서 v3</strong> — <code>quote.html</code> 기 발행 (HEAD: b8a1bfc). 본 기획안은 9개월 전체 견적 마스터로, 5월 견적서는 그 첫 달 분.</div>
   </div>
 
-  <!-- §8 KPI -->
+  <!-- §9 KPI -->
   <div class="section">
     <div class="part">
-      <div class="part-num">§8 KPI</div>
+      <div class="part-num">§9 KPI</div>
       <div class="part-name">3계층 14 지표</div>
     </div>
     <h2>3계층 14 KPI —<br><em>베이스라인 vs 12월 목표.</em></h2>
-    <p class="lead">1차 = HIZ 책임 측정 / 2차 = 격주 보고 / 3차 = 클라 측정 후 공유.</p>
+    <p class="lead">1차 = 에이전시 책임 측정 / 2차 = 격주 보고 / 3차 = 본사 측정 후 공유.</p>
 
-    <h4>1차 (HIZ 책임 측정)</h4>
+    <h4>1차 (에이전시 책임 측정)</h4>
     <div class="kpi-row">
       <div class="k-label">인스타 팔로워</div>
       <div class="k-track"><div class="k-base" style="width:62.95%;"></div><div class="k-target" style="width:100%;"></div></div>
@@ -1066,7 +1822,7 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
       <div class="k-target-num">50만+</div>
     </div>
     <div class="kpi-row">
-      <div class="k-label">앰배서더 콘텐츠</div>
+      <div class="k-label">서포터즈 콘텐츠</div>
       <div class="k-track"><div class="k-base" style="width:0%;"></div><div class="k-target" style="width:100%;"></div></div>
       <div class="k-base-num">0</div>
       <div class="k-target-num">120개</div>
@@ -1074,7 +1830,7 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
 
     <h4>2차 (격주 보고)</h4>
     <div class="kpi-row">
-      <div class="k-label">"부산 딥라떼" 검색량</div>
+      <div class="k-label">"부산 딥라떼" 검색량 + 자생 별칭</div>
       <div class="k-track"><div class="k-target" style="width:100%;"></div></div>
       <div class="k-base-num">0</div>
       <div class="k-target-num">월 10,000+</div>
@@ -1104,12 +1860,12 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
       <div class="k-target-num">1,000+</div>
     </div>
 
-    <h4>3차 (클라 측정 영역)</h4>
+    <h4>3차 (본사 측정 영역)</h4>
     <div class="kpi-row">
       <div class="k-label">딥라떼 누적 판매잔수</div>
       <div class="k-track"><div class="k-target" style="width:100%;"></div></div>
       <div class="k-base-num">0</div>
-      <div class="k-target-num">클라 측정</div>
+      <div class="k-target-num">본사 측정</div>
     </div>
     <div class="kpi-row">
       <div class="k-label">댄싱컵 시그니처 인지율</div>
@@ -1124,19 +1880,19 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
       <div class="k-target-num">5%+</div>
     </div>
 
-    <div class="info-dark"><strong>5/11 미팅 합의 우선순위:</strong> <b>1순위 (반드시 합의)</b> — 인스타 팔로워 / 게시물 / 매장 활성도 / "부산 딥라떼" 검색량 · <b>2순위 (제안)</b> — 인플 발화량 / 앰배서더 / UGC / 자생 별칭 · <b>3순위 (클라 측정)</b> — 판매잔수 / 인지율 / 외국인</div>
+    <div class="info-dark"><strong>5/11 미팅 합의 우선순위:</strong> <b>1순위 (반드시 합의)</b> — 인스타 팔로워 / 게시물 / 매장 활성도 / "부산 딥라떼" 검색량 · <b>2순위 (제안)</b> — 인플 발화량 / 서포터즈 콘텐츠 / UGC / 자생 별칭 · <b>3순위 (본사 측정)</b> — 판매잔수 / 인지율 / 외국인</div>
   </div>
 
-  <!-- §9 리스크 -->
+  <!-- §10 리스크 -->
   <div class="section">
     <div class="part">
-      <div class="part-num">§9 RISK</div>
+      <div class="part-num">§10 RISK</div>
       <div class="part-name">12 리스크 + 5/11 압축 5건</div>
     </div>
     <h2>리스크는 실패 목록이 아니라,<br><em>안전핀.</em></h2>
     <p class="lead">12건 통합 매트릭스. 모든 리스크에 안전핀 사전 배치 완료. 5/11 미팅에서는 압축 5건만 발표.</p>
 
-    <h3 class="with-line">9-1. 5/11 미팅 발표용 압축 5건</h3>
+    <h3 class="with-line">10-1. 5/11 미팅 발표용 압축 5건</h3>
 
     <div class="risk-row" style="background:#0D0D0D;color:#fff;">
       <div class="r-id">#</div>
@@ -1150,14 +1906,14 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
       <div class="r-title">거점 매장 협조 실패 (5/30)</div>
       <div class="r-prob lv-m">中</div>
       <div class="r-impact lv-h">大</div>
-      <div class="r-pin">마감 6/15 연장 + HIZ 직접 미팅</div>
+      <div class="r-pin">마감 6/15 연장 + 에이전시 직접 미팅</div>
     </div>
     <div class="risk-row">
       <div class="r-id">2</div>
-      <div class="r-title">앰배서더 6개월 유지 실패</div>
+      <div class="r-title">서포터즈 6개월 유지 실패</div>
       <div class="r-prob lv-m">中</div>
       <div class="r-impact lv-h">大</div>
-      <div class="r-pin">5집 + 예비 2집 + 6개월 분할 인센티브</div>
+      <div class="r-pin">5명 + 예비 2명 + 6개월 분할 인센티브</div>
     </div>
     <div class="risk-row">
       <div class="r-id">3</div>
@@ -1178,46 +1934,47 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
       <div class="r-title">KPI 합의 실패</div>
       <div class="r-prob lv-l">低</div>
       <div class="r-impact lv-h">大</div>
-      <div class="r-pin">1순위 4건을 HIZ 자체 기준으로 가동</div>
+      <div class="r-pin">1순위 4건을 에이전시 자체 기준으로 가동</div>
     </div>
 
-    <h3 class="with-line">9-2. 12 리스크 매트릭스 전체</h3>
+    <h3 class="with-line">10-2. 12 리스크 매트릭스 전체</h3>
 
     <table>
       <thead><tr><th>#</th><th>영역</th><th>리스크</th><th>P×I</th><th>안전핀</th></tr></thead>
       <tbody>
-        <tr><td>1</td><td>정의</td><td>우지 검색 점유 우위 지속</td><td>高×大</td><td>"부산 + 1년 상시" 복합 어휘 강화</td></tr>
+        <tr><td>1</td><td>정의</td><td>우지 검색 점유 우위 지속</td><td>高×大</td><td>라떼 본질(우유 블렌딩·1년 상시) + 부산 코팅 차별 강화</td></tr>
         <tr><td>2</td><td>메뉴</td><td>솔티드 D+30 매출 하락</td><td>中×大</td><td>"1년 상시" 강화 + 메이플 앞당김</td></tr>
-        <tr><td>3</td><td>메뉴</td><td>시즈널 메이플 운영 부담</td><td>中×中</td><td>11월 연기 + 가이드 PDF</td></tr>
-        <tr><td>4</td><td>부산</td><td>거점 매장 협조 실패 (5/30)</td><td>中×大</td><td>마감 6/15 연장 + HIZ 직접 미팅</td></tr>
-        <tr><td>5</td><td>부산</td><td>1·2티어 "추격 프레임" 비판</td><td>低×中</td><td>응대 0% / 일상 가격대 강화</td></tr>
-        <tr><td>6</td><td>시각</td><td>컵 발주 단가 초과</td><td>中×中</td><td>마블링 컬러 단순화 + 발주 분할</td></tr>
-        <tr><td>7</td><td>시각</td><td>시즌컵 자산 미회수</td><td>低×中</td><td>재활용 캠페인 + 인플 시딩</td></tr>
-        <tr><td>8</td><td>앰배서더</td><td>6개월 유지 실패</td><td>中×大</td><td>5집 + 예비 2집 + 6개월 분할</td></tr>
-        <tr><td>9</td><td>앰배서더</td><td>콘텐츠 톤 분산</td><td>中×中</td><td>OT 재시행 + 분기 점검</td></tr>
-        <tr><td>10</td><td>견적</td><td>PPL 미달성</td><td>低×大</td><td>분배 재설계</td></tr>
-        <tr><td>11</td><td>KPI</td><td>1차 지표 합의 실패</td><td>低×大</td><td>HIZ 자체 측정 가동</td></tr>
-        <tr><td>12</td><td>외부</td><td>경쟁사 시그니처 진입</td><td>低×大</td><td>외국인·관광객 어휘 트라이얼 (3차 차별 축)</td></tr>
+        <tr><td>3</td><td>메뉴</td><td>너티 정합성 결정 지연 (1년 상시 vs 시즈널)</td><td>中×中</td><td>5/19 게이트 입력값 = 리서치북 v9 너티 검증 활용</td></tr>
+        <tr><td>4</td><td>메뉴</td><td>시즈널 메이플 운영 부담</td><td>中×中</td><td>11월 연기 + 가이드 PDF</td></tr>
+        <tr><td>5</td><td>부산</td><td>거점 매장 협조 실패 (5/30)</td><td>中×大</td><td>마감 6/15 연장 + 에이전시 직접 미팅</td></tr>
+        <tr><td>6</td><td>부산</td><td>1·2티어 "추격 프레임" 비판</td><td>低×中</td><td>응대 0% / 일상 가격대 강화</td></tr>
+        <tr><td>7</td><td>시각</td><td>컵 발주 단가 초과</td><td>中×中</td><td>마블링 컬러 단순화 + 발주 분할</td></tr>
+        <tr><td>8</td><td>시각</td><td>시즌컵 자산 미회수</td><td>低×中</td><td>재활용 캠페인 + 인플 시딩</td></tr>
+        <tr><td>9</td><td>서포터즈</td><td>6개월 유지 실패</td><td>中×大</td><td>5명 + 예비 2명 + 6개월 분할</td></tr>
+        <tr><td>10</td><td>서포터즈</td><td>콘텐츠 톤 분산</td><td>中×中</td><td>OT 재시행 + 분기 점검</td></tr>
+        <tr><td>11</td><td>견적</td><td>PPL 미달성</td><td>低×大</td><td>분배 재설계</td></tr>
+        <tr><td>12</td><td>KPI</td><td>1차 지표 합의 실패</td><td>低×大</td><td>에이전시 자체 측정 가동</td></tr>
+        <tr><td>13</td><td>외부</td><td>경쟁사 시그니처 진입 (우지·텐퍼센트·메가)</td><td>低×大</td><td>dancingcup-viral 주간 모니터링 + 7일 안에 대응 콘텐츠 송출</td></tr>
       </tbody>
     </table>
 
     <div class="info-dark"><strong>5/11 톤:</strong> "리스크 5건 모두 안전핀이 사전 배치되어 있다. 합의 게이트 6건만 합의되면 8월 첫 분기 점검까지 정상 진행 가능."</div>
   </div>
 
-  <!-- §10 합의 게이트 -->
+  <!-- §11 합의 게이트 -->
   <div class="section" style="background: #fff7ed;">
     <div class="part">
-      <div class="part-num">§10 ★ DECISION GATES</div>
-      <div class="part-name">5/11 미팅 합의 6건</div>
+      <div class="part-num">§11 ★ DECISION GATES</div>
+      <div class="part-name">5/11 미팅 합의 6건 + 후속 4건</div>
     </div>
-    <h2>5/11 미팅에서<br><em>결정해야 할 것 6건.</em></h2>
-    <p class="lead">리서치북 §10-2와 1:1 매핑. 합의되면 8월 첫 분기 점검까지 정상 진행 가능.</p>
+    <h2>5/11 미팅에서<br><em>결정해야 할 것 6건 + 후속 4건.</em></h2>
+    <p class="lead">5/11 합의 6건(D1~D6) + 5/11 후 결정될 후속 4건(D7~D10) 분리. 핵심 6건만 합의되면 8월 첫 분기 점검까지 정상 진행 가능.</p>
 
     <div class="gate">
       <div class="g-id">D1</div>
       <div class="g-body">
         <b>1년 KPI 1차 지표 확정</b>
-        옵션 — A: 인스타 팔로워+검색량+매장 SNS / B: 매출 중심 / C: 통합 · <b>HIZ 권장: A (+ B 보조)</b>
+        옵션 — A: 인스타 팔로워+검색량+매장 SNS / B: 매출 중심 / C: 통합 · <b>에이전시 권장: A (+ B 보조)</b>
       </div>
       <div class="g-deadline">5/10 P5</div>
     </div>
@@ -1233,7 +1990,7 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
       <div class="g-id">D3</div>
       <div class="g-body">
         <b>PPL 집행 분기 (3,000~5,000만)</b>
-        옵션 — A: 8-10월 정점 / B: 7월 D-Day / C: 분기 4분할 · <b>HIZ 권장: A (가을 정점)</b>
+        옵션 — A: 8-10월 정점 / B: 7월 D-Day / C: 분기 4분할 · <b>에이전시 권장: A (가을 정점)</b>
       </div>
       <div class="g-deadline">6/30 P7</div>
     </div>
@@ -1241,7 +1998,7 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
       <div class="g-id">D4</div>
       <div class="g-body">
         <b>거점 매장 5-10개 선정</b>
-        부산 4 (센텀·광안리·해운대·기장) + 서울 1 / 그 외 · <b>HIZ 권장: 부산 4 + 서울 1</b>
+        부산 4 (센텀·광안리·해운대·기장) + 서울 1 / 그 외 · <b>에이전시 권장: 부산 4 + 서울 1</b>
       </div>
       <div class="g-deadline">6/15 P8</div>
     </div>
@@ -1249,58 +2006,96 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
       <div class="g-id">D5</div>
       <div class="g-body">
         <b>솔티드 = 7월 D-Day 메인 확정</b>
-        솔티드 / 너티 / 오리지널 · <b>HIZ 권장: 솔티드 메인 (Insight #5)</b>
+        솔티드 / 너티 / 오리지널 · <b>에이전시 권장: 솔티드 메인 (Insight #5)</b>
       </div>
       <div class="g-deadline">5/11</div>
     </div>
     <div class="gate">
       <div class="g-id">D6</div>
       <div class="g-body">
-        <b>앰배서더 모집 시점·인원 디테일</b>
-        6/1 모집 / 인원·기간 합의 · <b>HIZ 권장: 6/1 / 4/29 방향 합의 + 디테일 검토</b>
+        <b>알바생 서포터즈 모집 시점·인원 디테일</b>
+        6/1 모집 / 5명 + 예비 2명 / 6개월 / 인센티브 4단계 · <b>에이전시 권장: 6/1 / 4/29 방향 합의 + 디테일 검토</b>
       </div>
       <div class="g-deadline">5/11</div>
     </div>
 
-    <h3 class="with-line">10-1. 5/11 이후 후속 게이트</h3>
+    <h3 class="with-line">11-1. 5/11 후 후속 게이트 (D7~D10)</h3>
+
+    <p class="lead" style="margin-bottom:14px;">5/11 미팅에서는 합의 받지 않고, <b>5/11 후 결정될 4건</b>. 미리 명시해서 본사가 "오늘 결정 vs 후속 결정" 경계 명확히 인지하도록.</p>
+
+    <div class="gate">
+      <div class="g-id">D7</div>
+      <div class="g-body">
+        <b>7월 D-Day 정확 일자 확정 (7/13·15·20)</b>
+        부산 7월 휴가철 검색 트렌드 + 솔티드 글로벌 시즌성 데이터 확인 후 결정. <b>에이전시 권장: 7/15(화)</b>
+      </div>
+      <div class="g-deadline">5/19</div>
+    </div>
+    <div class="gate">
+      <div class="g-id">D8</div>
+      <div class="g-body">
+        <b>메이플 가을 출시 월 확정 (9·10·11월)</b>
+        메이플 라떼 가을 검색 시즌성 자료 검토 후 결정. <b>에이전시 권장: 10/15</b>
+      </div>
+      <div class="g-deadline">9/30</div>
+    </div>
+    <div class="gate">
+      <div class="g-id">D9</div>
+      <div class="g-body">
+        <b>컵 본 안 + 시즌 변주 확정 (5안 중 2개)</b>
+        본사 통일 메인 컵 1 + 시즌 변주 1 선택. <b>에이전시 권장: 안 1(마블링 (와인색)) + 안 2(시즌 컬러)</b>
+      </div>
+      <div class="g-deadline">5/30</div>
+    </div>
+    <div class="gate">
+      <div class="g-id">D10</div>
+      <div class="g-body">
+        <b>솔티드 휘낭시에 페어링 가능 여부 (브랜드팀 결정)</b>
+        디저트 개발팀과 운영 가능성 검토. 가능 시 7/15 D-Day 페어링 출시 / 불가 시 다른 페어링 후보로 대체. <b>브랜드팀 영역 / 에이전시는 후보 가이드 인계만</b>
+      </div>
+      <div class="g-deadline">6/15</div>
+    </div>
+
+    <h3 class="with-line">11-2. 후속 일정 캘린더</h3>
 
     <table>
       <thead><tr><th>시점</th><th>게이트</th><th>결정</th></tr></thead>
       <tbody>
-        <tr><td>5/19 (월)</td><td>메뉴 최종 확정</td><td>정규 3종 / 시즈널 1순위 / D-Day 7/15 검증</td></tr>
-        <tr><td>5/30 (금)</td><td>거점 매장 5개 점주 동의 마감</td><td>미달 시 6/15 연장</td></tr>
-        <tr><td>6/14 (토)</td><td>앰배서더 모집 마감</td><td>5집 + 예비 2집</td></tr>
-        <tr><td>6/15 (월)</td><td>운영 게이트</td><td>컵 / POP / 앰배서더 선발 / 인플 1차</td></tr>
+        <tr><td>5/19 (월)</td><td>메뉴 최종 확정 + D7</td><td>정규 3종 / 시즈널 1순위 / D-Day 7/15 검증</td></tr>
+        <tr><td>5/30 (금)</td><td>거점 매장 5개 점주 동의 + D9</td><td>거점 미달 시 6/15 연장 / 컵 본 안 확정</td></tr>
+        <tr><td>6/14 (토)</td><td>서포터즈 모집 마감</td><td>5명 + 예비 2명</td></tr>
+        <tr><td>6/15 (월)</td><td>운영 게이트 + D10</td><td>컵 발주 / POP / 서포터즈 선발 / 인플 1차 / 페어링 결정</td></tr>
         <tr class="hi"><td><b>7/15 (월)</b></td><td><b>D-Day</b></td><td>솔티드 메인 빅뱅</td></tr>
+        <tr><td>9/30 (화)</td><td>D8 메이플 출시 월 확정</td><td>10/15 또는 11월</td></tr>
       </tbody>
     </table>
   </div>
 
-  <!-- §11 산출물 분리 -->
+  <!-- §12 산출물 분리 -->
   <div class="section">
     <div class="part">
-      <div class="part-num">§11 SCOPE</div>
-      <div class="part-name">HIZ vs 브랜드팀 산출물 분리</div>
+      <div class="part-num">§12 SCOPE</div>
+      <div class="part-name">에이전시 vs 브랜드팀 산출물 분리</div>
     </div>
-    <h2>HIZ 책임 vs <em>브랜드팀 책임.</em></h2>
-    <p class="lead">컵 디자인·디저트 개발·매장 POP 인쇄·매장 운영은 브랜드팀 영역. HIZ는 가이드만 인계. 산출물·결재 결정 흐름이 분리되어야 마찰 없음.</p>
+    <h2>에이전시 책임 vs <em>브랜드팀 책임.</em></h2>
+    <p class="lead">컵 디자인·디저트 개발·매장 POP 인쇄·매장 운영은 브랜드팀 영역. 에이전시는 가이드만 인계. 산출물·결재 결정 흐름이 분리되어야 마찰 없음.</p>
 
     <div class="scope">
       <div class="scope-box scope-hiz">
-        <div class="scope-tag">HIZ 책임 산출물</div>
-        <h3>본 기획안 + 리서치북 + 콘텐츠</h3>
+        <div class="scope-tag">에이전시 책임 산출물</div>
+        <h3>리서치북 + 기획안 + 콘텐츠</h3>
         <ul class="clean">
-          <li><b>리서치</b> — 리서치북 v2 (소셜 리스닝·VOC 포함)</li>
-          <li><b>전략·기획</b> — 본 기획안 v2 (전략·메뉴·운영·견적·KPI·리스크)</li>
-          <li><b>콘텐츠 제작</b> — 인스타·릴스·X / 매거진B 시리즈 10편 / 시리즈 ①②③</li>
-          <li><b>인플루언서·앰배서더</b> — 모집·OT·운영·검수·재배포</li>
-          <li><b>광고</b> — 메타 광고 운영</li>
-          <li><b>KPI 측정</b> — 1·2차 KPI 보고</li>
+          <li><b>리서치</b> — 리서치북 v9 (사실·신호·VOC·트렌드 모니터링)</li>
+          <li><b>전략·기획</b> — 본 기획안 v4 (큰 전략·채널·라떼·신메뉴·운영·견적·KPI·리스크)</li>
+          <li><b>콘텐츠 제작</b> — 인스타 시리즈 5 / 릴스 6 포맷 / X 부산토박이 페르소나 / 틱톡 미러링</li>
+          <li><b>인플루언서·서포터즈</b> — 모집·OT·운영·검수·재배포</li>
+          <li><b>광고</b> — 메타 광고 운영 (릴스 소재 활용)</li>
+          <li><b>KPI 측정</b> — 1·2차 KPI 보고 + 자생 별칭 모니터링</li>
         </ul>
       </div>
       <div class="scope-box scope-brand">
         <div class="scope-tag">브랜드팀 책임 산출물</div>
-        <h3>HIZ는 가이드만 인계</h3>
+        <h3>에이전시는 가이드만 인계</h3>
         <ul class="clean">
           <li><b>컵 디자인·발주</b> — 디자이너 컨택·시안·단가·발주 결재</li>
           <li><b>페어링 디저트</b> — 솔티드 휘낭시에·메이플 휘낭시에 시연·납품 결정</li>
@@ -1311,23 +2106,24 @@ ul.clean li b { color: #1a1b18; font-weight: 700; }
       </div>
     </div>
 
-    <h3 class="with-line">11-1. 인계 시점 권장</h3>
+    <h3 class="with-line">12-1. 인계 시점 권장</h3>
 
     <table>
       <thead><tr><th>시점</th><th>인계물</th></tr></thead>
       <tbody>
-        <tr><td>5/14 (수)</td><td>컵 5안 가이드 · POP 6요소 통합안 · 페어링 디저트 1·2순위 → 브랜드팀 송출</td></tr>
-        <tr><td>5/26 (월)</td><td>매거진B 시리즈 #2 (6/1 출고용) 초안</td></tr>
+        <tr><td>5/14 (수)</td><td>컵 5안 가이드 · POP 6요소 통합안 · 페어링 디저트 1·2순위 / 영업 30·60초 스크립트 → 브랜드팀 송출</td></tr>
+        <tr><td>5/19 (월)</td><td>메뉴 네이밍 A안 디테일 / 시즈널 한정 B안 시범 후보 → 브랜드팀</td></tr>
+        <tr><td>5/26 (월)</td><td>인스타 시리즈 #2 (6/1 출고용) 초안 / 서포터즈 모집 폼 디테일 (5/11 D6 합의 후 인계)</td></tr>
       </tbody>
     </table>
   </div>
 
   <!-- FOOTER -->
   <div class="footer">
-    <div class="brand">댄싱컵 딥라떼 기획안 v3 — Track 1 라떼 앵커</div>
-    <div>HIZ 마케팅 제안서 · 리서치북 v8 자매 산출물 · §1.5 메뉴 운영 2-Track 오버뷰 신설 / §3-1 메뉴 네이밍 양안 결정 게이트 추가</div>
-    <div class="tag">2026-05-08 · 5/11 미팅 발표 · D-3 · 5/8 팀 자료 통합</div>
-    <div style="margin-top:12px;font-size:11px;color:#999;font-style:italic;">Track 2 신메뉴 시즌(컵빙수·오미자 등)은 별도 캠페인 — 본 기획안 외.</div>
+    <div class="brand">댄싱컵 딥라떼 기획안 v4 — 라떼 맛집 + 신메뉴 바이럴 2-Track 운영안</div>
+    <div>에이전시 마케팅 제안서 · 리서치북 v9 자매 산출물 · 견적서 quote.html · 라떼 본질 + 부산 매력 코팅 모델</div>
+    <div class="tag">2026-05-10 · 5/11 미팅 발표 · D-1 · 9개월 운영 청사진 (라떼·신메뉴 2-Track + 채널 4축)</div>
+    <div style="margin-top:12px;font-size:11px;color:#999;font-style:italic;">% Arabica Kyoto + 팀홀튼 캐나다 + 스타벅스 제주 결합 모델. 부산은 메뉴에 박지 않고 라이프스타일에 끼얹음.</div>
   </div>
 
 </div>
