@@ -1313,6 +1313,77 @@ p, li, .sub, .mc-desc, .rg-desc, .is-cap, .og-body,
 }
 .pa-img-tag b { color: #fff; font-weight: 700; }
 
+/* ==================== §5 BUSAN PLAY — 부산 딥라떼 활용 ==================== */
+.busan-play {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 22px;
+  margin: 8px 0 28px;
+}
+.bp-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--accent);
+  border-radius: 4px;
+  padding: 26px 26px 28px;
+  display: flex;
+  flex-direction: column;
+}
+.bp-tag {
+  font-size: 11px; font-weight: 800;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.bp-title {
+  font-size: 21px; font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  line-height: 1.28;
+  margin-bottom: 18px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+  text-wrap: pretty;
+}
+.bp-body { display: flex; flex-direction: column; gap: 12px; }
+.bp-row {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 13px;
+  line-height: 1.65;
+}
+.bp-k {
+  font-weight: 800;
+  color: var(--ink);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding-top: 2px;
+}
+.bp-v { color: var(--mid); text-wrap: pretty; }
+.bp-v b { color: var(--ink); font-weight: 700; }
+.bp-img {
+  margin: -26px -26px 20px;
+  height: 260px;
+  background: var(--cream);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+  position: relative;
+}
+.bp-img img { width: 100%; height: 100%; object-fit: contain; display: block; background: var(--cream); }
+.bp-img-tag {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  font-size: 10px; color: #fff;
+  background: rgba(26,26,26,0.78);
+  padding: 6px 12px;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+}
+.bp-img-tag b { color: #fff; font-weight: 700; }
+
 /* ==================== §7 CHANNEL EXAMPLE — 이미지화 ==================== */
 .mc-ex.with-img {
   padding: 0;
@@ -1562,7 +1633,7 @@ p, li, .sub, .mc-desc, .rg-desc, .is-cap, .og-body,
   <!-- §1 2026 전략 — 2축 -->
   <div class="slide">
     <div class="slide-head">
-      <div class="slide-num">01<span class="of">/</span>10<span class="name">2026 전략</span></div>
+      <div class="slide-num">01<span class="of">/</span>11<span class="name">2026 전략</span></div>
       <div class="slide-kicker">2가지 축을 통한 브랜드 확장</div>
     </div>
 
@@ -1587,7 +1658,7 @@ p, li, .sub, .mc-desc, .rg-desc, .is-cap, .og-body,
         <div class="td-pos">유행 맛집 포지셔닝</div>
         <div class="td-body">
           <p>SNS 유행 메뉴를 빠르게 도입해 한 달짜리 화제성으로 새 손님 유입을 만듭니다. 매월 1~2회 매장 도입 흐름.</p>
-          <p>F&amp;B 단발 유행은 평균 2~8주 사이클 — 두바이 초콜릿·마라탕후루 사례로 검증. 라떼 자리가 단단해지면 유행 효과도 누적됩니다.</p>
+          <p>F&amp;B 단발 유행은 평균 2~8주 사이클 — 두바이 초콜릿·버터떡 사례로 검증. 라떼 자리가 단단해지면 유행 효과도 누적됩니다.</p>
         </div>
       </div>
     </div>
@@ -1596,7 +1667,7 @@ p, li, .sub, .mc-desc, .rg-desc, .is-cap, .og-body,
   <!-- §2 딥라떼 — 시장·정의·메뉴 -->
   <div class="slide">
     <div class="slide-head">
-      <div class="slide-num">02<span class="of">/</span>10<span class="name">딥라떼 — 시장·메뉴</span></div>
+      <div class="slide-num">02<span class="of">/</span>11<span class="name">딥라떼 — 시장·메뉴</span></div>
       <div class="slide-kicker">시장 신호 → 정의 → 메뉴 3종</div>
     </div>
 
@@ -1657,7 +1728,7 @@ p, li, .sub, .mc-desc, .rg-desc, .is-cap, .og-body,
   <!-- §3 딥라떼 — 부산 키워드 -->
   <div class="slide">
     <div class="slide-head">
-      <div class="slide-num">03<span class="of">/</span>10<span class="name">딥라떼 — 부산 키워드</span></div>
+      <div class="slide-num">03<span class="of">/</span>11<span class="name">딥라떼 — 부산 키워드</span></div>
       <div class="slide-kicker">부산 = 커피 도시 변곡점 · 카테고리 점프</div>
     </div>
 
@@ -1713,7 +1784,7 @@ p, li, .sub, .mc-desc, .rg-desc, .is-cap, .og-body,
         </div>
         <div class="rg-region">case ③ · 도시별 시그니처 시리즈</div>
         <div class="rg-pair">팀홀튼 + <span class="em">캐나다 시티</span></div>
-        <div class="rg-desc">캐나다 매장 <b>4,000개+</b>. 밴쿠버·몬트리올·빅토리아 등 <b>도시명을 라떼·매차라떼 비주얼에 입혀 시리즈화</b>. <b>"double-double"</b> 주문 언어 2004 옥스퍼드 사전 등재. 매장 밀도 + 시티 시리즈 + 주문 언어 3축 결합.</div>
+        <div class="rg-desc">캐나다 매장 <b>4,000개+</b>. 밴쿠버·몬트리올·빅토리아 등 <b>도시명을 라떼·매차라떼 비주얼에 입혀 시리즈화</b>. <b>"double-double"</b> 주문 언어 2004 옥스퍼드 사전 등재. 매장 밀도 + 시티 시리즈 + 주문 언어를 모두 결합.</div>
       </div>
     </div>
   </div>
@@ -1721,7 +1792,7 @@ p, li, .sub, .mc-desc, .rg-desc, .is-cap, .og-body,
   <!-- §4 딥라떼 — 외국인 관광객 -->
   <div class="slide">
     <div class="slide-head">
-      <div class="slide-num">04<span class="of">/</span>10<span class="name">딥라떼 — 외국인 관광객</span></div>
+      <div class="slide-num">04<span class="of">/</span>11<span class="name">딥라떼 — 외국인 관광객</span></div>
       <div class="slide-kicker">대만·일본·중국 — 3 타깃 운영</div>
     </div>
 
@@ -1787,10 +1858,65 @@ p, li, .sub, .mc-desc, .rg-desc, .is-cap, .og-body,
     </div>
   </div>
 
-  <!-- §5 딥라떼 타겟·TPO -->
+  <!-- §5 부산 딥라떼 활용 — 라인·동네 어휘·매장 시각화 -->
   <div class="slide">
     <div class="slide-head">
-      <div class="slide-num">05<span class="of">/</span>10<span class="name">딥라떼 타겟 · TPO</span></div>
+      <div class="slide-num">05<span class="of">/</span>11<span class="name">부산 딥라떼 활용</span></div>
+      <div class="slide-kicker">라인·메뉴명 · 동네 어휘 · 매장 시각화</div>
+    </div>
+
+    <h2 class="lead">부산 딥라떼,<br><span class="em">이렇게 플레이</span>합니다.</h2>
+
+    <p class="sub">§3 지역 자산화 사례를 댄싱컵에 적용. <b>라인·메뉴명 + 동네 어휘 + 매장 시각화</b>로 풀이합니다.</p>
+
+    <div class="busan-play">
+      <div class="bp-card">
+        <div class="bp-img">
+          <img src="images/busan-play/01-lineup.jpg" alt="라떼 매크로 + 광안대교 부산 바다 배경" loading="lazy">
+          <div class="bp-img-tag"><b>딥라떼 무드</b> · 부산 바다에서 추출되는 라떼</div>
+        </div>
+        <div class="bp-tag">① 라인업 · 메뉴명</div>
+        <div class="bp-title">댄싱컵 딥라떼.<br>부산은 라인 밖.</div>
+        <div class="bp-body">
+          <div class="bp-row"><div class="bp-k">라인업</div><div class="bp-v"><b>댄싱컵 딥라떼</b> — 오리지널 · 솔티드 · 너티</div></div>
+          <div class="bp-row"><div class="bp-k">원칙</div><div class="bp-v">라인업·메뉴명에 <b>"부산" 미사용</b> — 컨셉·키워드는 콘텐츠·매장 자산에서</div></div>
+        </div>
+      </div>
+      <div class="bp-card">
+        <div class="bp-img">
+          <img src="images/busan-play/02-busan-neighborhoods.jpg" alt="해운대·광안리·동백섬 — 부산 핵심 동네 3컷" loading="lazy">
+          <div class="bp-img-tag"><b>부산 동네</b> · 해운대·광안리·동백섬·송정·태종대</div>
+        </div>
+        <div class="bp-tag">② 동네 어휘</div>
+        <div class="bp-title">메뉴명 아닌<br>콘텐츠·소제목에.</div>
+        <div class="bp-body">
+          <div class="bp-row"><div class="bp-k">동네</div><div class="bp-v"><b>해운대 · 광안리 · 송정 · 동백섬 · 태종대</b></div></div>
+          <div class="bp-row"><div class="bp-k">예시</div><div class="bp-v">"해운대 바다의 짭짤함을 담은 <b>솔티드 딥라떼</b>"<br>"광안리 야경의 깊이를 담은 <b>댄싱컵 딥라떼</b>"</div></div>
+        </div>
+      </div>
+      <div class="bp-card">
+        <div class="bp-img">
+          <img src="images/busan-play/03-cupholder.jpg" alt="컵홀더 + 펼친 컵홀더 시안 — 남색 부산 바다 일러스트" loading="lazy">
+          <div class="bp-img-tag"><b>댄싱컵 컵홀더 시안</b> · 남색 부산 바다 일러스트</div>
+        </div>
+        <div class="bp-tag">③ 매장 시각화</div>
+        <div class="bp-title">컵홀더 · POP에<br>부산 바다 무드.</div>
+        <div class="bp-body">
+          <div class="bp-row"><div class="bp-k">컵홀더</div><div class="bp-v">남색 부산 바다 일러스트 — <b>광안대교·갈매기·등대</b></div></div>
+          <div class="bp-row"><div class="bp-k">POP</div><div class="bp-v"><b>"부산에서 온 라떼 맛집"</b> 컨셉 카피로 통일</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <b>부산 딥라떼 키워드로 댄싱컵을 '부산에서 온 라떼 맛집' 자리에 박습니다.</b> 라인업·메뉴명이 아니라 <b>컨셉·동네 어휘·매장 자산</b>이 그 자리를 만듭니다.
+    </div>
+  </div>
+
+  <!-- §6 딥라떼 타겟·TPO -->
+  <div class="slide">
+    <div class="slide-head">
+      <div class="slide-num">06<span class="of">/</span>11<span class="name">딥라떼 타겟 · TPO</span></div>
       <div class="slide-kicker">누구를 위한 라떼 · 어떤 순간</div>
     </div>
 
@@ -1849,7 +1975,7 @@ p, li, .sub, .mc-desc, .rg-desc, .is-cap, .og-body,
   <!-- §6 딥라떼 플랜 -->
   <div class="slide">
     <div class="slide-head">
-      <div class="slide-num">06<span class="of">/</span>10<span class="name">딥라떼 플랜</span></div>
+      <div class="slide-num">07<span class="of">/</span>11<span class="name">딥라떼 플랜</span></div>
       <div class="slide-kicker">5~6월 · 7~8월 · 9~10월 · 11~12월</div>
     </div>
 
@@ -1908,7 +2034,7 @@ p, li, .sub, .mc-desc, .rg-desc, .is-cap, .og-body,
   <!-- §7 PLAN A·B 인플루언서 분기 -->
   <div class="slide">
     <div class="slide-head">
-      <div class="slide-num">07<span class="of">/</span>10<span class="name">PLAN A · B 분기</span></div>
+      <div class="slide-num">08<span class="of">/</span>11<span class="name">PLAN A · B 분기</span></div>
       <div class="slide-kicker">10월 — 인플루언서 운영 두 갈래</div>
     </div>
 
@@ -1961,7 +2087,7 @@ p, li, .sub, .mc-desc, .rg-desc, .is-cap, .og-body,
   <!-- §8 SNS 채널 운영 — 4축 -->
   <div class="slide">
     <div class="slide-head">
-      <div class="slide-num">08<span class="of">/</span>10<span class="name">채널 운영</span></div>
+      <div class="slide-num">09<span class="of">/</span>11<span class="name">채널 운영</span></div>
       <div class="slide-kicker">결은 따로 · 호흡은 다르게 · 4축</div>
     </div>
 
@@ -2020,7 +2146,7 @@ p, li, .sub, .mc-desc, .rg-desc, .is-cap, .og-body,
         <div class="mc-tag">채널 ④</div>
         <div class="mc-name">틱톡</div>
         <div class="mc-sub">미러링 채널 · 확산용</div>
-        <div class="mc-desc"><b>F&amp;B 유행 시작은 틱톡</b> — 두바이 초콜릿·마라탕후루·탕후루 모두 틱톡 진입. 바이럴 릴스 미러링으로 동시 업로드 · 신규 제작 부담 없이 확산축 확보.</div>
+        <div class="mc-desc"><b>F&amp;B 유행 시작은 틱톡</b> — 두바이 초콜릿·버터떡·탕후루 모두 틱톡 진입. 바이럴 릴스 미러링으로 동시 업로드 · 신규 제작 부담 없이 확산축 확보.</div>
         <div class="mc-ex with-img">
           <div class="mc-ex-img"><img src="images/channels/tiktok-shooting-bts.jpg" alt="컵빙수 매장 촬영 BTS — 같은 영상 미러링 업로드" loading="lazy"></div>
           <div class="mc-ex-cap"><b>컵빙수 매장 촬영 BTS</b> — 같은 영상·자막으로 릴스·틱톡 동시 업로드. <b>딥라떼도 매장 단위 촬영 → 미러링</b>으로 신규 제작 0건.</div>
@@ -2032,7 +2158,7 @@ p, li, .sub, .mc-desc, .rg-desc, .is-cap, .og-body,
   <!-- §9 서포터즈 -->
   <div class="slide">
     <div class="slide-head">
-      <div class="slide-num">09<span class="of">/</span>10<span class="name">서포터즈</span></div>
+      <div class="slide-num">10<span class="of">/</span>11<span class="name">서포터즈</span></div>
       <div class="slide-kicker">알바생 · 콘텐츠 1차 공급</div>
     </div>
 
@@ -2113,7 +2239,7 @@ p, li, .sub, .mc-desc, .rg-desc, .is-cap, .og-body,
   <!-- §10 KPI & 예산 -->
   <div class="slide">
     <div class="slide-head">
-      <div class="slide-num">10<span class="of">/</span>10<span class="name">KPI · 예산</span></div>
+      <div class="slide-num">11<span class="of">/</span>11<span class="name">KPI · 예산</span></div>
       <div class="slide-kicker">측정 지표 · Plan A·B 예산 분리</div>
     </div>
 
