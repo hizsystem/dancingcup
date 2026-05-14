@@ -308,10 +308,11 @@ p, li, .sub, .mc-desc, .rg-desc, .is-cap, .og-body,
   border-bottom: 1px solid var(--ink);
 }
 .def-row {
-  display: grid;
-  grid-template-columns: 140px 1fr;
-  gap: 32px;
-  align-items: baseline;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
 }
 .def-row .def-tag {
   font-size: 10px; font-weight: 800;
@@ -320,20 +321,22 @@ p, li, .sub, .mc-desc, .rg-desc, .is-cap, .og-body,
   text-transform: uppercase;
 }
 .def-row .def-text {
-  font-size: 22px; font-weight: 700;
-  line-height: 1.45;
+  font-size: 25px; font-weight: 700;
+  line-height: 1.5;
   color: var(--ink);
   letter-spacing: -0.018em;
+  text-align: center;
 }
 .def-row .def-text .em { color: var(--accent); }
 .def-row .def-text .def-en {
-  display: inline-block;
-  margin-top: 8px;
-  font-size: 14px; font-weight: 500;
-  color: #6b6b6b;
-  letter-spacing: 0.01em;
+  display: block;
+  margin-top: 12px;
+  font-size: 15px; font-weight: 500;
+  color: #4a4a4a;
+  letter-spacing: 0.015em;
   font-style: italic;
 }
+.def-row .def-text .def-en .em { color: var(--accent); font-style: normal; }
 
 /* ==================== STAT IMG — stat 안 이미지 ==================== */
 .stat-img {
@@ -1707,7 +1710,7 @@ p, li, .sub, .mc-desc, .rg-desc, .is-cap, .og-body,
     <div class="definition-line">
       <div class="def-row">
         <div class="def-tag">딥라떼 정의</div>
-        <div class="def-text">깊은 에스프레소와 라떼 밸런스에 맞춰 블렌딩한 우유의 <span class="em">딥라떼</span><br><span class="def-en">Deep Latte with bold espresso and milk blended for latte balance</span></div>
+        <div class="def-text"><span class="em">깊은 에스프레소</span>와 <span class="em">라떼 밸런스</span>에 맞춰 블렌딩한 우유의 <span class="em">딥라떼</span><span class="def-en">Deep Latte with <span class="em">bold espresso</span> and milk blended for <span class="em">latte balance</span></span></div>
       </div>
     </div>
 
