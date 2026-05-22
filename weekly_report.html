@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>댄싱컵 컵빙수 캠페인 — 주간 보고 · 2026-05-22 (Fri)</title>
+<style>
+:root{
+  --ink:#1a1a1a; --paper:#fafaf7; --cream:#f4efe5;
+  --accent:#6b2c2c; --accent-soft:#b8856a;
+  --pos:#1f7a3a; --neg:#6b2c2c; --neu:#7a7066;
+  --line:#d9d2c4;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#e8e4d8;font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',-apple-system,sans-serif;color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
+.page{max-width:1180px;margin:32px auto;background:var(--paper);padding:56px 60px 44px;box-shadow:0 8px 32px rgba(0,0,0,.08);border-radius:6px}
+.head{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2px solid var(--ink);padding-bottom:14px;margin-bottom:22px}
+.head h1{font-size:24px;margin:0 0 4px;letter-spacing:-.5px;font-weight:800}
+.head .sub{font-size:13px;color:var(--neu)}
+.head .meta{font-size:12px;color:var(--neu);text-align:right;line-height:1.7}
+.head .meta b{color:var(--ink);font-weight:700}
+
+.row{display:grid;gap:14px;margin-bottom:18px}
+.row.r4{grid-template-columns:repeat(4,1fr)}
+.row.r2{grid-template-columns:1.1fr 1fr}
+.row.r3{grid-template-columns:repeat(3,1fr)}
+
+.card{background:var(--cream);border-radius:6px;padding:16px 18px;border:1px solid var(--line)}
+.card.dark{background:var(--ink);color:var(--paper)}
+.card.dark .label{color:#bdb6a8}
+.card .label{font-size:11px;color:var(--neu);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.card .big{font-size:26px;font-weight:800;letter-spacing:-.5px}
+.card .sub{font-size:12px;color:var(--neu);margin-top:4px}
+.card .delta{font-size:13px;font-weight:700;color:var(--pos);margin-top:6px}
+.card .delta.neg{color:var(--neg)}
+.card .delta.flat{color:var(--neu)}
+
+.insights{background:#fffbf3;border:1px solid var(--accent-soft);border-left:4px solid var(--accent);border-radius:6px;padding:14px 18px;margin-bottom:14px}
+.insights .ins-title{font-size:12px;font-weight:800;color:var(--accent);letter-spacing:.5px;text-transform:uppercase;margin-bottom:8px;display:flex;justify-content:space-between;align-items:baseline}
+.insights .ins-title .src{font-size:10px;font-weight:500;color:var(--neu);text-transform:none;letter-spacing:0}
+.insights ul.ins-list{margin:0;padding-left:18px;font-size:13px;line-height:1.7;color:#2a2a2a}
+.insights ul.ins-list li{margin-bottom:4px}
+.insights ul.ins-list li:last-child{margin-bottom:0}
+.insights ul.ins-list b{font-weight:800;color:var(--ink)}
+
+.ig-card{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#fdf4ec 0%,#f4efe5 100%);border-radius:6px;padding:14px 18px;border:1px solid var(--line)}
+.ig-avatar{width:54px;height:54px;border-radius:50%;background:var(--cream);overflow:hidden;flex-shrink:0;border:1.5px solid var(--accent-soft)}
+.ig-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.ig-meta{flex:1}
+.ig-meta .name{font-size:15px;font-weight:800;color:var(--ink)}
+.ig-meta .handle{font-size:12px;color:var(--neu)}
+.ig-stat{display:flex;gap:18px;font-size:12px}
+.ig-stat .v{font-size:18px;font-weight:800;color:var(--ink);letter-spacing:-.3px}
+.ig-stat .d{font-size:11px;font-weight:700;color:var(--pos);margin-left:4px}
+.ig-stat .d.neg{color:var(--neg)}
+.ig-stat .d.flat{color:var(--neu)}
+.ig-stat .lbl{font-size:11px;color:var(--neu);text-transform:uppercase;letter-spacing:.4px}
+
+.camp{background:#fff;border:1px solid var(--line);border-radius:6px;padding:14px 16px}
+.camp .ctitle{font-size:14px;font-weight:800;margin-bottom:10px;color:var(--ink)}
+.camp .ctitle .tag{display:inline-block;font-size:10px;background:var(--accent);color:#fff;padding:2px 7px;border-radius:3px;margin-left:6px;vertical-align:middle;font-weight:700;letter-spacing:.3px}
+.camp .ctitle .tag.alt{background:var(--accent-soft)}
+.cm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:8px}
+.cm-cell{background:var(--cream);border-radius:4px;padding:8px 10px}
+.cm-cell .l{font-size:10px;color:var(--neu);text-transform:uppercase;font-weight:600;letter-spacing:.4px}
+.cm-cell .v{font-size:18px;font-weight:800;letter-spacing:-.3px}
+.cm-cell .v small{font-size:11px;font-weight:600;color:var(--neu);margin-left:3px}
+.cm-cell .bench{font-size:10px;font-weight:700;margin-top:3px;display:inline-block;padding:1px 6px;border-radius:3px}
+.cm-cell .bench.pos{background:#e0f0e4;color:var(--pos)}
+.cm-cell .bench.neg{background:#f3e1e1;color:var(--neg)}
+.cm-cell .bench.neu{background:#ece7dd;color:var(--neu)}
+.cm-foot{font-size:11px;color:var(--neu);display:flex;gap:14px;flex-wrap:wrap;margin-top:4px}
+
+.tbl-wrap{margin-top:6px}
+.tbl-title{font-size:13px;font-weight:800;margin-bottom:8px;display:flex;justify-content:space-between;align-items:baseline}
+.tbl-title .hint{font-size:11px;font-weight:500;color:var(--neu)}
+table.ads{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:4px;overflow:hidden}
+table.ads thead th{background:var(--ink);color:#fff;font-size:11px;font-weight:700;padding:8px 10px;text-align:right;letter-spacing:.3px}
+table.ads thead th.l{text-align:left}
+table.ads tbody td{padding:10px;border-top:1px solid var(--line);font-size:13px;vertical-align:middle;text-align:right}
+table.ads tbody td.l{text-align:left}
+table.ads tbody tr:nth-child(even){background:#fbf8f2}
+.rank{font-size:11px;color:var(--neu);font-weight:700;width:24px;text-align:center !important}
+.thumb{width:48px;height:64px;border-radius:4px;background:var(--cream);object-fit:cover;display:block;border:1px solid var(--line)}
+.thumb-cell{width:60px}
+.adname{font-size:13px;font-weight:700;line-height:1.3}
+.adname .sub{font-size:11px;color:var(--neu);font-weight:400;margin-top:2px}
+.grade{display:inline-block;font-size:10px;font-weight:800;padding:2px 6px;border-radius:3px;letter-spacing:.3px}
+.grade.pos{background:#e0f0e4;color:var(--pos)}
+.grade.neu{background:#ece7dd;color:var(--neu)}
+.grade.neg{background:#f3e1e1;color:var(--neg)}
+.num-strong{font-weight:800;font-size:14px;letter-spacing:-.3px}
+
+.callout{background:var(--cream);border-left:3px solid var(--accent);padding:10px 14px;margin-top:14px;font-size:12px;color:#3a3a3a;line-height:1.6}
+.callout b{color:var(--ink)}
+
+.foot{margin-top:18px;padding-top:12px;border-top:1px solid var(--line);font-size:11px;color:var(--neu);line-height:1.7}
+.foot a{color:var(--accent);text-decoration:none}
+.foot .label{font-weight:700;color:var(--ink);margin-right:4px}
+
+@media print{
+  body{background:#fff}
+  .page{box-shadow:none;margin:0;border-radius:0;max-width:none;padding:24px 30px}
+  @page{size:A4;margin:10mm}
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="head">
+    <div>
+      <h1>댄싱컵 컵빙수 캠페인 — 주간 보고</h1>
+      <div class="sub">Meta 광고 · Instagram 통합 주간 리포트</div>
+    </div>
+    <div class="meta">
+      <div><b>캠페인 누적 (D-7 비교 데이터 없음)</b></div>
+      <div>발행 2026-05-22 (Fri)</div>
+    </div>
+  </div>
+
+  
+    <div class="insights">
+      <div class="ins-title">이번 주 인사이트 <span class="src">자동 생성 · weekly_insights.md로 덮어쓰기 가능</span></div>
+      <ul class="ins-list"><li>이번 주 두 캠페인 합산 지출 <b>147,518원</b> · 클릭 <b>993건</b> · CTR <b>4.41%</b>로 업계 평균(1.67%) 대비 <b>2.6배</b> 성과.</li>
+<li>지출 최상위 소재 <b>『소재 2_무릉도원-260515』</b>는 7일 클릭 <b>287건</b> · CTR <b>2.97%</b> · CPC <b>221원</b>으로 <b>양호</b> 등급.</li>
+<li>캠페인 시작 이후 누적 지출 <b>147,523원</b> · 클릭 <b>781건</b> 도달. 평균 CPC <b>189원</b> 수준 유지.</li></ul>
+    </div>
+    
+
+  <div class="ig-card"><div class="ig-meta"><div class="name">@dancingcup.official</div><div class="handle">팔로워 데이터 미수집 — IG_USER_ID 확인 필요</div></div></div>
+
+  <div class="row r2" style="margin-top:14px">
+    
+    <div class="camp">
+      <div class="ctitle">컵빙수_자체제작<span class="tag ">7일 증분</span></div>
+      <div class="cm-grid">
+        <div class="cm-cell">
+          <div class="l">CTR (클릭률) <small>업계 평균 1.67%</small></div>
+          <div class="v">3.99<small>%</small></div>
+          <span class="bench pos">평균 대비 +139% · 우수</span>
+        </div>
+        <div class="cm-cell">
+          <div class="l">CPC (클릭당) <small>업계 평균 993원</small></div>
+          <div class="v">159<small>원</small></div>
+          <span class="bench pos">평균 대비 +84% · 우수</span>
+        </div>
+        <div class="cm-cell">
+          <div class="l">CPM (천노출당) </div>
+          <div class="v">6,348<small>원</small></div>
+          
+        </div>
+      </div>
+      <div class="cm-foot">
+        <span><b>지출</b> 71,090원</span>
+        <span><b>노출</b> 11,198</span>
+        <span><b>도달</b> 8,724</span>
+        <span><b>클릭</b> 447</span>
+        <span style="color:var(--neu);margin-left:auto">캠페인 누적 지출 71,090원 · 클릭 447</span>
+      </div>
+    </div>
+    
+    <div class="camp">
+      <div class="ctitle">컵빙수_인플루언서<span class="tag alt">7일 증분</span></div>
+      <div class="cm-grid">
+        <div class="cm-cell">
+          <div class="l">CTR (클릭률) <small>업계 평균 1.67%</small></div>
+          <div class="v">4.82<small>%</small></div>
+          <span class="bench pos">평균 대비 +189% · 우수</span>
+        </div>
+        <div class="cm-cell">
+          <div class="l">CPC (클릭당) <small>업계 평균 993원</small></div>
+          <div class="v">140<small>원</small></div>
+          <span class="bench pos">평균 대비 +86% · 우수</span>
+        </div>
+        <div class="cm-cell">
+          <div class="l">CPM (천노출당) </div>
+          <div class="v">6,753<small>원</small></div>
+          
+        </div>
+      </div>
+      <div class="cm-foot">
+        <span><b>지출</b> 76,428원</span>
+        <span><b>노출</b> 11,317</span>
+        <span><b>도달</b> 8,056</span>
+        <span><b>클릭</b> 546</span>
+        <span style="color:var(--neu);margin-left:auto">캠페인 누적 지출 76,428원 · 클릭 546</span>
+      </div>
+    </div>
+    
+  </div>
+
+  
+    <div class="tbl-wrap">
+      <div class="tbl-title">광고 소재별 7일 성과 <span class="hint">지출 내림차순 · 등급 = 우수 CTR≥4% &amp; CPC≤400원 / CUT CTR&lt;1.5% OR CPC&gt;1,000원</span></div>
+      <table class="ads">
+        <thead>
+          <tr>
+            <th></th><th></th><th class="l">소재</th><th>등급</th>
+            <th>7일 지출</th><th>7일 클릭</th><th>7일 CTR</th><th>7일 CPC</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+        <tr>
+          <td class="rank">1</td>
+          <td class="thumb-cell"><img class="thumb" src="https://scontent-icn2-1.xx.fbcdn.net/v/t15.5256-10/699132093_2334089090452167_2155798828004789949_n.jpg?_nc_cat=106&amp;ccb=1-7&amp;_nc_ohc=vxwhumWfbxEQ7kNvwHo03-z&amp;_nc_oc=AdpGtMr0gTiaVbYY9dBplbGMKuuRi2RiSpVG5Ebniz-RzUwzugNC3xh4ITGLgN9zjYQ&amp;_nc_zt=23&amp;_nc_ht=scontent-icn2-1.xx&amp;edm=AAwGEdEEAAAA&amp;_nc_gid=gkmLqrD8v_cTICghEHn3BA&amp;_nc_tpa=Q5bMBQHAclPMvw5ohqeU5B9JpslkYBVHaOX4_mNY-RQQs2GidkY3bXn4-4QwurG7b9wB5RbZ3xa-ElBo&amp;stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&amp;ur=a7ce7f&amp;_nc_sid=58080a&amp;oh=00_Af7qEfTrc0-oga9uqHfzDabNY0w3fsl21JIdwFP2GrpSTA&amp;oe=6A158A46" alt="" referrerpolicy="no-referrer"></td>
+          <td class="l"><div class="adname"><a href="https://www.instagram.com/p/DYWiY9uAHbZ/" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px dotted var(--neu)">소재 2_무릉도원-260515</a><div class="sub">캠페인 누적: 클릭 287 · 지출 63,561원</div></div></td>
+          <td><span class="grade neu">양호</span></td>
+          <td><span class="num-strong">63,561원</span></td>
+          <td><span class="num-strong">287</span></td>
+          <td><span class="num-strong">2.97%</span><div style="font-size:10px;color:var(--pos);font-weight:700;margin-top:2px">vs 평균 +78%</div></td>
+          <td><span class="num-strong">221원</span><div style="font-size:10px;color:var(--pos);font-weight:700;margin-top:2px">vs 평균 +78%</div></td>
+        </tr>
+        
+        <tr>
+          <td class="rank">2</td>
+          <td class="thumb-cell"><img class="thumb" src="https://scontent-icn2-1.xx.fbcdn.net/v/t15.5256-10/699804383_968578592630327_7321392105608314246_n.jpg?_nc_cat=109&amp;ccb=1-7&amp;_nc_ohc=hPyHJUb7GPsQ7kNvwHvTXSR&amp;_nc_oc=Adp8XF7hvw3-ceQ-0lZUDy0aPHambzytq_mAMuccYfrKXsuS59L6V8uzJxspbUFLEro&amp;_nc_zt=23&amp;_nc_ht=scontent-icn2-1.xx&amp;edm=AAwGEdEEAAAA&amp;_nc_gid=uZ8v2Ec1wniUilz26nMGQA&amp;_nc_tpa=Q5bMBQGLz3VLR6xcTdhrRtZAtD1j1CEypMhwYnjZeG-6vzXnNp_WJhhZbVUcalstWeRU37vVLoVWf6hZ&amp;stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&amp;ur=5fad0e&amp;_nc_sid=58080a&amp;oh=00_Af6lJN7oLrbJxlwZ6cLs4_QG25HIqCGyKz7yQ0kQrROqdw&amp;oe=6A15957A" alt="" referrerpolicy="no-referrer"></td>
+          <td class="l"><div class="adname"><a href="https://www.instagram.com/p/DYWgUC_gDvb/" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px dotted var(--neu)">소재 2_5초 후킹_260515</a><div class="sub">캠페인 누적: 클릭 395 · 지출 61,745원</div></div></td>
+          <td><span class="grade pos">우수</span></td>
+          <td><span class="num-strong">61,745원</span></td>
+          <td><span class="num-strong">395</span></td>
+          <td><span class="num-strong">4.12%</span><div style="font-size:10px;color:var(--pos);font-weight:700;margin-top:2px">vs 평균 +147%</div></td>
+          <td><span class="num-strong">156원</span><div style="font-size:10px;color:var(--pos);font-weight:700;margin-top:2px">vs 평균 +84%</div></td>
+        </tr>
+        
+        <tr>
+          <td class="rank">3</td>
+          <td class="thumb-cell"><img class="thumb" src="https://scontent-icn2-1.xx.fbcdn.net/v/t15.5256-10/689842173_1044971277969880_971498970523580408_n.jpg?_nc_cat=104&amp;ccb=1-7&amp;_nc_ohc=FZgsEffFIRkQ7kNvwHCdHi7&amp;_nc_oc=AdoBBdENjgSj1qQTRf3YZrxmSjDCfPYiDNvV1bIAmZHQ4_6g6pNpWzzqxwhr3pYHsYw&amp;_nc_zt=23&amp;_nc_ht=scontent-icn2-1.xx&amp;edm=AAwGEdEEAAAA&amp;_nc_gid=Kq78RnmcwVRcp0WyJEsZjA&amp;_nc_tpa=Q5bMBQE0CYrO1nR1d-fOA1xuEGG1PqVTKJkdQ5BiIi3cBwDWT6yls_8_Ey7YcyDaaFTKiLjV97mGr3rV&amp;stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&amp;ur=a7ce7f&amp;_nc_sid=58080a&amp;oh=00_Af5X22Gk-OCb2Cd5WTVkxWraJqQXA2yJ0oFsCJE8dh96FA&amp;oe=6A157660" alt="" referrerpolicy="no-referrer"></td>
+          <td class="l"><div class="adname"><a href="https://www.instagram.com/p/DYWiZycgLg9/" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px dotted var(--neu)">소재 3_말차발굴녀_260515</a><div class="sub">캠페인 누적: 클릭 32 · 지출 10,225원</div></div></td>
+          <td><span class="grade neu">양호</span></td>
+          <td><span class="num-strong">10,225원</span></td>
+          <td><span class="num-strong">32</span></td>
+          <td><span class="num-strong">2.52%</span><div style="font-size:10px;color:var(--neu);font-weight:700;margin-top:2px">vs 평균 +51%</div></td>
+          <td><span class="num-strong">320원</span><div style="font-size:10px;color:var(--pos);font-weight:700;margin-top:2px">vs 평균 +68%</div></td>
+        </tr>
+        
+        <tr>
+          <td class="rank">4</td>
+          <td class="thumb-cell"><img class="thumb" src="https://scontent-icn2-1.xx.fbcdn.net/v/t15.5256-10/698750969_1767204467974137_6032237739969070611_n.jpg?_nc_cat=110&amp;ccb=1-7&amp;_nc_ohc=pAXB5Z6QYyIQ7kNvwGWCqq8&amp;_nc_oc=Ado46ULvi7_r7j6jo83SToLxxlVVb6ZVpOdrpmlpK7Iu2MROXN_wvFF-wdGURLBzQRE&amp;_nc_zt=23&amp;_nc_ht=scontent-icn2-1.xx&amp;edm=AAwGEdEEAAAA&amp;_nc_gid=FYhlWsSd5VYN1zrXpo_VIA&amp;_nc_tpa=Q5bMBQEZGABN0plj6jopZudCYaWejyVeBVyxz14Jnfw1WSJie7FrfRykVyGn6eBTXQDNms7Hs13UKu0E&amp;stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&amp;ur=5fad0e&amp;_nc_sid=58080a&amp;oh=00_Af6WiIZj7qWcgG23-m_BfQUBBJqpqlF5xXl3w3uVRS2_Gw&amp;oe=6A158E1B" alt="" referrerpolicy="no-referrer"></td>
+          <td class="l"><div class="adname"><a href="https://www.instagram.com/p/DYWgUkZABcq/" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px dotted var(--neu)">소재 2-1_마케터 페르소나_260515</a><div class="sub">캠페인 누적: 클릭 27 · 지출 4,025원</div></div></td>
+          <td><span class="grade pos">우수</span></td>
+          <td><span class="num-strong">4,025원</span></td>
+          <td><span class="num-strong">27</span></td>
+          <td><span class="num-strong">4.24%</span><div style="font-size:10px;color:var(--pos);font-weight:700;margin-top:2px">vs 평균 +154%</div></td>
+          <td><span class="num-strong">149원</span><div style="font-size:10px;color:var(--pos);font-weight:700;margin-top:2px">vs 평균 +85%</div></td>
+        </tr>
+        
+        <tr>
+          <td class="rank">5</td>
+          <td class="thumb-cell"><img class="thumb" src="https://scontent-icn2-1.xx.fbcdn.net/v/t15.5256-10/699773060_1379103844046331_6506533158943819991_n.jpg?_nc_cat=103&amp;ccb=1-7&amp;_nc_ohc=v4odwsYLRMQQ7kNvwHlv7eG&amp;_nc_oc=Adp-xnMn1Cikj2vFokO2KT7bfxCpjFnpBSQ-ee5Ox8UqSZMLg2hyS5nUOMnVcENMLgI&amp;_nc_zt=23&amp;_nc_ht=scontent-icn2-1.xx&amp;edm=AAwGEdEEAAAA&amp;_nc_gid=qmn3o8hwRB6ly_D1Oxd6ew&amp;_nc_tpa=Q5bMBQE5G_4fy5zuGNmg13PvIoYawgXQzhLs7N1Mpu2yC1-SsOTwW4VvUWqEiHCRmPA_izHOQ4Vv0AjL&amp;stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&amp;ur=5fad0e&amp;_nc_sid=58080a&amp;oh=00_Af4sAo0g41JhnOay7WWq99u4an7wqwZRdTgyN2CGUE-AzA&amp;oe=6A156F03" alt="" referrerpolicy="no-referrer"></td>
+          <td class="l"><div class="adname"><a href="https://www.instagram.com/p/DYWgUxkANyY/" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px dotted var(--neu)">소재 1_TTS 바이럴_260515</a><div class="sub">캠페인 누적: 클릭 11 · 지출 2,947원</div></div></td>
+          <td><span class="grade neu">양호</span></td>
+          <td><span class="num-strong">2,947원</span></td>
+          <td><span class="num-strong">11</span></td>
+          <td><span class="num-strong">2.06%</span><div style="font-size:10px;color:var(--neu);font-weight:700;margin-top:2px">vs 평균 +23%</div></td>
+          <td><span class="num-strong">268원</span><div style="font-size:10px;color:var(--pos);font-weight:700;margin-top:2px">vs 평균 +73%</div></td>
+        </tr>
+        
+        <tr>
+          <td class="rank">6</td>
+          <td class="thumb-cell"><img class="thumb" src="https://scontent-icn2-1.xx.fbcdn.net/v/t15.5256-10/699046579_988186050238303_7672399298158909680_n.jpg?_nc_cat=105&amp;ccb=1-7&amp;_nc_ohc=9msonjkH7TUQ7kNvwFJ1dlN&amp;_nc_oc=AdoTZdiImj0Isr2_xN27l4pppmeeQNuAKDA8tAPE_ip3QiUCXDLv9KqJfDMTagS8iO4&amp;_nc_zt=23&amp;_nc_ht=scontent-icn2-1.xx&amp;edm=AAwGEdEEAAAA&amp;_nc_gid=phXOVZuI2k0ve5UTyZWqCw&amp;_nc_tpa=Q5bMBQHvWurdGBsjAhTKYJxi_nWkcszoQteei6capLYyg-g2vLWeqtTa93XXduOyfnkKul_uLyBzxFSl&amp;stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&amp;ur=a7ce7f&amp;_nc_sid=58080a&amp;oh=00_Af4wIrp65xWKx0eIPD_DaA-EXlpzzzMJkDApOwMuR5OOHw&amp;oe=6A1585A0" alt="" referrerpolicy="no-referrer"></td>
+          <td class="l"><div class="adname"><a href="https://www.instagram.com/p/DYOjN5kgANF/" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px dotted var(--neu)">소재 1_먹솜_260515</a><div class="sub">캠페인 누적: 클릭 7 · 지출 2,642원</div></div></td>
+          <td><span class="grade neu">양호</span></td>
+          <td><span class="num-strong">2,642원</span></td>
+          <td><span class="num-strong">7</span></td>
+          <td><span class="num-strong">1.78%</span><div style="font-size:10px;color:var(--neu);font-weight:700;margin-top:2px">vs 평균 +7%</div></td>
+          <td><span class="num-strong">377원</span><div style="font-size:10px;color:var(--pos);font-weight:700;margin-top:2px">vs 평균 +62%</div></td>
+        </tr>
+        
+        <tr>
+          <td class="rank">7</td>
+          <td class="thumb-cell"><img class="thumb" src="https://scontent-icn2-1.xx.fbcdn.net/v/t51.71878-10/689840675_1673232203702172_3104916663207349784_n.jpg?_nc_cat=103&amp;ccb=1-7&amp;_nc_ohc=XjAjmCUI6eIQ7kNvwG-STUp&amp;_nc_oc=AdqPj723tzh9RQAAyHm8DPePxZXjrfCZM23pD1KUWY5MwLmu-QhmPbvxr_FS3iTwF9I&amp;_nc_zt=23&amp;_nc_ht=scontent-icn2-1.xx&amp;edm=AAwGEdEEAAAA&amp;_nc_gid=AZAhuOdlwMaIj2NwM_HTXQ&amp;_nc_tpa=Q5bMBQEq2S4bkAoM9BS2yYZRklgvW8vDSZP5NODAW_niUciVBe7wGHYZMofkcT66jna_HheXaKxEu13Z&amp;stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&amp;ur=33e7a6&amp;_nc_sid=58080a&amp;oh=00_Af4U8QY1nzYXODTDSWJbLQPoloASEUHhSeQN5tL475naTg&amp;oe=6A157D04" alt="" referrerpolicy="no-referrer"></td>
+          <td class="l"><div class="adname"><a href="https://www.instagram.com/p/DYWhm1ZgH3f/" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px dotted var(--neu)">소재 3_AI 활용 광고_260515</a><div class="sub">캠페인 누적: 클릭 22 · 지출 2,378원</div></div></td>
+          <td><span class="grade pos">우수</span></td>
+          <td><span class="num-strong">2,378원</span></td>
+          <td><span class="num-strong">22</span></td>
+          <td><span class="num-strong">5.01%</span><div style="font-size:10px;color:var(--pos);font-weight:700;margin-top:2px">vs 평균 +200%</div></td>
+          <td><span class="num-strong">108원</span><div style="font-size:10px;color:var(--pos);font-weight:700;margin-top:2px">vs 평균 +89%</div></td>
+        </tr>
+        
+        </tbody>
+      </table>
+    </div>
+    
+
+  
+    <div class="foot">
+      <div><span class="label">비교 기간</span> — → 2026-05-22 (Fri) (7일)</div>
+      <div><b>업계 벤치마크</b> F&amp;B / Restaurants · 글로벌 (미국 중심) — 한국 시장과 직접 비교 시 차이 가능 · 출처: WordStream 2025 (F&amp;B)</div>
+      <div><span class="label">데이터</span> Meta Marketing API · Instagram Graph API · 매일 09:00 자동 갱신 · 보고서 URL <a href="https://hizsystem.github.io/dancingcup/weekly_report.html">https://hizsystem.github.io/dancingcup/weekly_report.html</a></div>
+    </div>
+    
+</div>
+</body>
+</html>
