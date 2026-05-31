@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>댄싱컵 5월 운영 보고서 — 브랜드라이즈</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans KR', -apple-system, sans-serif; background: #f4f7f9; color: #1a1b18; line-height: 1.7; font-size: 14px; -webkit-font-smoothing: antialiased; }
+
+/* TOOLBAR */
+.toolbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #0D0D0D; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; }
+.toolbar-left { display: flex; align-items: center; gap: 16px; }
+.toolbar-logo { font-size: 13px; font-weight: 700; color: #EA580C; letter-spacing: 0.05em; }
+.toolbar-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.15); }
+.toolbar-title { font-size: 14px; font-weight: 500; color: #fff; }
+.toolbar-actions { display: flex; gap: 10px; }
+.btn-toolbar { padding: 7px 18px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; background: transparent; color: #fff; font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-block; }
+.btn-toolbar:hover { background: rgba(255,255,255,0.1); }
+.btn-toolbar.alt { border-color: rgba(234,88,12,0.5); color: #EA580C; }
+
+.container { max-width: 920px; margin: 0 auto; padding: 80px 24px 60px; }
+
+/* HEADER */
+.report-header { background: #fff; border-radius: 12px; padding: 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+.report-header .label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px; }
+.report-header h1 { font-size: 34px; font-weight: 900; line-height: 1.3; letter-spacing: -0.02em; }
+.report-header h1 em { color: #EA580C; font-style: normal; }
+.meta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; padding-top: 24px; border-top: 1px solid #e8edf1; }
+.meta-item .mk { font-size: 11px; color: #999; letter-spacing: 0.04em; margin-bottom: 4px; }
+.meta-item .mv { font-size: 13px; font-weight: 600; }
+
+/* SECTION */
+.section { background: #fff; border-radius: 12px; padding: 32px 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+.section h2 { font-size: 18px; font-weight: 800; margin-bottom: 6px; letter-spacing: -0.02em; }
+.section h2 em { color: #EA580C; font-style: normal; }
+.section .sec-sub { font-size: 12px; color: #999; margin-bottom: 22px; }
+.section h3.block-t { font-size: 14px; font-weight: 800; margin: 26px 0 12px; padding-left: 10px; border-left: 3px solid #EA580C; }
+.section h3.block-t:first-of-type { margin-top: 4px; }
+.section p.body { font-size: 13.5px; color: #3a3c40; margin-bottom: 10px; }
+.section ul.body { font-size: 13.5px; color: #3a3c40; padding-left: 20px; margin-bottom: 10px; }
+.section ul.body li { margin-bottom: 5px; }
+
+/* SUMMARY highlight */
+.summary-box { background: #0D0D0D; border-radius: 12px; padding: 30px 36px; margin-bottom: 20px; color: #fff; }
+.summary-box .hl-label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.1em; margin-bottom: 14px; text-transform: uppercase; }
+.summary-box .lede { font-size: 17px; font-weight: 700; line-height: 1.6; margin-bottom: 18px; letter-spacing: -0.01em; }
+.summary-box .lede em { color: #FDBA8C; font-style: normal; }
+.summary-box .two-track { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.summary-box .tt-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 16px 18px; }
+.summary-box .tt-card .tt-k { font-size: 11px; font-weight: 700; color: #FDBA8C; letter-spacing: 0.04em; margin-bottom: 6px; }
+.summary-box .tt-card .tt-v { font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.9); line-height: 1.6; }
+
+/* KPI GRID */
+.track-label { font-size: 12px; font-weight: 800; color: #636569; letter-spacing: 0.04em; margin: 22px 0 10px; display: flex; align-items: center; gap: 8px; }
+.track-label:first-child { margin-top: 0; }
+.track-label .pill { font-size: 10px; font-weight: 700; padding: 2px 9px; border-radius: 20px; background: #FFF7ED; color: #EA580C; }
+.track-label .pill.b { background: #EFF6FF; color: #1d4ed8; }
+.kpi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.kpi-card { background: #f8fafb; border-radius: 10px; padding: 22px 16px; text-align: center; border: 1px solid #e8edf1; }
+.kpi-card .kc-label { font-size: 11px; color: #999; font-weight: 600; letter-spacing: 0.04em; margin-bottom: 8px; }
+.kpi-card .kc-value { font-size: 28px; font-weight: 900; color: #1a1b18; letter-spacing: -0.02em; line-height: 1.05; }
+.kpi-card .kc-value.pos { color: #047857; }
+.kpi-card .kc-unit { font-size: 13px; font-weight: 600; color: #999; }
+.kpi-card .kc-desc { font-size: 11px; color: #999; margin-top: 7px; line-height: 1.4; }
+.kpi-card .kc-chg { font-size: 12px; font-weight: 700; margin-top: 5px; }
+.kpi-card .kc-chg.up { color: #047857; }
+
+/* PART DIVIDER */
+.part-divider { display: flex; align-items: center; gap: 14px; margin: 36px 0 18px; }
+.part-divider .pd-tag { font-size: 11px; font-weight: 800; letter-spacing: 0.08em; padding: 6px 14px; border-radius: 8px; white-space: nowrap; }
+.part-divider.a .pd-tag { background: #FFF7ED; color: #EA580C; border: 1px solid #FED7AA; }
+.part-divider.b .pd-tag { background: #EFF6FF; color: #1d4ed8; border: 1px solid #BFDBFE; }
+.part-divider .pd-title { font-size: 20px; font-weight: 900; letter-spacing: -0.02em; }
+.part-divider .pd-budget { font-size: 13px; font-weight: 700; color: #999; margin-left: auto; white-space: nowrap; }
+.part-divider .line { display: none; }
+
+/* TABLE */
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { background: #f8fafb; padding: 10px 14px; font-weight: 600; border-bottom: 2px solid #e8edf1; color: #999; font-size: 11px; text-align: left; white-space: nowrap; }
+th.r { text-align: right; }
+td { padding: 11px 14px; border-bottom: 1px solid #f0f2f5; vertical-align: middle; }
+td.item { font-weight: 600; color: #1a1b18; }
+td.desc { color: #636569; font-size: 12px; }
+td.r { text-align: right; font-variant-numeric: tabular-nums; }
+td.amount { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+tr:hover td { background: #fafbfc; }
+tr.subtotal-row td { background: #f8fafb; font-weight: 700; border-top: 1px solid #e8edf1; }
+
+/* STATUS PILL */
+.st { display: inline-block; font-size: 10px; font-weight: 800; padding: 3px 10px; border-radius: 12px; letter-spacing: 0.03em; white-space: nowrap; }
+.st.done { background: #ECFDF5; color: #047857; }
+.st.prog { background: #FEF3C7; color: #92400E; }
+.st.plan { background: #EFF6FF; color: #1d4ed8; }
+
+/* CAMPAIGN cards */
+.camp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 4px 0 6px; }
+.camp { background: #f8fafb; border: 1px solid #e8edf1; border-radius: 12px; padding: 22px 24px; }
+.camp .ctitle { font-size: 14px; font-weight: 800; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+.camp .ctitle .tag { font-size: 10px; background: #EA580C; color: #fff; padding: 3px 8px; border-radius: 4px; font-weight: 700; }
+.camp .ctitle .tag.alt { background: #0D0D0D; }
+.cm-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 14px; }
+.cm-cell { background: #fff; border-radius: 10px; padding: 14px 10px; border: 1px solid #e8edf1; text-align: center; }
+.cm-cell .l { font-size: 10px; color: #999; font-weight: 600; letter-spacing: 0.03em; margin-bottom: 6px; }
+.cm-cell .v { font-size: 22px; font-weight: 900; letter-spacing: -0.02em; line-height: 1.1; }
+.cm-cell .v small { font-size: 12px; font-weight: 600; color: #999; }
+.cm-cell .bench-cap { font-size: 10px; color: #999; margin-top: 3px; display: block; }
+.cm-cell .bench { font-size: 10px; font-weight: 800; margin-top: 6px; display: inline-block; padding: 2px 8px; border-radius: 10px; }
+.cm-cell .bench.pos { background: #ECFDF5; color: #047857; }
+.cm-cell .bench.neu { background: #FEF3C7; color: #92400E; }
+.cm-foot { font-size: 12px; color: #636569; display: flex; gap: 16px; flex-wrap: wrap; padding-top: 10px; border-top: 1px solid #eef1f4; }
+.cm-foot b { color: #1a1b18; }
+
+/* GRADE */
+.grade { display: inline-block; font-size: 10px; font-weight: 800; padding: 3px 10px; border-radius: 12px; }
+.grade.pos { background: #ECFDF5; color: #047857; }
+.grade.neu { background: #FEF3C7; color: #92400E; }
+
+/* INFO / PLACEHOLDER */
+.info-box { background: #FFF7ED; border-left: 4px solid #EA580C; border-radius: 0 8px 8px 0; padding: 14px 20px; margin-top: 16px; font-size: 12px; color: #636569; line-height: 1.8; }
+.info-box strong { color: #1a1b18; }
+.ph { background: repeating-linear-gradient(45deg,#FFFBEB,#FFFBEB 10px,#FEF3C7 10px,#FEF3C7 20px); border: 1px dashed #F59E0B; border-radius: 8px; padding: 14px 18px; margin: 10px 0; font-size: 12.5px; color: #92400E; line-height: 1.7; }
+.ph strong { color: #78350F; }
+.ph .ph-tag { display: inline-block; font-size: 10px; font-weight: 800; background: #F59E0B; color: #fff; padding: 2px 8px; border-radius: 6px; margin-right: 8px; letter-spacing: 0.03em; }
+
+.note { font-size: 11px; color: #b45309; font-weight: 600; margin-top: 6px; }
+
+/* FOOTER */
+.footer { text-align: center; padding: 40px 0 10px; color: #999; font-size: 12px; line-height: 2; }
+.footer .brand { font-size: 15px; font-weight: 800; color: #1a1b18; margin-bottom: 4px; }
+
+@media (max-width: 768px) {
+  .container { padding: 70px 16px 40px; }
+  .meta-grid { grid-template-columns: repeat(2, 1fr); }
+  .kpi-grid { grid-template-columns: 1fr; }
+  .summary-box .two-track { grid-template-columns: 1fr; }
+  .camp-grid { grid-template-columns: 1fr; }
+  .cm-grid { grid-template-columns: 1fr 1fr; }
+  .section { padding: 24px 20px; }
+  .part-divider .pd-budget { display: none; }
+  .report-header h1 { font-size: 26px; }
+}
+@media print {
+  .toolbar { display: none; }
+  .container { padding: 20px; max-width: none; }
+  body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .section, .summary-box, .camp, .report-header { break-inside: avoid; }
+  @page { size: A4; margin: 12mm; }
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="toolbar-left">
+    <div class="toolbar-logo">BRANDRISE</div>
+    <div class="toolbar-sep"></div>
+    <div class="toolbar-title">댄싱컵 5월 운영 보고서</div>
+  </div>
+  <div class="toolbar-actions">
+    <a class="btn-toolbar alt" href="june-plan.html">6월 운영 플랜 →</a>
+    <button class="btn-toolbar" onclick="window.print()">PDF 저장</button>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="report-header">
+    <div class="label">댄싱컵 × 브랜드라이즈</div>
+    <h1>5월 <em>운영 보고서</em></h1>
+    <div class="meta-grid">
+      <div class="meta-item"><div class="mk">공급자</div><div class="mv">브랜드라이즈 by HIZ</div></div>
+      <div class="meta-item"><div class="mk">수신</div><div class="mv">(주)위드런 · 댄싱컵</div></div>
+      <div class="meta-item"><div class="mk">대상 기간</div><div class="mv">2026. 05. 01 — 05. 31</div></div>
+      <div class="meta-item"><div class="mk">단계</div><div class="mv">5월 — 세팅 · 빌드업</div></div>
+    </div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="summary-box">
+    <div class="hl-label">Summary · 5월 한 줄 정리</div>
+    <div class="lede">5월은 <em>채널과 딥라떼의 토대를 깐 달</em>입니다. 리테이너는 3개 채널 운영을 정립하고 딥라떼 기획·사전 바이럴을 세팅했으며, 컵빙수 캠페인은 광고 효율 업계 평균 대비 <em>2.5배</em>로 채널 성장을 끌어올렸습니다.</div>
+    <div class="two-track">
+      <div class="tt-card">
+        <div class="tt-k">리테이너 (월 500) — 세팅·정립</div>
+        <div class="tt-v">인스타·틱톡·X 3채널 운영 시작 · 딥라떼 기획안 확정 · 체험단·인플루언서 1차 세팅 완료(6월 업로드 예정)</div>
+      </div>
+      <div class="tt-card">
+        <div class="tt-k">컵빙수 여름 캠페인 (별도 200) — 노출·성장</div>
+        <div class="tt-v">메타 광고 CTR 업계 평균 2.5배 · 인스타 팔로워 성장 가속 · 기존 노출형 대비 효율 우위</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 한눈에 보기 -->
+  <div class="section">
+    <h2>5월 <em>한눈에 보기</em></h2>
+    <div class="sec-sub">트랙별 핵심 지표 · 컵빙수 광고·인스타는 실측, 일부는 월말·인사이트 수신 후 갱신</div>
+
+    <div class="track-label"><span class="pill">리테이너</span> 세팅·정립 현황</div>
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kc-label">운영 채널</div>
+        <div class="kc-value">3<span class="kc-unit">채널</span></div>
+        <div class="kc-desc">인스타그램 · 틱톡 · X 운영 시작</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">딥라떼 기획</div>
+        <div class="kc-value">확정</div>
+        <div class="kc-desc">정의·1년 라인업·톤 가이드</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">사전 바이럴 세팅</div>
+        <div class="kc-value">완료</div>
+        <div class="kc-desc">체험단·인플 → 6월 업로드</div>
+      </div>
+    </div>
+
+    <div class="track-label"><span class="pill b">컵빙수</span> 노출·성장 성과</div>
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kc-label">광고 CTR (합산)</div>
+        <div class="kc-value pos">4.14<span class="kc-unit">%</span></div>
+        <div class="kc-chg up">업계 평균 1.67% 대비 2.5배</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">인스타 팔로워</div>
+        <div class="kc-value">2,582</div>
+        <div class="kc-chg up">+92명 · 5/15 대비</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">광고 클릭 / 지출</div>
+        <div class="kc-value">2,021<span class="kc-unit">클릭</span></div>
+        <div class="kc-desc">지출 300천원 · 예산 전액 소진</div>
+      </div>
+    </div>
+    <div class="note">※ 컵빙수 캠페인 수치는 캠페인 전체 기간(5/15~5/28) 최종 확정치 — Meta Marketing API. 인스타 팔로워는 5/31 기준.</div>
+  </div>
+
+  <!-- ════════ PART A ════════ -->
+  <div class="part-divider a">
+    <span class="pd-tag">PART A</span>
+    <span class="pd-title">리테이너 운영</span>
+    <span class="pd-budget">월 500만원 · 세팅·시작·채널 정립</span>
+  </div>
+
+  <!-- A1. 계획 × 결과 -->
+  <div class="section">
+    <h2>A1. 5월 계획 <em>× 결과</em></h2>
+    <div class="sec-sub">리테이너 약속 대비 5월 진행 결과</div>
+    <table>
+      <thead><tr><th>영역</th><th>5월 약속</th><th style="width:160px;">결과 / 상태</th></tr></thead>
+      <tbody>
+        <tr><td class="item">채널 운영</td><td class="desc">인스타·틱톡·X 운영 정립</td><td><span class="st done">운영 시작</span></td></tr>
+        <tr><td class="item">딥라떼 기획</td><td class="desc">정의·1년 라인업·서포터즈·톤 가이드</td><td><span class="st done">확정</span></td></tr>
+        <tr><td class="item">딥라떼 사전 바이럴</td><td class="desc">체험단·인플루언서 섭외·제작 (6월 업로드)</td><td><span class="st done">1차 세팅 완료</span></td></tr>
+        <tr><td class="item">검색·언급 베이스라인</td><td class="desc">딥라떼·부산 라떼 검색·언급 측정 착수</td><td><span class="st prog">측정 착수</span></td></tr>
+        <tr><td class="item">모니터링·KPI</td><td class="desc">반응 모니터링·주간 KPI·월간 리포트</td><td><span class="st done">가동</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- A2. 채널 계정 운영 정립 -->
+  <div class="section">
+    <h2>A2. 채널 계정 <em>운영 정립</em></h2>
+    <div class="sec-sub">인스타그램 · 틱톡 · X 3채널 운영 시작 — 5월은 채널별 역할·톤 정립 단계</div>
+
+    <h3 class="block-t">인스타그램 공식 (@dancingcup.official)</h3>
+    <p class="body">컵빙수 캠페인 노출 확대와 맞물려 팔로워가 <strong>5/15 2,490명 → 5/31 2,582명(+92명)</strong>으로 성장했습니다. 5월 자체 발행은 릴스 중심으로 운영했고, 6월부터 딥라떼 사전 노출 피드를 본격화합니다.</p>
+    <div class="note">※ 채널 성장의 상세 분석은 PART B(컵빙수 캠페인)에 정리.</div>
+
+    <h3 class="block-t">틱톡 (@dancingcup.official)</h3>
+    <p class="body">5월 계정 개설 · 영상 <strong>3건</strong> · 팔로워 <strong>1명</strong> · 누적 ♥ <strong>18</strong>. 인스타 릴스 확산 건의 <strong>미러링(재포스팅)</strong>으로 같은 소재를 추가 채널에 노출하는 운영 모델로 세팅했습니다.</p>
+    <table>
+      <thead><tr><th style="width:78px;">업로드</th><th>제목 / 캡션</th><th class="r">조회</th><th class="r">♥</th><th class="r">댓글</th><th class="r">공유</th><th class="r">저장</th></tr></thead>
+      <tbody>
+        <tr><td>5/22</td><td class="desc">새 마케팅 직원이 컵빙수 사진 찍는 자세가 심상치 않습니다…</td><td class="r"><strong>939</strong></td><td class="r">8</td><td class="r">0</td><td class="r">0</td><td class="r">1</td></tr>
+        <tr><td>5/21</td><td class="desc">올여름엔 빙수도 빨대로 쭈욱 — 컵빙수 3종 출시</td><td class="r">519</td><td class="r">8</td><td class="r">0</td><td class="r">1</td><td class="r">0</td></tr>
+        <tr><td>5/26</td><td class="desc">한 컵에 담은 여름의 맛 — SUMMER CUP BINGSU TRIO</td><td class="r">233</td><td class="r">2</td><td class="r">0</td><td class="r">1</td><td class="r">1</td></tr>
+        <tr style="background:#FFF7ED;"><td><strong>합</strong></td><td class="desc">3편</td><td class="r"><strong>1,691</strong></td><td class="r"><strong>18</strong></td><td class="r">0</td><td class="r">2</td><td class="r">2</td></tr>
+      </tbody>
+    </table>
+    <div class="note">바이오: "High quality Low price Coffee. 모두가, 매일, 부담없이 즐기는 좋은 커피 ☕️" / 5/29 기준</div>
+
+    <h3 class="block-t">X (@dancingcup_life)</h3>
+    <p class="body">5월 일상 운영 시작 · 트윗 <strong>10건</strong>(미디어 1) · 팔로워 <strong>8명</strong> · 받은 좋아요 <strong>13</strong> · 리트윗 <strong>19</strong>. 공식 어투를 걷어낸 <strong>실시간 커뮤니케이션·30분 룰</strong> 기반 운영자 캐릭터로 일상 톤을 정립하는 단계입니다. 반응의 대부분은 <strong>5/26 트친소 오픈 이벤트</strong>(♥10·RT19)에서 발생했습니다.</p>
+    <table>
+      <thead><tr><th style="width:60px;">업로드</th><th>유형 · 내용</th><th class="r">♥</th><th class="r">RT</th></tr></thead>
+      <tbody>
+        <tr><td>5/22</td><td class="desc">계정 개설 인사 — "소문만 무성하던 라떼 맛집 댄싱컵 … 부산 출신 막내 마케터가 박박 우긴 결과 계정 개설"</td><td class="r">3</td><td class="r">0</td></tr>
+        <tr><td>5/23</td><td class="desc">고객 언급 리액션 — "부족한 환경에서도 댄싱컵 자체 홍보해주셔서 감사" (UGC 인용)</td><td class="r">0</td><td class="r">0</td></tr>
+        <tr><td>5/23</td><td class="desc">알바생 픽 — "현생 힘들 때 먹는 조합: 댄싱 딥라떼 + 말차화이트초코쿠키"</td><td class="r">0</td><td class="r">0</td></tr>
+        <tr><td>5/23</td><td class="desc">메뉴 추천 — "우베맛 제대로 나는 우베크림슈페너, 더 많은 분들이 알아야"</td><td class="r">0</td><td class="r">0</td></tr>
+        <tr><td>5/23</td><td class="desc">메뉴 추천 — "얼그레이 향 찐한데 안 텁텁한 밀크티, 댄싱컵이 해냄"</td><td class="r">0</td><td class="r">0</td></tr>
+        <tr style="background:#FFF7ED;"><td><strong>5/26</strong></td><td class="desc"><strong>★ 트친소 오픈 이벤트</strong> (미디어) — "댄싱컵 시그니처 딥라떼 먹어보실 분? 팔로우 하면 맞팔 · RT 이벤트"</td><td class="r"><strong>10</strong></td><td class="r"><strong>19</strong></td></tr>
+        <tr><td>5/26</td><td class="desc">이벤트 안내 (답글) — "기프티콘 준비 중, 매장 방문형으로 진행"</td><td class="r">0</td><td class="r">0</td></tr>
+        <tr><td>5/26</td><td class="desc">고객 언급 리액션 — "서울에 더 많이 생길 수 있도록 열심히" (UGC 인용)</td><td class="r">0</td><td class="r">0</td></tr>
+        <tr><td>5/26</td><td class="desc">메뉴 리액션 — "댄싱컵 르뱅쿠키는 겉바속쫀의 정석"</td><td class="r">0</td><td class="r">0</td></tr>
+        <tr><td>5/27</td><td class="desc">매장 안내 — "댄싱컵 우베 정상 영업합니다, 우베맛 진하고 크림 술술"</td><td class="r">0</td><td class="r">0</td></tr>
+        <tr style="background:#f8fafb;"><td><strong>합</strong></td><td class="desc">10건 (미디어 1 · 고객 언급 인용 4)</td><td class="r"><strong>13</strong></td><td class="r"><strong>19</strong></td></tr>
+      </tbody>
+    </table>
+    <div class="note">출처: X 계정 데이터 아카이브(5/30 내보내기). 노출(임프레션)·답글 수는 아카이브에 미포함. 바이오: "어깨춤이 절로 나오는 카페 댄싱컵 (내 기준)" / 5/29 기준</div>
+  </div>
+
+  <!-- A3. 딥라떼 바이럴 세팅 -->
+  <div class="section">
+    <h2>A3. 딥라떼 <em>사전 바이럴 세팅</em></h2>
+    <div class="sec-sub">7월 출시 전 키워드·검색량 선점 — 5월 섭외·제작, 6월 업로드</div>
+    <table>
+      <thead><tr><th>항목</th><th>5월 진행</th><th style="width:150px;">업로드</th></tr></thead>
+      <tbody>
+        <tr><td class="item">인플루언서 시딩</td><td class="desc">섭외·브리프·소재 제작 진행 (마이크로·전문가 라인 발굴)</td><td><span class="st plan">6월 업로드 예정</span></td></tr>
+        <tr><td class="item">블로그 체험단</td><td class="desc">플랫폼 컨택·모집 준비 · 메뉴 키워드 풀 구축</td><td><span class="st plan">6월 업로드 예정</span></td></tr>
+        <tr><td class="item">메타 광고</td><td class="desc">계정·픽셀·소재 사전 셋업</td><td><span class="st prog">셋업 진행</span></td></tr>
+      </tbody>
+    </table>
+    <div class="info-box">인플루언서·체험단은 <strong>5월부터 섭외·콘텐츠 제작을 진행</strong>하며, 실제 업로드(노출)는 7월 딥라떼 출시 전 검색량 선점을 위해 <strong>6월에 진행</strong>합니다.</div>
+  </div>
+
+  <!-- A4. 딥라떼 기획안 -->
+  <div class="section">
+    <h2>A4. 딥라떼 <em>기획안</em></h2>
+    <div class="sec-sub">5월 메인 산출물 — 9개월 실행 기획안 v5 + 자매 리서치북 v9 확정 (4/29·5/11 미팅 결정 반영)</div>
+
+    <h3 class="block-t">핵심 한 줄</h3>
+    <div class="info-box" style="background:#FFF7ED;border-left:4px solid #EA580C;padding:18px 20px;">
+      <strong>"댄싱컵 = 라떼가 맛있는 집"</strong> — 더 낫다고 주장하지 않고, 장면과 매일의 반복으로 하나의 연상을 9개월간 누적합니다. 상시 시그니처 한 잔 = <strong>댄싱컵 딥라떼</strong>(우유 블렌딩 베이스, 1년 상시).
+    </div>
+
+    <h3 class="block-t">전략의 네 축</h3>
+    <table>
+      <tbody>
+        <tr><td class="item">헤드</td><td class="desc">"라떼가 맛있는 집" — 비교 우위로 설득하지 않고 연상을 점유. 한국 저가 카페 4대(메가·컴포즈·빽·이디야) 중 1년 상시 라떼 시그니처 보유 브랜드 0 — <strong>진입자가 정의자</strong>.</td></tr>
+        <tr><td class="item">증거</td><td class="desc">댄싱컵 딥라떼 (오리지널·솔티드·너티 3종 풍미). 헤드를 손에 쥐여주는 실물 한 잔.</td></tr>
+        <tr><td class="item">빈도</td><td class="desc">130개 매장 = 매일 반복 노출. 단발 한 방이 아닌 누적으로 점유.</td></tr>
+        <tr><td class="item">신메뉴</td><td class="desc">컵빙수·오미자에이드 등 시즌 메뉴는 별도 간판이 아니라 헤드 아래에서 반복 노출을 키우는 계기. 본사 통일 운영으로 빠른 일제 적용.</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="block-t">확정 산출물</h3>
+    <ul class="body">
+      <li><strong>기획안 v5</strong> — 9개월 실행안 12개 섹션 (전략·방법론·채널·라떼 전략·신메뉴 운영·거점/서포터즈/인플·비주얼·1년 액션·예산·KPI·리스크·결정 게이트)</li>
+      <li><strong>리서치북 v9</strong> — 사실·신호·인사이트. 기획안의 모든 결정과 1:1 매핑되는 자매 산출물</li>
+      <li><strong>1년 액션 플랜</strong> — 월별·D-Day 표준 · 14지표 3계층 KPI 트래킹</li>
+      <li><strong>서포터즈·인플 운영안</strong> — 5/11 미팅 결정 게이트 6건 + 후속 4건 반영. 모집 폼·인센티브 구조·콘텐츠 가이드</li>
+      <li><strong>채널 톤·콘텐츠 가이드</strong> — 인스타·틱톡·X·인플 3-레이어 채널별 역할 분리, 어휘룰 v3.1</li>
+    </ul>
+
+    <div class="info-box">기획안·리서치북 전체 분량은 9개월 운영 전반을 다루므로 별도 문서로 공유합니다 — <strong>기획안_딥라떼_v5.html · 리서치북_딥라떼_v9.html · 견적서 retainer/summer</strong>.</div>
+  </div>
+
+  <!-- A5. 리테이너 예산 집행 -->
+  <div class="section">
+    <h2>A5. 리테이너 <em>예산 집행</em></h2>
+    <div class="sec-sub">월 500만원 (VAT 별도) · 5~6월은 딥라떼 사전 바이럴 집중을 위해 채널 운영 슬림화</div>
+    <table>
+      <thead><tr><th>파트</th><th>내용</th><th class="r">금액</th><th style="width:120px;">집행</th></tr></thead>
+      <tbody>
+        <tr><td class="item">Part 1</td><td class="desc">채널 상시 운영 (인스타·릴스·X·틱톡·모니터링)</td><td class="amount">1,500,000</td><td><span class="st done">진행</span></td></tr>
+        <tr><td class="item">Part 2</td><td class="desc">딥라떼 사전 바이럴 — 5월 섭외·소재 제작·메타 셋업 <span style="color:#1d4ed8;">/ 인플루언서·체험단 집행은 6월 예정</span></td><td class="amount">1,500,000</td><td><span class="st prog">6월 집행</span></td></tr>
+        <tr><td class="item">Part 3</td><td class="desc">딥라떼 기획·리서치 <span style="color:#EA580C;">★ 5월 메인</span></td><td class="amount">2,000,000</td><td><span class="st done">완료</span></td></tr>
+        <tr class="subtotal-row"><td class="item" colspan="2">리테이너 합계</td><td class="amount">5,000,000</td><td></td></tr>
+      </tbody>
+    </table>
+    <div class="info-box"><strong>인플루언서·체험단은 6월에 집행</strong>됩니다 — 7월 딥라떼 출시 전 검색량 선점을 위해 업로드 시점을 6월로 맞췄기 때문입니다(5월은 섭외·콘텐츠 제작). 금액은 견적 기준이며, 실집행 정산 내역 수신 시 갱신합니다.</div>
+  </div>
+
+  <!-- ════════ PART B ════════ -->
+  <div class="part-divider b">
+    <span class="pd-tag">PART B</span>
+    <span class="pd-title">컵빙수 여름 캠페인</span>
+    <span class="pd-budget">별도 200만원 · 노출 확대 → 채널 성장</span>
+  </div>
+
+  <!-- B1. 캠페인 개요·채널 성장 -->
+  <div class="section">
+    <h2>B1. 캠페인 개요 <em>· 채널 성장</em></h2>
+    <div class="sec-sub">여름 신메뉴 컵빙수 바이럴 — 메타 광고로 노출을 확대하고 공식 채널 성장으로 연결</div>
+    <table>
+      <tbody>
+        <tr><td class="item" style="width:130px;">캠페인</td><td class="desc">(26-05) 댄싱컵 컵빙수 바이럴</td></tr>
+        <tr><td class="item">기간</td><td class="desc">2026. 05. 15 — 05. 28</td></tr>
+        <tr><td class="item">채널</td><td class="desc">Meta (Instagram + Facebook) · 자체제작 + 인플루언서 2개 캠페인</td></tr>
+        <tr><td class="item">목적</td><td class="desc">여름 신메뉴 노출 확대 · 공식 계정 팔로워·인지 성장</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="block-t">채널 성장 — 팔로워</h3>
+    <p class="body">캠페인 노출 확대와 맞물려 인스타 팔로워가 <strong>2,490명(5/15) → 2,582명(5/31)으로 +92명</strong> 성장했습니다. 광고 도달이 프로필 유입·팔로우로 이어진 결과입니다.</p>
+
+    <h3 class="block-t">캠페인 총 노출 — 광고 + 인플루언서 합산</h3>
+    <p class="body">이번 캠페인은 메타 광고와 인플루언서 오가닉을 같은 컵빙수 소재로 묶어 운영했습니다. 두 경로의 노출을 합치면 캠페인이 만든 <strong>총 노출은 약 10만(101,580)</strong>에 이릅니다.</p>
+    <div class="kpi-grid" style="margin-top:14px;">
+      <div class="kpi-card">
+        <div class="kc-label">캠페인 총 노출</div>
+        <div class="kc-value pos">101,580</div>
+        <div class="kc-desc">광고 노출 48,838 + 인플 조회 52,742</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">광고 클릭</div>
+        <div class="kc-value">2,021</div>
+        <div class="kc-desc">CTR 4.14% · 업계 평균 2.5배</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">인플 오가닉 반응</div>
+        <div class="kc-value">842</div>
+        <div class="kc-desc">좋아요·댓글·공유·저장 합</div>
+      </div>
+    </div>
+
+    <h3 class="block-t">기존 파워페이지 운영 대비 — 노출도, 반응도 높았다</h3>
+    <p class="body">단순 노출 확보에 그쳤던 기존 파워페이지 방식과 달리, 이번 캠페인은 <strong>노출 규모(약 10만) 자체를 키우면서, 그 노출이 클릭·프로필 유입·팔로우(+92)·저장·공유 같은 실제 반응으로 이어졌습니다.</strong></p>
+    <ul class="body">
+      <li><strong>노출 — 더 크게.</strong> 광고 48,838 + 인플 오가닉 52,742를 합쳐 한 캠페인으로 10만 노출을 형성. 유료·오가닉을 같은 소재로 묶어 노출을 증폭했습니다.</li>
+      <li><strong>반응 — 측정 가능하게.</strong> 노출에서 끝나지 않고 클릭 2,021건(CTR 4.14% · 업계 평균 2.5배) · 인플 저장·공유 842건 · 신규 팔로우까지 동선이 잡힙니다.</li>
+      <li><strong>최적화 — 소재 단위로.</strong> 7개 소재의 CTR·CPC를 각각 측정해 잘 되는 소재에 예산을 집중(무릉도원·5초 후킹에 지출 90%)하는 운영이 가능했습니다.</li>
+    </ul>
+    <div class="note">※ 총 노출은 광고 노출(impressions)과 인플 오가닉 조회를 합산한 값으로, 두 경로 간 일부 중복 시청이 있을 수 있습니다.</div>
+  </div>
+
+  <!-- B2. 인플루언서 업로드 성과 -->
+  <div class="section">
+    <h2>B2. 인플루언서 <em>업로드 성과</em></h2>
+    <div class="sec-sub">인플루언서 본인 피드 오가닉 성과 · 5/12 동시 업로드 3편 (인스타 릴스 인사이트 기준)</div>
+
+    <table>
+      <thead><tr><th>인플</th><th>영상</th><th class="r">조회</th><th class="r">도달</th><th class="r">반응</th><th class="r">좋아요</th><th class="r">댓글</th><th class="r">공유</th><th class="r">저장</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="item">무릉도원</td>
+          <td class="desc">한손에 들어오는 컵빙수 (0:10)</td>
+          <td class="r"><strong>33,654</strong></td><td class="r">15,592</td><td class="r">478</td>
+          <td class="r">210</td><td class="r">36</td><td class="r"><strong>196</strong></td><td class="r">32</td>
+        </tr>
+        <tr>
+          <td class="item">말차발굴녀</td>
+          <td class="desc">광고 with 이벤트 · 말차컵빙수 (0:30)</td>
+          <td class="r">10,529</td><td class="r">—</td><td class="r">145</td>
+          <td class="r">85</td><td class="r">17</td><td class="r">28</td><td class="r">11</td>
+        </tr>
+        <tr>
+          <td class="item">먹솜</td>
+          <td class="desc">올여름 #댄싱컵 #컵빙수 어떠세요 (0:15)</td>
+          <td class="r">8,559</td><td class="r">7,366</td><td class="r">219</td>
+          <td class="r">115</td><td class="r">32</td><td class="r">55</td><td class="r">13</td>
+        </tr>
+        <tr style="background:#FFF7ED;">
+          <td class="item"><strong>합</strong></td><td class="desc">3편 합산</td>
+          <td class="r"><strong>52,742</strong></td><td class="r"><strong>22,958</strong><sup>*</sup></td><td class="r"><strong>842</strong></td>
+          <td class="r"><strong>410</strong></td><td class="r"><strong>85</strong></td><td class="r"><strong>279</strong></td><td class="r"><strong>56</strong></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="note">* 말차발굴녀는 광고 게재 영상이라 도달 항목 미표기. (조회·반응만 노출)</div>
+
+    <h3 class="block-t">짚어볼 포인트</h3>
+    <ul class="body">
+      <li><strong>무릉도원 단편 조회 33,654 · 공유 196건</strong> — 3편 중 압도적. "한손에 들어오는" 후킹이 저장·공유 동선으로 연결됐고, 메타 광고 소재(B3 소재 2 · 무릉도원)에서도 지출 1위(135,346원)로 이어졌습니다.</li>
+      <li><strong>먹솜 영상에서 댄싱컵 공식 신규 팔로우 9건 발생</strong> — 인플 영상 → 공식 프로필 이동 → 팔로우까지 연결되는 동선 확인. 인플 콘텐츠가 자사 채널 성장(+92명)에도 기여한 트래픽 경로입니다.</li>
+      <li><strong>3편 합 도달 22,958 · 반응 842</strong> — 인플 본인 피드 오가닉만으로도 상당한 규모. 같은 소재를 <a href="#" style="color:#EA580C;text-decoration:none;font-weight:600;">B3 메타 광고</a>로 증폭(노출 48,838 · 도달 38,173)해, 인플 오가닉 조회까지 더하면 컵빙수 소재가 닿은 <strong>총 노출 ≈ 10만+</strong>(광고 노출 48,838 + 인플 조회 52,742)가 형성됐습니다.</li>
+    </ul>
+  </div>
+
+  <!-- B3. 메타 광고 성과 -->
+  <div class="section">
+    <h2>B3. 메타 광고 <em>성과</em></h2>
+    <div class="sec-sub">자체제작 vs 인플루언서 2개 캠페인 · 업계 벤치마크 대비 (캠페인 전체 기간 5/15~5/28 최종)</div>
+    <div class="camp-grid">
+      <div class="camp">
+        <div class="ctitle">컵빙수 자체제작 <span class="tag">캠페인</span></div>
+        <div class="cm-grid">
+          <div class="cm-cell"><div class="l">CTR</div><div class="v">3.50<small>%</small></div><span class="bench-cap">평균 1.67%</span><span class="bench pos">+110% 우수</span></div>
+          <div class="cm-cell"><div class="l">CPC</div><div class="v">158<small>원</small></div><span class="bench-cap">평균 993원</span><span class="bench pos">우수</span></div>
+          <div class="cm-cell"><div class="l">CPM</div><div class="v">5,514<small>원</small></div></div>
+        </div>
+        <div class="cm-foot"><span><b>지출</b> 149,884원</span><span><b>노출</b> 27,180</span><span><b>도달</b> 20,578</span><span><b>클릭</b> 950</span></div>
+      </div>
+      <div class="camp">
+        <div class="ctitle">컵빙수 인플루언서 <span class="tag alt">캠페인</span></div>
+        <div class="cm-grid">
+          <div class="cm-cell"><div class="l">CTR</div><div class="v">4.95<small>%</small></div><span class="bench-cap">평균 1.67%</span><span class="bench pos">+196% 우수</span></div>
+          <div class="cm-cell"><div class="l">CPC</div><div class="v">140<small>원</small></div><span class="bench-cap">평균 993원</span><span class="bench pos">우수</span></div>
+          <div class="cm-cell"><div class="l">CPM</div><div class="v">6,922<small>원</small></div></div>
+        </div>
+        <div class="cm-foot"><span><b>지출</b> 149,920원</span><span><b>노출</b> 21,658</span><span><b>도달</b> 14,924</span><span><b>클릭</b> 1,071</span></div>
+      </div>
+    </div>
+    <div class="info-box">두 캠페인 <strong>합산 지출 299,804원 · 클릭 2,021건 · CTR 4.14%</strong>로 업계 평균(1.67%)의 <strong>2.5배</strong> 효율. 캠페인 전 기간으로 보면 <strong>인플루언서 협업 소재(CTR 4.95% · CPC 140원)</strong>가 자체제작을 근소하게 앞섰습니다. (벤치마크: WordStream 2025 F&amp;B · 글로벌 기준 · CTR은 캠페인 단위 전체 클릭 기준)</div>
+  </div>
+
+  <!-- B4. 소재별 성과 -->
+  <div class="section">
+    <h2>B4. 소재별 <em>성과</em></h2>
+    <div class="sec-sub">지출 내림차순 · 등급 = 우수(CTR ≥ 업계평균 2배 3.34%) / 양호(평균 1.67% 이상) · 캠페인 전체 기간(5/15~5/28) 최종</div>
+    <table>
+      <thead><tr><th>#</th><th>소재</th><th>등급</th><th class="r">지출</th><th class="r">클릭</th><th class="r">CTR</th><th class="r">CPC</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td class="item">소재 2 · 무릉도원</td><td><span class="grade neu">양호</span></td><td class="r">135,346원</td><td class="r">596</td><td class="r">3.02%</td><td class="r">227원</td></tr>
+        <tr><td>2</td><td class="item">소재 2 · 5초 후킹</td><td><span class="grade pos">우수</span></td><td class="r">134,800원</td><td class="r">881</td><td class="r">3.59%</td><td class="r">153원</td></tr>
+        <tr><td>3</td><td class="item">소재 3 · 말차발굴녀</td><td><span class="grade neu">양호</span></td><td class="r">11,297원</td><td class="r">39</td><td class="r">2.67%</td><td class="r">290원</td></tr>
+        <tr><td>4</td><td class="item">소재 2-1 · 마케터 페르소나</td><td><span class="grade neu">양호</span></td><td class="r">7,438원</td><td class="r">43</td><td class="r">3.26%</td><td class="r">173원</td></tr>
+        <tr><td>5</td><td class="item">소재 3 · AI 활용 광고</td><td><span class="grade pos">우수</span></td><td class="r">3,931원</td><td class="r">27</td><td class="r">3.99%</td><td class="r">146원</td></tr>
+        <tr><td>6</td><td class="item">소재 1 · TTS 바이럴</td><td><span class="grade neu">양호</span></td><td class="r">3,715원</td><td class="r">19</td><td class="r">3.02%</td><td class="r">196원</td></tr>
+        <tr><td>7</td><td class="item">소재 1 · 먹솜</td><td><span class="grade neu">양호</span></td><td class="r">3,277원</td><td class="r">10</td><td class="r">2.07%</td><td class="r">328원</td></tr>
+      </tbody>
+    </table>
+    <div class="note">※ 7개 소재 전부 업계 평균 CTR(1.67%)을 상회. 소재별 CTR은 링크 클릭 기준(B3 캠페인 합산은 전체 클릭 기준이라 수치 차이). 소재 라벨·썸네일은 클라 공유본에서 다듬을 수 있음.</div>
+  </div>
+
+  <!-- B5. 캠페인 예산 집행 -->
+  <div class="section">
+    <h2>B5. 캠페인 <em>예산 집행</em></h2>
+    <div class="sec-sub">여름 컵빙수 캠페인 (별도 200만원) — 광고비 집행 현황</div>
+    <table>
+      <thead><tr><th>항목</th><th>내용</th><th class="r">금액</th><th style="width:110px;">상태</th></tr></thead>
+      <tbody>
+        <tr><td class="item">메타 광고비</td><td class="desc">자체제작 + 인플루언서 2개 캠페인 (5/15~5/28 · 예산 전액 소진)</td><td class="amount">299,804</td><td><span class="st done">집행 완료</span></td></tr>
+        <tr><td class="item">콘텐츠 제작 · 인플루언서</td><td class="desc">자체 릴스·AI 소재 제작 + 인플루언서(무릉도원·말차발굴녀·먹솜) 섭외·콘텐츠</td><td class="amount">1,700,196</td><td><span class="st done">집행 완료</span></td></tr>
+        <tr class="subtotal-row"><td class="item" colspan="2">컵빙수 캠페인 합계 (전액 집행)</td><td class="amount">2,000,000</td><td><span class="st done">완료</span></td></tr>
+      </tbody>
+    </table>
+    <div class="note">※ 메타 광고비는 API 집계 확정치(299,804원). 컵빙수 캠페인 200만원은 전액 집행 완료. 항목별 세부 단가는 클라 정산서 기준.</div>
+  </div>
+
+  <!-- 6월로 이어가는 것 -->
+  <div class="section">
+    <h2>6월로 <em>이어가는 것</em></h2>
+    <div class="sec-sub">5월 토대 위에서 6월은 콘텐츠 업로드를 본격화합니다</div>
+    <ul class="body">
+      <li><strong>딥라떼 콘텐츠 업로드 본격화</strong> — 5월 세팅한 체험단·인플루언서 콘텐츠가 6월 노출 시작</li>
+      <li><strong>서포터즈 1차 모집·운영</strong> — 모집 개시 및 입문 OT</li>
+      <li><strong>3채널 콘텐츠 가속</strong> — 인스타 피드·릴스, 틱톡 미러링, X 일상 운영</li>
+      <li><strong>측정 체계 가동</strong> — 검색·언급·UGC·매출 연동 트래킹</li>
+    </ul>
+    <div class="info-box">상세 실행 계획은 <a href="june-plan.html" style="color:#EA580C;font-weight:700;">6월 운영 플랜 →</a> 참고.</div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="brand">BRANDRISE</div>
+    댄싱컵 × 브랜드라이즈 · 2026년 5월 운영 보고서<br>
+    데이터: Meta Marketing API · Instagram Graph API (자동 집계) · 일부 수치는 월말·인사이트 수신 후 확정
+  </div>
+
+</div>
+</body>
+</html>
