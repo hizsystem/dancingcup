@@ -881,34 +881,35 @@ p, li, .sub, .mc-desc, .rg-desc, .is-cap, .og-body,
 }
 .image-strip.cols-2 { grid-template-columns: repeat(2, 1fr); }
 .is-card {
-  position: relative;
-  aspect-ratio: 16 / 10;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
-  background: var(--line-soft);
-  border-radius: 2px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 3px;
 }
 .is-card img {
-  width: 100%; height: 100%;
-  object-fit: contain;
+  width: 100%; height: 215px;
+  object-fit: cover; object-position: center;
   display: block;
   transition: transform 0.6s cubic-bezier(.2,.7,.3,1);
 }
-.is-card:hover img { transform: scale(1.04); }
+.is-card:hover img { transform: scale(1.03); }
 .is-card .is-cap {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.82), rgba(0,0,0,0.15) 75%, transparent);
-  color: #fff;
-  padding: 36px 14px 12px;
+  background: var(--cream, var(--line-soft));
+  color: var(--ink-soft, #333);
+  padding: 12px 15px 13px;
   font-size: 12px;
   letter-spacing: 0.005em;
   line-height: 1.5;
+  border-top: 1px solid var(--line);
+  flex: 1;
 }
-.is-card .is-cap b { font-weight: 700; color: #fff; }
+.is-card .is-cap b { font-weight: 700; color: var(--ink); }
 .is-card .is-cap .src {
   display: block;
   font-size: 9.5px;
-  opacity: 0.72;
+  color: var(--grey);
   margin-top: 4px;
   letter-spacing: 0.06em;
 }
@@ -1921,12 +1922,12 @@ p, li, .sub, .mc-desc, .rg-desc, .is-cap, .og-body,
 
     <div class="image-strip cols-2">
       <div class="is-card">
-        <img src="images_v6/scene_aficionado.jpg" alt="애호가가 딥라떼를 발견·촬영하는 장면" loading="lazy" style="max-height:180px;object-fit:cover;">
-        <div class="is-cap">애호가가 브이로그에 딥라떼를 담는 장면 — 발견처럼<span class="src">AI 시안 · 촬영 시 교체</span></div>
+        <img src="images_v6/scene_aficionado.jpg" alt="애호가가 딥라떼를 발견·촬영하는 장면" loading="lazy">
+        <div class="is-cap">애호가가 브이로그에 딥라떼를 담는 장면 — 발견처럼<span class="src">레퍼런스(상업용 CC) · 촬영 시 교체</span></div>
       </div>
       <div class="is-card">
-        <img src="images_v6/scene_expert.jpg" alt="전문가가 딥라떼를 분석하는 장면" loading="lazy" style="max-height:180px;object-fit:cover;">
-        <div class="is-cap">전문가가 "왜 도는지" 뜯어보는 장면 (비교·블라인드 아님)<span class="src">AI 시안 · 촬영 시 교체</span></div>
+        <img src="images_v6/scene_expert.jpg" alt="전문가가 딥라떼를 분석하는 장면" loading="lazy">
+        <div class="is-cap">전문가가 "왜 도는지" 뜯어보는 장면 (비교·블라인드 아님)<span class="src">레퍼런스(상업용 CC) · 촬영 시 교체</span></div>
       </div>
     </div>
 
@@ -1971,12 +1972,12 @@ p, li, .sub, .mc-desc, .rg-desc, .is-cap, .og-body,
 
     <div class="image-strip cols-2">
       <div class="is-card">
-        <img src="images_v6/scene_settle.jpg" alt="동네에서 딥라떼를 들고 가는 장면" loading="lazy" style="max-height:170px;object-fit:cover;">
-        <div class="is-cap">정착 — 내 동네에서 매일 들고 가는 딥라떼<span class="src">AI 시안 · 촬영 시 교체</span></div>
+        <img src="images_v6/scene_settle.jpg" alt="동네에서 딥라떼를 들고 가는 장면" loading="lazy">
+        <div class="is-cap">정착 — 내 동네에서 매일 들고 가는 딥라떼<span class="src">레퍼런스(상업용 CC) · 촬영 시 교체</span></div>
       </div>
       <div class="is-card">
-        <img src="images_v6/scene_newyork.jpg" alt="해외 감도 비주얼 장면" loading="lazy" style="max-height:170px;object-fit:cover;">
-        <div class="is-cap">뉴욕 — 외치지 않고 비주얼이 말하는 무드<span class="src">AI 시안 · 촬영 시 교체</span></div>
+        <img src="images_v6/scene_newyork.jpg" alt="해외 감도 비주얼 장면" loading="lazy">
+        <div class="is-cap">뉴욕 — 외치지 않고 비주얼이 말하는 무드<span class="src">레퍼런스(상업용 CC) · 촬영 시 교체</span></div>
       </div>
     </div>
   </div>
@@ -2021,12 +2022,12 @@ p, li, .sub, .mc-desc, .rg-desc, .is-cap, .og-body,
 
     <div class="image-strip cols-2">
       <div class="is-card">
-        <img src="images_v5/case_tenpercent_kkudeok.jpg" alt="텐퍼센트 꾸덕라떼" loading="lazy" style="max-height:170px;object-fit:cover;">
+        <img src="images_v5/case_tenpercent_kkudeok.jpg" alt="텐퍼센트 꾸덕라떼" loading="lazy">
         <div class="is-cap">근거 — "꾸덕라떼"는 소비자가 붙였다 (3월 33만 잔)<span class="src">이넷뉴스, 2025</span></div>
       </div>
       <div class="is-card">
-        <img src="images_v6/scene_word.jpg" alt="소비자들이 딥라떼를 두고 이야기하는 장면" loading="lazy" style="max-height:170px;object-fit:cover;">
-        <div class="is-cap">소비자가 자기 말로 부르는 장면 — 입소문<span class="src">AI 시안 · 촬영 시 교체</span></div>
+        <img src="images_v6/scene_word.jpg" alt="소비자들이 딥라떼를 두고 이야기하는 장면" loading="lazy">
+        <div class="is-cap">소비자가 자기 말로 부르는 장면 — 입소문<span class="src">레퍼런스(상업용 CC) · 촬영 시 교체</span></div>
       </div>
     </div>
   </div>
