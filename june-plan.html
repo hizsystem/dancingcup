@@ -87,6 +87,27 @@ td.c { text-align: center; font-variant-numeric: tabular-nums; }
 .ph .ph-tag { display: inline-block; font-size: 10px; font-weight: 800; background: #F59E0B; color: #fff; padding: 2px 8px; border-radius: 6px; margin-right: 8px; }
 .note { font-size: 11px; color: #b45309; font-weight: 600; margin-top: 8px; }
 
+/* QUOTE */
+.quote-delta { background:#FFF7ED; border-left:4px solid #EA580C; border-radius:0 8px 8px 0; padding:14px 20px; margin-bottom:20px; font-size:12.5px; color:#636569; line-height:1.85; }
+.quote-delta strong { color:#1a1b18; }
+.quote-total { background:#0D0D0D; border-radius:12px; padding:26px 34px; margin-bottom:20px; display:flex; align-items:center; justify-content:space-between; color:#fff; flex-wrap:wrap; gap:12px; }
+.quote-total .qt-l { font-size:14px; font-weight:600; }
+.quote-total .qt-s { font-size:11px; color:rgba(255,255,255,0.45); margin-top:4px; }
+.quote-total .qt-a { font-size:36px; font-weight:900; letter-spacing:-0.03em; }
+.quote-total .qt-a span { font-size:15px; font-weight:600; }
+.part-block { margin-top:24px; }
+.part-block:first-of-type { margin-top:4px; }
+.part-bar { display:flex; align-items:baseline; justify-content:space-between; margin-bottom:6px; padding-bottom:8px; border-bottom:2px solid #f0f2f5; }
+.part-bar .pb-t { font-size:14.5px; font-weight:800; }
+.part-bar .pb-p { font-size:16px; font-weight:900; color:#EA580C; white-space:nowrap; }
+td.amt { text-align:right; font-weight:700; font-variant-numeric:tabular-nums; white-space:nowrap; width:110px; }
+th.amt-h { text-align:right; }
+tr.sub td { background:#f8fafb; font-weight:800; color:#1a1b18; border-top:1px solid #e8edf1; }
+.chg { display:inline-block; font-size:10px; font-weight:800; padding:2px 8px; border-radius:20px; margin-left:6px; vertical-align:middle; white-space:nowrap; }
+.chg-up { background:#ECFDF5; color:#047857; border:1px solid #A7F3D0; }
+.chg-down { background:#FEF2F2; color:#B91C1C; border:1px solid #FECACA; }
+.chg-new { background:#FFF7ED; color:#EA580C; border:1px solid #FED7AA; }
+
 .footer { text-align: center; padding: 40px 0 10px; color: #999; font-size: 12px; line-height: 2; }
 .footer .brand { font-size: 15px; font-weight: 800; color: #1a1b18; margin-bottom: 4px; }
 
@@ -116,6 +137,7 @@ td.c { text-align: center; font-variant-numeric: tabular-nums; }
   </div>
   <div class="toolbar-actions">
     <a class="btn-toolbar alt" href="may-report.html">← 5월 운영 보고서</a>
+    <a class="btn-toolbar alt" href="quote-june.html">6월 견적서 →</a>
     <button class="btn-toolbar" onclick="window.print()">PDF 저장</button>
   </div>
 </div>
@@ -256,6 +278,77 @@ td.c { text-align: center; font-variant-numeric: tabular-nums; }
         <li>6월 마감 리포트 · 7월 D-Day 점검</li>
       </ul>
     </div>
+  </div>
+
+  <!-- QUOTE -->
+  <div class="section">
+    <h2>6월 <em>운영 견적</em></h2>
+    <div class="sec-sub">월 리테이너 — VAT 별도 · 5월 견적 구조를 유지하되 6월 실행 단계에 맞춰 재배분</div>
+
+    <div class="quote-delta">
+      <strong>5월 대비 변경</strong> — 6월은 딥라떼 핵심 기획(정의·1년 라인업)이 5월에 마무리되어 <strong>기획·리서치 비중을 200만 → 150만으로 조정(−50)</strong>하고, 절감분을 <strong>메타 광고 집행비(매체비) 50만원</strong>으로 재배분했습니다. <strong>월 리테이너 총액 500만원은 동일</strong>합니다.
+    </div>
+
+    <div class="quote-total">
+      <div>
+        <div class="qt-l">6월 월 리테이너 합계</div>
+        <div class="qt-s">VAT 별도 · Part 1~3 합산 · 여름 캠페인(별도 견적)은 본 리테이너와 별개</div>
+      </div>
+      <div class="qt-a">5,000,000<span>원</span></div>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi-card"><div class="kc-label">Part 1</div><div class="kc-value">150<span style="font-size:13px;font-weight:600;color:#999;">만원</span></div><div class="kc-desc">채널 상시 운영</div></div>
+      <div class="kpi-card"><div class="kc-label">Part 2</div><div class="kc-value">200<span style="font-size:13px;font-weight:600;color:#999;">만원</span></div><div class="kc-desc">딥라떼 확산 + 메타 광고</div></div>
+      <div class="kpi-card"><div class="kc-label">Part 3</div><div class="kc-value">150<span style="font-size:13px;font-weight:600;color:#999;">만원</span></div><div class="kc-desc">기획·가이드 (5월比 −50)</div></div>
+    </div>
+
+    <!-- PART 1 -->
+    <div class="part-block">
+      <div class="part-bar"><div class="pb-t">Part 1 — 채널 상시 운영</div><div class="pb-p">1,500,000원</div></div>
+      <table>
+        <thead><tr><th>항목</th><th>내용</th><th class="amt-h">금액</th></tr></thead>
+        <tbody>
+          <tr><td class="item">인스타그램 피드 운영</td><td class="desc">브랜드팀 제작 소재 큐레이션·편집·캡션·해시태그·발행</td><td class="amt">100,000</td></tr>
+          <tr><td class="item">인스타그램 릴스 제작·운영</td><td class="desc">AI 활용 + 바이럴 소재 자체 제작 · 자막·음원·업로드</td><td class="amt">700,000</td></tr>
+          <tr><td class="item">X 상시 운영</td><td class="desc">실시간 커뮤니케이션·클레임 대응 · 30분 룰</td><td class="amt">300,000</td></tr>
+          <tr><td class="item">틱톡 미러링</td><td class="desc">릴스 확산 주요 건 재포스팅 · 틱톡 문법 로컬라이징</td><td class="amt">200,000</td></tr>
+          <tr><td class="item">채널 모니터링·KPI 트래킹</td><td class="desc">언급량·반응 모니터링 · 주간 KPI 체크 · 월간 운영 리포트</td><td class="amt">200,000</td></tr>
+          <tr class="sub"><td colspan="2">Part 1 소계</td><td class="amt">1,500,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PART 2 -->
+    <div class="part-block">
+      <div class="part-bar"><div class="pb-t">Part 2 — 딥라떼 확산 + 메타 광고</div><div class="pb-p">2,000,000원</div></div>
+      <table>
+        <thead><tr><th>항목</th><th>내용</th><th class="amt-h">금액</th></tr></thead>
+        <tbody>
+          <tr><td class="item">인플루언서 시딩 (3명)</td><td class="desc">맛집·라떼·경남 일상 마이크로 라인 섭외·브리프·소재 QC · 6월 콘텐츠 업로드</td><td class="amt">900,000</td></tr>
+          <tr><td class="item">블로그 체험단 (30명)</td><td class="desc">메뉴 키워드 선점·블로그 콘텐츠 풀 구축 · 모집·매니징·QC · 6월 발행</td><td class="amt">300,000</td></tr>
+          <tr><td class="item">메타 광고 운영(대행)</td><td class="desc">캠페인 세팅·소재 운영·타겟팅·리포트 (5월 우수 소재 학습 반영)</td><td class="amt">300,000</td></tr>
+          <tr><td class="item">메타 광고 집행비(매체비)<span class="chg chg-new">신규</span></td><td class="desc">페이스북·인스타 광고 실집행 매체비 (실비 · 잔액·증빙 정산)</td><td class="amt">500,000</td></tr>
+          <tr class="sub"><td colspan="2">Part 2 소계</td><td class="amt">2,000,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PART 3 -->
+    <div class="part-block">
+      <div class="part-bar"><div class="pb-t">Part 3 — 딥라떼 기획·가이드 <span class="chg chg-down">5월比 −50</span></div><div class="pb-p">1,500,000원</div></div>
+      <table>
+        <thead><tr><th>항목</th><th>내용</th><th class="amt-h">금액</th></tr></thead>
+        <tbody>
+          <tr><td class="item">체험단·인플루언서 콘텐츠 가이드</td><td class="desc">Phase 1 메시지(맛 증거 중심) · 금지 어휘 · 필수 표기 기준 — 결은 자유</td><td class="amt">500,000</td></tr>
+          <tr><td class="item">서포터즈 1기 모집·입문 가이드</td><td class="desc">사내 채널 모집안 · 콘텐츠 가이드 · 검수·활동·정산 안내</td><td class="amt">500,000</td></tr>
+          <tr><td class="item">7월 폼 D-Day 사전 기획</td><td class="desc">폼 3종 출시 사전 콘텐츠·예고 설계 · 런칭 타임라인(D-7~D+14) 정비</td><td class="amt">500,000</td></tr>
+          <tr class="sub"><td colspan="2">Part 3 소계</td><td class="amt">1,500,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="ph"><span class="ph-tag">정산 안내</span><strong>메타 광고 집행비(매체비)</strong>는 실제 광고에 집행되는 <strong>실비</strong>로, 잔액·증빙을 월 단위로 정산합니다. 운영 대행비(Part 2)와는 성격이 다른 항목입니다.</div>
   </div>
 
   <!-- CLOSING -->

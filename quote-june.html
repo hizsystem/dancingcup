@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>댄싱컵 6월 리테이너 견적서 — 브랜드라이즈</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans KR', -apple-system, sans-serif; background: #f4f7f9; color: #1a1b18; line-height: 1.7; font-size: 14px; }
+
+.toolbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #0D0D0D; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; }
+.toolbar-left { display: flex; align-items: center; gap: 16px; }
+.toolbar-logo { font-size: 13px; font-weight: 700; color: #EA580C; letter-spacing: 0.05em; }
+.toolbar-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.15); }
+.toolbar-title { font-size: 14px; font-weight: 500; color: #fff; }
+.toolbar-actions { display: flex; gap: 10px; }
+.btn-toolbar { padding: 7px 18px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; background: transparent; color: #fff; font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-block; }
+.btn-toolbar:hover { background: rgba(255,255,255,0.1); }
+.btn-toolbar.alt { border-color: rgba(234,88,12,0.5); color: #EA580C; }
+
+.container { max-width: 900px; margin: 0 auto; padding: 80px 24px 60px; }
+
+/* HEADER */
+.report-header { background: #fff; border-radius: 12px; padding: 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+.report-header .label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px; }
+.report-header h1 { font-size: 26px; font-weight: 900; line-height: 1.35; letter-spacing: -0.02em; margin-bottom: 0; }
+.report-header h1 em { color: #EA580C; font-style: normal; }
+.meta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; padding-top: 24px; border-top: 1px solid #e8edf1; }
+.meta-item .mk { font-size: 11px; color: #999; letter-spacing: 0.04em; margin-bottom: 4px; }
+.meta-item .mv { font-size: 13px; font-weight: 600; }
+
+/* SECTION */
+.section { background: #fff; border-radius: 12px; padding: 32px 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+
+/* PART HEADER */
+.part-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+.part-header h3 { font-size: 16px; font-weight: 700; }
+.part-price { font-size: 18px; font-weight: 900; color: #EA580C; }
+
+/* TABLE */
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { background: #f8fafb; padding: 10px 16px; font-weight: 600; border-bottom: 2px solid #e8edf1; color: #999; font-size: 11px; text-align: left; white-space: nowrap; }
+th:last-child { text-align: right; }
+td { padding: 12px 16px; border-bottom: 1px solid #f0f2f5; vertical-align: middle; }
+td.item { font-weight: 600; color: #1a1b18; white-space: nowrap; width: 220px; }
+td.desc { color: #636569; font-size: 12px; }
+td.amount { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; width: 120px; }
+tr:hover td { background: #fafbfc; }
+tr.subtotal-row td { background: #f8fafb; font-weight: 700; border-top: 1px solid #e8edf1; }
+
+/* KPI GRID */
+.kpi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.kpi-card { background: #f8fafb; border-radius: 10px; padding: 22px 16px; text-align: center; border: 1px solid #e8edf1; }
+.kpi-card .kc-label { font-size: 11px; color: #999; font-weight: 500; letter-spacing: 0.05em; margin-bottom: 8px; }
+.kpi-card .kc-value { font-size: 26px; font-weight: 900; color: #1a1b18; letter-spacing: -0.02em; }
+.kpi-card .kc-unit { font-size: 13px; font-weight: 500; color: #999; }
+.kpi-card .kc-desc { font-size: 11px; color: #999; margin-top: 6px; }
+
+/* TOTAL BOX */
+.total-box { background: #0D0D0D; border-radius: 12px; padding: 32px 40px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.total-box .tl { font-size: 15px; font-weight: 600; color: #fff; }
+.total-box .ts { font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 4px; }
+.total-box .ta { font-size: 40px; font-weight: 900; color: #fff; letter-spacing: -0.03em; }
+.total-box .ta span { font-size: 16px; font-weight: 600; }
+
+/* INFO BOX */
+.info-box { background: #FFF7ED; border-left: 4px solid #EA580C; border-radius: 0 8px 8px 0; padding: 14px 20px; margin-top: 16px; font-size: 12px; color: #636569; line-height: 1.8; }
+.info-box strong { color: #1a1b18; }
+
+/* DELTA BOX */
+.delta-box { background: #FFF7ED; border-left: 4px solid #EA580C; border-radius: 0 8px 8px 0; padding: 16px 22px; margin-bottom: 20px; font-size: 13px; color: #636569; line-height: 1.85; }
+.delta-box strong { color: #1a1b18; }
+
+/* BADGE */
+.badge { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 20px; background: #FFF7ED; color: #EA580C; margin-left: 8px; vertical-align: middle; }
+.badge-new { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 20px; background: #FFF7ED; color: #EA580C; margin-left: 8px; vertical-align: middle; border: 1px solid #FED7AA; }
+.badge-down { display: inline-block; font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 20px; background: #FEF2F2; color: #B91C1C; margin-left: 8px; vertical-align: middle; border: 1px solid #FECACA; }
+
+/* PART SUBNOTE */
+.part-subnote { background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 8px; padding: 10px 14px; margin: -8px 0 18px; font-size: 12px; color: #78350F; line-height: 1.65; }
+.part-subnote strong { color: #92400E; font-weight: 700; }
+
+/* FOOTER */
+.footer { text-align: center; padding: 40px 0; color: #999; font-size: 12px; line-height: 2; }
+.footer .brand { font-size: 15px; font-weight: 800; color: #1a1b18; margin-bottom: 4px; }
+
+@media (max-width: 768px) {
+  .container { padding: 70px 16px 40px; }
+  .meta-grid { grid-template-columns: repeat(2, 1fr); }
+  .kpi-grid { grid-template-columns: 1fr; }
+  .section { padding: 24px 20px; }
+  .total-box { flex-direction: column; text-align: center; }
+  td.item { white-space: normal; width: auto; }
+}
+@media print {
+  .toolbar { display: none; }
+  .container { padding: 20px; }
+  body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .section, .total-box, .delta-box { break-inside: avoid; }
+  @page { size: A4; margin: 12mm; }
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="toolbar-left">
+    <div class="toolbar-logo">BRANDRISE</div>
+    <div class="toolbar-sep"></div>
+    <div class="toolbar-title">댄싱컵 6월 리테이너 견적서</div>
+  </div>
+  <div class="toolbar-actions">
+    <a class="btn-toolbar alt" href="june-plan.html">← 6월 운영 플랜</a>
+    <button class="btn-toolbar" onclick="window.print()">PDF 저장</button>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="report-header">
+    <div class="label">댄싱컵 x 브랜드라이즈</div>
+    <h1 style="font-size:36px;">6월 리테이너 견적서</h1>
+    <div class="meta-grid">
+      <div class="meta-item">
+        <div class="mk">공급자</div>
+        <div class="mv">브랜드라이즈 by HIZ</div>
+      </div>
+      <div class="meta-item">
+        <div class="mk">수신</div>
+        <div class="mv">(주)위드런 · 댄싱컵</div>
+      </div>
+      <div class="meta-item">
+        <div class="mk">기준일</div>
+        <div class="mv">2026. 06. 04</div>
+      </div>
+      <div class="meta-item">
+        <div class="mk">대상 기간</div>
+        <div class="mv">2026. 06. 01 — 06. 30</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DELTA -->
+  <div class="delta-box">
+    <strong>5월 견적 대비 변경</strong> — 6월은 딥라떼 핵심 기획(정의·1년 라인업)이 5월에 마무리되어 <strong>기획·리서치 비중을 200만 → 150만으로 조정(−50)</strong>하고, 절감분을 <strong>메타 광고 집행비(매체비) 50만원</strong>으로 재배분했습니다. <strong>월 리테이너 총액 500만원은 동일</strong>합니다.
+  </div>
+
+  <!-- TOTAL -->
+  <div class="total-box">
+    <div>
+      <div class="tl">월 리테이너 합계</div>
+      <div class="ts">VAT 별도 · 여름 캠페인은 별도 견적서</div>
+    </div>
+    <div class="ta">5,000,000<span>원</span></div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <div class="section">
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kc-label">Part 1</div>
+        <div class="kc-value">150<span class="kc-unit">만원</span></div>
+        <div class="kc-desc">채널 상시 운영</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">Part 2</div>
+        <div class="kc-value">200<span class="kc-unit">만원</span></div>
+        <div class="kc-desc">딥라떼 확산 + 메타 광고 <span style="color:#EA580C;font-weight:700;">★</span></div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">Part 3</div>
+        <div class="kc-value">150<span class="kc-unit">만원</span></div>
+        <div class="kc-desc">기획·가이드 (5월比 −50)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PART 1 -->
+  <div class="section">
+    <div class="part-header">
+      <h3>Part 1 — 채널 상시 운영</h3>
+      <div class="part-price">1,500,000원</div>
+    </div>
+    <table>
+      <thead><tr><th>항목</th><th>내용</th><th>금액</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="item">인스타그램 피드 운영</td>
+          <td class="desc">브랜드팀 제작 소재 큐레이션·편집·캡션·해시태그·발행 (피드 콘텐츠 자체 제작은 불포함)</td>
+          <td class="amount">100,000</td>
+        </tr>
+        <tr>
+          <td class="item">인스타그램 릴스 제작·운영</td>
+          <td class="desc">AI 활용 + 바이럴 소재 자체 제작 · 자막·음원·업로드</td>
+          <td class="amount">700,000</td>
+        </tr>
+        <tr>
+          <td class="item">X 상시 운영</td>
+          <td class="desc">실시간 커뮤니케이션·클레임 대응 · 30분 룰</td>
+          <td class="amount">300,000</td>
+        </tr>
+        <tr>
+          <td class="item">틱톡 미러링</td>
+          <td class="desc">릴스 확산 주요 건 재포스팅 · 틱톡 문법 로컬라이징</td>
+          <td class="amount">200,000</td>
+        </tr>
+        <tr>
+          <td class="item">채널 모니터링·KPI 트래킹</td>
+          <td class="desc">언급량·반응 모니터링 · 주간 KPI 체크 · 이슈 알림 · 월간 운영 리포트</td>
+          <td class="amount">200,000</td>
+        </tr>
+        <tr class="subtotal-row">
+          <td class="item" colspan="2">Part 1 소계</td>
+          <td class="amount">1,500,000</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PART 2 -->
+  <div class="section">
+    <div class="part-header">
+      <h3>Part 2 — 딥라떼 확산 + 메타 광고 <span class="badge">6월 메인</span></h3>
+      <div class="part-price">2,000,000원</div>
+    </div>
+    <div class="part-subnote">
+      <strong>6월 업로드 진행</strong> — 5월에 섭외·제작한 인플루언서·블로그 체험단 콘텐츠를 6월에 본격 업로드(노출)합니다. 7월 폼 출시 전 "딥라떼·라떼맛집" 키워드·검색량을 선점하는 발견형 콘텐츠 라인입니다.
+    </div>
+    <table>
+      <thead><tr><th>항목</th><th>내용</th><th>금액</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="item">인플루언서 시딩 (3명)</td>
+          <td class="desc">맛집·라떼·경남 일상 마이크로 라인 섭외·브리프·소재 QC · 6월 콘텐츠 업로드</td>
+          <td class="amount">900,000</td>
+        </tr>
+        <tr>
+          <td class="item">블로그 체험단 (30명)</td>
+          <td class="desc">메뉴 키워드 선점·블로그 콘텐츠 풀 구축 · 모집·매니징·QC · 6월 발행</td>
+          <td class="amount">300,000</td>
+        </tr>
+        <tr>
+          <td class="item">메타 광고 운영(대행)</td>
+          <td class="desc">캠페인 세팅·소재 운영·타겟팅·리포트 (5월 우수 소재 학습 반영)</td>
+          <td class="amount">300,000</td>
+        </tr>
+        <tr>
+          <td class="item">메타 광고 집행비(매체비) <span class="badge-new">신규</span></td>
+          <td class="desc">페이스북·인스타 광고 실집행 매체비 (실비 · 잔액·증빙 월 정산)</td>
+          <td class="amount">500,000</td>
+        </tr>
+        <tr class="subtotal-row">
+          <td class="item" colspan="2">Part 2 소계</td>
+          <td class="amount">2,000,000</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PART 3 -->
+  <div class="section">
+    <div class="part-header">
+      <h3>Part 3 — 딥라떼 기획·가이드 <span class="badge-down">5월比 −50</span></h3>
+      <div class="part-price">1,500,000원</div>
+    </div>
+    <div class="part-subnote">
+      <strong>6월 슬림화</strong> — 딥라떼 정의·1년 라인업 등 핵심 기획이 5월에 완료되어, 6월 기획은 <strong>실행용 가이드 제작</strong> 중심으로 조정했습니다.
+    </div>
+    <table>
+      <thead><tr><th>항목</th><th>내용</th><th>금액</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="item">체험단·인플루언서 콘텐츠 가이드</td>
+          <td class="desc">Phase 1 메시지(맛 증거 중심) · 금지 어휘 · 필수 표기 기준 — 결은 자유</td>
+          <td class="amount">500,000</td>
+        </tr>
+        <tr>
+          <td class="item">서포터즈 1기 모집·입문 가이드</td>
+          <td class="desc">사내 채널 모집안 · 콘텐츠 가이드 · 검수·활동·정산 안내</td>
+          <td class="amount">500,000</td>
+        </tr>
+        <tr>
+          <td class="item">7월 폼 D-Day 사전 기획</td>
+          <td class="desc">폼 3종 출시 사전 콘텐츠·예고 설계 · 런칭 타임라인(D-7~D+14) 정비</td>
+          <td class="amount">500,000</td>
+        </tr>
+        <tr class="subtotal-row">
+          <td class="item" colspan="2">Part 3 소계</td>
+          <td class="amount">1,500,000</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- FINAL TOTAL -->
+  <div class="total-box">
+    <div>
+      <div class="tl">월 리테이너 최종 합계</div>
+      <div class="ts">VAT 별도 · Part 1~3 합산</div>
+    </div>
+    <div class="ta">5,000,000<span>원</span></div>
+  </div>
+
+  <div class="info-box">
+    <strong>메타 광고 집행비(매체비)</strong>는 실제 광고에 집행되는 <strong>실비</strong>로, 운영 대행비(Part 2)와는 성격이 다른 항목입니다. 잔액·증빙은 월 단위로 정산합니다. 여름 신메뉴 캠페인은 본 리테이너와 별도로 발행됩니다.
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="brand">BRANDRISE</div>
+    본 견적서는 발행일로부터 30일간 유효합니다.<br>
+    금액은 VAT 별도이며, 실 집행 시 조정될 수 있습니다.
+  </div>
+
+</div>
+</body>
+</html>
