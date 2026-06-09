@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>댄싱컵 6월 운영 플랜 — 브랜드라이즈</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans KR', -apple-system, sans-serif; background: #f4f7f9; color: #1a1b18; line-height: 1.7; font-size: 14px; -webkit-font-smoothing: antialiased; }
+
+.toolbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #0D0D0D; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; }
+.toolbar-left { display: flex; align-items: center; gap: 16px; }
+.toolbar-logo { font-size: 13px; font-weight: 700; color: #EA580C; letter-spacing: 0.05em; }
+.toolbar-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.15); }
+.toolbar-title { font-size: 14px; font-weight: 500; color: #fff; }
+.toolbar-actions { display: flex; gap: 10px; }
+.btn-toolbar { padding: 7px 18px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; background: transparent; color: #fff; font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-block; }
+.btn-toolbar:hover { background: rgba(255,255,255,0.1); }
+.btn-toolbar.alt { border-color: rgba(234,88,12,0.5); color: #EA580C; }
+
+.container { max-width: 920px; margin: 0 auto; padding: 80px 24px 60px; }
+
+/* HEADER */
+.report-header { background: #fff; border-radius: 12px; padding: 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+.report-header .label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px; }
+.report-header h1 { font-size: 34px; font-weight: 900; line-height: 1.3; letter-spacing: -0.02em; }
+.report-header h1 em { color: #EA580C; font-style: normal; }
+.meta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; padding-top: 24px; border-top: 1px solid #e8edf1; }
+.meta-item .mk { font-size: 11px; color: #999; letter-spacing: 0.04em; margin-bottom: 4px; }
+.meta-item .mv { font-size: 13px; font-weight: 600; }
+
+/* OVERVIEW / MISSION */
+.mission-box { background: #0D0D0D; border-radius: 12px; padding: 30px 36px; margin-bottom: 20px; color: #fff; }
+.mission-box .hl-label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.1em; margin-bottom: 14px; text-transform: uppercase; }
+.mission-box .lede { font-size: 18px; font-weight: 700; line-height: 1.55; letter-spacing: -0.01em; }
+.mission-box .lede em { color: #FDBA8C; font-style: normal; }
+
+/* SECTION */
+.section { background: #fff; border-radius: 12px; padding: 32px 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+.section h2 { font-size: 18px; font-weight: 800; margin-bottom: 6px; letter-spacing: -0.02em; }
+.section h2 em { color: #EA580C; font-style: normal; }
+.section .sec-sub { font-size: 12px; color: #999; margin-bottom: 20px; }
+.section p.body { font-size: 13.5px; color: #3a3c40; margin-bottom: 12px; }
+
+.action-tag { display: inline-block; font-size: 11px; font-weight: 800; color: #EA580C; letter-spacing: 0.06em; margin-bottom: 6px; }
+
+.detail { border-left: 3px solid #f0f2f5; padding: 4px 0 4px 18px; margin-bottom: 18px; }
+.detail:hover { border-left-color: #FED7AA; }
+.detail .dt { font-size: 14px; font-weight: 800; margin-bottom: 4px; }
+.detail .dd { font-size: 13px; color: #636569; }
+
+.measure { background: #f8fafb; border: 1px solid #e8edf1; border-radius: 8px; padding: 12px 16px; margin-top: 14px; font-size: 12.5px; color: #3a3c40; }
+.measure strong { color: #EA580C; font-weight: 700; }
+
+.kpi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 18px; }
+.kpi-card { background: #f8fafb; border-radius: 10px; padding: 20px 16px; text-align: center; border: 1px solid #e8edf1; }
+.kpi-card .kc-label { font-size: 11px; color: #999; font-weight: 600; letter-spacing: 0.04em; margin-bottom: 8px; }
+.kpi-card .kc-value { font-size: 22px; font-weight: 900; color: #1a1b18; letter-spacing: -0.02em; line-height: 1.15; }
+.kpi-card .kc-desc { font-size: 11px; color: #999; margin-top: 6px; }
+.act-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 14px; }
+.act-card { border: 1px solid #e8edf1; border-radius: 10px; padding: 18px 18px; }
+.act-card .ac-n { font-size: 12px; font-weight: 800; color: #EA580C; margin-bottom: 6px; }
+.act-card .ac-t { font-size: 13.5px; font-weight: 700; line-height: 1.45; }
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { background: #f8fafb; padding: 10px 14px; font-weight: 600; border-bottom: 2px solid #e8edf1; color: #999; font-size: 11px; text-align: left; white-space: nowrap; }
+th.r { text-align: right; }
+td { padding: 11px 14px; border-bottom: 1px solid #f0f2f5; vertical-align: middle; }
+td.item { font-weight: 600; color: #1a1b18; }
+td.desc { color: #636569; font-size: 12px; }
+td.c { text-align: center; font-variant-numeric: tabular-nums; }
+
+.week { border: 1px solid #e8edf1; border-radius: 10px; padding: 18px 22px; margin-bottom: 14px; }
+.week .wk-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 10px; }
+.week .wk-range { font-size: 12px; font-weight: 800; color: #fff; background: #EA580C; padding: 3px 12px; border-radius: 20px; white-space: nowrap; }
+.week .wk-theme { font-size: 14px; font-weight: 800; }
+.week ul { padding-left: 20px; font-size: 13px; color: #3a3c40; }
+.week ul li { margin-bottom: 4px; }
+
+.closing-box { background: #0D0D0D; border-radius: 12px; padding: 36px 40px; text-align: center; color: #fff; margin-bottom: 20px; }
+.closing-box .cl-msg { font-size: 22px; font-weight: 900; letter-spacing: -0.02em; line-height: 1.4; }
+.closing-box .cl-msg em { color: #FDBA8C; font-style: normal; }
+.closing-box .cl-sub { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 12px; }
+
+.ph { background: repeating-linear-gradient(45deg,#FFFBEB,#FFFBEB 10px,#FEF3C7 10px,#FEF3C7 20px); border: 1px dashed #F59E0B; border-radius: 8px; padding: 13px 18px; margin: 10px 0; font-size: 12.5px; color: #92400E; line-height: 1.7; }
+.ph .ph-tag { display: inline-block; font-size: 10px; font-weight: 800; background: #F59E0B; color: #fff; padding: 2px 8px; border-radius: 6px; margin-right: 8px; }
+.note { font-size: 11px; color: #b45309; font-weight: 600; margin-top: 8px; }
+
+/* QUOTE */
+.quote-delta { background:#FFF7ED; border-left:4px solid #EA580C; border-radius:0 8px 8px 0; padding:14px 20px; margin-bottom:20px; font-size:12.5px; color:#636569; line-height:1.85; }
+.quote-delta strong { color:#1a1b18; }
+.quote-total { background:#0D0D0D; border-radius:12px; padding:26px 34px; margin-bottom:20px; display:flex; align-items:center; justify-content:space-between; color:#fff; flex-wrap:wrap; gap:12px; }
+.quote-total .qt-l { font-size:14px; font-weight:600; }
+.quote-total .qt-s { font-size:11px; color:rgba(255,255,255,0.45); margin-top:4px; }
+.quote-total .qt-a { font-size:36px; font-weight:900; letter-spacing:-0.03em; }
+.quote-total .qt-a span { font-size:15px; font-weight:600; }
+.part-block { margin-top:24px; }
+.part-block:first-of-type { margin-top:4px; }
+.part-bar { display:flex; align-items:baseline; justify-content:space-between; margin-bottom:6px; padding-bottom:8px; border-bottom:2px solid #f0f2f5; }
+.part-bar .pb-t { font-size:14.5px; font-weight:800; }
+.part-bar .pb-p { font-size:16px; font-weight:900; color:#EA580C; white-space:nowrap; }
+td.amt { text-align:right; font-weight:700; font-variant-numeric:tabular-nums; white-space:nowrap; width:110px; }
+th.amt-h { text-align:right; }
+tr.sub td { background:#f8fafb; font-weight:800; color:#1a1b18; border-top:1px solid #e8edf1; }
+.chg { display:inline-block; font-size:10px; font-weight:800; padding:2px 8px; border-radius:20px; margin-left:6px; vertical-align:middle; white-space:nowrap; }
+.chg-up { background:#ECFDF5; color:#047857; border:1px solid #A7F3D0; }
+.chg-down { background:#FEF2F2; color:#B91C1C; border:1px solid #FECACA; }
+.chg-new { background:#FFF7ED; color:#EA580C; border:1px solid #FED7AA; }
+
+.footer { text-align: center; padding: 40px 0 10px; color: #999; font-size: 12px; line-height: 2; }
+.footer .brand { font-size: 15px; font-weight: 800; color: #1a1b18; margin-bottom: 4px; }
+
+@media (max-width: 768px) {
+  .container { padding: 70px 16px 40px; }
+  .meta-grid { grid-template-columns: repeat(2, 1fr); }
+  .kpi-grid, .act-cards { grid-template-columns: 1fr; }
+  .section { padding: 24px 20px; }
+  .report-header h1 { font-size: 26px; }
+}
+@media print {
+  .toolbar { display: none; }
+  .container { padding: 20px; max-width: none; }
+  body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .section, .mission-box, .closing-box, .week { break-inside: avoid; }
+  @page { size: A4; margin: 12mm; }
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="toolbar-left">
+    <div class="toolbar-logo">BRANDRISE</div>
+    <div class="toolbar-sep"></div>
+    <div class="toolbar-title">댄싱컵 6월 운영 플랜</div>
+  </div>
+  <div class="toolbar-actions">
+    <a class="btn-toolbar alt" href="plan_brief_v5.html">딥라떼 기획안</a>
+    <a class="btn-toolbar alt" href="may-report.html">← 5월 운영 보고서</a>
+    <a class="btn-toolbar alt" href="quote-june_v2.html">6월 견적서 →</a>
+    <button class="btn-toolbar" onclick="window.print()">PDF 저장</button>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="report-header">
+    <div class="label">댄싱컵 × 브랜드라이즈</div>
+    <h1>6월 <em>운영 플랜</em></h1>
+    <div class="meta-grid">
+      <div class="meta-item"><div class="mk">공급자</div><div class="mv">브랜드라이즈 by HIZ</div></div>
+      <div class="meta-item"><div class="mk">수신</div><div class="mv">(주)위드런 · 댄싱컵</div></div>
+      <div class="meta-item"><div class="mk">대상 기간</div><div class="mv">2026. 06. 01 — 06. 30</div></div>
+      <div class="meta-item"><div class="mk">단계</div><div class="mv">6월 — Phase 1 인지도 빌드업 (출시 전)</div></div>
+    </div>
+  </div>
+
+  <!-- MISSION -->
+  <div class="mission-box">
+    <div class="hl-label">Mission · 6월 한눈에 보기</div>
+    <div class="lede">저가 라떼엔 1등 <em>"라떼 맛집"</em>이 비어 있습니다 — 댄싱컵은 딥라떼로 그 자리를 차지합니다. <em>7월 폼 3종·리뉴얼 출시 전, 5~6월은 인지도를 쌓는 기간</em>입니다. 이미 판매 중인 딥라떼로 "이 가격에 이게?" 맛 인지를 깔고, 애호가 발견형 시딩·블로그 체험단으로 <em>"딥라떼·라떼맛집" 검색·언급을 미리 선점</em>합니다. 폼·"폼 미쳤다" 캠페인은 7월 D-Day부터 — 6월은 그 출시가 더 크게 터지도록 인지 기반을 까는 달입니다.</div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <div class="section">
+    <h2>6월 핵심 <em>KPI · 액션</em></h2>
+    <div class="sec-sub">출시 전 인지도 빌드업 — 한 달 목표 지표와 3대 핵심 액션</div>
+
+    <div class="kpi-grid">
+      <div class="kpi-card"><div class="kc-label">플레이 ① 라떼맛집</div><div class="kc-value">애호가 시딩</div><div class="kc-desc">발견형 다수 분산 + 블로그 체험단</div></div>
+      <div class="kpi-card"><div class="kc-label">딥라떼 맛 증거</div><div class="kc-value">콘텐츠 누적</div><div class="kc-desc">"이 가격에 이게?" 4채널 업로드</div></div>
+      <div class="kpi-card"><div class="kc-label">검색 · 언급</div><div class="kc-value">선점</div><div class="kc-desc">딥라떼 · 라떼맛집 키워드 상승</div></div>
+    </div>
+
+    <div class="act-cards">
+      <div class="act-card"><div class="ac-n">ACTION 1</div><div class="ac-t">애호가 발견형 시딩 · 블로그 체험단 1차 · 가이드</div></div>
+      <div class="act-card"><div class="ac-n">ACTION 2</div><div class="ac-t">딥라떼 "맛 증거" 콘텐츠 누적 (채널 4축)</div></div>
+      <div class="act-card"><div class="ac-n">ACTION 3</div><div class="ac-t">서포터즈 1기 · 메타 광고 · 7월 D-Day 준비</div></div>
+    </div>
+  </div>
+
+  <!-- ACTION 1 -->
+  <div class="section">
+    <div class="action-tag">ACTION 1 · 플레이 ① 라떼맛집</div>
+    <h2>애호가 <em>발견형 시딩</em> · 블로그 체험단 1차</h2>
+    <div class="sec-sub">출시 전 인지·검색을 미리 쌓는다 (전환 목적 아님) — 6월은 "먼저·애호가" 단계 (전문가 권위는 가을, 일반인 단골 선언은 그 뒤)</div>
+
+    <div class="detail"><div class="dt">애호가 발견형 시딩 1차</div><div class="dd">맛집·라떼·경남 일상 마이크로 계정 다수와 1차 컨택 — 메가·전문가 아닌 <strong>발견형 다수 분산</strong>. 카페 브이로그에 딥라떼를 슬쩍, 한 모금에 "이 가격에 이게?" 멈칫하는 15~30초 세로 릴스. 시차를 두면 "요즘 자주 보이네". 후보·실명은 섭외 직전 재확인</div></div>
+    <div class="detail"><div class="dt">블로그 체험단 1차 섭외</div><div class="dd">경남권 거점 매장 방문형 체험단 후보 리스트업·컨택 → "딥라떼·라떼맛집" 메뉴 키워드 검색 콘텐츠 풀 구축. "후기 없어 못 믿고, 안 믿어 후기 없는" 고리를 먼저 끊는다</div></div>
+    <div class="detail"><div class="dt">콘텐츠 가이드 제작</div><div class="dd">체험단·애호가용 가이드 — Phase 1 메시지(맛 증거 중심, <strong>폼은 미언급</strong>) · 금지 어휘(기업 어투·디스·성과 자랑) · 필수 표기(협찬 표시) 기준만 명시, 결은 자유</div></div>
+
+    <div class="measure"><strong>측정</strong> — 시딩·체험단 컨택·확정 수 · 가이드 배포 완료 · 1차 콘텐츠 발행 예정 건</div>
+  </div>
+
+  <!-- ACTION 2 -->
+  <div class="section">
+    <div class="action-tag">ACTION 2 · 채널 4축</div>
+    <h2>딥라떼 <em>"맛 증거" 콘텐츠 누적</em></h2>
+    <div class="sec-sub">"딥라떼는 이미 맛있다"를 자체 콘텐츠로 증거화 — 채널마다 결과 호흡이 다르게 (폼 얘기는 7월 D-Day부터)</div>
+
+    <div class="detail"><div class="dt">인스타 · 톤 유지 + AI 릴스</div><div class="dd">피드는 라떼 일상·페어링·매장 무드 정물 컷으로 1년 가는 자리. 사진 → AI(I2V) 씨즐 영상화(톤 그대로). "오늘의 딥라떼" 지점 7초 컷으로 <strong>"내 동네 ○○점"</strong> 정착 누적</div></div>
+    <div class="detail"><div class="dt">바이럴 릴스 · 메타 광고</div><div class="dd">어두운 라떼 + 밝은 폼이 섞이는 3초 같은 <strong>색 대비(뉴욕 비주얼)</strong> 자체 제작 → 메타 광고 소재. 피드에 안 올리고 광고로만 가는 라인 병행</div></div>
+    <div class="detail"><div class="dt">X · 부산 토박이 운영자 톤</div><div class="dd">기업 어투 0% · 30분 룰 · 셀프디스. "딥라떼 꼬숩하네" 같은 별명 씨앗을 슬쩍 흘려 <strong>소비자가 줍게</strong>(공식이 정의하지 않음). 7월 폼 출시 점진 예고</div></div>
+    <div class="detail"><div class="dt">틱톡 · 미러링 확산</div><div class="dd">반응 좋은 릴스를 동일 영상·자막으로 동시 업로드 — 신규 제작 부담 없이 확산축 확보</div></div>
+
+    <div class="measure"><strong>측정</strong> — 채널별 발행 수 · 도달·저장·공유 · 프로필 유입 · 팔로워 증감</div>
+  </div>
+
+  <!-- ACTION 3 -->
+  <div class="section">
+    <div class="action-tag">ACTION 3 · 공급 구조 + 7월 준비</div>
+    <h2>서포터즈 1기 · 메타 광고 <em>· 7월 D-Day 준비</em></h2>
+    <div class="sec-sub">매장 자생 콘텐츠 공급 라인(1기 실험) + 유료 노출 + 폼 출시(7월) 선결 작업</div>
+
+    <div class="detail"><div class="dt">서포터즈 1기 모집·가이드</div><div class="dd">매장 알바생 대상 모집(내부 공지 방식 검토) · 인스타·X·틱톡 중 1개 활성 계정 · 부산권 매장 우선. 입문 가이드 = 딥라떼 정의 + 금지 어휘만 명시(결은 자유) + 검수·활동·정산 안내. 매장마다 결이 다른 게 핵심</div></div>
+    <div class="detail"><div class="dt">메타 광고</div><div class="dd">5월 컵빙수 캠페인 우수 소재 학습 반영해 셋업·소재 운영 (전 기간 누적 CTR 4.14% · 업계 평균 2.5배 / 인플루언서 협업 소재 CTR 4.95%·CPC 140원으로 근소 우위 → 6월 인플 소재 비중 유지)</div></div>
+    <div class="detail"><div class="dt">7월 폼 D-Day 사전 준비</div><div class="dd">폼 3종(솔티드·너티·말차) 출시 D-7 예고·히어로 릴스·"오늘의 딥라떼 ○○폼" 포맷·X 밈 사전 설계. 런칭 타임라인 D-7~D+14 정비</div></div>
+
+    <div class="ph"><span class="ph-tag">확인 필요</span>7월 폼 출시 일정 확인 필요</div>
+    <div class="ph"><span class="ph-tag">확인 필요</span>서포터즈 모집이 내부 공지를 통한 모집인지 확인 필요</div>
+    <div class="measure"><strong>측정</strong> — 모집 응답·선발·가이드 완료 · 광고 CTR·CPC (업계 평균 대비) · 7월 출시 준비 점검</div>
+  </div>
+
+  <!-- KPI TARGET -->
+  <div class="section">
+    <h2>6월 <em>KPI 목표</em></h2>
+    <div class="sec-sub">출시 전이라 인지도(팔로워·검색·언급·UGC) 중심 · 매장 매출은 7월 출시 후 연동</div>
+    <table>
+      <thead><tr><th>KPI 4축</th><th class="r">5월 결과</th><th class="r">6월 목표</th><th>평가 기준 · 8개월 북극성</th></tr></thead>
+      <tbody>
+        <tr><td class="item">① 인스타 팔로워·인게이지</td><td class="c">2,582 (+92)</td><td class="c">순증 지속</td><td class="desc">베이스 2,518 → 12월 6,000 경로 · 인게이지 3%+</td></tr>
+        <tr><td class="item">② 딥라떼·라떼맛집 검색·언급</td><td class="c">베이스라인</td><td class="c">상승</td><td class="desc">네이버 검색·해시태그·X 멘션 통합 (북극성 월 +20%)</td></tr>
+        <tr><td class="item">③ UGC 회수·서포터즈</td><td class="c">준비</td><td class="c">1기 가동</td><td class="desc">자생 매장 콘텐츠 회수 · 공식 채널 흡수</td></tr>
+        <tr><td class="item">④ 매장 매출 연동</td><td class="c">—</td><td class="c">7~12월</td><td class="desc">딥라떼·폼 매출 비중 (7월 출시 후 POS 연동)</td></tr>
+        <tr><td class="item">＋ 광고 CTR</td><td class="c">4.14%</td><td class="c">평균 이상 유지</td><td class="desc">업계 평균 1.67% 대비</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- WEEKLY -->
+  <div class="section">
+    <h2>6월 <em>주간 캘린더</em></h2>
+    <div class="sec-sub">주차별 주제와 핵심 태스크</div>
+
+    <div class="week">
+      <div class="wk-head"><span class="wk-range">6/1 — 6/7</span><span class="wk-theme">애호가 시딩·체험단 1차 섭외 + 가이드</span></div>
+      <ul>
+        <li>애호가(맛집·라떼·경남 일상) 마이크로 라인 1차 컨택 — 발견형 다수 분산</li>
+        <li>블로그 체험단 1차 후보 리스트업·컨택 (경남권 거점 매장 방문형)</li>
+        <li>체험단·애호가용 콘텐츠 가이드 제작·확정 (폼 미언급)</li>
+        <li>7월 폼 출시 일정 확인 착수</li>
+      </ul>
+    </div>
+    <div class="week">
+      <div class="wk-head"><span class="wk-range">6/8 — 6/14</span><span class="wk-theme">섭외 확정 + 발견형 시딩 + 자체 콘텐츠 개시</span></div>
+      <ul>
+        <li>애호가·체험단 섭외 확정 · 가이드 배포</li>
+        <li>딥라떼 "맛 증거" 자체 콘텐츠 업로드 개시 (인스타 피드·AI 릴스)</li>
+        <li>체험단 1차 매장 방문 · 블로그 시드 발행</li>
+        <li>애호가 발견형 시딩 콘텐츠 노출 시작 ("이 가격에 이게?")</li>
+        <li>서포터즈 1기 모집 개시 · 틱톡 미러링 · X 일상 운영(꼬숩 씨앗)</li>
+      </ul>
+    </div>
+    <div class="week">
+      <div class="wk-head"><span class="wk-range">6/15 — 6/21</span><span class="wk-theme">콘텐츠 누적 + 서포터즈 가이드 + 메타</span></div>
+      <ul>
+        <li>애호가·체험단 콘텐츠 누적 발행</li>
+        <li>서포터즈 1기 모집 마감 · 선발 · 입문 가이드</li>
+        <li>메타 광고 셋업 완료 · 뉴욕 비주얼(색 대비) 소재 운영</li>
+      </ul>
+    </div>
+    <div class="week">
+      <div class="wk-head"><span class="wk-range">6/22 — 6/30</span><span class="wk-theme">측정 가동 + 7월 폼 D-Day 준비</span></div>
+      <ul>
+        <li>서포터즈 첫 콘텐츠 과제 송출</li>
+        <li>KPI 4축 주간 트래킹 가동 (팔로워·검색/언급·UGC·매출)</li>
+        <li>7월 폼 3종(솔티드·너티·말차) 출시 사전 콘텐츠·예고 준비</li>
+        <li>7월 폼 출시 일정 점검</li>
+        <li>6월 마감 리포트 · 7월 D-Day 점검</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- QUOTE -->
+  <div class="section">
+    <h2>6월 <em>운영 견적</em></h2>
+    <div class="sec-sub">월 리테이너 500만/월 · VAT 별도</div>
+
+    <div class="quote-total">
+      <div>
+        <div class="qt-l">6월 월 리테이너 합계</div>
+        <div class="qt-s">VAT 별도 · Part 1~3 합산 · 여름 캠페인(별도 견적)은 본 리테이너와 별개</div>
+      </div>
+      <div class="qt-a">5,000,000<span>원</span></div>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi-card"><div class="kc-label">Part 1</div><div class="kc-value">140<span style="font-size:13px;font-weight:600;color:#999;">만원</span></div><div class="kc-desc">채널 상시 운영</div></div>
+      <div class="kpi-card"><div class="kc-label">Part 2</div><div class="kc-value">210<span style="font-size:13px;font-weight:600;color:#999;">만원</span></div><div class="kc-desc">딥라떼 인지 확산 + 메타 광고</div></div>
+      <div class="kpi-card"><div class="kc-label">Part 3</div><div class="kc-value">150<span style="font-size:13px;font-weight:600;color:#999;">만원</span></div><div class="kc-desc">기획·가이드</div></div>
+    </div>
+
+    <!-- PART 1 -->
+    <div class="part-block">
+      <div class="part-bar"><div class="pb-t">Part 1 — 채널 상시 운영</div><div class="pb-p">1,400,000원</div></div>
+      <table>
+        <thead><tr><th>항목</th><th>내용</th><th class="amt-h">금액</th></tr></thead>
+        <tbody>
+          <tr><td class="item">인스타그램 릴스 제작·운영 (3건)</td><td class="desc">AI 활용 + 바이럴 소재 자체 제작 · 자막·음원·업로드</td><td class="amt">700,000</td></tr>
+          <tr><td class="item">X 상시 운영</td><td class="desc">실시간 커뮤니케이션·클레임 대응 · 30분 룰</td><td class="amt">300,000</td></tr>
+          <tr><td class="item">틱톡 미러링 (3건)</td><td class="desc">릴스 확산 주요 건 재포스팅 · 틱톡 문법 로컬라이징</td><td class="amt">200,000</td></tr>
+          <tr><td class="item">채널 모니터링·KPI 트래킹</td><td class="desc">언급량·반응 모니터링 · 주간 KPI 체크 · 월간 운영 리포트</td><td class="amt">200,000</td></tr>
+          <tr class="sub"><td colspan="2">Part 1 소계</td><td class="amt">1,400,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PART 2 -->
+    <div class="part-block">
+      <div class="part-bar"><div class="pb-t">Part 2 — 딥라떼 인지 확산 + 메타 광고</div><div class="pb-p">2,100,000원</div></div>
+      <table>
+        <thead><tr><th>항목</th><th>내용</th><th class="amt-h">금액</th></tr></thead>
+        <tbody>
+          <tr><td class="item">인플루언서 시딩 (3명)</td><td class="desc">맛집·라떼·경남 일상 마이크로 라인 — 발견형 다수 분산(인지 선점) · 섭외·브리프·소재 QC · 6월 업로드</td><td class="amt">900,000</td></tr>
+          <tr><td class="item">블로그 체험단 (30명)</td><td class="desc">메뉴 키워드 선점·블로그 콘텐츠 풀 구축 · 모집·매니징·QC · 6월 발행</td><td class="amt">300,000</td></tr>
+          <tr><td class="item">메타 광고 운영</td><td class="desc">인지·도달 목적 캠페인 세팅·소재 운영·타겟팅·리포트 (5월 우수 소재 학습 반영)</td><td class="amt">300,000</td></tr>
+          <tr><td class="item">메타 광고 집행비(매체비)</td><td class="desc">페이스북·인스타 광고 실집행 매체비</td><td class="amt">600,000</td></tr>
+          <tr class="sub"><td colspan="2">Part 2 소계</td><td class="amt">2,100,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PART 3 -->
+    <div class="part-block">
+      <div class="part-bar"><div class="pb-t">Part 3 — 딥라떼 기획·가이드</div><div class="pb-p">1,500,000원</div></div>
+      <table>
+        <thead><tr><th>항목</th><th>내용</th><th class="amt-h">금액</th></tr></thead>
+        <tbody>
+          <tr><td class="item">딥라떼 정의·스토리라인</td><td class="desc">차별 포인트 정의 · 영업·소비자용 답변 텍스트 · 콘텐츠 키 메시지</td><td class="amt">500,000</td></tr>
+          <tr><td class="item">채널 톤앤매너·콘텐츠 가이드</td><td class="desc">채널별 톤앤매너 · 프로필·키워드 정비 · 지점 활용 가이드</td><td class="amt">500,000</td></tr>
+          <tr><td class="item">서포터즈 모집·운영안</td><td class="desc">알바생 서포터즈 모집 폼 · 인센티브 구조 · 콘텐츠 운영 가이드</td><td class="amt">500,000</td></tr>
+          <tr class="sub"><td colspan="2">Part 3 소계</td><td class="amt">1,500,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- CLOSING -->
+  <div class="closing-box">
+    <div class="cl-msg">출시 전, <em>"라떼는 여기지"</em> 인지를 미리 쌓는 <em>한 달</em>.</div>
+    <div class="cl-sub">7월 폼 3종·리뉴얼 출시가 더 크게 터지도록 — 6월에 딥라떼·라떼맛집 인지도와 검색량을 먼저 깔아둡니다.</div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="brand">BRANDRISE</div>
+    댄싱컵 × 브랜드라이즈 · 2026년 6월 운영 플랜<br>
+    본 플랜은 5월 운영 보고서의 후속이며, 세부 일정·목표는 추후 조정될 수 있습니다.
+  </div>
+
+</div>
+</body>
+</html>
