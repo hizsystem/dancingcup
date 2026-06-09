@@ -49,6 +49,10 @@ body { font-family: 'Noto Sans KR', -apple-system, sans-serif; background: #f4f7
 .detail:hover { border-left-color: #FED7AA; }
 .detail .dt { font-size: 14px; font-weight: 800; margin-bottom: 4px; }
 .detail .dd { font-size: 13px; color: #636569; }
+.detail .dd ul { list-style: none; padding-left: 0; margin: 6px 0 0; }
+.detail .dd ul li { position: relative; padding-left: 14px; margin-bottom: 4px; }
+.detail .dd ul li::before { content: ''; position: absolute; left: 0; top: 9px; width: 4px; height: 4px; border-radius: 50%; background: #FB923C; }
+.detail .dd ul li .lab { font-weight: 800; color: #1a1b18; }
 
 .measure { background: #f8fafb; border: 1px solid #e8edf1; border-radius: 8px; padding: 12px 16px; margin-top: 14px; font-size: 12.5px; color: #3a3c40; }
 .measure strong { color: #EA580C; font-weight: 700; }
@@ -214,9 +218,24 @@ tr.sub td { background:#f8fafb; font-weight:800; color:#1a1b18; border-top:1px s
     <h2>서포터즈 1기 · 메타 광고 <em>· 7월 D-Day 준비</em></h2>
     <div class="sec-sub">매장 자생 콘텐츠 공급 라인(1기 실험) + 유료 노출 + 폼 출시(7월) 선결 작업</div>
 
-    <div class="detail"><div class="dt">서포터즈 1기 모집</div><div class="dd">매장 알바생 대상 · <strong>매장 내부 공지 방식</strong>으로 모집(공개 모집 아님) · 인스타 활성 계정 보유 · 부산권 매장 우선. <strong>정원은 못 박지 않고</strong> 응답·자격에 따라 유연 운영 — 매장마다 결이 다른 게 핵심</div></div>
-    <div class="detail"><div class="dt">서포터즈 운영 가이드</div><div class="dd">공식 가이드는 <strong>딥라떼 인플루언서 가이드를 축약한 최소 가이드</strong> — 딥라떼 정의 + 금지 어휘(기업 어투·디스·성과 자랑)만 고정하고 톤·소재는 자율. 협찬·활동 표기 · 발행 전 가벼운 검수 · 정산 안내. 우수 콘텐츠는 공식 채널이 리포스트로 회수(자생 → 흡수)</div></div>
-    <div class="detail"><div class="dt">서포터즈 1기 운영 계획·동력</div><div class="dd">모집 공지 → 선발·온보딩 → 첫 콘텐츠 과제 → 발행물 회수·공식 채널 흡수 순으로 6월 내 1기를 <strong>자유 콘텐츠 위주(월 2~3개)</strong>로 가볍게 가동. 동력 = <strong>월 10만원 활동비 + 기수 종료 시 활동 증명서 발급</strong>(이력·경험 자산) — <em>금액·빈도는 제안값</em>. 1기는 구조를 검증하는 <strong>실험 단계</strong></div></div>
+    <div class="detail"><div class="dt">서포터즈 1기 모집</div><div class="dd"><ul>
+      <li><span class="lab">대상</span> — 매장 알바생 · 부산권 매장 우선</li>
+      <li><span class="lab">방식</span> — 매장 내부 공지로 모집 (공개 모집 아님)</li>
+      <li><span class="lab">자격</span> — 인스타 활성 계정 보유</li>
+      <li><span class="lab">규모</span> — 정원은 못 박지 않고, 응답·자격에 따라 유연 운영 (매장마다 결이 다른 게 핵심)</li>
+    </ul></div></div>
+    <div class="detail"><div class="dt">서포터즈 운영 가이드</div><div class="dd"><ul>
+      <li><span class="lab">베이스</span> — 딥라떼 인플루언서 가이드를 축약한 최소 가이드</li>
+      <li><span class="lab">고정</span> — 딥라떼 정의 + 금지 어휘(기업 어투·디스·성과 자랑)만 / 톤·소재는 자율</li>
+      <li><span class="lab">운영</span> — 협찬·활동 표기 · 발행 전 가벼운 검수 · 정산 안내</li>
+      <li><span class="lab">회수</span> — 우수 콘텐츠는 공식 채널이 리포스트로 흡수 (자생 → 흡수)</li>
+    </ul></div></div>
+    <div class="detail"><div class="dt">서포터즈 1기 운영 계획·동력</div><div class="dd"><ul>
+      <li><span class="lab">흐름</span> — 모집 공지 → 선발·온보딩 → 첫 콘텐츠 과제 → 발행물 회수·공식 채널 흡수</li>
+      <li><span class="lab">콘텐츠</span> — 자유 콘텐츠 위주 · 월 2~3개로 가볍게</li>
+      <li><span class="lab">동력</span> — 월 10만원 활동비 + 기수 종료 시 활동 증명서 발급 (이력·경험 자산)</li>
+      <li><span class="lab">성격</span> — 1기는 구조를 검증하는 실험 단계 · <em>금액·빈도는 제안값</em></li>
+    </ul></div></div>
     <div class="detail"><div class="dt">메타 광고</div><div class="dd">5월 컵빙수 캠페인 우수 소재 학습 반영해 셋업·소재 운영 (전 기간 누적 CTR 4.14% · 업계 평균 2.5배 / 인플루언서 협업 소재 CTR 4.95%·CPC 140원으로 근소 우위 → 6월 인플 소재 비중 유지)</div></div>
     <div class="detail"><div class="dt">7월 폼 D-Day 사전 준비</div><div class="dd">폼 3종(솔티드·너티·말차) 출시 D-7 예고·히어로 릴스·"오늘의 딥라떼 ○○폼" 포맷·X 밈 사전 설계. 런칭 타임라인 D-7~D+14 정비</div></div>
 
