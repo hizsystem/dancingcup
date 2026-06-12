@@ -1,2 +1,26 @@
 *.m4a
 *.txt
+.firecrawl/
+
+# Meta Marketing API secrets
+.env
+.env.*
+!.env.example
+_PM/meta_api/.env
+_PM/meta_api/.env.bak
+_PM/meta_api/state.json
+_PM/meta_api/__pycache__/
+_PM/meta_api/*.log
+_PM/meta_api/logs/
+_PM/meta_api/mapping.json.seed
+_PM/meta_api/history.jsonl
+_PM/meta_api/reports/
+.gstack/
+
+# X(트위터) 계정 데이터 아카이브 — 개인정보(이메일 등) 포함, 커밋 금지
+twitter-20*/
+_PM/_scrape/
+
+# AI 릴스 레퍼런스 다운로드(대용량)
+.refs_reel/
+.firecrawl/
