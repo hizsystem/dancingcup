@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>댄싱컵 7월 운영 플랜 — 브랜드라이즈</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans KR', -apple-system, sans-serif; background: #f4f7f9; color: #1a1b18; line-height: 1.7; font-size: 14px; -webkit-font-smoothing: antialiased; }
+
+.toolbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #0D0D0D; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; }
+.toolbar-left { display: flex; align-items: center; gap: 16px; }
+.toolbar-logo { font-size: 13px; font-weight: 700; color: #EA580C; letter-spacing: 0.05em; }
+.toolbar-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.15); }
+.toolbar-title { font-size: 14px; font-weight: 500; color: #fff; }
+.toolbar-actions { display: flex; gap: 10px; }
+.btn-toolbar { padding: 7px 18px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; background: transparent; color: #fff; font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-block; }
+.btn-toolbar:hover { background: rgba(255,255,255,0.1); }
+.btn-toolbar.alt { border-color: rgba(234,88,12,0.5); color: #EA580C; }
+
+.container { max-width: 920px; margin: 0 auto; padding: 80px 24px 60px; }
+
+/* HEADER */
+.report-header { background: #fff; border-radius: 12px; padding: 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+.report-header .label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px; }
+.report-header h1 { font-size: 34px; font-weight: 900; line-height: 1.3; letter-spacing: -0.02em; }
+.report-header h1 em { color: #EA580C; font-style: normal; }
+.meta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; padding-top: 24px; border-top: 1px solid #e8edf1; }
+.meta-item .mk { font-size: 11px; color: #999; letter-spacing: 0.04em; margin-bottom: 4px; }
+.meta-item .mv { font-size: 13px; font-weight: 600; }
+
+/* OVERVIEW / MISSION */
+.mission-box { background: #0D0D0D; border-radius: 12px; padding: 30px 36px; margin-bottom: 20px; color: #fff; }
+.mission-box .hl-label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.1em; margin-bottom: 14px; text-transform: uppercase; }
+.mission-box .lede { font-size: 18px; font-weight: 700; line-height: 1.55; letter-spacing: -0.01em; }
+.mission-box .lede em { color: #FDBA8C; font-style: normal; }
+
+/* SECTION */
+.section { background: #fff; border-radius: 12px; padding: 32px 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+.section h2 { font-size: 18px; font-weight: 800; margin-bottom: 6px; letter-spacing: -0.02em; }
+.section h2 em { color: #EA580C; font-style: normal; }
+.section .sec-sub { font-size: 12px; color: #999; margin-bottom: 20px; }
+.section p.body { font-size: 13.5px; color: #3a3c40; margin-bottom: 12px; }
+
+.action-tag { display: inline-block; font-size: 11px; font-weight: 800; color: #EA580C; letter-spacing: 0.06em; margin-bottom: 6px; }
+
+.detail { border-left: 3px solid #f0f2f5; padding: 4px 0 4px 18px; margin-bottom: 18px; }
+.detail:hover { border-left-color: #FED7AA; }
+.detail .dt { font-size: 14px; font-weight: 800; margin-bottom: 4px; }
+.detail .dd { font-size: 13px; color: #636569; }
+.detail .dd ul { list-style: none; padding-left: 0; margin: 6px 0 0; }
+.detail .dd ul li { position: relative; padding-left: 14px; margin-bottom: 4px; }
+.detail .dd ul li::before { content: ''; position: absolute; left: 0; top: 9px; width: 4px; height: 4px; border-radius: 50%; background: #FB923C; }
+.detail .dd ul li .lab { font-weight: 800; color: #1a1b18; }
+
+.measure { background: #f8fafb; border: 1px solid #e8edf1; border-radius: 8px; padding: 12px 16px; margin-top: 14px; font-size: 12.5px; color: #3a3c40; }
+.measure strong { color: #EA580C; font-weight: 700; }
+
+.kpi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 18px; }
+.kpi-card { background: #f8fafb; border-radius: 10px; padding: 20px 16px; text-align: center; border: 1px solid #e8edf1; }
+.kpi-card .kc-label { font-size: 11px; color: #999; font-weight: 600; letter-spacing: 0.04em; margin-bottom: 8px; }
+.kpi-card .kc-value { font-size: 22px; font-weight: 900; color: #1a1b18; letter-spacing: -0.02em; line-height: 1.15; }
+.kpi-card .kc-desc { font-size: 11px; color: #999; margin-top: 6px; }
+.act-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 14px; }
+.act-card { border: 1px solid #e8edf1; border-radius: 10px; padding: 18px 16px; }
+.act-card .ac-n { font-size: 12px; font-weight: 800; color: #EA580C; margin-bottom: 6px; }
+.act-card .ac-t { font-size: 13.5px; font-weight: 700; line-height: 1.45; }
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { background: #f8fafb; padding: 10px 14px; font-weight: 600; border-bottom: 2px solid #e8edf1; color: #999; font-size: 11px; text-align: left; white-space: nowrap; }
+th.r { text-align: right; }
+td { padding: 11px 14px; border-bottom: 1px solid #f0f2f5; vertical-align: middle; }
+td.item { font-weight: 600; color: #1a1b18; }
+td.desc { color: #636569; font-size: 12px; }
+td.c { text-align: center; font-variant-numeric: tabular-nums; }
+
+.week { border: 1px solid #e8edf1; border-radius: 10px; padding: 18px 22px; margin-bottom: 14px; }
+.week .wk-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 10px; }
+.week .wk-range { font-size: 12px; font-weight: 800; color: #fff; background: #EA580C; padding: 3px 12px; border-radius: 20px; white-space: nowrap; }
+.week .wk-theme { font-size: 14px; font-weight: 800; }
+.week ul { padding-left: 20px; font-size: 13px; color: #3a3c40; }
+.week ul li { margin-bottom: 4px; }
+
+.closing-box { background: #0D0D0D; border-radius: 12px; padding: 36px 40px; text-align: center; color: #fff; margin-bottom: 20px; }
+.closing-box .cl-msg { font-size: 22px; font-weight: 900; letter-spacing: -0.02em; line-height: 1.4; }
+.closing-box .cl-msg em { color: #FDBA8C; font-style: normal; }
+.closing-box .cl-sub { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 12px; }
+
+.ph { background: repeating-linear-gradient(45deg,#FFFBEB,#FFFBEB 10px,#FEF3C7 10px,#FEF3C7 20px); border: 1px dashed #F59E0B; border-radius: 8px; padding: 13px 18px; margin: 10px 0; font-size: 12.5px; color: #92400E; line-height: 1.7; }
+.ph .ph-tag { display: inline-block; font-size: 10px; font-weight: 800; background: #F59E0B; color: #fff; padding: 2px 8px; border-radius: 6px; margin-right: 8px; }
+.note { font-size: 11px; color: #b45309; font-weight: 600; margin-top: 8px; }
+
+/* QUOTE */
+.quote-delta { background:#FFF7ED; border-left:4px solid #EA580C; border-radius:0 8px 8px 0; padding:14px 20px; margin-bottom:20px; font-size:12.5px; color:#636569; line-height:1.85; }
+.quote-delta strong { color:#1a1b18; }
+.quote-total { background:#0D0D0D; border-radius:12px; padding:26px 34px; margin-bottom:20px; display:flex; align-items:center; justify-content:space-between; color:#fff; flex-wrap:wrap; gap:12px; }
+.quote-total .qt-l { font-size:14px; font-weight:600; }
+.quote-total .qt-s { font-size:11px; color:rgba(255,255,255,0.45); margin-top:4px; }
+.quote-total .qt-a { font-size:36px; font-weight:900; letter-spacing:-0.03em; }
+.quote-total .qt-a span { font-size:15px; font-weight:600; }
+.part-block { margin-top:24px; }
+.part-block:first-of-type { margin-top:4px; }
+.part-bar { display:flex; align-items:baseline; justify-content:space-between; margin-bottom:6px; padding-bottom:8px; border-bottom:2px solid #f0f2f5; }
+.part-bar .pb-t { font-size:14.5px; font-weight:800; }
+.part-bar .pb-p { font-size:16px; font-weight:900; color:#EA580C; white-space:nowrap; }
+td.amt { text-align:right; font-weight:700; font-variant-numeric:tabular-nums; white-space:nowrap; width:110px; }
+th.amt-h { text-align:right; }
+tr.sub td { background:#f8fafb; font-weight:800; color:#1a1b18; border-top:1px solid #e8edf1; }
+
+.footer { text-align: center; padding: 40px 0 10px; color: #999; font-size: 12px; line-height: 2; }
+.footer .brand { font-size: 15px; font-weight: 800; color: #1a1b18; margin-bottom: 4px; }
+
+@media (max-width: 768px) {
+  .container { padding: 70px 16px 40px; }
+  .meta-grid { grid-template-columns: repeat(2, 1fr); }
+  .kpi-grid, .act-cards { grid-template-columns: 1fr; }
+  .section { padding: 24px 20px; }
+  .report-header h1 { font-size: 26px; }
+}
+@media print {
+  .toolbar { display: none; }
+  .container { padding: 20px; max-width: none; }
+  body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .section, .mission-box, .closing-box, .week { break-inside: avoid; }
+  @page { size: A4; margin: 12mm; }
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="toolbar-left">
+    <div class="toolbar-logo">BRANDRISE</div>
+    <div class="toolbar-sep"></div>
+    <div class="toolbar-title">댄싱컵 7월 운영 플랜</div>
+  </div>
+  <div class="toolbar-actions">
+    <a class="btn-toolbar alt" href="june-plan_v2.html">← 6월 운영 플랜</a>
+    <button class="btn-toolbar" onclick="window.print()">PDF 저장</button>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="report-header">
+    <div class="label">댄싱컵 × 브랜드라이즈</div>
+    <h1>7월 <em>운영 플랜</em></h1>
+    <div class="meta-grid">
+      <div class="meta-item"><div class="mk">공급자</div><div class="mv">브랜드라이즈 by HIZ</div></div>
+      <div class="meta-item"><div class="mk">수신</div><div class="mv">(주)위드런 · 댄싱컵</div></div>
+      <div class="meta-item"><div class="mk">대상 기간</div><div class="mv">2026. 07. 01 — 07. 31</div></div>
+      <div class="meta-item"><div class="mk">단계</div><div class="mv">7월 — 여름 성수기</div></div>
+    </div>
+  </div>
+
+  <!-- MISSION -->
+  <div class="mission-box">
+    <div class="hl-label">7월 전략</div>
+    <div class="lede">아이스 딥라떼로 <em>"녹아도 진하다"</em> 점유 — 여름 신규 유입을 <em>라떼 단골</em>로.</div>
+    <div style="margin-top:16px;font-size:13px;color:rgba(255,255,255,0.72);line-height:1.95;">차별점 = "녹아도 진하다" (여름 라떼는 다 연해진다) · 7월 역할 = 신규 유입 · 상위 목표 = 라떼 단골 정착 · 폼·신메뉴 제외</div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <div class="section">
+    <h2>7월 핵심 <em>KPI · 운영</em></h2>
+    <div class="sec-sub">단일 메시지 "녹아도 진하다"로 정렬 — 여름 유입을 단골로</div>
+
+    <div class="kpi-grid">
+      <div class="kpi-card"><div class="kc-label">차별점</div><div class="kc-value">녹아도 진하다</div><div class="kc-desc">여름 라떼는 다 연해진다</div></div>
+      <div class="kpi-card"><div class="kc-label">검색 · 언급</div><div class="kc-value">선점 지속</div><div class="kc-desc">딥라떼 · 라떼맛집 · 아이스 딥라떼</div></div>
+      <div class="kpi-card"><div class="kc-label">인스타</div><div class="kc-value">팔로워 순증</div><div class="kc-desc">인게이지 유지</div></div>
+    </div>
+
+    <div class="act-cards">
+      <div class="act-card"><div class="ac-n">채널 운영</div><div class="ac-t">진함 일상 노출 · 단골 신호</div></div>
+      <div class="act-card"><div class="ac-n">릴스 제작</div><div class="ac-t">진함 증거 소재 + 광고 전환</div></div>
+      <div class="act-card"><div class="ac-n">인플루언서</div><div class="ac-t">발견형 유입</div></div>
+      <div class="act-card"><div class="ac-n">체험단</div><div class="ac-t">검색 선점</div></div>
+    </div>
+  </div>
+
+  <!-- ACTION 1 -->
+  <div class="section">
+    <div class="action-tag">채널 운영</div>
+    <h2>릴스 <em>· 트위터</em></h2>
+    <div class="sec-sub">진함 일상 노출 · 단골 신호 줍기</div>
+
+    <div class="detail"><div class="dt">인스타 릴스</div><div class="dd">색 안 변하는 컷으로 진함 노출 · "오늘의 딥라떼" 지점 루틴(내 동네 ○○점)</div></div>
+    <div class="detail"><div class="dt">X(트위터)</div><div class="dd">기업 말투 0 · 30분 룰 · 셀프디스 · "꼬숩" 같은 표현은 손님이 줍게(공식이 정의 안 함)</div></div>
+    <div class="detail"><div class="dt">틱톡 미러링</div><div class="dd">반응 좋은 릴스만 재포스팅 · 신규 제작 0</div></div>
+    <div class="detail"><div class="dt">모니터링 · KPI</div><div class="dd">언급·반응 모니터링 · 주간 KPI · 월간 리포트</div></div>
+
+    <div class="measure"><strong>측정</strong> — 채널별 발행 수 · 도달·저장·공유 · 프로필 유입 · 팔로워 증감</div>
+  </div>
+
+  <!-- ACTION 2 -->
+  <div class="section">
+    <div class="action-tag">릴스 제작</div>
+    <h2>AI 소재 <em>+ 메타 광고</em></h2>
+    <div class="sec-sub">"녹아도 진하다"를 증거 영상으로 · 광고로 전환</div>
+
+    <div class="detail"><div class="dt">AI 릴스 제작</div><div class="dd">기존 씨즐·릴스 자산 여름용 재편집 · 신규 컷 보강</div></div>
+    <div class="detail"><div class="dt">소재 4종</div><div class="dd"><ul>
+      <li><span class="lab">끝 모금</span> — 얼음 녹은 컵, 색 그대로</li>
+      <li><span class="lab">시간 경과</span> — "30분 뒤" 자막, 안 연해짐</li>
+      <li><span class="lab">청량 진입</span> — 시원하게 시작, 진하게 끝</li>
+      <li><span class="lab">조용한 한 컷</span> — 무자막 한 모금(오가닉)</li>
+    </ul></div></div>
+    <div class="detail"><div class="dt">메타 광고</div><div class="dd">AI 라벨 필수(규정) · paid 소프트 CTA / 피드 무CTA · 5~6월 우수 소재 반영 · 변형 태워 검증 · 매체비 포함</div></div>
+
+    <div class="measure"><strong>측정</strong> — 소재 수 · CTR · CPC(업계 평균 대비) · 도달</div>
+  </div>
+
+  <!-- ACTION 3 -->
+  <div class="section">
+    <div class="action-tag">인플루언서</div>
+    <h2>맛집 · 라떼 · <em>경남 마이크로</em></h2>
+    <div class="sec-sub">작은 계정 여럿으로 발견형 유입 — 인지·검색 선점 (전환 목적 아님)</div>
+
+    <div class="detail"><div class="dt">분산 섭외</div><div class="dd">큰 한 명 대신 마이크로 계정 여럿 · 카페 일상에 아이스 딥라떼 한 컷 · 시차 두면 "요즘 자주 보이네"</div></div>
+    <div class="detail"><div class="dt">가드레일</div><div class="dd">여름 = 마시는 상황만 · 시즌 한정 표기 금지(상시 라인) · 협찬 표기 필수 · 우월성 주장·디스·성과 자랑 금지</div></div>
+
+    <div class="measure"><strong>측정</strong> — 컨택·확정 수 · 발행 건 · 도달·반응</div>
+  </div>
+
+  <!-- ACTION 4 -->
+  <div class="section">
+    <div class="action-tag">블로그 체험단</div>
+    <h2>블로그 <em>키워드 선점</em></h2>
+    <div class="sec-sub">검색에 후기 미리 깔기 — 경남 거점 매장 방문형</div>
+
+    <div class="detail"><div class="dt">키워드 선점</div><div class="dd">딥라떼·라떼맛집·아이스 딥라떼 검색 후기 풀 구축 · "후기 없어 못 믿는" 고리 끊기</div></div>
+    <div class="detail"><div class="dt">매장 방문</div><div class="dd">경남권 거점 매장 방문형 · 모집·매니징·QC</div></div>
+
+    <div class="measure"><strong>측정</strong> — 모집·확정 수 · 발행 건 · 지정 키워드 노출</div>
+  </div>
+
+  <!-- 음료 트렌드 리포트 -->
+  <div class="section">
+    <div class="action-tag">7월 신규</div>
+    <h2>음료 <em>트렌드 리포트</em></h2>
+    <div class="sec-sub">유행 메뉴를 잡을 때 참고용</div>
+
+    <div class="detail"><div class="dt">월 1회 공유</div><div class="dd">음료·메뉴 트렌드 월 1회 정리 · 유행 메뉴 참고용 · <strong>견적 외(리테이너 내 제공)</strong></div></div>
+
+    <div class="measure"><strong>측정</strong> — 트렌드 리포트 1회 공유</div>
+  </div>
+
+  <!-- KPI TARGET -->
+  <div class="section">
+    <h2>7월 <em>KPI 목표</em></h2>
+    <div class="sec-sub">인지도(팔로워·검색·언급·UGC)와 광고 효율 중심</div>
+    <table>
+      <thead><tr><th>KPI</th><th class="r">6월 결과</th><th class="r">7월 목표</th><th>기준</th></tr></thead>
+      <tbody>
+        <tr><td class="item">① 인스타 팔로워·인게이지</td><td class="c">확인 필요</td><td class="c">순증 지속</td><td class="desc">베이스 2,518 → 12월 6,000 경로 · 인게이지 3%+</td></tr>
+        <tr><td class="item">② 딥라떼·라떼맛집·아이스 딥라떼 검색·언급</td><td class="c">확인 필요</td><td class="c">상승</td><td class="desc">네이버 검색·해시태그·X 멘션</td></tr>
+        <tr><td class="item">＋ 광고 CTR</td><td class="c">확인 필요</td><td class="c">평균 이상 유지</td><td class="desc">업계 평균 1.67% 대비 (5월 4.14%)</td></tr>
+      </tbody>
+    </table>
+    <div class="ph"><span class="ph-tag">확인 필요</span>6월 마감 수치(팔로워·검색·CTR)는 6월 리포트 확정 후 채워 넣습니다.</div>
+  </div>
+
+  <!-- WEEKLY -->
+  <div class="section">
+    <h2>7월 <em>주간 캘린더</em></h2>
+    <div class="sec-sub">주차별 주제와 핵심 태스크</div>
+
+    <div class="week">
+      <div class="wk-head"><span class="wk-range">7/1 — 7/5</span><span class="wk-theme">소재 제작 · 광고 세팅 · 인플루언서 컨택</span></div>
+      <ul>
+        <li>아이스 딥라떼 AI 릴스·소재 제작 시작 (소재 4종)</li>
+        <li>메타 광고 세팅 · 변형 태우기 시작</li>
+        <li>인플루언서(맛집·라떼·경남) 1차 컨택 · 체험단 후보 리스트업</li>
+      </ul>
+    </div>
+    <div class="week">
+      <div class="wk-head"><span class="wk-range">7/6 — 7/12</span><span class="wk-theme">섭외 확정 · 발행 개시</span></div>
+      <ul>
+        <li>인플루언서·체험단 확정 · 가이드 배포</li>
+        <li>릴스 업로드 · X 일상 운영 · 틱톡 미러링</li>
+        <li>인플루언서 노출 시작 ("녹아도 진하다")</li>
+      </ul>
+    </div>
+    <div class="week">
+      <div class="wk-head"><span class="wk-range">7/13 — 7/19</span><span class="wk-theme">콘텐츠 누적 · 광고 테스트</span></div>
+      <ul>
+        <li>릴스·인플루언서·체험단 콘텐츠 누적 발행</li>
+        <li>메타 광고 변형 늘려 테스트 · 이긴 소재 더블다운</li>
+      </ul>
+    </div>
+    <div class="week">
+      <div class="wk-head"><span class="wk-range">7/20 — 7/26</span><span class="wk-theme">측정 · 트렌드 리포트</span></div>
+      <ul>
+        <li>KPI 주간 트래킹 (팔로워·검색/언급·UGC·광고)</li>
+        <li>음료 트렌드 리포트 1차 공유</li>
+      </ul>
+    </div>
+    <div class="week">
+      <div class="wk-head"><span class="wk-range">7/27 — 7/31</span><span class="wk-theme">마감 · 8월 준비</span></div>
+      <ul>
+        <li>7월 마감 리포트</li>
+        <li>8월 운영 방향 점검</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- QUOTE -->
+  <div class="section">
+    <h2>7월 <em>운영 견적</em></h2>
+    <div class="sec-sub">월 리테이너 500만/월 · VAT 별도</div>
+
+    <div class="quote-total">
+      <div>
+        <div class="qt-l">7월 월 리테이너 합계</div>
+        <div class="qt-s">VAT 별도 · Part 1~3 합산</div>
+      </div>
+      <div class="qt-a">5,000,000<span>원</span></div>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi-card"><div class="kc-label">Part 1</div><div class="kc-value">140<span style="font-size:13px;font-weight:600;color:#999;">만원</span></div><div class="kc-desc">채널 상시 운영</div></div>
+      <div class="kpi-card"><div class="kc-label">Part 2</div><div class="kc-value">220<span style="font-size:13px;font-weight:600;color:#999;">만원</span></div><div class="kc-desc">인플루언서 + 체험단</div></div>
+      <div class="kpi-card"><div class="kc-label">Part 3</div><div class="kc-value">140<span style="font-size:13px;font-weight:600;color:#999;">만원</span></div><div class="kc-desc">메타 광고</div></div>
+    </div>
+
+    <!-- PART 1 -->
+    <div class="part-block">
+      <div class="part-bar"><div class="pb-t">Part 1 — 채널 상시 운영</div><div class="pb-p">1,400,000원</div></div>
+      <table>
+        <thead><tr><th>항목</th><th>내용</th><th class="amt-h">금액</th></tr></thead>
+        <tbody>
+          <tr><td class="item">인스타그램 릴스 제작·운영 (3건)</td><td class="desc">AI 활용 + 자체 제작 · 자막·음원·업로드</td><td class="amt">700,000</td></tr>
+          <tr><td class="item">X 상시 운영</td><td class="desc">실시간 커뮤니케이션·클레임 대응 · 30분 룰</td><td class="amt">300,000</td></tr>
+          <tr><td class="item">틱톡 미러링 (3건)</td><td class="desc">릴스 주요 건 재포스팅 · 틱톡 문법 로컬라이징</td><td class="amt">200,000</td></tr>
+          <tr><td class="item">채널 모니터링·KPI 트래킹</td><td class="desc">언급량·반응 모니터링 · 주간 KPI · 월간 리포트</td><td class="amt">200,000</td></tr>
+          <tr class="sub"><td colspan="2">Part 1 소계</td><td class="amt">1,400,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PART 2 -->
+    <div class="part-block">
+      <div class="part-bar"><div class="pb-t">Part 2 — 인플루언서 + 블로그 체험단</div><div class="pb-p">2,200,000원</div></div>
+      <table>
+        <thead><tr><th>항목</th><th>내용</th><th class="amt-h">금액</th></tr></thead>
+        <tbody>
+          <tr><td class="item">인플루언서 (6명)</td><td class="desc">맛집·라떼·경남 마이크로 다수 · 섭외·브리프·QC · 7월 업로드</td><td class="amt">1,800,000</td></tr>
+          <tr><td class="item">블로그 체험단 (40명)</td><td class="desc">키워드 선점·블로그 콘텐츠 풀 구축 · 모집·매니징·QC · 7월 발행</td><td class="amt">400,000</td></tr>
+          <tr class="sub"><td colspan="2">Part 2 소계</td><td class="amt">2,200,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PART 3 -->
+    <div class="part-block">
+      <div class="part-bar"><div class="pb-t">Part 3 — 메타 광고</div><div class="pb-p">1,400,000원</div></div>
+      <table>
+        <thead><tr><th>항목</th><th>내용</th><th class="amt-h">금액</th></tr></thead>
+        <tbody>
+          <tr><td class="item">메타 광고 운영</td><td class="desc">아이스 딥라떼 소재 운영·타겟팅·리포트 (5~6월 우수 소재 반영)</td><td class="amt">300,000</td></tr>
+          <tr><td class="item">메타 광고 집행비(매체비)</td><td class="desc">페이스북·인스타 광고 실집행 매체비</td><td class="amt">1,100,000</td></tr>
+          <tr class="sub"><td colspan="2">Part 3 소계</td><td class="amt">1,400,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="quote-delta" style="margin-top:20px;margin-bottom:0;"><strong>음료 트렌드 리포트</strong>는 견적에 넣지 않고 리테이너 안에서 제공합니다(별도 비용 없음).</div>
+
+  </div>
+
+  <!-- CLOSING -->
+  <div class="closing-box">
+    <div class="cl-msg">여름 신규 유입 → <em>라떼 단골 정착</em></div>
+    <div class="cl-sub">7월 단일 메시지 — "녹아도 진하다"</div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="brand">BRANDRISE</div>
+    댄싱컵 × 브랜드라이즈 · 2026년 7월 운영 플랜<br>
+    세부 일정·목표는 추후 조정될 수 있습니다.
+  </div>
+
+</div>
+</body>
+</html>
