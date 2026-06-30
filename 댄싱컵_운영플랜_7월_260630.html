@@ -67,6 +67,12 @@ body { font-family: 'Noto Sans KR', -apple-system, sans-serif; background: #f4f7
 .act-card .ac-n { font-size: 12px; font-weight: 800; color: #EA580C; margin-bottom: 6px; }
 .act-card .ac-t { font-size: 13.5px; font-weight: 700; line-height: 1.45; }
 
+/* DELIVERABLE CHIPS — 액션별 산출물 수량 (견적과 1:1) */
+.deliv-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+.deliv-chip { display: inline-flex; align-items: baseline; gap: 5px; background: #FFF7ED; border: 1px solid #FED7AA; border-radius: 8px; padding: 6px 12px; font-size: 12px; color: #9a3412; font-weight: 600; white-space: nowrap; }
+.deliv-chip b { font-size: 14px; font-weight: 900; color: #EA580C; }
+.deliv-chip.plain { color: #636569; background: #f8fafb; border-color: #e8edf1; }
+
 /* WHY / STRATEGY CONTEXT */
 .context-lead { font-size: 13.5px; color: #3a3c40; line-height: 1.85; margin-bottom: 4px; }
 .context-lead strong { color: #1a1b18; font-weight: 700; }
@@ -230,6 +236,13 @@ tr.sub td { background:#f8fafb; font-weight:800; color:#1a1b18; border-top:1px s
     <h2>릴스 <em>· 트위터</em></h2>
     <div class="sec-sub">진함 일상 노출 · 단골 신호 줍기</div>
 
+    <div class="deliv-row">
+      <span class="deliv-chip">인스타 릴스 <b>3</b>건</span>
+      <span class="deliv-chip">X <b>상시</b></span>
+      <span class="deliv-chip">틱톡 미러링 <b>3</b>건</span>
+      <span class="deliv-chip">월간 리포트 <b>1</b>회</span>
+    </div>
+
     <div class="detail"><div class="dt">인스타 릴스</div><div class="dd">색 안 변하는 컷으로 진함 노출 · "오늘의 딥라떼" 지점 루틴(내 동네 ○○점)</div></div>
     <div class="detail"><div class="dt">X(트위터)</div><div class="dd">기업 말투 0 · 30분 룰 · 셀프디스 · "꼬숩" 같은 표현은 손님이 줍게(공식이 정의 안 함)</div></div>
     <div class="detail"><div class="dt">틱톡 미러링</div><div class="dd">반응 좋은 릴스만 재포스팅 · 신규 제작 0</div></div>
@@ -243,6 +256,12 @@ tr.sub td { background:#f8fafb; font-weight:800; color:#1a1b18; border-top:1px s
     <div class="action-tag">릴스 제작</div>
     <h2>AI 소재 <em>+ 메타 광고</em></h2>
     <div class="sec-sub">"녹아도 진하다"를 증거 영상으로 · 광고로 전환</div>
+
+    <div class="deliv-row">
+      <span class="deliv-chip">AI 소재 <b>4</b>종</span>
+      <span class="deliv-chip plain">광고 변형 태워 검증</span>
+      <span class="deliv-chip">매체비 <b>110</b>만 포함</span>
+    </div>
 
     <div class="detail"><div class="dt">AI 릴스 제작</div><div class="dd">기존 씨즐·릴스 자산 여름용 재편집 · 신규 컷 보강</div></div>
     <div class="detail"><div class="dt">소재 4종</div><div class="dd"><ul>
@@ -262,6 +281,12 @@ tr.sub td { background:#f8fafb; font-weight:800; color:#1a1b18; border-top:1px s
     <h2>맛집 · 라떼 · <em>경남 마이크로</em></h2>
     <div class="sec-sub">작은 계정 여럿으로 발견형 유입 — 인지·검색 선점 (전환 목적 아님)</div>
 
+    <div class="deliv-row">
+      <span class="deliv-chip">인플루언서 <b>6</b>명</span>
+      <span class="deliv-chip plain">맛집·라떼·경남 마이크로</span>
+      <span class="deliv-chip plain">시차 두고 노출</span>
+    </div>
+
     <div class="detail"><div class="dt">분산 섭외</div><div class="dd">큰 한 명 대신 마이크로 계정 여럿 · 카페 일상에 아이스 딥라떼 한 컷 · 시차 두면 "요즘 자주 보이네"</div></div>
     <div class="detail"><div class="dt">가드레일</div><div class="dd">여름 = 마시는 상황만 · 시즌 한정 표기 금지(상시 라인) · 협찬 표기 필수 · 우월성 주장·디스·성과 자랑 금지</div></div>
 
@@ -273,6 +298,12 @@ tr.sub td { background:#f8fafb; font-weight:800; color:#1a1b18; border-top:1px s
     <div class="action-tag">블로그 체험단</div>
     <h2>블로그 <em>키워드 선점</em></h2>
     <div class="sec-sub">검색에 후기 미리 깔기 — 경남 거점 매장 방문형</div>
+
+    <div class="deliv-row">
+      <span class="deliv-chip">블로그 체험단 <b>40</b>명</span>
+      <span class="deliv-chip plain">경남 거점 방문형</span>
+      <span class="deliv-chip plain">지정 키워드 후기</span>
+    </div>
 
     <div class="detail"><div class="dt">키워드 선점</div><div class="dd">딥라떼·라떼맛집·아이스 딥라떼 검색 후기 풀 구축 · "후기 없어 못 믿는" 고리 끊기</div></div>
     <div class="detail"><div class="dt">매장 방문</div><div class="dd">경남권 거점 매장 방문형 · 모집·매니징·QC</div></div>
