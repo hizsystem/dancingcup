@@ -58,6 +58,14 @@ body { font-family: 'Noto Sans KR', -apple-system, sans-serif; background: #f4f7
 .measure strong { color: #EA580C; font-weight: 700; }
 .src { font-size: 10.5px; color: #aeb2b8; font-weight: 600; white-space: nowrap; }
 
+/* TREND VISUAL REFERENCE */
+.trend-visuals { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 8px 0 4px; }
+.tv-item { border: 1px solid #e8edf1; border-radius: 10px; overflow: hidden; background: #fff; }
+.tv-item img { width: 100%; height: 116px; object-fit: cover; display: block; }
+.tv-cap { padding: 9px 11px; }
+.tv-cap .tv-t { font-size: 11.5px; font-weight: 800; color: #1a1b18; line-height: 1.35; }
+.tv-cap .tv-s { font-size: 10px; color: #aeb2b8; font-weight: 600; margin-top: 3px; }
+
 .kpi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 18px; }
 .kpi-card { background: #f8fafb; border-radius: 10px; padding: 20px 16px; text-align: center; border: 1px solid #e8edf1; }
 .kpi-card .kc-label { font-size: 11px; color: #999; font-weight: 600; letter-spacing: 0.04em; margin-bottom: 8px; }
@@ -139,6 +147,7 @@ tr.sub td { background:#f8fafb; font-weight:800; color:#1a1b18; border-top:1px s
   .container { padding: 70px 16px 40px; }
   .meta-grid { grid-template-columns: repeat(2, 1fr); }
   .kpi-grid, .act-cards, .why-grid, .arc { grid-template-columns: 1fr; }
+  .trend-visuals { grid-template-columns: repeat(2, 1fr); }
   .arc-step { border-right: none; border-bottom: 1px solid #e8edf1; }
   .arc-step:last-child { border-bottom: none; }
   .section { padding: 24px 20px; }
@@ -253,9 +262,9 @@ tr.sub td { background:#f8fafb; font-weight:800; color:#1a1b18; border-top:1px s
     <div class="sec-sub">진함 일상 노출 · 단골 신호 줍기</div>
 
     <div class="deliv-row">
-      <span class="deliv-chip">인스타 릴스 <b>4</b>건</span>
+      <span class="deliv-chip">인스타 릴스 <b>3</b>건</span>
       <span class="deliv-chip">X <b>상시</b></span>
-      <span class="deliv-chip">틱톡 미러링 <b>4</b>건</span>
+      <span class="deliv-chip">틱톡 미러링 <b>3</b>건</span>
       <span class="deliv-chip">월간 리포트 <b>1</b>회</span>
     </div>
 
@@ -274,17 +283,16 @@ tr.sub td { background:#f8fafb; font-weight:800; color:#1a1b18; border-top:1px s
     <div class="sec-sub">"녹아도 진하다"를 증거 영상으로 · 광고로 전환</div>
 
     <div class="deliv-row">
-      <span class="deliv-chip">AI 광고 소재 <b>4</b>종</span>
+      <span class="deliv-chip">AI 광고 소재 <b>3</b>종</span>
       <span class="deliv-chip plain">광고 변형 태워 검증</span>
       <span class="deliv-chip">매체비 <b>80</b>만 포함</span>
     </div>
 
-    <div class="detail"><div class="dt">AI 소재 제작</div><div class="dd">끝 모금·30분 뒤·청량 진입·무자막 한 컷 4종 제작 · 릴스·메타 광고로 운영</div></div>
-    <div class="detail"><div class="dt">광고 소재 4종</div><div class="dd"><ul>
+    <div class="detail"><div class="dt">AI 소재 제작</div><div class="dd">끝 모금·30분 뒤·청량 진입 3종 제작 · 릴스·메타 광고로 운영</div></div>
+    <div class="detail"><div class="dt">광고 소재 3종</div><div class="dd"><ul>
       <li><span class="lab">끝 모금</span> — 얼음 녹은 컵, 색 그대로</li>
       <li><span class="lab">시간 경과</span> — "30분 뒤" 자막, 안 연해짐</li>
       <li><span class="lab">청량 진입</span> — 시원하게 시작, 진하게 끝</li>
-      <li><span class="lab">조용한 한 컷</span> — 무자막 한 모금(오가닉)</li>
     </ul></div></div>
     <div class="detail"><div class="dt">메타 광고</div><div class="dd">AI 라벨 필수(규정) · paid 소프트 CTA / 피드 무CTA · 5~6월 우수 소재 반영 · 변형 태워 검증 · 매체비 포함</div></div>
 
@@ -294,16 +302,16 @@ tr.sub td { background:#f8fafb; font-weight:800; color:#1a1b18; border-top:1px s
   <!-- ACTION 3 -->
   <div class="section">
     <div class="action-tag">인플루언서</div>
-    <h2>맛집 · 라떼 · <em>경남 마이크로</em></h2>
-    <div class="sec-sub">작은 계정 여럿으로 발견형 유입 — 인지·검색 선점 (전환 목적 아님)</div>
+    <h2>맛집 · 라떼 · <em>카페·디저트</em></h2>
+    <div class="sec-sub">카페·디저트 취향 계정 여럿으로 발견형 유입 — 인지·검색 선점 (전환 목적 아님)</div>
 
     <div class="deliv-row">
-      <span class="deliv-chip">인플루언서 <b>6</b>명</span>
-      <span class="deliv-chip plain">맛집·라떼·경남 마이크로</span>
+      <span class="deliv-chip">인플루언서 <b>7</b>명</span>
+      <span class="deliv-chip plain">맛집·라떼·카페·디저트</span>
       <span class="deliv-chip plain">시차 두고 노출</span>
     </div>
 
-    <div class="detail"><div class="dt">분산 섭외</div><div class="dd">큰 한 명 대신 마이크로 계정 여럿 · 카페 일상에 아이스 딥라떼 한 컷 · 시차 두면 "요즘 자주 보이네"</div></div>
+    <div class="detail"><div class="dt">분산 섭외</div><div class="dd">큰 한 명 대신 카페·디저트 취향 계정 여럿 · 카페·디저트 일상에 아이스 딥라떼 한 컷 · 시차 두면 "요즘 자주 보이네"</div></div>
     <div class="detail"><div class="dt">가드레일</div><div class="dd">여름 = 마시는 상황만 · 시즌 한정 표기 금지(상시 라인) · 협찬 표기 필수 · 우월성 주장·디스·성과 자랑 금지</div></div>
 
     <div class="measure"><strong>측정</strong> — 컨택·확정 수 · 발행 건 · 도달·반응</div>
@@ -358,6 +366,13 @@ tr.sub td { background:#f8fafb; font-weight:800; color:#1a1b18; border-top:1px s
       </tbody>
     </table>
 
+    <div class="trend-visuals">
+      <div class="tv-item"><img src="assets/trend/ediya_fruit.jpg" alt="이디야 생과일 음료"><div class="tv-cap"><div class="tv-t">생과일·수박</div><div class="tv-s">이디야 생과일 3종 · 출처 이디야커피</div></div></div>
+      <div class="tv-item"><img src="assets/trend/sbux_summer.jpg" alt="스타벅스 여름 라인업"><div class="tv-cap"><div class="tv-t">코코넛·씨솔트</div><div class="tv-s">스타벅스 여름 라인업 · 출처 스타벅스 코리아</div></div></div>
+      <div class="tv-item"><img src="assets/trend/oozy_wellness.jpg" alt="우지커피 여름 신메뉴"><div class="tv-cap"><div class="tv-t">웰니스·수박리카노</div><div class="tv-s">우지커피 여름 시즌 · 출처 우지커피</div></div></div>
+      <div class="tv-item"><img src="assets/trend/dirtysoda.jpg" alt="더티소다"><div class="tv-cap"><div class="tv-t">더티소다</div><div class="tv-s">코코넛·라임 더티소다 · 출처 워싱턴타임스</div></div></div>
+    </div>
+
     <div class="measure"><strong>참고 원칙</strong> — 조회수와 판매는 다릅니다. 따라가더라도 SKU는 2~3개로 좁혀 검토합니다.</div>
 
     <div class="detail" style="margin-top:18px;"><div class="dt">월 1회 공유</div><div class="dd">음료·메뉴 트렌드 정리본을 매달 참고 자료로 제공합니다. 실행은 위 7월 운영 플랜을 기준으로 합니다. <strong>견적 외(리테이너 내 제공)</strong></div></div>
@@ -386,7 +401,7 @@ tr.sub td { background:#f8fafb; font-weight:800; color:#1a1b18; border-top:1px s
     <div class="week">
       <div class="wk-head"><span class="wk-range">7/1 — 7/5</span><span class="wk-theme">소재 제작 · 광고 세팅 · 인플루언서 컨택</span></div>
       <ul>
-        <li>아이스 딥라떼 AI 릴스·소재 제작 시작 (소재 4종)</li>
+        <li>아이스 딥라떼 AI 릴스·소재 제작 시작 (소재 3종)</li>
         <li>메타 광고 세팅 · 변형 태우기 시작</li>
         <li>인플루언서(맛집·라떼·경남) 1차 컨택 · 체험단 후보 리스트업</li>
       </ul>
@@ -436,35 +451,35 @@ tr.sub td { background:#f8fafb; font-weight:800; color:#1a1b18; border-top:1px s
     </div>
 
     <div class="kpi-grid">
-      <div class="kpi-card"><div class="kc-label">Part 1</div><div class="kc-value">170<span style="font-size:13px;font-weight:600;color:#999;">만원</span></div><div class="kc-desc">채널 상시 운영</div></div>
-      <div class="kpi-card"><div class="kc-label">Part 2</div><div class="kc-value">220<span style="font-size:13px;font-weight:600;color:#999;">만원</span></div><div class="kc-desc">인플루언서 + 체험단</div></div>
+      <div class="kpi-card"><div class="kc-label">Part 1</div><div class="kc-value">140<span style="font-size:13px;font-weight:600;color:#999;">만원</span></div><div class="kc-desc">채널 상시 운영</div></div>
+      <div class="kpi-card"><div class="kc-label">Part 2</div><div class="kc-value">250<span style="font-size:13px;font-weight:600;color:#999;">만원</span></div><div class="kc-desc">인플루언서 + 체험단</div></div>
       <div class="kpi-card"><div class="kc-label">Part 3</div><div class="kc-value">110<span style="font-size:13px;font-weight:600;color:#999;">만원</span></div><div class="kc-desc">메타 광고</div></div>
     </div>
 
     <!-- PART 1 -->
     <div class="part-block">
-      <div class="part-bar"><div class="pb-t">Part 1 — 채널 상시 운영</div><div class="pb-p">1,700,000원</div></div>
+      <div class="part-bar"><div class="pb-t">Part 1 — 채널 상시 운영</div><div class="pb-p">1,400,000원</div></div>
       <table>
         <thead><tr><th>항목</th><th>내용</th><th class="amt-h">금액</th></tr></thead>
         <tbody>
-          <tr><td class="item">인스타그램 릴스 제작·운영 (4건)</td><td class="desc">AI 활용 + 자체 제작 · 자막·음원·업로드</td><td class="amt">1,000,000</td></tr>
+          <tr><td class="item">인스타그램 릴스 제작·운영 (3건)</td><td class="desc">AI 활용 + 자체 제작 · 자막·음원·업로드</td><td class="amt">700,000</td></tr>
           <tr><td class="item">X 상시 운영</td><td class="desc">실시간 커뮤니케이션·클레임 대응 · 30분 룰</td><td class="amt">300,000</td></tr>
-          <tr><td class="item">틱톡 미러링 (4건)</td><td class="desc">릴스 주요 건 재포스팅 · 틱톡 문법 로컬라이징 · 건수 비례 아닌 정액</td><td class="amt">200,000</td></tr>
+          <tr><td class="item">틱톡 미러링 (3건)</td><td class="desc">릴스 주요 건 재포스팅 · 틱톡 문법 로컬라이징 · 건수 비례 아닌 정액</td><td class="amt">200,000</td></tr>
           <tr><td class="item">채널 모니터링·KPI 트래킹</td><td class="desc">언급량·반응 모니터링 · 주간 KPI · 월간 리포트</td><td class="amt">200,000</td></tr>
-          <tr class="sub"><td colspan="2">Part 1 소계</td><td class="amt">1,700,000</td></tr>
+          <tr class="sub"><td colspan="2">Part 1 소계</td><td class="amt">1,400,000</td></tr>
         </tbody>
       </table>
     </div>
 
     <!-- PART 2 -->
     <div class="part-block">
-      <div class="part-bar"><div class="pb-t">Part 2 — 인플루언서 + 블로그 체험단</div><div class="pb-p">2,200,000원</div></div>
+      <div class="part-bar"><div class="pb-t">Part 2 — 인플루언서 + 블로그 체험단</div><div class="pb-p">2,500,000원</div></div>
       <table>
         <thead><tr><th>항목</th><th>내용</th><th class="amt-h">금액</th></tr></thead>
         <tbody>
-          <tr><td class="item">인플루언서 (6명)</td><td class="desc">맛집·라떼·경남 마이크로 다수 · 섭외·브리프·QC · 7월 업로드</td><td class="amt">1,800,000</td></tr>
+          <tr><td class="item">인플루언서 (7명)</td><td class="desc">맛집·라떼·카페·디저트 계정 다수 · 섭외·브리프·QC · 7월 업로드</td><td class="amt">2,100,000</td></tr>
           <tr><td class="item">블로그 체험단 (40명)</td><td class="desc">키워드 선점·블로그 콘텐츠 풀 구축 · 모집·매니징·QC · 7월 발행</td><td class="amt">400,000</td></tr>
-          <tr class="sub"><td colspan="2">Part 2 소계</td><td class="amt">2,200,000</td></tr>
+          <tr class="sub"><td colspan="2">Part 2 소계</td><td class="amt">2,500,000</td></tr>
         </tbody>
       </table>
     </div>
