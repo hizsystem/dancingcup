@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>댄싱컵 광고 데이터 브리핑 — 브랜드라이즈</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans KR', -apple-system, sans-serif; background: #f4f7f9; color: #1a1b18; line-height: 1.7; font-size: 14px; -webkit-font-smoothing: antialiased; }
+
+/* TOOLBAR */
+.toolbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #0D0D0D; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; }
+.toolbar-left { display: flex; align-items: center; gap: 16px; }
+.toolbar-logo { font-size: 13px; font-weight: 700; color: #EA580C; letter-spacing: 0.05em; }
+.toolbar-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.15); }
+.toolbar-title { font-size: 14px; font-weight: 500; color: #fff; }
+.toolbar-actions { display: flex; gap: 10px; }
+.btn-toolbar { padding: 7px 18px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; background: transparent; color: #fff; font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-block; }
+.btn-toolbar:hover { background: rgba(255,255,255,0.1); }
+.btn-toolbar.alt { border-color: rgba(234,88,12,0.5); color: #EA580C; }
+
+.container { max-width: 920px; margin: 0 auto; padding: 80px 24px 60px; }
+
+/* HEADER */
+.report-header { background: #fff; border-radius: 12px; padding: 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+.report-header .label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px; }
+.report-header h1 { font-size: 34px; font-weight: 900; line-height: 1.3; letter-spacing: -0.02em; }
+.report-header h1 em { color: #EA580C; font-style: normal; }
+.meta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; padding-top: 24px; border-top: 1px solid #e8edf1; }
+.meta-item .mk { font-size: 11px; color: #999; letter-spacing: 0.04em; margin-bottom: 4px; }
+.meta-item .mv { font-size: 13px; font-weight: 600; }
+
+/* SECTION */
+.section { background: #fff; border-radius: 12px; padding: 32px 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+.section h2 { font-size: 18px; font-weight: 800; margin-bottom: 6px; letter-spacing: -0.02em; }
+.section h2 em { color: #EA580C; font-style: normal; }
+.section .sec-sub { font-size: 12px; color: #999; margin-bottom: 22px; }
+.section h3.block-t { font-size: 14px; font-weight: 800; margin: 26px 0 12px; padding-left: 10px; border-left: 3px solid #EA580C; }
+.section h3.block-t:first-of-type { margin-top: 4px; }
+.section p.body { font-size: 13.5px; color: #3a3c40; margin-bottom: 10px; }
+
+/* SUMMARY highlight */
+.summary-box { background: #0D0D0D; border-radius: 12px; padding: 30px 36px; margin-bottom: 20px; color: #fff; }
+.summary-box .hl-label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.1em; margin-bottom: 14px; text-transform: uppercase; }
+.summary-box .lede { font-size: 17px; font-weight: 700; line-height: 1.6; margin-bottom: 18px; letter-spacing: -0.01em; }
+.summary-box .lede em { color: #FDBA8C; font-style: normal; }
+.summary-box .two-track { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.summary-box .tt-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 16px 18px; }
+.summary-box .tt-card .tt-k { font-size: 11px; font-weight: 700; color: #FDBA8C; letter-spacing: 0.04em; margin-bottom: 6px; }
+.summary-box .tt-card .tt-v { font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.9); line-height: 1.6; }
+
+/* KPI GRID */
+.kpi-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+.kpi-card { background: #f8fafb; border-radius: 10px; padding: 18px 10px; text-align: center; border: 1px solid #e8edf1; }
+.kpi-card .kc-label { font-size: 11px; color: #999; font-weight: 600; letter-spacing: 0.04em; margin-bottom: 8px; }
+.kpi-card .kc-value { font-size: 20px; font-weight: 900; color: #1a1b18; letter-spacing: -0.02em; line-height: 1.05; }
+.kpi-card .kc-value.pos { color: #047857; }
+.kpi-card .kc-unit { font-size: 12px; font-weight: 600; color: #999; }
+
+/* TABLE */
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { background: #f8fafb; padding: 10px 14px; font-weight: 600; border-bottom: 2px solid #e8edf1; color: #999; font-size: 11px; text-align: left; white-space: nowrap; }
+th.r { text-align: right; }
+td { padding: 11px 14px; border-bottom: 1px solid #f0f2f5; vertical-align: middle; }
+td.item { font-weight: 600; color: #1a1b18; }
+td.r { text-align: right; font-variant-numeric: tabular-nums; }
+tr:hover td { background: #fafbfc; }
+tr.hl-row td { background: #FFF7ED; }
+tr.hl-row:hover td { background: #FFF7ED; }
+tr.hl-row td:first-child { box-shadow: inset 3px 0 0 #EA580C; }
+tr.subtotal-row td { background: #f8fafb; font-weight: 700; border-top: 1px solid #e8edf1; }
+
+/* 지역 바 차트 */
+.bars { display: grid; grid-template-columns: 175px 1fr 130px; row-gap: 9px; align-items: center; font-size: 13px; margin-top: 4px; }
+.bars .bname { font-weight: 600; }
+.bars .track { position: relative; height: 18px; }
+.bars .fill { position: absolute; left: 0; top: 0; bottom: 0; background: #cbd5e1; border-radius: 0 4px 4px 0; }
+.bars .fill.main { background: #EA580C; }
+.bars .bval { text-align: right; font-variant-numeric: tabular-nums; }
+.bars .bval b { font-weight: 800; }
+.bars .bval small { color: #999; }
+
+.ctr-cell { display: flex; align-items: center; gap: 8px; justify-content: flex-end; }
+.ctr-bar { height: 8px; background: #EA580C; border-radius: 0 3px 3px 0; }
+
+/* INFO */
+.info-box { background: #FFF7ED; border-left: 4px solid #EA580C; border-radius: 0 8px 8px 0; padding: 14px 20px; margin-top: 16px; font-size: 12px; color: #636569; line-height: 1.8; }
+.info-box strong { color: #1a1b18; }
+.note { font-size: 11px; color: #b45309; font-weight: 600; margin-top: 8px; }
+
+/* FOOTER */
+.footer { text-align: center; padding: 40px 0 10px; color: #999; font-size: 12px; line-height: 2; }
+.footer .brand { font-size: 15px; font-weight: 800; color: #1a1b18; margin-bottom: 4px; }
+
+@media (max-width: 768px) {
+  .container { padding: 70px 16px 40px; }
+  .meta-grid { grid-template-columns: repeat(2, 1fr); }
+  .kpi-grid { grid-template-columns: repeat(3, 1fr); }
+  .summary-box .two-track { grid-template-columns: 1fr; }
+  .section { padding: 24px 20px; }
+  .report-header h1 { font-size: 26px; }
+  .bars { grid-template-columns: 120px 1fr 110px; }
+}
+@media print {
+  .toolbar { display: none; }
+  .container { padding: 20px; max-width: none; }
+  body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .section, .summary-box, .report-header { break-inside: avoid; }
+  @page { size: A4; margin: 12mm; }
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="toolbar-left">
+    <div class="toolbar-logo">BRANDRISE</div>
+    <div class="toolbar-sep"></div>
+    <div class="toolbar-title">댄싱컵 광고 데이터 브리핑 — 지역·연령 도달</div>
+  </div>
+  <div class="toolbar-actions">
+    <a class="btn-toolbar alt" href="https://hizsystem.github.io/dancingcup/june-report.html">6월 운영 보고서</a>
+    <a class="btn-toolbar alt" href="https://hizsystem.github.io/dancingcup/july-plan.html">7월 운영 플랜</a>
+    <button class="btn-toolbar" onclick="window.print()">PDF 저장</button>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="report-header">
+    <div class="label">댄싱컵 × 브랜드라이즈</div>
+    <h1>광고 데이터 브리핑 — <em>지역·연령 도달 현황</em></h1>
+    <div class="meta-grid">
+      <div class="meta-item"><div class="mk">공급자</div><div class="mv">브랜드라이즈 by HIZ</div></div>
+      <div class="meta-item"><div class="mk">수신</div><div class="mv">(주)위드런 · 댄싱컵</div></div>
+      <div class="meta-item"><div class="mk">집계 기간</div><div class="mv">2026. 05. 01 — 07. 03</div></div>
+      <div class="meta-item"><div class="mk">용도</div><div class="mv">가맹 문의 증가 배경 확인</div></div>
+    </div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="summary-box">
+    <div class="hl-label">Summary · 세 줄 정리</div>
+    <div class="lede">광고 노출의 <em>절반 이상(54%)이 서울·경기·인천</em>에 나갔고, 창업 검토 연령대(35–55)의 클릭률이 <em>평균을 크게 웃돌며</em>, 상시 메뉴 딥라떼 캠페인에서 <em>실질 유입 효율이 가장 높았습니다.</em> 최근 가맹 문의 증가와 같은 방향을 가리키는 신호입니다.</div>
+    <div class="two-track">
+      <div class="tt-card">
+        <div class="tt-k">지역 — 수도권 도달 확인</div>
+        <div class="tt-v">노출 1위 경기 33,120 · 2위 서울 30,910. 딥라떼 캠페인 기간(6/22~)에는 수도권 비중이 58.6%로 확대 · CTR도 전국 평균 이상</div>
+      </div>
+      <div class="tt-card">
+        <div class="tt-k">연령·메뉴 — 창업 관심층 반응</div>
+        <div class="tt-v">35–55세 CTR 5~8% (전체 평균 4.20%) · 상시 메뉴 딥라떼 링크 CTR 4.29%로 시즌 메뉴 컵빙수(3.31%) 대비 개선</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 한눈에 보기 -->
+  <div class="section">
+    <h2>전체 성과 <em>한눈에 보기</em></h2>
+    <div class="sec-sub">2026.05.01 – 07.03 누적 · Meta Marketing API 실측</div>
+    <div class="kpi-grid">
+      <div class="kpi-card"><div class="kc-label">노출</div><div class="kc-value">129,226</div></div>
+      <div class="kpi-card"><div class="kc-label">도달</div><div class="kc-value">82,348</div></div>
+      <div class="kpi-card"><div class="kc-label">클릭</div><div class="kc-value">5,428</div></div>
+      <div class="kpi-card"><div class="kc-label">전체 CTR</div><div class="kc-value pos">4.20<span class="kc-unit">%</span></div></div>
+      <div class="kpi-card"><div class="kc-label">CPC</div><div class="kc-value">166<span class="kc-unit">원</span></div></div>
+      <div class="kpi-card"><div class="kc-label">예산</div><div class="kc-value">89.9<span class="kc-unit">만원</span></div></div>
+    </div>
+  </div>
+
+  <!-- 01 지역 -->
+  <div class="section">
+    <h2>지역별 노출 — <em>절반 이상이 서울·경기권</em></h2>
+    <div class="sec-sub">권역별 노출 비중 · 노출 129,226 기준 (2026.05.01 – 07.03)</div>
+
+    <div class="bars">
+      <div class="bname">수도권 (서울·경기·인천)</div>
+      <div class="track"><div class="fill main" style="width:100%"></div></div>
+      <div class="bval"><b>54.2%</b> <small>· 70,047</small></div>
+
+      <div class="bname">경남권 (부산·경남·울산)</div>
+      <div class="track"><div class="fill" style="width:31%"></div></div>
+      <div class="bval">16.9% <small>· 21,776</small></div>
+
+      <div class="bname">대구·경북</div>
+      <div class="track"><div class="fill" style="width:17%"></div></div>
+      <div class="bval">9.0% <small>· 11,682</small></div>
+
+      <div class="bname">충청·대전</div>
+      <div class="track"><div class="fill" style="width:16%"></div></div>
+      <div class="bval">8.9% <small>· 11,459</small></div>
+
+      <div class="bname">기타 (호남·강원·제주 등)</div>
+      <div class="track"><div class="fill" style="width:20%"></div></div>
+      <div class="bval">11.0% <small>· 14,262</small></div>
+    </div>
+
+    <div class="info-box">
+      개별 지역 1위는 <strong>경기 33,120</strong> · 2위 <strong>서울 30,910</strong> — 부산(12,086)의 2.5배 이상.
+      딥라떼 캠페인 기간(6.22–7.3)만 보면 수도권 비중이 <strong>58.6%</strong>로 더 높아졌고,
+      수도권 CTR도 4.23~4.33%로 전국 평균(4.20%) 이상입니다. 노출만 나가는 것이 아니라 반응까지 붙고 있습니다.
+    </div>
+  </div>
+
+  <!-- 02 연령 -->
+  <div class="section">
+    <h2>연령별 반응 — <em>창업 검토 연령대일수록 CTR 상승</em></h2>
+    <div class="sec-sub">노출은 25–34에 몰렸지만(47%), 클릭률은 연령이 올라갈수록 높습니다</div>
+
+    <table>
+      <thead>
+        <tr><th>연령</th><th class="r">노출</th><th class="r">클릭</th><th class="r" style="width:190px;">CTR</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="item">18–24</td><td class="r">26,210</td><td class="r">681</td>
+          <td class="r"><div class="ctr-cell"><div class="ctr-bar" style="width:33px"></div>2.60%</div></td></tr>
+        <tr><td class="item">25–34</td><td class="r">60,893</td><td class="r">2,449</td>
+          <td class="r"><div class="ctr-cell"><div class="ctr-bar" style="width:51px"></div>4.02%</div></td></tr>
+        <tr class="hl-row"><td class="item">35–44</td><td class="r">30,972</td><td class="r">1,571</td>
+          <td class="r"><div class="ctr-cell"><div class="ctr-bar" style="width:64px"></div>5.07%</div></td></tr>
+        <tr class="hl-row"><td class="item">45–54</td><td class="r">8,672</td><td class="r">551</td>
+          <td class="r"><div class="ctr-cell"><div class="ctr-bar" style="width:80px"></div>6.35%</div></td></tr>
+        <tr class="hl-row"><td class="item">55–64</td><td class="r">1,751</td><td class="r">139</td>
+          <td class="r"><div class="ctr-cell"><div class="ctr-bar" style="width:100px"></div>7.94%</div></td></tr>
+        <tr><td class="item">65+</td><td class="r">725</td><td class="r">37</td>
+          <td class="r"><div class="ctr-cell"><div class="ctr-bar" style="width:64px"></div>5.10%</div></td></tr>
+      </tbody>
+    </table>
+
+    <div class="info-box">
+      가맹 창업 주 연령대(35–55)의 CTR이 <strong>5~8%로 전체 평균 4.20%를 크게 웃돕니다.</strong>
+      소비자 타겟보다 창업 검토 연령대가 광고에 더 적극적으로 반응하는 흐름입니다.
+      성별은 여성 노출 79%(CTR 4.30%) · 남성 20%(CTR 3.82%).
+    </div>
+  </div>
+
+  <!-- 03 캠페인 -->
+  <div class="section">
+    <h2>캠페인별 성과 — <em>링크 클릭 기준 딥라떼가 뚜렷이 개선</em></h2>
+    <div class="sec-sub">전체 CTR과 링크 CTR 병기 · 2026.05.01 – 07.03</div>
+
+    <table>
+      <thead>
+        <tr><th>캠페인</th><th class="r">노출</th><th class="r">도달</th><th class="r">전체 CTR</th><th class="r">링크 CTR</th><th class="r">링크당 비용</th><th class="r">예산</th></tr>
+      </thead>
+      <tbody>
+        <tr class="hl-row"><td class="item">딥라떼 · 인플루언서 협업 (6.22–)</td><td class="r">53,259</td><td class="r">39,996</td><td class="r">4.34%</td><td class="r">4.38%</td><td class="r">171원</td><td class="r">399,500원</td></tr>
+        <tr class="hl-row"><td class="item">딥라떼 · 자체(HIZ) 제작 (6.22–)</td><td class="r">27,129</td><td class="r">22,827</td><td class="r">4.04%</td><td class="r">4.10%</td><td class="r">180원</td><td class="r">199,869원</td></tr>
+        <tr><td class="item">컵빙수 · 인플루언서 협업 (5.15–)</td><td class="r">21,658</td><td class="r">14,924</td><td class="r">4.95%</td><td class="r">2.98%</td><td class="r">232원</td><td class="r">149,920원</td></tr>
+        <tr><td class="item">컵빙수 · 자체(HIZ) 제작 (5.15–)</td><td class="r">27,180</td><td class="r">20,578</td><td class="r">3.50%</td><td class="r">3.57%</td><td class="r">155원</td><td class="r">149,884원</td></tr>
+        <tr class="subtotal-row"><td class="item">합계</td><td class="r">129,226</td><td class="r">82,348</td><td class="r">4.20%</td><td class="r">3.92%</td><td class="r">178원</td><td class="r">899,173원</td></tr>
+      </tbody>
+    </table>
+
+    <div class="info-box">
+      <strong>전체 CTR</strong>은 광고 위 모든 클릭(링크 이동 + 프로필 방문·사진 확대·더보기 등), <strong>링크 CTR</strong>은 랜딩으로 실제 이동한 클릭만 집계합니다.
+      컵빙수 인플루언서 소재는 전체 CTR이 4.95%로 가장 높았지만 링크 이동은 2.98%에 그쳤습니다 — 클릭 상당수가 인플루언서 프로필 탐색 등으로 분산.
+      캠페인 합산 링크 CTR은 <strong>컵빙수 3.31% → 딥라떼 4.29%</strong>로, 실질 유입 효율이 한 달 사이 뚜렷하게 개선됐습니다.
+    </div>
+  </div>
+
+  <!-- 04 가설 -->
+  <div class="section">
+    <h2>가맹 문의 증가와의 연결 — <em>가설과 근거</em></h2>
+    <div class="sec-sub">데이터가 지지하는 범위까지 정리 · 인과 확인은 다음 단계</div>
+
+    <h3 class="block-t">서울·경기 도달은 데이터로 확인됩니다</h3>
+    <p class="body">창업 광고가 나가지 않은 지난 1년 사이, 수도권에 브랜드가 노출된 경로는 이 광고와 딥라떼 콘텐츠입니다. 노출의 <strong>54%(최근 59%)가 수도권</strong>에 나갔습니다.</p>
+
+    <h3 class="block-t">연령 데이터가 같은 방향을 가리킵니다</h3>
+    <p class="body">창업 검토 연령대(35–55)의 클릭률이 평균을 크게 웃돕니다 — 브랜드 광고가 소비자와 동시에 <strong>예비 창업자에게도 닿고 있습니다.</strong></p>
+
+    <h3 class="block-t">가설 — 상시 메뉴에 붙은 반응이 창업 관심으로 이어졌다</h3>
+    <p class="body">시즌 한정(컵빙수)이 아닌 상시 메뉴(딥라떼) 콘텐츠에서 실질 유입 효율이 가장 높았고(링크 CTR 4.29%), 반응이 창업 검토 연령대·수도권에 집중됐습니다. 연중 판매하는 시그니처 메뉴에 소비자 반응이 확인된 것이 <strong>예비 창업자에게 브랜드 매력 신호로 작동했을 가능성</strong> — 문의 증가 시점도 딥라떼 캠페인 시작(6.22) 직후와 겹칩니다.</p>
+
+    <h3 class="block-t">인과 확인은 다음 단계</h3>
+    <p class="body">현재 데이터는 도달 지역·연령·시점이 문의 발생 패턴과 겹친다는 근거까지입니다. 가맹 문의 접수 시 <strong>"어디서 보고 오셨는지" 항목을 추가</strong>하면, 다음 달부터는 문의 한 건마다 유입 경로를 확인할 수 있습니다.</p>
+  </div>
+
+  <div class="footer">
+    <div class="brand">BRANDRISE by HIZ</div>
+    출처: Meta Ads Manager · 2026.05.01 – 07.03 실측 · 지역은 Meta 추정 위치 기준 · 예산 = 기간 내 집행분 합계<br>
+    지역·연령 CTR은 전체 클릭 기준(링크 클릭 분리 집계 미제공) · 캠페인별 표는 전체·링크 클릭 병기
+  </div>
+
+</div>
+</body>
+</html>
