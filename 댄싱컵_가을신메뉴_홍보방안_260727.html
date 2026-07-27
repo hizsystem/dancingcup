@@ -144,6 +144,35 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
 .ev .ev-n { font-size: 11.5px; font-weight: 700; color: #999; margin-top: 5px; }
 .ev-read { font-size: 13px; color: #3a3c40; display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
 .ev-read strong { color: #1a1b18; font-weight: 800; }
+
+/* 흐름 다이어그램 */
+.flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin: 6px 0 4px; }
+.flow > * { min-width: 0; }
+.fl { position: relative; border: 1px solid #e8edf1; border-radius: 10px; padding: 15px 14px; background: #fff; margin-right: 16px; }
+.flow .fl:last-child { margin-right: 0; }
+.fl::after { content: ''; position: absolute; right: -12px; top: 50%; width: 8px; height: 8px; border-top: 2px solid #FED7AA; border-right: 2px solid #FED7AA; transform: translateY(-50%) rotate(45deg); }
+.flow .fl:last-child::after { display: none; }
+.fl .fl-k { font-size: 10.5px; font-weight: 800; color: #EA580C; letter-spacing: 0.04em; margin-bottom: 7px; }
+.fl .fl-t { font-size: 12.5px; font-weight: 800; line-height: 1.45; }
+.fl.dim { background: #f8fafb; }
+
+/* 영수증 목업 */
+.rcpt-wrap { display: grid; grid-template-columns: 260px 1fr; gap: 20px; align-items: center; margin: 6px 0 4px; }
+.rcpt-wrap > * { min-width: 0; }
+.rcpt { background: #fffef9; border: 1px solid #e8e3d5; border-radius: 3px; padding: 16px 18px 20px; font-family: 'Menlo','Consolas',monospace; font-size: 11px; color: #4a4a44; line-height: 1.9; box-shadow: 0 3px 14px rgba(0,0,0,0.07); transform: rotate(-1.2deg); }
+.rcpt .rc-hd { text-align: center; font-weight: 700; letter-spacing: 0.18em; color: #1a1b18; padding-bottom: 8px; }
+.rcpt .rc-dv { border-top: 1px dashed #cfc9b8; margin: 7px 0; }
+.rcpt .rc-ln { display: flex; justify-content: space-between; gap: 10px; }
+.rcpt .rc-msg { margin-top: 10px; padding-top: 9px; border-top: 1px dashed #cfc9b8; font-size: 11.5px; font-weight: 700; color: #9a3412; line-height: 1.65; text-align: center; }
+
+/* 투표 UI 목업 */
+.poll { background: #f8fafb; border: 1px solid #e8edf1; border-radius: 12px; padding: 18px 20px; }
+.poll .pl-q { font-size: 12.5px; font-weight: 800; margin-bottom: 12px; }
+.poll .pl-row { position: relative; background: #fff; border: 1px solid #e8edf1; border-radius: 8px; height: 34px; margin-bottom: 8px; overflow: hidden; display: flex; align-items: center; }
+.poll .pl-fill { position: absolute; left: 0; top: 0; bottom: 0; background: #FFF0E2; border-right: 2px solid #FB923C; }
+.poll .pl-lb { position: relative; padding-left: 13px; font-size: 12px; font-weight: 800; color: #1a1b18; }
+.poll .pl-pc { position: relative; margin-left: auto; padding-right: 13px; font-size: 12px; font-weight: 900; color: #EA580C; }
+.poll .pl-n { font-size: 10.5px; color: #aeb2b8; font-weight: 700; margin-top: 4px; }
 .ev.hot .ev-n { color: #EA580C; }
 .caption-ex { background: #fff; border-left: 3px solid #FB923C; border-radius: 0 6px 6px 0; padding: 9px 13px; margin-bottom: 10px; }
 .caption-ex .cx-k { font-size: 10px; font-weight: 800; color: #9a3412; letter-spacing: 0.04em; margin-bottom: 3px; }
@@ -314,15 +343,12 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
     <div class="sec-sub">제품이 아니라 실행을 모았습니다 · 국내 21건</div>
 
     <div class="menu-head" style="margin-top:4px;"><span class="mh-t">대결은 이미 나온 수입니다</span><span class="mh-s">공차 흑백밀크티 · 2026-01</span></div>
-    <table>
-      <thead><tr><th>시점</th><th>공차가 한 것</th></tr></thead>
-      <tbody>
-        <tr><td class="item">출시 6일 전</td><td class="desc">인스타 '흑 VS 백' 댓글 투표</td></tr>
-        <tr><td class="item">출시일</td><td class="desc">셰프가 흑·백 두 캐릭터로 1인 2역 영상</td></tr>
-        <tr><td class="item">출시 직후</td><td class="desc">스크래치 쿠폰 — 난수 앱 등록, 즉시 당첨</td></tr>
-        <tr><td class="item">확산</td><td class="desc">구매 인증샷</td></tr>
-      </tbody>
-    </table>
+    <div class="flow">
+      <div class="fl"><div class="fl-k">출시 6일 전</div><div class="fl-t">'흑 VS 백'<br>댓글 투표</div></div>
+      <div class="fl"><div class="fl-k">출시일</div><div class="fl-t">셰프가 흑·백<br>1인 2역 영상</div></div>
+      <div class="fl"><div class="fl-k">직후</div><div class="fl-t">스크래치 쿠폰<br>즉시 당첨</div></div>
+      <div class="fl dim"><div class="fl-k">확산</div><div class="fl-t">구매 인증샷</div></div>
+    </div>
     <div class="ref-note">대결 축은 흑임자 vs 소금. 흑임자를 한 편으로 세운 것까지 같습니다</div>
 
     <div class="rec-box" style="margin-top:16px;">
@@ -332,17 +358,33 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
     <div class="ref-note">브랜드가 연출한 대결은 영상이 끝나면 끝납니다. 130개 지점이 편을 들면 9월 내내 굴러갑니다</div>
 
     <div class="menu-head"><span class="mh-t">흑임자</span><span class="mh-s">국내 9건 중 5건</span></div>
-    <table>
+    <div class="ev-grid c3">
+      <div class="ev hot">
+        <div class="ev-k">이디야 음료 2종</div>
+        <div class="ev-v">20만 잔</div>
+        <div class="ev-n">출시 3주 · 일 1만 개</div>
+      </div>
+      <div class="ev hot">
+        <div class="ev-k">같이 낸 흑임자 붕어빵</div>
+        <div class="ev-v">13만 개</div>
+        <div class="ev-n">같은 3주</div>
+      </div>
+      <div class="ev">
+        <div class="ev-k">밀크베버리지 순위</div>
+        <div class="ev-v">3위</div>
+        <div class="ev-n">토피넛·초콜릿 다음</div>
+      </div>
+    </div>
+    <div class="ev-read"><span>음료만 낸 게 아니라 <strong>씹는 것과 같이</strong> 냈습니다.</span> <span class="src">이디야 2022-10</span></div>
+    <table style="margin-top:14px;">
       <thead><tr><th>브랜드</th><th>한 일</th><th>결과</th></tr></thead>
       <tbody>
-        <tr><td class="item">이디야 <span class="src">2022-10</span></td><td class="desc">음료 2종 + <b>흑임자 붕어빵</b> 같은 날 출시</td><td class="desc">3주 20만 잔 · 밀크베버리지 3위</td></tr>
         <tr><td class="item">달콤커피 <span class="src">2019-11</span></td><td class="desc">강릉 유행 메뉴를 프랜차이즈로 이식</td><td class="desc">폰스트랩 3만 개 한정 굿즈</td></tr>
         <tr><td class="item">칸타타 <span class="src">2023-05</span></td><td class="desc">전국 카페 6곳 온라인 투표 → 최우수작 상품화</td><td class="desc">패키지에 원조 카페 · QR 스토리</td></tr>
         <tr><td class="item">이디야 국중박 <span class="src">2026</span></td><td class="desc">박물관 5개점 전용 검은깨 라떼</td><td class="desc">외국인 주문 1위</td></tr>
         <tr><td class="item">더벤티 <span class="src">2025-09</span></td><td class="desc">저가권에서 확인되는 유일한 흑임자 라인</td><td class="desc">가을 출시</td></tr>
       </tbody>
     </table>
-    <div class="ref-note">이디야는 음료만 낸 게 아니라 씹는 것과 같이 냈습니다. 붕어빵도 3주 13만 개</div>
 
     <div class="menu-head"><span class="mh-t">쑥</span><span class="mh-s">국내 7건 중 4건</span></div>
     <table>
@@ -385,7 +427,33 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
     <div class="ref-note">오트를 단품으로 판 곳보다, <b>변경 옵션</b>과 <b>시간대</b>로 판 곳이 오래 갔습니다</div>
 
     <div class="menu-head"><span class="mh-t">저가권이 지금 쓰는 수</span><span class="mh-s">2026년 사례</span></div>
-    <table>
+    <div class="rcpt-wrap">
+      <div class="rcpt">
+        <div class="rc-hd">MEGA MGC COFFEE</div>
+        <div class="rc-dv"></div>
+        <div class="rc-ln"><span>복숭아 퐁당 요거트</span><span>4,500</span></div>
+        <div class="rc-ln"><span>와앙 핫 치즈스틱</span><span>3,500</span></div>
+        <div class="rc-dv"></div>
+        <div class="rc-ln"><span>합계</span><span>8,000</span></div>
+        <div class="rc-msg">붉은 스무디의 흔적을<br>남기지 마십시오.</div>
+      </div>
+      <div>
+        <div class="ev-grid">
+          <div class="ev hot">
+            <div class="ev-k">X 게시물 조회</div>
+            <div class="ev-v">490만</div>
+            <div class="ev-n">리트윗 1.9만</div>
+          </div>
+          <div class="ev">
+            <div class="ev-k">신메뉴 6종</div>
+            <div class="ev-v">2주 100만 개</div>
+            <div class="ev-n">2026-07-09 출시</div>
+          </div>
+        </div>
+        <div class="ev-read" style="margin-top:12px;"><span>제작물은 <strong>영수증 문구</strong>가 전부입니다.</span> <span class="src">매장 DID 화면 연동</span></div>
+      </div>
+    </div>
+    <table style="margin-top:18px;">
       <thead><tr><th>브랜드</th><th>한 일</th><th>결과</th></tr></thead>
       <tbody>
         <tr><td class="item">메가 <span class="src">2026-07</span></td><td class="desc">키오스크 <b>영수증에 괴담 문구</b> 인쇄 · DID 화면 연동</td><td class="desc">X 리트윗 1.9만 · 490만 뷰</td></tr>
@@ -563,8 +631,28 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
       <span class="deliv-chip">인스타 · X</span>
       <span class="deliv-chip plain">추가 비용 0</span>
     </div>
-    <div class="detail"><div class="dt">9/9 — 마시기 전</div><div class="dd">색과 이름만 보고 고르게 합니다. 출시일에 확인하러 옵니다</div></div>
-    <div class="detail"><div class="dt">9/19 — 마신 뒤</div><div class="dd">앞의 선택이 바뀌었는지 묻습니다. 바뀐 쪽이 콘텐츠가 됩니다</div></div>
+    <div class="ref-grid c2" style="align-items:start;">
+      <div class="ref">
+        <img src="plan_assets/act_vote.jpg" alt="쑥·흑임자 두 컵 대칭 컷">
+        <div class="rf-cap"><div class="rf-t">투표에 쓸 기준 컷</div><div class="rf-s">같은 컵·같은 조명 — 색만 갈리게</div></div>
+      </div>
+      <div>
+        <div class="poll">
+          <div class="pl-q">9/9 · 마시기 전 &nbsp;— &nbsp;어느 편입니까</div>
+          <div class="pl-row"><div class="pl-fill" style="width:58%;"></div><span class="pl-lb">쑥파</span><span class="pl-pc">58%</span></div>
+          <div class="pl-row"><div class="pl-fill" style="width:42%;"></div><span class="pl-lb">흑임자파</span><span class="pl-pc">42%</span></div>
+          <div class="pl-n">수치는 배치 예시입니다</div>
+        </div>
+        <div class="poll" style="margin-top:10px;">
+          <div class="pl-q">9/19 · 마신 뒤 &nbsp;— &nbsp;선택이 바뀌었습니까</div>
+          <div class="pl-row"><div class="pl-fill" style="width:39%;"></div><span class="pl-lb">그대로</span><span class="pl-pc">39%</span></div>
+          <div class="pl-row"><div class="pl-fill" style="width:61%;"></div><span class="pl-lb">갈아탔다</span><span class="pl-pc">61%</span></div>
+          <div class="pl-n">갈아탄 쪽이 다음 콘텐츠가 됩니다</div>
+        </div>
+      </div>
+    </div>
+    <div class="detail" style="margin-top:14px;"><div class="dt">9/9 — 마시기 전</div><div class="dd">색과 이름만 보고 고르게 합니다. 출시일에 확인하러 옵니다</div></div>
+    <div class="detail"><div class="dt">9/19 — 마신 뒤</div><div class="dd">한 번 더 물으면 같은 사람에게 두 번 말을 겁니다</div></div>
     <div class="measure"><strong>선례</strong> — 공차 출시 전 6일 댓글 투표 · 어메이징 오트 '나만의 원픽 고르기' <span class="src">2026-01 / 2023</span></div>
 
     <div class="menu-head"><span class="mh-t">② 경남권 크리에이터 — 두 잔을 다 마시게</span><span class="mh-s">9/15 · 9/18 · 9/22 분산</span></div>
@@ -573,8 +661,19 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
       <span class="deliv-chip">1,000,000원</span>
       <span class="deliv-chip plain">방문 지점 태그</span>
     </div>
-    <div class="detail"><div class="dt">한 명이 두 잔을 마시고 하나를 고릅니다</div><div class="dd">각자 다른 메뉴를 받으면 비교가 안 됩니다</div></div>
-    <div class="detail"><div class="dt">계약에 넣을 것</div><div class="dd">원본 파일 납품 · 메타 광고 30일 사용권 — 없으면 인원을 줄입니다</div></div>
+    <div class="ref-grid c2" style="align-items:start;">
+      <div class="ref">
+        <img src="plan_assets/act_creator.jpg" alt="두 잔을 함께 든 비교 컷">
+        <div class="rf-cap"><div class="rf-t">노리는 그림</div><div class="rf-s">한 프레임에 두 잔 · 얼굴 없이 손만</div></div>
+      </div>
+      <div class="hooks"><ul>
+        <li>두 잔을 같이 들어야 비교가 성립합니다</li>
+        <li>각자 한 잔씩 받으면 그냥 신메뉴 소개가 됩니다</li>
+        <li>마지막에 한 잔을 내려놓는 컷 = 선택</li>
+        <li class="w">협찬 표기 필수 · 우월성 주장 금지</li>
+      </ul></div>
+    </div>
+    <div class="detail" style="margin-top:14px;"><div class="dt">계약에 넣을 것</div><div class="dd">원본 파일 납품 · 메타 광고 30일 사용권 — 없으면 인원을 줄입니다</div></div>
     <div class="measure"><strong>선례</strong> — 달콤커피가 강릉 유행 메뉴를 지역 각도로 이식 <span class="src">2019-11</span></div>
 
     <div class="menu-head"><span class="mh-t">③ 파일럿 지점 숏폼 — 직원이 찍습니다</span><span class="mh-s">5~10개점</span></div>
@@ -583,8 +682,20 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
       <span class="deliv-chip">HIZ 재편집</span>
       <span class="deliv-chip plain">제작비 200,000원 안</span>
     </div>
-    <div class="detail"><div class="dt">쑥 붓기 · 흑임자 붓기 · 직원 원픽</div><div class="dd">휴대폰으로 찍은 원본을 받아 HIZ가 편집합니다</div></div>
-    <div class="detail"><div class="dt">130개점 전체는 목표로 잡지 않습니다</div><div class="dd">참여 안 하는 지점이 대부분이면 캠페인이 실패로 보입니다</div></div>
+    <div class="ref-grid c2" style="align-items:start;">
+      <div class="ref">
+        <img src="plan_assets/act_store.jpg" alt="매장 카운터 직원 원픽 컷">
+        <div class="rf-cap"><div class="rf-t">7초 안에 끝나는 그림</div><div class="rf-s">직원이 한 잔을 앞으로 민다 = 원픽</div></div>
+      </div>
+      <div>
+        <div class="flow" style="grid-template-columns:1fr 1fr;">
+          <div class="fl"><div class="fl-k">0~4초</div><div class="fl-t">쑥 붓기 → 흑임자 붓기</div></div>
+          <div class="fl"><div class="fl-k">5~7초</div><div class="fl-t">직원이 한 잔을 민다</div></div>
+        </div>
+        <div class="detail" style="margin-top:14px;"><div class="dt">대사도 자막도 없습니다</div><div class="dd">지점마다 말이 달라지면 편집이 안 붙습니다</div></div>
+        <div class="detail"><div class="dt">130개점 전체는 목표로 잡지 않습니다</div><div class="dd">참여 안 하는 지점이 대부분이면 캠페인이 실패로 보입니다</div></div>
+      </div>
+    </div>
     <div class="measure"><strong>선례</strong> — 컴포즈 알바생 릴스 70만 뷰 → 정식 메뉴 채택, 2주 30만 잔 <span class="src">2026-03</span></div>
 
     <div class="menu-head"><span class="mh-t">④ 메타 소재 검증 — 반씩 씁니다</span><span class="mh-s">800,000원</span></div>
@@ -611,10 +722,27 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
     </div>
 
     <div class="menu-head"><span class="mh-t">본사가 결정하면 되는 것</span><span class="mh-s">HIZ 예산 밖 · 제작비 거의 0</span></div>
-    <div class="why-grid">
-      <div class="why-card"><div class="wc-n">영수증 문구</div><div class="wc-t">"오늘 흑임자파를 고르셨습니다"</div><div class="wc-d">메가는 영수증 문구만으로 X 490만 뷰. 주문 8할이 키오스크입니다 <span class="wc-d warn">POS 권한 필요</span></div></div>
+    <div class="rcpt-wrap">
+      <div class="rcpt">
+        <div class="rc-hd">DANCING CUP</div>
+        <div class="rc-dv"></div>
+        <div class="rc-ln"><span>흑임자라떼 (ICE)</span><span>3,500</span></div>
+        <div class="rc-ln"><span>딥라떼 (ICE)</span><span>3,000</span></div>
+        <div class="rc-dv"></div>
+        <div class="rc-ln"><span>합계</span><span>6,500</span></div>
+        <div class="rc-msg">오늘 흑임자파를<br>고르셨습니다.</div>
+      </div>
+      <div>
+        <div class="detail"><div class="dt">제작물이 없습니다</div><div class="dd">키오스크 문구 한 줄. 메가는 이것만으로 X 490만 뷰</div></div>
+        <div class="detail"><div class="dt">주문 10건 중 8건이 키오스크</div><div class="dd">공식 계정보다 확실하게 닿는 접점입니다</div></div>
+        <div class="ph"><span class="ph-tag">전제</span>본사에서 영수증 문구를 일괄 제어할 수 있는지 확인 필요 — HIZ가 실행하는 항목이 아닙니다</div>
+      </div>
+    </div>
+
+    <div class="why-grid" style="margin-top:18px;">
       <div class="why-card"><div class="wc-n">크루 커스텀</div><div class="wc-t">직원이 만든 조합을 공모</div><div class="wc-d">컴포즈는 알바생 레시피를 정식 메뉴로 올렸습니다 <span class="wc-d warn">사내 공지·시상 경로 필요</span></div></div>
       <div class="why-card"><div class="wc-n">푸드 페어링</div><div class="wc-t">씹는 것과 같이 내면 커집니다</div><div class="wc-d">이디야 흑임자 붕어빵 3주 13만 개 <span class="wc-d warn">메뉴 개발은 HIZ 영역 밖</span></div></div>
+      <div class="why-card"><div class="wc-n">지점 승격</div><div class="wc-t">잘 되는 지점을 전국으로</div><div class="wc-d">스타벅스는 1개 지점 특화품을 전국 한정으로 올렸습니다 <span class="wc-d warn">지점 판매 데이터 필요</span></div></div>
     </div>
 
     <div class="ph"><span class="ph-tag">측정 한계</span>지점별 판매량을 받지 못하면 대결 결과는 <b>소셜 응답</b>으로만 발표합니다. 판매 우열로 쓰지 않습니다</div>
@@ -707,7 +835,19 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
     <div class="ref-note">쑥·흑임자는 신규 유입, 오트딥은 이미 딥라떼를 마시는 사람의 선택지입니다. 한 판에 섞으면 둘 다 흐려집니다</div>
 
     <div class="menu-head"><span class="mh-t">단품이 아니라 옵션으로 말합니다</span><span class="mh-s">선례 2건</span></div>
-    <div class="why-grid">
+    <div class="ref-grid c2" style="align-items:start;">
+      <div class="ref">
+        <img src="plan_assets/act_oat_option.jpg" alt="우유딥·오트딥 비교 컷">
+        <div class="rf-cap"><div class="rf-t">한 프레임에 나란히</div><div class="rf-s">왼쪽 우유 · 오른쪽 오트 — 베이스 톤만 갈림</div></div>
+      </div>
+      <div class="hooks"><ul>
+        <li>새 메뉴를 소개하는 그림이 아닙니다</li>
+        <li>같은 딥라떼가 두 가지로 나오는 그림입니다</li>
+        <li>오트 쪽이 더 따뜻한 아이보리로 읽힙니다</li>
+        <li class="w">어느 쪽이 낫다고 말하지 않습니다</li>
+      </ul></div>
+    </div>
+    <div class="why-grid" style="margin-top:14px;">
       <div class="why-card"><div class="wc-n">빽다방 <span class="src">2021-12</span></div><div class="wc-t">우유 → 두유 변경 +500원</div><div class="wc-d">저가권도 밀크 베이스를 유료 옵션으로 팔았습니다</div></div>
       <div class="why-card"><div class="wc-n">어메이징 오트 <span class="src">2023</span></div><div class="wc-t">우유 메뉴 전부 오트로 변경 가능</div><div class="wc-d">신메뉴가 아니라 기존 메뉴의 변주로 열었습니다</div></div>
       <div class="why-card"><div class="wc-n">그래서 말투</div><div class="wc-t">"딥라떼, 오트로 바꿔봤어요?"</div><div class="wc-d">8월 "오늘도 딥라떼"가 그대로 이어집니다</div></div>
