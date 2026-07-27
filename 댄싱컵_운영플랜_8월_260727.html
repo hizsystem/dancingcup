@@ -220,6 +220,10 @@ td.srcc { font-size: 10.5px; color: #aeb2b8; font-weight: 600; line-height: 1.5;
 .rl .rl-t { font-size: 14.5px; font-weight: 800; color: #1a1b18; line-height: 1.35; }
 .rl .rl-s { font-size: 11px; color: #999; margin-top: 4px; line-height: 1.5; }
 .ev-grid.c3 { grid-template-columns: repeat(3, 1fr); }
+.axis { display: flex; align-items: baseline; gap: 10px; margin: 26px 0 10px; padding-bottom: 8px; border-bottom: 2px solid #f0f2f5; }
+.axis .ax-n { font-size: 11px; font-weight: 800; color: #fff; background: #EA580C; padding: 3px 9px; border-radius: 6px; white-space: nowrap; }
+.axis .ax-t { font-size: 15.5px; font-weight: 800; }
+.axis .ax-s { font-size: 11.5px; color: #999; font-weight: 600; }
 .hooks { align-self: center; }
 .hooks ul { list-style: none; padding: 0; margin: 0; }
 .hooks li { position: relative; padding-left: 14px; font-size: 13px; color: #636569; line-height: 1.6; margin-bottom: 8px; }
@@ -450,7 +454,9 @@ td.srcc { font-size: 10.5px; color: #aeb2b8; font-weight: 600; line-height: 1.5;
     <h2>음료 <em>트렌드 리포트</em></h2>
     <div class="sec-sub">2026 하반기 음료 흐름 — 가을 메뉴 판단용 참고</div>
 
-    <p class="context-lead">디저트 유행은 <strong>릴레이</strong>로 돕니다. 지금 주자는 <strong>양쯔깐루</strong>입니다.</p>
+    <p class="context-lead">지금 <strong>두 축</strong>이 따로 돕니다. 하나는 빨리 죽고, 하나는 계절마다 돌아옵니다.</p>
+
+    <div class="axis"><span class="ax-n">축 1</span><span class="ax-t">유행 릴레이</span><span class="ax-s">외래 디저트 · 주자 교대</span></div>
 
     <div class="relay">
       <div class="rl"><div class="rl-d">2025 말</div><div class="rl-t">두쫀쿠</div><div class="rl-s">카다이프 · 피스타치오</div></div>
@@ -495,7 +501,44 @@ td.srcc { font-size: 10.5px; color: #aeb2b8; font-weight: 600; line-height: 1.5;
     </div>
     <div class="ref-note">홍콩 디저트(망고·자몽·사고) · 국내형은 코코넛밀크 대신 그릭요거트 베이스<br>이름을 안 써도 망고+자몽 조합이 이번 여름 대표 상품</div>
 
-    <p class="context-lead" style="margin-top:22px;">재료는 이렇게 바뀌지만, <strong>팔리는 문법</strong>은 오래 갑니다.</p>
+    <div class="axis"><span class="ax-n">축 2</span><span class="ax-t">제철 코어</span><span class="ax-s">국내 제철 · 계절마다 교대</span></div>
+
+    <p class="context-lead">릴레이와 다릅니다. 죽지 않고 <strong>다음 제철로 넘어갑니다</strong>. 지금은 토마토입니다.</p>
+
+    <div class="ref-grid c2" style="align-items:start;">
+      <div class="ref">
+        <img src="plan_assets/trend_tomato.jpg" alt="토마토코어 레퍼런스">
+        <div class="rf-cap"><div class="rf-t">토마토코어</div><div class="rf-s">빨강–초록 대비 · 계절감 인증</div></div>
+      </div>
+      <div class="hooks">
+        <ul>
+          <li>오늘의집 토마토 소품 검색 <b>+312%</b> · 6/15~7/12</li>
+          <li>29CM 토마토 거래액 <b>+259%</b> · 폰케이스 5배</li>
+          <li>로에베 토마토 리프 향수 매출 <b>2배</b></li>
+          <li>메가 멋쟁이 토마토 스무디 — 7/9 <b>베스트셀러</b></li>
+          <li>바나프레소 토마토 빙수 — <b>후추 뿌려 먹기</b>로 화제</li>
+          <li>애슐리 브랜드 최초 토마토&바질 시즌 · 신메뉴 14종</li>
+          <li>이디야 커피다이닝 'RED' — 토마토·산초·홍고추 커피</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ev-grid">
+      <div class="ev hot">
+        <div class="ev-k">확산 순서</div>
+        <div class="ev-v">이미지 <i>→</i> 맛</div>
+        <div class="ev-n">'귀엽다'가 '맛있다'보다 먼저</div>
+      </div>
+      <div class="ev">
+        <div class="ev-k">주도 주체</div>
+        <div class="ev-v">소비자 <i>→</i> 브랜드</div>
+        <div class="ev-n">인스타 인증 → 제품 출시</div>
+      </div>
+    </div>
+    <div class="ev-read"><span>제철코어는 음료를 넘어 <strong>소품·향수·패션</strong>까지 갑니다.</span> <span class="src">썸트렌드 · 반론보도 2026-06-18</span></div>
+    <div class="ref-note">업계 전망 — 토마토 다음은 체리·수박·복숭아, 이어서 꽃·허브·곡물 모티브</div>
+
+    <p class="context-lead" style="margin-top:26px;">두 축을 관통하는 건 <strong>팔리는 문법</strong>입니다. 이건 오래 갑니다.</p>
 
     <div class="ref-grid c3">
       <div class="ref">
@@ -563,16 +606,6 @@ td.srcc { font-size: 10.5px; color: #aeb2b8; font-weight: 600; line-height: 1.5;
           <td class="srcc">경향신문<br>2026-02-07</td>
         </tr>
         <tr>
-          <td class="item">토마토코어</td>
-          <td class="desc"><ul class="sig">
-            <li>블로그 언급 <b>640건대</b> 급등 · 5월 재점화</li>
-            <li><b>할리스</b> 토마토 상큼 컵빙수 6,800원</li>
-            <li>마이쮸 토마토 — 2004년 이후 첫 채소 · 일부 품절</li>
-            <li>바나프레소 토마토 생과일주스·스무디</li>
-          </ul></td>
-          <td class="srcc">썸트렌드<br>뉴스웨이 2026-05-22</td>
-        </tr>
-        <tr>
           <td class="item">디카페인 표준화</td>
           <td class="desc"><ul class="sig">
             <li><b>메가MGC</b> 전년비 +70% · 연 750만 잔</li>
@@ -597,19 +630,19 @@ td.srcc { font-size: 10.5px; color: #aeb2b8; font-weight: 600; line-height: 1.5;
 
     <div class="why-grid" style="margin-top:20px;">
       <div class="why-card">
-        <div class="wc-n">9/15 신메뉴</div>
-        <div class="wc-t">재료 편승은 못 합니다</div>
-        <div class="wc-d">지금 잡아도 출시 때면 끝나 있습니다. 유행 수명이 리드타임보다 짧습니다</div>
-      </div>
-      <div class="why-card">
-        <div class="wc-n">대신 가져올 것</div>
-        <div class="wc-t">재료가 아니라 문법</div>
-        <div class="wc-d">레이어·식감·비주얼 반전은 릴레이가 바뀌어도 계속 팔립니다</div>
-      </div>
-      <div class="why-card">
         <div class="wc-n">쑥 · 흑임자</div>
-        <div class="wc-t">릴레이 밖에 있습니다</div>
-        <div class="wc-d">유행을 쫓지 않는 제철·전통 축이라 타이밍에 안 물립니다</div>
+        <div class="wc-t">축 2에 속합니다</div>
+        <div class="wc-d">릴레이가 아니라 제철코어. 가을 곡물은 다음 차례로 지목된 자리입니다</div>
+      </div>
+      <div class="why-card">
+        <div class="wc-n">그래서 색이 먼저</div>
+        <div class="wc-t">맛 설명은 그 다음</div>
+        <div class="wc-d">토마토도 '귀엽다'가 '맛있다'보다 먼저 왔습니다. 색·계절감으로 먼저 걸립니다</div>
+      </div>
+      <div class="why-card">
+        <div class="wc-n">릴레이는 편승 불가</div>
+        <div class="wc-t">수명이 리드타임보다 짧음</div>
+        <div class="wc-d">양쯔깐루를 지금 잡아도 9/15엔 끝나 있습니다. 문법만 가져옵니다</div>
       </div>
     </div>
 
