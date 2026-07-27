@@ -146,7 +146,9 @@ tr.sub td { background:#f8fafb; font-weight:800; color:#1a1b18; border-top:1px s
 @media (max-width: 768px) {
   .container { padding: 70px 16px 40px; }
   .meta-grid { grid-template-columns: repeat(2, 1fr); }
-  .kpi-grid, .act-cards, .why-grid, .arc { grid-template-columns: 1fr; }
+  .kpi-grid, .act-cards, .why-grid, .arc, .ev-grid.c3 { grid-template-columns: 1fr; }
+  .relay { grid-template-columns: repeat(2, 1fr); }
+  .rl { border-bottom: 1px solid #e8edf1; }
   .trend-visuals { grid-template-columns: repeat(2, 1fr); }
   .arc-step { border-right: none; border-bottom: 1px solid #e8edf1; }
   .arc-step:last-child { border-bottom: none; }
@@ -206,6 +208,24 @@ td.srcc { font-size: 10.5px; color: #aeb2b8; font-weight: 600; line-height: 1.5;
 .sb-step .sb-n { font-size: 10px; font-weight: 800; color: #EA580C; margin-top: 8px; }
 .sb-step .sb-t { font-size: 12px; font-weight: 700; margin-top: 2px; line-height: 1.4; color: #1a1b18; }
 .ref-note { font-size: 10.5px; color: #aeb2b8; font-weight: 600; line-height: 1.6; margin: 2px 0 4px; }
+
+/* 유행 릴레이 */
+.relay { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid #e8edf1; border-radius: 10px; overflow: hidden; margin: 4px 0 16px; }
+.relay > * { min-width: 0; }
+.rl { padding: 15px 16px; border-right: 1px solid #e8edf1; }
+.rl:last-child { border-right: none; }
+.rl.now { background: #FFF7ED; }
+.rl .rl-d { font-size: 10.5px; font-weight: 800; color: #aeb2b8; letter-spacing: 0.04em; margin-bottom: 5px; }
+.rl.now .rl-d { color: #EA580C; }
+.rl .rl-t { font-size: 14.5px; font-weight: 800; color: #1a1b18; line-height: 1.35; }
+.rl .rl-s { font-size: 11px; color: #999; margin-top: 4px; line-height: 1.5; }
+.ev-grid.c3 { grid-template-columns: repeat(3, 1fr); }
+.hooks { align-self: center; }
+.hooks ul { list-style: none; padding: 0; margin: 0; }
+.hooks li { position: relative; padding-left: 14px; font-size: 13px; color: #636569; line-height: 1.6; margin-bottom: 8px; }
+.hooks li:last-child { margin-bottom: 0; }
+.hooks li::before { content: ''; position: absolute; left: 0; top: 9px; width: 4px; height: 4px; border-radius: 50%; background: #FB923C; }
+.hooks li b { font-weight: 800; color: #1a1b18; }
 .caption-ex { background: #fff; border-left: 3px solid #FB923C; border-radius: 0 6px 6px 0; padding: 9px 13px; margin-bottom: 10px; }
 .caption-ex .cx-k { font-size: 10px; font-weight: 800; color: #9a3412; letter-spacing: 0.04em; margin-bottom: 3px; }
 .caption-ex .cx-t { font-size: 13px; color: #3a3c40; }
@@ -430,7 +450,52 @@ td.srcc { font-size: 10.5px; color: #aeb2b8; font-weight: 600; line-height: 1.5;
     <h2>음료 <em>트렌드 리포트</em></h2>
     <div class="sec-sub">2026 하반기 음료 흐름 — 가을 메뉴 판단용 참고</div>
 
-    <p class="context-lead">올해 상반기는 <strong>색</strong>이 끌었습니다. 지금 넘어가는 축은 <strong>식감</strong>입니다.</p>
+    <p class="context-lead">디저트 유행은 <strong>릴레이</strong>로 돕니다. 지금 주자는 <strong>양쯔깐루</strong>입니다.</p>
+
+    <div class="relay">
+      <div class="rl"><div class="rl-d">2025 말</div><div class="rl-t">두쫀쿠</div><div class="rl-s">카다이프 · 피스타치오</div></div>
+      <div class="rl"><div class="rl-d">2026 봄</div><div class="rl-t">버터떡</div><div class="rl-s">겉바속쫀</div></div>
+      <div class="rl"><div class="rl-d">4~7월</div><div class="rl-t">우베</div><div class="rl-s">보라색 · 종료</div></div>
+      <div class="rl now"><div class="rl-d">지금</div><div class="rl-t">양쯔깐루</div><div class="rl-s">망고 + 자몽</div></div>
+    </div>
+
+    <div class="ev-grid c3">
+      <div class="ev">
+        <div class="ev-k">탕후루 2023</div>
+        <div class="ev-v">54일</div>
+        <div class="ev-n">유행 지속</div>
+      </div>
+      <div class="ev hot">
+        <div class="ev-k">두바이초콜릿 2024</div>
+        <div class="ev-v">13일</div>
+        <div class="ev-n">유행 지속</div>
+      </div>
+      <div class="ev hot">
+        <div class="ev-k">두쫀쿠 2025 말</div>
+        <div class="ev-v">17일</div>
+        <div class="ev-n">유행 지속</div>
+      </div>
+    </div>
+    <div class="ev-read"><span>5년 사이 유행 수명이 <strong>10분의 1</strong>로 줄었습니다.</span> <span class="src">위키트리 2026-07-25</span></div>
+
+    <div class="ref-grid c2" style="margin-top:18px;align-items:start;">
+      <div class="ref">
+        <img src="plan_assets/trend_yangzhi.jpg" alt="양쯔깐루 레퍼런스">
+        <div class="rf-cap"><div class="rf-t">고체 양쯔깐루</div><div class="rf-s">그릭요거트 위 망고·자몽·사고</div></div>
+      </div>
+      <div class="hooks">
+        <ul>
+          <li>구글트렌드 관심도 <b>0 → 100</b> · 한 달 만</li>
+          <li>GS25 떠먹는 양쯔깐루 <b>4일 만에</b> 냉장디저트 10위권</li>
+          <li>요거트월드 <b>3주 만에</b> 세트 판매 1위</li>
+          <li>설빙 자망코 — 망고빙수 5월 <b>33만 개</b> · 전년비 +24%</li>
+          <li>투썸 자몽톡 망고 프라페 <b>7/15</b> — 대형 브랜드도 합류</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ref-note">홍콩 디저트(망고·자몽·사고) · 국내형은 코코넛밀크 대신 그릭요거트 베이스<br>이름을 안 써도 망고+자몽 조합이 이번 여름 대표 상품</div>
+
+    <p class="context-lead" style="margin-top:22px;">재료는 이렇게 바뀌지만, <strong>팔리는 문법</strong>은 오래 갑니다.</p>
 
     <div class="ref-grid c3">
       <div class="ref">
@@ -487,16 +552,6 @@ td.srcc { font-size: 10.5px; color: #aeb2b8; font-weight: 600; line-height: 1.5;
           <td class="srcc">여행픽 2026-05-14<br>헤럴드경제 2026-07-23</td>
         </tr>
         <tr>
-          <td class="item">우베 — 보라색 <span class="src">지남</span></td>
-          <td class="desc"><ul class="sig">
-            <li>4월 투썸 선점 → <b>6~7월 정점</b></li>
-            <li>제과·빙과까지 내려감 — 확산이 끝났다는 신호</li>
-            <li>저가권도 진입 완료 — 빽다방 3종 · 이디야</li>
-            <li><b>9월엔 피로 구간</b></li>
-          </ul></td>
-          <td class="srcc">스마트투데이 2026-04-28<br>EBN 2026-07-10</td>
-        </tr>
-        <tr>
           <td class="item">말차 대체 → 호지차</td>
           <td class="desc"><ul class="sig">
             <li><b>내셔널지오그래픽</b> 2026 주목 식품 11선</li>
@@ -542,19 +597,19 @@ td.srcc { font-size: 10.5px; color: #aeb2b8; font-weight: 600; line-height: 1.5;
 
     <div class="why-grid" style="margin-top:20px;">
       <div class="why-card">
-        <div class="wc-n">색 → 식감</div>
-        <div class="wc-t">흑임자에 유리한 전환</div>
-        <div class="wc-d">색으로만 싸우는 구간이 끝났습니다. 레이어·폼이 지금 팔리는 문법</div>
+        <div class="wc-n">9/15 신메뉴</div>
+        <div class="wc-t">재료 편승은 못 합니다</div>
+        <div class="wc-d">지금 잡아도 출시 때면 끝나 있습니다. 유행 수명이 리드타임보다 짧습니다</div>
       </div>
       <div class="why-card">
-        <div class="wc-n">호지차</div>
-        <div class="wc-t">흑임자와 같은 자리</div>
-        <div class="wc-d">둘 다 말차 대체·고소한 로스팅 계열. 저가권은 아직 비었습니다</div>
+        <div class="wc-n">대신 가져올 것</div>
+        <div class="wc-t">재료가 아니라 문법</div>
+        <div class="wc-d">레이어·식감·비주얼 반전은 릴레이가 바뀌어도 계속 팔립니다</div>
       </div>
       <div class="why-card">
-        <div class="wc-n">토마토</div>
-        <div class="wc-t">여름 소재</div>
-        <div class="wc-d">붙은 자리가 빙수·생과일주스. 내년 여름 컵빙수 검토감</div>
+        <div class="wc-n">쑥 · 흑임자</div>
+        <div class="wc-t">릴레이 밖에 있습니다</div>
+        <div class="wc-d">유행을 쫓지 않는 제철·전통 축이라 타이밍에 안 물립니다</div>
       </div>
     </div>
 
