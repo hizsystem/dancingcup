@@ -131,6 +131,17 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
 /* 포스터 레퍼런스 */
 .ref.poster img { height: 340px; object-fit: contain; background: #f4f7f9; }
 .ref-note { font-size: 10.5px; color: #aeb2b8; font-weight: 600; line-height: 1.6; margin: 2px 0 4px; }
+
+/* 근거 수치 블록 */
+.ev-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 4px 0 6px; }
+.ev-grid > * { min-width: 0; }
+.ev { border: 1px solid #e8edf1; border-radius: 10px; padding: 16px 18px; background: #fff; }
+.ev.hot { border-color: #FED7AA; background: #FFF7ED; }
+.ev .ev-k { font-size: 11px; font-weight: 700; color: #999; margin-bottom: 7px; }
+.ev .ev-v { font-size: 21px; font-weight: 900; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; line-height: 1.2; }
+.ev.hot .ev-v { color: #EA580C; }
+.ev .ev-n { font-size: 11.5px; font-weight: 700; color: #999; margin-top: 5px; }
+.ev.hot .ev-n { color: #EA580C; }
 .caption-ex { background: #fff; border-left: 3px solid #FB923C; border-radius: 0 6px 6px 0; padding: 9px 13px; margin-bottom: 10px; }
 .caption-ex .cx-k { font-size: 10px; font-weight: 800; color: #9a3412; letter-spacing: 0.04em; margin-bottom: 3px; }
 .caption-ex .cx-t { font-size: 13px; color: #3a3c40; }
@@ -173,7 +184,7 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
 @media (max-width: 768px) {
   .container { padding: 70px 16px 40px; }
   .meta-grid { grid-template-columns: repeat(2, 1fr); }
-  .why-grid, .vs-grid, .ref-grid.c2, .ref-grid.c3, .menu-cards { grid-template-columns: 1fr; }
+  .why-grid, .vs-grid, .ref-grid.c2, .ref-grid.c3, .menu-cards, .ev-grid { grid-template-columns: 1fr; }
   .storyboard { grid-template-columns: repeat(2, 1fr); }
   .vs-div { padding: 4px 0; }
   .section { padding: 24px 20px; }
@@ -292,7 +303,7 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
         <ul>
           <li>투명컵 회색–검정 레이어 붓기 ASMR</li>
           <li>폼 토핑 클로즈업 + 고소함 리액션</li>
-          <li>매치 품귀 시대의 대안 프레임</li>
+          <li>말차 품귀 시대의 대안 프레임</li>
         </ul>
       </div>
       <div class="vs-div">VS</div>
@@ -368,6 +379,22 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
     </div>
 
     <div class="measure"><strong>시장 선례</strong> — 더벤티 흑임자폼라떼(2025-09) · 빽다방 쑥쑥라떼(2021~) · 할매니얼 CU +21.5% <span class="src">4개 매체 교차</span></div>
+
+    <div class="menu-head" style="margin-top:20px;"><span class="mh-t">"말차 다음"이 실제로 열린 자리인 근거</span><span class="mh-s">2026</span></div>
+    <div class="ev-grid">
+      <div class="ev hot">
+        <div class="ev-k">교토 말차 수확량</div>
+        <div class="ev-v">−20%</div>
+        <div class="ev-n">전년 대비</div>
+      </div>
+      <div class="ev hot">
+        <div class="ev-k">말차 경매가</div>
+        <div class="ev-v">최대 +170%</div>
+        <div class="ev-n">전년 동기 대비</div>
+      </div>
+    </div>
+    <div class="ref-note">새 차밭은 첫 수확까지 5년 — 품귀가 단기에 풀리지 않습니다 (경향신문 2026-02-07)</div>
+    <div class="ph"><span class="ph-tag">경쟁</span>같은 자리를 <b>호지차</b>도 노립니다. 동서식품·웅진식품·오설록이 이미 출시 — 저가 브랜드 진입은 아직 미확인</div>
 
     <!-- 예산 배정 -->
     <div class="part-block">
