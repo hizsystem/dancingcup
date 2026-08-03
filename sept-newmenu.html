@@ -55,6 +55,8 @@ body { font-family: 'Noto Sans KR', -apple-system, sans-serif; background: #f4f7
 
 /* WHY CARDS */
 .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 4px 0 6px; }
+.why-grid.c2 { grid-template-columns: repeat(2, 1fr); }
+.why-grid > * { min-width: 0; }
 .why-card { border: 1px solid #e8edf1; border-radius: 10px; padding: 18px 18px; background: #fff; }
 .why-card .wc-n { font-size: 11px; font-weight: 800; color: #EA580C; letter-spacing: 0.04em; margin-bottom: 8px; }
 .why-card .wc-t { font-size: 13.5px; font-weight: 800; margin-bottom: 6px; line-height: 1.4; }
@@ -267,7 +269,9 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
 @media (max-width: 768px) {
   .container { padding: 70px 16px 40px; }
   .meta-grid { grid-template-columns: repeat(2, 1fr); }
-  .why-grid, .vs-grid, .ref-grid.c2, .ref-grid.c3, .menu-cards, .ev-grid { grid-template-columns: 1fr; }
+  .why-grid, .why-grid.c2, .vs-grid, .ref-grid.c2, .ref-grid.c3, .menu-cards, .ev-grid { grid-template-columns: 1fr; }
+  .bcards, .bcards.c2, .voc-split { grid-template-columns: 1fr; }
+  .part-div { flex-wrap: wrap; gap: 8px; }
   .storyboard { grid-template-columns: repeat(2, 1fr); }
   .vs-div { padding: 4px 0; }
   .section { padding: 24px 20px; }
@@ -326,16 +330,18 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
 
   <!-- R0. 요약 -->
   <div class="section">
-    <h2>다섯 <em>줄</em></h2>
+    <h2>일곱 <em>줄</em></h2>
     <div class="sec-sub">읽을 시간이 없으면 여기까지</div>
     <table>
       <thead><tr><th style="width:52px;">#</th><th>신호</th></tr></thead>
       <tbody>
         <tr><td class="item">01</td><td class="desc"><b>흑임자는 해외에서 뜨겁고 국내에서 안 떴다</b> — 옐프 검색 +147% / 국내는 "대중적 유행 아님"</td></tr>
         <tr><td class="item">02</td><td class="desc"><b>저가 프랜차이즈 흑임자 상시 라떼가 비어 있다</b> — 겨울·빙수 시즌 한정으로만 나왔다</td></tr>
-        <tr><td class="item">03</td><td class="desc"><b>쑥은 봄 언어에 묶여 있다</b> — 확인된 출시가 전부 3~4월</td></tr>
-        <tr><td class="item">04</td><td class="desc"><b>오트에 '식물성'을 쓰면 선례가 있다</b> — 메가커피는 표기를 철회했다</td></tr>
-        <tr><td class="item">05</td><td class="desc"><b>불만 3종이 전부 질감</b> — 텁텁함 · 과당 · 향 부족</td></tr>
+        <tr><td class="item">03</td><td class="desc"><b>'덜 달다'가 결점이 아니라 고르는 이유다</b> — 자극적인 맛의 반작용</td></tr>
+        <tr><td class="item">04</td><td class="desc"><b>추억이 아니라 처음 먹는 맛으로 고른다</b> — 할머니 프레이밍은 동기를 잘못 짚는다</td></tr>
+        <tr><td class="item">05</td><td class="desc"><b>부모와 같이 마실 수 있는 유일한 축이다</b> — 추석과 겹친다</td></tr>
+        <tr><td class="item">06</td><td class="desc"><b>쑥은 봄 언어에 묶여 있고 거부감도 넓다</b> — 출시가 전부 3~4월 · 쓴맛·섬유질</td></tr>
+        <tr><td class="item">07</td><td class="desc"><b>오트에 '식물성'을 쓰면 선례가 있다</b> — 메가커피는 표기를 철회했다</td></tr>
       </tbody>
     </table>
   </div>
@@ -383,6 +389,38 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
     <div class="ref-note">이미지 = 각 사 보도자료 · 출처는 하단 인덱스</div>
     <div class="detail" style="margin-top:14px;"><div class="dt">더카페 컷의 하단 고지</div><div class="dd">"생성형 AI를 통해 연출" — 7월 댄싱컵 광고에서 AI 소재가 실사에 CPC 2.2배로 진 그 조건입니다</div></div>
 
+    <div class="menu-head"><span class="mh-t">왜 고르는가</span><span class="mh-s">맛 평가 이전의 선택 동기 넷</span></div>
+    <div class="why-grid c2">
+      <div class="why-card">
+        <div class="wc-n">동기 ①</div>
+        <div class="wc-t">덜 단 게 결점이 아니라 이유</div>
+        <div class="wc-d">"마라탕·매운 라면 등 자극적인 맛의 <b>반작용</b>으로 심심한 맛이 뜬다" — 유통업계 인용<br><span class="src">"달기만 한 케이크보다 덜 달아도 건강한 맛" · 26세 직장인</span></div>
+      </div>
+      <div class="why-card">
+        <div class="wc-n">동기 ②</div>
+        <div class="wc-t">블랙푸드 — 탈모 · 항산화</div>
+        <div class="wc-d">세사민 · 안토시아닌 · 비타민E. 효능을 알고 사러 옵니다<br><span class="src">"탈모에 관심이 많아 흑임자 효능을 알고 있었다" · 재구매 의향 블로그</span></div>
+      </div>
+      <div class="why-card">
+        <div class="wc-n">동기 ③</div>
+        <div class="wc-t">부모와 같이 먹을 수 있는 유일한 축</div>
+        <div class="wc-d">"젊은 세대가 부모님과 디저트를 먹으려면 선택지가 없다" — 프랜차이즈 관계자<br><span class="src">"엄마와 나 모두를 취저했다 · 예전엔 취향이 갈려 갈등" · 26세</span></div>
+      </div>
+      <div class="why-card">
+        <div class="wc-n">동기 ④</div>
+        <div class="wc-t">추억이 아니라 처음 먹는 맛</div>
+        <div class="wc-d warn">"MZ세대가 경험하지 못했던 <b>새로운 재료</b>" — 소비자학 교수<br><span class="src">노스탤지어로 프레이밍하면 동기를 잘못 짚는 것</span></div>
+      </div>
+    </div>
+
+    <div class="menu-head"><span class="mh-t">이 동기가 팔린 규모</span><span class="mh-s">할매니얼 축의 과거 실적</span></div>
+    <div class="ev-grid c3">
+      <div class="ev hot"><div class="ev-k">투썸 쑥·흑임자 라떼</div><div class="ev-v">20만<span style="font-size:13px;">잔</span></div><div class="ev-n">출시 1개월 · 2020</div></div>
+      <div class="ev"><div class="ev-k">스타벅스 흑임자 케이크</div><div class="ev-v">13만<span style="font-size:13px;">개</span></div><div class="ev-n">출시 보름 · 2022</div></div>
+      <div class="ev"><div class="ev-k">롯데마트 흑임자 식품</div><div class="ev-v">+38.5%</div><div class="ev-n">2021 · 전년 대비</div></div>
+    </div>
+    <div class="flip">국내에서 <b>흑임자가 안 팔린 적은 없습니다.</b> 저가 프랜차이즈 상시 라인에 안 들어왔을 뿐</div>
+
     <div class="menu-head"><span class="mh-t">소비자 발화</span><span class="mh-s">블로그 · 커뮤니티 · 리뷰 플랫폼 · 보도 인용 4채널</span></div>
     <div class="voc-split">
       <div>
@@ -426,6 +464,26 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
         </ul>
       </div>
     </div>
+
+    <div class="menu-head"><span class="mh-t">왜 고르는가</span><span class="mh-s">흑임자와 동기가 다릅니다</span></div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="wc-n">동기 ①</div>
+        <div class="wc-t">말차의 대체제</div>
+        <div class="wc-d">"말차도 좋지만 봄에는 쑥 라떼도 취향 저격"<br><span class="src">30대 여성 · 커뮤니티 2026-03</span></div>
+      </div>
+      <div class="why-card">
+        <div class="wc-n">동기 ②</div>
+        <div class="wc-t">구분되는 향</div>
+        <div class="wc-d">"누구나 쉽게 구분할 수 있는 향 — 브랜드 정체성에 유리"<br><span class="src">디저트 업계 평가 · 2026-05</span></div>
+      </div>
+      <div class="why-card">
+        <div class="wc-n">동기 ③</div>
+        <div class="wc-t">한정성</div>
+        <div class="wc-d warn">"그 시기를 지나면 사라지는 식재료" — 이게 매력이자 <b>9월의 문제</b></div>
+      </div>
+    </div>
+    <div class="ph"><span class="ph-tag">진입 장벽</span>쑥은 <b>쓴맛과 섬유질</b>이 먼저 걸립니다. "쑥떡은 섬유질이 많아 뻣뻣하거나 쌉싸름해 선뜻 고르기 주저" — 보도 인용. 흑임자보다 <b>거부감 구간이 넓습니다</b></div>
 
     <div class="menu-head"><span class="mh-t">소비자 발화</span><span class="mh-s">양이 곧 신뢰</span></div>
     <div class="voc-split">
@@ -538,11 +596,26 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
     </div>
     <div class="insight">
       <div class="in-n">03</div>
-      <div class="in-t">쑥의 판매 언어는 봄에 묶여 있다</div>
-      <div class="in-m">근거 문구가 "제철"입니다. 9월에 내면 <b>왜 지금인지를 카피가 떠안습니다.</b></div>
+      <div class="in-t">'덜 달다'가 결점이 아니라 구매 이유다</div>
+      <div class="in-m">자극적인 맛의 반작용으로 선택됩니다. 단맛을 올려 진입장벽을 낮추면 <b>고른 이유를 지우는 것입니다.</b></div>
     </div>
     <div class="insight">
       <div class="in-n">04</div>
+      <div class="in-t">추억이 아니라 처음 먹는 맛이다</div>
+      <div class="in-m">"MZ세대가 경험하지 못했던 새로운 재료"가 동기입니다. <b>할머니·옛날 프레이밍은 동기를 잘못 짚습니다.</b></div>
+    </div>
+    <div class="insight">
+      <div class="in-n">05</div>
+      <div class="in-t">부모와 같이 마실 수 있는 유일한 축이다</div>
+      <div class="in-m">세대가 갈리지 않는 몇 안 되는 맛입니다. <b>추석 9/25가 이 동기와 정확히 겹칩니다.</b></div>
+    </div>
+    <div class="insight">
+      <div class="in-n">06</div>
+      <div class="in-t">쑥은 흑임자보다 거부감 구간이 넓다</div>
+      <div class="in-m">쓴맛·섬유질이 먼저 걸립니다. 계절 문제까지 겹쳐 <b>같은 축으로 묶을 근거가 약합니다.</b></div>
+    </div>
+    <div class="insight">
+      <div class="in-n">07</div>
       <div class="in-t">오트는 건강이 아니라 고소함으로 팔린다</div>
       <div class="in-m">건강 소구는 성분 검증을 통과해야 하고, 긍정 발화는 이미 "고소하다"에 몰려 있습니다.</div>
     </div>
@@ -551,13 +624,15 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
   <!-- R6. 결정 게이트 -->
   <div class="section">
     <div class="action-tag">기획 착수 전</div>
-    <h2>결정 게이트 <em>다섯</em></h2>
+    <h2>결정 게이트 <em>여덟</em></h2>
     <div class="sec-sub">권장은 리서치 근거만으로 낸 판단 · 최종 결정은 브랜드팀</div>
     <table>
       <thead><tr><th style="width:40px;">#</th><th>결정할 것</th><th>옵션</th><th style="width:120px;">권장</th></tr></thead>
       <tbody>
-        <tr><td class="item">D1</td><td class="desc">쑥 9월 편성</td><td class="desc">A 9월 / B 내년 봄 이월</td><td class="desc"><b>B</b> 계절 불일치</td></tr>
-        <tr><td class="item">D2</td><td class="desc">흑임자 소구 축</td><td class="desc">A 글로벌 트렌드 / B 안 텁텁한 진함</td><td class="desc"><b>B</b> 국내 미유행</td></tr>
+        <tr><td class="item">D1</td><td class="desc">쑥 9월 편성</td><td class="desc">A 9월 / B 내년 봄 이월</td><td class="desc"><b>B</b> 계절 · 거부감</td></tr>
+        <tr><td class="item">D2</td><td class="desc">흑임자 소구 축</td><td class="desc">A 글로벌 트렌드 / B 안 텁텁한 진함 / C 블랙푸드 건강 / D 온 가족</td><td class="desc"><b>B + D</b> 국내 미유행</td></tr>
+        <tr><td class="item">D2-1</td><td class="desc">할매니얼 어휘 사용</td><td class="desc">A 할머니·옛날 맛 / B 처음 먹는 맛</td><td class="desc"><b>B</b> 동기가 신규성</td></tr>
+        <tr><td class="item">D2-2</td><td class="desc">당도 설계</td><td class="desc">A 진입장벽 낮추게 달게 / B 덜 달게 유지</td><td class="desc"><b>B</b> 덜 단 게 구매 이유</td></tr>
         <tr><td class="item">D3</td><td class="desc">오트 표기</td><td class="desc">A 식물성·비건 / B 고소함만</td><td class="desc"><b>B</b> 선례 있음</td></tr>
         <tr><td class="item">D4</td><td class="desc">가을 정석 대응</td><td class="desc">A 밤·고구마도 / B 비켜간다</td><td class="desc"><b>B</b> 경쟁 밀집</td></tr>
         <tr><td class="item">D5</td><td class="desc">대결 포맷</td><td class="desc">A 흑 vs 백 / B 다른 축</td><td class="desc"><b>B</b> 1월 소진</td></tr>
@@ -659,6 +734,8 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
     <div class="detail"><div class="dt">섭외 기준</div><div class="dd">경남권 3~4명 — 팔로워 규모가 아니라 실제 매장에서 찍는 계정</div></div>
     <div class="detail"><div class="dt">지점명 노출</div><div class="dd">카피에 지점명을 박습니다. 7월 '승아'가 영도영선점으로 검증했습니다</div></div>
     <div class="detail"><div class="dt">감각어 '고소한'</div><div class="dd">7월 X 후기에서 손님이 "꼬소하다"를 먼저 썼습니다. 브랜드가 정의하지 않고 이어받습니다</div></div>
+    <div class="detail"><div class="dt">'할매니얼'은 내부 축 이름</div><div class="dd">카피에 할머니·옛날·추억을 쓰지 않습니다. 고르는 동기가 <b>처음 먹는 맛</b>이라 반대로 갑니다 (PART 1 인사이트 04)</div></div>
+    <div class="detail"><div class="dt">덜 단 것을 그대로 둡니다</div><div class="dd">진입장벽을 낮추려고 당도를 올리면 고른 이유가 사라집니다 (인사이트 03)</div></div>
     <div class="measure"><strong>근거 문서</strong> — <a href="july-report.html" style="color:#EA580C;font-weight:800;">7월 운영 보고서 →</a> <span class="src">소재별 성과·판독</span></div>
   </div>
 
@@ -900,10 +977,22 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
       <b>뉴스와이어</b> 투썸 꿀 고구마 라떼 (2025-09-03) · <b>KNS뉴스통신</b> 가을 밤·고구마 (2024-10-31)
     </div>
 
+    <div class="menu-head"><span class="mh-t">선택 동기 · 할매니얼</span></div>
+    <div class="srclist">
+      <b>매경이코노미</b> 밀레니얼 세대 사로잡은 '할매 음식' (2020-06-08) — 세대 공용·복고·건강 3동기 · 전문가 인용<br>
+      <b>한국경제</b> 할매니얼 열풍 (2022-04) — 자극적인 맛의 반작용 · 모녀 동반 사례<br>
+      <b>아시아경제</b> MZ 사로잡은 할매니얼 (2022-11-09) — 26세 직장인 인용 · 소비자학 교수 인용<br>
+      <b>중앙일보</b> 옛것을 나만의 방식으로 (2024-05-27) — 취향 소비·모디슈머<br>
+      <b>더바이어</b> 검은 깨·빨간 열매, MZ 사로잡다 (2026-03-16) — 성분·색감·헬시플레저<br>
+      <b>서울신문</b> 뉴트로 밀레니얼 트렌드 (2020-12) — 투썸 쑥·흑임자 라떼 20만 잔<br>
+      <b>아이티인사이트</b> 쑥 디저트가 뜨는 이유 (2026-05-03) — 향·로컬리티·한정성<br>
+      <b>조선일보</b> 제주 쑥 인절미 (2026-07-20) — 쑥의 섬유질·쓴맛 진입 장벽
+    </div>
+
     <div class="menu-head"><span class="mh-t">소비자 발화</span></div>
     <div class="srclist">
       수집일 <b>2026-08-03</b> · 4채널 — 블로그 / 커뮤니티 / 리뷰 플랫폼 / 보도 내 인용<br>
-      흑임자 8건 · 쑥 4건 · 오트 6건 추출 · 핸들·실명은 표기하지 않습니다
+      흑임자 12건 · 쑥 7건 · 오트 6건 추출 · 핸들·실명은 표기하지 않습니다
     </div>
 
     <div class="menu-head"><span class="mh-t">미검증</span><span class="mh-s">다음 주 보완</span></div>
