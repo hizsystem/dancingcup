@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>댄싱컵 9월 신메뉴 홍보 방안 — 브랜드라이즈</title>
+<title>댄싱컵 9월 신메뉴 — 리서치 &amp; 홍보 방안</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -204,6 +204,57 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
 .ph { background: repeating-linear-gradient(45deg,#FFFBEB,#FFFBEB 10px,#FEF3C7 10px,#FEF3C7 20px); border: 1px dashed #F59E0B; border-radius: 8px; padding: 13px 18px; margin: 14px 0 0; font-size: 12.5px; color: #92400E; line-height: 1.7; }
 .ph .ph-tag { display: inline-block; font-size: 10px; font-weight: 800; background: #F59E0B; color: #fff; padding: 2px 8px; border-radius: 6px; margin-right: 8px; }
 
+/* PART DIVIDER */
+.part-div { display: flex; align-items: center; gap: 16px; margin: 34px 0 20px; }
+.part-div .pd-n { font-size: 11px; font-weight: 900; color: #fff; background: #0D0D0D; padding: 5px 14px; border-radius: 20px; letter-spacing: 0.08em; white-space: nowrap; }
+.part-div .pd-t { font-size: 17px; font-weight: 900; letter-spacing: -0.02em; white-space: nowrap; }
+.part-div .pd-s { font-size: 12px; color: #999; font-weight: 600; white-space: nowrap; }
+.part-div .pd-l { flex: 1; height: 1px; background: #e1e7ec; }
+
+/* 소재 블록 */
+.ing { border: 1px solid #e8edf1; border-radius: 12px; overflow: hidden; margin-bottom: 20px; }
+.ing-hd { display: flex; align-items: baseline; gap: 12px; padding: 15px 20px; background: #f8fafb; border-bottom: 1px solid #e8edf1; flex-wrap: wrap; }
+.ing-hd .ih-n { font-size: 16px; font-weight: 900; }
+.ing-hd .ih-v { font-size: 12.5px; font-weight: 700; color: #EA580C; }
+.ing-hd .ih-s { font-size: 11.5px; color: #999; font-weight: 600; margin-left: auto; }
+.ing-bd { padding: 18px 20px 20px; }
+
+/* 브랜드 캡처 카드 */
+.bcards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.bcards.c2 { grid-template-columns: repeat(2, 1fr); }
+.bcards > * { min-width: 0; }
+.bcard { border: 1px solid #e8edf1; border-radius: 10px; overflow: hidden; background: #fff; }
+.bcard img { width: 100%; height: 190px; object-fit: cover; object-position: center 32%; display: block; background: #f0f2f5; }
+.bcard.tall img { height: 250px; object-fit: contain; background: #fbfcfd; }
+.bcard .bc-b { padding: 11px 13px 13px; }
+.bcard .bc-n { font-size: 10.5px; font-weight: 800; color: #EA580C; letter-spacing: 0.04em; margin-bottom: 4px; }
+.bcard .bc-t { font-size: 13px; font-weight: 800; line-height: 1.35; margin-bottom: 5px; }
+.bcard .bc-d { font-size: 11.5px; color: #636569; line-height: 1.55; }
+.bcard .bc-d.warn { color: #b45309; font-weight: 700; }
+
+/* VOC */
+.voc-split { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 6px; }
+.voc-split > * { min-width: 0; }
+.voc-hd { font-size: 11px; font-weight: 800; letter-spacing: 0.05em; margin-bottom: 10px; padding-bottom: 6px; border-bottom: 2px solid #f0f2f5; }
+.voc-hd.p { color: #15803d; }
+.voc-hd.n { color: #b45309; }
+.voc { border-left: 3px solid #e8edf1; padding: 1px 0 1px 13px; margin-bottom: 11px; }
+.voc.pos { border-left-color: #4ade80; }
+.voc.neg { border-left-color: #FB923C; }
+.voc .vq { font-size: 12.5px; font-weight: 700; color: #1a1b18; line-height: 1.45; }
+.voc .vs { font-size: 10px; color: #aeb2b8; font-weight: 600; margin-top: 3px; }
+.flip { background: #FFF7ED; border: 1px solid #FED7AA; border-radius: 8px; padding: 11px 15px; margin-top: 14px; font-size: 12.5px; color: #9a3412; }
+.flip b { color: #EA580C; font-weight: 800; }
+
+/* 인사이트 */
+.insight { border: 1px solid #e8edf1; border-radius: 10px; padding: 16px 18px; margin-bottom: 10px; }
+.insight .in-n { font-size: 10.5px; font-weight: 800; color: #EA580C; letter-spacing: 0.05em; margin-bottom: 5px; }
+.insight .in-t { font-size: 14.5px; font-weight: 900; line-height: 1.4; margin-bottom: 6px; }
+.insight .in-m { font-size: 12.5px; color: #636569; }
+.insight .in-m b { color: #1a1b18; }
+.srclist { font-size: 11.5px; color: #636569; line-height: 1.95; }
+.srclist b { color: #1a1b18; }
+
 /* CLOSING */
 .closing-box { background: #0D0D0D; border-radius: 12px; padding: 36px 40px; text-align: center; color: #fff; margin-bottom: 20px; }
 .closing-box .cl-msg { font-size: 22px; font-weight: 900; letter-spacing: -0.02em; line-height: 1.4; }
@@ -237,7 +288,7 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
   <div class="toolbar-left">
     <div class="toolbar-logo">BRANDRISE</div>
     <div class="toolbar-sep"></div>
-    <div class="toolbar-title">댄싱컵 9월 신메뉴 홍보 방안</div>
+    <div class="toolbar-title">댄싱컵 9월 신메뉴 — 리서치 &amp; 홍보 방안</div>
   </div>
   <div class="toolbar-actions">
     <button class="btn-toolbar" onclick="window.print()">PDF 저장</button>
@@ -248,13 +299,14 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
   <!-- HEADER -->
   <div class="report-header">
     <div class="label">댄싱컵 × 브랜드라이즈</div>
-    <h1>9월 <em>신메뉴 홍보 방안</em></h1>
+    <h1>9월 신메뉴 — <em>리서치 &amp; 홍보 방안</em></h1>
     <div class="meta-grid">
-      <div class="meta-item"><div class="mk">공급자</div><div class="mv">브랜드라이즈 by HIZ</div></div>
       <div class="meta-item"><div class="mk">수신</div><div class="mv">(주)위드런 · 댄싱컵</div></div>
+      <div class="meta-item"><div class="mk">작성</div><div class="mv">2026. 08. 03</div></div>
       <div class="meta-item"><div class="mk">출시</div><div class="mv">2026. 09. 15 (화)</div></div>
       <div class="meta-item"><div class="mk">추석</div><div class="mv">09. 25 (금) · 연휴 24~27</div></div>
     </div>
+    <div class="ref-note" style="margin-top:18px;">PART 1 리서치 — 흑임자·쑥·오트의 타 브랜드 플레이와 소비자 발화 &nbsp;/&nbsp; PART 2 홍보 방안 — 축 배정·제작 기준·타임라인</div>
   </div>
 
   <!-- MISSION -->
@@ -262,6 +314,264 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
     <div class="hl-label">9월 두 축</div>
     <div class="lede">쑥 · 흑임자는 <em>할매니얼</em> &nbsp;/&nbsp; 오트딥은 <em>바꿔 마시기</em></div>
     <div class="lede-sub">셋을 나란히 놓지 않습니다 &nbsp;·&nbsp; 앞의 둘은 <b>새로 온 맛</b>, 오트딥은 <b>늘 마시던 것의 다른 버전</b></div>
+  </div>
+
+  <!-- ===== PART 1 · 리서치 ===== -->
+  <div class="part-div">
+    <span class="pd-n">PART 1</span>
+    <span class="pd-t">리서치</span>
+    <span class="pd-l"></span>
+    <span class="pd-s">타 브랜드 플레이 · 소비자 발화</span>
+  </div>
+
+  <!-- R0. 요약 -->
+  <div class="section">
+    <h2>다섯 <em>줄</em></h2>
+    <div class="sec-sub">읽을 시간이 없으면 여기까지</div>
+    <table>
+      <thead><tr><th style="width:52px;">#</th><th>신호</th></tr></thead>
+      <tbody>
+        <tr><td class="item">01</td><td class="desc"><b>흑임자는 해외에서 뜨겁고 국내에서 안 떴다</b> — 옐프 검색 +147% / 국내는 "대중적 유행 아님"</td></tr>
+        <tr><td class="item">02</td><td class="desc"><b>저가 프랜차이즈 흑임자 상시 라떼가 비어 있다</b> — 겨울·빙수 시즌 한정으로만 나왔다</td></tr>
+        <tr><td class="item">03</td><td class="desc"><b>쑥은 봄 언어에 묶여 있다</b> — 확인된 출시가 전부 3~4월</td></tr>
+        <tr><td class="item">04</td><td class="desc"><b>오트에 '식물성'을 쓰면 선례가 있다</b> — 메가커피는 표기를 철회했다</td></tr>
+        <tr><td class="item">05</td><td class="desc"><b>불만 3종이 전부 질감</b> — 텁텁함 · 과당 · 향 부족</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- R1. 흑임자 -->
+  <div class="section">
+    <div class="action-tag">소재 ①</div>
+    <h2>흑임자 — <em>비어 있는 상시 자리</em></h2>
+    <div class="sec-sub">해외 신호는 강하고, 국내 수요는 아직입니다</div>
+
+    <div class="ev-grid c3">
+      <div class="ev hot"><div class="ev-k">흑임자 말차라떼 검색</div><div class="ev-v">+147%</div><div class="ev-n">옐프 · 2023→2025</div></div>
+      <div class="ev"><div class="ev-k">흑임자 라떼 검색</div><div class="ev-v">+23%</div><div class="ev-n">같은 기간</div></div>
+      <div class="ev"><div class="ev-k">국내 판매 카페</div><div class="ev-v">일부 상권</div><div class="ev-n">성수 · 망리단길</div></div>
+    </div>
+    <div class="ph"><span class="ph-tag">역신호</span>국내 1차 보도는 <b>"대중적인 유행은 아니다"</b>로 못 박습니다. 큐그레이더 인용 — <b>"시그니처로 파는 카페들이 꾸준한 정도"</b></div>
+
+    <div class="menu-head"><span class="mh-t">타 브랜드가 쓴 방식</span><span class="mh-s">전부 시즌 한정 · 상시 라떼는 없습니다</span></div>
+    <div class="bcards">
+      <div class="bcard tall">
+        <img src="plan_assets/ref/ref_gongcha.jpg" alt="공차 흑백밀크티 4종 포스터">
+        <div class="bc-b">
+          <div class="bc-n">공차 · 2026.01</div>
+          <div class="bc-t">흑백밀크티 4종</div>
+          <div class="bc-d">셰프 협업 · 흑임자 vs 소금 대결. 맛이 아니라 <b>편 고르기</b>를 화제로 만들었습니다</div>
+        </div>
+      </div>
+      <div class="bcard tall">
+        <img src="plan_assets/ref/ref_thecaffe.jpg" alt="더카페 크림라떼 4종">
+        <div class="bc-b">
+          <div class="bc-n">더카페 · 2025.12</div>
+          <div class="bc-t">흑임자 크림라떼</div>
+          <div class="bc-d">겨울 4종 중 1종. 흰 크림 위 흑임자 가루 — <b>회색 마블</b>이 이 소재의 표준 화면</div>
+        </div>
+      </div>
+      <div class="bcard tall">
+        <img src="plan_assets/ref/ref_hollys.jpg" alt="할리스 ALL BLACK 포스터">
+        <div class="bc-b">
+          <div class="bc-n">할리스 · 2026.07</div>
+          <div class="bc-t">블랙샷 라떼</div>
+          <div class="bc-d warn">'2026 컬러는 블랙'을 인용해놓고 재료는 연유·에스프레소 — 색만 빌렸습니다</div>
+        </div>
+      </div>
+    </div>
+    <div class="ref-note">이미지 = 각 사 보도자료 · 출처는 하단 인덱스</div>
+    <div class="detail" style="margin-top:14px;"><div class="dt">더카페 컷의 하단 고지</div><div class="dd">"생성형 AI를 통해 연출" — 7월 댄싱컵 광고에서 AI 소재가 실사에 CPC 2.2배로 진 그 조건입니다</div></div>
+
+    <div class="menu-head"><span class="mh-t">소비자 발화</span><span class="mh-s">블로그 · 커뮤니티 · 리뷰 플랫폼 · 보도 인용 4채널</span></div>
+    <div class="voc-split">
+      <div>
+        <div class="voc-hd p">좋다고 할 때</div>
+        <div class="voc pos"><div class="vq">"그냥 라떼도 고소한데 고소함의 끝"</div><div class="vs">블로그 · 2020-11</div></div>
+        <div class="voc pos"><div class="vq">"흑임자 맛 적절하고 고소하고 부드럽다"</div><div class="vs">리뷰 플랫폼</div></div>
+        <div class="voc pos"><div class="vq">"토속적인 음료 좋아하는 사람에게 추천"</div><div class="vs">리뷰 플랫폼</div></div>
+      </div>
+      <div>
+        <div class="voc-hd n">화낼 때</div>
+        <div class="voc neg"><div class="vq">"입자가 너무 텁텁해 목에 걸린다"</div><div class="vs">블로그 · 2026-05</div></div>
+        <div class="voc neg"><div class="vq">"시럽 단맛이 지나쳐 커피 맛을 가린다"</div><div class="vs">블로그 · 2026-05</div></div>
+        <div class="voc neg"><div class="vq">"흑임자 향이 뒤로 밀린다 · 주연이 헷갈린다"</div><div class="vs">리뷰 기사 · 2026-01</div></div>
+      </div>
+    </div>
+    <div class="flip">불만 셋이 전부 <b>농도와 질감</b>입니다 — 걸린다 · 시럽이 이긴다 · 흑임자가 안 보인다</div>
+  </div>
+
+  <!-- R2. 쑥 -->
+  <div class="section">
+    <div class="action-tag">소재 ②</div>
+    <h2>쑥 — <em>봄에 묶인 판매 언어</em></h2>
+    <div class="sec-sub">확인된 프랜차이즈 출시가 전부 3~4월입니다</div>
+
+    <div class="bcards c2">
+      <div class="bcard tall">
+        <img src="plan_assets/ref/ref_baekmidang.jpg" alt="백미당 우리 쑥 3종 포스터">
+        <div class="bc-b">
+          <div class="bc-n">백미당 · 2026.04</div>
+          <div class="bc-t">우리 쑥 3종</div>
+          <div class="bc-d warn">포스터 첫 줄이 <b>"봄의 향기 듬뿍 담은"</b> — 출시 근거를 계절에 두고 있습니다</div>
+        </div>
+      </div>
+      <div class="hooks">
+        <div class="menu-head" style="margin-top:0;"><span class="mh-t">가을 사례</span><span class="mh-s">0건</span></div>
+        <ul>
+          <li>백미당 2026년 4월 · 국내산 쑥 제철</li>
+          <li>스타벅스 2025년 봄 · 쑥 팥 생크림 롤</li>
+          <li>개인 카페 상시 · 서울 종로·신사 할매니얼 상권</li>
+          <li class="w">저가 프랜차이즈 쑥 라떼 — 확인 안 됨</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="menu-head"><span class="mh-t">소비자 발화</span><span class="mh-s">양이 곧 신뢰</span></div>
+    <div class="voc-split">
+      <div>
+        <div class="voc-hd p">좋다고 할 때</div>
+        <div class="voc pos"><div class="vq">"은은한 쑥향에 고소하면서 달달한 맛"</div><div class="vs">매거진 · 2024-03</div></div>
+        <div class="voc pos"><div class="vq">"쫀득한 쑥떡과 크림이 어우러진다"</div><div class="vs">매거진 · 2024-03</div></div>
+      </div>
+      <div>
+        <div class="voc-hd n">화낼 때</div>
+        <div class="voc neg"><div class="vq">"쑥크림을 바르는 시늉만 했다"</div><div class="vs">블로그 · 2025-03</div></div>
+        <div class="voc neg"><div class="vq">"쑥향이 미약 · 다시 먹을 일 없을 듯"</div><div class="vs">블로그 · 2025-03</div></div>
+      </div>
+    </div>
+    <div class="flip">쑥은 <b>덜 넣으면 바로 들킵니다.</b> 가격이 높을수록 양에 대한 판정이 가혹해집니다</div>
+  </div>
+
+  <!-- R3. 오트 -->
+  <div class="section">
+    <div class="action-tag">소재 ③</div>
+    <h2>오트 — <em>표기에 선례가 있다</em></h2>
+    <div class="sec-sub">시장은 커지는 중이고, 사고는 성분·값에서 납니다</div>
+
+    <div class="ev-grid c3">
+      <div class="ev hot"><div class="ev-k">글로벌 오트밀크 시장</div><div class="ev-v">46억<span style="font-size:13px;">달러</span></div><div class="ev-n">2026 · 2033년 137억 전망</div></div>
+      <div class="ev"><div class="ev-k">연평균 성장률</div><div class="ev-v">16.8%</div><div class="ev-n">2026→2033</div></div>
+      <div class="ev"><div class="ev-k">카페랩 공급 카페</div><div class="ev-v">+64%</div><div class="ev-n">2026 · 전년 대비</div></div>
+    </div>
+
+    <div class="menu-head"><span class="mh-t">타 브랜드가 쓴 방식</span><span class="mh-s">전용 메뉴는 디카페인을 같이 답니다</span></div>
+    <div class="bcards c2">
+      <div class="bcard tall">
+        <img src="plan_assets/ref/ref_tomntoms.jpg" alt="탐앤탐스 오트 콜드브루와 카페랩 오트">
+        <div class="bc-b">
+          <div class="bc-n">탐앤탐스 · 2025.12~</div>
+          <div class="bc-t">오트 콜드브루 · 디카페인</div>
+          <div class="bc-d">전용 메뉴로 세웠습니다. 200개 중 60개점 · <b>층 분리 화면</b>이 오트 라떼의 문법</div>
+        </div>
+      </div>
+      <div class="bcard tall">
+        <img src="plan_assets/ref/ref_mega.jpg" alt="메가커피 키오스크 오트밀크변경 옵션 화면">
+        <div class="bc-b">
+          <div class="bc-n">메가커피 · 2023.01</div>
+          <div class="bc-t">우유 변경 옵션 +500원</div>
+          <div class="bc-d warn">키오스크에 노출된 제품이 <b>서울우유 귀리우유</b> — 여기서 표기 문제가 터졌습니다</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-head"><span class="mh-t">회피할 선례</span><span class="mh-s">메가커피 · 2023</span></div>
+    <table>
+      <thead><tr><th style="width:120px;">항목</th><th>사실</th></tr></thead>
+      <tbody>
+        <tr><td class="item">초기 문구</td><td class="desc">"부담 없는 칼로리의 식물성 음료"</td></tr>
+        <tr><td class="item">실제 제품</td><td class="desc">유당분해우유 50% · 6곡 혼합분말 40%</td></tr>
+        <tr><td class="item">쟁점</td><td class="desc">원유가 들어가 대체유가 아님</td></tr>
+        <tr><td class="item">대응</td><td class="desc">2개월 만에 '식물성' 삭제 → '식이섬유가 풍부한 음료'</td></tr>
+      </tbody>
+    </table>
+
+    <div class="menu-head"><span class="mh-t">소비자 발화</span><span class="mh-s">맛보다 값·성분 불만이 큽니다</span></div>
+    <div class="voc-split">
+      <div>
+        <div class="voc-hd p">좋다고 할 때</div>
+        <div class="voc pos"><div class="vq">"생각보다 고소하고 맛 괜찮다"</div><div class="vs">커뮤니티 · 2025-06</div></div>
+        <div class="voc pos"><div class="vq">"일반우유보다 오트 넣은 게 더 낫다"</div><div class="vs">커뮤니티 · 2026-04</div></div>
+        <div class="voc pos"><div class="vq">"산미를 해치지 않으면서 부드럽다"</div><div class="vs">업계 매체 · 2025-07</div></div>
+      </div>
+      <div>
+        <div class="voc-hd n">화낼 때</div>
+        <div class="voc neg"><div class="vq">"500원 더 냈는데 속은 기분"</div><div class="vs">보도 인용 · 2023-10</div></div>
+        <div class="voc neg"><div class="vq">"추가금 500원 800원 안 받게 보편화되면"</div><div class="vs">커뮤니티 · 2025-06</div></div>
+        <div class="voc neg"><div class="vq">"당 함량 때문에 진짜 가끔만 먹어야 한다"</div><div class="vs">커뮤니티 · 2026-04</div></div>
+      </div>
+    </div>
+    <div class="flip">긍정 발화의 어휘가 <b>"고소하다"</b>입니다 — 7월 딥라떼 X 후기의 "꼬소하다"와 같은 말</div>
+  </div>
+
+  <!-- R4. 가을 정석 -->
+  <div class="section">
+    <h2>가을 정석 — <em>밤 · 고구마</em></h2>
+    <div class="sec-sub">흑임자·쑥의 가을 슬롯은 비어 있고, 검증도 안 돼 있습니다</div>
+    <table>
+      <thead><tr><th style="width:150px;">브랜드</th><th style="width:90px;">시점</th><th>가을 소재</th></tr></thead>
+      <tbody>
+        <tr><td class="item">투썸플레이스</td><td class="desc">2025.09</td><td class="desc">꿀 고구마 라떼 · 홍시 주스 — '제철코어'</td></tr>
+        <tr><td class="item">메가MGC커피</td><td class="desc">2024 가을</td><td class="desc">공주 알밤 — 밤밤 찰떡 프라페</td></tr>
+        <tr><td class="item">더카페</td><td class="desc">2024.09</td><td class="desc">밤 라떼 2종 — 자체 밤 파우더</td></tr>
+        <tr><td class="item">더카페</td><td class="desc">2025.10</td><td class="desc">옥수수 라떼 · 말차 콜드브루</td></tr>
+        <tr><td class="item">카페인중독</td><td class="desc">2025.11</td><td class="desc">꿀고구마 3종 — 라떼·크림라떼·와플</td></tr>
+      </tbody>
+    </table>
+    <div class="ref-note">가을에 확인된 흑임자·쑥 출시는 없습니다. 흑임자는 겨울·빙수, 쑥은 봄에 몰려 있습니다</div>
+  </div>
+
+  <!-- R5. 인사이트 -->
+  <div class="section">
+    <h2>인사이트 <em>넷</em></h2>
+    <div class="sec-sub">리서치에서 나온 것만 · 실행 판단은 PART 2</div>
+
+    <div class="insight">
+      <div class="in-n">01</div>
+      <div class="in-t">자리가 비어 있고, 수요도 아직 안 왔다</div>
+      <div class="in-m">저가 프랜차이즈 상시 흑임자 라떼가 없는 것과, 국내에서 안 떴다는 것은 <b>같은 사실의 양면입니다.</b></div>
+    </div>
+    <div class="insight">
+      <div class="in-n">02</div>
+      <div class="in-t">흑임자 불만 3종이 딥라떼 자산과 정면으로 겹친다</div>
+      <div class="in-m">텁텁함 · 과당 · 향 실종. 셋 다 농도 문제이고, <b>7월에 검증된 언어가 '진함'과 '고소함'입니다.</b></div>
+    </div>
+    <div class="insight">
+      <div class="in-n">03</div>
+      <div class="in-t">쑥의 판매 언어는 봄에 묶여 있다</div>
+      <div class="in-m">근거 문구가 "제철"입니다. 9월에 내면 <b>왜 지금인지를 카피가 떠안습니다.</b></div>
+    </div>
+    <div class="insight">
+      <div class="in-n">04</div>
+      <div class="in-t">오트는 건강이 아니라 고소함으로 팔린다</div>
+      <div class="in-m">건강 소구는 성분 검증을 통과해야 하고, 긍정 발화는 이미 "고소하다"에 몰려 있습니다.</div>
+    </div>
+  </div>
+
+  <!-- R6. 결정 게이트 -->
+  <div class="section">
+    <div class="action-tag">기획 착수 전</div>
+    <h2>결정 게이트 <em>다섯</em></h2>
+    <div class="sec-sub">권장은 리서치 근거만으로 낸 판단 · 최종 결정은 브랜드팀</div>
+    <table>
+      <thead><tr><th style="width:40px;">#</th><th>결정할 것</th><th>옵션</th><th style="width:120px;">권장</th></tr></thead>
+      <tbody>
+        <tr><td class="item">D1</td><td class="desc">쑥 9월 편성</td><td class="desc">A 9월 / B 내년 봄 이월</td><td class="desc"><b>B</b> 계절 불일치</td></tr>
+        <tr><td class="item">D2</td><td class="desc">흑임자 소구 축</td><td class="desc">A 글로벌 트렌드 / B 안 텁텁한 진함</td><td class="desc"><b>B</b> 국내 미유행</td></tr>
+        <tr><td class="item">D3</td><td class="desc">오트 표기</td><td class="desc">A 식물성·비건 / B 고소함만</td><td class="desc"><b>B</b> 선례 있음</td></tr>
+        <tr><td class="item">D4</td><td class="desc">가을 정석 대응</td><td class="desc">A 밤·고구마도 / B 비켜간다</td><td class="desc"><b>B</b> 경쟁 밀집</td></tr>
+        <tr><td class="item">D5</td><td class="desc">대결 포맷</td><td class="desc">A 흑 vs 백 / B 다른 축</td><td class="desc"><b>B</b> 1월 소진</td></tr>
+      </tbody>
+    </table>
+    <div class="ph"><span class="ph-tag">확인 필요</span>블렌딩 오트밀크 성분표 · 흑임자 베이스 입자 굵기 · 130개점 재현성 — 셋 다 <b>D2·D3의 선행 조건</b></div>
+  </div>
+
+  <!-- ===== PART 2 · 플랜 ===== -->
+  <div class="part-div">
+    <span class="pd-n">PART 2</span>
+    <span class="pd-t">홍보 방안</span>
+    <span class="pd-l"></span>
+    <span class="pd-s">축 배정 · 제작 기준 · 타임라인</span>
   </div>
 
   <!-- 1. 라인업 -->
@@ -292,44 +602,7 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
         <tr><td class="item">바꿔 마시기 <span class="src">오트딥</span></td><td class="desc">기존 딥라떼 고객</td><td class="desc">월 리테이너 안</td></tr>
       </tbody>
     </table>
-  </div>
-
-  <!-- 1-1. 소재 근거 -->
-  <div class="section">
-    <div class="action-tag">리서치 요약</div>
-    <h2>소재 근거 — <em>타 브랜드 · 소비자 발화</em></h2>
-    <div class="sec-sub">전문은 <a href="research-fall.html" style="color:#EA580C;font-weight:700;">가을 소재 리서치북 →</a> · 여기서는 라인업에 걸리는 3건만</div>
-
-    <div class="why-grid">
-      <div class="why-card">
-        <div class="wc-n">흑임자</div>
-        <div class="wc-t">비어 있는 상시 자리</div>
-        <div class="wc-d">프랜차이즈 출시가 전부 겨울 크림·여름 빙수·단발 협업. 저가대 상시 라떼는 확인 안 됨</div>
-      </div>
-      <div class="why-card">
-        <div class="wc-n">쑥</div>
-        <div class="wc-t">봄에 묶인 판매 언어</div>
-        <div class="wc-d warn">확인된 출시가 전부 3~4월 · 근거 문구가 "제철". 가을 사례 0건</div>
-      </div>
-      <div class="why-card">
-        <div class="wc-n">오트</div>
-        <div class="wc-t">표기 선례 있음</div>
-        <div class="wc-d warn">메가커피는 "식물성" 문구를 2개월 만에 철회했습니다</div>
-      </div>
-    </div>
-
-    <div class="menu-head"><span class="mh-t">소비자가 화내는 지점</span><span class="mh-s">셋 다 질감·농도</span></div>
-    <table>
-      <thead><tr><th style="width:110px;">소재</th><th>불만 발화</th><th style="width:150px;">뒤집는 조건</th></tr></thead>
-      <tbody>
-        <tr><td class="item">흑임자</td><td class="desc">"입자가 텁텁해 목에 걸린다" · "시럽 단맛이 커피를 가린다"</td><td class="desc">안 텁텁한 진함</td></tr>
-        <tr><td class="item">쑥</td><td class="desc">"쑥크림을 바르는 시늉만" · "쑥향이 미약하다"</td><td class="desc">눈에 보이는 양</td></tr>
-        <tr><td class="item">오트</td><td class="desc">"500원 더 냈는데 속은 기분" · "당 함량 때문에 가끔만"</td><td class="desc">건강 아닌 고소함</td></tr>
-      </tbody>
-    </table>
-    <div class="detail" style="margin-top:16px;"><div class="dt">긍정 발화의 공통 어휘 — "고소하다"</div><div class="dd">흑임자·오트 양쪽 호평이 같은 단어로 모입니다. 7월 딥라떼 X 후기의 "꼬소하다"와 같은 말입니다</div></div>
-
-    <div class="ph"><span class="ph-tag">확정 요청</span><b>쑥의 9월 편성</b> — 리서치 권장은 내년 봄 이월입니다. 9월에 낸다면 "왜 지금인지"를 카피가 떠안습니다. 라인업은 브랜드팀 결정이라 <b>편성 확정 후 소재를 잡습니다</b></div>
+    <div class="ph"><span class="ph-tag">확정 요청</span><b>쑥의 9월 편성</b> — 리서치 권장은 내년 봄 이월(D1)입니다. 9월에 낸다면 "왜 지금인지"를 카피가 떠안습니다. 라인업은 브랜드팀 결정이라 <b>편성 확정 후 소재를 잡습니다</b></div>
   </div>
 
   <!-- 1-2. 제작 기준 -->
@@ -607,11 +880,44 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
     <div class="cl-sub">9월 15일 출시 · 추석 9월 25일</div>
   </div>
 
+  <!-- 출처 -->
+  <div class="section">
+    <h2>출처</h2>
+    <div class="sec-sub">1차 보도 우선 · 소비자 발화는 채널·시점 표기</div>
+
+    <div class="menu-head" style="margin-top:8px;"><span class="mh-t">시장 · 트렌드</span></div>
+    <div class="srclist">
+      <b>헤럴드경제</b> 제2의 말차는 '흑임자'? (2026-03-30) · <b>리얼푸드</b> (2026-03-23) — 옐프 2026 트렌드 · 푸드인스티튜트 인용<br>
+      <b>쿡앤셰프</b> 흑임자 트렌드 (2026-03-12) · <b>애플경제</b> 삼양사 카페랩 (2026-06-16)
+    </div>
+
+    <div class="menu-head"><span class="mh-t">타 브랜드 · 이미지</span></div>
+    <div class="srclist">
+      <b>한국마케팅신문</b> 공차 흑백밀크티 (2026-01-02) · <b>네이트뉴스</b> 리뷰 (2026-01-08)<br>
+      <b>업다운뉴스</b> 더카페 크림라떼 4종 (2025-12) · <b>이랜드</b> 가을 라떼·밤 라떼 (2024~2025)<br>
+      <b>노믹센</b> 할리스 블랙샷 라떼 (2026-07-13) · <b>월요신문</b> 백미당 우리 쑥 (2026-04-02)<br>
+      <b>애플경제</b> 탐앤탐스 오트 콜드브루 (2026-06-16) · <b>헤럴드경제</b> 메가커피 오트밀크 옵션 (2023-10-13)<br>
+      <b>뉴스와이어</b> 투썸 꿀 고구마 라떼 (2025-09-03) · <b>KNS뉴스통신</b> 가을 밤·고구마 (2024-10-31)
+    </div>
+
+    <div class="menu-head"><span class="mh-t">소비자 발화</span></div>
+    <div class="srclist">
+      수집일 <b>2026-08-03</b> · 4채널 — 블로그 / 커뮤니티 / 리뷰 플랫폼 / 보도 내 인용<br>
+      흑임자 8건 · 쑥 4건 · 오트 6건 추출 · 핸들·실명은 표기하지 않습니다
+    </div>
+
+    <div class="menu-head"><span class="mh-t">미검증</span><span class="mh-s">다음 주 보완</span></div>
+    <div class="srclist">
+      국내 흑임자·쑥 검색량 추이 — <b>미확보</b>. 네이버 검색광고 도구 접근이 막혀 있습니다
+    </div>
+  </div>
+
   <!-- FOOTER -->
   <div class="footer">
     <div class="brand">BRANDRISE</div>
-    댄싱컵 × 브랜드라이즈 · 2026년 9월 신메뉴 홍보 방안<br>
-    이미지는 색·구도 레퍼런스 · 실제 제품컷 아님<br>
+    댄싱컵 × 브랜드라이즈 · 2026년 9월 신메뉴 리서치 &amp; 홍보 방안<br>
+    타 브랜드 이미지는 각 사 보도자료 · 인용 목적<br>
+    자체 이미지는 색·구도 레퍼런스 · 실제 제품컷 아님<br>
     세부 일정·예산 배정은 확정 후 조정될 수 있습니다.
   </div>
 
