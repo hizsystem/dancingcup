@@ -227,6 +227,20 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
 /* 브랜드 캡처 카드 */
 .bcards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 .bcards.c2 { grid-template-columns: repeat(2, 1fr); }
+.bcards.c4 { grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.bcards.c4 img { height: 150px; }
+.bcards.c4 .bc-b { padding: 9px 10px 11px; }
+.bcards.c4 .bc-t { font-size: 12px; }
+.bcards.c4 .bc-d { font-size: 11px; }
+.gal { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 4px 0 6px; }
+.gal > * { min-width: 0; }
+.gal figure { margin: 0; border: 1px solid #e8edf1; border-radius: 9px; overflow: hidden; background: #fff; }
+.gal img { width: 100%; height: 132px; object-fit: cover; display: block; background: #f0f2f5; }
+.gal figcaption { font-size: 10.5px; color: #636569; line-height: 1.45; padding: 7px 9px 9px; }
+.gal figcaption b { color: #1a1b18; display: block; font-size: 11px; margin-bottom: 2px; }
+.gal.g3 { grid-template-columns: repeat(3, 1fr); }
+.gal.g3 img { height: 178px; }
+.gal figure.pack img { object-fit: contain; background: #fbfcfd; padding: 6px; }
 .bcards > * { min-width: 0; }
 .bcard { border: 1px solid #e8edf1; border-radius: 10px; overflow: hidden; background: #fff; }
 .bcard img { width: 100%; height: 190px; object-fit: cover; object-position: center 32%; display: block; background: #f0f2f5; }
@@ -313,7 +327,7 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
       <div class="meta-item"><div class="mk">출시</div><div class="mv">2026. 09. 15 (화)</div></div>
       <div class="meta-item"><div class="mk">추석</div><div class="mv">09. 25 (금) · 연휴 24~27</div></div>
     </div>
-    <div class="ref-note" style="margin-top:18px;">PART 1 리서치 — 흑임자·쑥·오트의 타 브랜드 플레이와 소비자 발화 &nbsp;/&nbsp; PART 2 홍보 방안 — 축 배정·제작 기준·타임라인</div>
+    <div class="ref-note" style="margin-top:18px;">PART 1 리서치 — 국내 레퍼런스·발화 → 해외 레퍼런스 → 오트 활용 &nbsp;/&nbsp; PART 2 홍보 방안 — 축 배정·제작 기준·타임라인</div>
   </div>
 
   <!-- MISSION -->
@@ -328,7 +342,7 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
     <span class="pd-n">PART 1</span>
     <span class="pd-t">리서치</span>
     <span class="pd-l"></span>
-    <span class="pd-s">타 브랜드 플레이 · 소비자 발화</span>
+    <span class="pd-s">국내 레퍼런스·발화 → 해외 레퍼런스 → 오트 활용</span>
   </div>
 
   <!-- R0. 요약 -->
@@ -338,13 +352,13 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
     <table>
       <thead><tr><th style="width:52px;">#</th><th>신호</th></tr></thead>
       <tbody>
-        <tr><td class="item">01</td><td class="desc"><b>흑임자는 해외에서 뜨겁고 국내에서 안 떴다</b> — 옐프 검색 +147% / 국내는 "대중적 유행 아님"</td></tr>
-        <tr><td class="item">02</td><td class="desc"><b>저가 프랜차이즈 흑임자 상시 라떼가 비어 있다</b> — 겨울·빙수 시즌 한정으로만 나왔다</td></tr>
-        <tr><td class="item">03</td><td class="desc"><b>흑임자는 '할매입맛'보다 해외 말차바 문법이 더 힙하다</b> — black sesame matcha latte가 홈카페·스페셜티 카페 포맷으로 확산</td></tr>
-        <tr><td class="item">04</td><td class="desc"><b>쑥은 말차 옆자리로 묶을 수 있다</b> — 초록 음료의 다음 취향, matcha adjacent 플레이</td></tr>
-        <tr><td class="item">05</td><td class="desc"><b>흑임자·쑥의 공통점은 레트로가 아니라 Asian green/black latte</b> — 해외에서 온 듯한 메뉴처럼 보이게 만든다</td></tr>
-        <tr><td class="item">06</td><td class="desc"><b>오트딥은 건강 대체가 아니라 딥라떼 선택지 확장</b> — “딥라떼, 오트로 바꿔봤어요?”</td></tr>
-        <tr><td class="item">07</td><td class="desc"><b>식물성·비건·효능 표현은 쓰지 않는다</b> — 메가커피 표기 선례 때문에 고소함만 남긴다</td></tr>
+        <tr><td class="item">01</td><td class="desc"><b>해외 검색 급등 · 국내 무반응</b> — 옐프 흑임자 말차 +147% / 국내 보도는 "대중적 유행 아님"</td></tr>
+        <tr><td class="item">02</td><td class="desc"><b>저가 프랜차이즈 상시 라떼 공백</b> — 확인된 국내 출시가 전부 겨울·봄 시즌 한정</td></tr>
+        <tr><td class="item">03</td><td class="desc"><b>역수입 구조</b> — 해외가 쓰는 흑임자 라떼 문법의 출처가 한국 카페</td></tr>
+        <tr><td class="item">04</td><td class="desc"><b>쑥의 해외 자리 = 말차 옆</b> — 뉴욕 Lysée의 소개 문구가 "우리 식의 말차"</td></tr>
+        <tr><td class="item">05</td><td class="desc"><b>판매 근거의 전환</b> — 계절·추억이 아니라 색·층·카페인 없음</td></tr>
+        <tr><td class="item">06</td><td class="desc"><b>오트의 현재 단계 = 토핑 상품</b> — 해외는 콜드폼까지, 국내는 아직 옵션</td></tr>
+        <tr><td class="item">07</td><td class="desc"><b>금지 어휘 — 식물성·비건·효능</b> — 메가커피 표기 철회 선례</td></tr>
       </tbody>
     </table>
   </div>
@@ -565,6 +579,173 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
     <div class="flip">긍정 발화의 어휘가 <b>"고소하다"</b>입니다 — 7월 딥라떼 X 후기의 "꼬소하다"와 같은 말</div>
   </div>
 
+  <!-- R3-B. 전환 — 국내 소구점 부재 -->
+  <div class="section">
+    <h2>국내 소구점 <em>부재</em></h2>
+    <div class="sec-sub">여기까지가 국내 자료 · 흑임자·쑥은 팔 언어가 안 나옵니다</div>
+
+    <div class="vs-grid">
+      <div class="vs-card">
+        <div class="vc-n">국내에서 확인된 것</div>
+        <div class="vc-t">시즌 한정 · 계절 언어</div>
+        <ul>
+          <li>흑임자 = 겨울·빙수 시즌 한정으로만 등장</li>
+          <li>쑥 = 확인된 출시가 전부 3~4월</li>
+          <li>판매 언어가 '봄의 향기'·'겨울 크림'에 묶임</li>
+          <li class="w">저가 프랜차이즈 상시 라인 = 0건</li>
+        </ul>
+      </div>
+      <div class="vs-div">→</div>
+      <div class="vs-card">
+        <div class="vc-n">그래서 본 것</div>
+        <div class="vc-t">해외 카페의 취급 방식</div>
+        <ul>
+          <li>같은 재료가 계절 없이 상시 메뉴로 붙어 있음</li>
+          <li>파는 근거가 계절이 아니라 색·질감</li>
+          <li>한국 카페 문법이 역수입된 구조</li>
+          <li>9월 출시에 쓸 언어가 여기에 있음</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ph"><span class="ph-tag">전환 근거</span>국내 1차 보도가 <b>"대중적인 유행은 아니다"</b>로 못 박은 재료입니다. 국내 사례만으로는 9월 카피가 서지 않습니다</div>
+  </div>
+
+  <!-- R3-C. 해외 흑임자 -->
+  <div class="section">
+    <div class="action-tag">해외 레퍼런스 ①</div>
+    <h2>해외 흑임자 — <em>젖은 콘크리트색</em></h2>
+    <div class="sec-sub">계절이 아니라 색으로 팝니다 · 미국·영국·호주 카페</div>
+
+    <div class="ev-grid c3">
+      <div class="ev hot"><div class="ev-k">흑임자 말차라떼 검색</div><div class="ev-v">+147%</div><div class="ev-n">옐프 2026 트렌드 보고서</div></div>
+      <div class="ev"><div class="ev-k">흑임자 라떼 / 디저트</div><div class="ev-v">+23<span style="font-size:13px;">%</span> · +21<span style="font-size:13px;">%</span></div><div class="ev-n">같은 기간</div></div>
+      <div class="ev"><div class="ev-k">흑임자 음료 검색</div><div class="ev-v">+30%</div><div class="ev-n">구글트렌드 · 최근 1년</div></div>
+    </div>
+    <div class="flip">푸드인스티튜트 — <b>"2026년의 컬러는 블랙"</b> · 뉴욕·시애틀 카페 중심</div>
+
+    <div class="menu-head"><span class="mh-t">화면 문법</span><span class="mh-s">회색–검정 그라데이션 · 마블 소용돌이 · 검은 알갱이</span></div>
+    <div class="gal">
+      <figure><img src="plan_assets/ref_global/kr_herald_a.jpg" alt="회색 그라데이션 흑임자 라떼에 흰 폼 라떼아트"><figcaption><b>그라데이션 + 흰 폼</b>아래로 갈수록 검게, 표면에 흰 라떼아트</figcaption></figure>
+      <figure><img src="plan_assets/ref_global/gs_hero_blacksesame.jpg" alt="회색 흑임자 라떼 위 흰 로제타 라떼아트"><figcaption><b>회색 바탕 라떼아트</b>흰 결이 회색 위에서 가장 잘 보임</figcaption></figure>
+      <figure><img src="plan_assets/ref_global/gs_kahii_cloud.jpg" alt="크림 위에 흑임자 가루를 얹은 라떼"><figcaption><b>가루를 그대로 얹기</b>갈아 넣지 않고 알갱이를 남김</figcaption></figure>
+      <figure><img src="plan_assets/ref_global/gs_kahii_vcloud.jpg" alt="흰 우유와 갈색 커피가 층으로 분리된 흑임자 음료"><figcaption><b>세로 층 분리</b>흰 우유 → 커피 → 검은 토핑</figcaption></figure>
+    </div>
+    <div class="ref-note">이미지 = 각 카페·매체 공개 자료 · 출처는 하단 인덱스</div>
+
+    <div class="menu-head"><span class="mh-t">확장되는 자리</span><span class="mh-s">라떼 한 잔에서 끝나지 않습니다</span></div>
+    <div class="gal g3">
+      <figure><img src="plan_assets/ref_global/gs_kahii_sesamematcha.jpg" alt="말차 위에 흑임자 크림을 올리고 상단에 두 가루를 반반 뿌린 음료"><figcaption><b>말차 × 흑임자 반반</b>초록 아래·회색 위 · 상단 가루를 반으로 갈라 뿌림</figcaption></figure>
+      <figure><img src="plan_assets/ref_global/gs_gails_spring.jpg" alt="GAIL's 2026 봄 메뉴 아이스 말차·흑임자 음료"><figcaption><b>GAIL's · 2026 봄</b>진초록 위 / 검정 마블 아래 — 아이스 세트컷</figcaption></figure>
+      <figure><img src="plan_assets/ref_global/gs_timesnow_c.jpg" alt="흑임자 아이스라떼 두 잔과 검정 크루아상"><figcaption><b>음료 + 베이커리</b>같은 검정으로 묶어 한 화면에 둠</figcaption></figure>
+    </div>
+
+    <div class="menu-head"><span class="mh-t">상시 메뉴로 붙인 카페</span><span class="mh-s">시즌 한정이 아닙니다</span></div>
+    <table>
+      <thead><tr><th style="width:150px;">카페</th><th style="width:76px;">지역</th><th>메뉴 · 방식</th></tr></thead>
+      <tbody>
+        <tr class="b4-hl"><td class="item">Kahii</td><td class="desc">시드니</td><td class="desc"><b>Black Sesame Cloud</b> — 리스트레또 + 흑임자 크림 + 찬 우유. <b>한국 커피 문화에서 착안했다고 직접 밝힘</b></td></tr>
+        <tr><td class="item">GAIL's</td><td class="desc">런던</td><td class="desc">아이스 참깨 말차 블랙 라떼 — 2026 봄 메뉴</td></tr>
+        <tr><td class="item">Café Kitsuné</td><td class="desc">뉴욕</td><td class="desc">피스타치오 밀크 흑임자 라떼 — 대체유와 조합</td></tr>
+        <tr><td class="item">Kitaro</td><td class="desc">브루클린</td><td class="desc">밀크셰이크처럼 걸쭉한 농도로 승부</td></tr>
+        <tr><td class="item">Tatte Bakery</td><td class="desc">미국</td><td class="desc">흑임자 + 타히니 + 소금 한 꼬집 — 가을·겨울 메뉴</td></tr>
+        <tr><td class="item">Black Fox Coffee</td><td class="desc">뉴욕</td><td class="desc"><b>참깨 오트밀크</b> 차이 — 흑임자와 오트를 한 잔에</td></tr>
+        <tr><td class="item">Nana's Green Tea</td><td class="desc">미국</td><td class="desc">흑임자 라떼 플로트 약 7달러 — 매장 확장 중</td></tr>
+      </tbody>
+    </table>
+
+    <div class="ph"><span class="ph-tag">되짚을 것</span>이 문법을 만든 게 <b>한국 카페</b>입니다. 보도 인용 — "한국 카페에서는 흑임자 베이스에 우유와 에스프레소를 넣고, 흑임자 휘핑크림이나 가루를 뿌린다". 영국 SNS 키워드는 <b>'한국식 흑임자 라테'·'포스트 말차'</b></div>
+    <div class="flip">역수입 구조입니다. 댄싱컵은 <b>원래 문법을 가진 쪽</b>에 서 있습니다</div>
+  </div>
+
+  <!-- R3-D. 해외 쑥 -->
+  <div class="section">
+    <div class="action-tag">해외 레퍼런스 ②</div>
+    <h2>해외 쑥 — <em>말차의 옆자리</em></h2>
+    <div class="sec-sub">봄 재료가 아니라 카페인 없는 초록 음료로 팝니다</div>
+
+    <div class="gal">
+      <figure><img src="plan_assets/ref_global/mw_lysee_a.jpg" alt="초록 층과 흰 우유 층 위에 손으로 소금을 뿌리는 장면"><figcaption><b>Lysée · 뉴욕</b>마무리로 말돈 소금 한 꼬집 — 뿌리는 손이 컷</figcaption></figure>
+      <figure><img src="plan_assets/ref_global/mw_lysee_b.jpg" alt="흰 우유 위에 초록 층이 얹힌 유리잔"><figcaption><b>초록 / 흰 2층</b>섞기 전 상태로 내보냄</figcaption></figure>
+      <figure><img src="plan_assets/ref_global/mw_leef_artemisia.jpg" alt="흰 접시에 담긴 말린 쑥"><figcaption><b>Leef · 뉴욕</b>원물 자체를 화면에 올림</figcaption></figure>
+      <figure><img src="plan_assets/ref_global/mw_yomogi_jp.png" alt="일본 요모기 라떼와 쑥잎, 떡"><figcaption><b>일본 요모기</b>잎·떡을 같이 놓아 정체를 설명</figcaption></figure>
+    </div>
+    <div class="ref-note">이미지 = 각 카페·매체 공개 자료 · 출처는 하단 인덱스</div>
+
+    <div class="menu-head"><span class="mh-t">파는 방식</span><span class="mh-s">'봄'이 한 번도 안 나옵니다</span></div>
+    <table>
+      <thead><tr><th style="width:150px;">카페</th><th style="width:76px;">지역</th><th>메뉴 · 방식</th></tr></thead>
+      <tbody>
+        <tr class="b4-hl"><td class="item">Lysée</td><td class="desc">뉴욕</td><td class="desc"><b>Artemesia Latte</b> — 하동산 쑥 + 오트 또는 우유 + 말돈 소금. 소개 문구가 <b>"우리 식의 말차"</b> · 카페인 없음</td></tr>
+        <tr><td class="item">Leef</td><td class="desc">뉴욕</td><td class="desc">Artemisia Matcha — 하동산. 노트를 <b>볶은 쌀·풋아몬드·세이지</b>로 표기</td></tr>
+        <tr><td class="item">Cafe de Mama</td><td class="desc">뉴욕</td><td class="desc">Green Herb Mochi Latte 6.5달러 — 쑥 크림 + 모찌 꼬치. 말차를 섞은 버전은 7.5달러</td></tr>
+        <tr><td class="item">요모기 전문 카페</td><td class="desc">일본 나가하마</td><td class="desc">쑥만으로 라떼·경단·과자를 채운 단일 소재 매장</td></tr>
+        <tr><td class="item">Center Coffee</td><td class="desc">서울</td><td class="desc">쑥 라떼를 오래 상시로 유지 — 해외 매체가 기준점으로 인용</td></tr>
+      </tbody>
+    </table>
+
+    <div class="menu-head"><span class="mh-t">쑥이 말차보다 나은 지점</span><span class="mh-s">일본 업계가 꼽은 셋</span></div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="wc-n">강점 ①</div>
+        <div class="wc-t">적은 양으로 진한 초록</div>
+        <div class="wc-d">말차보다 적게 넣어도 색이 납니다<br><span class="src">일본 업계 인용 · 2026-05</span></div>
+      </div>
+      <div class="why-card">
+        <div class="wc-n">강점 ②</div>
+        <div class="wc-t">카페인 없음</div>
+        <div class="wc-d">저녁 음료·임산부·어린이까지 열립니다<br><span class="src">Lysée·Leef 모두 표기에 명시</span></div>
+      </div>
+      <div class="why-card">
+        <div class="wc-n">강점 ③</div>
+        <div class="wc-t">붙일 곳이 넓음</div>
+        <div class="wc-d">한식·양식·중식 어디에나 페어링됩니다<br><span class="src">같은 자료</span></div>
+      </div>
+    </div>
+    <div class="ph"><span class="ph-tag">선점 상태</span>국제 'mugwort latte' 대화는 <b>한국 쑥이 이미 갖고 있습니다.</b> 일본 요모기가 뒤따라 붙는 구도 — 매체 표현으로 "따라잡는 쪽"</div>
+  </div>
+
+  <!-- R3-E. 오트 활용 사례 -->
+  <div class="section">
+    <div class="action-tag">해외·국내 레퍼런스 ③</div>
+    <h2>오트 활용 — <em>옵션에서 메뉴로</em></h2>
+    <div class="sec-sub">우유 변경 옵션에서 시작해 전용 메뉴·토핑까지 갔습니다</div>
+
+    <div class="menu-head"><span class="mh-t">국내 — 옵션 단계</span><span class="mh-s">추가금 500~700원 구조</span></div>
+    <table>
+      <thead><tr><th style="width:118px;">브랜드</th><th style="width:82px;">시점</th><th>방식 · 결과</th></tr></thead>
+      <tbody>
+        <tr class="b4-hl"><td class="item">스타벅스</td><td class="desc">2021.09</td><td class="desc">자체 개발 오트밀크를 기본 옵션에 편입 · +600원, 카드결제 무료. <b>콜드브루 오트라떼는 6개월 120만잔</b></td></tr>
+        <tr><td class="item">폴바셋</td><td class="desc">2022.02</td><td class="desc">어메이징 오트 바리스타 — <b>무상 변경</b>. 오트·소이·락토프리 3종</td></tr>
+        <tr><td class="item">이디야</td><td class="desc">2023.03</td><td class="desc">옵션 추가 후 8개월 만에 변경 건수 <b>+31%</b></td></tr>
+        <tr><td class="item">투썸·커피빈·더벤티</td><td class="desc">2021~</td><td class="desc">오트 활용 메뉴 운영</td></tr>
+        <tr><td class="item">메가커피</td><td class="desc">2023.01</td><td class="desc warn">표기 문제로 '식물성' 문구를 2개월 만에 철회 — 회피할 선례</td></tr>
+      </tbody>
+    </table>
+    <div class="flip">국내 대체유 시장 <b>6,942억(2021) → 1조 전망(2026)</b> — 유로모니터</div>
+
+    <div class="menu-head"><span class="mh-t">해외 — 메뉴·토핑 단계</span><span class="mh-s">옵션을 넘어 화면이 되는 방식</span></div>
+    <div class="gal">
+      <figure class="pack"><img src="plan_assets/ref_global/oat_peets_layer.png" alt="흰 우유에서 갈색 커피로 그라데이션이 지는 아이스 오트 라떼"><figcaption><b>Peet's · 층 그라데이션</b>오트 위에 콜드브루를 부어 경계를 남김</figcaption></figure>
+      <figure class="pack"><img src="plan_assets/ref_global/oat_oatly_coldfoam.webp" alt="오틀리 바리스타 콜드폼 1L 제품"><figcaption><b>Oatly 콜드폼 · 2026.05</b>영국 첫 식물성 콜드폼 — 색·향 커스텀</figcaption></figure>
+      <figure><img src="plan_assets/ref_global/oat_blacksheep.jpg" alt="분홍 콜드폼을 올린 블랙쉽커피 음료"><figcaption><b>Black Sheep · 컬러 폼</b>전 메뉴에 폼을 얹을 수 있게 열어둠</figcaption></figure>
+      <figure class="pack"><img src="plan_assets/ref_global/oat_sbux_kr.png" alt="스타벅스 코리아 오트밀크 음료 3종"><figcaption><b>스타벅스 코리아</b>오트를 쓴 음료를 라인으로 묶어 전시</figcaption></figure>
+    </div>
+    <div class="ref-note">이미지 = 각 브랜드 공개 자료 · 출처는 하단 인덱스</div>
+
+    <div class="menu-head"><span class="mh-t">활용 형태</span><span class="mh-s">오트를 쓰는 다섯 가지</span></div>
+    <table>
+      <thead><tr><th style="width:118px;">형태</th><th>사례</th></tr></thead>
+      <tbody>
+        <tr><td class="item">우유 대체</td><td class="desc">스타벅스·폴바셋·이디야 — 옵션 변경</td></tr>
+        <tr><td class="item">전용 메뉴</td><td class="desc">탐앤탐스 오트 콜드브루 · Black Sheep 아이스 바닐라 오트라떼(미국 메뉴 5위)</td></tr>
+        <tr><td class="item">기본값</td><td class="desc">Blank Street — 오트를 기본으로 두고 우유를 선택으로 내림</td></tr>
+        <tr><td class="item">콜드폼 토핑</td><td class="desc">Oatly 바리스타 콜드폼 · 폼 유지 약 1시간 · 사전 제조 냉장 8시간</td></tr>
+        <tr><td class="item">다른 재료와 결합</td><td class="desc">Black Fox 참깨 오트밀크 차이 — 흑임자 × 오트</td></tr>
+      </tbody>
+    </table>
+    <div class="ph"><span class="ph-tag">수요 신호</span>스타벅스 2026년 2분기 <b>콜드폼 매출 +40%</b>. 오트는 '대체'가 아니라 <b>토핑·질감 상품</b>으로 이동 중입니다</div>
+  </div>
+
   <!-- R4. 가을 정석 -->
   <div class="section">
     <h2>가을 정석 — <em>밤 · 고구마</em></h2>
@@ -655,16 +836,16 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
   <!-- 1. 라인업 -->
   <div class="section">
     <h2>라인업 <em>· 축 배정</em></h2>
-    <div class="sec-sub">흑임자·쑥은 해외 말차바식 취향 음료, 오트딥은 딥라떼 선택지</div>
+    <div class="sec-sub">흑임자·쑥은 해외 카페식 취향 음료, 오트딥은 딥라떼 선택지</div>
 
     <div class="menu-cards">
       <div class="mc">
         <img src="plan_assets/hero_blacksesame.jpg" alt="흑임자라떼 비주얼 레퍼런스">
-        <div class="mc-b"><div class="mc-n">축 1 · Black Sesame Bar</div><div class="mc-t">흑임자라떼</div><div class="mc-d">검정 크림·마블·말차바 감도</div></div>
+        <div class="mc-b"><div class="mc-n">축 1 · 검정 라떼</div><div class="mc-t">흑임자라떼</div><div class="mc-d">회색–검정 그라데이션 · 가루 토핑</div></div>
       </div>
       <div class="mc">
         <img src="plan_assets/hero_mugwort.jpg" alt="쑥라떼 비주얼 레퍼런스">
-        <div class="mc-b"><div class="mc-n">축 1-B · Matcha Adjacent</div><div class="mc-t">쑥라떼</div><div class="mc-d">말차 옆 초록 취향 · 진녹색 폼</div></div>
+        <div class="mc-b"><div class="mc-n">축 1-B · 초록 라떼</div><div class="mc-t">쑥라떼</div><div class="mc-d">말차 옆자리 · 초록/흰 2층</div></div>
       </div>
       <div class="mc">
         <img src="plan_assets/hero_oatdeep.jpg" alt="오트딥라떼 비주얼 레퍼런스">
@@ -677,7 +858,7 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
       <thead><tr><th>축</th><th>대상</th><th>재원</th></tr></thead>
       <tbody>
         <tr><td class="item">Black Sesame Bar <span class="src">흑임자</span></td><td class="desc">해외 카페 취향 유입 — 안 마셔본 사람</td><td class="desc">OOS 별도 200만</td></tr>
-        <tr><td class="item">Matcha Adjacent <span class="src">쑥</span></td><td class="desc">말차·녹차 취향 고객</td><td class="desc">편성 확정 시 200만 안에서 분할</td></tr>
+        <tr><td class="item">초록 라떼 <span class="src">쑥</span></td><td class="desc">말차·녹차 취향 고객</td><td class="desc">편성 확정 시 200만 안에서 분할</td></tr>
         <tr><td class="item">바꿔 마시기 <span class="src">오트딥</span></td><td class="desc">기존 딥라떼 고객</td><td class="desc">월 리테이너 안</td></tr>
       </tbody>
     </table>
@@ -739,8 +920,8 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
     <div class="detail"><div class="dt">섭외 기준</div><div class="dd">경남권 3~4명 — 팔로워 규모가 아니라 실제 매장에서 찍는 계정</div></div>
     <div class="detail"><div class="dt">지점명 노출</div><div class="dd">카피에 지점명을 박습니다. 7월 '승아'가 영도영선점으로 검증했습니다</div></div>
     <div class="detail"><div class="dt">감각어 '고소한'</div><div class="dd">7월 X 후기에서 손님이 "꼬소하다"를 먼저 썼습니다. 브랜드가 정의하지 않고 이어받습니다</div></div>
-    <div class="detail"><div class="dt">할머니·옛날·추억 어휘 금지</div><div class="dd">국내에서 이미 많이 쓴 할매입맛 프레임보다, 해외 말차바처럼 보이는 <b>black/green latte</b> 문법으로 갑니다</div></div>
-    <div class="detail"><div class="dt">이미지 기준</div><div class="dd">슈퍼말차식 밝은 초록·검정 대비, 투명컵 레이어, 바 카운터, 손에 든 컵. 제품컷도 “해외에서 온 듯한 카페 메뉴”로 보이게 합니다</div></div>
+    <div class="detail"><div class="dt">할머니·옛날·추억 어휘 금지</div><div class="dd">국내에서 이미 많이 쓴 할매입맛 프레임 대신, 해외 카페가 쓰는 <b>black/green latte</b> 문법으로 갑니다</div></div>
+    <div class="detail"><div class="dt">이미지 기준</div><div class="dd">투명컵 층 분리 · 자연광 · 손에 든 컵 · 실제 매장 테이블. 확보한 해외 레퍼런스 컷을 기준으로 씁니다</div></div>
     <div class="measure"><strong>근거 문서</strong> — <a href="july-report.html" style="color:#EA580C;font-weight:800;">7월 운영 보고서 →</a> <span class="src">소재별 성과·판독</span></div>
   </div>
 
@@ -801,19 +982,19 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
   <!-- 2. 축1 흑임자·쑥 -->
   <div class="section">
     <div class="action-tag">축 1 · OOS 200만</div>
-    <h2>흑임자·쑥 — <em>해외 말차바처럼 플레이합니다</em></h2>
-    <div class="sec-sub">할매입맛·가을무드가 아니라, Super Matcha식 black/green latte 취향으로</div>
+    <h2>흑임자·쑥 — <em>해외 카페 문법으로</em></h2>
+    <div class="sec-sub">계절·할매입맛이 아니라 색과 층으로 팝니다</div>
 
     <div class="rec-box">
       <div class="rc-label">축</div>
       <div class="rc-line">Black &amp; Green <em>Latte Bar</em></div>
     </div>
-    <div class="ref-note">흑임자와 쑥을 묶는 공통점은 “옛날 맛”이 아니라, 해외 스페셜티 카페에서 온 듯한 검정·초록 라떼의 비주얼과 취향성입니다.</div>
+    <div class="ref-note">두 재료를 묶는 공통점은 옛날 맛이 아니라, 검정·초록 라떼의 색과 층입니다.</div>
 
     <div class="why-grid">
-      <div class="why-card"><div class="wc-n">근거 ①</div><div class="wc-t">Black sesame matcha 확산</div><div class="wc-d">해외 홈카페·카페 메뉴에서 흑임자+말차 조합이 “nutty, toasty, creamy”로 소비됩니다</div></div>
-      <div class="why-card"><div class="wc-n">근거 ②</div><div class="wc-t">쑥은 말차 옆자리</div><div class="wc-d">쑥을 봄나물로 설명하지 않고, 말차와 같은 초록 취향 음료의 변주로 보여줍니다</div></div>
-      <div class="why-card"><div class="wc-n">근거 ③</div><div class="wc-t">댄싱컵 자산과 연결</div><div class="wc-d">7월 딥라떼가 만든 “진함”을 검정·초록 레이어로 눈에 보이게 확장합니다</div></div>
+      <div class="why-card"><div class="wc-n">근거 ①</div><div class="wc-t">한국 문법의 역수입</div><div class="wc-d">Kahii(시드니)는 <b>한국 커피 문화에서 착안</b>했다고 직접 밝힙니다<br><span class="src">영국 SNS 키워드 = '한국식 흑임자 라테'</span></div></div>
+      <div class="why-card"><div class="wc-n">근거 ②</div><div class="wc-t">쑥 = 말차 옆자리</div><div class="wc-d">Lysée(뉴욕)의 소개 문구가 <b>"우리 식의 말차"</b><br><span class="src">봄·제철 언어를 한 번도 안 씀</span></div></div>
+      <div class="why-card"><div class="wc-n">근거 ③</div><div class="wc-t">딥라떼 자산과 연결</div><div class="wc-d">7월에 확인된 '진함'을 검정·초록 층으로 옮깁니다<br><span class="src">CTR 10.17% 소재의 조건 = 실제 컵·1인칭</span></div></div>
     </div>
 
     <div class="menu-head"><span class="mh-t">해외 레퍼런스에서 가져올 문법</span><span class="mh-s">제품 설명보다 화면 먼저</span></div>
@@ -826,19 +1007,25 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
         <tr><td class="item">소셜 포맷</td><td class="desc">“이 조합 한국에도?” “검정 라떼 먹어봄?”</td><td class="desc">“말차파가 쑥도 가능할까?”</td></tr>
       </tbody>
     </table>
-    <div class="ph"><span class="ph-tag">이미지 방향</span>현재 레퍼런스 컷은 제품은 보이지만 아직 <b>해외 카페/말차바 감도</b>가 약합니다. 생성·촬영 시 투명컵, 검정·초록 레이어, 손에 든 컵, 바 카운터, 자연광을 우선합니다.</div>
-    <div class="detail" style="margin-top:14px;"><div class="dt">생성 프롬프트 기준</div><div class="dd">“overseas specialty cafe, Super Matcha inspired, black sesame cream matcha latte, clear takeaway cup, natural daylight, handheld realistic UGC, no logo, no text” — 스튜디오 제품 렌더보다 실제 카페에서 찍은 듯한 컷을 우선합니다</div></div>
+    <div class="menu-head"><span class="mh-t">촬영 레퍼런스 — 그대로 재현할 컷</span><span class="mh-s">스튜디오 렌더 아님 · 실제 카페 컷 기준</span></div>
+    <div class="gal">
+      <figure><img src="plan_assets/ref_global/kr_herald_a.jpg" alt="회색 그라데이션 흑임자 라떼에 흰 폼 라떼아트"><figcaption><b>컷 A · 정면 그라데이션</b>아래 검정 → 위 회색, 표면에 흰 결</figcaption></figure>
+      <figure><img src="plan_assets/ref_global/gs_kahii_cloud.jpg" alt="크림 위에 흑임자 가루를 얹은 라떼"><figcaption><b>컷 B · 가루 클로즈업</b>알갱이가 보이게 위에서 내려찍기</figcaption></figure>
+      <figure><img src="plan_assets/ref_global/gs_kahii_sesamematcha.jpg" alt="초록과 회색이 층으로 나뉜 음료, 상단에 가루를 반반 뿌림"><figcaption><b>컷 C · 반반 가루</b>흑임자·쑥을 한 잔 위에서 갈라 뿌림</figcaption></figure>
+      <figure><img src="plan_assets/ref_global/mw_lysee_a.jpg" alt="음료 위에 손으로 소금을 뿌리는 장면"><figcaption><b>컷 D · 뿌리는 손</b>마감 동작을 3초 훅으로</figcaption></figure>
+    </div>
+    <div class="detail" style="margin-top:14px;"><div class="dt">공통 조건</div><div class="dd">투명컵 · 자연광 · 손에 든 컵 · 실제 매장 테이블. 7월에 CTR 10.17%가 나온 소재의 조건과 같습니다</div></div>
 
-    <div class="menu-head"><span class="mh-t">바이럴 포맷 ① 해외에서 온 검정 라떼</span><span class="mh-s">릴스 · 티저</span></div>
+    <div class="menu-head"><span class="mh-t">바이럴 포맷 ① 검정 라떼</span><span class="mh-s">릴스 · 티저</span></div>
     <div class="ref-grid c2" style="align-items:start;">
       <div class="ref">
-        <img src="plan_assets/hero_blacksesame.jpg" alt="흑임자라떼 비주얼 레퍼런스">
-        <div class="rf-cap"><div class="rf-t">Black Sesame Latte</div><div class="rf-s">검정 크림·마블·투명컵이 핵심. 더 힙한 실사 컷 필요</div></div>
+        <img src="plan_assets/ref_global/gs_timesnow_c.jpg" alt="흑임자 아이스라떼 두 잔과 검정 크루아상">
+        <div class="rf-cap"><div class="rf-t">검정으로 묶은 한 화면</div><div class="rf-s">음료 단독보다 같은 색 두 개를 붙이면 강해집니다</div></div>
       </div>
       <div class="hooks"><ul>
-        <li>“해외 카페에서 보던 검정 라떼”처럼 첫인상을 만듭니다</li>
-        <li>흑임자를 할매입맛으로 설명하지 않고 <b>black sesame</b>라는 재료감으로 보입니다</li>
-        <li>말차가 그랬듯, 이름보다 <b>색과 레이어</b>가 먼저 퍼지게 합니다</li>
+        <li>이름보다 <b>색과 층</b>이 먼저 퍼지게 합니다</li>
+        <li>흑임자를 재료명 <b>black sesame</b>로 보입니다</li>
+        <li>가루가 우유에 풀리는 5초를 훅으로 씁니다</li>
         <li class="w">효능·블랙푸드·탈모·항산화 소구는 쓰지 않습니다</li>
       </ul></div>
     </div>
@@ -846,14 +1033,14 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
     <div class="menu-head"><span class="mh-t">바이럴 포맷 ② 말차파 테스트</span><span class="mh-s">쑥을 묶는 방법</span></div>
     <div class="ref-grid c2" style="align-items:start;">
       <div class="ref">
-        <img src="plan_assets/hero_mugwort.jpg" alt="쑥라떼 비주얼 레퍼런스">
-        <div class="rf-cap"><div class="rf-t">Matcha Adjacent</div><div class="rf-s">쑥은 봄나물보다 말차 옆 초록 음료로</div></div>
+        <img src="plan_assets/ref_global/mw_lysee_b.jpg" alt="흰 우유 위에 초록 층이 얹힌 유리잔">
+        <div class="rf-cap"><div class="rf-t">섞기 전 2층</div><div class="rf-s">초록/흰 경계를 남긴 채로 내보냅니다</div></div>
       </div>
       <div class="hooks"><ul>
-        <li>“말차 좋아하면 쑥도 가능?”으로 진입장벽을 낮춥니다</li>
-        <li>쑥의 약점인 쓴맛·섬유질은 말보다 크림/폼/레이어 화면으로 완충합니다</li>
-        <li>흑임자와 한 컷에 둘 때는 <b>black vs green</b> 컬러바처럼 구성합니다</li>
-        <li class="w">“가을 제철 쑥”은 쓰지 않습니다. 계절 근거가 약합니다</li>
+        <li>"말차 좋아하면 쑥도 가능?"으로 진입장벽을 낮춥니다</li>
+        <li>쓴맛·섬유질 약점은 크림·폼·층 화면으로 완충합니다</li>
+        <li>카페인 없음을 저녁 음료 근거로 씁니다</li>
+        <li class="w">"가을 제철 쑥"은 쓰지 않습니다. 계절 근거가 없습니다</li>
       </ul></div>
     </div>
 
@@ -908,6 +1095,16 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
         <div class="detail" style="margin-top:14px;"><div class="dt">축 1에 끼우지 않습니다</div><div class="dd">쑥·흑임자와 한 묶음으로 내면 셋 다 흐려집니다</div></div>
       </div>
     </div>
+
+    <div class="menu-head"><span class="mh-t">촬영 레퍼런스</span><span class="mh-s">오트는 색이 아니라 층·질감으로 보입니다</span></div>
+    <div class="gal g3">
+      <figure class="pack"><img src="plan_assets/ref_global/oat_peets_layer.png" alt="흰 우유에서 갈색 커피로 그라데이션이 지는 아이스 오트 라떼"><figcaption><b>붓기 직후 층</b>섞이기 전 경계가 남은 상태 — 릴스 9/18의 목표 화면</figcaption></figure>
+      <figure class="pack"><img src="plan_assets/ref_global/oat_sbux_kr.png" alt="스타벅스 코리아 오트밀크 음료 3종"><figcaption><b>라인으로 묶기</b>단품이 아니라 선택지로 나란히 놓는 전시</figcaption></figure>
+      <figure><img src="plan_assets/ref_global/oat_blacksheep.jpg" alt="컬러 콜드폼을 올린 음료"><figcaption><b>폼 얹기</b>다음 단계 후보 — 이번 9월 범위는 아님</figcaption></figure>
+    </div>
+    <div class="ref-note">이미지 = 각 브랜드 공개 자료 · 출처는 하단 인덱스</div>
+
+    <div class="ph"><span class="ph-tag">해외 현재 단계</span>오트는 이미 <b>옵션을 넘어 토핑 상품</b>이 됐습니다. Oatly 콜드폼(2026.05 영국) · 스타벅스 콜드폼 매출 +40%. 9월엔 선택지까지만 가고, 폼은 다음 분기 후보로 둡니다</div>
 
     <div class="menu-head"><span class="mh-t">노출 3회</span><span class="mh-s">추가 비용 없음</span></div>
     <table>
@@ -1049,12 +1246,41 @@ tr.sub td { background: #f8fafb; font-weight: 800; color: #1a1b18; border-top: 1
     </div>
 
 
-    <div class="menu-head"><span class="mh-t">해외 흑임자·말차 레퍼런스</span></div>
+    <div class="menu-head"><span class="mh-t">해외 흑임자 — 매체</span></div>
     <div class="srclist">
-      <b>Falstaff</b> Curious about the Black Sesame Latte? (2025-11-21) — black sesame latte를 matcha latte처럼 비커피 라떼 트렌드로 설명<br>
-      <b>Poppy Latte / sweet comforts</b> Black Sesame Matcha Latte (2025-03-18) — black sesame + matcha + oat milk 홈카페 레시피<br>
-      <b>TikTok Discover</b> black sesame matcha latte — black sesame cream top, home cafe, oat milk 레시피 다수<br>
-      <b>Instagram 검색 결과</b> Cha Redefine, TRUE BLACK 등 black sesame matcha/latte 포스트 확인 — 링크는 접근 가능 여부 변동
+      <b>Yelp</b> 2026 Food &amp; Drink Trend Forecast — 흑임자 말차 +147% / 라떼 +23% / 디저트 +21% (2024-09~2025-08 대비)<br>
+      <b>Fox News</b> Jet-black cafe trend sweeps America (2026-02-22) · <b>Food World News</b> (2026-02-24)<br>
+      <b>Times Now</b> Black Sesame Is Having Its Moment (2026-07-22) — 색·마블 소용돌이 서술 · 기사 이미지 인용<br>
+      <b>Country &amp; Town House</b> Is Black Sesame The New Matcha? (2026-02-23) — 런던 GAIL's·WA Café·Café Pedlar<br>
+      <b>Free Press Journal</b> (2026-06-28) · <b>Udumbara</b> (2026-03-24) — 활용 형태(라떼·콜드폼·페이스트리·아이스크림)<br>
+      <b>헤럴드경제·리얼푸드</b> (2026-03) — 푸드인스티튜트 "2026년의 컬러는 블랙" · 한국 카페 영향 · 기사 이미지 인용
+    </div>
+
+    <div class="menu-head"><span class="mh-t">해외 흑임자 — 카페 1차</span></div>
+    <div class="srclist">
+      <b>Kahii</b> (시드니) Black Sesame Cloud 제품 페이지 — 한국 커피 문화 착안 명시 · 이미지 인용<br>
+      <b>Café Kitsuné</b> (뉴욕) 피스타치오 밀크 흑임자 라떼 · <b>Kitaro</b> (브루클린) · <b>ANDO patisserie</b> (뉴욕)<br>
+      <b>Black Fox Coffee</b> (뉴욕) Sesame Chai — 참깨 오트밀크 · <b>Tatte Bakery</b> 흑임자+타히니 공지<br>
+      <b>Nana's Green Tea</b> 미국 확장 · 흑임자 라떼 플로트 약 7달러
+    </div>
+
+    <div class="menu-head"><span class="mh-t">해외 쑥</span></div>
+    <div class="srclist">
+      <b>Lysée</b> (뉴욕) Artemesia Latte 메뉴 페이지 — 하동산 쑥 · 오트/우유 · 말돈 소금 · 카페인 없음 · 이미지 인용<br>
+      <b>Leef NYC</b> Artemisia Tea / Artemisia Matcha — 하동산 · 노트 표기 · 이미지 인용<br>
+      <b>Cafe de Mama</b> (뉴욕) Green Herb / Green Forest Mochi Latte — 가격·구성<br>
+      <b>JapanTalkback</b> Yomogi as the 'Next Matcha' (2026-05-05) — 나가하마 요모기 카페 · 요모기 3강점 · 한국 쑥 선점 서술 · 기사 이미지 인용<br>
+      <b>Korea Herald</b> Coffee Klatch — 쑥·흑임자 라떼 카페 (2023-10-28)
+    </div>
+
+    <div class="menu-head"><span class="mh-t">오트 활용</span></div>
+    <div class="srclist">
+      <b>신세계그룹 뉴스룸</b> 스타벅스 오트밀크 도입 (2021-09) · 한 달 20만잔 — 이미지 인용<br>
+      <b>비즈워치</b> 폴바셋 어메이징 오트 (2022-02-10) · <b>아시아경제</b> 이디야 옵션 +31% (2023-11-21)<br>
+      <b>한국경제 마켓인사이트</b> 대체유 시장 규모 (2022-10) — 유로모니터 인용<br>
+      <b>Oatly</b> Barista Cold Foam 제품·스토리 페이지 (2026-06) — 이미지 인용 · <b>Green Queen</b> (2026) — 스타벅스 콜드폼 +40%<br>
+      <b>vegconomist</b> (2026-05-06) · <b>The Capturist</b> Black Sheep 여름 라인업 (2026-06-04) — 이미지 인용<br>
+      <b>Peet's Coffee</b> Cold Brew Oat Latte 제품 페이지 — 이미지 인용 · <b>Blank Street</b> 오트 기본 구성
     </div>
 
     <div class="menu-head"><span class="mh-t">소비자 발화</span></div>
