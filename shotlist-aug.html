@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>댄싱컵 8월 자체 소재 촬영 리스트 — 브랜드라이즈</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans KR', -apple-system, sans-serif; background: #f4f7f9; color: #1a1b18; line-height: 1.7; font-size: 14px; -webkit-font-smoothing: antialiased; }
+.toolbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #0D0D0D; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; }
+.toolbar-left { display: flex; align-items: center; gap: 16px; }
+.toolbar-logo { font-size: 13px; font-weight: 700; color: #EA580C; letter-spacing: 0.05em; }
+.toolbar-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.15); }
+.toolbar-title { font-size: 14px; font-weight: 500; color: #fff; }
+.btn-toolbar { padding: 7px 18px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; background: transparent; color: #fff; font-size: 12px; font-weight: 500; cursor: pointer; text-decoration: none; }
+.container { max-width: 980px; margin: 0 auto; padding: 80px 24px 60px; }
+
+.report-header { background: #fff; border-radius: 12px; padding: 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+.report-header .label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px; }
+.report-header h1 { font-size: 32px; font-weight: 900; line-height: 1.3; letter-spacing: -0.02em; }
+.report-header h1 em { color: #EA580C; font-style: normal; }
+.meta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; padding-top: 24px; border-top: 1px solid #e8edf1; }
+.meta-item .mk { font-size: 11px; color: #999; margin-bottom: 4px; }
+.meta-item .mv { font-size: 13px; font-weight: 600; }
+
+.mission-box { background: #0D0D0D; border-radius: 12px; padding: 28px 36px; margin-bottom: 20px; color: #fff; }
+.mission-box .hl-label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.1em; margin-bottom: 12px; }
+.mission-box .lede { font-size: 17px; font-weight: 700; line-height: 1.6; }
+.mission-box .lede em { color: #FDBA8C; font-style: normal; }
+
+.section { background: #fff; border-radius: 12px; padding: 32px 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+h2 { font-size: 21px; font-weight: 900; letter-spacing: -0.02em; margin-bottom: 5px; }
+h2 em { color: #EA580C; font-style: normal; }
+.sec-sub { font-size: 12.5px; color: #999; font-weight: 600; margin-bottom: 20px; }
+.menu-head { display: flex; align-items: baseline; gap: 10px; margin: 26px 0 12px; padding-bottom: 7px; border-bottom: 2px solid #f0f2f5; }
+.menu-head .mh-t { font-size: 15.5px; font-weight: 900; }
+.menu-head .mh-s { font-size: 12px; color: #999; font-weight: 600; }
+
+table { width: 100%; border-collapse: collapse; margin: 4px 0; }
+th { background: #f8fafb; font-size: 11.5px; font-weight: 700; color: #666; padding: 10px 12px; text-align: left; border-bottom: 1px solid #e8edf1; }
+th.r, td.r { text-align: right; }
+td { padding: 11px 12px; font-size: 13px; border-bottom: 1px solid #f0f2f5; vertical-align: top; }
+td.item { font-weight: 700; }
+td.desc { color: #636569; font-size: 12.5px; }
+tr.sub td { background: #f8fafb; font-weight: 800; }
+
+.kpi-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin: 4px 0 6px; }
+.kpi-card { border: 1px solid #e8edf1; border-radius: 10px; padding: 16px 18px; background: #fff; }
+.kpi-card.hot { border-color: #FED7AA; background: #FFF7ED; }
+.kc-label { font-size: 11px; font-weight: 700; color: #999; margin-bottom: 6px; }
+.kc-value { font-size: 24px; font-weight: 900; letter-spacing: -0.02em; }
+.kpi-card.hot .kc-value { color: #EA580C; }
+.kc-unit { font-size: 13px; margin-left: 2px; }
+.kc-desc { font-size: 11.5px; color: #999; margin-top: 4px; font-weight: 600; }
+
+/* 컷 카드 */
+.cuts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 6px 0; }
+.cut { border: 1px solid #e8edf1; border-radius: 10px; overflow: hidden; background: #fff; }
+.cut img { width: 100%; height: 210px; object-fit: cover; display: block; background: #f0f2f5; }
+.cut .cb { padding: 12px 14px 14px; }
+.cut .cn { font-size: 10.5px; font-weight: 800; color: #EA580C; letter-spacing: 0.04em; margin-bottom: 5px; }
+.cut .ct { font-size: 13.5px; font-weight: 800; line-height: 1.4; margin-bottom: 6px; }
+.cut .cd { font-size: 12px; color: #636569; line-height: 1.6; }
+.cut .load { display: inline-block; margin-top: 9px; font-size: 10.5px; font-weight: 800; padding: 3px 9px; border-radius: 5px; }
+.load.free { background: #ECFDF5; color: #047857; }
+.load.seat { background: #EFF6FF; color: #1d4ed8; }
+.load.bar  { background: #FEF3C7; color: #92400E; }
+
+.cmp { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin: 6px 0; }
+.cmp figure { margin: 0; border: 1px solid #e8edf1; border-radius: 10px; overflow: hidden; background: #fff; }
+.cmp figure.win { border-color: #FED7AA; }
+.cmp img { width: 100%; height: 230px; object-fit: cover; display: block; }
+.cmp figcaption { padding: 11px 13px 13px; font-size: 12px; color: #636569; line-height: 1.55; }
+.cmp figcaption b { display: block; font-size: 12.5px; color: #1a1b18; margin-bottom: 3px; }
+.cmp figure.win figcaption b { color: #EA580C; }
+
+.flip { background: #FFF7ED; border: 1px solid #FED7AA; border-radius: 8px; padding: 12px 16px; margin-top: 14px; font-size: 12.5px; color: #9a3412; }
+.flip b { color: #EA580C; font-weight: 800; }
+.ph { background: repeating-linear-gradient(45deg,#FFFBEB,#FFFBEB 10px,#FEF3C7 10px,#FEF3C7 20px); border: 1px dashed #F59E0B; border-radius: 8px; padding: 13px 18px; margin: 14px 0 0; font-size: 12.5px; color: #92400E; line-height: 1.7; }
+.ph .ph-tag { display: inline-block; font-size: 10px; font-weight: 800; background: #F59E0B; color: #fff; padding: 2px 8px; border-radius: 6px; margin-right: 8px; }
+.note { font-size: 11px; color: #aeb2b8; font-weight: 600; margin-top: 8px; }
+.legend { display: flex; gap: 14px; flex-wrap: wrap; margin: 10px 0 2px; font-size: 11.5px; color: #666; align-items: center; }
+.legend span.k { font-weight: 800; padding: 3px 9px; border-radius: 5px; font-size: 10.5px; }
+
+.footer { text-align: center; padding: 30px; color: #aeb2b8; font-size: 11.5px; }
+.footer .brand { font-weight: 900; color: #EA580C; letter-spacing: 0.1em; margin-bottom: 6px; }
+
+@media (max-width: 780px) {
+  .cuts, .cmp { grid-template-columns: repeat(2,1fr); }
+  .kpi-grid, .meta-grid { grid-template-columns: repeat(2,1fr); }
+  .section { padding: 24px 20px; }
+}
+@media print { .toolbar { display:none; } .container { padding-top: 20px; } }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="toolbar-left">
+    <span class="toolbar-logo">BRANDRISE</span>
+    <span class="toolbar-sep"></span>
+    <span class="toolbar-title">댄싱컵 8월 자체 소재 촬영 리스트</span>
+  </div>
+  <a class="btn-toolbar" href="javascript:window.print()">PDF 저장</a>
+</div>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="report-header">
+    <div class="label">댄싱컵 × 브랜드라이즈</div>
+    <h1>8월 자체 소재 — <em>촬영 리스트</em></h1>
+    <div class="meta-grid">
+      <div class="meta-item"><div class="mk">촬영 메뉴</div><div class="mv">아이스 딥라떼 단독</div></div>
+      <div class="meta-item"><div class="mk">컷</div><div class="mv">14컷 + 영상</div></div>
+      <div class="meta-item"><div class="mk">소요</div><div class="mv">3시간 내외</div></div>
+      <div class="meta-item"><div class="mk">지점 · 날짜</div><div class="mv">확인 중</div></div>
+    </div>
+  </div>
+
+  <!-- MISSION -->
+  <div class="mission-box">
+    <div class="hl-label">이번 촬영이 만드는 것</div>
+    <div class="lede">8월 메시지는 <em>"매일 마신다"</em>입니다.<br>같은 컵을 상황만 바꿔 여러 벌 찍는 것이 이번 촬영의 핵심입니다.</div>
+  </div>
+
+  <!-- 한눈에 -->
+  <div class="section">
+    <h2>한눈에 <em>보기</em></h2>
+    <div class="sec-sub">물류·인력 판단에 필요한 수치</div>
+    <div class="kpi-grid">
+      <div class="kpi-card hot"><div class="kc-label">필요 잔수</div><div class="kc-value">25<span class="kc-unit">잔</span></div><div class="kc-desc">실촬영 20 + 재촬영 여유</div></div>
+      <div class="kpi-card"><div class="kc-label">총 컷</div><div class="kc-value">14<span class="kc-unit">컷</span></div><div class="kc-desc">컷당 영상 5~10초 병행</div></div>
+      <div class="kpi-card"><div class="kc-label">카운터 점유</div><div class="kc-value">40<span class="kc-unit">분</span></div><div class="kc-desc">제조·픽업 컷 3개</div></div>
+      <div class="kpi-card"><div class="kc-label">좌석 점유</div><div class="kc-value">1<span class="kc-unit">석</span></div><div class="kc-desc">약 1시간 30분</div></div>
+    </div>
+    <div class="flip">잔수가 많은 이유는 아이스라서입니다. <b>결로와 얼음이 컷의 핵심</b>이라 한 잔으로 여러 컷을 찍으면 녹아서 못 씁니다</div>
+  </div>
+
+  <!-- 기준 -->
+  <div class="section">
+    <h2>촬영 기준 — <em>7월에 성적이 갈린 지점</em></h2>
+    <div class="sec-sub">상상한 톤이 아니라 이 계정에서 이미 결과가 나온 화면</div>
+    <div class="cmp">
+      <figure class="win">
+        <img src="plan_assets/jul_win_matgungi.jpg" alt="7월 1위 소재 — 손에 든 테이크아웃 컵">
+        <figcaption><b>CTR 10.17% · 1위</b>실제 테이크아웃 컵 · 손글씨 자막 · 손님 1인칭</figcaption>
+      </figure>
+      <figure class="win">
+        <img src="plan_assets/jul_win_seunga.jpg" alt="7월 2위 소재 — 매장 테이블 위 딥라떼">
+        <figcaption><b>CTR 8.09% · 2위</b>매장 테이블 · 지점 맥락 · 손글씨 자막</figcaption>
+      </figure>
+      <figure>
+        <img src="plan_assets/jul_ai_iced.jpg" alt="자체 AI 제작 소재">
+        <figcaption><b>CTR 5.06%</b>무브랜드 컵 · 합성 배경 · 브랜드 3인칭</figcaption>
+      </figure>
+    </div>
+    <div class="flip">한 줄 기준 — <b>광고컷이 아니라 손님이 찍은 것처럼 보이면 합격</b></div>
+  </div>
+
+  <!-- A -->
+  <div class="section">
+    <h2>A. 데일리 반복 — <em>5컷</em></h2>
+    <div class="sec-sub">8월 메인 축 · 같은 컵을 다른 날처럼 보이게</div>
+    <div class="legend">
+      매장 부담 —
+      <span class="k free">매장 밖</span> 매장 관여 없음
+      <span class="k seat">좌석</span> 테이블 1석
+      <span class="k bar">카운터</span> 바 점유
+    </div>
+    <div class="cuts">
+      <div class="cut">
+        <img src="plan_assets/aug_daily.jpg" alt="손에 든 컵 · 거리 배경">
+        <div class="cb"><div class="cn">A1</div><div class="ct">손에 든 컵 · 거리</div><div class="cd">걸으면서 든 컵. 층이 보이는 각도로</div><span class="load free">매장 밖</span></div>
+      </div>
+      <div class="cut">
+        <img src="plan_assets/aug_store.jpg" alt="손에 든 컵 · 매장 앞">
+        <div class="cb"><div class="cn">A2</div><div class="ct">손에 든 컵 · 매장 앞</div><div class="cd">간판·매장이 배경에 들어오게</div><span class="load free">매장 밖</span></div>
+      </div>
+      <div class="cut">
+        <img src="plan_assets/jul_win_seunga.jpg" alt="테이블 위 컵">
+        <div class="cb"><div class="cn">A3</div><div class="ct">책상·테이블 위</div><div class="cd">일하는 자리에 놓인 상태</div><span class="load seat">좌석</span></div>
+      </div>
+      <div class="cut">
+        <img src="plan_assets/aug_daily.jpg" alt="옷 바꿔 재촬영">
+        <div class="cb"><div class="cn">A4</div><div class="ct">옷·소품 바꿔 재촬영</div><div class="cd">A1~A3을 다른 날처럼 한 벌 더</div><span class="load free">매장 밖</span></div>
+      </div>
+      <div class="cut">
+        <img src="plan_assets/jul_win_matgungi.jpg" alt="컵 여러 개">
+        <div class="cb"><div class="cn">A5</div><div class="ct">컵 여러 개 나란히</div><div class="cd">며칠치 누적처럼</div><span class="load seat">좌석</span></div>
+      </div>
+    </div>
+    <div class="ph"><span class="ph-tag">이 축이 메인</span>배경과 옷만 바꿔 한 번에 찍습니다. <b>매장 밖 촬영이 많아 매장 부담이 가장 적은 구간</b>입니다</div>
+  </div>
+
+  <!-- B -->
+  <div class="section">
+    <h2>B. 진함 · 시원함 — <em>4컷</em></h2>
+    <div class="sec-sub">7월에 클릭이 난 지점 · 8월도 폭염이라 그대로 갑니다</div>
+    <div class="cuts">
+      <div class="cut">
+        <img src="plan_assets/deep_macro.jpg" alt="얼음 사이 진한 층">
+        <div class="cb"><div class="cn">B1</div><div class="ct">얼음 사이 진한 층</div><div class="cd">위에서 내려찍기. 더워도 진하다</div><span class="load seat">좌석</span></div>
+      </div>
+      <div class="cut">
+        <img src="plan_assets/deep_marbling.jpg" alt="마블링">
+        <div class="cb"><div class="cn">B2</div><div class="ct">섞이는 순간 마블링</div><div class="cd">커피가 우유에 퍼지는 결</div><span class="load seat">좌석</span></div>
+      </div>
+      <div class="cut">
+        <img src="plan_assets/deep_macro.jpg" alt="컵 표면 결로">
+        <div class="cb"><div class="cn">B3</div><div class="ct">컵 표면 결로</div><div class="cd">물방울·손자국. 시원함의 증거</div><span class="load seat">좌석</span></div>
+      </div>
+      <div class="cut">
+        <img src="plan_assets/deep_marbling.jpg" alt="젓기 전후">
+        <div class="cb"><div class="cn">B4</div><div class="ct">젓기 전 / 젓은 후</div><div class="cd">색이 안 묽어지는 것을 2컷으로</div><span class="load seat">좌석</span></div>
+      </div>
+    </div>
+    <div class="flip">B1·B4가 <b>7월에 클릭이 난 지점</b>입니다 — 아이스인데도 끝까지 진하다</div>
+  </div>
+
+  <!-- C -->
+  <div class="section">
+    <h2>C. 매장 · 제조 — <em>3컷</em></h2>
+    <div class="sec-sub">카운터가 필요한 구간 · 이 40분만 조율되면 됩니다</div>
+    <div class="cuts">
+      <div class="cut">
+        <img src="plan_assets/oat_espressopour.jpg" alt="에스프레소 붓는 순간">
+        <div class="cb"><div class="cn">C1</div><div class="ct">에스프레소 붓는 순간</div><div class="cd">3~5초 훅용. 여러 테이크 필요</div><span class="load bar">카운터</span></div>
+      </div>
+      <div class="cut">
+        <img src="plan_assets/oat_milkpour.jpg" alt="우유 붓는 순간">
+        <div class="cb"><div class="cn">C2</div><div class="ct">우유 붓는 순간</div><div class="cd">층이 생기는 과정</div><span class="load bar">카운터</span></div>
+      </div>
+      <div class="cut">
+        <img src="plan_assets/aug_store.jpg" alt="컵 건네받는 손">
+        <div class="cb"><div class="cn">C3</div><div class="ct">컵 건네받는 손</div><div class="cd">픽업 순간. 매장 접점</div><span class="load bar">카운터</span></div>
+      </div>
+    </div>
+    <div class="ph"><span class="ph-tag">여기가 조율 지점</span>이 3컷만 카운터를 씁니다. <b>합쳐서 30~40분</b> · 비피크 시간대면 충분합니다</div>
+  </div>
+
+  <!-- D -->
+  <div class="section">
+    <h2>D. 9월 대비 — <em>2컷</em></h2>
+    <div class="sec-sub">오트 딥라떼(9/15) 비교컷을 위한 기준 확보</div>
+    <div class="cuts">
+      <div class="cut">
+        <img src="plan_assets/oat_milkpour.jpg" alt="우유 붓기 전 베이스">
+        <div class="cb"><div class="cn">D1</div><div class="ct">우유 붓기 전 베이스</div><div class="cd">9월 "오트로 바꿔봤어요?" 비교컷 좌측</div><span class="load bar">카운터</span></div>
+      </div>
+      <div class="cut">
+        <img src="plan_assets/deep_macro.jpg" alt="앵글 고정 기준컷">
+        <div class="cb"><div class="cn">D2</div><div class="ct">앵글 고정 기준컷</div><div class="cd">각도·거리·조명 메모. 9월에 오트로 재현</div><span class="load seat">좌석</span></div>
+      </div>
+    </div>
+    <div class="flip">D2를 지금 잡아두면 <b>9월에 같은 앵글로 오트 버전만 찍어</b> 비교컷이 완성됩니다</div>
+  </div>
+
+  <!-- 물류 -->
+  <div class="section">
+    <h2>매장에 보낼 <em>물류</em></h2>
+    <div class="sec-sub">발주 기준</div>
+    <table>
+      <thead><tr><th style="width:200px;">항목</th><th class="r" style="width:110px;">수량</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr><td class="item">딥라떼 베이스</td><td class="r"><b>25잔분</b></td><td class="desc">실촬영 20 + 재촬영 여유 5</td></tr>
+        <tr><td class="item">테이크아웃 컵·뚜껑·빨대</td><td class="r"><b>30세트</b></td><td class="desc">컵이 소재의 핵심 — 흠 없는 컵으로</td></tr>
+        <tr><td class="item">얼음</td><td class="r">여유분</td><td class="desc">컷마다 새로 제조</td></tr>
+        <tr><td class="item">컵홀더 · 캐리어</td><td class="r">2~3</td><td class="desc">픽업 컷용</td></tr>
+      </tbody>
+    </table>
+    <div class="ph"><span class="ph-tag">확인 요청</span>라인업 컷(오리지널·솔티드·너티 나란히)이 필요하면 <b>솔티드·너티 각 2잔</b>만 추가하면 됩니다</div>
+  </div>
+
+  <!-- 진행 -->
+  <div class="section">
+    <h2>진행 방식 — <em>바이저 판단</em></h2>
+    <div class="sec-sub">매장 부담을 컷 단위로 나눈 결과</div>
+    <table>
+      <thead><tr><th style="width:150px;">구간</th><th class="r" style="width:100px;">시간</th><th>매장 관여</th></tr></thead>
+      <tbody>
+        <tr><td class="item">세팅</td><td class="r">30분</td><td class="desc">없음</td></tr>
+        <tr><td class="item">A 데일리 반복</td><td class="r">60분</td><td class="desc">대부분 매장 밖 · 좌석 일부</td></tr>
+        <tr><td class="item">B 진함·시원함</td><td class="r">40분</td><td class="desc">좌석 1석 · 음료 순차 제조</td></tr>
+        <tr><td class="item">C 매장·제조</td><td class="r">40분</td><td class="desc"><b>카운터 점유</b></td></tr>
+        <tr><td class="item">D 9월 대비</td><td class="r">15분</td><td class="desc">카운터 일부</td></tr>
+        <tr><td class="item">정리</td><td class="r">20분</td><td class="desc">없음</td></tr>
+        <tr class="sub"><td>합계</td><td class="r">3시간 내외</td><td>카운터 실점유 40분</td></tr>
+      </tbody>
+    </table>
+
+    <div class="menu-head"><span class="mh-t">바이저가 붙으면 좋은 이유</span><span class="mh-s">둘 다 제조 타이밍 문제</span></div>
+    <table>
+      <tbody>
+        <tr><td class="item" style="width:150px;">순차 제조</td><td class="desc">25잔을 컷 진행에 맞춰 계속 새로 만들어야 합니다. 미리 만들어두면 녹습니다</td></tr>
+        <tr><td class="item">카운터 40분</td><td class="desc">제조·픽업 컷은 손이 화면에 나옵니다. 응대와 겹치면 진행이 끊깁니다</td></tr>
+      </tbody>
+    </table>
+    <div class="flip">비피크(오후 2~4시)에 <b>바이저 한 분이 음료 제조만 전담</b>하시면 3시간 안에 끝납니다. 점주님은 평소대로 운영하시면 됩니다</div>
+    <div class="ph"><span class="ph-tag">축소안</span>매장 사정이 어려우면 <b>C·D를 빼고 2시간</b>으로 줄일 수 있습니다. A는 매장 밖이 대부분이라 그대로 두는 쪽이 좋습니다</div>
+  </div>
+
+  <!-- 확인 -->
+  <div class="section">
+    <h2>확인 <em>부탁드릴 것</em></h2>
+    <table>
+      <tbody>
+        <tr><td class="item" style="width:180px;">촬영 지점</td><td class="desc">정해지면 그 매장 간판·인테리어가 들어가는 컷을 미리 설계하겠습니다</td></tr>
+        <tr><td class="item">촬영 날짜</td><td class="desc">비피크 시간대 기준</td></tr>
+        <tr><td class="item">바이저 동행 여부</td><td class="desc">위 부담표 기준으로 판단 부탁드립니다</td></tr>
+        <tr><td class="item">라인업 컷</td><td class="desc">솔티드·너티 추가 여부</td></tr>
+      </tbody>
+    </table>
+    <div class="note">※ 레퍼런스 이미지는 프레이밍 참고용입니다. 실제 촬영은 해당 지점 실물 컵·매장에서 진행합니다</div>
+  </div>
+
+  <div class="footer">
+    <div class="brand">BRANDRISE</div>
+    댄싱컵 × 브랜드라이즈 · 8월 자체 소재 촬영 리스트
+  </div>
+
+</div>
+</body>
+</html>
