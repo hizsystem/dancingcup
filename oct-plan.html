@@ -374,6 +374,15 @@ body { word-break: keep-all; overflow-wrap: break-word; }
 .sec-head h2 { flex: 0 0 auto; max-width: 100%; }
 .sec-head .sec-sub { flex: 1 1 200px; min-width: 0; }
 .ref-a { color:#EA580C; font-weight:700; text-decoration:none; }
+.refg { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.refc { display:grid; grid-template-columns:auto 1fr; gap:14px; border:1px solid #e8edf1; border-radius:10px; padding:12px; background:#fdfdfb; min-width:0; }
+.refc .ims { display:flex; gap:6px; }
+.refc .ims img { width:72px; height:128px; object-fit:cover; border-radius:6px; display:block; background:#f1f3f5; }
+.refc .n { font-size:11px; font-weight:700; color:#EA580C; margin-bottom:2px; }
+.refc .t { font-size:15px; font-weight:700; color:#1a1b18; margin-bottom:6px; }
+.refc .d { font-size:13px; color:#3a3c40; line-height:1.6; margin-bottom:8px; }
+.refc .l { font-size:12px; line-height:1.6; }
+@media (max-width: 720px) { .refg { grid-template-columns:1fr; } .refc .ims img { width:60px; height:107px; } }
 </style>
 </head>
 <body>
@@ -395,7 +404,7 @@ body { word-break: keep-all; overflow-wrap: break-word; }
     <div class="rh-main">
     <div class="label">댄싱컵 x 브랜드라이즈</div>
     <h1>10월 운영 플랜</h1>
-    <div class="h1sub">딥라떼 라인</div>
+    <div class="h1sub">라떼 유목민 정착 · 딥라떼 · 라떼 맛집</div>
     </div>
     <div class="meta-grid">
       <div class="meta-item"><div class="mk">공급자</div><div class="mv">브랜드라이즈 by HIZ</div></div>
@@ -407,15 +416,15 @@ body { word-break: keep-all; overflow-wrap: break-word; }
 
   <div class="summary-box">
     <div class="hl-label">10월 전략</div>
-    <div class="lede">딥라떼 한 이름 아래 <em>오트를 고르는 선택지</em>로 세웁니다.</div>
+    <div class="lede">딥라떼 전략을 이어갑니다. <em>라떼 유목민이 정착하는 라떼 맛집, 댄싱컵 딥라떼.</em></div>
     <div class="two-track">
       <div class="tt-card">
-        <div class="tt-k">9월 결과</div>
-        <div class="tt-v">오트 딥라떼 소재가 광고 예산 91% · 오가닉 조회 1위</div>
+        <div class="tt-k">10월에 정할 것</div>
+        <div class="tt-v">소구 메뉴 1개 · 딥라떼 또는 오트 딥라떼</div>
       </div>
       <div class="tt-card">
         <div class="tt-k">10월 운영</div>
-        <div class="tt-v">신규 출시 없음 · 9월 출시분 운영 · 겨울 신메뉴는 11월 중순</div>
+        <div class="tt-v">레퍼런스 기반 자체 소재 · 규모를 키운 인플루언서</div>
       </div>
     </div>
   </div>
@@ -427,67 +436,51 @@ body { word-break: keep-all; overflow-wrap: break-word; }
       <tbody>
         <tr><td class="item">자체 제작 릴스</td><td class="desc"><b>6건</b> · 레퍼런스 기반 촬영 1회</td><td class="num">10월 초 촬영<span class="sub">10/6부터 업로드</span></td></tr>
         <tr><td class="item">메타 광고</td><td class="desc"><b>80만원</b> · 세트 4개</td><td class="num">10/6 – 10/31<span class="sub">탐색 40만 → 확대 40만</span></td></tr>
-        <tr><td class="item">인플루언서</td><td class="desc"><b>6명</b> · 영상은 한 잔</td><td class="num">10월 첫 주 메뉴 결정<span class="sub">둘째 주 섭외</span></td></tr>
-        <tr><td class="item">블로그 체험단</td><td class="desc"><b>40명</b> · 오트 딥라떼 키워드 포함</td><td class="num">10월 중 모집 · 발행</td></tr>
+        <tr><td class="item">인플루언서</td><td class="desc"><b>6명</b> · 9월보다 큰 계정 · 소구 메뉴 한 잔</td><td class="num">10월 첫 주 메뉴 결정<span class="sub">둘째 주 섭외</span></td></tr>
+        <tr><td class="item">블로그 체험단</td><td class="desc"><b>40명</b> · 지역 + 라떼 맛집 · 소구 메뉴</td><td class="num">10월 중 모집<span class="sub">9월분 40명은 10월 발행</span></td></tr>
         <tr><td class="item">X</td><td class="desc">상시 운영 · 이벤트 <b>2회</b></td><td class="num">10/13 주 · 10/27 주</td></tr>
-        <tr><td class="item">가맹점</td><td class="desc">딥라떼 라인 가이드 배포 · 재포스팅</td><td class="num">10월 초 배포</td></tr>
+        <tr><td class="item">가맹점</td><td class="desc">딥라떼 가이드 배포 · 재포스팅</td><td class="num">10월 초 배포</td></tr>
       </tbody>
     </table>
   </div>
 
   <div class="section">
-    <div class="sec-head"><h2>딥라떼 라인 — <em>세 층으로 고릅니다</em></h2><div class="sec-sub">한 이름 아래 선택지를 배치하는 구조</div></div>
-    <div class="umb">
-      <div class="top">댄싱 딥라떼<small>변하지 않는 이름 · 라떼 맛집의 근거</small></div>
-      <div class="stem"></div>
-      <div class="row">
-        <div class="leaf">오리지널<span class="s">풍미</span></div>
-        <div class="leaf">너티<span class="s">풍미</span></div>
-        <div class="leaf">솔티드<span class="s">풍미</span></div>
-        <div class="leaf new">오트<span class="s">베이스 변경</span></div>
-      </div>
-      <div class="stem"></div>
-      <div class="row" style="grid-template-columns:1fr 1fr;">
-        <div class="leaf">시그니처 원두<span class="s">점심 · 저녁 전후</span></div>
-        <div class="leaf">디카페인 원두<span class="s">공복 · 늦은 시간</span></div>
-      </div>
-    </div>
-    <div class="note">※ 강화쑥 · 흑임자 크림 라떼는 딥라떼 라인 밖에서 가을 메뉴로 계속 노출</div>
-  </div>
-
-  <div class="section">
-    <div class="sec-head"><h2>모양이 같은 두 잔 — <em>다른 브랜드의 방식</em></h2><div class="sec-sub">변형 메뉴를 기존 메뉴와 함께 판 사례</div></div>
+    <div class="sec-head"><h2>딥라떼 전략 — <em>세 가지 플레이</em></h2><div class="sec-sub">6월부터 이어온 방향 그대로</div></div>
     <table>
-      <thead><tr><th style="width:170px;">브랜드</th><th>변형</th><th>구별한 방식</th></tr></thead>
+      <thead><tr><th style="width:150px;">플레이</th><th>손님이 하는 말</th><th>10월 실행</th></tr></thead>
       <tbody>
-        <tr><td class="item">스타벅스 · 2019</td><td class="desc">블론드 원두</td><td class="desc">기존 메뉴 앞에 붙는 이름 · 원두 선택</td></tr>
-        <tr><td class="item">컴포즈 · 2026. 04</td><td class="desc">올데이 오트</td><td class="desc">디카페인 · 저당과 묶은 라인</td></tr>
-        <tr><td class="item">메가커피 · 2026. 09</td><td class="desc">하우스밀크 라떼</td><td class="desc">모양이 다른 오르조라떼와 묶음</td></tr>
-        <tr><td class="item">우지커피 · 2026. 09</td><td class="desc">오트밀크 7종</td><td class="desc">흑임자를 앞에 · 계절 콘셉트로 묶음</td></tr>
+        <tr><td class="item">라떼 유목민 정착</td><td class="desc">"라떼 유목민인데 여기 정착함"</td><td class="desc">인플루언서 캡션 · X 발화</td></tr>
+        <tr class="b4-hl"><td class="item">딥라떼</td><td class="desc">"오늘도 딥라떼"</td><td class="desc">자체 소재 · 인플루언서 · 메타 광고</td></tr>
+        <tr><td class="item">라떼 맛집</td><td class="desc">"지역명 + 라떼 맛집" 검색</td><td class="desc">블로그 체험단 · 가맹점</td></tr>
       </tbody>
     </table>
-    <div class="bracket">두 잔을 나란히 놓은 곳은 없습니다. <b>이름과 재료</b>로 구별합니다.</div>
+    <div class="note">※ 강화쑥 · 흑임자 크림 라떼는 가을 메뉴로 계속 노출</div>
   </div>
-
+  <div class="section">
+    <div class="sec-head"><h2>10월에 정할 것 — <em>어떤 한 잔을 띄울지</em></h2><div class="sec-sub">자체 소재 · 인플루언서 · 체험단에 같은 메뉴 적용</div></div>
+    <table>
+      <thead><tr><th style="width:130px;">소구 메뉴</th><th>근거</th><th>걸리는 점</th></tr></thead>
+      <tbody>
+        <tr><td class="item">딥라떼</td><td class="desc">7 · 8월 인플루언서 소재 광고 클릭률 9.68% · 7.97%<br>메뉴 이름 검색이 쌓인 자산</td><td class="desc">9월 오트 딥라떼 흐름이 광고에서 끊김</td></tr>
+        <tr><td class="item">오트 딥라떼</td><td class="desc">9월 광고 예산 91% · 공식 릴스 조회 1위</td><td class="desc">9월 우지커피 오트밀크 7종과 시기 · 재료가 겹침<br>성분 확인 전에는 표현 제한</td></tr>
+      </tbody>
+    </table>
+    <div class="bracket">두 잔은 제조법과 모양이 거의 같아 <b>한 영상에 담으면 구별되지 않습니다</b>. 인플루언서는 정한 한 잔에 집중하고, 두 잔을 함께 보여줄 때는 자막으로 구별합니다.</div>
+  </div>
   <div class="section">
     <div class="sec-head"><h2>10월 소재 — <em>레퍼런스 기반 촬영</em></h2><div class="sec-sub">10월 초 촬영 1회 · 릴스 6건 · 레퍼런스 9건</div></div>
-    <table>
-      <thead><tr><th style="width:44px;">#</th><th style="width:120px;">소재</th><th>촬영 방식</th><th style="width:170px;">레퍼런스</th></tr></thead>
-      <tbody>
-        <tr class="b4-hl"><td class="desc">1</td><td class="item">재료 순서</td><td class="desc">트렌드 음원 · 포맷 위에 오트 딥라떼 → 재료 → 딥라떼 → 우유 · 에스프레소</td><td class="desc"><a class="ref-a" href="https://www.instagram.com/reels/DdySX1roU1z/" target="_blank" rel="noopener">Rubino</a><br><a class="ref-a" href="https://www.instagram.com/p/Dc3ns3eKenE/" target="_blank" rel="noopener">Claudia Rose</a></td></tr>
-        <tr class="b4-hl"><td class="desc">2</td><td class="item">이름 자막</td><td class="desc">에스프레소를 다 따를 때 「딥라떼」 자막 → 이어서 「오트 딥라떼」</td><td class="desc"><a class="ref-a" href="https://www.instagram.com/p/Dcx_uxPOunu/" target="_blank" rel="noopener">scenes</a></td></tr>
-        <tr><td class="desc">3</td><td class="item">매장 순간</td><td class="desc">매장 손님의 순간 포착 속 딥라떼와 오트 딥라떼</td><td class="desc"><a class="ref-a" href="https://www.instagram.com/p/DbcrXkfBblN/" target="_blank" rel="noopener">GRAY GRISTMILL</a></td></tr>
-        <tr><td class="desc">4</td><td class="item">매장 전경</td><td class="desc">매장과 음료를 한 편에 모두</td><td class="desc"><a class="ref-a" href="https://www.instagram.com/reel/DdyKTxVAv0K/" target="_blank" rel="noopener">Brags and Brams</a></td></tr>
-        <tr><td class="desc">5</td><td class="item">AI 트렌드</td><td class="desc">요즘 뜨는 AI 릴스 포맷에 두 잔을 얹음</td><td class="desc"><a class="ref-a" href="https://www.instagram.com/reel/DdYaiTmSuiw/" target="_blank" rel="noopener">The Lit Social Club</a><br><a class="ref-a" href="https://www.instagram.com/reel/DcZA-lioxg0/" target="_blank" rel="noopener">Sophia</a></td></tr>
-        <tr><td class="desc">6</td><td class="item">AI 릴스</td><td class="desc">9월 신메뉴 릴스와 같은 방식 1건</td><td class="desc"><a class="ref-a" href="https://www.instagram.com/reel/DdYyyZIzmog/" target="_blank" rel="noopener">댄싱컵 9월 신메뉴</a></td></tr>
-        <tr><td class="desc">+</td><td class="item">캐러셀</td><td class="desc">릴스 외 형식 시도</td><td class="desc"><a class="ref-a" href="https://www.instagram.com/p/DdjvZlUDtfw/" target="_blank" rel="noopener">Pals Specialty Coffee</a></td></tr>
-      </tbody>
-    </table>
-    <div class="bracket">
-      1 · 2 · 3은 <b>딥라떼와 오트 딥라떼를 한 편에</b> 담고, 재료와 자막으로 구별합니다.
+    <div class="refg">
+      <div class="refc"><div class="ims"><a href="https://www.instagram.com/reels/DdySX1roU1z/" target="_blank" rel="noopener"><img src="plan_assets/oct_ref/rubino.jpg" alt="Rubino" width="72" height="128" loading="lazy"></a><a href="https://www.instagram.com/p/Dc3ns3eKenE/" target="_blank" rel="noopener"><img src="plan_assets/oct_ref/claudia.jpg" alt="Claudia Rose" width="72" height="128" loading="lazy"></a></div><div><div class="n">소재 1</div><div class="t">재료 순서</div><div class="d">트렌드 음원 · 포맷 위에 한 잔을 먼저 보여주고 재료 → 우유 → 에스프레소 순서로</div><div class="l"><a class="ref-a" href="https://www.instagram.com/reels/DdySX1roU1z/" target="_blank" rel="noopener">Rubino</a><br><a class="ref-a" href="https://www.instagram.com/p/Dc3ns3eKenE/" target="_blank" rel="noopener">Claudia Rose</a></div></div></div>
+      <div class="refc"><div class="ims"><a href="https://www.instagram.com/p/Dcx_uxPOunu/" target="_blank" rel="noopener"><img src="plan_assets/oct_ref/scenes.jpg" alt="scenes" width="72" height="128" loading="lazy"></a></div><div><div class="n">소재 2</div><div class="t">이름 자막</div><div class="d">에스프레소를 다 따를 때쯤 「딥라떼」 자막 → 이어서 다음 잔</div><div class="l"><a class="ref-a" href="https://www.instagram.com/p/Dcx_uxPOunu/" target="_blank" rel="noopener">scenes</a></div></div></div>
+      <div class="refc"><div class="ims"><a href="https://www.instagram.com/p/DbcrXkfBblN/" target="_blank" rel="noopener"><img src="plan_assets/oct_ref/gray.jpg" alt="GRAY GRISTMILL" width="72" height="128" loading="lazy"></a></div><div><div class="n">소재 3</div><div class="t">매장 순간</div><div class="d">댄싱컵 매장 손님의 순간 포착 속 한 잔</div><div class="l"><a class="ref-a" href="https://www.instagram.com/p/DbcrXkfBblN/" target="_blank" rel="noopener">GRAY GRISTMILL</a></div></div></div>
+      <div class="refc"><div class="ims"><a href="https://www.instagram.com/reel/DdyKTxVAv0K/" target="_blank" rel="noopener"><img src="plan_assets/oct_ref/brags.jpg" alt="Brags and Brams" width="72" height="128" loading="lazy"></a></div><div><div class="n">소재 4</div><div class="t">매장 전경</div><div class="d">매장과 음료를 한 편에 모두</div><div class="l"><a class="ref-a" href="https://www.instagram.com/reel/DdyKTxVAv0K/" target="_blank" rel="noopener">Brags and Brams</a></div></div></div>
+      <div class="refc"><div class="ims"><a href="https://www.instagram.com/reel/DdYaiTmSuiw/" target="_blank" rel="noopener"><img src="plan_assets/oct_ref/litsocial.jpg" alt="The Lit Social Club" width="72" height="128" loading="lazy"></a><a href="https://www.instagram.com/reel/DcZA-lioxg0/" target="_blank" rel="noopener"><img src="plan_assets/oct_ref/sophia.jpg" alt="Sophia" width="72" height="128" loading="lazy"></a></div><div><div class="n">소재 5</div><div class="t">AI 트렌드</div><div class="d">요즘 뜨는 AI 릴스 포맷에 딥라떼를 얹음</div><div class="l"><a class="ref-a" href="https://www.instagram.com/reel/DdYaiTmSuiw/" target="_blank" rel="noopener">The Lit Social Club</a><br><a class="ref-a" href="https://www.instagram.com/reel/DcZA-lioxg0/" target="_blank" rel="noopener">Sophia</a></div></div></div>
+      <div class="refc"><div class="ims"><a href="https://www.instagram.com/reel/DdYyyZIzmog/" target="_blank" rel="noopener"><img src="plan_assets/oct_ref/dc_sept.jpg" alt="댄싱컵 9월 신메뉴" width="72" height="128" loading="lazy"></a></div><div><div class="n">소재 6</div><div class="t">AI 릴스</div><div class="d">9월 신메뉴 릴스와 같은 방식 1건</div><div class="l"><a class="ref-a" href="https://www.instagram.com/reel/DdYyyZIzmog/" target="_blank" rel="noopener">댄싱컵 9월 신메뉴</a></div></div></div>
     </div>
+      <div class="refc" style="margin-top:14px;"><div class="ims"><a href="https://www.instagram.com/p/DdjvZlUDtfw/" target="_blank" rel="noopener"><img src="plan_assets/oct_ref/pals.jpg" alt="Pals Specialty Coffee" width="72" height="128" loading="lazy"></a></div><div><div class="n">추가 시도</div><div class="t">캐러셀</div><div class="d">릴스 외 형식 한 번</div><div class="l"><a class="ref-a" href="https://www.instagram.com/p/DdjvZlUDtfw/" target="_blank" rel="noopener">Pals Specialty Coffee</a></div></div></div>
+    <div class="bracket">7월부터 반응이 좋았던 자체 소재는 <b>유행 음원 · 트렌드 포맷</b>을 탄 것이었습니다. 10월 소재 6건 모두 이 조건 위에서 찍습니다.</div>
+    <div class="note">※ 썸네일을 누르면 레퍼런스 원본으로 연결</div>
   </div>
-
   <div class="section">
     <div class="sec-head"><h2>메타 광고 — <em>세트 4개</em></h2><div class="sec-sub">매체비 80만원 · 세트당 소재 2</div></div>
 
@@ -495,7 +488,7 @@ body { word-break: keep-all; overflow-wrap: break-word; }
     <table>
       <thead><tr><th style="width:80px;">세트</th><th>소재</th><th>타겟</th><th style="width:90px;">확인할 것</th></tr></thead>
       <tbody>
-        <tr><td class="item">A 두 잔</td><td class="desc">1 재료 순서 · 2 이름 자막</td><td class="desc">전국 · 18–54</td><td class="desc">두 잔 구별 방식의 효과</td></tr>
+        <tr><td class="item">A 제조</td><td class="desc">1 재료 순서 · 2 이름 자막</td><td class="desc">전국 · 18–54</td><td class="desc">제조 장면의 효과</td></tr>
         <tr><td class="item">B 매장</td><td class="desc">3 매장 순간 · 4 매장 전경</td><td class="desc">전국 · 18–54</td><td class="desc">매장 장면의 효과</td></tr>
         <tr><td class="item">C 경남권</td><td class="desc">1 재료 순서 · 5 AI 트렌드</td><td class="desc">부산 · 경남 · 울산</td><td class="desc">지역 집중의 효율</td></tr>
         <tr><td class="item">D 연령 상향</td><td class="desc">2 이름 자막 · 6 AI 릴스</td><td class="desc">전국 · 35–54</td><td class="desc">상위 연령 반응</td></tr>
@@ -512,48 +505,41 @@ body { word-break: keep-all; overflow-wrap: break-word; }
         <tr class="subtotal-row"><td class="item">합계</td><td class="desc">10/6 – 10/31</td><td class="desc">26일 연속 집행 · 공백 없음</td><td class="amount">800,000</td></tr>
       </tbody>
     </table>
-    <div class="deliv-note">9월분 인플루언서 매체비 80만원은 <b>9월 인플루언서 소재 6건으로 10월 초까지</b> 별도 집행합니다</div>
+    <div class="deliv-note">9월분 인플루언서 매체비 80만원은 <b>9월 인플루언서 소재로 10월 초부터</b> 별도 집행합니다</div>
   </div>
 
   <div class="section">
-    <div class="sec-head"><h2>인플루언서 — <em>무엇을 보여줄지 협의</em></h2><div class="sec-sub">6명 · 영상은 한 잔 · 딥라떼와 오트 딥라떼 중 선택</div></div>
+    <div class="sec-head"><h2>인플루언서 — <em>규모를 키워 딥라떼를 띄웁니다</em></h2><div class="sec-sub">6명 · 소구 메뉴 한 잔</div></div>
     <table>
-      <thead><tr><th style="width:130px;">선택지</th><th>근거</th><th>걸리는 점</th></tr></thead>
       <tbody>
-        <tr><td class="item">딥라떼 한 잔</td><td class="desc">7 · 8월 인플루언서 소재가 모두 딥라떼 · 광고 클릭률 9.68% · 7.97%</td><td class="desc">오트 딥라떼 후기는 9월 4건에서 이어지지 않음</td></tr>
-        <tr><td class="item">오트 딥라떼 한 잔</td><td class="desc">9월 오트 딥라떼 후기 4건을 이어감 · 9/28 후기 2건이 캡션에서 딥라떼를 먼저 꺼냄</td><td class="desc">기존 딥라떼 한 잔은 자체 소재에만 나옴</td></tr>
+        <tr><td class="item" style="width:130px;">계정 규모</td><td class="desc">9월 3,599 – 3.8만 → 10월은 9월보다 큰 계정 중심</td></tr>
+        <tr><td class="item">영상</td><td class="desc">정한 한 잔 · 매장 방문</td></tr>
+        <tr><td class="item">캡션</td><td class="desc">"라떼 유목민 정착" 발화 · 가격 미표기</td></tr>
+        <tr><td class="item">해시태그</td><td class="desc">#딥라떼 #라떼맛집 #딥라떼맛집 포함 5개 이내</td></tr>
+        <tr><td class="item">일정</td><td class="desc">메뉴 결정 즉시 섭외 · 업로드 후 메타 광고 전환</td></tr>
       </tbody>
     </table>
-    <table style="margin-top:18px;">
-      <tbody>
-        <tr><td class="item" style="width:130px;">결정 기준</td><td class="desc">9월분 오트 딥라떼 인플루언서 광고 반응 · 10월 초 집행분</td></tr>
-        <tr><td class="item">공통 브리프</td><td class="desc">영상은 한 잔 · 캡션에서 다른 한 잔을 한 줄로 언급</td></tr>
-        <tr><td class="item">표기</td><td class="desc">가격 미표기 · 해시태그 5개 안에 #딥라떼 #라떼맛집 #딥라떼맛집</td></tr>
-      </tbody>
-    </table>
-    <div class="bracket">
-      두 잔을 한 영상에 담으면 잔이 같아 구별되지 않습니다. 함께 보여주는 역할은 <b>자체 소재 1 · 2가</b> 맡고, 인플루언서는 한 잔에 집중합니다.
-    </div>
+    <div class="deliv-note">9월분 3명(몰빵 · 부산쥐 · 온드인 부산)은 10월 초 업로드 · 9월분 매체비로 함께 집행합니다</div>
   </div>
-
   <div class="section">
-    <div class="sec-head"><h2>블로그 체험단 — <em>오트 딥라떼로 돌립니다</em></h2><div class="sec-sub">40명 · 방문형 · 지정 키워드</div></div>
-    <div class="statrow">
-      <div class="sc"><div class="l">누적 발행</div><div class="v">126<small>건</small></div><div class="d">6월부터 7개 지점</div></div>
-      <div class="sc"><div class="l">오트딥 후기</div><div class="v">0<small>건</small></div><div class="d">9월 후기는 전부 기존 딥라떼</div></div>
-      <div class="sc"><div class="l">9월 신규</div><div class="v">2<small>지점</small></div><div class="d">광주동천 · 포항장성 · 모집 중</div></div>
-      <div class="sc"><div class="l">10월 배정</div><div class="v">40<small>명</small></div><div class="d">지점은 협의 후 확정</div></div>
+    <div class="sec-head"><h2>블로그 체험단 — <em>라떼 맛집 검색을 채웁니다</em></h2><div class="sec-sub">40명 · 방문형 · 지정 키워드</div></div>
+    <div class="split2">
+      <table>
+        <thead><tr><th>회차</th><th>지점</th><th class="r">발행</th></tr></thead>
+        <tbody>
+          <tr><td class="item">9월분 40명</td><td class="desc">광주동천 · 포항장성</td><td class="r">10월</td></tr>
+          <tr><td class="item">10월분 40명</td><td class="desc">협의 후 확정</td><td class="r">10 – 11월</td></tr>
+        </tbody>
+      </table>
+      <table>
+        <thead><tr><th>키워드 갈래</th><th class="r">비중</th></tr></thead>
+        <tbody>
+          <tr><td class="item">지역 + 라떼 맛집</td><td class="r">20명</td></tr>
+          <tr><td class="item">소구 메뉴명</td><td class="r">20명</td></tr>
+        </tbody>
+      </table>
     </div>
-    <table style="margin-top:14px;">
-      <thead><tr><th style="width:150px;">키워드 갈래</th><th>구성</th><th style="width:100px;">비중</th></tr></thead>
-      <tbody>
-        <tr><td class="item">지역 + 라떼 맛집</td><td class="desc">기존 유지 · 검색 유입의 본진</td><td class="desc">20명</td></tr>
-        <tr><td class="item">오트 딥라떼</td><td class="desc">메뉴명 직접 지정 · 후기 0건 구간을 채움</td><td class="desc">14명</td></tr>
-        <tr><td class="item">딥라떼 종류 · 고르기</td><td class="desc">라인 전체를 다루는 후기</td><td class="desc">6명</td></tr>
-      </tbody>
-    </table>
   </div>
-
   <div class="section">
     <div class="sec-head"><h2>X · 가맹점 — <em>9월 흐름 유지</em></h2><div class="sec-sub">상시 운영</div></div>
     <div class="split2">
@@ -563,7 +549,7 @@ body { word-break: keep-all; overflow-wrap: break-word; }
           <tbody>
             <tr><td class="item">상시 포스팅</td><td class="desc">주 3회 · 기업 어투 0% · 30분 룰</td></tr>
             <tr><td class="item">이벤트</td><td class="desc">월 2회 · 당첨자 정리 후 전달</td></tr>
-            <tr><td class="item">10월 소재</td><td class="desc">딥라떼 고르기 · 원두 선택 대화</td></tr>
+            <tr><td class="item">10월 소재</td><td class="desc">"오늘도 딥라떼" · 라떼 유목민 정착 발화</td></tr>
           </tbody>
         </table>
       </div>
@@ -571,7 +557,7 @@ body { word-break: keep-all; overflow-wrap: break-word; }
         <h3 class="block-t" style="margin-top:0;">가맹점</h3>
         <table>
           <tbody>
-            <tr><td class="item">가이드 배포</td><td class="desc">딥라떼 라인 구성 · 공통 해시태그 · 가격 미표기</td></tr>
+            <tr><td class="item">가이드 배포</td><td class="desc">소구 메뉴 · 공통 해시태그 · 가격 미표기</td></tr>
             <tr><td class="item">수락 · 집계</td><td class="desc">공동작업 수락과 성과 확인</td></tr>
             <tr><td class="item">재포스팅</td><td class="desc">반응 좋은 지점 릴스를 공식 계정으로</td></tr>
           </tbody>
@@ -581,29 +567,11 @@ body { word-break: keep-all; overflow-wrap: break-word; }
   </div>
 
   <div class="section">
-    <div class="sec-head"><h2>10월 <em>KPI</em></h2><div class="sec-sub">9월 실적을 기준선으로</div></div>
-    <table>
-      <thead><tr><th>KPI</th><th class="r">9월 결과</th><th class="r">10월 기준</th><th class="r">비고</th></tr></thead>
-      <tbody>
-        <tr><td class="item">① 광고 클릭률</td><td class="r">5.82%</td><td class="r">7% 이상</td><td class="r desc">업계 평균 1.67%</td></tr>
-        <tr><td class="item">② 광고 클릭 단가</td><td class="r">91원</td><td class="r">100원 이하</td><td class="r desc">9월 수준 유지</td></tr>
-        <tr><td class="item">③ 소재별 최소 노출</td><td class="r">6개 중 3개 미달</td><td class="r">전 소재 1,000 이상</td><td class="r desc">세트 분리의 성패 지표</td></tr>
-        <tr><td class="item">④ 릴스 완주율</td><td class="r">2.7%</td><td class="r">5% 이상</td><td class="r desc">첫 3초 설계 적용</td></tr>
-        <tr><td class="item">⑤ 광고 연속 집행</td><td class="r">8일</td><td class="r">26일</td><td class="r desc">10/6 – 10/31</td></tr>
-        <tr><td class="item">⑥ 인스타 팔로워</td><td class="r">2,754 (+30)</td><td class="r">순증 유지</td><td class="r desc">12월 6,000 경로</td></tr>
-        <tr><td class="item">⑦ 오트딥 블로그 후기</td><td class="r">0건</td><td class="r">발생</td><td class="r desc">10월 신규 측정</td></tr>
-        <tr><td class="item">⑧ 두 메뉴 합산 판매</td><td class="r">확인 불가</td><td class="r">추이 확인</td><td class="r desc">판매 데이터 확보 시</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="section">
-    <div class="sec-head"><h2>진행 전 <em>확인</em></h2><div class="sec-sub">소재 착수 전에 정해져야 하는 네 가지</div></div>
+    <div class="sec-head"><h2>진행 전 <em>확인</em></h2><div class="sec-sub">소재 착수 전에 정해져야 하는 세 가지</div></div>
     <table class="check">
       <thead><tr><th>항목</th><th>확인할 것</th><th>실행에 미치는 영향</th><th>기한</th></tr></thead>
       <tbody>
-        <tr><td class="item">오트밀크 성분</td><td class="desc">'오트 블렌딩 밀크'에 원유 · 유크림이 들어가는지</td><td class="num">원유가 있으면 식물성 · 유당 관련 표현을 전부 뺍니다<span class="sub">동종 브랜드가 같은 표기로 지적받은 사례 있음</span></td><td><span class="st prog">10/1</span></td></tr>
-        <tr><td class="item">디카페인 원두</td><td class="desc">전 지점 변경 가능한지 · 추가금이 있는지</td><td class="num">원두 선택 화법을 자막 · 캡션에 쓸 수 있는지 갈립니다<span class="sub">인플루언서가 이미 안내한 내용</span></td><td><span class="st prog">10/1</span></td></tr>
+        <tr><td class="item">오트밀크 성분</td><td class="desc">'오트 블렌딩 밀크'에 원유 · 유크림이 들어가는지</td><td class="num">오트 딥라떼 소구 시 · 원유가 있으면 식물성 · 유당 표현을 뺍니다<span class="sub">동종 브랜드가 같은 표기로 지적받은 사례 있음</span></td><td><span class="st prog">10/1</span></td></tr>
         <tr><td class="item">두 메뉴 판매량</td><td class="desc">딥라떼 · 오트 딥라떼 주간 잔 수</td><td class="num">선택지가 는 건지 갈아탄 건지 가립니다<span class="sub">7월에 정한 성과 기준</span></td><td><span class="st plan">10월 중</span></td></tr>
         <tr><td class="item">겨울 신메뉴 일정</td><td class="desc">11월 중순 출시일과 메뉴 확정 시점</td><td class="num">10월 하순 사전 노출 여부가 정해집니다<span class="sub">유자 · 버터스카치 검토 중으로 전달받음</span></td><td><span class="st plan">10월 중순</span></td></tr>
       </tbody>
@@ -626,7 +594,7 @@ body { word-break: keep-all; overflow-wrap: break-word; }
       <thead><tr><th>Part 2 — 인플루언서 · 블로그 체험단</th><th>내용</th><th class="r" style="width:120px;">금액</th></tr></thead>
       <tbody>
         <tr><td class="item">인플루언서 (6명)</td><td class="desc">소구 메뉴 협의 후 확정 · 섭외부터 QC까지</td><td class="amount">1,800,000</td></tr>
-        <tr><td class="item">블로그 체험단 (40명)</td><td class="desc">오트 딥라떼와 지역 키워드 · 모집과 매니징 · QC</td><td class="amount">400,000</td></tr>
+        <tr><td class="item">블로그 체험단 (40명)</td><td class="desc">소구 메뉴와 지역 키워드 · 모집과 매니징 · QC</td><td class="amount">400,000</td></tr>
         <tr class="subtotal-row"><td class="item">Part 2 소계</td><td></td><td class="amount">2,200,000</td></tr>
       </tbody>
     </table>
