@@ -95,10 +95,6 @@ tr.subtotal-row td { background: #f8fafb; font-weight: 700; border-top: 1px soli
   @page { size: A4; margin: 12mm; }
 }
 
-.delta-box { background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 10px; padding: 16px 22px; margin-bottom: 20px; font-size: 12.5px; color: #78350F; line-height: 1.8; }
-.delta-box strong { color: #92400E; font-weight: 800; }
-.delta-row { display: grid; grid-template-columns: 130px 1fr; gap: 12px; padding: 6px 0; }
-.delta-row .dk { font-weight: 800; color: #92400E; }
 
 /* 모바일 — 넓은 표는 표 안에서 가로 스크롤 */
 @media (max-width: 768px) {
@@ -154,7 +150,7 @@ tr.subtotal-row td { background: #f8fafb; font-weight: 700; border-top: 1px soli
   <div class="total-box">
     <div>
       <div class="tl">월 리테이너 합계</div>
-      <div class="ts">VAT 별도 · 8월과 동일 총액</div>
+      <div class="ts">VAT 별도 · 8월과 동일 구성</div>
     </div>
     <div class="ta">5,000,000<span>원</span></div>
   </div>
@@ -164,13 +160,13 @@ tr.subtotal-row td { background: #f8fafb; font-weight: 700; border-top: 1px soli
     <div class="kpi-grid">
       <div class="kpi-card">
         <div class="kc-label">Part 1</div>
-        <div class="kc-value">170<span class="kc-unit">만원</span></div>
-        <div class="kc-desc">채널 상시 운영 <span style="color:#EA580C;font-weight:700;">★</span></div>
+        <div class="kc-value">140<span class="kc-unit">만원</span></div>
+        <div class="kc-desc">채널 상시 운영</div>
       </div>
       <div class="kpi-card">
         <div class="kc-label">Part 2</div>
-        <div class="kc-value">220<span class="kc-unit">만원</span></div>
-        <div class="kc-desc">인플루언서 + 블로그 체험단</div>
+        <div class="kc-value">250<span class="kc-unit">만원</span></div>
+        <div class="kc-desc">인플루언서 + 블로그 체험단 <span style="color:#EA580C;font-weight:700;">★</span></div>
       </div>
       <div class="kpi-card">
         <div class="kc-label">Part 3</div>
@@ -180,33 +176,26 @@ tr.subtotal-row td { background: #f8fafb; font-weight: 700; border-top: 1px soli
     </div>
   </div>
 
-  <!-- 8월 대비 변경 -->
-  <div class="delta-box">
-    <div class="delta-row"><div class="dk">릴스 3건 → 6건</div><div>9/1 촬영 1회로 4건을 뽑아 건당 단가가 내려갔습니다 (+30만)</div></div>
-    <div class="delta-row"><div class="dk">인플루언서 7명 → 6명</div><div>쑥임자 3명은 신메뉴 편성으로 분리했습니다 (−30만)</div></div>
-    <div class="delta-row"><div class="dk">총액</div><div><strong>5,000,000원으로 동일합니다</strong></div></div>
-  </div>
-
   <!-- PART 1 -->
   <div class="section">
     <div class="part-header">
-      <h3>Part 1 — 채널 상시 운영 <span class="badge">9월 증액</span></h3>
-      <div class="part-price">1,700,000원</div>
+      <h3>Part 1 — 채널 상시 운영</h3>
+      <div class="part-price">1,400,000원</div>
     </div>
     <div class="part-subnote">
-      9/15 오트딥라떼 출시 · 9/1 가재울점 촬영본(구도 6종)을 소재 원본으로 사용합니다
+      9/15 오트딥라떼 출시 · 9/1 가재울점 촬영본을 소재 원본으로 사용합니다
     </div>
     <table>
       <thead><tr><th>항목</th><th>내용</th><th>금액</th></tr></thead>
       <tbody>
         <tr>
-          <td class="item">인스타그램 릴스 제작·운영 (6건)</td>
-          <td class="desc">전부 9/15 출시 이후 · 본편/광고 변형 2벌<br><span style="color:#999;">자막·음원·업로드 포함</span></td>
-          <td class="amount">1,000,000</td>
+          <td class="item">인스타그램 릴스 제작·운영 (3건)</td>
+          <td class="desc">오트딥라떼 · 9/15 출시 이후<br><span style="color:#999;">자막·음원·업로드 포함</span></td>
+          <td class="amount">700,000</td>
         </tr>
         <tr>
           <td class="item">X 상시 운영</td>
-          <td class="desc">씬쿠키 대화 축 주 3회 · 실시간 대응 · 30분 룰</td>
+          <td class="desc">주 3회 · 실시간 대응 · 30분 룰</td>
           <td class="amount">400,000</td>
         </tr>
         <tr>
@@ -221,7 +210,7 @@ tr.subtotal-row td { background: #f8fafb; font-weight: 700; border-top: 1px soli
         </tr>
         <tr class="subtotal-row">
           <td class="item" colspan="2">Part 1 소계</td>
-          <td class="amount">1,700,000</td>
+          <td class="amount">1,400,000</td>
         </tr>
       </tbody>
     </table>
@@ -231,10 +220,7 @@ tr.subtotal-row td { background: #f8fafb; font-weight: 700; border-top: 1px soli
   <div class="section">
     <div class="part-header">
       <h3>Part 2 — 인플루언서 + 블로그 체험단</h3>
-      <div class="part-price">2,200,000원</div>
-    </div>
-    <div class="part-subnote">
-      인플루언서 <strong>6명 전원에게 씬쿠키를 함께 발송</strong>합니다 — 3명은 오트딥라떼, 3명은 씬쿠키가 메인
+      <div class="part-price">2,500,000원</div>
     </div>
     <table>
       <thead><tr><th>항목</th><th>내용</th><th>금액</th></tr></thead>
@@ -242,7 +228,7 @@ tr.subtotal-row td { background: #f8fafb; font-weight: 700; border-top: 1px soli
         <tr>
           <td class="item">인플루언서 (6명)</td>
           <td class="desc">맛집·라떼·카페·디저트 계정 · 섭외·브리프·QC · 9월 업로드</td>
-          <td class="amount">1,800,000</td>
+          <td class="amount">2,100,000</td>
         </tr>
         <tr>
           <td class="item">블로그 체험단 (40명)</td>
@@ -251,7 +237,7 @@ tr.subtotal-row td { background: #f8fafb; font-weight: 700; border-top: 1px soli
         </tr>
         <tr class="subtotal-row">
           <td class="item" colspan="2">Part 2 소계</td>
-          <td class="amount">2,200,000</td>
+          <td class="amount">2,500,000</td>
         </tr>
       </tbody>
     </table>
