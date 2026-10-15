@@ -26,7 +26,7 @@ body { font-family: 'Noto Sans KR', -apple-system, sans-serif; background: #f4f7
 .report-header .label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px; }
 .report-header h1 { font-size: 26px; font-weight: 900; line-height: 1.35; letter-spacing: -0.02em; margin-bottom: 0; }
 .report-header h1 em { color: #EA580C; font-style: normal; }
-.meta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; padding-top: 24px; border-top: 1px solid #e8edf1; }
+.meta-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 28px; padding-top: 24px; border-top: 1px solid #e8edf1; }
 .meta-item .mk { font-size: 11px; color: #6b6d70; letter-spacing: 0.04em; margin-bottom: 4px; }
 .meta-item .mv { font-size: 13px; font-weight: 600; }
 
@@ -82,6 +82,7 @@ tr.subtotal-row td { background: #f8fafb; font-weight: 700; border-top: 1px soli
 @media (max-width: 768px) {
   .container { padding: 70px 16px 40px; }
   .meta-grid { grid-template-columns: repeat(2, 1fr); }
+  .meta-item.wide { grid-column: 1 / -1; }
   .kpi-grid { grid-template-columns: 1fr; }
   .section { padding: 24px 20px; }
   .total-box { flex-direction: column; text-align: center; }
@@ -155,6 +156,10 @@ tr.subtotal-row td { background: #f8fafb; font-weight: 700; border-top: 1px soli
         <div class="mk">대상</div>
         <div class="mv">버터스카치 2종 · 11/17 출시</div>
       </div>
+      <div class="meta-item wide">
+        <div class="mk">운영 기간</div>
+        <div class="mv">2026. 11. 04 ~ 12월 초</div>
+      </div>
     </div>
   </div>
 
@@ -162,7 +167,7 @@ tr.subtotal-row td { background: #f8fafb; font-weight: 700; border-top: 1px soli
   <div class="total-box">
     <div>
       <div class="tl">신메뉴 캠페인 합계</div>
-      <div class="ts">VAT 별도 · 월 리테이너와 별도 편성</div>
+      <div class="ts">VAT 별도 · 월 리테이너와 별도 편성 · 운영 11/4 ~ 12월 초</div>
     </div>
     <div class="ta">2,000,000<span>원</span></div>
   </div>
@@ -171,7 +176,7 @@ tr.subtotal-row td { background: #f8fafb; font-weight: 700; border-top: 1px soli
   <div class="section">
     <div class="part-header" style="margin-bottom:16px;">
       <h3>편성 범위</h3>
-      <div class="part-price" style="font-size:13px;color:#6b6d70;font-weight:600;">11/17 출시 · 12월 초 광고 마무리</div>
+      <div class="part-price" style="font-size:13px;color:#6b6d70;font-weight:600;">운영 기간 11/4 ~ 12월 초</div>
     </div>
     <div class="part-subnote">
       <strong>신규 유입</strong>이 목적인 별도 편성입니다 — 버터스카치 라떼 · 버터스카치 쉐이크
@@ -194,6 +199,7 @@ tr.subtotal-row td { background: #f8fafb; font-weight: 700; border-top: 1px soli
       </div>
     </div>
     <div class="tl-mini">
+      <div class="r"><div class="d">11/4 · 기획</div><div class="c">촬영 기획안·레퍼런스 전달</div></div>
       <div class="r"><div class="d">11/9 · 촬영</div><div class="c">자체 릴스 촬영 · 11/13 최종 컨펌 · 인플루언서 확정</div></div>
       <div class="r"><div class="d">11/17 · 출시</div><div class="c">자체 릴스 업로드 · 메타 광고 개시 · 인플루언서 촬영 시작</div></div>
       <div class="r"><div class="d">~11/27</div><div class="c">인플루언서 업로드 완료 · 인플루언서 소재 광고 합류</div></div>
@@ -206,6 +212,9 @@ tr.subtotal-row td { background: #f8fafb; font-weight: 700; border-top: 1px soli
     <div class="part-header">
       <h3>인플루언서 <span class="badge">3~4명</span></h3>
       <div class="part-price">900,000원</div>
+    </div>
+    <div class="part-subnote">
+      인플루언서 전원에게 <strong>바나나푸딩을 함께 발송</strong>해 출시 소식까지 노출합니다 — 콘텐츠 메인은 버터스카치
     </div>
     <table>
       <thead><tr><th>항목</th><th>내용</th><th>금액</th></tr></thead>
