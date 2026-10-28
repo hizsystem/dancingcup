@@ -385,6 +385,7 @@ body { word-break: keep-all; overflow-wrap: break-word; }
 @media (max-width: 720px) { .refg { grid-template-columns:1fr; } .refc .ims img { width:60px; height:107px; } }
 
 /* ── 11월 플랜 추가 컴포넌트 ── */
+td.desc .sub { display:block; color:#6b7280; font-size:11px; margin-top:2px; }
 .gantt { display:grid; grid-template-columns:150px 1fr; gap:8px 14px; align-items:center; margin-top:4px; }
 .gantt > * { min-width:0; }
 .g-lane-t { grid-column:1 / -1; font-size:11px; font-weight:700; color:#EA580C; margin-top:10px; letter-spacing:0; }
@@ -464,9 +465,9 @@ tr.grp-row td { background: #fdf2ec; color: #EA580C; font-size: 11px; font-weigh
       <thead><tr><th style="width:120px;">영역</th><th>11월에 할 것</th><th style="width:200px;">시점</th></tr></thead>
       <tbody>
         <tr class="grp-row"><td colspan="3">리테이너 500만 · 딥라떼</td></tr>
-        <tr><td class="item">촬영</td><td class="desc"><b>1회</b> · 딥라떼 · 버터스카치 함께</td><td class="desc">11/9</td></tr>
-        <tr><td class="item">자체 제작 릴스</td><td class="desc">딥라떼 <b>3건</b></td><td class="desc">11/12 업로드 <span class="st plan">가정</span></td></tr>
-        <tr class="b4-hl"><td class="item">메타 광고</td><td class="desc"><b>80만원</b> · 위닝 소재 10 → 자체 35 → 인플루언서 35</td><td class="desc">위닝 · 자체는 출시 전 11/2 – 11/16</td></tr>
+        <tr><td class="item">촬영</td><td class="desc"><b>1회</b> · 딥라떼 · 버터스카치 함께</td><td class="desc">11/9<span class="sub">촬영 기획안 11/4</span></td></tr>
+        <tr><td class="item">자체 제작 릴스</td><td class="desc">딥라떼 <b>3건</b></td><td class="desc">11/12 업로드 <span class="st plan">가정</span><span class="sub">11/11 컨펌</span></td></tr>
+        <tr class="b4-hl"><td class="item">메타 광고</td><td class="desc"><b>80만원</b> · 위닝 소재 10 → 자체 35 → 인플루언서 35</td><td class="desc">위닝 · 자체는 출시 전 11/4 – 11/16</td></tr>
         <tr><td class="item">인플루언서</td><td class="desc"><b>4 – 5명</b> · 3만 이상 계정 · 두 잔</td><td class="desc">11월 첫 주 섭외 · 업로드 순서대로 광고</td></tr>
         <tr><td class="item">블로그 체험단</td><td class="desc"><b>40명</b> · 지역 + 라떼 맛집 · 두 메뉴명</td><td class="desc">10월분 11/8 마감 후 모집</td></tr>
         <tr><td class="item">X</td><td class="desc">이벤트 <b>2회</b> · 실시간 대응 30분 룰</td><td class="desc">11/9 주 · 11/16 주 <span class="st plan">가정</span></td></tr>
@@ -493,8 +494,10 @@ tr.grp-row td { background: #fdf2ec; color: #EA580C; font-size: 11px; font-weigh
 
     <h3 class="block-t">집행 순서 · 11/2 – 12/6</h3>
     <div class="gantt">
+      <div class="g-lane-t">10월 리테이너분</div>
+      <div class="g-l">인플루언서 35만<small>10/28 – 11/4 집행 중</small></div><div class="g-tr"><span class="g-bar" style="left:0%;width:8.57%;border-radius:0 4px 4px 0;"></span></div>
       <div class="g-lane-t">딥라떼 · 리테이너 80만</div>
-      <div class="g-l">위닝 소재 10만<small>11/2 – 11/11</small></div><div class="g-tr"><span class="g-bar" style="left:0%;width:28.57%;"></span></div>
+      <div class="g-l">위닝 소재 10만<small>11/4 – 11/11</small></div><div class="g-tr"><span class="g-bar" style="left:5.71%;width:22.86%;"></span></div>
       <div class="g-l">자체 35만<small>11/12 – 11/16</small></div><div class="g-tr"><span class="g-bar" style="left:28.57%;width:14.29%;"></span></div>
       <div class="g-l">인플루언서 35만<small>업로드 후 7일</small></div><div class="g-tr"><span class="g-bar soft" style="left:60%;width:20%;"></span></div>
       <div class="g-lane-t">버터스카치 · 신메뉴 80만</div>
@@ -515,7 +518,7 @@ tr.grp-row td { background: #fdf2ec; color: #EA580C; font-size: 11px; font-weigh
       </tbody>
     </table>
     <div class="deliv-note">10월 위닝 세트에서는 메이가 예산 <b>98.5%</b>를 가져갔습니다 · 세트 1위는 12월 위닝 소재로</div>
-    <div class="deliv-note">10월 인플루언서 매체비 35만원은 <b>광고 코드 수령 후 7일</b> 따로 집행 · 11월 위닝 소재에는 넣지 않습니다</div>
+    <div class="deliv-note">10월 인플루언서 매체비 35만원은 <b>10/28 – 11/4</b> 먼저 집행 · 11월 위닝 소재에는 넣지 않습니다</div>
   </div>
 
   <div class="section">
